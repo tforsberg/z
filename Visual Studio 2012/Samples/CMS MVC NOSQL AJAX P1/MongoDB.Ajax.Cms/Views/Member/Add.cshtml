@@ -1,0 +1,82 @@
+﻿@model User
+
+<div class="site-block form">
+    <form action="/Member/Add" class="ajax" data-ajax="{hashPwd:true}">
+    @Html.HiddenFor(x => x.Id)
+    <table class="table">
+
+        <tr>
+            <td class="w25">UserName
+            </td>
+
+
+            <td>
+                @Model.UserName
+            </td>
+        </tr>
+        <tr>
+            <td class="w25">Tell
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.Tel, new { @class = "input {validate:{digits:1}}" })
+            </td>
+        </tr>
+        <tr>
+            <td>FullName
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.FullName, new { @class = "input" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>Card Number
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.CardId, new { @class = "input {validate:{digits:1}}" })
+            </td>
+        </tr>
+        <tr>
+            <td>Address
+            </td>
+            <td>
+                @Html.TextAreaFor(x => x.Address, new { @class = "edit_textarea" })
+            </td>
+        </tr>
+        <tr>
+            <td>Yahoo
+            </td>
+            <td>
+                @Html.TextBoxFor(x => x.YahooId, new { @class = "input" })
+            </td>
+        </tr>
+       
+        <tr>
+            <td>Avatar
+            </td>
+            <td class="avatar-preview">
+                @Html.ImageLink("javascript:;",Model.FullName, Model.Avatar, new {@style = "width:50px;height:50px", @class = "avatar", @onclick = "$.showDialog('/filemanager/?returnId=Avatar&returnfull=1')" })
+                @Html.HiddenFor(x => Model.Avatar)
+            </td>
+        </tr>
+        <tr>
+            <td>Status
+            </td>
+            <td>
+                @Html.DropDownListFor(x => x.Status, HtmlExtensions.ToSelectList<UserStatus>(), new {@class="width30"})
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+
+                <input type="submit" class="ui-button" value="Save" />
+
+            </td>
+        </tr>
+
+    </table>
+    </form>
+
+</div>

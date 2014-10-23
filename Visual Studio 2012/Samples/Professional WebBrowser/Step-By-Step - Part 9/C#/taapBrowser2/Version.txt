@@ -1,0 +1,31 @@
+﻿9th January 2014
+Dave Gordon [davesama@hotmail.co.uk]
+Version Alpha
+Added	: HistoryList to Properties to keep track of the user's history.
+
+21st December 2013
+Dave Gordon [davesama@hotmail.co.uk]
+Version Alpha
+Added	: Additional Console output which is also displayed in the Debugger's output
+Changed	: BrowserControl Tag is now a reference to the TabPage it is on
+Changed	: TabPage.Tag is now a reference to the BrowserControl that it hosts
+Changed	: BrowserIndex is not really needed now.
+
+21st December 2013
+Dave Gordon [davesama@hotmail.co.uk]
+Version Alpha
+Added	: BrowserControl_Crashed Console Messages
+Added	: BrowserControl_CertificateError Console Message (Needs more to be done than just this!)
+Added	: 
+Changed	: GetBrowserIndex() from returning an Object to an Int
+
+19th December 2013
+Dave Gordon [davesama@hotmail.co.uk]
+Version Alpha
+Added	: This version file
+Added	: FrmOptions
+Added	: Options->Settings to the Main Tools Menu, opens FrmOptions
+Added	: Class UserSettings.cs
+Added	: Setting MaximumTabLength
+Renamed	: ConsoleWindow to FrmConsoleWindow
+Renamed	: Browser Control to ctrlBrowser

@@ -1,0 +1,34 @@
+﻿<div id="gbd4" class="gbm hidden">
+    <div class="gbmc">
+        <div id="gbmpdv">
+            <div id="gbmpiw">
+                <a href="javascript:;" class="gbmpiaa">
+                    @if (!string.IsNullOrWhiteSpace(IWebContext.UserInfo.Avatar))
+                    {
+                        @Html.Image(IWebContext.UserInfo.Avatar, new { @style = "width:96px;height:96px;border:solid 1px #ccc" })
+                    }
+                    else
+                    {
+                        @Html.Image("/avatar/unknow.png", new { @style = "width:96px;height:96px;border:solid 1px #ccc" })
+                    }
+                </a>
+            </div>
+            <div class="gbpc">
+                <span class="gbps" id="gbmpn">Member Info</span><span class="gbps2">@IWebContext.UserInfo.UserName</span>
+                <div class="gbmlbw">
+                    <a class="gbmlb" href="javascript:;" id="gb_156">Account Info</a>&ndash;
+                                            <a data-window="width:320,height:200,maximize:0,minimize:0,title:'Change password'" class="gbmlb window kooltip" href="/Member/ChangePwd">Change Password</a>
+                </div>
+                <a class="gbqfb gbiba" href="javascript:;" id="gbmplp" role="button">Log info</a>
+            </div>
+        </div>
+        <table id="gbmpal">
+            <tbody>
+                <tr>
+                    <td class="gbmpala"></td>
+                    <td class="gbmpalb"><a class="gbqfbb ajax confirm" title="Are you sure want to exit the system?" href="/Member/Logout" id="gb_71" role="button" target="_top">Logout</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

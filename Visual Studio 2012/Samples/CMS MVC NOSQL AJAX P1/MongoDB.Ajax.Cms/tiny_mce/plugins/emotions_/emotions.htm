@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{#emotions_dlg.title}</title>
+    <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="js/emotions.js"></script>
+    <style type="text/css">
+        td
+        {
+            text-align: center;
+        }
+        img
+        {
+            border: 0;
+        }
+        a.smile
+        {
+            margin-right:5px;              
+            
+        }
+              
+        
+    </style>
+</head>
+<body style="display: none" role="application" aria-labelledby="app_title">
+    <span style="display: none;" id="app_title">{#emotions_dlg.title}</span>
+    <div>
+        <div class="title">
+            {#emotions_dlg.title}:<br />
+            <br />
+        </div>
+
+        <script type="text/javascript">
+            for(var i=1;i<=141;i++) {
+                document.write('<a class="smile" href="javascript:EmotionsDialog.insert(\'/smiles/' + i + '.gif\',\'emotions_dlg.' + i + '\');"><img src="/smiles/' + i + '.gif" /></a>')
+            }
+            
+        </script>
+
+        <!--<table cellspacing="0" cellpadding="4">
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/1.gif','emotions_dlg.1');">
+                        <img src="/smiles/1.gif" alt="{#emotions_dlg.1}" title="{#emotions_dlg.1}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/10.gif','emotions_dlg.10');">
+                        <img src="/smiles/10.gif" alt="{#emotions_dlg.10}" title="{#emotions_dlg.10}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/12.gif','emotions_dlg.12');">
+                        <img src="/smiles/12.gif" alt="{#emotions_dlg.12}" title="{#emotions_dlg.12}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/16.gif','emotions_dlg.16');">
+                        <img src="/smiles/16.gif" alt="{#emotions_dlg.16}" title="{#emotions_dlg.16}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/11.gif','emotions_dlg.11');">
+                        <img src="/smiles/11.gif" alt="{#emotions_dlg.11}" title="{#emotions_dlg.11}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/16_tip.gif','emotions_dlg.16_tip');">
+                        <img src="/smiles/16_tip.gif" alt="{#emotions_dlg.16_tip}" title="{#emotions_dlg.16_tip}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/58.gif','emotions_dlg.58');">
+                        <img src="/smiles/58.gif" alt="{#emotions_dlg.58}" title="{#emotions_dlg.58}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/105.gif','emotions_dlg.105');">
+                        <img src="/smiles/105.gif" alt="{#emotions_dlg.105}" title="{#emotions_dlg.105}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/15.gif','emotions_dlg.15');">
+                        <img src="/smiles/15.gif" alt="{#emotions_dlg.15}" title="{#emotions_dlg.15}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/109.gif','emotions_dlg.109');">
+                        <img src="/smiles/109.gif" alt="{#emotions_dlg.109}" title="{#emotions_dlg.109}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/22.gif','emotions_dlg.22');">
+                        <img src="/smiles/22.gif" alt="{#emotions_dlg.22}" title="{#emotions_dlg.22}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/5.gif','emotions_dlg.5');">
+                        <img src="/smiles/5.gif" alt="{#emotions_dlg.5}" title="{#emotions_dlg.5}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/20.gif','emotions_dlg.20');">
+                        <img src="/smiles/20.gif" alt="{#emotions_dlg.20}" title="{#emotions_dlg.20}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/19.gif','emotions_dlg.19');">
+                        <img src="/smiles/19.gif" alt="{#emotions_dlg.19}" title="{#emotions_dlg.19}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/17.gif','emotions_dlg.17');">
+                        <img src="/smiles/17.gif" alt="{#emotions_dlg.17}" title="{#emotions_dlg.17}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/21.gif','emotions_dlg.21');">
+                        <img src="/smiles/21.gif" alt="{#emotions_dlg.21}" title="{#emotions_dlg.21}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/67.gif','emotions_dlg.67');">
+                        <img src="/smiles/67.gif" alt="{#emotions_dlg.67}" title="{#emotions_dlg.67}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/2.gif','emotions_dlg.2');">
+                        <img src="/smiles/2.gif" alt="{#emotions_dlg.2}" title="{#emotions_dlg.2}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/45.gif','emotions_dlg.45');">
+                        <img src="/smiles/45.gif" alt="{#emotions_dlg.45}" title="{#emotions_dlg.45}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/23.gif','emotions_dlg.23');">
+                        <img src="/smiles/23.gif" alt="{#emotions_dlg.23}" title="{#emotions_dlg.23}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/48.gif','emotions_dlg.48');">
+                        <img src="/smiles/48.gif" alt="{#emotions_dlg.48}" title="{#emotions_dlg.48}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/56.gif','emotions_dlg.56');">
+                        <img src="/smiles/56.gif" alt="{#emotions_dlg.56}" title="{#emotions_dlg.56}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/25.gif','emotions_dlg.25');">
+                        <img src="/smiles/25.gif" alt="{#emotions_dlg.25}" title="{#emotions_dlg.25}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/62.gif','emotions_dlg.62');">
+                        <img src="/smiles/62.gif" alt="{#emotions_dlg.62}" title="{#emotions_dlg.62}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/50.gif','emotions_dlg.50');">
+                        <img src="/smiles/50.gif" alt="{#emotions_dlg.50}" title="{#emotions_dlg.50}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/14.gif','emotions_dlg.14');">
+                        <img src="/smiles/14.gif" alt="{#emotions_dlg.14}" title="{#emotions_dlg.14}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/57.gif','emotions_dlg.57');">
+                        <img src="/smiles/57.gif" alt="{#emotions_dlg.57}" title="{#emotions_dlg.57}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/68.gif','emotions_dlg.68');">
+                        <img src="/smiles/68.gif" alt="{#emotions_dlg.68}" title="{#emotions_dlg.68}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/31.gif','emotions_dlg.31');">
+                        <img src="/smiles/31.gif" alt="{#emotions_dlg.31}" title="{#emotions_dlg.31}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/3.gif','emotions_dlg.3');">
+                        <img src="/smiles/3.gif" alt="{#emotions_dlg.3}" title="{#emotions_dlg.3}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/72.gif','emotions_dlg.72');">
+                        <img src="/smiles/72.gif" alt="{#emotions_dlg.72}" title="{#emotions_dlg.72}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/28.gif','emotions_dlg.28');">
+                        <img src="/smiles/28.gif" alt="{#emotions_dlg.28}" title="{#emotions_dlg.28}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/7.gif','emotions_dlg.7');">
+                        <img src="/smiles/7.gif" alt="{#emotions_dlg.7}" title="{#emotions_dlg.7}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/59.gif','emotions_dlg.59');">
+                        <img src="/smiles/59.gif" alt="{#emotions_dlg.59}" title="{#emotions_dlg.59}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/29.gif','emotions_dlg.29');">
+                        <img src="/smiles/29.gif" alt="{#emotions_dlg.29}" title="{#emotions_dlg.29}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/38.gif','emotions_dlg.38');">
+                        <img src="/smiles/38.gif" alt="{#emotions_dlg.38}" title="{#emotions_dlg.38}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/4.gif','emotions_dlg.4');">
+                        <img src="/smiles/4.gif" alt="{#emotions_dlg.4}" title="{#emotions_dlg.4}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/39.gif','emotions_dlg.39');">
+                        <img src="/smiles/39.gif" alt="{#emotions_dlg.39}" title="{#emotions_dlg.39}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/33.gif','emotions_dlg.33');">
+                        <img src="/smiles/33.gif" alt="{#emotions_dlg.33}" title="{#emotions_dlg.33}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/69.gif','emotions_dlg.69');">
+                        <img src="/smiles/69.gif" alt="{#emotions_dlg.69}" title="{#emotions_dlg.69}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/41.gif','emotions_dlg.41');">
+                        <img src="/smiles/41.gif" alt="{#emotions_dlg.41}" title="{#emotions_dlg.41}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/43.gif','emotions_dlg.43');">
+                        <img src="/smiles/43.gif" alt="{#emotions_dlg.43}" title="{#emotions_dlg.43}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/44.gif','emotions_dlg.44');">
+                        <img src="/smiles/44.gif" alt="{#emotions_dlg.44}" title="{#emotions_dlg.44}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/47.gif','emotions_dlg.47');">
+                        <img src="/smiles/47.gif" alt="{#emotions_dlg.47}" title="{#emotions_dlg.47}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/37.gif','emotions_dlg.37');">
+                        <img src="/smiles/37.gif" alt="{#emotions_dlg.37}" title="{#emotions_dlg.37}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/75.gif','emotions_dlg.75');">
+                        <img src="/smiles/75.gif" alt="{#emotions_dlg.75}" title="{#emotions_dlg.75}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/60.gif','emotions_dlg.60');">
+                        <img src="/smiles/60.gif" alt="{#emotions_dlg.60}" title="{#emotions_dlg.60}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/51.gif','emotions_dlg.51');">
+                        <img src="/smiles/51.gif" alt="{#emotions_dlg.51}" title="{#emotions_dlg.51}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/27.gif','emotions_dlg.27');">
+                        <img src="/smiles/27.gif" alt="{#emotions_dlg.27}" title="{#emotions_dlg.27}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/32.gif','emotions_dlg.32');">
+                        <img src="/smiles/32.gif" alt="{#emotions_dlg.32}" title="{#emotions_dlg.32}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/66.gif','emotions_dlg.66');">
+                        <img src="/smiles/66.gif" alt="{#emotions_dlg.66}" title="{#emotions_dlg.66}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/78.gif','emotions_dlg.78');">
+                        <img src="/smiles/78.gif" alt="{#emotions_dlg.78}" title="{#emotions_dlg.78}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/pirate_2.gif','emotions_dlg.pirate_2');">
+                        <img src="/smiles/pirate_2.gif" alt="{#emotions_dlg.pirate_2}" title="{#emotions_dlg.pirate_2}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/8.gif','emotions_dlg.8');">
+                        <img src="/smiles/8.gif" alt="{#emotions_dlg.8}" title="{#emotions_dlg.8}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/64.gif','emotions_dlg.64');">
+                        <img src="/smiles/64.gif" alt="{#emotions_dlg.64}" title="{#emotions_dlg.64}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/61.gif','emotions_dlg.61');">
+                        <img src="/smiles/61.gif" alt="{#emotions_dlg.61}" title="{#emotions_dlg.61}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/65.gif','emotions_dlg.65');">
+                        <img src="/smiles/65.gif" alt="{#emotions_dlg.65}" title="{#emotions_dlg.65}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/71.gif','emotions_dlg.71');">
+                        <img src="/smiles/71.gif" alt="{#emotions_dlg.71}" title="{#emotions_dlg.71}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/13.gif','emotions_dlg.13');">
+                        <img src="/smiles/13.gif" alt="{#emotions_dlg.13}" title="{#emotions_dlg.13}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/63.gif','emotions_dlg.63');">
+                        <img src="/smiles/63.gif" alt="{#emotions_dlg.63}" title="{#emotions_dlg.63}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/9.gif','emotions_dlg.9');">
+                        <img src="/smiles/9.gif" alt="{#emotions_dlg.9}" title="{#emotions_dlg.9}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/transformer.gif','emotions_dlg.transformer');">
+                        <img src="/smiles/transformer.gif" alt="{#emotions_dlg.transformer}" title="{#emotions_dlg.transformer}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/73.gif','emotions_dlg.73');">
+                        <img src="/smiles/73.gif" alt="{#emotions_dlg.73}" title="{#emotions_dlg.73}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/53.gif','emotions_dlg.53');">
+                        <img src="/smiles/53.gif" alt="{#emotions_dlg.53}" title="{#emotions_dlg.53}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/55.gif','emotions_dlg.55');">
+                        <img src="/smiles/55.gif" alt="{#emotions_dlg.55}" title="{#emotions_dlg.55}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/52.gif','emotions_dlg.52');">
+                        <img src="/smiles/52.gif" alt="{#emotions_dlg.52}" title="{#emotions_dlg.52}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/54.gif','emotions_dlg.54');">
+                        <img src="/smiles/54.gif" alt="{#emotions_dlg.54}" title="{#emotions_dlg.54}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/49.gif','emotions_dlg.49');">
+                        <img src="/smiles/49.gif" alt="{#emotions_dlg.49}" title="{#emotions_dlg.49}" /></a>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/6.gif','emotions_dlg.6');">
+                        <img src="/smiles/6.gif" alt="{#emotions_dlg.6}" title="{#emotions_dlg.6}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/100.gif','emotions_dlg.100');">
+                        <img src="/smiles/100.gif" alt="{#emotions_dlg.100}" title="{#emotions_dlg.100}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/108.gif','emotions_dlg.108');">
+                        <img src="/smiles/108.gif" alt="{#emotions_dlg.108}" title="{#emotions_dlg.108}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/102.gif','emotions_dlg.102');">
+                        <img src="/smiles/102.gif" alt="{#emotions_dlg.102}" title="{#emotions_dlg.102}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/34.gif','emotions_dlg.34');">
+                        <img src="/smiles/34.gif" alt="{#emotions_dlg.34}" title="{#emotions_dlg.34}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/77.gif','emotions_dlg.77');">
+                        <img src="/smiles/77.gif" alt="{#emotions_dlg.77}" title="{#emotions_dlg.77}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/101.gif','emotions_dlg.101');">
+                        <img src="/smiles/101.gif" alt="{#emotions_dlg.101}" title="{#emotions_dlg.101}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/24.gif','emotions_dlg.24');">
+                        <img src="/smiles/24.gif" alt="{#emotions_dlg.24}" title="{#emotions_dlg.24}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/36.gif','emotions_dlg.36');">
+                        <img src="/smiles/36.gif" alt="{#emotions_dlg.36}" title="{#emotions_dlg.36}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/107.gif','emotions_dlg.107');">
+                        <img src="/smiles/107.gif" alt="{#emotions_dlg.107}" title="{#emotions_dlg.107}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/76.gif','emotions_dlg.76');">
+                        <img src="/smiles/76.gif" alt="{#emotions_dlg.76}" title="{#emotions_dlg.76}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/104.gif','emotions_dlg.104');">
+                        <img src="/smiles/104.gif" alt="{#emotions_dlg.104}" title="{#emotions_dlg.104}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/18.gif','emotions_dlg.18');">
+                        <img src="/smiles/18.gif" alt="{#emotions_dlg.18}" title="{#emotions_dlg.18}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/110.gif','emotions_dlg.110');">
+                        <img src="/smiles/110.gif" alt="{#emotions_dlg.110}" title="{#emotions_dlg.110}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/112.gif','emotions_dlg.112');">
+                        <img src="/smiles/112.gif" alt="{#emotions_dlg.112}" title="{#emotions_dlg.112}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/42.gif','emotions_dlg.42');">
+                        <img src="/smiles/42.gif" alt="{#emotions_dlg.42}" title="{#emotions_dlg.42}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/40.gif','emotions_dlg.40');">
+                        <img src="/smiles/40.gif" alt="{#emotions_dlg.40}" title="{#emotions_dlg.40}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/111.gif','emotions_dlg.111');">
+                        <img src="/smiles/111.gif" alt="{#emotions_dlg.111}" title="{#emotions_dlg.111}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/115.gif','emotions_dlg.115');">
+                        <img src="/smiles/115.gif" alt="{#emotions_dlg.115}" title="{#emotions_dlg.115}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/30.gif','emotions_dlg.30');">
+                        <img src="/smiles/30.gif" alt="{#emotions_dlg.30}" title="{#emotions_dlg.30}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/103.gif','emotions_dlg.103');">
+                        <img src="/smiles/103.gif" alt="{#emotions_dlg.103}" title="{#emotions_dlg.103}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/113.gif','emotions_dlg.113');">
+                        <img src="/smiles/113.gif" alt="{#emotions_dlg.113}" title="{#emotions_dlg.113}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/46.gif','emotions_dlg.46');">
+                        <img src="/smiles/46.gif" alt="{#emotions_dlg.46}" title="{#emotions_dlg.46}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/106.gif','emotions_dlg.106');">
+                        <img src="/smiles/106.gif" alt="{#emotions_dlg.106}" title="{#emotions_dlg.106}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/114.gif','emotions_dlg.114');">
+                        <img src="/smiles/114.gif" alt="{#emotions_dlg.114}" title="{#emotions_dlg.114}" /></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/70.gif','emotions_dlg.70');">
+                        <img src="/smiles/70.gif" alt="{#emotions_dlg.70}" title="{#emotions_dlg.70}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/35.gif','emotions_dlg.35');">
+                        <img src="/smiles/35.gif" alt="{#emotions_dlg.35}" title="{#emotions_dlg.35}" /></a>
+                </td>
+                <td>
+                    <a href="javascript:EmotionsDialog.insert('/smiles/26.gif','emotions_dlg.26');">
+                        <img src="/smiles/26.gif" alt="{#emotions_dlg.26}" title="{#emotions_dlg.26}" /></a>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </table>-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<User>
+
+@{
+    int _count = 0;
+}
+
+
+<form action="/Member/" class="ajax" data-ajax="target:'#ajax-list'" id="_fgrid">
+
+    <input type="hidden" value="del" name="act" />
+
+    <table class="grid">
+        <tr class="head">
+            <td class="center" style="width: 50px">
+                <input type="checkbox" class="check-master" /></td>
+            <td>UserName</td>
+            
+            <td class="w10 center">Status</td>
+            <td class="w20 center">Address</td>
+            <td class="w10 center">Created</td>
+         
+            <td class="center" style="width: 200px">Action</td>
+        </tr>
+
+        @if (Model != null)
+        {
+            foreach (var _x in Model)
+            {
+                _count++;
+                
+            <tr class="@string.Format("row{0}", _count % 2 == 0 ? "" : "-alt")">
+                <td class="center">
+                    <input type="checkbox" class="selected" name="id" value="@_x.Id" /></td>
+
+                <td>
+                    @_x.UserName
+                </td>
+
+                <td class="center">
+                    <div class="widget-action">
+                        <a class="ui-button window kooltip" title="@((UserStatus)_x.Status)" data-window="{width:300,height:150,maximize:0,minimize:0,title:'Status'}" href="@string.Format("/Member/Status/?Id={0}&t={1}", _x.Id, _x.Status)">
+                            <span class="@string.Format("ico-16 {0}", ((UserStatus)_x.Status).ToString().ToLower())"></span>
+                        </a>
+                    </div>
+                </td>
+
+                <td class="">@_x.Address</td>
+
+                <td class="center">@IWebContext.PrettyDate(_x.Created)</td>
+
+                <td class="center">
+
+                    <div class="widget-action">
+
+                        @* <a href="/Member/Add/?Id=@_x.Id" title="Edit this item" class="ui-button window" data-window="width:400,height:210,maximize:0,minimize:0,title:'Adv Manager'"><span class="ico-16 edit"></span></a>*@
+                        <a href="@string.Format("/Member/Role/?Id={0}&r={1}",_x.Id,_x.RoleId)" title="Edit role for this user" class="ui-button window" data-window="width:300,height:150,maximize:0,minimize:0,title:'Role Manager'"><span class="ico-16 security"></span></a>
+                         <a href="/Website/?UserId=@_x.Id" title="Website of this user" class="ui-button ajax" data-ajax="{target:'#ajax-container',data:{f:1},state:true}"><span class="ico-16 link"></span></a>
+                        <a href="/Member/RestPwd/@_x.Id" class="ui-button ajax confirm" title="Are you sure reset password this user" ><span class="ico-16 lock"></span></a>
+                        <a href="/Member/Remove/@_x.Id" class="ui-button ajax confirm" title="Are you sure want to delete this item?" data-ajax="target:'#ajax-list'"><span class="ico-16 remove"></span></a>
+                    </div>
+
+                </td>
+            </tr>
+            }
+
+        }
+    </table>
+</form>
+
+
+<div class="white-bt">
+    @Html.Raw(ViewBag.Paging)
+    <br class="empty" />
+</div>

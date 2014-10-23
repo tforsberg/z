@@ -1,0 +1,15 @@
+﻿<form action="/Member/Status/" class="ajax" data-ajax="{onComplete:function(){alert('Thanh công');$('#_fsearch').submit()}}">
+
+    @Html.Hidden("id", Request.QueryString["id"])
+    
+    <div class="field">
+
+        @Html.DropDownList("stt", HtmlExtensions.ToSelectList<UserStatus>(Request.QueryString["t"]))
+    </div>
+    <div class="field center">
+
+        <input type="submit" class="ui-button" value="Save" />
+
+    </div>
+
+</form>

@@ -1,0 +1,97 @@
+﻿@model User
+<div class="site-block form">
+    @Html.HiddenFor(x => x.Id)
+    <table class="info_popup_div">
+        <tr>
+            <td colspan="2" align="center">
+                @Html.Image(Model.Avatar, new { @class = "avatar" })
+            </td>
+        </tr>
+        <tr>
+            <td class="w10">Tên đăng nhập
+            </td>
+            <td class="bold">
+                @Model.UserName
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w10">Địa chỉ mail
+            </td>
+            <td class="bold">
+                @Model.Email
+            </td>
+        </tr>
+        <tr>
+            <td class="w10">Tên đầy đủ
+            </td>
+            <td class="bold">
+                @(!string.IsNullOrWhiteSpace(Model.FullName) ? Model.FullName : "Chưa cập nhật")
+            </td>
+        </tr>
+        <tr>
+            <td class="w10">Số CMT
+            </td>
+            <td class="bold">
+                @(!string.IsNullOrWhiteSpace(Model.CardId) ? Model.CardId : "Chưa cập nhật")
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w10">Địa chỉ
+            </td>
+            <td class="infobox_desc">
+                @(!string.IsNullOrWhiteSpace(Model.Address) ? Model.Address : "Chưa cập nhật")
+            </td>
+        </tr>
+        <tr>
+            <td class="w10">Số điện thoại
+            </td>
+            <td class="bold">
+                @(!string.IsNullOrWhiteSpace(Model.Tel) ? Model.Tel : "Chưa cập nhật")
+            </td>
+        </tr>
+        <tr>
+            <td>Trạng thái tài khoản
+            </td>
+            <td class="w10 bold" style="color: red">
+                @((UserStatus)Model.Status)
+            </td>
+        </tr>
+        <tr>
+            <td class="w10">Thời điểm tham gia
+            </td>
+            <td class="bold">
+                @IWebContext.PrettyDate(Model.Created)
+            </td>
+        </tr>
+        @if (Model.Actived.HasValue)
+        {
+            <tr>
+                <td class="w10">Thời điểm kích hoạt
+                </td>
+                <td class="bold">
+                    @IWebContext.PrettyDate(Model.Created))
+                </td>
+            </tr>
+        }
+        <tr>
+            <td class="w10">Giới tính
+            </td>
+            <td class="bold">
+                @(Model.Sex.Equals(1) ? "Nam" : Model.Sex.Equals(2) ? "Nữ" : "Chưa cập nhật")
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="w10">yahoo
+            </td>
+            <td class="bold">
+                @(!string.IsNullOrWhiteSpace(Model.YahooId) ? Model.YahooId : "Chưa cập nhật")
+            </td>
+        </tr>
+
+
+    </table>
+</div>

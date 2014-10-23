@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages name="English" code="en">
+
+    <DATETIME>
+        <JUST_NOW>{0} sec ago</JUST_NOW>
+        <MINUTES_AGO>{0} min ago</MINUTES_AGO>
+        <HOURS_AGO>{0} hours ago</HOURS_AGO>
+        <YESTERDAY_AT>Yesterday, at {0:T}</YESTERDAY_AT>
+        <DAYS_AGO>{0} days ago</DAYS_AGO>
+        <WEEKS_AGO>{0} weeks ago</WEEKS_AGO>
+        <SHORT_DATE>yyyy-MM-d</SHORT_DATE>
+    </DATETIME>
+
+
+</languages>

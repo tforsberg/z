@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages name="English" code="en">
+
+  <DATETIME>
+    <JUST_NOW>{0} giây trước</JUST_NOW>
+    <MINUTES_AGO>{0} phút trước</MINUTES_AGO>
+    <HOURS_AGO>{0} giờ trước</HOURS_AGO>
+    <YESTERDAY_AT>Hôm qua, lúc {0:T}</YESTERDAY_AT>
+    <DAYS_AGO>{0} ngày trước</DAYS_AGO>
+    <WEEKS_AGO>{0} tuần trước</WEEKS_AGO>
+    <SHORT_DATE>dd-MM-yyyy</SHORT_DATE>
+  </DATETIME>
+</languages>

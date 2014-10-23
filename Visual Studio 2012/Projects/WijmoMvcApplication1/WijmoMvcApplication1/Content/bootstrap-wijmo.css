@@ -1,0 +1,1390 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.page-header {
+    clear: both;
+}
+
+.splitterContainer {
+    height: 210px;
+}
+
+#vsplitter1, #hsplitter1, #vsplitter2, #hsplitter2 {
+    width: 200px;
+    height: 200px;
+}
+
+.wijmo-wijsplitter-v-panel1-content,
+.wijmo-wijsplitter-v-panel2-content {
+    margin-bottom: 0;
+}
+
+/* copy ui-slider's classes */
+.ui-slider {
+    position: relative;
+    text-align: left;
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: default;
+    padding: 0px;
+}
+
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+    padding: 0;
+}
+
+.ui-slider-horizontal {
+    height: .6em;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top: -.3em;
+    margin-left: -.6em;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+    cursor: inherit;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+}
+
+.ui-slider-vertical {
+    width: .8em;
+    height: 100px;
+}
+
+.ui-slider-vertical .ui-slider-handle {
+    left: -.3em;
+    margin-left: 0;
+    margin-bottom: -.6em;
+}
+
+.ui-slider-vertical .ui-slider-range {
+    left: 0;
+    width: 100%;
+    cursor: inherit;
+}
+
+.ui-slider-vertical .ui-slider-range-min {
+    bottom: 0;
+}
+
+.ui-slider-vertical .ui-slider-range-max {
+    top: 0;
+}
+/* copy ui-resizable's classes */
+.ui-resizable {
+    position: relative;
+}
+
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    z-index: 99999;
+    display: block;
+}
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0;
+}
+
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}
+
+.ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px;
+}
+
+.ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px;
+}
+
+.ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px;
+}
+
+.elements ul {
+    padding: 8px 0 0 8px;
+    margin: 0px;
+    width: 840px;
+    float: left;
+    position: relative;
+    zoom: 1;
+}
+
+.elements ul li {
+    background: #fff;
+    color: #fff;
+    font-weight: 900;
+    height: 70px;
+    margin: 0 8px 8px 0;
+    padding: 0;
+    padding-top: 62px;
+    position: relative;
+    text-align: center;
+    width: 132px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.elements li {
+    float: left;
+    list-style: none;
+}
+
+
+/* Corner radius */
+.ui-corner-tl {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.ui-corner-tr {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.ui-corner-bl {
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.ui-corner-br {
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.ui-corner-top {
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.ui-corner-bottom {
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.ui-corner-right {
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.ui-corner-left {
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.ui-corner-all {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.ui-icon {
+    text-indent: 0;
+    overflow: hidden;
+}
+
+.ui-progressbar {
+    height: 2em;
+    text-align: left;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    height: 100%;
+    margin: -1px;
+    padding: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/* Accordion */
+.wijmo-wijaccordion a {
+    text-align: left;
+}
+
+.wijmo-wijaccordion-bottom .wijmo-wijaccordion-content-active {
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-left-radius: 0px;
+    border-top-left-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.wijmo-wijaccordion .wijmo-wijaccordion-header .ui-icon {
+	line-height: inherit;
+	font-size: 12px;
+}
+
+/* Calendar */
+.ui-datepicker div.wijmo-wijcalendar-header-inner {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wijmo-wijcalendar .ui-datepicker-header {
+    padding: 0;
+    width: 100%;
+}
+
+
+.wijmo-wijcalendar .wijmo-wijcalendar-header {
+    display: block;
+}
+
+.wijmo-wijcalendar .wijmo-wijcalendar-header-inner {
+    padding: 0;
+    width: 75%;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 auto;
+    line-height: normal;
+    float: none;
+    padding: 0;
+    font-size: 12px;
+    width: 75%;
+}
+
+.ui-datepicker td {
+    display: table-cell;
+    padding: 0;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    right: 0;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    left: 0;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.wijmo-wijcalendar .ui-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.wijmo-wijcalendar .wijmo-wijcalendar-navbutton {
+    top: 1px;
+    height: 100%;
+    padding: 0;
+    font-size: 12px;
+}
+
+/* Carousel */
+.wijmo-wijcarousel {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wijmo-wijcarousel .wijmo-wijcarousel-button {
+    padding: 0;
+    width: 22px;
+    height: auto;
+}
+
+.wijmo-wijpager .ui-list .wijmo-wijpager-button {
+    padding: 0;
+}
+
+.wijmo-wijpager .ui-list {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wijmo-wijcarousel .wijmo-wijcarousel-text {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+    margin: 0;
+}
+
+.wijmo-wijcarousel .wijmo-wijcarousel-caption{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.wijmo-wijcarousel-vertical .wijmo-wijcarousel-button-previous, .wijmo-wijcarousel-vertical-multi .wijmo-wijcarousel-button-previous {
+    height: 18px;
+}
+
+.wijmo-wijcarousel .wijmo-wijcarousel-dot {
+	padding: 0px;
+}
+
+/* Combobox */
+.wijmo-wijcombobox {
+	font-size: 12px;
+}
+.wijmo-wijcombobox .wijmo-wijcombobox-wrapper {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	font-size: 12px;
+}
+.wijmo-wijcombobox .wijmo-wijcombobox-trigger {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	font-size: 12px;
+    width: auto;
+	padding: 0px;
+}
+
+.wijmo-wijcombobox-wrapper, .wijmo-wijcombobox-list, .wijmo-wijcombobox-list .wijmo-wijsuperpanel-vbar-buttontop, .wijmo-wijcombobox-list .wijmo-wijsuperpanel-vbar-buttonbottom, .wijmo-wijcombobox-list .wijmo-wijsuperpanel-handle {
+	padding: 0;
+}
+
+/**For chrome loading the bootstrap font resource lazy*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{ 
+    .wijmo-wijcombobox .wijmo-wijcombobox-trigger span
+      {
+            width:12px;
+      }
+} 
+
+/* Dialog */
+.ui-dialog {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    padding: 0;
+	position: absolute;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.ui-dialog-titlebar {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    white-space: normal;
+}
+
+.ui-dialog-content {
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+    padding: 6px 12px;
+}
+
+.ui-dialog-titlebar a span {
+    display: none;
+}
+
+.wijmo-wijdialog-captionbutton {
+    font-size: 12px;
+    height: 19px;
+    padding: 1px 0 0 3px;
+    white-space: normal;
+}
+
+.wijmo-wijdialog-captionbutton:hover, .wijmo-wijdialog-captionbutton .ui-state-focus {
+    padding: 1px 0 0 3px;
+}
+
+/* Expander */
+.wijmo-wijexpander .ui-expander-header {
+    display: block;
+    padding: 0;
+}
+
+.wijmo-wijexpander .ui-expander-header a {
+    text-align: left;
+}
+
+.wijmo-wijexpander .ui-expander-header .ui-icon {
+	line-height: inherit;
+	font-size: 12px;
+}
+
+/* Gallery */
+.wijmo-wijgallery .wijmo-wijgallery-button {
+    padding: 0;
+	width: 22px;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-frame {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: none;
+    border: 0;
+}
+
+.wijmo-wijgallery .wijmo-wijcarousel-item {
+    padding: 0;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-thumbs-pointer-bottom, .wijmo-wijgallery .wijmo-wijgallery-thumbs-pointer-top, .wijmo-wijgallery .wijmo-wijgallery-thumbs-pointer-left {
+    padding: 0;
+    margin: 0;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-caption {
+    margin: 0;
+    border-radius: 0;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-text {
+    margin: 0;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-content .wijmo-wijgallery-small-image {
+	padding: 0px;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-timerbar {
+	margin-left: 9px;
+}
+
+.wijmo-wijgallery .wijmo-wijgallery-thumbs-pointer-right {
+	padding: 0px;
+}
+
+/* Grid */
+.wijmo-wijgrid .wijmo-wijgrid-headerrow .wijmo-c1basefield {
+    display: table-cell;
+    border-radius: 0;
+}
+
+.wijgridtd.btn {
+    border-radius: 0;
+    text-align: inherit;
+}
+
+.wijmo-wijgrid-row.panel {
+    text-align: inherit;
+}
+
+.wijmo-wijgrid .wijmo-wijgrid-group-area.panel {
+	margin-bottom: 0px;
+}
+
+.wijmo-wijgrid td,
+.wijmo-wijgrid th {
+    display: table-cell;
+}
+
+.wijmo-wijgrid tr {
+    display: table-row;
+}
+
+.wijmo-wijgrid-resizehandle,
+.wijmo-wijgrid-freezing-handle-v .btn,
+.wijmo-wijgrid-freezing-handle-h .btn {
+    padding: 0;
+    display: block;
+}
+
+/* wijlist */
+
+.wijmo-wijcombobox-list, .wijmo-wijlist {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.wijmo-wijlist-ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: auto;
+    left: auto;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.wijmo-wijlist-ul .wijmo-wijlist-item {
+    margin: 0;
+    border: none;
+    display: block;
+    padding: 3px 5px;
+	font-size: 12px;
+}
+
+.wijmo-wijlist-ul .wijmo-wijlist-item a {
+	text-decoration: none;
+}
+
+/* Input */
+.ui-input-trigger-right .wijmo-wijinput-trigger, .ui-input-trigger-left .wijmo-wijinput-trigger, .ui-input-spinner-trigger-right .wijmo-wijinput-trigger , .ui-input-spinner-trigger-left .wijmo-wijinput-trigger{
+    border: 1px solid #A8A8A8;
+}
+
+.wijmo-wijinput .wijmo-wijinput-trigger {
+	padding: 0px 1px;
+}
+
+/* Input Date */
+.wijmo-wijinput {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.wijmo-wijinput .wijmo-wijinput-trigger .ui-icon {
+    left: -1px;
+}
+
+/* Input Number */
+.ui-input-spinner-right .wijmo-wijinput-spinup, .ui-input-spinner-right .wijmo-wijinput-spindown {
+    padding: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ui-input-spinner-left .wijmo-wijinput-spinup, .ui-input-spinner-left .wijmo-wijinput-spindown {
+    padding: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.wijmo-wijinput-spinup, .wijmo-wijinput-spindown {
+    padding: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+/*.wijmo-wijinput .wijmo-wijinput-spinner-right .ui-icon {
+    position: relative;
+    top: 1px;
+    margin-top: 0;
+}*/
+
+.ui-input-spinner-right .wijmo-wijinput-spinup {
+    top: 1px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.ui-input-spinner-right .wijmo-wijinput-spinup .ui-icon {
+    left: 1px;
+}
+
+.ui-input-spinner-right .wijmo-wijinput-spindown .ui-icon {
+    left: 0px;
+}
+
+.ui-input-spinner-right .wijmo-wijinput-spindown {
+    bottom: 1px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* Lightbox */
+.wijmo-wijlightbox-controls-inside .wijmo-wijlightbox-button-prev, .wijmo-wijlightbox-controls-inside .wijmo-wijlightbox-button-next {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.wijmo-wijlightbox-frame .wijmo-wijlightbox-toolbox-button, .wijmo-wijlightbox-frame .wijmo-wijlightbox-toolbox-sep {
+    font-size: 12px;
+    padding: 0;
+    position: relative;
+    width: 18px;
+}
+
+.wijmo-wijlightbox-text-overlay, .wijmo-wijlightbox-title-overlay, .wijmo-wijlightbox-text-titleoverlay, .wijmo-wijlightbox-title-titleoverlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    margin: 0;
+}
+
+.ui-input-trigger-left .wijmo-wijinput-wrapper, .ui-input-spinner-left .wijmo-wijinput-wrapper {
+    padding-left: 16px;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-wrapper {
+    padding-left: 33px;
+}
+
+.ui-input-spinner-trigger-right .wijmo-wijinput-wrapper {
+    padding-right: 33px;
+}
+
+.ui-input-spinner-trigger-right .wijmo-wijinput-spinner-right {
+    right: 15px;
+    border: 1px solid #A8A8A8;
+}
+
+.ui-input-spinner-trigger-left .wijmo-wijinput-spinner-left {
+    left : 15px;
+    border: 1px solid #A8A8A8;
+}
+
+.ui-input-trigger-right .wijmo-wijinput-spinner-left {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border: 1px solid #A8A8A8;
+}
+
+.wijmo-wijinput-spinner-left, .wijmo-wijinput-spinner-right{
+    border: 1px solid #A8A8A8;
+}
+
+/* Rating */
+.wijmo-wijrating .wijmo-wijrating-reset {
+    padding: 0;
+}
+
+.wijmo-wijrating .wijmo-wijrating-reset .ui-icon {
+    top: -1px;
+}
+
+/* Tabs */
+.ui-tabs .ui-tabs-nav {
+    width: 100%;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.ui-tabs .ui-tabs-panel {
+    border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/* Slider */
+.wijmo-wijslider-horizontal .wijmo-wijslider-decbutton, .wijmo-wijslider-horizontal .wijmo-wijslider-incbutton {
+    padding: 0;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+}
+
+.wijmo-wijslider-vertical .wijmo-wijslider-decbutton, .wijmo-wijslider-vertical .wijmo-wijslider-incbutton {
+    padding: 0;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+}
+
+.wijmo-wijslider-decbutton .ui-icon, .wijmo-wijslider-incbutton .ui-icon {
+    height: 100%;
+}
+
+/* Super Panel */
+.wijmo-wijsuperpanel-vbarcontainer .ui-state-default, .wijmo-wijsuperpanel-hbarcontainer .ui-state-default, .wijmo-wijsuperpanel-vbarcontainer .ui-btn-up-c, .wijmo-wijsuperpanel-hbarcontainer .ui-btn-up-c {
+    padding: 0;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+}
+
+.wijmo-wijsuperpanel .wijmo-wijsuperpanel-hbarcontainer {
+    background: none;
+    box-shadow: none;
+    padding: 0px 18px;
+}
+
+.wijmo-wijsuperpanel .wijmo-wijsuperpanel-vbarcontainer {
+    background: none;
+    box-shadow: none;
+    padding: 18px 0px;
+}
+
+.wijmo-wijsuperpanel-hbarcontainer, .wijmo-wijsuperpanel-vbarcontainer {
+    text-align: left;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/* Splitter */
+.wijmo-wijsplitter-v-bar {
+    padding: 0;
+}
+
+.wijmo-wijsplitter-v-expander {
+    border-radius: 0px;
+}
+
+.wijmo-wijsplitter-h-panel1-content {
+    margin-bottom: 0;
+}
+
+.wijmo-wijsplitter-h-bar {
+    padding: 0;
+    width: 100%;
+}
+
+.wijmo-wijsplitter-h-expander {
+    border-radius: 0px;
+}
+
+.wijmo-wijsplitter-h-panel2-content {
+    margin-bottom: 0;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel1-collapsed .ui-icon {
+    margin-left: -2px;
+    font-size: 8px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel2-collapsed .ui-icon {
+    margin-left: -2px;
+    font-size: 8px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel1-expanded .ui-icon {
+    font-size: 8px;
+    margin-left: 0;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel2-expanded .ui-icon {
+    font-size: 8px;
+    margin-left: -2px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel1-expanded {
+    left: -9px;
+    width: 8px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel2-expanded {
+    width: 8px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel1-collapsed {
+    right: -9px;
+    width: 8px;
+}
+
+.wijmo-wijsplitter-vertical .wijmo-wijsplitter-v-panel2-collapsed {
+    width: 8px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel1-expanded {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 25px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel2-expanded {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 25px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel1-expanded .ui-icon {
+    font-size: 8px;
+    margin-top: 0px;
+    top: -8px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel2-expanded .ui-icon {
+    font-size: 8px;
+    margin-top: 0px;
+    top: -8px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel1-collapsed {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 25px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel2-collapsed {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 25px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel1-collapsed .ui-icon {
+    font-size: 8px;
+    margin-top: 0px;
+    top: -8px;
+}
+
+.wijmo-wijsplitter-horizontal .wijmo-wijsplitter-h-panel2-collapsed .ui-icon {
+    font-size: 8px;
+    margin-top: 0px;
+    top: -8px;
+}
+
+.wijmo-wijsplitter-horizontal {
+    line-height: 0;
+}
+
+.wijmo-wijsplitter-h-panel2 {
+    line-height: 1.42857;
+}
+
+.wijmo-wijsplitter-h-panel1 {
+    line-height: 1.42857;
+}
+
+/* Wizard */
+.wijmo-wijwizard-steps li {
+    text-align: left;
+}
+
+.wijmo-wijwizard .wijmo-wijsuperpanel {
+    margin: 0;
+}
+
+.wijmo-wijwizard .wijmo-wijwizard-panel {
+    box-shadow: none;
+    margin: 0;
+}
+
+.wijmo-wijwizard-buttons .ui-button {
+    padding: 6px 12px;
+}
+
+/* Editor */
+div.wijmo-wijribbon .ui-icon, .wijmo-wijribbon-abbrevicon, div.wijmo-wijribbon-simple span.ui-icon, .wijmo-wijribbon .wijmo-wijribbon-group .ui-button:hover .ui-icon, div.wijmo-wijribbon-modes span.ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .ui-icon, .wijmo-wijribbon-group .wijmo-wijribbon-abbrevgroup:hover .wijmo-wijribbon-abbrevicon {
+    /*background-image: url("../Images/wijeditor/wijmo-ui-icons_000000_240x112.png");*/
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+    background-image: none;
+}
+
+.ui-button {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin-right: .1em;
+    text-decoration: none !important;
+    cursor: pointer;
+    text-align: center;
+    zoom: 1;
+    overflow: visible;
+}
+
+.wijmo-wijribbon .wijmo-wijribbon-panel, .wijmo-wijribbon .ui-button .ui-icon-triangle-1-s, .wijmo-wijribbon .wijmo-wijribbon-dropdownbutton .ui-button:hover .ui-icon-triangle-1-s {
+    background: none;
+}
+
+.wijmo-wijribbon .wijmo-wijribbon-groups .wijmo-wijribbon-group, .wijmo-wijsplitter-h-panel1-content {
+    border-radius: 0;
+}
+
+
+/* the overflow property removes extra width in IE */
+.ui-button-icon-only {
+    width: 2.2em;
+}
+/* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only {
+    width: 2.4em;
+}
+/* button elements seem to need a little more width */
+.ui-button-icons-only {
+    width: 3.4em;
+}
+
+button.ui-button-icons-only {
+    width: 3.7em;
+}
+
+.ui-button-icon-only .ui-icon, .ui-button-text-icon .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+    margin-left: 6px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+}
+
+.ui-button-text-icon .ui-button-text, .ui-button-text-icons .ui-button-text {
+    padding: 5px 12px 5px 25px;
+}
+
+/*button text element */
+.ui-button .ui-button-text {
+    display: block;
+    line-height: 1.4;
+}
+
+.ui-button-text-only .ui-button-text {
+    padding: .4em 1em;
+}
+
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+    padding: .4em;
+    text-indent: -9999999px;
+}
+
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text {
+    padding: .4em 1em .4em 2.1em;
+}
+
+.ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text {
+    padding: .4em 2.1em .4em 1em;
+}
+
+.ui-button-text-icons .ui-button-text {
+    padding-left: 2.1em;
+    padding-right: 2.1em;
+}
+/* no icon support for input elements, provide padding by default */
+input.ui-button {
+    padding: .4em 1em;
+}
+
+/*button icon element(s) */
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.ui-button-icon-only .ui-icon {
+    left: 50%;
+    margin-left: -8px;
+}
+
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary {
+    left: .5em;
+}
+
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary {
+    right: .5em;
+}
+
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary {
+    right: .5em;
+}
+
+/*button sets*/
+.ui-buttonset {
+    margin-right: 7px;
+}
+
+.ui-buttonset .ui-button {
+    margin-left: 0;
+    margin-right: -.3em;
+}
+
+/* workarounds */
+button.ui-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.ui-helper-hidden-accessible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+
+div.wijmo-wijribbon, .wijmo-wijeditor-content .wijmo-wijsplitter-h-panel1-content {
+    margin: 0px;
+}
+
+.wijmo-wijeditor-content .wijmo-wijsplitter-h-bar {
+    padding: 0px;
+}
+
+.wijmo-wijeditor-footer.ui-state-default, .wijmo-wijribbon-modes.ui-state-default {
+    font-weight: bold;
+}
+
+.wijmo-wijribbon .ui-button .ui-icon-triangle-1-s {
+    background-position: 0 0;
+}
+
+.wijmo-wijribbon .ui-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.wijmo-wijribbon .btn {
+    font-size: 11px;
+}
+
+.wijmo-wijribbon .wijmo-wijribbon-group {
+    white-space: normal;
+    text-align: left;
+}
+
+.wijmo-wijribbon .wijmo-wijribbon-dropdown > li {
+    display: block;
+    border: 0;
+}
+
+/*bootstrap is border-box*/
+.wijmo-wijeditor .wijmo-wijribbon .wijmo-wijribbon-breaks {
+    width: 6em;
+}
+
+.wijmo-wijeditor .wijmo-wijribbon .wijmo-wijribbon-paragraph {
+    width: 12.5em;
+}
+
+/* Menu */
+.wijmo-wijmenu .wijmo-wijmenu-child {
+    width: initial;
+    padding: initial;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .ui-widget-header, .wijmo-wijmenu-horizontal .wijmo-wijmenu-child .ui-header {
+    padding: 2px 4px;
+}
+
+.wijmo-wijmenu-link .ui-icon {
+    top: 4px;
+    left: 2px;
+    position: relative;
+}
+
+.wijmo-wijmenu-child .wijmo-wijmenu-link .ui-icon {
+    top: auto;
+    left: auto;
+    font-size: 12px;
+    float: right;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-parent .wijmo-wijmenu-child {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border-width: 1px;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .wijmo-wijmenu-link {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-list .wijmo-wijmenu-item {
+    position: static;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-separator {
+    padding: 0px;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-item .wijmo-wijmenu-text, .wijmo-wijmenu-horizontal .wijmo-wijmenu-parent .ui-icon, .wijmo-wijmenu-breadcrumb a, .wijmo-wijmenu-breadcrumb span, .wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a .ui-icon {
+    white-space: normal;
+    text-align: left;
+}
+
+.ui-widget-header.wijmo-wijmenu {
+    background: none repeat scroll 0 0 #F1F1F1;
+}
+
+/* Events Calendar */
+.wijmo-wijevcal, .wijmo-wijevcal:hover, .wijmo-wijevcal:focus {
+    background: none;
+    box-shadow: none;
+}
+
+.wijmo-wijev-timeinterval {
+    border-radius: 0;
+	box-shadow: none;
+    margin: 0;
+}
+
+.wijmo-wijev .wijmo-wijev-view {
+    white-space: normal;
+}
+
+.wijmo-wijev-viewdetails .wijmo-wijev-agenda-container li.wijmo-wijev-agenda-event {
+	display: block;
+}
+
+.wijmo-wijev .wijmo-wijev-dayview .wijmo-wijev-timeruler .wijmo-wijev-timerulerinterval {
+	margin-bottom: 0px;
+}
+
+.wijmo-wijev-dayheadercolumn {
+	margin-bottom: 0px;
+}
+
+.wijmo-wijev-allday-cell {
+	margin-bottom: 0px;
+}
+
+.wijmo-wijev .wijmo-wijev-event-dialog li {
+    text-align:left;
+}
+
+.wijmo-wijev-event-dialog label {
+    width:70px;
+}
+
+.wijmo-wijev-event-dialog .wijmo-wijev-color-button .ui-button-text {
+    padding: 9px 19px 9px 6px;
+}
+
+/* Datepager */
+.wijmo-wijdatepager-decrement .ui-button-text span, .wijmo-wijdatepager-increment .ui-button-text span {
+    text-indent: -9999px;
+    display: block;
+}
+
+.wijmo-wijdatepager-pages .wijmo-wijdatepager-pagelabel {
+    color: #333;
+    color: initial;
+    padding: 0px;
+}
+
+.wijmo-wijdatepager-tooltip {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wijmo-wijdatepager-decrement .ui-icon, .wijmo-wijdatepager-increment .ui-icon {
+    height: 100%;
+}
+
+/* video */
+.wijmo-wijvideo .wijmo-wijvideo-controls li {
+    height: 18px;
+    padding: 0px 3px;
+}
+
+.wijmo-wijvideo .wijmo-wijvideo-controls li .ui-icon {
+    height: 18px;
+    top: -1px;
+}
+
+.wijmo-wijvideo-volume-container {
+    bottom: 17px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.wijmo-wijvideo div.wijmo-wijvideo-volumeslider {
+    padding: 0;
+}
+
+.wijmo-wijvideo-index-slider {
+    padding: 0px;
+    display: block;
+}
+
+/* Tooltip */
+.wijmo-wijtooltip-arrow-lb .wijmo-wijtooltip-pointer {
+    border-top: 0 dashed rgba(0, 0, 0, 0);
+}
+
+.wijmo-wijtooltip-pointer {
+    margin-bottom: 0px;
+}
+
+/* DropDwon */
+.wijmo-wijdropdown {
+    padding: 0;
+}
+
+.wijmo-wijdropdown a, .wijmo-wijdropdown a:link, .wijmo-wijdropdown a:visited {
+    text-decoration: none;
+}
+
+.wijmo-wijdropdown div.wijmo-dropdown-trigger {
+    width: 18px;
+    font-size: 12px;
+}
+
+.wijmo-wijdropdown label.wijmo-dropdown-label {
+    text-align: left;
+    margin: 0;
+}
+
+.wijmo-wijdropdown .wijmo-dropdown .wijmo-dropdown-item {
+    display: block;
+}
+
+/* Checkbox */
+.wijmo-checkbox .wijmo-checkbox-box {
+    padding: 0;
+}
+
+.wijmo-checkbox .ui-icon {
+    top: -2px;
+}
+
+/* radio */
+.wijmo-wijradio .wijmo-wijradio-box {
+    padding: 0px;
+}
+
+.wijmo-wijradio .ui-icon {
+    top: -1px;
+    left: -2px;
+    width: 18px;
+    height: 18px;
+}
+
+/* tree */
+.wijmo-wijtree .wijmo-wijtree-list .ui-icon {
+    height: 18px;
+}
+.wijmo-wijtree .wijmo-wijtree-list .wijmo-wijtree-node {
+    box-shadow: none;
+}
+
+/* pager */
+.wijmo-wijpager .ui-list .wijmo-wijpager-button span {
+    display: block;
+}
+
+
+/* form decorator */
+.wijmo-wijtextbox {
+    display: inline-block;
+    text-align: left;
+    outline: none;    
+}
+
+/* Video */
+.wijmo-wijvideo .wijmo-wijvideo-controls {
+    background: none;
+}
+
+/* Events calendar */
+.wijmo-wijevcal .wijmo-wijev-navigationbar, .wijmo-wijevcal .wijmo-wijev-headerbar {
+    background: none;
+    box-shadow: none;
+}
+
+/* C1AutoComplete*/
+.ui-menu {
+    display: block;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 2px;
+}
+.ui-autocomplete {
+    cursor: default;
+    position: absolute;
+	border: 1px solid #CCCCCC;
+}

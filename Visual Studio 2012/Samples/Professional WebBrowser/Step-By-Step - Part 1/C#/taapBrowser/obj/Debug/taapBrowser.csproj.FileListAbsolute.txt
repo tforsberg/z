@@ -1,0 +1,6 @@
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\bin\Debug\taapBrowser.exe.config
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\obj\Debug\taapBrowser.csprojResolveAssemblyReference.cache
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\obj\Debug\taapBrowser.Form1.resources
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\obj\Debug\taapBrowser.Forms.FrmBrowser.resources
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\obj\Debug\taapBrowser.Properties.Resources.resources
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Professional WebBrowser\Step-By-Step - Part 1\C#\taapBrowser\obj\Debug\taapBrowser.csproj.GenerateResource.Cache

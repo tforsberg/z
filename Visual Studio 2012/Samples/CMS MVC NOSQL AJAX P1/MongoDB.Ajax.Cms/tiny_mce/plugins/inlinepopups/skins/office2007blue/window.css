@@ -1,0 +1,90 @@
+/* office2007 */
+
+/* Reset */
+.office2007blue, .office2007blue div, .office2007blue span, .office2007blue a {vertical-align:baseline; text-align:left; position:absolute; border:0; padding:0; margin:0; background:transparent; font-family:Arial,Verdana; font-size:11px; color:#000; text-decoration:none; font-weight:normal; width:auto; height:auto; overflow:hidden; display:block}
+
+/* General */
+.office2007blue {position:absolute; direction:ltr}
+.office2007blue .mceWrapper {position:static}
+.mceEventBlocker {position:fixed; left:0; top:0; background:url(img/horizontal.gif) no-repeat 0 -99px; width:100%; height:100%}
+.office2007blue .mcePlaceHolder {border:1px solid #000; background:#D5E7FF; top:0; left:0; opacity:0.5; -ms-filter:'alpha(opacity=50)'; filter:alpha(opacity=50)}
+.office2007blue_modalBlocker {position:fixed; left:0; top:0; width:100%; height:100%; background:#888; opacity:0.6; -ms-filter:'alpha(opacity=60)'; filter:alpha(opacity=60); display:none}
+
+/* Top */
+.office2007blue .mceTop, .office2007blue .mceTop div {top:0; width:100%; height:32px}
+.office2007blue .mceTop .mceLeft {width:6px; background:url(img/corners.gif);height:32px}
+.office2007blue .mceTop .mceCenter {right:6px; width:100%; height:32px; background:url(img/horizontal.gif) 12px 0; clip:rect(auto auto auto 12px)}
+.office2007blue .mceTop .mceRight {right:0; width:6px; height:32px; background:url(img/corners.gif) -12px 0}
+.office2007blue .mceTop span {width:100%; text-align:center; vertical-align:middle; line-height:32px; font-weight:bold}
+.office2007blue .mceFocus .mceTop .mceLeft {background:url(img/corners.gif) -6px 0}
+.office2007blue .mceFocus .mceTop .mceCenter {background:url(img/horizontal.gif) 0 -32px}
+.office2007blue .mceFocus .mceTop .mceRight {background:url(img/corners.gif) -18px 0}
+.office2007blue .mceFocus .mceTop span {color:#4D8BB9}
+
+/* Middle */
+.office2007blue .mceMiddle, .office2007blue .mceMiddle div {top:0}
+.office2007blue .mceMiddle {width:100%; height:100%; clip:rect(32px auto auto auto)}
+.office2007blue .mceMiddle .mceLeft {left:0; width:5px; height:100%; background:url(img/vertical.gif) -5px 0}
+.office2007blue .mceMiddle span {top:32px; left:5px; width:100%; height:100%; background:#FFF}
+.office2007blue .mceMiddle .mceRight {right:0; width:5px; height:100%; background:url(img/vertical.gif)}
+
+/* Bottom */
+.office2007blue .mceBottom, .office2007blue .mceBottom div {height:6px}
+.office2007blue .mceBottom {left:0; bottom:0; width:100%}
+.office2007blue .mceBottom div {top:0}
+.office2007blue .mceBottom .mceLeft {left:0; width:5px; background:url(img/corners.gif) -34px -6px}
+.office2007blue .mceBottom .mceCenter {left:5px; width:100%; background:url(img/horizontal.gif) 0 -64px}
+.office2007blue .mceBottom .mceRight {right:0; width:5px; background: url(img/corners.gif) -34px 0}
+.office2007blue .mceBottom span {display:none}
+.office2007blue .mceStatusbar .mceBottom, .office2007blue .mceStatusbar .mceBottom div {height:23px}
+.office2007blue .mceStatusbar .mceBottom .mceLeft {background:url(img/corners.gif) -29px 0}
+.office2007blue .mceStatusbar .mceBottom .mceCenter {background:url(img/horizontal.gif) 0 -70px}
+.office2007blue .mceStatusbar .mceBottom .mceRight {background:url(img/corners.gif) -24px 0}
+.office2007blue .mceStatusbar .mceBottom span {display:block; left:7px; font-family:Arial, Verdana; font-size:11px; line-height:23px}
+
+/* Actions */
+.office2007blue a {width:23px; height:22px;top:3px}
+.office2007blue .mceClose {right:6px; background:url(img/buttons.gif) -72px 0}
+.office2007blue .mceMin {display:none; right:56px; background:url(img/buttons.gif) 0 0}
+.office2007blue .mceMed {display:none; right:32px; background:url(img/buttons.gif) -24px 0}
+.office2007blue .mceMax {display:none; right:32px; background:url(img/buttons.gif) -48px 0}
+.office2007blue .mceMove {display:none;width:100%;cursor:move;background:url(img/corners.gif) no-repeat -100px -100px}
+.office2007blue .mceMovable .mceMove {display:block}
+.office2007blue .mceFocus .mceClose {right:6px; background:url(img/buttons.gif) -72px 0}
+.office2007blue .mceFocus .mceMin {right:56px; background:url(img/buttons.gif) 0 0}
+.office2007blue .mceFocus .mceMed {right:32px; background:url(img/buttons.gif) -24px 0}
+.office2007blue .mceFocus .mceMax {right:32px; background:url(img/buttons.gif) -48px 0}
+.office2007blue .mceFocus .mceClose:hover {right:6px; background:url(img/buttons.gif) -72px -24px}
+.office2007blue .mceFocus .mceMin:hover {right:56px; background:url(img/buttons.gif) 0 -24px}
+.office2007blue .mceFocus .mceMed:hover {right:32px; background:url(img/buttons.gif) -24px -24px}
+.office2007blue .mceFocus .mceMax:hover {right:32px; background:url(img/buttons.gif) -48px -24px}
+
+/* Resize */
+.office2007blue .mceResize {top:auto; left:auto; display:none; width:5px; height:5px; background:url(img/horizontal.gif) no-repeat 0 -99px}
+.office2007blue .mceResizable .mceResize {display:block}
+.office2007blue .mceResizable .mceMin, .office2007blue .mceMax {display:none}
+.office2007blue .mceMinimizable .mceMin {display:block}
+.office2007blue .mceMaximizable .mceMax {display:block}
+.office2007blue .mceMaximized .mceMed {display:block}
+.office2007blue .mceMaximized .mceMax {display:none}
+.office2007blue a.mceResizeN {top:0; left:0; width:100%; cursor:n-resize}
+.office2007blue a.mceResizeNW {top:0; left:0; cursor:nw-resize}
+.office2007blue a.mceResizeNE {top:0; right:0; cursor:ne-resize}
+.office2007blue a.mceResizeW {top:0; left:0; height:100%; cursor:w-resize;}
+.office2007blue a.mceResizeE {top:0; right:0; height:100%; cursor:e-resize}
+.office2007blue a.mceResizeS {bottom:0; left:0; width:100%; cursor:s-resize}
+.office2007blue a.mceResizeSW {bottom:0; left:0; cursor:sw-resize}
+.office2007blue a.mceResizeSE {bottom:0; right:0; cursor:se-resize}
+
+/* Alert/Confirm */
+.office2007blue .mceButton {font-weight:bold; bottom:10px; width:80px; height:24px; background:url(img/button.gif); line-height:24px; vertical-align:middle; text-align:center; outline:0}
+.office2007blue .mceButton:hover{background-position:0 -24px}
+.office2007blue .mceMiddle .mceIcon {left:15px; top:35px; width:32px; height:32px}
+.office2007blue .mceAlert .mceMiddle span, .office2007blue .mceConfirm .mceMiddle span {background:transparent;left:60px; top:35px; width:320px; height:50px; font-weight:bold; overflow:auto; white-space:normal}
+.office2007blue a:hover {font-weight:bold;}
+.office2007blue .mceAlert .mceMiddle, .office2007blue .mceConfirm .mceMiddle {background:#D6D7D5}
+.office2007blue .mceAlert .mceOk {left:50%; top:auto; margin-left: -40px}
+.office2007blue .mceAlert .mceIcon {background:url(img/alert.gif)}
+.office2007blue .mceConfirm .mceOk {left:50%; top:auto; margin-left: -90px}
+.office2007blue .mceConfirm .mceCancel {left:50%; top:auto}
+.office2007blue .mceConfirm .mceIcon {background:url(img/confirm.gif)} 

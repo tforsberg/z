@@ -1,0 +1,1223 @@
+﻿.icon-16 {
+    background: url("skins/icon_16.gif") no-repeat;
+    padding-left: 24px;
+}
+
+
+
+    .icon-16.reply, .icon-16.go {
+        background-position: 0 -325px;
+    }
+
+
+    .icon-16.like {
+        background-position: 0 0;
+    }
+
+
+    .icon-16.home, .icon-16.root {
+        background-position: 50% -365px;
+    }
+
+
+    .icon-16.prev {
+        background-position: 50% -888px;
+    }
+
+
+    .icon-16.up {
+        background-position: 50% -175px;
+    }
+
+
+    .icon-16.refresh {
+        background-position: 50% -30px;
+    }
+
+    /*
+    .icon-16.reply, .icon-16.go {
+        background-position: 0 -325px;
+    }*/
+
+    .icon-16.edit {
+        background-position: center -800px;
+    }
+
+
+
+    .icon-16.del {
+        background-position: center -705px;
+    }
+
+
+
+    .icon-16.cancel {
+        background-position: 0 -705px;
+    }
+
+
+.ico-16.search {
+    background-position: -620px 0px;
+}
+
+
+.ico-16.plus {
+    background-position: -360px 0px;
+}
+
+.icon-16.folder {
+    background-position: center -1308px;
+}
+
+
+
+.icon-16.add {
+    background-position: center -1345px;
+}
+
+
+
+.icon-24 {
+    background: url("skins/icon_24.gif") no-repeat;
+    height: 24px;
+    line-height: 24px;
+    padding: 5px 8px 5px 30px;
+}
+
+    .icon-24.add {
+        background-position: 50% 4px;
+    }
+
+
+    .icon-24.up {
+        background-position: 50% -38px;
+    }
+
+
+
+
+/*-------------------------------*/
+
+
+.ico-16 {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 17px;
+    background: url("skins/icon-sprite-16.png") no-repeat;
+}
+
+    .ico-16.user {
+        background-position: 0px 0px;
+    }
+
+    .ico-16.users {
+        background-position: -20px 0px;
+    }
+
+    .ico-16.up {
+        background-position: -40px 0px;
+    }
+
+    .ico-16.down {
+        background-position: -60px 0px;
+    }
+
+    .ico-16.download {
+        background-position: -80px 0px;
+    }
+
+    .ico-16.gear {
+        background-position: -100px 0px;
+    }
+
+    .ico-16.wrench {
+        background-position: -120px 0px;
+    }
+
+    .ico-16.folder {
+        background-position: -140px 0px;
+    }
+
+    .ico-16.page {
+        background-position: -160px 0px;
+    }
+
+    .ico-16.doc {
+        background-position: -180px 0px;
+    }
+
+    .ico-16.page-copy {
+        background-position: -200px 0px;
+    }
+
+    .ico-16.pencil, .ico-16.edit {
+        background-position: -220px 0px;
+    }
+
+    .ico-16.brush {
+        background-position: -240px 0px;
+    }
+
+    .ico-16.mail {
+        background-position: -260px 0px;
+    }
+
+    .ico-16.pie-stats {
+        background-position: -280px 0px;
+    }
+
+    .ico-16.bar-stats {
+        background-position: -300px 0px;
+    }
+
+    .ico-16.link {
+        background-position: -320px 0px;
+    }
+
+    .ico-16.rss {
+        background-position: -340px 0px;
+    }
+
+    .ico-16.plus {
+        background-position: -360px 0px;
+    }
+
+    .ico-16.minus {
+        background-position: -380px 0px;
+    }
+
+    .ico-16.camera {
+        background-position: -400px 0px;
+    }
+
+    .ico-16.lock, .ico-16.locked {
+        background-position: -418px 0px;
+    }
+
+    .ico-16.unlock {
+        background-position: -440px 0px;
+    }
+
+    .ico-16.cart {
+        background-position: -460px 0px;
+    }
+
+    .ico-16.security {
+        background-position: -480px 0px;
+    }
+
+    .ico-16.repeat {
+        background-position: -500px 0px;
+    }
+
+    .ico-16.refresh {
+        background-position: -520px 0px;
+    }
+
+    .ico-16.warning {
+        background-position: -540px 0px;
+    }
+
+    .ico-16.trash, .ico-16.removed {
+        background-position: -560px 0px;
+    }
+
+    .ico-16.remove {
+        background-position: -580px 0px;
+    }
+
+    .ico-16.print {
+        background-position: -600px 0px;
+    }
+
+    .ico-16.search {
+        background-position: -620px 0px;
+    }
+
+    .ico-16.phone {
+        background-position: -640px 0px;
+    }
+
+    .ico-16.key {
+        background-position: -660px 0px;
+    }
+
+    .ico-16.question {
+        background-position: -680px 0px;
+    }
+
+    .ico-16.home {
+        background-position: -700px 0px;
+    }
+
+    .ico-16.flag {
+        background-position: -720px 0px;
+    }
+
+    .ico-16.star {
+        background-position: -740px 0px;
+    }
+
+    .ico-16.heart {
+        background-position: -760px 0px;
+    }
+
+    .ico-16.at {
+        background-position: -780px 0px;
+    }
+
+    .ico-16.money {
+        background-position: -800px 0px;
+    }
+
+    .ico-16.comment {
+        background-position: -820px 0px;
+    }
+
+    .ico-16.comments {
+        background-position: -840px 0px;
+    }
+
+    .ico-16.alarm {
+        background-position: -860px 0px;
+    }
+
+.running .ico-16.alarm {
+    /*background-position: -1200px -40px;*/
+    /*background-position: -1320px -20px;*/
+    background-position: -1000px 0px;
+}
+
+.ico-16.calculator {
+    background-position: -880px 0px;
+}
+
+.ico-16.briefcase {
+    background-position: -900px 0px;
+}
+
+.ico-16.calendar {
+    background-position: -920px 0px;
+}
+
+.ico-16.globe {
+    background-position: -940px 0px;
+}
+
+.ico-16.map-marker {
+    background-position: -960px 0px;
+}
+
+.ico-16.close {
+    background-position: -980px 0px;
+}
+
+.ico-16.accept, .ico-16.actived {
+    background-position: -1000px 0px;
+}
+
+.ico-16.move-file {
+    background-position: -1020px 0px;
+}
+
+.ico-16.wired {
+    background-position: -1040px 0px;
+}
+
+.ico-16.save {
+    background-position: -1060px 0px;
+}
+
+.ico-16.cancel {
+    background-position: -1080px 0px;
+}
+
+.ico-16.arrow-out {
+    background-position: -1100px 0px;
+}
+
+.ico-16.arrow-in {
+    background-position: -1120px 0px;
+}
+
+.ico-16.add-folder {
+    background-position: -1140px 0px;
+}
+
+.ico-16.dropbox {
+    background-position: -1160px 0px;
+}
+
+.ico-16.gotoprev {
+    background-position: -1180px 0px;
+}
+
+.ico-16.gotonext {
+    background-position: -1200px 0px;
+}
+
+.ico-16.zoom-out {
+    background-position: -1220px 0px;
+}
+
+.ico-16.zoom-in {
+    background-position: -1240px 0px;
+}
+
+.ico-16.redo {
+    background-position: -1260px 0px;
+}
+
+.ico-16.first {
+    background-position: -1280px 0px;
+}
+
+.ico-16.back {
+    background-position: -1300px 0px;
+}
+
+.ico-16.next {
+    background-position: -1320px 0px;
+}
+
+
+
+.ico-16.pending {
+    background-position: -860px 0px;
+}
+
+
+.ico-16.last {
+    background-position: -1340px 0px;
+}
+
+.ico-16.full {
+    background-position: -1360px 0px;
+    width: 17px;
+}
+
+.ico-16.thumb {
+    background-position: -1380px 0px;
+    width: 17px;
+}
+
+.ico-16.contactSheet {
+    background-position: -1400px 0px;
+    width: 17px;
+}
+
+.ico-16.widget {
+    background-position: -1380px 1px;
+    width: 17px;
+}
+
+.ico-16.grnDownload {
+    background-position: -1420px 0px;
+}
+
+.ico-16.ylwEye {
+    background-position: -1438px 0px;
+    width: 19px;
+    margin: 7px auto 0;
+}
+
+.ico-16.bookMode {
+    background-position: -1457px 0px;
+    width: 19px;
+}
+
+.ico-16.compatMode {
+    background-position: -1487px 0px;
+    width: 19px;
+}
+
+.ico-16.small {
+    background-position: -1509px 0px;
+}
+
+.ico-16.medium {
+    background-position: -1532px 0px;
+}
+
+.ico-16.large {
+    background-position: -1548px 0px;
+}
+
+.ico-16.original {
+    background-position: -1570px 0px;
+}
+
+.ico-16.previewBtn {
+    background-position: -1586px 0px;
+    width: 19px;
+}
+
+a:hover .ico-16.user {
+    background-position: 0px -20px;
+}
+
+a:hover .ico-16.users {
+    background-position: -20px -20px;
+}
+
+a:hover .ico-16.up {
+    background-position: -40px -20px;
+}
+
+a:hover .ico-16.down {
+    background-position: -60px -20px;
+}
+
+a:hover .ico-16.download {
+    background-position: -80px -20px;
+}
+
+a:hover .ico-16.gear {
+    background-position: -100px -20px;
+}
+
+a:hover .ico-16.wrench {
+    background-position: -120px -20px;
+}
+
+a:hover .ico-16.folder {
+    background-position: -140px -20px;
+}
+
+a:hover .ico-16.page {
+    background-position: -160px -20px;
+}
+
+a:hover .ico-16.doc {
+    background-position: -180px -20px;
+}
+
+a:hover .ico-16.page-copy {
+    background-position: -200px -20px;
+}
+
+a:hover .ico-16.pencil {
+    background-position: -220px -20px;
+}
+
+a:hover .ico-16.brush {
+    background-position: -240px -20px;
+}
+
+a:hover .ico-16.mail {
+    background-position: -260px -20px;
+}
+
+a:hover .ico-16.pie-stats {
+    background-position: -280px -20px;
+}
+
+a:hover .ico-16.bar-stats {
+    background-position: -300px -20px;
+}
+
+a:hover .ico-16.link {
+    background-position: -320px -20px;
+}
+
+a:hover .ico-16.rss {
+    background-position: -340px -20px;
+}
+
+a:hover .ico-16.plus {
+    background-position: -360px -20px;
+}
+
+a:hover .ico-16.minus {
+    background-position: -380px -20px;
+}
+
+a:hover .ico-16.camera {
+    background-position: -400px -20px;
+}
+
+a:hover .ico-16.lock {
+    background-position: -418px -20px;
+}
+
+a:hover .ico-16.unlock {
+    background-position: -440px -20px;
+}
+
+a:hover .ico-16.cart {
+    background-position: -460px -20px;
+}
+
+a:hover .ico-16.security {
+    background-position: -480px -20px;
+}
+
+a:hover .ico-16.repeat {
+    background-position: -500px -20px;
+}
+
+a:hover .ico-16.refresh {
+    background-position: -520px -20px;
+}
+
+a:hover .ico-16.warning {
+    background-position: -540px -20px;
+}
+
+a:hover .ico-16.trash {
+    background-position: -560px -20px;
+}
+
+a:hover .ico-16.remove {
+    background-position: -580px -20px;
+}
+
+a:hover .ico-16.print {
+    background-position: -600px -20px;
+}
+
+a:hover .ico-16.search {
+    background-position: -620px -20px;
+}
+
+a:hover .ico-16.phone {
+    background-position: -640px -20px;
+}
+
+a:hover .ico-16.key {
+    background-position: -660px -20px;
+}
+
+a:hover .ico-16.question {
+    background-position: -680px -20px;
+}
+
+a:hover .ico-16.home {
+    background-position: -700px -20px;
+}
+
+a:hover .ico-16.flag {
+    background-position: -720px -20px;
+}
+
+a:hover .ico-16.star {
+    background-position: -740px -20px;
+}
+
+a:hover .ico-16.heart {
+    background-position: -760px -20px;
+}
+
+a:hover .ico-16.at {
+    background-position: -780px -20px;
+}
+
+a:hover .ico-16.money {
+    background-position: -800px -20px;
+}
+
+a:hover .ico-16.comment {
+    background-position: -820px -20px;
+}
+
+a:hover .ico-16.comments {
+    background-position: -840px -20px;
+}
+
+a:hover .ico-16.alarm {
+    background-position: -860px -20px;
+}
+
+a:hover .ico-16.calculator {
+    background-position: -880px -20px;
+}
+
+a:hover .ico-16.briefcase {
+    background-position: -900px -20px;
+}
+
+a:hover .ico-16.calendar {
+    background-position: -920px -20px;
+}
+
+a:hover .ico-16.globe {
+    background-position: -940px -20px;
+}
+
+a:hover .ico-16.map-marker {
+    background-position: -960px -20px;
+}
+
+a:hover .ico-16.close {
+    background-position: -980px -20px;
+}
+
+a:hover .ico-16.accept {
+    background-position: -1000px -20px;
+}
+
+a:hover .ico-16.move-file {
+    background-position: -1020px -20px;
+}
+
+a:hover .ico-16.wired {
+    background-position: -1040px -20px;
+}
+
+a:hover .ico-16.save {
+    background-position: -1060px -20px;
+}
+
+a:hover .ico-16.cancel {
+    background-position: -1080px -20px;
+}
+
+a:hover .ico-16.arrow-out {
+    background-position: -1100px -20px;
+}
+
+a:hover .ico-16.arrow-in {
+    background-position: -1120px -20px;
+}
+
+a:hover .ico-16.add-folder {
+    background-position: -1140px -20px;
+}
+
+a:hover .ico-16.dropbox {
+    background-position: -1160px -20px;
+}
+
+a:hover .ico-16.gotoprev {
+    background-position: -1180px -20px;
+}
+
+a:hover .ico-16.gotonext {
+    background-position: -1200px -20px;
+}
+
+a:hover .ico-16.zoom-out {
+    background-position: -1220px -20px;
+}
+
+a:hover .ico-16.zoom-in {
+    background-position: -1240px -20px;
+}
+
+a:hover .ico-16.redo {
+    background-position: -1260px -20px;
+}
+
+a:hover .ico-16.first {
+    background-position: -1280px -20px;
+}
+
+a:hover .ico-16.back {
+    background-position: -1300px -20px;
+}
+
+a:hover .ico-16.next {
+    background-position: -1320px -20px;
+}
+
+a:hover .ico-16.last {
+    background-position: -1340px -20px;
+}
+
+a:hover .ico-16.full {
+    background-position: -1360px -20px;
+}
+
+a:hover .ico-16.thumb {
+    background-position: -1380px -20px;
+}
+
+a:hover .ico-16.contactSheet {
+    background-position: -1400px -20px;
+}
+
+a:hover .ico-16.grnDownload {
+    background-position: -1420px -20px;
+}
+
+a:hover .ico-16.ylwEye {
+    background-position: -1438px -20px;
+    width: 19px;
+    margin: 7px auto 0;
+}
+
+a:hover .ico-16.bookMode {
+    background-position: -1457px -20px;
+    width: 19px;
+}
+
+a:hover .ico-16.compatMode {
+    background-position: -1487px -20px;
+    width: 19px;
+}
+
+a:hover .ico-16.small {
+    background-position: -1509px -20px;
+}
+
+a:hover .ico-16.medium {
+    background-position: -1532px -20px;
+}
+
+a:hover .ico-16.large {
+    background-position: -1548px -20px;
+}
+
+a:hover .ico-16.original {
+    background-position: -1570px -20px;
+}
+
+a:hover .ico-16.previewBtn {
+    background-position: -1586px -20px;
+    width: 19px;
+}
+
+.current .ico-16.user {
+    background-position: 0px -40px;
+}
+
+.current .ico-16.users {
+    background-position: -20px -40px;
+}
+
+.current .ico-16.up {
+    background-position: -40px -40px;
+}
+
+.current .ico-16.down {
+    background-position: -60px -40px;
+}
+
+.current .ico-16.download {
+    background-position: -80px -40px;
+}
+
+.current .ico-16.gear {
+    background-position: -100px -40px;
+}
+
+.current .ico-16.wrench {
+    background-position: -120px -40px;
+}
+
+.current .ico-16.folder {
+    background-position: -140px -40px;
+}
+
+.current .ico-16.page {
+    background-position: -160px -40px;
+}
+
+.current .ico-16.doc {
+    background-position: -180px -40px;
+}
+
+.current .ico-16.page-copy {
+    background-position: -200px -40px;
+}
+
+.current .ico-16.pencil {
+    background-position: -220px -40px;
+}
+
+.current .ico-16.brush {
+    background-position: -240px -40px;
+}
+
+.current .ico-16.mail {
+    background-position: -260px -40px;
+}
+
+.current .ico-16.pie-stats {
+    background-position: -280px -40px;
+}
+
+.current .ico-16.bar-stats {
+    background-position: -300px -40px;
+}
+
+.current .ico-16.link {
+    background-position: -320px -40px;
+}
+
+.current .ico-16.rss {
+    background-position: -340px -40px;
+}
+
+.current .ico-16.plus {
+    background-position: -360px -40px;
+}
+
+.current .ico-16.minus {
+    background-position: -380px -40px;
+}
+
+.current .ico-16.camera {
+    background-position: -400px -40px;
+}
+
+.current .ico-16.lock {
+    background-position: -420px -40px;
+}
+
+.current .ico-16.unlock {
+    background-position: -440px -40px;
+}
+
+.current .ico-16.cart {
+    background-position: -460px -40px;
+}
+
+.current .ico-16.security {
+    background-position: -480px -40px;
+}
+
+.current .ico-16.repeat {
+    background-position: -500px -40px;
+}
+
+.current .ico-16.refresh {
+    background-position: -520px -40px;
+}
+
+.current .ico-16.warning {
+    background-position: -540px -40px;
+}
+
+.current .ico-16.trash {
+    background-position: -560px -40px;
+}
+
+.current .ico-16.remove {
+    background-position: -580px -40px;
+}
+
+.current .ico-16.print {
+    background-position: -600px -40px;
+}
+
+.current .ico-16.search {
+    background-position: -620px -40px;
+}
+
+.current .ico-16.phone {
+    background-position: -640px -40px;
+}
+
+.current .ico-16.key {
+    background-position: -660px -40px;
+}
+
+.current .ico-16.question {
+    background-position: -680px -40px;
+}
+
+.current .ico-16.home {
+    background-position: -700px -40px;
+}
+
+.current .ico-16.flag {
+    background-position: -720px -40px;
+}
+
+.current .ico-16.star {
+    background-position: -740px -40px;
+}
+
+.current .ico-16.heart {
+    background-position: -760px -40px;
+}
+
+.current .ico-16.at {
+    background-position: -780px -40px;
+}
+
+.current .ico-16.money {
+    background-position: -800px -40px;
+}
+
+.current .ico-16.comment {
+    background-position: -820px -40px;
+}
+
+.current .ico-16.comments {
+    background-position: -840px -40px;
+}
+
+.current .ico-16.alarm {
+    background-position: -860px -40px;
+}
+
+.current .ico-16.calculator {
+    background-position: -880px -40px;
+}
+
+.current .ico-16.briefcase {
+    background-position: -900px -40px;
+}
+
+.current .ico-16.calendar {
+    background-position: -920px -40px;
+}
+
+.current .ico-16.globe {
+    background-position: -940px -40px;
+}
+
+.current .ico-16.map-marker {
+    background-position: -960px -40px;
+}
+
+.current .ico-16.close {
+    background-position: -980px -40px;
+}
+
+.current .ico-16.accept {
+    background-position: -1000px -40px;
+}
+
+.current .ico-16.move-file {
+    background-position: -1020px -40px;
+}
+
+.current .ico-16.wired {
+    background-position: -1040px -40px;
+}
+
+.current .ico-16.save {
+    background-position: -1060px -40px;
+}
+
+.current .ico-16.cancel {
+    background-position: -1080px -40px;
+}
+
+.current .ico-16.arrow-out {
+    background-position: -1100px -40px;
+}
+
+.current .ico-16.arrow-in {
+    background-position: -1120px -40px;
+}
+
+.current .ico-16.add-folder {
+    background-position: -1140px -40px;
+}
+
+.current .ico-16.dropbox {
+    background-position: -1140px -40px;
+}
+
+.current .ico-16.gotoprev {
+    background-position: -1180px -40px;
+}
+
+.current .ico-16.gotonext {
+    background-position: -1200px -40px;
+}
+
+.current .ico-16.zoom-out {
+    background-position: -1220px -40px;
+}
+
+.current .ico-16.zoom-in {
+    background-position: -1240px -40px;
+}
+
+.current .ico-16.redo {
+    background-position: -1260px -40px;
+}
+
+.current .ico-16.first {
+    background-position: -1280px -40px;
+}
+
+.current .ico-16.back {
+    background-position: -1300px -40px;
+}
+
+.current .ico-16.next {
+    background-position: -1320px -40px;
+}
+
+.current .ico-16.last {
+    background-position: -1340px -40px;
+}
+
+.current .ico-16.full {
+    background-position: -1360px -40px;
+    width: 17px;
+}
+
+.current .ico-16.thumb {
+    background-position: -1380px -40px;
+    width: 17px;
+}
+
+.current .ico-16.contactSheet {
+    background-position: -1400px 0px;
+    width: 17px;
+}
+
+.current .ico-16.grnDownload {
+    background-position: -1420px -40px;
+}
+
+.current .ico-16.ylwEye {
+    background-position: -1438px -40px;
+    width: 19px;
+    margin: 7px auto 0;
+}
+
+.current .ico-16.bookMode {
+    background-position: -1457px -40px;
+    width: 19px;
+}
+
+.current .ico-16.compatMode {
+    background-position: -1487px -40px;
+    width: 19px;
+}
+
+.current .ico-16.small {
+    background-position: -1509px -40px;
+}
+
+.current .ico-16.medium {
+    background-position: -1532px -40px;
+}
+
+.current .ico-16.large {
+    background-position: -1548px -40px;
+}
+
+.current .ico-16.original {
+    background-position: -1570px -40px;
+}
+
+.current .ico-16.previewBtn {
+    background-position: -1586px -40px;
+    width: 19px;
+}
+
+.btn.toggleOn .ico-16.full {
+    background-position: -1360px -20px;
+}
+
+.btn.toggleOn .ico-16.thumb {
+    background-position: -1380px -20px;
+}
+
+.btn.toggleOn .ico-16.contactSheet {
+    background-position: -1400px -20px;
+}
+/*
+
+
+    .ico-16.download {
+        background-position: -78px 0px;
+    }
+
+    .ico-16.gear {
+        background-position: -100px 0px;
+    }
+
+    .ico-16.trash {
+        background-position: -560px 0px;
+    }
+
+    .ico-16.remove {
+        background-position: -580px 0px;
+    }
+
+    .ico-16.preview {
+        background-position: -1586px 0px;
+        /*width: 19px;!1!
+    }
+
+    .ico-16.zoom-in {
+        background-position: -1240px 0px;
+    }
+
+    .ico-16.thumb {
+        background-position: -1380px 0px;
+    }
+
+    .ico-16.full {
+        background-position: -1360px 0px;
+        width: 17px;
+    }
+
+    .ico-16.cancel {
+        background-position: -1080px 0px;
+    }
+
+      .ico-16.edit {
+        background-position: -220px 0px;
+    }
+
+    .ico-16.arrow-in {
+        background-position: -1120px 0px;
+    }
+
+      .ico-16.security {
+        background-position: -480px 0px;
+    }
+
+       .ico-16.refresh {
+        background-position: -520px 0px;
+    }
+
+        .ico-16.at {
+        background-position: -780px 0px;
+    }
+
+        .ico-16.calendar {
+        background-position: -920px 0px;
+    }
+        
+    .ico-16.search {
+        background-position: -620px 0px;
+    }
+
+a:hover .ico-16.download {
+    background-position: -78px -20px;
+}
+
+a:hover .ico-16.gear {
+    background-position: -100px -20px;
+}
+
+
+a:hover .ico-16.zoom-in {
+    background-position: -1240px -20px;
+}
+
+
+a:hover .ico-16.remove {
+    background-position: -580px -20px;
+}
+
+
+a:hover .ico-16.full {
+    background-position: -1360px -20px;
+}
+
+
+
+a:hover .ico-16.cancel {
+    background-position: -1080px -20px;
+}
+
+
+
+a:hover .ico-16.arrow-in {
+    background-position: -1120px -20px;
+}
+*/

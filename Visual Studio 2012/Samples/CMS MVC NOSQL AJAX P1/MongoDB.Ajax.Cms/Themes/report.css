@@ -1,0 +1,38 @@
+﻿.summary {
+    margin-top: 10px;
+    width: 100%;
+}
+.summary ul {
+    list-style: none outside none;
+    white-space: nowrap;
+}
+.summary li {
+    border: 1px solid #C5C1C1;
+    color: #777777;
+    display: block;
+    float: left;
+    height: 92px;
+    list-style: none outside none;
+    margin: 0 10px 10px 0;
+    padding: 0 5px;
+    text-align: center;
+    width: 9.99%;
+}
+.summary li.w140 {
+    width: 16.99%;
+}
+.summary li.last {
+    float: right;
+    width: 29.99%;
+}
+.summary li p {
+    height: 40px;
+}
+.summary li p.tit {
+    line-height: 30px;
+}
+.summary li .mun {
+    color: #007196;
+    font-size: 20px;
+    font-weight: bold;
+}

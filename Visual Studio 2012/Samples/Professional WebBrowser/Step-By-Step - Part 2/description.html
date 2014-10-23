@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=B13725333DE73FED14392EE0AFB02E40" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/cb7c58eb-41e2-4b9f-8668-e7d6b65012c9Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=0BC47A6384E0BB007E15A2B454098745" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Professional WebBrowser - Step-By-Step - Part 2</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Professional WebBrowser - Step-By-Step - Part 2</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, ASP.NET, File System, Win32, .NET, WMI, Windows Forms, Windows Azure, .NET Framework, Javascript, Visual Basic .NET, .NET Framework 4.0, Windows General, C# Language, Internet Explorer, HTML5, WinForms, Windows 8, Graphics Functions, Visual Studio 2012, Windows Phone 8, Windows Store app, .NET Development
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Interop, Controls, Animation, Graphics, C#, Asynchronous Programming, Security, Authentication, ASP.NET, File System, User Interface, Windows Forms, Graphics and 3D, Architecture and Design, Windows Azure, XAML, threading, Images, customization, custom controls, Web Services, 2d graphics, Performance, Image manipulation, Automation, Getting Started, Windows Phone, Image, WebBrowser, HTML5, .NET 4, Imaging, Drawing, How to, UI Design, Generic C# resuable code, File Systems, Image Optimization, C# Language Features, Language Samples, Graphics Functions, Audio and video, Devices and sensors, User Experience, BitmapImage, Windows Store app, Load Image
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Web, Cloud, Phone, Data, Xbox, Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">12/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Professional-WebBrowser-70e450b2">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div>
+<h1>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Introduction</h1>
+</div>
+<p>The first thing people see and want to change in most consumer applications is the look! So in this section we will start to build our Style system which allows the end user to change the look of your browser without you caring too much about how it affects
+ the application&rsquo;s functions.</p>
+<div>
+<h1>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Building the Sample</h1>
+</div>
+<p>The sample is built in Visual Studio 2012 Ultimate as an x86 targeted application using .Net Framework 4. We will be using NuGet packages, a number of 3rd party libraries. All of which will be fully explained to you ensuring that the final compilation of
+ your browser will be hassle free. Oh! And the sample code is verbosely commented so you should have no problem in working out what the code does.</p>
+<div>
+<h1>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</h1>
+</div>
+<p>The Addressbar in our sample is built upon a Toolstrip. The problem is trying to change the size of the graphics shown in the Toolstrip and in general getting it to look the way you want it and make it easy for end user&rsquo;s to change it so that it looks
+ like they want it to.</p>
+<div>
+<h1>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let&rsquo;s Get Started!</h1>
+</div>
+<p>Open Visual Studio 2012 and select the project. Our Addressbar you will remember is on our FrmBrowser.cs form. Select the AddressBar and set the following properties:</p>
+<ol>
+<li>Name: AddressBar </li><li>Accessible Description: AddressBar </li><li>AccessibleName: AddressBar </li><li>Anchor: Top, Left, Right </li><li>AutoSize: False </li><li>BacKColor: Transparent. Click the little downward arrow to the right of the colour box, Select Web from the top tab, then Transparent is available to you.
+</li><li>GripStyle: Hidden </li><li>MinimumSize: (Copy and paste it&rsquo;s current size to the MinimumSize property)
+</li><li>Stretch: True </li></ol>
+<p>Now download 9 Graphic images from a copyright free source. You can find such sources through your favourite search engine. You will need images similar to the images below:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="67" valign="top">
+<p>BtnBack</p>
+</td>
+<td width="67" valign="top">
+<p>BtnForward</p>
+</td>
+<td width="67" valign="top">
+<p>BtnSecure</p>
+</td>
+<td width="67" valign="top">
+<p>BtnFavourites</p>
+</td>
+<td width="67" valign="top">
+<p>BtnReload</p>
+</td>
+<td width="67" valign="top">
+<p>BtnSearchProvider</p>
+</td>
+<td width="67" valign="top">
+<p>BtnSearch</p>
+</td>
+<td width="67" valign="top">
+<p>BtnHome</p>
+</td>
+<td width="67" valign="top">
+<p>btnMenu</p>
+</td>
+</tr>
+<tr>
+<td width="67" valign="top">
+<p>&nbsp;<img id="101278" src="description/Alarm-Arrow-Left-icon.png" alt="" width="37" height="37"></p>
+</td>
+<td width="67" valign="top">
+<p>&nbsp;<img id="101279" src="description/Arrow_Right.png" alt="" width="40" height="40"></p>
+</td>
+<td width="67" valign="top">
+<p>&nbsp;<img id="101280" src="description/119710687050730804piotr_halas_padlock.svg.med.png" alt="" width="51" height="53"></p>
+</td>
+<td width="67" valign="top">
+<p>&nbsp;<img id="101281" src="description/add_to_favourites.png" alt="" width="47" height="47"></p>
+</td>
+<td width="67" valign="top">
+<p><img id="101282" src="description/43647_21352_reload_128x128.png" alt="" width="58" height="58"></p>
+</td>
+<td width="67" valign="top">
+<p>&nbsp;<img id="101283" src="description/social_google_box.png" alt="" width="71" height="71"></p>
+</td>
+<td width="67" valign="top">
+<p><img id="101284" src="description/086087-retro-green-floral-icon-business-magnifying-glass-ps.png" alt="" width="76" height="76"></p>
+</td>
+<td width="67" valign="top">
+<p><img id="101285" src="description/082302-green-jelly-icon-business-home2.png" alt="" width="74" height="74"></p>
+</td>
+<td width="67" valign="top">
+<p><img id="101286" src="description/arrow-down.png" alt="" width="80" height="55"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>It does not matter how large these files are, but it is important that you get images that have a transparent background! Click on each button in turn and in properties click image. On the left of the dialogue select
+<em>Project resource file</em>:</p>
+<p>&nbsp;<img id="101287" src="description/Picture 2013-11-17 18_18_02.png" alt="" width="576" height="390"></p>
+<p>&nbsp;</p>
+<p>Do that with all the images:</p>
+<p><img id="101288" src="description/QuickTip.jpeg" alt="" width="50" height="56" style="vertical-align:text-top; float:left">You can select all the images at once and add in this manner &ndash; you do not need to add each image one at a time!</p>
+<p>&nbsp;</p>
+<ol>
+<li>Now select each button and add the desired image. And edit the button&rsquo;s properties so that the AccessibleDescription, and AccessibleName are set to the same as the button&rsquo;s name. &nbsp;
+</li><li>AccessibleRole should be set to the correct Role &ndash; Buttons should be set to PushButtons.
+</li><li>Set the Autosize Property to False. </li><li>Finally, change the Text and TooltipText to something appropriate. </li></ol>
+<p>&nbsp;</p>
+<div>
+<h1>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now some coding.</h1>
+</div>
+<p>Finally you will get your hands dirty with some actual coding.</p>
+<p>We need a method to resize the images to our desired size. We will hard code this size for just now but it will be added to our Options form later. The following code let&rsquo;s use scale the images to the width and height required.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+
+        /// Allows the application to scale images so that they are suitable for the AddressBar
+
+        /// &lt;/summary&gt;
+
+        /// &lt;param name=&quot;image&quot;&gt;
+
+        /// Image: The Image to scale
+
+        /// &lt;/param&gt;
+
+        /// &lt;param name=&quot;maxWidth&quot;&gt;
+
+        /// Int: The Width to scale this image to.
+
+        /// &lt;/param&gt;
+
+        /// &lt;param name=&quot;maxHeight&quot;&gt;
+
+        /// Int: The Width to Scale this image to
+
+        /// &lt;/param&gt;
+
+        /// &lt;returns&gt;&lt;/returns&gt;
+
+        private static Image ScaleImage(Image image, int maxWidth, int maxHeight)
+
+        {
+
+            var ratioX = (double)maxWidth / image.Width;
+
+            var ratioY = (double)maxHeight / image.Height;
+
+            var ratio = Math.Min(ratioX, ratioY);
+
+ 
+
+            var newWidth = (int)(image.Width * ratio);
+
+            var newHeight = (int)(image.Height * ratio);
+
+ 
+
+            var newImage = new Bitmap(newWidth, newHeight);
+
+            Graphics.FromImage(newImage).DrawImage(image, 0, 0, newWidth, newHeight);
+
+            return newImage;
+
+        }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Allows&nbsp;the&nbsp;application&nbsp;to&nbsp;scale&nbsp;images&nbsp;so&nbsp;that&nbsp;they&nbsp;are&nbsp;suitable&nbsp;for&nbsp;the&nbsp;AddressBar</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;image&quot;&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Image:&nbsp;The&nbsp;Image&nbsp;to&nbsp;scale</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;maxWidth&quot;&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Int:&nbsp;The&nbsp;Width&nbsp;to&nbsp;scale&nbsp;this&nbsp;image&nbsp;to.</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;param&nbsp;name=&quot;maxHeight&quot;&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Int:&nbsp;The&nbsp;Width&nbsp;to&nbsp;Scale&nbsp;this&nbsp;image&nbsp;to</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/param&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;&lt;/returns&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;Image&nbsp;ScaleImage(Image&nbsp;image,&nbsp;<span class="cs__keyword">int</span>&nbsp;maxWidth,&nbsp;<span class="cs__keyword">int</span>&nbsp;maxHeight)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;ratioX&nbsp;=&nbsp;(<span class="cs__keyword">double</span>)maxWidth&nbsp;/&nbsp;image.Width;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;ratioY&nbsp;=&nbsp;(<span class="cs__keyword">double</span>)maxHeight&nbsp;/&nbsp;image.Height;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;ratio&nbsp;=&nbsp;Math.Min(ratioX,&nbsp;ratioY);&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newWidth&nbsp;=&nbsp;(<span class="cs__keyword">int</span>)(image.Width&nbsp;*&nbsp;ratio);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newHeight&nbsp;=&nbsp;(<span class="cs__keyword">int</span>)(image.Height&nbsp;*&nbsp;ratio);&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newImage&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Bitmap(newWidth,&nbsp;newHeight);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphics.FromImage(newImage).DrawImage(image,&nbsp;<span class="cs__number">0</span>,&nbsp;<span class="cs__number">0</span>,&nbsp;newWidth,&nbsp;newHeight);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;newImage;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>We place this code in our FrmBrowser.cs code section.</p>
+<p><img id="101288" src="description/QuickTip.jpeg" alt="" width="50" height="56" style="vertical-align:text-top; float:left">You can jump from code view to designer view and back &ndash; by right clicking on the view you have &ndash; the context
+ menu will have an option to move to the alternative view.</p>
+<p>&nbsp;</p>
+<p>We are going to create a delegate so that we can change the button icons and sizes from a different thread if necessary. This is the delegate which we add to the top of out code.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private delegate void UpdateButtonImageDelegate();</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">delegate</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;UpdateButtonImageDelegate();</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>We then add a method to load the styles. We have two possible styles. The first is the default style which we are creating now and the second is the user&rsquo;s preferred style. At this moment in time though, we only have one style &ndash; the default &ndash;
+ which we are going to resize to our hard coded value of 30.</p>
+<p>&nbsp;</p>
+<p>Because this can be called from an alternative thread we will need to check if we need to use the invoke the delegate which is easily done like this.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+
+        /// Load the User's Home button image or if none selected - the Default.
+
+        /// &lt;/summary&gt;
+
+        private void LoadHomeButton()
+
+        {
+
+            if (AddressBar.InvokeRequired)
+
+            {
+
+                AddressBar.Invoke(new UpdateButtonImageDelegate(LoadHomeButton), null);
+
+            }
+
+            else
+
+            {
+
+                this.btnHome.Image = ScaleImage(global::taapBrowser.Properties.Resources.homeenergy, tabIconSize, tabIconSize);
+
+            }
+
+        }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Load&nbsp;the&nbsp;User's&nbsp;Home&nbsp;button&nbsp;image&nbsp;or&nbsp;if&nbsp;none&nbsp;selected&nbsp;-&nbsp;the&nbsp;Default.</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;LoadHomeButton()&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(AddressBar.InvokeRequired)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AddressBar.Invoke(<span class="cs__keyword">new</span>&nbsp;UpdateButtonImageDelegate(LoadHomeButton),&nbsp;<span class="cs__keyword">null</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.btnHome.Image&nbsp;=&nbsp;ScaleImage(global::taapBrowser.Properties.Resources.homeenergy,&nbsp;tabIconSize,&nbsp;tabIconSize);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>You will need to change the taapBrowser to whatever your solution Namespace is called and the actual homeenergy reference will need to be changed to whatever your Home button icon was named. Finally, you will need to add a hardcoded global (placed at the
+ top of the code) variable called tabIconSize.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">private int tabIconSize = 30;</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;tabIconSize&nbsp;=&nbsp;<span class="cs__number">30</span>;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>Now you need to do the same with all the other buttons.</p>
+<p>We also want to resize the AddressBar &ndash; in particular we want the address input textbox to fill the available space.</p>
+<p>We use two methods for that:</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">/// &lt;summary&gt;
+
+        /// Resizes the address bar so that the URL input area takes up as much room as possible horizontally.
+
+        /// &lt;/summary&gt;
+
+        private void ResizeTheAddressBar()
+
+        {
+
+            int wid = this.GetAddressBarControlsWidth();
+
+            if (this.AddressBar.Size.Width - wid != this.tbAddressBox.Size.Width)
+
+            {
+
+                this.tbAddressBox.Size = new Size((this.AddressBar.Size.Width - (wid &#43; 100)), this.tbAddressBox.Size.Height);
+
+            }
+
+        }
+
+ 
+
+        /// &lt;summary&gt;
+
+        /// Calculates the current width of the AddressBar
+
+        /// &lt;/summary&gt;
+
+        /// &lt;returns&gt;
+
+        /// int: The current width of the AddressBar
+
+        /// &lt;/returns&gt;
+
+        private int GetAddressBarControlsWidth()
+
+        {
+
+            int width = 0;
+
+ 
+
+            ToolStripItemCollection tsic = AddressBar.Items;
+
+ 
+
+            foreach (ToolStripItem item in tsic)
+
+            {
+
+                if (item.Name != &quot;tbAddressBox&quot;)
+
+                {
+
+                    width &#43;= item.Width;
+
+                    width &#43;= item.Margin.Horizontal;
+
+                }
+
+            }
+
+            return width;
+
+        }</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Resizes&nbsp;the&nbsp;address&nbsp;bar&nbsp;so&nbsp;that&nbsp;the&nbsp;URL&nbsp;input&nbsp;area&nbsp;takes&nbsp;up&nbsp;as&nbsp;much&nbsp;room&nbsp;as&nbsp;possible&nbsp;horizontally.</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;ResizeTheAddressBar()&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">int</span>&nbsp;wid&nbsp;=&nbsp;<span class="cs__keyword">this</span>.GetAddressBarControlsWidth();&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(<span class="cs__keyword">this</span>.AddressBar.Size.Width&nbsp;-&nbsp;wid&nbsp;!=&nbsp;<span class="cs__keyword">this</span>.tbAddressBox.Size.Width)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">this</span>.tbAddressBox.Size&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Size((<span class="cs__keyword">this</span>.AddressBar.Size.Width&nbsp;-&nbsp;(wid&nbsp;&#43;&nbsp;<span class="cs__number">100</span>)),&nbsp;<span class="cs__keyword">this</span>.tbAddressBox.Size.Height);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;Calculates&nbsp;the&nbsp;current&nbsp;width&nbsp;of&nbsp;the&nbsp;AddressBar</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/summary&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;returns&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;int:&nbsp;The&nbsp;current&nbsp;width&nbsp;of&nbsp;the&nbsp;AddressBar</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">///&nbsp;&lt;/returns&gt;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">private</span>&nbsp;<span class="cs__keyword">int</span>&nbsp;GetAddressBarControlsWidth()&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">int</span>&nbsp;width&nbsp;=&nbsp;<span class="cs__number">0</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToolStripItemCollection&nbsp;tsic&nbsp;=&nbsp;AddressBar.Items;&nbsp;
+&nbsp;
+&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(ToolStripItem&nbsp;item&nbsp;<span class="cs__keyword">in</span>&nbsp;tsic)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(item.Name&nbsp;!=&nbsp;<span class="cs__string">&quot;tbAddressBox&quot;</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&#43;=&nbsp;item.Width;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&#43;=&nbsp;item.Margin.Horizontal;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">return</span>&nbsp;width;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p>We get the width of the controls in the AddressBar not including the tbAddressBox and take that from the width of the AddressBar&rsquo;s width &ndash; this tells us how much we can set the tbAddressBox&rsquo;s width to.</p>
+<p>We also need to make sure everything fits when the form size is changed. We do this by subscribing to the FrmBrowser Resize event. The easiest way to do this is in the designer</p>
+<ol>
+<li>click the top bar of the form, </li><li>Go to the properties window </li><li>Click the lightening icon at the top and look through all the events you can subscribe to
+</li><li>Double click to the left of the Resize Event name and you will magically be transported back to you code and the newly created Event method.
+</li><li>Add the ResizeTheAddressBar method to the event. </li></ol>
+<p>Every time the form is resized this will automatically resize our AddressBar.</p>
+<p>That&rsquo;s it for just now &ndash; we will deal with more functionality in the next episode &ndash; getting the AddressBar buttons to function correctly.</p>
+<h3>5.1.1&nbsp;&nbsp;&nbsp; Source Code Files</h3>
+<ul>
+<li><em>source code Form1.cs &ndash; The main interface to our Browsing application</em>
+</li><li><em>source code Forms/FrmBrowser.cs &ndash; This is our tab-able, dock-able and free-floating browser interface.</em>
+</li></ul>
+<p>If you like my samples then please nominate me for an MVP. <a href="http://mvp.microsoft.com/en-us/nominate-an-mvp.aspx">
+http://mvp.microsoft.com/en-us/nominate-an-mvp.aspx</a>. Leave me a message if you nominated me!</p>
+<div>
+<h1>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; More Information</h1>
+</div>
+<p>To convert the solution to a previous version of Visual Studio you can use this free application:
+<a href="http://vsprojectconverter.codeplex.com/">http://vsprojectconverter.codeplex.com/</a> or download and use Visual Studio 2013 Express which is freely available from Microsoft from here:
+<a href="http://www.visualstudio.com/downloads/download-visual-studio-vs">http://www.visualstudio.com/downloads/download-visual-studio-vs</a>.</p>
+<p>&nbsp;<a href="http://www.awesomium.com/download/">http://www.awesomium.com/download/</a></p>
+<p>ToolStrip Images and Button Sizing: <a href="http://forums.codeguru.com/showthread.php?402345-RESOLVED-Size-of-Buttons-in-a-toolStrip&amp;s=89af90e4d3d369895ca033758eb0c7ff">
+http://forums.codeguru.com/showthread.php?402345-RESOLVED-Size-of-Buttons-in-a-toolStrip&amp;s=89af90e4d3d369895ca033758eb0c7ff</a></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

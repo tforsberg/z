@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WijmoMvcApplication1.Models.TahDoList>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="listGrid">
+	<thead>
+		<tr>
+						<th>
+				@Html.DisplayNameFor(model => model.Title)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.CreatedAt)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Priority)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Cost)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Summary)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.Done)
+			</th>
+					<th>
+				@Html.DisplayNameFor(model => model.DoneAt)
+			</th>
+				<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+	@foreach (var item in Model) {
+		<tr>
+						<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.CreatedAt)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.Priority)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.Cost)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.Summary)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.Done)
+			</td>
+					<td>
+				@Html.DisplayFor(modelItem => item.DoneAt)
+			</td>
+				<td>
+				@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+				@Html.ActionLink("Details", "Details", new { id=item.Id }) |
+				@Html.ActionLink("Delete", "Delete", new { id=item.Id })
+			</td>
+			</tr>
+	}
+	<tbody>
+</table>
+
+@section scripts {
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#listGrid").wijgrid({ allowSorting: true, allowPaging: true, pageSize: 20});
+	});
+</script>
+}

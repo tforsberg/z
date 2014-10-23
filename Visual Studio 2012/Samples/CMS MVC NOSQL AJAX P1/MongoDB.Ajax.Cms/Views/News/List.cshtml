@@ -1,0 +1,77 @@
+﻿@model IEnumerable<News>
+
+@{
+    int _count = 0;
+}
+
+<form action="/News/List" class="ajax" data-ajax="target:'#ajax-list'" id="_fgrid">
+
+    <input type="hidden" value="del" name="act" />
+
+    <table class="grid">
+        <tr class="head">
+            <td class="center">
+                <input type="checkbox" class="check-master" /></td>
+            <td class="w5 center">Img</td>
+            <td>Title</td>
+            <td class="w20 center">Url</td>
+            <td class="w10 center">Status</td>
+            <td class="w10 center">Created</td>
+            <td class="center" style="width: 150px">Action</td>
+        </tr>
+
+        @if (Model != null)
+        {
+            foreach (var _x in Model)
+            {
+                _count++;
+                
+            <tr class="@string.Format("row{0}", _count % 2 == 0 ? "" : "-alt")">
+                <td class="center">
+                    <input type="checkbox" class="selected" name="id" value="@_x.Id" /></td>
+                
+                <td class="center">
+                    
+                    @Html.Image(_x.Img,new {@class="img-thumb"}) 
+
+                </td>
+
+
+                <td>
+                    @_x.Title
+                </td>
+
+                <td>@_x.Url</td>
+                <td class="center">
+                    <div class="widget-action">
+                        <a href="javascript://" class="ui-button kooltip" title="@((NewsStatus)_x.Status)">
+                            <span class="@string.Format("ico-16 {0}", ((NewsStatus)_x.Status).ToString().ToLower())"></span>
+                        </a>
+                    </div>
+                </td>
+                <td class="center">@IWebContext.PrettyDate(_x.Created)</td>
+
+                <td class="center">
+                    <div class="widget-action">
+                        <a href="/News/Add/?Id=@_x.Id" title="Edit this item" class="ui-button window kooltip" data-window="width:900,height:600"><span class="ico-16 edit"></span></a>
+                        <a href="/News/Add/?Id=@_x.Id&copy=1" title="" class="ui-button window" data-window="width:900,height:600"><span class="ico-16 plus"></span></a>
+                        <a href="/News/Remove/@_x.Id" class="ui-button ajax confirm" title="Are you sure want to delete this item?" data-ajax="target:'#ajax-list'"><span class="ico-16 remove"></span></a>
+                    </div>
+
+                </td>
+            </tr>
+            }
+
+        }
+
+
+
+
+    </table>
+</form>
+
+<div class="white-bt">
+    @Html.Raw(ViewBag.Paging)
+    <br class="empty" />
+</div>
+

@@ -1,0 +1,39 @@
+﻿<div class="site-block form">
+    <form action="/Member/ChangePwd" class="ajax" data-ajax="{hashPwd:true}">
+    @Html.AntiForgeryToken()
+    <table class="table">
+        <tr>
+            <td class="w25">Old Pwd
+            </td>
+            <td class="bold">
+                  <input type="password"  class="password {validate:{required:1}}"  name="oldpwd" />
+            </td>
+        </tr>
+        <tr>
+            <td class="w25">Pwd
+            </td>
+            <td>
+                <input type="password"  class="password {validate:{required:1}}" id="pwd" name="pwd" />
+                @* @Html.Password("pwd", "" ,new { @class = "input {validate:{required:1}}", @placeholder = "**********" })*@
+            </td>
+        </tr>
+
+        <tr>
+            <td>Re Pwd
+            </td>
+            <td>
+                <input type="password" class="password {validate:{required:1,equalTo:'#pwd'}}" id="repwd" name="repwd" />
+                @*@Html.Password("repwd", new { @class = "input {validate:{required:1,equalTo:'#pwd'}}", @placeholder = "**********" })*@
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+
+                <input type="submit" class="ui-button" value="Save" />
+
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

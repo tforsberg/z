@@ -1,0 +1,109 @@
+﻿@model IEnumerable<User>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('.datepicker').datepicker();
+    })
+
+</script>
+
+<form action="/Member/" class="ajax" data-ajax="target:'#ajax-list'" id="_fsearch">
+    @Html.Hidden("pageIndex",IWebContext.PageIndex)
+    <div class="widget-head">
+
+        <div id="search" class="hidden">
+
+            <table>
+                <tr>
+                    <td style="width: 50px">from:
+                    </td>
+                    <td style="width: 200px">
+                        <input type="text" name="from" class="datepicker" style="width: 150px" value="@((DateTime.UtcNow - TimeSpan.FromDays(30)).ToString("MM/d/yyyy"))" />
+                    </td>
+
+                    <td style="width: 50px">sort:
+                    </td>
+                    <td style="width: 150px">
+                        <select name="sort">
+                            <option value="crt">Created</option>
+                            <option value="uid">User Name</option>
+                            <option value="fname">Full Name</option>
+                        </select>
+
+                    </td>
+
+                    <td style="width: 50px">status:
+                    </td>
+
+                    <td style="width: 150px">
+                        @Html.DropDownList("stt", HtmlExtensions.ToSelectList<GlobalStatus>(), "Select status")
+                    </td>
+
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>to:
+                    </td>
+                    <td>
+                        <input name="to" type="text" class="datepicker" style="width: 150px" value="@((DateTime.UtcNow.AddDays(1)).ToString("MM/d/yyyy"))" />
+                    </td>
+                    <td style="width: 50px">order:
+                    </td>
+
+                    <td>
+                        <select name="dir">
+                            <option value="desc">DESC</option>
+                            <option value="asc">ASC</option>
+                        </select>
+
+                    </td>
+                    
+                    <td>
+                        role:
+                    </td>
+                    
+                    <td>
+                        @Html.DropDownList("rid",new MultiSelectList(ViewBag.Roles as IEnumerable<Role>,"id","Name"),"Select role")
+                    </td>
+                    <td>
+
+                        <a class="ui-button btn-search" href="javascript://">
+                            <span class="ico-16 search"></span>
+                        </a>
+
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+            <br class="empty" />
+
+        </div>
+
+        <input type="text" id="kwd" name="kwd" placeholder="Quick search" class="input search" />
+        <div class="fr">
+
+            
+            <a class="ui-button btn-refresh" href="javascript://">
+                <span class="ico-16 refresh"></span>
+            </a>
+            
+            <a class="ui-button timer" href="javascript://">
+                <span class="ico-16 alarm"></span>
+            </a>
+
+            <a class="ui-button btn-gear" href="javascript://">
+                <span class="ico-16 gear"></span>
+            </a>
+        </div>
+
+        <br class="empty" />
+
+    </div>
+
+</form>
+<div id="ajax-list">
+    @Html.Partial("List", Model)
+</div>
+

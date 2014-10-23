@@ -1,0 +1,4 @@
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.UI.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.UI.pdb
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.UI.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.UI.pdb

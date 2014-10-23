@@ -1,0 +1,41 @@
+﻿<div class="login-panel hidden" id="login">
+
+    <form action="/Member/Login" class="ajax" data-ajax="{hashPwd:true}">
+        @Html.AntiForgeryToken()
+        @Html.Hidden("returnUrl",IWebContext.ReturnUrl)
+        <div>
+            <input type="text" placeholder="user name" name="uid" class="input user" />
+        </div>
+        <div>
+            <input type="password" placeholder="**********" name="pwd" class="input lock" />
+        </div>
+
+        <div >
+
+            <div class="fr">
+
+                <a href="">Lost Pwd?</a>
+
+            </div>
+
+            <input type="checkbox" id="rem" name="rem" />
+            <label for="rem">Remember login</label>
+
+        </div>
+
+        <div class="center">
+
+            <input type="submit" class="button" value="Login" />
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        new $.Window({ url: '#login', maximize: false, minimize: 0, width: 350, height: 240, resizable: false, title: 'Administrator' });
+
+    })
+
+</script>

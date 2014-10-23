@@ -1,0 +1,30 @@
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Business.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Business.pdb
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\log4net.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Core.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Core.pdb
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\log4net.xml
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.pdb
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.xml
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.pdb
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.xml
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.csprojResolveAssemblyReference.cache
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.dll
+c:\users\manh\documents\visual studio 2012\Projects\MongoDB.Ajax.Cms\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Business.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Business.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\log4net.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Core.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Ajax.Core.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\log4net.xml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Bson.xml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\bin\Debug\MongoDB.Driver.xml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.csprojResolveAssemblyReference.cache
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\CMS MVC NOSQL AJAX P1\MongoDB.Ajax.UI\obj\Debug\MongoDB.Ajax.Business.pdb

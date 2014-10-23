@@ -1,0 +1,377 @@
+
+.window-container {
+    color: #333;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    word-wrap: break-word;
+    width: auto !important;
+    height: auto !important;
+}
+
+.window8 {
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    -khtml-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    /*  border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;*/
+    border: solid 1px #5D4942;
+}
+
+    .window8.window-nofocus {
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -khtml-box-shadow: none;
+    }
+
+    .window8 .window-body {
+        text-align: left;
+        background: #fff;
+        position: relative;
+        display: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #5D4942;
+        overflow: auto;
+    }
+
+    .window8 .window-content {
+        display: none;
+        position: relative;
+        overflow: auto;
+    }
+
+    .window8 .window-loading {
+        position: absolute;
+        background: #fff url("skins/loading.gif") no-repeat center center;
+        border: solid 1px #999;
+        width: 150px;
+        height: 60px;
+        display: none;
+        z-index: 10001;
+    }
+
+
+    .window8 > table {
+        border-collapse: collapse; /* ie 6 hack -- if the global table width is set to anything it could cause us issues*/
+        padding: 0;
+        width: auto !important;
+    }
+
+    .window8 > table > tr > td {
+        margin: 0;
+        padding: 0;
+    }
+
+    .window8 .box-t-l, .window8 .box-t-r, .window8 .box-b-r, .window8 .box-b-l {
+        width: 5px;
+        height: 5px;
+        /* width: 0.313em;
+        height: 0.313em;*/
+        border-style: none;
+        padding: 0;
+        margin: 0;
+        background: url('skins/sprite.png') no-repeat;
+        /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='crop',src='skins/sprite.png',enabled='true');*/
+    }
+
+    .window8.window-nofocus .box-t-l, .window8.window-nofocus .box-t-r, .window8.window-nofocus .box-b-r, .window8.window-nofocus .box-b-l {
+        background-image: url('skins/sprite_alt.png');
+    }
+
+
+    .window8 .box-t-l {
+        background-position: top left;
+    }
+
+    .window8 .box-t-r {
+        background-position: top right;
+    }
+
+    .window8 .box-b-l {
+        background-position: bottom left;
+    }
+
+    .window8 .box-b-r {
+        background-position: bottom right;
+    }
+
+    .window8 .box-m-l, .window8 .box-m-r {
+        background: url('skins/sprite_y.png') repeat-y;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src='skins/sprite_y.png',enabled='true');
+    }
+
+    .window8.window-nofocus .box-m-l, .window8.window-nofocus .box-m-r {
+        background-image: url('skins/sprite_alt_y.png');
+    }
+
+    .window8 .box-m-r {
+        background-position: top right;
+    }
+
+    .window8 .box-t-c, .window8 .box-b-c {
+        background: url('skins/sprite_x.png') repeat-x;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src='skins/sprite_x.png',enabled='true');
+    }
+
+    .window8.window-nofocus .box-t-c, .window8.window-nofocus .box-b-c {
+        background-image: url('skins/sprite_alt_x.png');
+    }
+
+
+    .window8 .box-t-c {
+        height: 38px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+     .window8 .box-m-c {
+         margin: 0;
+         padding: 0;
+    }
+
+    .window8.ui-draggable .box-t-c {
+        cursor: move;
+    }
+
+    .window8 .box-b-c {
+        background-position: bottom left;
+    }
+
+    .window8 .box-title {
+        font-weight: bold;
+        font-size: 16px;
+        float: left;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 65%;
+        position: absolute;
+        top: 10px;
+    }
+
+    .window8 .window-status {
+        background: #f6f6f6;
+        border: solid 1px #ccc;
+        border-top-style: none;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 5px;
+        display: none;
+    }
+
+    .window8 .window-control {
+        position: absolute;
+        top: 0px;
+        right: 8px;
+        z-index: 1;
+    }
+
+    .window8 .resizable, .ui-resizable-se {
+        display: none;
+        background: url("skins/resizable.gif") no-repeat;
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        bottom: 9px;
+        right: 9px;
+        cursor: se-resize;
+    }
+
+    .window8.ui-resizable .resizable {
+        display: block;
+    }
+
+    .window8.window-minimized .resizable, .window8.window-minimized .ui-resizable-se {
+        display: none;
+    }
+
+    .window8 .window-close, .window8 .window-max, .window8 .window-min {
+        float: right;
+        display: none;
+        height: 26px;
+        background: url('skins/btn.png') no-repeat;
+    }
+
+    .window8 .window-close {
+        width: 59px;
+        background-position: -101px 0;
+    }
+
+        .window8 .window-close:hover {
+            background-position: -101px -26px;
+        }
+
+
+    .window8 .window-max {
+        width: 33px;
+        background-position: -68px 0;
+    }
+
+        .window8 .window-max:hover {
+            background-position: -68px -26px;
+        }
+
+    .window8.window-maximized .window-max {
+        width: 33px;
+        background-position: -35px 0;
+    }
+
+        .window8.window-maximized .window-max:hover {
+            background-position: -35px -26px;
+        }
+
+    .window8 .window-min {
+        width: 35px;
+        background-position: 0 0;
+    }
+
+        .window8 .window-min:hover {
+            background-position: 0 -26px;
+        }
+
+
+/*
+
+
+
+.window8 input[type='text'], .window8 input[type='password'], .window8 textarea {
+    border: solid 1px #b6bfc6;
+    background-color: #fff;
+    padding: 3px 4px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    width: 90%;
+}
+
+.window8 input[type='button'], .window8 input[type='submit'] {
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #888;
+    background-position: 0% 0%;
+    width: 75px;
+    text-align: center;
+    margin-right: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 8px;
+    color: #333;
+    background-color: #eee;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    background-image: linear-gradient(#f5f6f6, #e4e4e3);
+    /* for IE 6 - 9 !1!
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+    .window8 input[type='button']:hover, .window8 input[type='submit']:hover {
+        border-color: #808E9B;
+        -moz-box-shadow: 0 0 3px #999;
+        -webkit-box-shadow: 0 0 3px #999;
+        -khtml-box-shadow: 0 0 3px #999;
+        box-shadow: 0 0 3px #999;
+        outline: 0;
+    }
+*/
+
+
+
+/*!
+ * jQuery UI Resizable 1.8.21
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable {
+    position: relative;
+}
+
+.ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+}
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+    display: none;
+}
+
+.ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0;
+}
+
+.ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+}
+
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+
+.ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%;
+}
+/*
+.ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px;
+}*/
+
+.ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px;
+}
+
+.ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px;
+}
+
+.ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px;
+}
+
+.ui-resizable-helper {
+    border: dotted 2px #ccc;
+}

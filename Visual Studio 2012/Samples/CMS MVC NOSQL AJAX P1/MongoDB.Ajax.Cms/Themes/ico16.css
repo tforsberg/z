@@ -1,0 +1,1163 @@
+﻿
+
+/* BUTTON STYLES */
+
+.btn, input[type="button"].btn, input[type="submit"] {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0;
+    font: normal normal bold 14px/14px Arial, sans-serif;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none; /*-moz-user-select: none; */ /* Commented by ddean - this was breaking selection of text in textfields in firefox. */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.input-static {
+    font-size: 16px;
+    padding: 7px 6px;
+    border-radius: 4px;
+    background: #E4E8ED;
+    border: 1px solid #D0D3D6;
+    color: #838a91;
+    line-height: normal;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.primary.btn, input[type="button"].primary.btn, input[type="submit"] {
+    color: white;
+    border: 1px solid #004487;
+    background-color: #5389be;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5389be), to(#2e6499));
+    background-image: -webkit-linear-gradient(top, #5389be, #2e6499);
+    background-image: -moz-linear-gradient(top, #5389be, #2e6499);
+    background-image: -ms-linear-gradient(top, #5389be, #2e6499);
+    background-image: -o-linear-gradient(top, #5389be, #2e6499);
+    background-image: linear-gradient(top, #5389be, #2e6499);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5389be', EndColorStr='#2e6499');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.7);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.7);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.7);
+    text-shadow: 0px -1px 0px #000;
+}
+
+.secondary.btn, input[type="button"] {
+    color: #636466;
+    border: 1px solid #A3A6A8;
+    background-color: #ecf0f3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf0f3), to(#d4d8db));
+    background-image: -webkit-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: -moz-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: -ms-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: -o-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: linear-gradient(top, #ecf0f3, #d4d8db);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf0f3', EndColorStr='#d4d8db');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px 1px 0px #fff;
+}
+
+.yellow.btn {
+    color: #636466;
+    border: 1px solid #A3A6A8;
+    background-color: #e2ca56;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f2e7b2), to(#e2ca56));
+    background-image: -webkit-linear-gradient(top, #f2e7b2, #e2ca56);
+    background-image: -moz-linear-gradient(top, #f2e7b2, #e2ca56);
+    background-image: -ms-linear-gradient(top, #f2e7b2, #e2ca56);
+    background-image: -o-linear-gradient(top, #f2e7b2, #e2ca56);
+    background-image: linear-gradient(top, #f2e7b2, #e2ca56);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f2e7b2', EndColorStr='#e2ca56');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px 1px 0px #fff;
+}
+/* NEED TO FIX .tertiary.btn, input[type="button"].tertiary { color: white; border: 1px solid #C77400; background-color: #E09600; background-image: -webkit-gradient(linear, left top, left bottom, from(#5389be), to(#2e6499)); background-image: -webkit-linear-gradient(top, #E0A800, #E09600); background-image: -moz-linear-gradient(top, #5389be, #2e6499); background-image: -ms-linear-gradient(top, #5389be, #2e6499); background-image: -o-linear-gradient(top, #5389be, #2e6499); background-image: linear-gradient(top, #5389be, #2e6499); filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5389be', EndColorStr='#2e6499'); -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px white; -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px white; box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px white; text-shadow: 0px -1px 0px #000; }*/
+
+.alt.btn, input[type="button"].alt.btn {
+    color: white;
+    border: 1px solid #468000;
+    background-color: #83b842;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#83b842), to(#629721));
+    background-image: -webkit-linear-gradient(top, #83b842, #629721);
+    background-image: -moz-linear-gradient(top, #83b842, #629721);
+    background-image: -ms-linear-gradient(top, #83b842, #629721);
+    background-image: -o-linear-gradient(top, #83b842, #629721);
+    background-image: linear-gradient(top, #83b842, #629721);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#83b842', EndColorStr='#629721');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px -1px 0px #000;
+}
+
+.btn:active, .secondary.btn:active, .btn.toggleOn, input[type="button"]:active {
+    color: #636466;
+    border: 1px solid #A8ABAD;
+    background-color: #ECF0F3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf0f3), to(#d4d8db));
+    background-image: -webkit-linear-gradient(top, #e5e8eb, #cdd0d3);
+    background-image: -moz-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: -ms-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: -o-linear-gradient(top, #ecf0f3, #d4d8db);
+    background-image: linear-gradient(top, #e9ecee, #cdd0d3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf0f3', EndColorStr='#d4d8db');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px 1px 0px white;
+}
+
+.primary.btn:active, input[type="button"].primary:active, input[type="submit"].primary:active {
+    color: #ecf1f6;
+    border: 1px solid #124475;
+    background-color: #497cae;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#497cae), to(#316496));
+    background-image: -webkit-linear-gradient(top, #497cae, #316496);
+    background-image: -moz-linear-gradient(top, #497cae, #316496);
+    background-image: -ms-linear-gradient(top, #497cae, #316496);
+    background-image: -o-linear-gradient(top, #497cae, #316496);
+    background-image: linear-gradient(top, #497cae, #316496);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#497cae', EndColorStr='#316496');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px -1px 0px black;
+}
+/* NEED TO FIX .tertiary.btn:active, input[type="button"].tertiary:active, input[type="submit"].tertiary:active { }*/
+
+.alt.btn:active, input[type="button"].alt:active {
+    color: #f0f5ea;
+    border: 1px solid #3a6209;
+    background-color: #7aad3c;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7aad3c), to(#619423));
+    background-image: -webkit-linear-gradient(top, #7aad3c, #619423);
+    background-image: -moz-linear-gradient(top, #7aad3c, #619423);
+    background-image: -ms-linear-gradient(top, #7aad3c, #619423);
+    background-image: -o-linear-gradient(top, #7aad3c, #619423);
+    background-image: linear-gradient(top, #7aad3c, #619423);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7aad3c', EndColorStr='#619423');
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.6), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 1px 0px rgba(255,255,255,.5);
+    text-shadow: 0px -1px 0px black;
+}
+
+.btn.sm {
+    padding: 5px 15px;
+}
+/*--------------------------*/
+
+.ico16 {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 17px;
+    margin: 3px 10px 0 0;
+    background: url(http://cdn.mediafire.com/images/icons/icon-sprite-16.png) no-repeat;
+}
+
+    .ico16.user {
+        background-position: 0px 0px;
+    }
+
+    .ico16.users {
+        background-position: -20px 0px;
+    }
+
+    .ico16.up {
+        background-position: -40px 0px;
+    }
+
+    .ico16.down {
+        background-position: -60px 0px;
+    }
+
+    .ico16.download {
+        background-position: -80px 0px;
+    }
+
+    .ico16.gear {
+        background-position: -100px 0px;
+    }
+
+    .ico16.wrench {
+        background-position: -120px 0px;
+    }
+
+    .ico16.folder {
+        background-position: -140px 0px;
+    }
+
+    .ico16.page {
+        background-position: -160px 0px;
+    }
+
+    .ico16.doc {
+        background-position: -180px 0px;
+    }
+
+    .ico16.page-copy {
+        background-position: -200px 0px;
+    }
+
+    .ico16.pencil {
+        background-position: -220px 0px;
+    }
+
+    .ico16.brush {
+        background-position: -240px 0px;
+    }
+
+    .ico16.mail {
+        background-position: -260px 0px;
+    }
+
+    .ico16.pie-stats {
+        background-position: -280px 0px;
+    }
+
+    .ico16.bar-stats {
+        background-position: -300px 0px;
+    }
+
+    .ico16.link {
+        background-position: -320px 0px;
+    }
+
+    .ico16.rss {
+        background-position: -340px 0px;
+    }
+
+    .ico16.plus {
+        background-position: -360px 0px;
+    }
+
+    .ico16.minus {
+        background-position: -380px 0px;
+    }
+
+    .ico16.camera {
+        background-position: -400px 0px;
+    }
+
+    .ico16.lock {
+        background-position: -420px 0px;
+    }
+
+    .ico16.unlock {
+        background-position: -440px 0px;
+    }
+
+    .ico16.cart {
+        background-position: -460px 0px;
+    }
+
+    .ico16.security {
+        background-position: -480px 0px;
+    }
+
+    .ico16.repeat {
+        background-position: -500px 0px;
+    }
+
+    .ico16.refresh {
+        background-position: -520px 0px;
+    }
+
+    .ico16.warning {
+        background-position: -540px 0px;
+    }
+
+    .ico16.trash {
+        background-position: -560px 0px;
+    }
+
+    .ico16.remove {
+        background-position: -580px 0px;
+    }
+
+    .ico16.print {
+        background-position: -600px 0px;
+    }
+
+    .ico16.search {
+        background-position: -620px 0px;
+    }
+     
+    .ico16.phone {
+        background-position: -640px 0px;
+    }
+
+    .ico16.key {
+        background-position: -660px 0px;
+    }
+
+    .ico16.question {
+        background-position: -680px 0px;
+    }
+
+    .ico16.home {
+        background-position: -700px 0px;
+    }
+
+    .ico16.flag {
+        background-position: -720px 0px;
+    }
+
+    .ico16.star {
+        background-position: -740px 0px;
+    }
+
+    .ico16.heart {
+        background-position: -760px 0px;
+    }
+
+    .ico16.at {
+        background-position: -780px 0px;
+    }
+
+    .ico16.money {
+        background-position: -800px 0px;
+    }
+
+    .ico16.comment {
+        background-position: -820px 0px;
+    }
+
+    .ico16.comments {
+        background-position: -840px 0px;
+    }
+
+    .ico16.alarm {
+        background-position: -860px 0px;
+    }
+
+    .ico16.calculator {
+        background-position: -880px 0px;
+    }
+
+    .ico16.briefcase {
+        background-position: -900px 0px;
+    }
+
+    .ico16.calendar {
+        background-position: -920px 0px;
+    }
+
+    .ico16.globe {
+        background-position: -940px 0px;
+    }
+
+    .ico16.map-marker {
+        background-position: -960px 0px;
+    }
+
+    .ico16.close {
+        background-position: -980px 0px;
+    }
+
+    .ico16.accept {
+        background-position: -1000px 0px;
+    }
+
+    .ico16.move-file {
+        background-position: -1020px 0px;
+    }
+
+    .ico16.wired {
+        background-position: -1040px 0px;
+    }
+
+    .ico16.save {
+        background-position: -1060px 0px;
+    }
+
+    .ico16.cancel {
+        background-position: -1080px 0px;
+    }
+
+    .ico16.arrow-out {
+        background-position: -1100px 0px;
+    }
+
+    .ico16.arrow-in {
+        background-position: -1120px 0px;
+    }
+
+    .ico16.add-folder {
+        background-position: -1140px 0px;
+    }
+
+    .ico16.dropbox {
+        background-position: -1160px 0px;
+    }
+
+    .ico16.gotoprev {
+        background-position: -1180px 0px;
+    }
+
+    .ico16.gotonext {
+        background-position: -1200px 0px;
+    }
+
+    .ico16.zoom-out {
+        background-position: -1220px 0px;
+    }
+
+    .ico16.zoom-in {
+        background-position: -1240px 0px;
+    }
+
+    .ico16.redo {
+        background-position: -1260px 0px;
+    }
+
+    .ico16.first {
+        background-position: -1280px 0px;
+    }
+
+    .ico16.back {
+        background-position: -1300px 0px;
+    }
+
+    .ico16.next {
+        background-position: -1320px 0px;
+    }
+
+    .ico16.last {
+        background-position: -1340px 0px;
+    }
+
+    .ico16.full {
+        background-position: -1360px 0px;
+        width: 17px;
+    }
+
+    .ico16.thumb {
+        background-position: -1380px 0px;
+        width: 17px;
+    }
+
+    .ico16.contactSheet {
+        background-position: -1400px 0px;
+        width: 17px;
+    }
+
+    .ico16.grnDownload {
+        background-position: -1420px 0px;
+    }
+
+    .ico16.ylwEye {
+        background-position: -1438px 0px;
+        width: 19px;
+        margin: 7px auto 0;
+    }
+
+    .ico16.bookMode {
+        background-position: -1457px 0px;
+        width: 19px;
+    }
+
+    .ico16.compatMode {
+        background-position: -1487px 0px;
+        width: 19px;
+    }
+
+    .ico16.small {
+        background-position: -1509px 0px;
+    }
+
+    .ico16.medium {
+        background-position: -1532px 0px;
+    }
+
+    .ico16.large {
+        background-position: -1548px 0px;
+    }
+
+    .ico16.original {
+        background-position: -1570px 0px;
+    }
+
+    .ico16.previewBtn {
+        background-position: -1586px 0px;
+        width: 19px;
+    }
+
+a:hover .ico16.user {
+    background-position: 0px -20px;
+}
+
+a:hover .ico16.users {
+    background-position: -20px -20px;
+}
+
+a:hover .ico16.up {
+    background-position: -40px -20px;
+}
+
+a:hover .ico16.down {
+    background-position: -60px -20px;
+}
+
+a:hover .ico16.download {
+    background-position: -80px -20px;
+}
+
+a:hover .ico16.gear {
+    background-position: -100px -20px;
+}
+
+a:hover .ico16.wrench {
+    background-position: -120px -20px;
+}
+
+a:hover .ico16.folder {
+    background-position: -140px -20px;
+}
+
+a:hover .ico16.page {
+    background-position: -160px -20px;
+}
+
+a:hover .ico16.doc {
+    background-position: -180px -20px;
+}
+
+a:hover .ico16.page-copy {
+    background-position: -200px -20px;
+}
+
+a:hover .ico16.pencil {
+    background-position: -220px -20px;
+}
+
+a:hover .ico16.brush {
+    background-position: -240px -20px;
+}
+
+a:hover .ico16.mail {
+    background-position: -260px -20px;
+}
+
+a:hover .ico16.pie-stats {
+    background-position: -280px -20px;
+}
+
+a:hover .ico16.bar-stats {
+    background-position: -300px -20px;
+}
+
+a:hover .ico16.link {
+    background-position: -320px -20px;
+}
+
+a:hover .ico16.rss {
+    background-position: -340px -20px;
+}
+
+a:hover .ico16.plus {
+    background-position: -360px -20px;
+}
+
+a:hover .ico16.minus {
+    background-position: -380px -20px;
+}
+
+a:hover .ico16.camera {
+    background-position: -400px -20px;
+}
+
+a:hover .ico16.lock {
+    background-position: -420px -20px;
+}
+
+a:hover .ico16.unlock {
+    background-position: -440px -20px;
+}
+
+a:hover .ico16.cart {
+    background-position: -460px -20px;
+}
+
+a:hover .ico16.security {
+    background-position: -480px -20px;
+}
+
+a:hover .ico16.repeat {
+    background-position: -500px -20px;
+}
+
+a:hover .ico16.refresh {
+    background-position: -520px -20px;
+}
+
+a:hover .ico16.warning {
+    background-position: -540px -20px;
+}
+
+a:hover .ico16.trash {
+    background-position: -560px -20px;
+}
+
+a:hover .ico16.remove {
+    background-position: -580px -20px;
+}
+
+a:hover .ico16.print {
+    background-position: -600px -20px;
+}
+
+a:hover .ico16.search {
+    background-position: -620px -20px;
+}
+
+a:hover .ico16.phone {
+    background-position: -640px -20px;
+}
+
+a:hover .ico16.key {
+    background-position: -660px -20px;
+}
+
+a:hover .ico16.question {
+    background-position: -680px -20px;
+}
+
+a:hover .ico16.home {
+    background-position: -700px -20px;
+}
+
+a:hover .ico16.flag {
+    background-position: -720px -20px;
+}
+
+a:hover .ico16.star {
+    background-position: -740px -20px;
+}
+
+a:hover .ico16.heart {
+    background-position: -760px -20px;
+}
+
+a:hover .ico16.at {
+    background-position: -780px -20px;
+}
+
+a:hover .ico16.money {
+    background-position: -800px -20px;
+}
+
+a:hover .ico16.comment {
+    background-position: -820px -20px;
+}
+
+a:hover .ico16.comments {
+    background-position: -840px -20px;
+}
+
+a:hover .ico16.alarm {
+    background-position: -860px -20px;
+}
+
+a:hover .ico16.calculator {
+    background-position: -880px -20px;
+}
+
+a:hover .ico16.briefcase {
+    background-position: -900px -20px;
+}
+
+a:hover .ico16.calendar {
+    background-position: -920px -20px;
+}
+
+a:hover .ico16.globe {
+    background-position: -940px -20px;
+}
+
+a:hover .ico16.map-marker {
+    background-position: -960px -20px;
+}
+
+a:hover .ico16.close {
+    background-position: -980px -20px;
+}
+
+a:hover .ico16.accept {
+    background-position: -1000px -20px;
+}
+
+a:hover .ico16.move-file {
+    background-position: -1020px -20px;
+}
+
+a:hover .ico16.wired {
+    background-position: -1040px -20px;
+}
+
+a:hover .ico16.save {
+    background-position: -1060px -20px;
+}
+
+a:hover .ico16.cancel {
+    background-position: -1080px -20px;
+}
+
+a:hover .ico16.arrow-out {
+    background-position: -1100px -20px;
+}
+
+a:hover .ico16.arrow-in {
+    background-position: -1120px -20px;
+}
+
+a:hover .ico16.add-folder {
+    background-position: -1140px -20px;
+}
+
+a:hover .ico16.dropbox {
+    background-position: -1160px -20px;
+}
+
+a:hover .ico16.gotoprev {
+    background-position: -1180px -20px;
+}
+
+a:hover .ico16.gotonext {
+    background-position: -1200px -20px;
+}
+
+a:hover .ico16.zoom-out {
+    background-position: -1220px -20px;
+}
+
+a:hover .ico16.zoom-in {
+    background-position: -1240px -20px;
+}
+
+a:hover .ico16.redo {
+    background-position: -1260px -20px;
+}
+
+a:hover .ico16.first {
+    background-position: -1280px -20px;
+}
+
+a:hover .ico16.back {
+    background-position: -1300px -20px;
+}
+
+a:hover .ico16.next {
+    background-position: -1320px -20px;
+}
+
+a:hover .ico16.last {
+    background-position: -1340px -20px;
+}
+
+a:hover .ico16.full {
+    background-position: -1360px -20px;
+}
+
+a:hover .ico16.thumb {
+    background-position: -1380px -20px;
+}
+
+a:hover .ico16.contactSheet {
+    background-position: -1400px -20px;
+}
+
+a:hover .ico16.grnDownload {
+    background-position: -1420px -20px;
+}
+
+a:hover .ico16.ylwEye {
+    background-position: -1438px -20px;
+    width: 19px;
+    margin: 7px auto 0;
+}
+
+a:hover .ico16.bookMode {
+    background-position: -1457px -20px;
+    width: 19px;
+}
+
+a:hover .ico16.compatMode {
+    background-position: -1487px -20px;
+    width: 19px;
+}
+
+a:hover .ico16.small {
+    background-position: -1509px -20px;
+}
+
+a:hover .ico16.medium {
+    background-position: -1532px -20px;
+}
+
+a:hover .ico16.large {
+    background-position: -1548px -20px;
+}
+
+a:hover .ico16.original {
+    background-position: -1570px -20px;
+}
+
+a:hover .ico16.previewBtn {
+    background-position: -1586px -20px;
+    width: 19px;
+}
+
+.current .ico16.user {
+    background-position: 0px -40px;
+}
+
+.current .ico16.users {
+    background-position: -20px -40px;
+}
+
+.current .ico16.up {
+    background-position: -40px -40px;
+}
+
+.current .ico16.down {
+    background-position: -60px -40px;
+}
+
+.current .ico16.download {
+    background-position: -80px -40px;
+}
+
+.current .ico16.gear {
+    background-position: -100px -40px;
+}
+
+.current .ico16.wrench {
+    background-position: -120px -40px;
+}
+
+.current .ico16.folder {
+    background-position: -140px -40px;
+}
+
+.current .ico16.page {
+    background-position: -160px -40px;
+}
+
+.current .ico16.doc {
+    background-position: -180px -40px;
+}
+
+.current .ico16.page-copy {
+    background-position: -200px -40px;
+}
+
+.current .ico16.pencil {
+    background-position: -220px -40px;
+}
+
+.current .ico16.brush {
+    background-position: -240px -40px;
+}
+
+.current .ico16.mail {
+    background-position: -260px -40px;
+}
+
+.current .ico16.pie-stats {
+    background-position: -280px -40px;
+}
+
+.current .ico16.bar-stats {
+    background-position: -300px -40px;
+}
+
+.current .ico16.link {
+    background-position: -320px -40px;
+}
+
+.current .ico16.rss {
+    background-position: -340px -40px;
+}
+
+.current .ico16.plus {
+    background-position: -360px -40px;
+}
+
+.current .ico16.minus {
+    background-position: -380px -40px;
+}
+
+.current .ico16.camera {
+    background-position: -400px -40px;
+}
+
+.current .ico16.lock {
+    background-position: -420px -40px;
+}
+
+.current .ico16.unlock {
+    background-position: -440px -40px;
+}
+
+.current .ico16.cart {
+    background-position: -460px -40px;
+}
+
+.current .ico16.security {
+    background-position: -480px -40px;
+}
+
+.current .ico16.repeat {
+    background-position: -500px -40px;
+}
+
+.current .ico16.refresh {
+    background-position: -520px -40px;
+}
+
+.current .ico16.warning {
+    background-position: -540px -40px;
+}
+
+.current .ico16.trash {
+    background-position: -560px -40px;
+}
+
+.current .ico16.remove {
+    background-position: -580px -40px;
+}
+
+.current .ico16.print {
+    background-position: -600px -40px;
+}
+
+.current .ico16.search {
+    background-position: -620px -40px;
+}
+
+.current .ico16.phone {
+    background-position: -640px -40px;
+}
+
+.current .ico16.key {
+    background-position: -660px -40px;
+}
+
+.current .ico16.question {
+    background-position: -680px -40px;
+}
+
+.current .ico16.home {
+    background-position: -700px -40px;
+}
+
+.current .ico16.flag {
+    background-position: -720px -40px;
+}
+
+.current .ico16.star {
+    background-position: -740px -40px;
+}
+
+.current .ico16.heart {
+    background-position: -760px -40px;
+}
+
+.current .ico16.at {
+    background-position: -780px -40px;
+}
+
+.current .ico16.money {
+    background-position: -800px -40px;
+}
+
+.current .ico16.comment {
+    background-position: -820px -40px;
+}
+
+.current .ico16.comments {
+    background-position: -840px -40px;
+}
+
+.current .ico16.alarm {
+    background-position: -860px -40px;
+}
+
+.current .ico16.calculator {
+    background-position: -880px -40px;
+}
+
+.current .ico16.briefcase {
+    background-position: -900px -40px;
+}
+
+.current .ico16.calendar {
+    background-position: -920px -40px;
+}
+
+.current .ico16.globe {
+    background-position: -940px -40px;
+}
+
+.current .ico16.map-marker {
+    background-position: -960px -40px;
+}
+
+.current .ico16.close {
+    background-position: -980px -40px;
+}
+
+.current .ico16.accept {
+    background-position: -1000px -40px;
+}
+
+.current .ico16.move-file {
+    background-position: -1020px -40px;
+}
+
+.current .ico16.wired {
+    background-position: -1040px -40px;
+}
+
+.current .ico16.save {
+    background-position: -1060px -40px;
+}
+
+.current .ico16.cancel {
+    background-position: -1080px -40px;
+}
+
+.current .ico16.arrow-out {
+    background-position: -1100px -40px;
+}
+
+.current .ico16.arrow-in {
+    background-position: -1120px -40px;
+}
+
+.current .ico16.add-folder {
+    background-position: -1140px -40px;
+}
+
+.current .ico16.dropbox {
+    background-position: -1140px -40px;
+}
+
+.current .ico16.gotoprev {
+    background-position: -1180px -40px;
+}
+
+.current .ico16.gotonext {
+    background-position: -1200px -40px;
+}
+
+.current .ico16.zoom-out {
+    background-position: -1220px -40px;
+}
+
+.current .ico16.zoom-in {
+    background-position: -1240px -40px;
+}
+
+.current .ico16.redo {
+    background-position: -1260px -40px;
+}
+
+.current .ico16.first {
+    background-position: -1280px -40px;
+}
+
+.current .ico16.back {
+    background-position: -1300px -40px;
+}
+
+.current .ico16.next {
+    background-position: -1320px -40px;
+}
+
+.current .ico16.last {
+    background-position: -1340px -40px;
+}
+
+.current .ico16.full {
+    background-position: -1360px -40px;
+    width: 17px;
+}
+
+.current .ico16.thumb {
+    background-position: -1380px -40px;
+    width: 17px;
+}
+
+.current .ico16.contactSheet {
+    background-position: -1400px 0px;
+    width: 17px;
+}
+
+.current .ico16.grnDownload {
+    background-position: -1420px -40px;
+}
+
+.current .ico16.ylwEye {
+    background-position: -1438px -40px;
+    width: 19px;
+    margin: 7px auto 0;
+}
+
+.current .ico16.bookMode {
+    background-position: -1457px -40px;
+    width: 19px;
+}
+
+.current .ico16.compatMode {
+    background-position: -1487px -40px;
+    width: 19px;
+}
+
+.current .ico16.small {
+    background-position: -1509px -40px;
+}
+
+.current .ico16.medium {
+    background-position: -1532px -40px;
+}
+
+.current .ico16.large {
+    background-position: -1548px -40px;
+}
+
+.current .ico16.original {
+    background-position: -1570px -40px;
+}
+
+.current .ico16.previewBtn {
+    background-position: -1586px -40px;
+    width: 19px;
+}
+
+.btn.toggleOn .ico16.full {
+    background-position: -1360px -20px;
+}
+
+.btn.toggleOn .ico16.thumb {
+    background-position: -1380px -20px;
+}
+
+.btn.toggleOn .ico16.contactSheet {
+    background-position: -1400px -20px;
+}

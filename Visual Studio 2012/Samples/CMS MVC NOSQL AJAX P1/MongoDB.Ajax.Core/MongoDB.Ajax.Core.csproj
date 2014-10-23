@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26EC0665-9C96-45A7-82F0-725F5C42E8D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MongoDB.Ajax.Core</RootNamespace>
+    <AssemblyName>MongoDB.Ajax.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\WebConfiguration.cs" />
+    <Compile Include="Core\CacheHelper.cs" />
+    <Compile Include="Core\Encryptor.cs" />
+    <Compile Include="Core\Extensions\EnumExtensions.cs" />
+    <Compile Include="Core\Extensions\IDictionaryExtensions.cs" />
+    <Compile Include="Core\Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Core\Extensions\ObjectExtension.cs" />
+    <Compile Include="Core\Extensions\RequestExtensions.cs" />
+    <Compile Include="Core\Extensions\StringExtensions.cs" />
+    <Compile Include="Core\FileHelper.cs" />
+    <Compile Include="Core\Hash.cs" />
+    <Compile Include="Core\ImageHelper.cs" />
+    <Compile Include="Core\MongoDb\CollectionName.cs" />
+    <Compile Include="Core\MongoDb\IObject.cs" />
+    <Compile Include="Core\MongoDb\MainDb.cs" />
+    <Compile Include="Core\Packer\CssPacker.cs" />
+    <Compile Include="Core\Packer\ParseMaster.cs" />
+    <Compile Include="Core\Packer\ScriptPacker.cs" />
+    <Compile Include="Core\Utils.cs" />
+    <Compile Include="Mvc\Attributes\Compression.cs" />
+    <Compile Include="Mvc\Attributes\IsNotModifiedAttribute.cs" />
+    <Compile Include="Mvc\Attributes\ReCaptchaValidation.cs" />
+    <Compile Include="Mvc\Attributes\RemoveHtmlWhiteSpace.cs" />
+    <Compile Include="Mvc\Attributes\RequiredAuthenticationAttribute.cs" />
+    <Compile Include="Mvc\Attributes\ValidateAntiModelInjectionAttribute.cs" />
+    <Compile Include="Mvc\Attributes\ValidateDdosAttack.cs" />
+    <Compile Include="Mvc\Attributes\ValidatePostbackAttribute.cs" />
+    <Compile Include="Mvc\Binders\IntArrayBinder.cs" />
+    <Compile Include="Mvc\Binders\ObjectIdBinder.cs" />
+    <Compile Include="Mvc\Binders\StringArrayBinder.cs" />
+    <Compile Include="Mvc\Exceptions\HttpAntiModelInjectionException.cs" />
+    <Compile Include="Mvc\Handlers\TinyMceHandler.cs" />
+    <Compile Include="Mvc\Html\ButtonExtensions.cs" />
+    <Compile Include="Mvc\Html\HtmlExtensions.cs" />
+    <Compile Include="Mvc\Html\MetaExtensions.cs" />
+    <Compile Include="Mvc\Html\ScriptBlock.cs" />
+    <Compile Include="Mvc\Html\ScriptBlockExtension.cs" />
+    <Compile Include="Mvc\UI\BaseControl.cs" />
+    <Compile Include="Mvc\UI\Form\AjaxRequestDataType.cs" />
+    <Compile Include="Mvc\UI\Form\AjaxResultInlineMode.cs" />
+    <Compile Include="Mvc\UI\Form\jQueryAjaxOptions.cs" />
+    <Compile Include="Mvc\UI\Form\jQueryForm.cs" />
+    <Compile Include="Mvc\UI\Form\PostModes.cs" />
+    <Compile Include="Mvc\UI\ReCaptcha\RecaptchaResponse.cs" />
+    <Compile Include="Mvc\UI\ReCaptcha\RecaptchaValidator.cs" />
+    <Compile Include="Mvc\UI\TinyMce\EditorOptions.cs" />
+    <Compile Include="Mvc\UI\TinyMce\EditorToolbarMode.cs" />
+    <Compile Include="Mvc\UI\ViewComponentFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

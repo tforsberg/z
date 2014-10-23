@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Ajax.Cms", "MongoDB.Ajax.Cms\MongoDB.Ajax.Cms.csproj", "{98B87D3A-58E9-4F45-A242-0E271A8C0886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Ajax.Core", "MongoDB.Ajax.Core\MongoDB.Ajax.Core.csproj", "{26EC0665-9C96-45A7-82F0-725F5C42E8D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Ajax.Business", "MongoDB.Ajax.UI\MongoDB.Ajax.Business.csproj", "{B6391B34-9022-4789-B1C3-6937D43896F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D90FABF-7838-4714-A041-96A62C506777}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\KY2GJYFR.SCD\description.html = ..\..\..\..\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\KY2GJYFR.SCD\description.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98B87D3A-58E9-4F45-A242-0E271A8C0886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B87D3A-58E9-4F45-A242-0E271A8C0886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B87D3A-58E9-4F45-A242-0E271A8C0886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B87D3A-58E9-4F45-A242-0E271A8C0886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EC0665-9C96-45A7-82F0-725F5C42E8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EC0665-9C96-45A7-82F0-725F5C42E8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EC0665-9C96-45A7-82F0-725F5C42E8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EC0665-9C96-45A7-82F0-725F5C42E8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6391B34-9022-4789-B1C3-6937D43896F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6391B34-9022-4789-B1C3-6937D43896F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6391B34-9022-4789-B1C3-6937D43896F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6391B34-9022-4789-B1C3-6937D43896F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

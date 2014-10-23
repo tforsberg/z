@@ -1,0 +1,111 @@
+﻿@model News
+
+
+<div class="site-block form">
+    <form action="/News/Save" class="ajax" data-ajax="target:'#ajax-list'">
+
+        @Html.Hidden("copy", Request.QueryString["copy"])
+
+        @Html.HiddenFor(x => x.Id)
+
+        <table class="table">
+
+            <tr>
+
+                <td class="w20">Title
+                </td>
+
+
+                <td>
+
+                    @Html.TextBoxFor(x => x.Title, new { @class = "input {validate:{required:1}}" })
+
+                </td>
+            </tr>
+
+            @* <tr>
+
+                <td>Friend Url
+                </td>
+                <td>
+
+                    @Html.TextBoxFor(x => x.Url, new { @class = "input" })
+
+                </td>
+            </tr>*@
+
+            <tr>
+                <td>Image </td>
+                <td>
+                    @* @Html.TextBoxFor(x => Model.Img, new SortedDictionary<string, object>()
+                                                         {
+                                                             {"class","input window"},
+                                                             {"data-window","{width:800,height:510,type:'iframe',url:'/filemanager/?target=Img&returnFull=1'}"}
+                                                         }) @Html.Link("javascript://", "", new { @class = "ui-button icon-16 folder", @onclick = "$.showDialog('/filemanager/?returnId=Img&returnfull=1',{type:'iframe',width:800,height:510})" })*@
+
+                    @Html.TextBoxFor(x => Model.Img, new { @class = "input", @onclick = "$.showDialog('/filemanager/?returnId=Img&returnfull=1')" })
+                </td>
+            </tr>
+
+            <tr>
+
+                <td>Status
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.Status, HtmlExtensions.ToSelectList<NewsStatus>())
+                </td>
+            </tr>
+
+            <tr>
+
+                <td>Mode
+                </td>
+                <td>
+                    @*@Html.DropDownList("modes", new MultiSelectList(EnumExtensions.ToSelectList<NewsModes>(),"Value", "Text", Model.Modes), new { multiple = "multiple",@class="multi" })*@
+                    @Html.ListBoxFor(x => x.Modes, HtmlExtensions.ToSelectList<NewsModes>(), new { multiple = "multiple", @class = "multi select" })
+                </td>
+            </tr>
+
+            <tr>
+
+                <td>Html
+                </td>
+                <td>
+
+                    @Html.TextAreaFor(x => x.Html, new Dictionary<string, object>()
+                                                       {
+                                                           {"class","input tinymce"},
+                                                           {"data-tinymce","toolbarMode:'full',file_browser_callback:1"},
+                                                           {"style","height:300px"}
+                                                       })
+
+                </td>
+            </tr>
+            @* <tr>
+                <td>Created
+                </td>
+                <td>
+                    @#1#Html.RadioButtonGroup("Published", (List<SelectItem>)ViewBag.YesNo, Model == null || Model.Published, new { @class = "radio-group-panel" })#1#
+                    @Html.CheckBoxFor(x => x.IsAdmin)
+                </td>
+            </tr>*@
+            <tr>
+                <td></td>
+                <td>
+
+                    <input type="submit" class="ui-button" value="Save" />
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>
+<script type="text/javascript">
+
+    $.Editor.init();
+
+    //$("select.multi").multiselect();
+
+</script>

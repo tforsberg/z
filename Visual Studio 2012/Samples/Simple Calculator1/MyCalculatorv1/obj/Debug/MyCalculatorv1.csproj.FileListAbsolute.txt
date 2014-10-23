@@ -1,0 +1,26 @@
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\bin\Debug\MyCalculatorv1.exe.config
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\bin\Debug\MyCalculatorv1.exe
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\bin\Debug\MyCalculatorv1.pdb
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.csprojResolveAssemblyReference.cache
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MainWindow.baml
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MainWindow.g.cs
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\App.g.cs
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1_MarkupCompile.cache
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.g.resources
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.Properties.Resources.resources
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.csproj.GenerateResource.Cache
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.exe
+c:\users\houssem\documents\visual studio 2012\Projects\MyCalculatorv1\MyCalculatorv1\obj\Debug\MyCalculatorv1.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\bin\Debug\MyCalculatorv1.exe.config
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.exe
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\bin\Debug\MyCalculatorv1.exe
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\bin\Debug\MyCalculatorv1.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.csprojResolveAssemblyReference.cache
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MainWindow.baml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MainWindow.g.cs
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\App.g.cs
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1_MarkupCompile.cache
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.g.resources
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.Properties.Resources.resources
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Samples\Simple Calculator1\MyCalculatorv1\obj\Debug\MyCalculatorv1.csproj.GenerateResource.Cache

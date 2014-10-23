@@ -1,0 +1,25 @@
+﻿@model IEnumerable<News>
+<div class="widget-head">
+    <div class="fr">
+        <form action="/News/" class="ajax" data-ajax="target:'#ajax-list'" id="_fsearch">
+            @Html.Hidden("pageIndex",IWebContext.PageIndex)
+            <input type="hidden" name="act" value="search" />
+
+            <input type="text" id="kwd" name="kwd" placeholder="Quick search" class="input search" />
+
+        </form>
+
+    </div>
+
+
+    <a class="ui-button window" data-window="width:900,height:600,maximize:0,minimize:0,title:'News Manager'" href="/News/Add">
+        <span class="ico-16 plus"></span>
+    </a>
+
+    <br class="empty" />
+
+</div>
+
+<div id="ajax-list">
+    @Html.Partial("List", Model)
+</div>

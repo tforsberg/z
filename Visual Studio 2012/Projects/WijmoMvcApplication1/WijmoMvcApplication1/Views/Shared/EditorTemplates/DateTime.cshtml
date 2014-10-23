@@ -1,0 +1,14 @@
+﻿@inherits System.Web.Mvc.WebViewPage<System.DateTime?>
+@if (Model.HasValue)
+{ 
+    @Html.TextBox("", (Model.Value), new { @class = "datePicker", data_ui_fn="wijinputdate({ showTrigger: true})" })
+}
+else {
+    @Html.TextBox("", "", new { @class = "datePicker" })
+}
+
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $("#@ViewData.TemplateInfo.GetFullHtmlFieldId("")").wijinputdate({ showTrigger: true });
+    });
+</script>

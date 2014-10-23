@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin++</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/Themes/layout.css" />
+    <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.23.min.js"></script>
+    <script src="~/Scripts/swfobject.js"></script>
+    <script src="~/Scripts/hash.min.js"></script>
+    <script src="~/Scripts/jquery.metadata.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.easing.js"></script>
+    <script src="~/Scripts/koolbox.min.js"></script>
+    <script src="~/Scripts/jquery.window.js"></script>
+    <script src="~/tiny_mce/jquery.tinymce.js"></script>
+    <script src="~/Scripts/jquery.tinymce.editor.js"></script>
+    <script src="~/Scripts/dropdown.min.js"></script>
+    <script src="~/Scripts/core.js"></script>
+    <script src="~/Scripts/config.js"></script>
+
+
+</head>
+    <body>
+        
+        
+
+        @if (IWebContext.Logined)
+        {
+        
+
+            <div class="page-wrapper">
+
+                <div class="header">
+                    @Html.Partial("Account")
+
+                    <ul class="user fr">
+
+                        <li>
+
+                            @Html.Link("", IWebContext.UserInfo.UserName,new {@class="welcome"})
+
+                        </li>
+                        <li class="dropdown {dropdown:{target:'#gbd4'}}">
+                            @if (!string.IsNullOrWhiteSpace(IWebContext.UserInfo.Avatar))
+                            {
+                                @Html.ImageLink("javascript://", null, IWebContext.UserInfo.Avatar, new { @class = "avatar" })
+                            }
+                            else
+                            {
+                                @Html.ImageLink("javascript://", null, "/avatar/unknow.png", new { @class = "avatar" })
+                            }
+
+
+
+                        </li>
+
+
+                    </ul>
+
+                    <a class="logo" href="/"></a>
+
+                    @*    <div style="background: #1699E5; height: 50px; margin-left: 15%">
+                </div>
+*@
+                </div>
+
+                @Html.Partial("LeftMenu")
+
+                <div class="col-right">
+                    <div id="ajax-container">
+                        @RenderBody()
+                    </div>
+                </div>
+
+                <br class="empty" />
+
+            </div>
+        }
+        else
+        {
+            @RenderBody()
+        }
+    </body>
+</html>

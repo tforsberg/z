@@ -1,0 +1,38 @@
+﻿@inherits System.Web.Mvc.WebViewPage<System.Int32?>
+@{
+    int MinValue = 0;
+    int MaxValue = 100;
+    foreach (var validator in @ViewData.ModelMetadata.GetValidators(this.ViewContext).OfType<System.Web.Mvc.RangeAttributeAdapter>())
+    {
+        var rules = validator.GetClientValidationRules().FirstOrDefault();
+        if (rules != null)
+        {
+            MinValue = (int)rules.ValidationParameters["min"];
+            MaxValue = (int)rules.ValidationParameters["max"];
+            break;
+        }
+    }
+}
+@if (Model.HasValue)
+{ 
+    @Html.TextBox("", (Model.Value), new { @class = "integerEditor" })
+}
+else
+{
+    @Html.TextBox("", "", new { @class = "integerEditor" })
+    
+}
+<script type='text/javascript'>
+    $(document).ready(function () {
+        var minValue = @MinValue;
+        var maxValue = @MaxValue;
+        $("#@ViewData.ModelMetadata.PropertyName").wijslider({
+            min: minValue,
+            max: maxValue,
+            change: function (event, ui) {
+                $("#@ViewData.ModelMetadata.PropertyName").val(ui.value);
+            }
+        });
+    
+    });
+</script>
