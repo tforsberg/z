@@ -1,0 +1,13 @@
+c:\users\toddforsberg\documents\visual studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\ScriptProject.exe.config
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\obj\Debug\ScriptProject.csprojResolveAssemblyReference.cache
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\obj\Debug\ScriptProject.exe
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\obj\Debug\ScriptProject.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\ScriptProject.exe
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\ScriptProject.pdb
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\ScriptProject.js
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\mscorlib.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\Saltarelle.Web.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\mscorlib.xml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\Saltarelle.Web.xml
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\Saltarelle.jQuery.dll
+C:\Users\ToddForsberg\Documents\Visual Studio 2012\Projects\ScriptProject\ScriptProject\bin\Debug\Saltarelle.jQuery.xml

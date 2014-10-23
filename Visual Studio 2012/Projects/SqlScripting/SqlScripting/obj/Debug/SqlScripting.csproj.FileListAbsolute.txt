@@ -1,0 +1,13 @@
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\SqlScripting.exe.config
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\obj\Debug\SqlScripting.csprojResolveAssemblyReference.cache
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\SqlScripting.exe
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\SqlScripting.pdb
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.Smo.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\obj\Debug\SqlScripting.exe
+c:\users\toddforsberg\documents\visual studio 2012\Projects\SqlScripting\SqlScripting\obj\Debug\SqlScripting.pdb

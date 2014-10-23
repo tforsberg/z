@@ -1,0 +1,7 @@
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\TelerikMvcApp1Tests.pdb
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Mvc.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\bin\Debug\System.Web.Mvc.xml
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.csprojResolveAssemblyReference.cache
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.dll
+c:\users\toddforsberg\documents\visual studio 2012\Projects\TelerikMvcApp1\TelerikMvcApp1Tests\obj\Debug\TelerikMvcApp1Tests.pdb
