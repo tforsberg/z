@@ -1,0 +1,120 @@
+<h2>DateTime Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Provides date and time utilities.</p>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addDays</b>(value, days)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>days</b> (<b>number</b>): Number of days to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of days to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of days to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addHours</b>(value, hours)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>hours</b> (<b>number</b>): Number of hours to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of hours to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of hours to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addMinutes</b>(value, minutes)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>minutes</b> (<b>number</b>): Number of minutes to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of minutes to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of minutes to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addMonths</b>(value, months)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>months</b> (<b>number</b>): Number of months to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of months to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of months to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addSeconds</b>(value, seconds)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>seconds</b> (<b>number</b>): Number of seconds to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of seconds to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of seconds to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>addYears</b>(value, years)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Original date.</li><li><b>years</b> (<b>number</b>): Number of years to add to the given date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a new Date that adds the specified number of years to a given Date.<br/><b>Returns</b> A new Date object that adds the specified number of years to a given Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>clone</b>(date)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>date</b> (<b>Date</b>): Date object to copy.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Creates a copy of a given Date object.<br/><b>Returns</b> A copy of the Date object passed in.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>equals</b>(d1, d2)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>d1</b> (<b>Date</b>): First date.</li><li><b>d2</b> (<b>Date</b>): Second date.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns true if two Date objects refer to the same date and time.<br/><b>Returns</b> True if two Date objects refer to the same date and time.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>fromDateTime</b>(date, time)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>date</b> (<b>Date</b>): Date object that contains the date (day/month/year).</li><li><b>time</b> (<b>Date</b>): Date object that contains the time (hour:minute:second).</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Gets a Date object with the date and time set on two Date objects.<br/><b>Returns</b> A Date object with the date and time values copied from the date and time parameters.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>sameDate</b>(d1, d2)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>d1</b> (<b>Date</b>): First date.</li><li><b>d2</b> (<b>Date</b>): Second date.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns true if two Date objects refer to the same date (ignoring time).<br/><b>Returns</b> True if two Date objects refer to the same date (ignoring time).</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>sameTime</b>(d1, d2)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>d1</b> (<b>Date</b>): First date.</li><li><b>d2</b> (<b>Date</b>): Second date.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns true if two Date objects refer to the same time (ignoring date).<br/><b>Returns</b> True if two Date objects refer to the same time (ignoring date).</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Labels</h3>
+        <p>
+            This view demonstrates how you can use the <b>FlexChart</b>'s <b>itemFormatter</b>
+            property to customize the add labels to each chart element.</p>
+        <p>
+            In this example, the <b>itemFormatter</b> property is a function that draws the
+            chart element as usual, then uses the chart's rendering engine to add a rectangle
+            with the point's value centered over the data point.</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-menu value="ctx.chart.chartType" header="Chart Type">
+            <wj-menu-item value="0">Column</wj-menu-item>
+            <wj-menu-item value="2">Scatter</wj-menu-item>
+            <wj-menu-item value="3">Line</wj-menu-item>
+            <wj-menu-item value="4">LineSymbols</wj-menu-item>
+            <wj-menu-item value="5">Area</wj-menu-item>
+        </wj-menu>
+
+        <wj-flex-chart
+            class="chart"
+            control="ctx.chart"
+            items-source="ctx.itemsSource"
+            binding-x="name">
+            <wj-flex-chart-series name="March" binding="mar"></wj-flex-chart-series>
+            <wj-flex-chart-series name="April" binding="apr"></wj-flex-chart-series>
+            <wj-flex-chart-series name="May" binding="may"></wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+</div>

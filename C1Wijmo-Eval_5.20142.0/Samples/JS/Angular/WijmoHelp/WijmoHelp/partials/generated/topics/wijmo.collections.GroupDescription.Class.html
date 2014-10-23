@@ -1,0 +1,44 @@
+<h2>GroupDescription Class</h2>
+<dl class="dl-horizontal">
+<dt>Derived Classes</dt><dd><a href="" ng-click="go('wijmo.collections.PropertyGroupDescription.Class.html')"><b>PropertyGroupDescription</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Represents a base class for types defining grouping conditions. </p>
+
+<p>The concrete class which is commonly used for this purpose is 
+<a href="" ng-click="go('wijmo.collections.PropertyGroupDescription.Class.html')"><b>PropertyGroupDescription</b></a>.</p></p>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>groupNameFromItem</b>(item, level)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): The item to get group name for.</li><li><b>level</b> (<b>number</b>): The zero-based group level index.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Returns the group name for the given item.<br/><b>Returns</b> The name of the group the item belongs to.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>namesMatch</b>(groupName, itemName)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>groupName</b> (<b>any</b>): The name of the group.</li><li><b>itemName</b> (<b>any</b>): The name of the item.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns a value that indicates whether the group name and the item name
+match (which implies that the item belongs to the group).<br/><b>Returns</b> True if the names match; otherwise, false.</td>
+    </tr>
+</tbody>
+</table>

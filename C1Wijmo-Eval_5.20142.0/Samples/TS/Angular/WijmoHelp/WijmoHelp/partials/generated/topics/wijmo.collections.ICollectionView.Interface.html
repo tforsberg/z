@@ -1,0 +1,230 @@
+<h2>ICollectionView Interface</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><a href="" ng-click="go('wijmo.collections.INotifyCollectionChanged.Interface.html')"><b>INotifyCollectionChanged</b></a>, <a href="" ng-click="go('wijmo.IQueryInterface.Interface.html')"><b>IQueryInterface</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Enables collections to have the functionalities of current record management, 
+custom sorting, filtering, and grouping.</p>
+
+<p>This is a JavaScript version of the <b>ICollectionView</b> interface used in 
+Microsoft's XAML platform. It provides a consistent, powerful, and  MVVM-friendly 
+way to bind data to UI elements.</p>
+
+<p>Wijmo includes several classes that implement <b>ICollectionView</b>. The most 
+common is <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a>, which works based on regular JavsScript 
+arrays.</p></p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canFilter</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether this view supports filtering via the 
+<b>filter</b> property.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canGroup</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether this view supports grouping via the 
+<b>groupDescriptions</b> property.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canSort</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether this view supports sorting via the 
+<b>sortDescriptions</b> property.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a></td>
+      <td>Occurs after the current item changes.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a></td>
+      <td>Occurs before the current item changes.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the current item in the view.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentPosition</b></td>
+      <td><b>number</b></td>
+      <td>Gets the ordinal position of the current item in the view.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>filter</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.IPredicate.Interface.html')"><b>IPredicate</b></a></td>
+      <td><p>Gets or sets a callback used to determine if an item is suitable for 
+inclusion in the view.</p>
+
+<p>NOTE: If the filter function needs a scope (i.e. a meaningful 'this'
+value), then remember to set the filter using the 'bind' function to
+specify the 'this' object. For example:
+<pre>
+  collectionView.filter = this._filter.bind(this);
+</pre></p></td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>groupDescriptions</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets a collection of <a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a> objects that describe how the 
+items in the collection are grouped in the view.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>groups</b></td>
+      <td><b>any</b></td>
+      <td>Gets the top-level groups.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>isEmpty</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether this view contains no items.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>items</b></td>
+      <td><b>any</b></td>
+      <td>Gets the filtered, sorted, grouped items in the view.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>sortDescriptions</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets a collection of <a href="" ng-click="go('wijmo.collections.SortDescription.Class.html')"><b>SortDescription</b></a> objects that describe how the items 
+in the collection are sorted in the view.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>sourceCollection</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the collection object from which to create this view.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>beginUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Suspends refreshes until the next call to <b>endUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>contains</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): The item to locate in the collection.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns a value that indicates whether a given item belongs to this view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>deferUpdate</b>(fn)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fn</b> (<b>Function</b>): Function to be executed within the beginUpdate/endUpdate block.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Executes a function within a beginUpdate/endUpdate block.</p>
+
+<p>The collection will not be refreshed until the function has been executed.
+This method ensures endUpdate is called even if the function throws.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>endUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Resumes refreshes suspended by a call to <b>beginUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentTo</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): The item to set as the <b>currentItem</b>.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the specified item to be the current item in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToFirst</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the first item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToLast</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the last item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToNext</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the item after the current item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToPosition</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): The index of the item to set as the <b>currentItem</b>.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the item at the specified index in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToPrevious</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Sets the item before the current item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refresh</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Re-creates the view using the current sort, filter, and group parameters.</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,86 @@
+<h2>
+    Creating Wijmo 5 Controls</h2>
+<p>
+    Every Wijmo 5 control is associated with an HTML element that hosts it on the page.
+    To create a control, you start by adding a <b>div</b> element to the page, then use
+    JavaScript code to instantiate the control and bind it to the host element.</p>
+<p>
+    For example, this fiddle shows how you can create a <b>FlexGrid</b> and
+    a <b>FlexChart</b> and bind them to a small data source:</p>
+<p>
+    <a href="http://jsfiddle.net/Wijmo5/MWue8/" target="_blank" class="btn btn-info">
+        <img src="../../images/fiddle.png" />
+        Creating Controls
+    </a>
+</p>
+<p>
+    The fiddle includes all the necessary references (as described in the 
+    <a href="static/references.html">Referencing Wijmo 5 in your Applications</a> 
+    topic). The HTML part of the fiddle declares two <b>div</b> elements named
+    'theGrid' and 'theChart':</p>
+<pre>&lt;h1&gt;Hello&lt;/h1&gt;
+
+&lt;p&gt;This is a FlexGrid control:&lt;/p&gt;
+&lt;div id="theGrid" style="width:100%;height:auto;"&gt;&lt;/div&gt;
+
+&lt;p&gt;And this is a FlexChart:&lt;/p&gt;
+&lt;div id="theChart" style="width:100%;height:350px;"&gt;&lt;/div&gt;
+
+&lt;p&gt;That's it for now...&lt;/p&gt;</pre>
+<p>
+    The JavaScript part of the fiddle executes when the document has loaded.
+    It creates a small data set, binds the controls to the <b>div</b> elements,
+    then binds the controls to the data set:</p>
+<pre>&lt;script id="scriptInit" type="text/javascript"&gt;
+$(document).ready(function () {
+
+  // generate some random data
+  var countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
+      data = [];
+  for (var i = 0; i &lt; countries.length; i++) {
+    data.push({
+      country: countries[i],
+      downloads: Math.round(Math.random() * 20000),
+      sales: Math.random() * 10000,
+      expenses: Math.random() * 5000
+    });
+  }
+
+  // create grid and show data
+  var grid = new wijmo.grid.FlexGrid('#theGrid');
+  grid.itemsSource = data;
+    
+  // create a chart and show the same data    
+  var chart = new wijmo.chart.FlexChart('#theChart');
+  chart.initialize({
+      itemsSource: data,
+      bindingX: 'country',
+      series: [
+          { name: 'Sales', binding: 'sales' },
+          { name: 'Expenses', binding: 'expenses' },
+          { name: 'Downloads', binding: 'downloads', chartType: wijmo.chart.ChartType.LineSymbols } ]
+  });
+});
+&lt;/script&gt;
+</pre>
+<p>
+    Notice that the size and position of the control are determined by the host element. 
+    In this case, we set the grid's height to "auto," causing it to automatically size 
+    itself to its contents. We can also set the height to a fixed value, and the grid
+    automatically shows scrollbars if necessary.</p>
+<p>
+    In most cases, you use a CSS framework such as Bootstrap to lay out your pages, 
+    and you lay out the controls exactly like any other HTML elements.</p>
+<p>
+    You can get a reference to the element that hosts a Wijmo control using the 
+    control's <b>hostElement</b> property. You can get a reference to the  control being 
+    hosted by a given element using the <b>Control.getControl(element)</b> static method.</p>
+<p>
+    For more details on control sizing and layout, see the
+    <a href="static/sizingAndStyling.html">Sizing and Styling Controls</a> 
+    topic.</p>
+<p>
+    You can use <b>div</b> elements as hosts for all Wijmo controls. Additionally, you can 
+    use <b>input</b> elements as hosts for the most input controls, and <b>select</b> elements
+    as hosts for the <b>ListBox</b>, <b>ComboBox</b>, <b>AutoComplete</b>, and <b>Menu</b>
+    controls.</p>

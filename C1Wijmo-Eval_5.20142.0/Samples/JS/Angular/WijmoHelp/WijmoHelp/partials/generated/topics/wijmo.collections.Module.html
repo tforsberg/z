@@ -1,0 +1,199 @@
+<h2>Module wijmo.collections</h2>
+<dl class="dl-horizontal">
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Defines interfaces and classes related to data, including the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> 
+interface and the <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> class and <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a> classes.</p>
+<br/>
+<h3>Classes</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.ArrayBase.Class.html')"><b>ArrayBase</b></a></td>
+      <td>Base class for Array classes with notifications.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a></td>
+      <td><p>Class that implements the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> interface to expose data in
+regular JavaScript arrays.</p>
+
+<p>The <b>CollectionView</b> class implements the following interfaces:
+<ul>
+  <li><b>ICollectionView</b>: provides current record management, 
+      custom sorting, filtering, and grouping.</li>
+  <li><a href="" ng-click="go('wijmo.collections.IEditableCollectionView.Interface.html')"><b>IEditableCollectionView</b></a>: provides methods for editing,
+      adding, and removing items.</li>
+  <li><a href="" ng-click="go('wijmo.collections.IPagedCollectionView.Interface.html')"><b>IPagedCollectionView</b></a>: provides paging.</li>
+</ul></p>
+
+<p>To use the <b>CollectionView</b> class, start by declaring it and passing a 
+regular array as a data source. Then configure the view using the 
+<b>filter</b>, <b>sortDescriptions</b>, <b>groupDescriptions</b>, and 
+<b>pageSize</b> properties. Finally, access the view using the <b>items</b>
+property. For example:</p>
+
+<p><pre>
+  // create a new CollectionView 
+  var cv = new wijmo.collections.CollectionView(myArray);
+  // sort items by amount in descending order
+  var sd = new wijmo.collections.SortDescription('amount', false);
+  cv.sortDescriptions.push(sd);
+  // show only items with amounts greater than 100
+  cv.filter = function(item) { return item.amount > 100 };
+  // show the sorted, filtered result on the console
+  for (var i = 0; i &lt; cv.items.length; i++) {
+    var item = cv.items[i]; 
+    console.log(i + ': ' + item.name + ' ' + item.amount);
+  }
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.CollectionViewGroup.Class.html')"><b>CollectionViewGroup</b></a></td>
+      <td>Represents a group created by a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> object based on
+its <b>groupDescriptions</b> property.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a></td>
+      <td><p>Represents a base class for types defining grouping conditions. </p>
+
+<p>The concrete class which is commonly used for this purpose is 
+<a href="" ng-click="go('wijmo.collections.PropertyGroupDescription.Class.html')"><b>PropertyGroupDescription</b></a>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.NotifyCollectionChangedEventArgs.Class.html')"><b>NotifyCollectionChangedEventArgs</b></a></td>
+      <td>Provides data for the <b>collectionChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td><p>Array that sends notifications on changes.</p>
+
+<p>The class raises the <b>collectionChanged</b> event when changes are made with 
+the push, pop, splice, insert, or remove methods.</p>
+
+<p>Warning: Changes made by assigning values directly to array members or to the 
+length of the array do not raise the <b>collectionChanged</b> event.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.PageChangingEventArgs.Class.html')"><b>PageChangingEventArgs</b></a></td>
+      <td>Provides data for the <b>pageChanging</b> event</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.PropertyGroupDescription.Class.html')"><b>PropertyGroupDescription</b></a></td>
+      <td><p>Describes the grouping of items using a property name as the criterion.</p>
+
+<p>For example, the code below causes a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> to group items 
+by the value of their 'country' property:
+<pre>
+var cv = new wijmo.collections.CollectionView(items);
+var gd = new wijmo.collections.PropertyGroupDescription('country');
+cv.groupDescriptions.push(gd);
+</pre></p>
+
+<p>You may also specify a callback function that generates the group name.
+For example, the code below causes a <b>CollectionView</b> to group items 
+by the first letter of the value of their 'country' property:
+<pre>
+var cv = new wijmo.collections.CollectionView(items);
+var gd = new wijmo.collections.PropertyGroupDescription('country', 
+  function(item, propName) {
+    return item[propName][0]; // return country's initial
+});
+cv.groupDescriptions.push(gd);
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.SortDescription.Class.html')"><b>SortDescription</b></a></td>
+      <td>Describes a sorting criterion.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Interfaces</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></td>
+      <td><p>Enables collections to have the functionalities of current record management, 
+custom sorting, filtering, and grouping.</p>
+
+<p>This is a JavaScript version of the <b>ICollectionView</b> interface used in 
+Microsoft's XAML platform. It provides a consistent, powerful, and  MVVM-friendly 
+way to bind data to UI elements.</p>
+
+<p>Wijmo includes several classes that implement <b>ICollectionView</b>. The most 
+common is <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a>, which works based on regular JavsScript 
+arrays.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.IComparer.Interface.html')"><b>IComparer</b></a></td>
+      <td>Represents the method that compares two objects.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.IEditableCollectionView.Interface.html')"><b>IEditableCollectionView</b></a></td>
+      <td>Defines methods and properties that extend <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> to provide 
+editing capabilities.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.INotifyCollectionChanged.Interface.html')"><b>INotifyCollectionChanged</b></a></td>
+      <td>Notifies listeners of dynamic changes, such as when items get added and 
+removed or when the collection is sorted, filtered, or grouped.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.IPagedCollectionView.Interface.html')"><b>IPagedCollectionView</b></a></td>
+      <td>Defines methods and properties that extend <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> to provide 
+paging capabilities.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.IPredicate.Interface.html')"><b>IPredicate</b></a></td>
+      <td>Represents a method that takes an item of any type and returns a 
+boolean that indicates whether the object meets a set of criteria.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Enumerations</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.collections.NotifyCollectionChangedAction.Enum.html')"><b>NotifyCollectionChangedAction</b></a></td>
+      <td>Describes the action that caused the <b>collectionChanged</b> event.</td>
+    </tr>
+</tbody>
+</table>

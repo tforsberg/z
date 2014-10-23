@@ -1,0 +1,31 @@
+<h2>
+    Globalizing Wijmo 5 Applications</h2>
+<p>
+    By default, Wijmo formats and parses data using the American English culture.
+    The decimal symbol is a period, the thousands separator is a comma, and the 
+    days of the week are "Sunday" through "Saturday.&quot;</p>
+<p>
+    If your application targets other cultures, include references to
+    the appropriate Wijmo culture files in your HTML pages. We include about 10
+    culture files with Wijmo, and have tools for generating new ones.
+    If you want to target a culture that is not currently supported, contact
+    us and we will create the file you need.</p>
+<p>
+    For example, to localize an application for the German culture, add this line to the head section of the page:</p>
+
+<pre>&lt;!-- set German culture --&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/cultures/wijmo.culture.de.min.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+
+<p>
+    This fiddle demonstrates the result. Notice the formatting of grid values and calendar dates.</p>
+<p>
+    <a href="http://jsfiddle.net/Wijmo5/wK97R/" target="_blank" class="btn btn-info">
+        <img src="../../images/fiddle.png" />
+        Globalization
+    </a>
+</p>
+<p>
+    You can edit the values in the grid to see that globalization also works for 
+    parsing data. Wijmo's <a href="topic/wijmo.Globalize.Class.html">Globalize</a>
+    class allows you to format and parse values in your applications outside of 
+    Wijmo controls as well.</p>

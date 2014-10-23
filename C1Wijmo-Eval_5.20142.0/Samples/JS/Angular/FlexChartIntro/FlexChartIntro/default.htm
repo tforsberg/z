@@ -1,0 +1,936 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FlexChart Introduction</title>
+
+    <!-- ensure IE uses the latest version of IE (yes, yes...) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery/Angular/Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.chart.min.js" type="text/javascript"></script>
+    
+    <script src="scripts/vendor/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/vendor/wijmo.min.css">
+
+    <!-- app scripts and styles -->
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/directives/appDctv.js" type="text/javascript"></script>
+    <script src="scripts/controllers/appCtrl.js" type="text/javascript"></script>
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+	<div class="header visible-xs visible-sm">
+		<div class="container">
+			<h1>
+				FlexChart 101</h1>
+		</div>
+	</div>
+	<div class="header hidden-xs hidden-sm">
+		<div class="container">
+			<img src="resources/wijmo5.png">
+			<h1>
+				FlexChart 101</h1>
+			<p>
+				This page shows how to get started with Wijmo's FlexChart control.</p>
+		</div>
+	</div>
+    <div class="container">
+
+        <!-- getting started -->
+        <h2>
+            Getting Started</h2>
+        <p>
+            Steps for getting started with the FlexChart in AngularJS applications:</p>
+        <ol>
+            <li>Add references to jQuery, AngularJS, Wijmo, and Wijmo's AngularJS directives.</li>
+            <li>Add a controller to provide data and logic.</li>
+            <li>Add a FlexChart to the page and bind it to the data.</li>
+            <li>Add some CSS to customize the chart's appearance.</li>
+        </ol>
+        <div class="row started">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="scripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/angular.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/bootstrap.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/bootstrap.css"/&gt;
+
+  &lt;script src="scripts/wijmo.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.input.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.grid.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.chart.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.angular.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/wijmo.css" /&gt;
+
+  &lt;script src="scripts/app.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link href="css/app.css" rel="stylesheet" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body ng-app="app" ng-controller="appCtrl"&gt;
+
+  &lt;!-- this is the chart --&gt;
+  &lt;wj-flex-chart 
+    items-source="data"
+    binding-x="country"&gt;
+    &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;/wj-flex-chart&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// declare app module
+var app = angular.module('app');
+
+// app controller provides data
+app.controller('appCtrl', function appCtrl($scope) {
+
+    // generate some random data
+    var countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
+        data = [];
+    for (var i = 0; i &lt; countries.length; i++) {
+        data.push({
+            country: countries[i],
+            downloads: Math.round(Math.random() * 20000),
+            sales: Math.random() * 10000,
+            expenses: Math.random() * 5000
+        });
+    }
+
+    // add data array to scope
+    $scope.data = data;
+});
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+/* set default chart style */
+.wj-flexchart {
+    height: 400px;
+    background-color: white;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    padding: 8px;
+    margin-bottom: 12px;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".started .collapsed-content, .started .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".started .collapsed-content, .started .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- chart types -->
+        <h2>
+            Chart Types</h2>
+        <p>
+            The FlexChart control has three properties that allow you to customize the chart 
+            type:</p>
+        <ol>
+            <li>
+                <b>chartType</b>: Selects the default chart type to be used for all series.
+                Individual series may override this.</li>
+            <li>
+                <b>stacking</b>: Determines whether series are plotted independently, 
+                stacked, or stacked so their sum is 100%.</li>
+            <li>
+                <b>rotated</b>: Flips the X and Y axes so X becomes vertical and Y horizontal.</li> 
+        </ol>
+        <p>
+            The example below allows you to see what happens when you change these properties:</p>
+        <div class="row types">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" chart-type="{{chartProps.chartType}}" stacking="{{chartProps.stacking}}" rotated="{{chartProps.rotated}}" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+
+                <wj-menu value="chartProps.chartType" header="Chart Type">
+                    <wj-menu-item value="0">Column</wj-menu-item>
+                    <wj-menu-item value="1">Bar</wj-menu-item>
+                    <wj-menu-item value="2">Scatter</wj-menu-item>
+                    <wj-menu-item value="3">Line</wj-menu-item>
+                    <wj-menu-item value="4">LineSymbols</wj-menu-item>
+                    <wj-menu-item value="5">Area</wj-menu-item>
+                </wj-menu>
+                <wj-menu value="chartProps.stacking" header="Stacking">
+                    <wj-menu-item value="0">None</wj-menu-item>
+                    <wj-menu-item value="1">Stacked</wj-menu-item>
+                    <wj-menu-item value="2">Stacked 100%</wj-menu-item>
+                </wj-menu>
+                <wj-menu value="chartProps.rotated" header="Rotated">
+                    <wj-menu-item value="false">False</wj-menu-item>
+                    <wj-menu-item value="true">True</wj-menu-item>
+                </wj-menu>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div ng-non-bindable="" class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  chart-type="{{chartProps.chartType}}"
+  stacking="{{chartProps.stacking}}"
+  rotated="{{chartProps.rotated}}"
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+
+&lt;wj-menu value="chartProps.chartType" header="Chart Type" &gt;
+  &lt;wj-menu-item value="0"&gt;Column&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="1"&gt;Bar&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="2"&gt;Scatter&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="3"&gt;Line&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="4"&gt;LineSymbols&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="5"&gt;Area&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;
+&lt;wj-menu value="chartProps.stacking" header="Stacking" &gt;
+  &lt;wj-menu-item value="0"&gt;None&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="1"&gt;Stacked&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="2"&gt;Stacked 100%&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;
+&lt;wj-menu value="chartProps.rotated" header="Rotated" &gt;
+  &lt;wj-menu-item value="false"&gt;False&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value="true"&gt;True&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// add chart properties to scope
+$scope.chartProps = {
+    chartType: wijmo.chart.ChartType.Column,
+    stacking: wijmo.chart.Stacking.None,
+    rotated: false
+};
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".types .collapsed-content, .types .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".types .collapsed-content, .types .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- mixed chart types -->
+        <h2>
+            Mixed Chart Types</h2>
+        <p>
+            You can use different chart types for each chart series by setting the <b>chartType</b>
+            property on the series itself. This overrides the chart's default chart type.</p>
+        <p>
+            In the example below, the chart's <b>chartType</b> property is set to <b>Column</b>,
+            but the <b>Downloads</b> series overrides that to use the <b>LineAndSymbol</b>
+            chart type:</p>
+        <div class="row mixed">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" chart-type="Column" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads" chart-type="LineSymbols"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  chart-type="Column"
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-series 
+    name="Sales" 
+    binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series
+    name="Expenses"
+    binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series 
+    name="Downloads" 
+    binding="downloads" 
+    chart-type="LineSymbols"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".mixed .collapsed-content, .mixed .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".mixed .collapsed-content, .mixed .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- legend and titles -->
+        <h2>
+            Legend and Titles</h2>
+        <p>
+            Use the <b>legend</b> properties to customize the appearance of the chart legend, and
+            the <b>header</b>, <b>footer</b>, and axis <b>title</b> properties to add titles
+            to your charts.</p>
+        <p>
+            You can style the legend and titles using CSS. The CSS tab below shows the rules
+            used to customize the appearance of the legend and titles. Notice that these are
+            SVG elements, so you have to use CSS attributes such as "fill" instead of "color."</p>
+        <div class="row legend">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" binding-x="country" header="{{chartProps.header}}" footer="{{chartProps.footer}}">
+                    <wj-flex-chart-legend position="{{chartProps.legendPosition}}"></wj-flex-chart-legend>
+                    <wj-flex-chart-axis wj-property="axisX" title="{{chartProps.titleX}}"></wj-flex-chart-axis>
+                    <wj-flex-chart-axis wj-property="axisY" title="{{chartProps.titleY}}"></wj-flex-chart-axis>
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+                <dl class="dl-horizontal">
+                  <dt>Header</dt><dd><input ng-model="chartProps.header" class="form-control"></dd>
+                  <dt>Footer</dt><dd><input ng-model="chartProps.footer" class="form-control"></dd>
+                  <dt>X-Axis Title</dt><dd><input ng-model="chartProps.titleX" class="form-control"></dd>
+                  <dt>Y-Axis Title</dt><dd><input ng-model="chartProps.titleY" class="form-control"></dd>
+                  <dt></dt>
+                  <dd>
+                    <wj-menu value="chartProps.legendPosition" header="Legend">
+                        <wj-menu-item value="0">None</wj-menu-item>
+                        <wj-menu-item value="1">Left</wj-menu-item>
+                        <wj-menu-item value="2">Top</wj-menu-item>
+                        <wj-menu-item value="3">Right</wj-menu-item>
+                        <wj-menu-item value="4">Bottom</wj-menu-item>
+                    </wj-menu>
+                  </dd>
+                </dl>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div ng-non-bindable="" class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  binding-x="country"
+  header="{{chartProps.header}}"
+  footer="{{chartProps.footer}}"&gt;
+  &lt;wj-flex-chart-legend position="{{chartProps.legendPosition}}"&gt;&lt;/wj-flex-chart-legend&gt;
+  &lt;wj-flex-chart-axis wj-property="axisX" title="{{chartProps.titleX}}"&gt;&lt;/wj-flex-chart-axis&gt;
+  &lt;wj-flex-chart-axis wj-property="axisY" title="{{chartProps.titleY}}"&gt;&lt;/wj-flex-chart-axis&gt;
+  &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+&lt;dl class="dl-horizontal"&gt;
+  &lt;dt&gt;Header&lt;/dt&gt;&lt;dd&gt;&lt;input ng-model="chartProps.header" class="form-control"/&gt;&lt;/dd&gt;
+  &lt;dt&gt;Footer&lt;/dt&gt;&lt;dd&gt;&lt;input ng-model="chartProps.footer" class="form-control"/&gt;&lt;/dd&gt;
+  &lt;dt&gt;X-Axis Title&lt;/dt&gt;&lt;dd&gt;&lt;input ng-model="chartProps.titleX" class="form-control"/&gt;&lt;/dd&gt;
+  &lt;dt&gt;Y-Axis Title&lt;/dt&gt;&lt;dd&gt;&lt;input ng-model="chartProps.titleY" class="form-control"/&gt;&lt;/dd&gt;
+  &lt;dt&gt;&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;wj-menu value="chartProps.legendPosition" header="Legend" &gt;
+      &lt;wj-menu-item value="0"&gt;None&lt;/wj-menu-item&gt;
+      &lt;wj-menu-item value="1"&gt;Left&lt;/wj-menu-item&gt;
+      &lt;wj-menu-item value="2"&gt;Top&lt;/wj-menu-item&gt;
+      &lt;wj-menu-item value="3"&gt;Right&lt;/wj-menu-item&gt;
+      &lt;wj-menu-item value="4"&gt;Bottom&lt;/wj-menu-item&gt;
+    &lt;/wj-menu&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// add chart properties to scope
+$scope.chartProps = {
+    chartType: wijmo.chart.ChartType.Column,
+    legendPosition: wijmo.chart.Position.Right,
+    stacking: wijmo.chart.Stacking.None,
+    rotated: false,
+    header: 'Sample Chart',
+    footer: 'copyright (c) ComponentOne',
+    titleX: 'country',
+    titleY: 'amount'
+};
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+.wj-flexchart .wj-title {
+    font-weight: bold;
+}
+.wj-flexchart .wj-header .wj-title {
+    font-size: 18pt;
+    fill: #80044d;
+}
+.wj-flexchart .wj-footer .wj-title {
+    fill: #80044d;
+}
+.wj-flexchart .wj-axis-x .wj-title, 
+.wj-flexchart .wj-axis-y .wj-title {
+    font-style: italic;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".legend .collapsed-content, .legend .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".legend .collapsed-content, .legend .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- tooltips -->
+        <h2>
+            Tooltips</h2>
+        <p>
+            The FlexChart has built-in support for tooltips. By default, the control displays
+            tooltips when the user touches or hovers the mouse on a data point.</p>
+        <p>
+            The tooltip content is generated using a template that may contain the following
+            parameters:</p>
+        <ul>
+            <li><b>seriesName</b>: The name of the series that contains the chart element.</li>
+            <li><b>pointIndex</b>: The index of the chart element within the series.</li>
+            <li><b>x</b>: The <b>x</b> value of the chart element.</li>
+            <li><b>y</b>: The <b>y</b> value of the chart element.</li>
+        </ul>
+        <p>
+            By default, the tooltip template is set to
+            <code>&lt;b&gt;{seriesName}&lt;/b&gt;&lt;br/&gt;{x} {y}</code>,
+            and you can see how that works in the  charts above.
+            In this example, we set the tooltip template to 
+            <code>&lt;b&gt;{seriesName}&lt;/b&gt; &lt;img src='resources/{x}.png'/&gt;&lt;br/&gt;{y}</code>,
+            which replaces the country name with the country's flag.</p>
+        <p>
+            You can disable the chart tooltips by setting the template to an empty string.</p>
+        <div class="row tips">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" tooltip-content="<img src='resources/{x}.png'/> <b>{seriesName}</b><br/>{y}" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  tooltip-content="&lt;img src='resources/{x}.png'/&gt; &lt;b&gt;{seriesName}&lt;/b&gt;&lt;br/&gt;{y}"
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".tips .collapsed-content, .tips .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".tips .collapsed-content, .tips .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- styling series -->
+        <h2>
+            Styling Series</h2>
+        <p>
+            The FlexChart automatically picks colors for each series based on a default
+            palette, which you can override by setting the <b>palette</b> property.
+            But you can also override the default settings by setting the <b>style</b> 
+            property of any series to an object that specifies SVG styling attributes, 
+            including <b>fill</b>, <b>stroke</b>, <b>strokeThickness</b>, and so on.</p>
+        <p>
+            The <b>Series.style</b> property is an exception to the general rule that
+            all styling in Wijmo is done through CSS. The exception reflects the fact
+            that many charts have dynamic series, which would be impossible to style
+            in advance. For example, a stock chart may show series selected by the 
+            user while running the application.<p>
+        <p>
+            The chart in this example uses the <b>style</b> and <b>symbolStyle</b> properties 
+            to select style attributes for each series:</p>
+        <div class="row series">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales" ng-attr-style="{fill:'green', stroke:'darkgreen', 'stroke-width': '1'}"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses" ng-attr-style="{fill:'red', stroke:'darkred', 'stroke-width': '1'}"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads" chart-type="LineSymbols" ng-attr-style="{ stroke:'orange', 'stroke-width': '5'}" ng-attr-symbol-style="{fill:'gold', stroke:'gold' }"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-series 
+    name="Sales" 
+    binding="sales"
+    ng-attr-style="{fill:'green', stroke:'darkgreen', 'stroke-width': '1'}"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series 
+    name="Expenses" 
+    binding="expenses"
+    ng-attr-style="{fill:'red', stroke:'darkred', 'stroke-width': '1'}"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series 
+    name="Downloads" 
+    binding="downloads" 
+    chart-type="'LineSymbols'"
+    ng-attr-style="{ stroke:'orange', 'stroke-width': '5'}"
+    ng-attr-symbol-style="{fill:'gold', stroke:'gold' }"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".series .collapsed-content, .series .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".series .collapsed-content, .series .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- customizing axes -->
+        <h2>
+            Customizing Axes</h2>
+        <p>
+            Use axis properties to customize the chart's axes,
+            including ranges (minimum and maximum), label format, tickmark spacing, and
+            gridlines.</p>
+        <p>
+            The <b>Axis</b> class has boolean properties that allow you to turn features on
+            or off (<b>axisLine</b>, <b>labels</b>, <b>majorTickMarks</b>, and <b>majorGrid</b>.)
+            You can style the appearance of the features that are turned on using CSS.</p>
+        <div class="row axes">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" binding-x="country">
+                    <wj-flex-chart-axis wj-property="axisX" axis-line="true" major-grid="true"></wj-flex-chart-axis>
+                    <wj-flex-chart-axis wj-property="axisY" format="c0" max="10000" major-unit="2000" axis-line="true" major-grid="true"></wj-flex-chart-axis>
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+  items-source="data" 
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-axis 
+      wj-property="axisX" 
+      axis-line="true" 
+      major-grid="true"&gt;&lt;/wj-flex-chart-axis&gt;
+  &lt;wj-flex-chart-axis 
+      wj-property="axisY" 
+      format="c0" 
+      max="10000" 
+      major-unit="2000" 
+      axis-line="true" 
+      major-grid="true"&gt;&lt;/wj-flex-chart-axis&gt;
+  &lt;wj-flex-chart-series 
+      name="Sales" 
+      binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series 
+      name="Expenses" 
+      binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".axes .collapsed-content, .axes .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".axes .collapsed-content, .axes .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- theming -->
+        <h2>
+            Theming</h2>
+        <p>
+            The appearance of the FlexChart is defined in CSS. In addition to the default theme, we 
+            include about a dozen professionally designed themes that customize the appearance of
+            all Wijmo controls to achieve a consistent, attractive look.</p>
+        <p>
+            To customize the appearance of the chart, inspect the elements you want to style and 
+            create some CSS rules that apply to those elements.</p>
+        <p>
+            For example, if you right-click one of the labels on the X axis in IE or Chrome, you 
+            will see that it is an element with the "wj-label" class, that it is contained in an 
+            element with the "wj-axis-x" class, which is contained in the the top-level control 
+            element, which has the "wj-flexchart" class. The first CSS rule in this example uses
+            this information to customize the X labels. The rule selector adds the additional 
+            requirement that the parent element must be have the "wj-flexchart" <b>and</b> the
+            "custom-flex-chart" classes. Without this, the rule would apply to all charts on the
+            page.</p>
+        <div class="row theming">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart class="custom-flex-chart" items-source="data" binding-x="country">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+  class="custom-flex-chart"
+  items-source="data" 
+  binding-x="country"&gt;
+  &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+/* custom chart theme */
+.custom-flex-chart.wj-flexchart .wj-axis-x .wj-label {
+    font-family: Courier New, Courier, monospace;
+    font-weight: bold;
+}
+.custom-flex-chart.wj-flexchart .wj-legend .wj-label {
+    font-family: Courier New, Courier, monospace;
+    font-weight: bold;
+}
+.custom-flex-chart.wj-flexchart .wj-legend > rect {
+    fill: #f8f8f8;
+    stroke: #c0c0c0;
+}
+.custom-flex-chart.wj-flexchart .wj-plot-area >  rect {
+    fill: #f8f8f8;
+    stroke: #c0c0c0;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".theming .collapsed-content, .theming .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".theming .collapsed-content, .theming .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- selection modes -->
+        <h2>
+            Selection Modes</h2>
+        <p>
+            The FlexChart allows you to select series or data points by clicking or touching them.
+            Use the <b>selectionMode</b> property to specify whether you want to allow selection 
+            by series, by data point, or no selection at all (selection is off by default.)</p>
+        <p>
+            Setting the <b>selectionMode</b> property to <b>Series</b> or <b>Point</b> causes
+            the FlexChart to update the <b>Selection</b> property when the user clicks the
+            mouse, and to apply the "wj-state-selected" class to selected chart elements.</p>
+        <p>
+            The <b>Selection</b> property returns the currently selected series. To get the
+            currently selected data point, get the currently selected item within the 
+            selected series using the <b>Series.collectionView.currentItem</b> property
+            as shown in the example.</p>
+        <div class="row selection">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" binding-x="country" tooltip="" chart-type="{{chartProps.chartType}}" selection-mode="{{chartProps.selectionMode}}" selection="chartProps.selection">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+                <wj-menu value="chartProps.selectionMode" header="Selection Mode">
+                    <wj-menu-item value="0">None</wj-menu-item>
+                    <wj-menu-item value="1">Series</wj-menu-item>
+                    <wj-menu-item value="2">Point</wj-menu-item>
+                </wj-menu>
+                <wj-menu value="chartProps.chartType" header="Chart Type">
+                    <wj-menu-item value="0">Column</wj-menu-item>
+                    <wj-menu-item value="1">Bar</wj-menu-item>
+                    <wj-menu-item value="2">Scatter</wj-menu-item>
+                    <wj-menu-item value="3">Line</wj-menu-item>
+                    <wj-menu-item value="4">LineSymbols</wj-menu-item>
+                    <wj-menu-item value="5">Area</wj-menu-item>
+                </wj-menu>
+                <div ng-hide="chartProps.selectionMode == 0 || chartProps.selection == null">
+                    <h4>
+                        Current Selection</h4>
+                    <p>
+                        Series: <b>{{chartProps.selection.name}}</b></p>
+                    <dl class="dl-horizontal" ng-hide="chartProps.selectionMode != 2 || chartProps.selection.collectionView.currentItem == null">
+                        <dt>Country</dt><dd>{{chartProps.selection.collectionView.currentItem.country}}</dd>
+                        <dt>Sales</dt><dd>{{chartProps.selection.collectionView.currentItem.sales | number:2}}</dd>
+                        <dt>Expenses</dt><dd>{{chartProps.selection.collectionView.currentItem.expenses | number:2}}</dd>
+                        <dt>Downloads</dt><dd>{{chartProps.selection.collectionView.currentItem.downloads | number:0}}</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div ng-non-bindable="" class="pane-content">
+&lt;wj-flex-chart
+  items-source="data" 
+  binding-x="country"
+  tooltip=""
+  chart-type="{{chartProps.chartType}}"
+  selection-mode="{{chartProps.selectionMode}}"
+  selection="chartProps.selection"&gt;
+  &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+&lt;div ng-hide="chartProps.selectionMode == 0 || chartProps.selection == null"&gt;
+  &lt;h4&gt;
+    Current Selection&lt;/h4&gt;
+  &lt;p&gt;
+    Series: &lt;b&gt;{&#8203;{chartProps.selection.name}}&lt;/b&gt;&lt;/p&gt;
+  &lt;dl class="dl-horizontal" ng-hide="chartProps.selectionMode != 2 || chartProps.selection.collectionView.currentItem == null"&gt;
+    &lt;dt&gt;Country&lt;/dt&gt;&lt;dd&gt;{&#8203;{chartProps.selection.collectionView.currentItem.country}}&lt;/dd&gt;
+    &lt;dt&gt;Sales&lt;/dt&gt;&lt;dd&gt;{&#8203;{chartProps.selection.collectionView.currentItem.sales | number:2}}&lt;/dd&gt;
+    &lt;dt&gt;Expenses&lt;/dt&gt;&lt;dd&gt;{&#8203;{chartProps.selection.collectionView.currentItem.expenses | number:2}}&lt;/dd&gt;
+    &lt;dt&gt;Downloads&lt;/dt&gt;&lt;dd&gt;{&#8203;{chartProps.selection.collectionView.currentItem.downloads | number:0}}&lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// add chart properties to scope
+$scope.chartProps = {
+    chartType: wijmo.chart.ChartType.Column,
+    stacking: wijmo.chart.Stacking.None,
+    legendPosition: wijmo.chart.Position.Right,
+    rotated: false,
+    header: 'Sample Chart',
+    footer: 'copyright (c) ComponentOne',
+    titleX: 'country',
+    titleY: 'amount',
+    selectionMode: wijmo.chart.SelectionMode.Series,
+    selection: null
+};
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+/* style for selected items on the chart */
+.wj-flexchart .wj-state-selected {
+    stroke: #000;
+    stroke-width: 5px;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".selection .collapsed-content, .selection .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".selection .collapsed-content, .selection .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- toggle series visibility -->
+        <h2>
+            Toggle Series</h2>
+        <p>
+            The <b>Series</b> class has a <b>visibility</b> property that allows you to
+            determine whether a series should be shown in the chart and in the legend,
+            only in the legend, or completely hidden.</p>
+        <p>
+            This sample shows how you can use the <b>visibility</b> property to toggle 
+            the visibility of a series using two methods:</p>
+        <ol>
+            <li>
+                Clicking on legend entries:<br>
+                The chart directive sets the chart's <b>option.legendToggle</b> property to true, 
+                which toggles the <b>visibility</b> property of a series when its legend entry is 
+                clicked.
+            </li>
+            <li>Using checkboxes:<br>
+                The page uses Angular directives to bind input controls directly to the <b>visibility</b> 
+                property of each series.</li>
+        </ol>
+        <div class="row visibility">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="data" legend-toggle="true" control="toggleChart">
+                    <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Downloads" binding="downloads"></wj-flex-chart-series>
+                </wj-flex-chart>
+
+                <!-- toggle series with checkboxes -->
+                Sales <input type="checkbox" ng-model="toggleChart.series[0].visibility" ng-true-value="0" ng-false-value="2" ng-checked="true"><br>
+                Expenses <input type="checkbox" ng-model="toggleChart.series[1].visibility" ng-true-value="0" ng-false-value="2" ng-checked="true"><br>
+                Downloads <input type="checkbox" ng-model="toggleChart.series[2].visibility" ng-true-value="0" ng-false-value="2" ng-checked="true">
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+    items-source="data"
+    legend-toggle="true"
+    control="toggleChart"&gt;
+    &lt;wj-flex-chart-series name="Sales" binding="sales"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Expenses" binding="expenses"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Downloads" binding="downloads"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+
+Sales &lt;input type="checkbox" 
+    ng-model="toggleChart.series[0].visibility" 
+    ng-true-value="0" ng-false-value="2" ng-checked="true"/&gt;&lt;br /&gt;
+Expenses &lt;input type="checkbox" 
+    ng-model="toggleChart.series[1].visibility" 
+    ng-true-value="0" ng-false-value="2" ng-checked="true"/&gt;&lt;br /&gt;
+Downloads &lt;input type="checkbox"
+    ng-model="toggleChart.series[2].visibility" 
+    ng-true-value="0" ng-false-value="2" ng-checked="true"/&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// toggle series visibility when user clicks on the legend
+// (note: this code is in the chart directive)
+control.hostElement.addEventListener('click', function (e) {
+    if (scope.seriesToggle == true) {
+        var ht = control.hitTest(e);
+        if (ht && ht.chartElement == wijmo.chart.ChartElement.Legend && ht.series) {
+            if (ht.series.visibility == wijmo.chart.SeriesVisibility.Legend) {
+                ht.series.visibility = wijmo.chart.SeriesVisibility.Visible;
+            } else {
+                ht.series.visibility = wijmo.chart.SeriesVisibility.Legend;
+            }
+        }
+    }
+});
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".visibility .collapsed-content, .visibility .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".visibility .collapsed-content, .visibility .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- dynamic charts -->
+        <h2>
+            Dynamic Charts</h2>
+        <p>
+            The FlexChart uses an <b>ICollectionView</b> internally, so any changes you make to
+            the data source are automatically reflected in the chart.</p>
+        <p>
+            In this sample, we use a timer to add items to the data source, discarding old items 
+            to keep the total count at 200. The result is a dynamic chart that scrolls as new 
+            data arrives.</p>
+        <div class="row dynamic">
+			<div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-chart items-source="trafficData" chart-type="Area" stacking="Stacked" binding-x="time">
+                    <wj-flex-chart-axis wj-property="axisX" format="mm:ss"></wj-flex-chart-axis>
+                    <wj-flex-chart-series name="Trucks" binding="trucks"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Ships" binding="ships"></wj-flex-chart-series>
+                    <wj-flex-chart-series name="Planes" binding="planes"></wj-flex-chart-series>
+                </wj-flex-chart>
+                <dl class="dl-horizontal">
+                    <dt>Update Speed</dt>
+                    <dd>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default" ng-click="setInterval(200)">Slow</button>
+                          <button type="button" class="btn btn-default" ng-click="setInterval(100)">Medium</button>
+                          <button type="button" class="btn btn-default" ng-click="setInterval(50)">Fast</button>
+                          <button type="button" class="btn btn-default" ng-click="setInterval(0)">Stop</button>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-chart 
+    items-source="trafficData" 
+    chart-type="Area"
+    stacking="Stacked"
+    binding-x="time"&gt;
+    &lt;wj-flex-chart-axis wj-property="axisX" format="mm:ss"&gt;&lt;/wj-flex-chart-axis&gt;
+    &lt;wj-flex-chart-series name="Trucks" binding="trucks"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Ships" binding="ships"&gt;&lt;/wj-flex-chart-series&gt;
+    &lt;wj-flex-chart-series name="Planes" binding="planes"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;
+&lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-default" ng-click="setInterval(200)"&gt;Slow&lt;/button&gt;
+    &lt;button type="button" class="btn btn-default" ng-click="setInterval(100)"&gt;Medium&lt;/button&gt;
+    &lt;button type="button" class="btn btn-default" ng-click="setInterval(50)"&gt;Fast&lt;/button&gt;
+    &lt;button type="button" class="btn btn-default" ng-click="setInterval(0)"&gt;Stop&lt;/button&gt;
+&lt;/div&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// dynamic data
+var toAddData;
+$scope.trafficData = new wijmo.collections.ObservableArray();
+$scope.setInterval = function (interval) {
+    if (toAddData) {
+        clearTimeout(toAddData);
+        toAddData = null;
+    }
+    $scope.interval = interval;
+    if (interval) {
+        toAddData = setTimeout(addTrafficItem);
+    }
+};
+$scope.setInterval(500);
+
+function addTrafficItem() {
+    // add random data, limit array length
+    ...
+    // keep adding
+    ...
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".dynamic .collapsed-content, .dynamic .col-xs-12 .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".dynamic .collapsed-content, .dynamic .col-xs-12 .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>            
+        </div>
+    </div>
+</body>
+</html>

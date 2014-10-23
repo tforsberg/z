@@ -1,0 +1,80 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Templates and Conditional Formatting
+		</h3>
+		<p>
+			Wijmo is about is not opinionated about templating mechanisms. It does however
+			provides a flexible infrastructure that allows you to easily integrate
+			templating mechanisms provided by whatever framework you choose.
+		</p>
+		<p>
+			This sample uses AngularJS, which provides a great templating mechanism.
+			Our FlexGrid directive leverages AngularJS templates and allows you to specify
+			cell templates directly in the markup. The directive uses the grid's
+			<b>itemFormatter</b> function to evaluate the templates and generate the cell
+			content.
+		</p>
+		<p>
+			The markup looks very similar to what you would use when creating regular
+			tables in AngularJS, or grids in XAML:
+		</p>
+		<pre>&lt;wj-flex-grid 
+  class="grid" 
+  items-source="ctx.data"
+  is-read-only="true"&gt;
+    &lt;wj-flex-grid-column header="ID" binding="id" width="80"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Date" binding="start"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Product" binding="product"&gt;
+      &lt;span class="glyphicon glyphicon-{&#8203;{['leaf', 'fire', 'magnet'][$item.productId] }}"&gt;&lt;/span&gt;
+        {&#8203;{$item.product}}
+    &lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Revenue" binding="amount" format="n0"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Expense" binding="amount2" format="n0"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Discount" binding="discount" format="p0" 
+        ng-style="{true:{color:'red'}, false:{color:'green'}}[$item.discount &gt; 0.12]"&gt;
+    &lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;</pre>
+
+		<p>
+			Notice how the third grid column contains some HTML. The directive uses that HTML content
+			as a column template. The directive inserts three scope variables that you can use in the
+			template: $row, $column, and $item. These variables contain references to the cell's row,
+			column, and bound data item. The template uses the $item property to insert an icon in the
+			cell.
+		</p>
+		<p>
+			The last column contains an <b>ng-style</b> attribute that causes items with discounts
+			higher than 12% to be shown in red. The syntax for the style is a little obscure because
+			Angular did not support
+			<a href="http://stackoverflow.com/questions/12008580/a-ternary-in-angular-templates-angularjs">
+				ternary operators
+			</a>until version 1.1.5 (a good reason to upgrade to the latest version of Angular).
+		</p>
+	</div>
+	<div class="row-fluid">
+
+		<!-- the grid -->
+        <wj-flex-grid class="grid"
+                      control="ctx.flex"
+                      items-source="ctx.data"
+                      is-read-only="true"
+                      items-source-changed="itemsSourceChangedHandler(s, e)">
+            <wj-flex-grid-column header="ID" binding="id" width="80"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Date" binding="start"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Product"
+                                 binding="product"
+                                 ng-style="{true: {color: 'darkred'}, false: {color: 'darkgreen'}}[$item.productId == 1]">
+                <span class="glyphicon glyphicon-{{ [ 'leaf', 'fire', 'magnet' ][$item.productId] }}"></span>
+                {{$item.product}}
+            </wj-flex-grid-column>
+            <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Expense" binding="amount2" format="n0"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Discount"
+                                 binding="discount"
+                                 format="p0"
+                                 ng-style="{true: {color: 'darkred'}, false: {color: 'darkgreen'}}[$item.discount > 0.12]">
+            </wj-flex-grid-column>
+        </wj-flex-grid>
+	</div>
+</div>

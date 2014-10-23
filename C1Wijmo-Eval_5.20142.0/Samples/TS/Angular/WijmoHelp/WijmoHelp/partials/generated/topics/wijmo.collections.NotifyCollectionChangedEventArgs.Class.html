@@ -1,0 +1,73 @@
+<h2>NotifyCollectionChangedEventArgs Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Provides data for the <b>collectionChanged</b> event.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(action, item, index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>action</b> (): Type of action that caused the event to fire. <span class="text-info">(default Value: <b>NotifyCollectionChangedAction.Reset</b>)</span></li><li><b>item</b> (): Item that was added or changed. <span class="text-info">(default Value: <b>null</b>)</span></li><li><b>index</b> (<b>number</b>): Index of the item. <span class="text-info">(default Value: <b>-1</b>)</span></li></ul>
+</td>
+      <td>Initializes a new instance of an <a href="" ng-click="go('wijmo.collections.NotifyCollectionChangedEventArgs.Class.html')"><b>NotifyCollectionChangedEventArgs</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>action</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.NotifyCollectionChangedAction.Enum.html')"><b>NotifyCollectionChangedAction</b></a></td>
+      <td>Gets the action that caused the event.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span><span class="badge" title="Field">F</span></td>
+      <td><b>empty</b></td>
+      <td></td>
+      <td>Provides a value to use with events that do not have event data.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>index</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index at which the change occurred.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>item</b></td>
+      <td><b>any</b></td>
+      <td>Gets the item that was added, removed, or changed.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span><span class="badge" title="Field">F</span></td>
+      <td><b>reset</b></td>
+      <td></td>
+      <td>Provides a reset notification.</td>
+    </tr>
+</tbody>
+</table>

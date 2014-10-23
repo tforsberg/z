@@ -1,0 +1,195 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Control Templates</h3>
+        <p>
+            Wijmo controls are created from HTML templates that define their 
+            inner structures. In most cases, we style controls using CSS. But 
+            if you want to change more than just the appearance of the control, 
+            you can change its structure by customizing the control template.</p>
+        <p>
+            Control templates are defined by a static property called <b>controlTemplate</b>. 
+            This property contains an HTML fragment that creates the control. 
+            Modifications to control templates affect the class, not specific 
+            instances of the control. For example, if you modify the template
+            for the <b>InputNumber</b> control, all instances of the <b>InputNumber</b> 
+            control created after the change are affected.</p>
+        <p>
+            In addition to the standard HTML content, elements that play special 
+            roles within the control must have a "part" attribute to specify the 
+            role they play. For example, a button that increases a value may be 
+            marked with a <i>part="button-inc"</i>" attribute. This concept is 
+            similar to XAML control templates and their "TemplatePart" attributes. 
+            When overriding a control template, it is important to refer to the 
+            original template and make sure that all parts are present.</p>
+        <p>
+            <strong>Note</strong>: You can find the original template in the 
+            source code of each control by searching for "controlTemplate".</p>
+        <p>
+            Control templates obey the usual rules of class inheritance. For 
+            example, if you assign a custom template to the <b>ComboBox</b> 
+            class, the template is used for the <b>ComboBox</b> class and by 
+            all classes that inherit from it (<b>AutoSearch</b> and 
+            <b>InputTime</b>).</p>
+        <p>
+            <strong>Caution</strong>: There is no method for restoring the 
+            original control templates. Changing templates is typically a 
+            one-time operation. In this sample, the controller saves the original 
+            templates before applying the customizations, and restores them 
+            when the user navigates to a new page.</p>
+
+    </div>
+
+    <br />
+    <br />
+    <h4>
+        Customizing the InputNumber control template</h4>
+    <p>
+        By default, the <b>InputNumber</b> control shows spinner buttons on 
+        either side of the control. We selected this design because it makes 
+        the spinner buttons easier to use on mobile devices.</p>
+    <p>
+        If you prefer a more traditional layout, with spinner buttons stacked 
+        one above the other on the right of the control, you can create a new 
+        HTML template and assign it to the <b>InputNumber.controlTemplate</b> 
+        property as follows:</p>
+
+    <pre>wijmo.input.InputNumber.controlTemplate = '&lt;div style="..."&gt;' +
+  '&lt;table style="..."&gt;' +
+    '&lt;tr&gt;' +
+      '&lt;td style="..."&gt;' +
+        '&lt;input <b>wj-part="input"</b> style="..."/&gt;' +
+      '&lt;/td&gt;' +
+      '&lt;td style ="..."&gt;' +
+        '&lt;span <b>wj-part="btn-inc"</b>&gt; &amp;#9650;&lt;/span&gt;&lt;br&gt;' +
+        '&lt;span <b>wj-part="btn-dec"</b>&gt; &amp;#9660;&lt;/span&gt;' +
+      '&lt;/td&gt;' +
+    '&lt;/tr&gt;' +
+  '&lt;/table&gt;' +
+'&lt;/div&gt;';</pre>
+
+    <p>
+        The result is that the new template applies the button layout to all 
+        InputNumber controls on the page, regardless of class or style, as you 
+        can see in these examples.</p>
+
+    <div class="row-fluid">
+        <div class="col-md-5">
+            <wj-input-number class="form-control"
+                value="ctx.someNumber"
+                min="0"
+                max="1000"
+                step="100"
+                format="'n2'">
+            </wj-input-number>
+        </div>
+        <div class="col-md-5">
+            <wj-input-number class="form-control customEdit"
+                value="ctx.someNumber"
+                min="0"
+                max="1000"
+                step="100"
+                format="'n2'">
+            </wj-input-number>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <h4>
+        Customizing the ComboBox control template</h4>
+    <p>
+        By default, the <b>ComboBox</b> control shows a button with a simple 
+        triangle on the right of the control. We selected this design to keep 
+        the control appearance as simple and unobtrusive as possible. If you 
+        want to use one of the Bootstrap glyphs instead of the simple triangle, 
+        you can you can create a new HTML template and assign it to the
+        <b>ComboBox.controlTemplate</b> property with code like this.</p>
+
+    <pre>wijmo.input.ComboBox.controlTemplate = '&lt;div style="..."&gt;' +
+  '&lt;table style="..."&gt;' +
+    '&lt;tr&gt;' +
+      '&lt;td style="..."&gt;' +
+        '&lt;input <b>wj-part="input"</b> style="..."/&gt;' +
+      '&lt;/td&gt;' +
+      '&lt;td <b>wj-part="btn"</b> style="..."&gt;' +
+        '&lt;span class="glyphicon glyphicon-circle-arrow-down"&gt;&lt;/span&gt;' +
+      '&lt;/td&gt;' +
+    '&lt;/tr&gt;' +
+  '&lt;/table&gt;' +
+  '&lt;div <b>wj-part="dropdown"</b> style="..."/&gt;' +
+'&lt;/div&gt;';</pre>
+
+    <p>
+        The result is that the new template changes the button glyph on all 
+        ComboBox controls on the page, regardless of class or style, as you 
+        can see in these examples.</p>
+
+    <div class="row-fluid">
+        <div class="col-md-5">
+            <wj-combo-box class="form-control"
+                text="ctx.someSize"
+                items-source="ctx.sizes"
+                is-editable="true"
+                placeholder="'pick a size'">
+            </wj-combo-box>
+        </div>
+        <div class="col-md-5">
+            <wj-combo-box class="form-control customEdit"
+                text="ctx.someSize"
+                items-source="ctx.sizes"
+                is-editable="true"
+                placeholder="'pick a size'">
+            </wj-combo-box>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <h4>
+        Customizing the Calendar control template</h4>
+    <p>
+        The <b>Calendar</b> control looks like the one used in Google Chrome. 
+        If you prefer something that looks more like the calendar in jQueryUI, 
+        you can create a new HTML template and assign it to the 
+        <b>Calendar.controlTemplate</b> property with code like this.</p>
+
+    <pre>wijmo.input.Calendar.controlTemplate = '&lt;div style="..."&gt;' +
+  '&lt;table <b>wj-part="tbl-header"</b> style="..."&gt;' +
+    '&lt;tr style="..."&gt;' +
+      '&lt;td style="..."&gt;' +
+        '&lt;div <b>wj-part="btn-prev"</b> class="glyphicon glyphicon-circle-arrow-left"&gt;&lt;/div&gt;' +
+      '&lt;/td&gt;' +
+      '&lt;td <b>wj-part="btn-month"</b> style="..."&gt;' +
+        '&lt;div <b>wj-part="span-month"</b>&gt;&lt;/div&gt;' +
+      '&lt;/td&gt;' +
+      '&lt;td style="..."&gt;' +
+        '&lt;div <b>wj-part="btn-next"</b> class="glyphicon glyphicon-circle-arrow-right"&gt;&lt;/div&gt;' +
+      '&lt;/td&gt;' +
+    '&lt;/tr&gt;' +
+  '&lt;/table&gt;' +
+  '&lt;table <b>wj-part="tbl-month"</b> style="..."/&gt;' +
+  '&lt;table <b>wj-part="tbl-year"</b> style="..."/&gt;' +
+  '&lt;button <b>wj-part="btn-today"</b> style="display:none"/&gt;' +
+'&lt;/div&gt;';</pre>
+    <p>
+        Notice how the template specifies a "button-today" part and hides by 
+        giving it a "display:none" style. This is necessary because the control 
+        checks the template and throws an exception if any parts are missing.</p>
+    <p>
+        The result is shown below:</p>
+
+    <div class="row-fluid">
+        <div class="col-md-5">
+            <wj-calendar class="form-control calendar"
+                value="ctx.someDate">
+            </wj-calendar>
+        </div>
+        <div class="col-md-5">
+            <wj-calendar style="padding: 8px"
+                class="customEdit calendar"
+                value="ctx.someDate">
+            </wj-calendar>
+        </div>
+    </div>
+</div>

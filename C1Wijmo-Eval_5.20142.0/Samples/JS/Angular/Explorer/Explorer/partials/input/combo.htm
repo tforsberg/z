@@ -1,0 +1,236 @@
+﻿<div class="row-fluid" >
+    <div class="copy">
+        <h3>
+            ComboBox</h3>
+        <p>
+            The <b>ComboBox</b> control is a simple and powerful combo box. These are the main
+            properties of the <b>ComboBox</b> control:</p>
+        <dl class="dl-horizontal">
+            <dt>
+                itemsSource</dt>
+            <dd>
+                Gets or sets an array or an <b>ICollectionView</b> with the options available.</dd>
+            <dt>
+                displayMember</dt>
+            <dd>
+                If the items are objects (as opposed to strings), use this property to specify which
+                property of the items should be displayed in the <b>ComboBox</b>.</dd>
+            <dt>
+                text</dt>
+            <dd>
+                Gets or sets the text in the control.</dd>
+            <dt>
+                selectedIndex</dt>
+            <dd>
+                Gets or sets the index of the currently selected item in the <i>itemsSource</i>.</dd>
+            <dt>
+                selectedItem</dt>
+            <dd>
+                Gets or sets currently selected item in the <i>itemsSource</i>.</dd>
+            <dt>
+                isEditable</dt>
+            <dd>
+                Gets or sets whether the user can type values that are not in the <i>itemsSource</i>.</dd>
+        </dl>
+        <p>
+            The <b>itemsSource</b> and <b>displayMember</b> properties are responsible for populating the
+            option list. They are mainly input properties. The <b>text</b>, <b>selectedItem</b>, and
+            <b>selectedIndex</b> properties change to reflect the user input. They are mainly output
+            properties.</p>
+        <p>
+            The table below contains a regular input element and some <b>ComboBox</b> controls, with and
+            without drop-down items. Try typing the name of some countries. As you type, the <b>ComboBox</b>
+            will automatically complete the entry. You may use the up/down keys to select the previous/next
+            items that match what you have typed.</p>
+        <p>
+            Notice how the list of items is automatically positioned above or below the control in
+            order to fit the space available. Notice also how the control appearance can be customized
+            using regular css.</p>
+    </div>
+
+    <!-- BEGIN -->
+
+    <div class="row div-thick col-head">
+        <div class="col-sm-3 col-xs-12">
+            Description
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            ComboBox
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            Bound value
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Regular input element
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="regular input"
+                ng-model="ctx.country1" />
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country1}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Regular input element, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <input 
+                type="text"
+                class="form-control customEdit"
+                placeholder="regular input"
+                ng-model="ctx.country1" />
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country1}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            No items (no items)
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="country1"
+                placeholder="anything (no items)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{country1}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Countries, editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box
+                text="ctx.country2"
+                items-source="ctx.countries"
+                is-editable="true"
+                placeholder="country (selectable and editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country2}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            Countries, editable, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                class="customEdit"
+                text="ctx.country2"
+                items-source="ctx.countries"
+                is-editable="true"
+                placeholder="country (selectable and editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country2}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Countries, non-editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.country3"
+                items-source="ctx.countries"
+                is-editable="false"
+                placeholder="country (selectable but not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country3}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Countries, non-editable, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                class="customEdit"
+                text="ctx.country3"
+                items-source="ctx.countries"
+                is-editable="false"
+                placeholder="country (selectable but not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country3}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView, editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.item1"
+                control="ctx.cmb1"
+                items-source="ctx.items"
+                display-member-path="country"
+                selected-value-path="id"
+                is-editable="true"
+                placeholder="item (displayMember=country, editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.item1}}, ID: {{ctx.cmb1.selectedItem.id}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView, non-editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.item2"
+                control="ctx.cmb2"
+                items-source="ctx.items"
+                display-member-path="country"
+                selected-value-path="id"
+                is-editable="false"
+                placeholder="item (displayMember=country, not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.item2}}, ID: {{ctx.cmb2.selectedItem.id}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView Items
+        </div>
+        <div class="col-sm-6 col-xs-12 app-resize-grid">
+            <wj-flex-grid 
+                style="height:250px;width:350px"
+                items-source="ctx.items"
+                selection-mode="Row">
+            </wj-flex-grid>
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            HTML content
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                items-source="ctx.htmlItems"
+                is-editable="false"
+                is-content-html="true">
+            </wj-combo-box>
+        </div>
+    </div>
+</div>

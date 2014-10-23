@@ -1,0 +1,76 @@
+/* -- Background -- */
+.wj-content:not(.customEdit) {
+  background: #ffffff;
+  color: #333333;
+}
+.wj-listbox-item:not(.wj-state-selected):hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+.wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background: rgba(0, 0, 0, 0.04);
+}
+/* -- Header -- */
+.wj-header {
+  background: #eeeeee;
+  color: #333333;
+}
+.wj-flexgrid .wj-group {
+  background: #e1e1e1;
+  color: #333333;
+}
+/* -- Grid -- */
+div[wj-part='root'] {
+  background: #f2f2f2;
+}
+div[wj-part='cells'] {
+  background: #ffffff;
+  color: #333333;
+}
+.wj-state-selected {
+  background: #81b0d9;
+  color: #333333;
+}
+.wj-state-multi-selected {
+  background: #7a95ad;
+  color: #ffffff;
+}
+.wj-input-group .wj-form-control,
+.wj-grid-editor {
+  background: #fff;
+  color: #000000;
+}
+div[wj-part='rhcells'] .wj-header {
+  background: #eeeeee;
+}
+.wj-cell {
+  border: none;
+}
+/* -- Buttons -- */
+.wj-content:not(.customEdit) .wj-input-group-btn > .wj-btn,
+.wj-content:not(.customEdit) .wj-btn-group > .wj-btn {
+  background: #81b1d9;
+  color: #333333;
+}
+.wj-content:not(.customEdit) .wj-input-group-btn > .wj-btn:hover,
+.wj-content:not(.customEdit) .wj-btn-group > .wj-btn:hover {
+  background: #5a99cd;
+}
+/* -- Border Radii -- */
+.wj-content,
+.wj-input-group,
+.wj-btn-group,
+.wj-btn-group-vertical,
+.wj-tooltip,
+.customEdit {
+  border-radius: 0;
+}
+/* -------------------- Tooltip -------------------- */
+.wj-tooltip {
+  background: #dae7f2;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* -------------------- Chart -------------------- */
+/* ---------- X Axis ---------- */
+/* ---------- Y Axis ---------- */
+

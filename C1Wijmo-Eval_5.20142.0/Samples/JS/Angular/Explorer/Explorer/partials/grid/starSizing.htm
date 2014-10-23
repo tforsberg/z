@@ -1,0 +1,88 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Star Sizing
+		</h3>
+		<p>
+			This view shows how you can use XAML-style star sizing to implement flexible layouts
+			with the <b>FlexGrid</b>.
+		</p>
+
+		<div class="collapsed-content collapse">
+			<p>
+				Star sizing is similar to percentage sizing, except the values don't have to add up
+				to one hundred. Size '3*' means 'three times wider than size 1*'. The total size
+				used to calculate the layout is the current width of the control minus the space
+				taken up by any non-star columns.
+			</p>
+			<p>
+				You can use star-sizing to implement grids where the last column expand to fill all
+				the available space. To do this, simply set the width of the last colunm to '*'. You
+				may also want to give the last column a 'minWidth' to prevent it from getting too
+				narrow.
+			</p>
+		</div>
+		<p>
+			<button type="button" data-toggle="collapse"
+					data-target=".collapsed-content, .btn.btn-default.btn-xs.collapse"
+					class="btn btn-default btn-xs collapse in">
+				Read more
+			</button>
+		</p>
+
+	</div>
+
+	<h4>
+		Example 1:
+	</h4>
+	<p>
+		This grid has four columns. The first is 80 pixels wide, and can be resized between
+		40 and 160 pixels. The other three are '2*', '*', and '*' pixels wide and cannot be
+		resized at all.
+	</p>
+	<p>
+		Notice how the second column is twice as wide as the third and fourth columns, and
+		they keep these proportions even as you resize the first column or the whole grid.
+	</p>
+
+	<wj-flex-grid class="grid" items-source="ctx.data">
+		<wj-flex-grid-column header="Date" binding="start" width="80" min-width="40" max-width="160"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Product" binding="product" width="2*" allow-resizing="false"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Revenue" binding="amount" format="n0" width="*" allow-resizing="false"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Expense" binding="amount2" format="n0" width="*" allow-resizing="false"></wj-flex-grid-column>
+	</wj-flex-grid>
+	<br />
+	<br />
+	<h4>
+		Example 2:
+	</h4>
+	<p>
+		This grid shows how you can make any column stretch to fill the available space. In this case,
+		we set the width of the second column to '*' to achieve that effect.
+	</p>
+	<p>
+		We also set the minimum width of the second column to 100 pixels in order to prevent it from
+		getting too narrow even if the other columns or the grid are resized.
+	</p>
+
+	<wj-flex-grid class="grid" items-source="ctx.data">
+		<wj-flex-grid-column header="Date" binding="start" width="80"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Product" binding="product" width="*" min-width="100" allow-resizing="false"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Revenue" binding="amount" format="n0" width="120"></wj-flex-grid-column>
+	</wj-flex-grid>
+	<br />
+	<br />
+	<h4>
+		Example 3:
+	</h4>
+	<p>
+		This example sets all widths to "*", which means the space available is divided equally among them.
+		Resize the browser and notice how the grid resizes and the columns fill it up equally.
+	</p>
+	<wj-flex-grid class="grid" allow-resizing="None" items-source="ctx.data">
+		<wj-flex-grid-column header="Date" binding="start" width="*"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Product" binding="product" width="*" min-width="100"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Revenue" binding="amount" format="n0" width="*"></wj-flex-grid-column>
+		<wj-flex-grid-column header="Expense" binding="amount2" format="n0" width="*"></wj-flex-grid-column>
+	</wj-flex-grid>
+</div>

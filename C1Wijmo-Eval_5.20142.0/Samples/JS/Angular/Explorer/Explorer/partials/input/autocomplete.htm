@@ -1,0 +1,94 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            AutoComplete</h3>
+        <p>
+            The <b>AutoComplete</b> control derives from <b>ComboBox</b> and modifies it as follows:</p>
+        <ol>
+            <li>
+                The <b>ComboBox</b> has a static look up list, whereas the <b>AutoComplete</b>
+                filters the list dynamically as the user types (it also allows you to dynamically
+                provide the items).</li>
+            <li>
+                The <b>ComboBox</b> has a fixed look up algorithm (it always looks for items that
+                <i>start</i> with the string typed in by the user), whereas the <b>AutoComplete</b>
+                looks for items that <b>contain</b> the items typed by the user.</li>
+            <li>
+                The <b>ComboBox</b> displays items as plain text, whereas the <b>AutoComplete</b>
+                displays items as HTML which allows it to highlight the matching portions of the
+                items.</li>
+        </ol>
+
+    </div>
+    <h4>
+        AutoComplete with string arrays</h4>
+    <p>
+        The <b>AutoComplete</b> below uses a string array as its <b>itemsSource</b>. As you
+        type, the drop-down will show a list with items that contain the text you typed.
+        Notice that you can type multiple search terms. For example, 'un st' will match
+        'United States'.</p>
+
+    <wj-auto-complete
+        control="ctx.ac1"
+        items-source="ctx.countries"
+        placeholder="country">
+    </wj-auto-complete>
+    <p>
+        Selected Index: <b>{{ctx.ac1.selectedIndex}}</b><br />
+        Selected Item: <b>{{ctx.ac1.selectedItem}}</b>
+    </p>
+
+    <br />
+    <h4>
+        AutoComplete with CollectionViews</h4>
+    <p>
+        The <b>AutoComplete</b> below uses an <b>ArrayColletionView</b> as its <b>itemsSource</b>,
+        and 'country' as its <b>displayMember</b>. The main difference between this example and
+        the previous is that in this case the <b>selectedItem</b> is a full object, whereas in
+        the previous example it was just a string.</p>
+    <p>
+        Note that the <b>AutoComplete</b> applies a filter to the collection view as you type,
+        so if other controls are bound to the same collection view, they will also show the
+        filtered data. If you want to avoid this, create a separate collection view just for
+        the <b>AutoComplete</b>.</p>
+
+    <wj-auto-complete
+        class="customEdit"
+        control="ctx.ac2"
+        items-source="ctx.items"
+        display-member-path="country"
+        placeholder="country">
+    </wj-auto-complete>
+    <p>
+        Selected Index: <b>{{ctx.ac2.selectedIndex}}</b><br />
+        Selected Item: <b>{{ctx.ac2.selectedItem}}</b>
+    </p>
+
+    <br />
+    <h4>
+        AutoComplete with Custom Data Sources and Highlighting</h4>
+    <p>
+        This <b>autoComplete</b> does not have a static list of items. Instead, it uses the
+        <b>itemsSourceFunction</b> property to specify a function that makes an ajax call
+        and returns items asynchronously. In this case, the items contain company data from
+        a catalog with over 6,000 items. Real applications could use SQL queries to look
+        up items from tables with millions of items.</p>
+    <p>
+        This <b>autoComplete</b> also uses the <b>cssMatch</b> property to highlight the
+        matches with a yellow background instead of using the default bold.</p>
+
+    <wj-auto-complete
+        class="customEdit"
+        control="ctx.acAsync"
+        items-source-function="ctx.getCompanies"
+        display-member-path="SymbolName"
+        selected-value-path="Symbol"
+        placeholder="company name"
+        css-match="'match'">
+    </wj-auto-complete>
+    <p>
+        Selected Index: <b>{{ctx.acAsync.selectedIndex}}</b><br />
+        Selected Item: <b>{{ctx.acAsync.selectedItem}}</b><br />
+        Selected Value: <b>{{ctx.acAsync.selectedValue}}</b>
+    </p>
+</div>

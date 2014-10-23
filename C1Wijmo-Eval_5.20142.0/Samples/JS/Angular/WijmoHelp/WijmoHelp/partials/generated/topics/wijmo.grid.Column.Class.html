@@ -1,0 +1,284 @@
+<h2>Column Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a></dd>
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p>Represents a column on the grid.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>()</td>
+      <td></td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>aggregate</b></td>
+      <td><a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a></td>
+      <td>Gets or sets the <a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a> to display in the group header rows 
+for this column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>align</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets the horizontal alignment of items in this column.</p>
+
+<p>The default value for this property is null, which causes the grid to select
+the alignment automatically based on column's <b>dataType</b> (numbers are
+right-aligned, boolean values are centered, other types are left-aligned).</p>
+
+<p>If you want to override the default alignment, set this property
+to 'left', 'right', or 'center'.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowDragging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the user can move this row or column to a new position with the mouse.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowMerging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column can be merged.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowResizing</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets a whether the user can resize this row or column with the mouse.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowSorting</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the user can sort this column by clicking its header.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>binding</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property this column is bound to.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cssClass</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets a CSS class name to be used when rendering this row or column.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentSort</b></td>
+      <td><b>string</b></td>
+      <td>Gets a string that describes the current sorting applied to this column.
+Possible values are '+' for ascending order, '-' for descending order, or 
+null for unsorted columns.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>dataMap</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a></td>
+      <td>Gets or sets the <a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a> used to convert raw values into display values for this 
+column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>dataType</b></td>
+      <td><a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a></td>
+      <td><p>Gets or sets the type of value stored in this column.</p>
+
+<p>Values are coerced into the proper type when editing the grid.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>format</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the format string used to convert raw values into display 
+values for this column (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>grid</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a></td>
+      <td>Gets the FlexGrid that owns this row or column.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>header</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text displayed in the column header.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>index</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of this row or column in the parent collection.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isContentHtml</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column contain HTML content rather than plain text.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isReadOnly</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column can be edited.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isSelected</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is selected.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isVisible</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is visible and not collapsed.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>maxWidth</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the maximum width of this column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>minWidth</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the minimum width of this column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>name</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets the name of this column.</p>
+
+<p>The column name can be used to retrieve the column using the <b>getColumn</b> method.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pos</b></td>
+      <td><b>number</b></td>
+      <td>Gets the position of this row or column.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>renderSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets the render size of this row or column.
+This property accounts for visibility, default size, and min/max sizes.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>renderWidth</b></td>
+      <td><b>number</b></td>
+      <td><p>Gets the render width of this column.</p>
+
+<p>The value returned takes into account the column's visibility, default size, and min/max sizes.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>size</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the size of this row or column.
+Setting this property to null or negative values causes the element to use the 
+parent collection's default size.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>visible</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is visible.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>width</b></td>
+      <td><b>any</b></td>
+      <td><p>Gets or sets the width of this column.</p>
+
+<p>Column widths may be positive numbers (column width in pixels), 
+null or negative numbers (use the collection's default column width), or
+strings in the format '{number}*' (star sizing).</p>
+
+<p>The star-sizing option performs a XAML-style dynamic sizing where column 
+widths are proportional to the number before the star. For example, if
+a grid has three columns with widths "100", "*", and "3*", the first column
+will be 100 pixels wide, the second will take up 1/4th of the remaining
+space, and the last will take up the remaining 3/4ths of the remaining space.</p>
+
+<p>Star-sizing allows you to define columns that automatically stretch to fill
+the width available. For example, set the width of the last column to "*"
+and it will automatically extend to fill the entire grid width so there's
+no empty space. You may also want to set the column's <b>minWidth</b> property
+to prevent the column from getting too narrow.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>wordWrap</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column should wrap their content.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getAlignment</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the actual column alignment. </p>
+
+<p>Returns the value of the <b>align</b> property if that is not null, or
+selects the alignment based on the column's <b>dataType</b>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onPropertyChanged</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Marks the owner list as dirty and refreshes the owner grid.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a>).</span></td>
+    </tr>
+</tbody>
+</table>

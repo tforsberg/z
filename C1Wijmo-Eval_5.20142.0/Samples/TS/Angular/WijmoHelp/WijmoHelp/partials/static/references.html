@@ -1,0 +1,102 @@
+<h2>
+    Referencing Wijmo 5 in Your Applications</h2>
+<p>
+    To use Wijmo 5 in your applications, include it by adding a few references 
+    to your HTML pages.</p>
+<p>
+    The minimal set of files required by any Wijmo 5 application is:</p>
+<ul>
+    <li><b>jQuery.js:</b> Wijmo 5 depends on jQuery.</li>
+    <li><b>wijmo.js:</b> Contains the Wijmo 5 infrastructure including the
+        <a href="topic/wijmo.Globalize.Class.html">Globalize</a>, 
+        <a href="topic/wijmo.Event.Class.html">Event</a>, 
+        <a href="topic/wijmo.Control.Class.html">Control</a>, and
+        <a href="topic/wijmo.collections.CollectionView.Class.html">CollectionView</a> classes.</li>
+    <li><b>wijmo.css:</b> Contains the CSS rules used for styling all Wijmo 5 controls.</li>
+</ul>
+<p>
+    In addition to these, include one or more additional files, depending on which 
+    components you use:</p>
+<ul>
+    <li><b>wijmo.grid.js:</b> Contains the 
+        <a href="topic/wijmo.grid.FlexGrid.Class.html">FlexGrid</a> control.</li>
+    <li><b>wijmo.chart.js:</b> Contains the 
+        <a href="topic/wijmo.chart.FlexChart.Class.html">FlexChart</a> control.</li>
+    <li><b>wijmo.input.js:</b> Contains several input controls, including 
+        <a href="topic/wijmo.input.ComboBox.Class.html">ComboBox</a>, 
+        <a href="topic/wijmo.input.AutoComplete.Class.html">AutoComplete</a>, 
+        <a href="topic/wijmo.input.InputDate.Class.html">InputDate</a>, 
+        <a href="topic/wijmo.input.InputTime.Class.html">InputTime</a>, 
+        <a href="topic/wijmo.input.InputNumber.Class.html">InputNumber</a>, 
+        <a href="topic/wijmo.input.ListBox.Class.html">ListBox</a>, 
+        <a href="topic/wijmo.input.Menu.Class.html">Menu</a>, and
+        <a href="topic/wijmo.input.Calendar.Class.html">Calendar</a> controls.</li>
+    <li><b>angular.js:</b> Google's AngularJS framework, required for AngularJS 
+        applications.</li>
+    <li><b>wijmo.angular.js:</b> Contains AngularJS directives that allow you to use
+        Wijmo 5 controls directly in your markup.</li>
+    <li><b>wijmo.culture.<i>[CultureName]</i>.js:</b> Contains culture-specific files 
+        used to develop applications in languages other than American English.</li>
+    <li><b>wijmo.theme.<i>[ThemeName]</i>.css:</b> Contains CSS rules used to 
+        customize the appearance of the Wijmo 5 controls.</li>
+</ul>
+<p>
+    As for the actual location of the files, you have two options. You may download 
+    Wijmo and copy the required files to the appropriate folders within your application, 
+    or you may reference Wijmo files hosted in the cloud, on our Content Delivery 
+    Network (CDN). 
+    The sections below show examples.</p>
+<h3>
+    Deploying Wijmo locally</h3>
+<p>
+    Download the Wijmo files and copy them to a folder within your application.
+    If you place the Wijmo script files in a folder called "scripts/vendors," and the 
+    css files in a folder called "styles," you can add the following lines to your 
+    HTML pages:</p>
+<pre>
+&lt;!-- Wijmo/jQuery references (required) --&gt;
+&lt;script src="scripts/vendor/jquery-2.1.0.min.js" type="text/javascript"&gt;&lt;/script&gt; 
+&lt;script src="scripts/vendor/controls/wijmo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;link href="styles/wijmo.min.css" rel="stylesheet" type="text/css" /&gt;
+
+&lt;!-- Wijmo controls (optional, include the controls you need) --&gt;
+&lt;script src="scripts/vendor/controls/wijmo.grid.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="scripts/vendor/controls/wijmo.chart.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="scripts/vendor/controls/wijmo.input.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;!-- Wijmo custom theme (optional, include the theme you like) --&gt;
+&lt;link href="styles/themes/wijmo.theme.modern.min.css" rel="stylesheet" type="text/css" /&gt;
+
+&lt;!-- Wijmo custom culture (optional, include the culture you want) --&gt;
+&lt;script src="scripts/vendor/controls/cultures/wijmo.culture.ja.min.js " type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;!-- AngularJS and Wijmo directives (optional, use in AngularJS applications) --&gt;
+&lt;script src="scripts/vendor/angular.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="scripts/vendor/interop/angular/wijmo.angular.min.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+<h3>
+    Deploying Wijmo from CDN</h3>
+<p>
+    In this case, there is nothing to download. Simply add the following lines to your HTML
+    pages:</p>
+<pre>
+&lt;!-- Wijmo/jQuery references (required) --&gt;
+&lt;script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"&gt;&lt;/script&gt; 
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;link href="http://cdn.wijmo.com/5.20142.0/styles/wijmo.min.css" rel="stylesheet" type="text/css" /&gt;
+
+&lt;!-- Wijmo controls (optional, include the controls you need) --&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.grid.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.chart.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.input.min.js" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;!-- Wijmo custom theme (optional, include the theme you like) --&gt;
+&lt;link href="http://cdn.wijmo.com/5.20142.0/styles/themes/wijmo.theme.modern.min.css" rel="stylesheet" type="text/css" /&gt;
+
+&lt;!-- Wijmo custom culture (optional, include the culture you want) --&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/controls/cultures/wijmo.culture.ja.min.js " type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;!-- AngularJS and Wijmo directives (optional, use in AngularJS applications) --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://cdn.wijmo.com/5.20142.0/interop/angular/wijmo.angular.min.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>

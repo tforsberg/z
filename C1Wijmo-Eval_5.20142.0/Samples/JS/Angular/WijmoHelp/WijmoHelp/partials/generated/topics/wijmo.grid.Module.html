@@ -1,0 +1,194 @@
+<h2>Module wijmo.grid</h2>
+<dl class="dl-horizontal">
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p><p>Defines the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control and associated classes.</p>
+
+<p>The example below creates a <b>FlexGrid</b> control and binds it to a
+'data' array. The grid has three columns, specified by explicitly
+populating the grid's <b>columns</b> array.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/6GB66/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></p>
+<br/>
+<h3>Classes</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellFactory.Class.html')"><b>CellFactory</b></a></td>
+      <td>Creates HTML elements that represents cells within a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Represents a rectangular group of cells defined by two row indices and
+two column indices.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Provides arguments for <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> events.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a></td>
+      <td>Represents a column on the grid.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.ColumnCollection.Class.html')"><b>ColumnCollection</b></a></td>
+      <td>Represents a collection of <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a> objects in a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a></td>
+      <td><p>Represents a data map for use with the column's <b>dataMap</b> property.</p>
+
+<p>Data maps provide the grid with automatic look up capabilities. For example, 
+you may want to display a customer name instead of his ID, or a color name 
+instead of its RGB value.</p>
+
+<p>For example, the code below creates binds a grid to a collection of products,
+then assigns a <b>DataMap</b> to the grid's 'CategoryID' column so the grid will
+display the category names rather than the raw IDs.</p>
+
+<p><pre>
+// bind grid to products
+var flex = new wijmo.grid.FlexGrid();
+flex.itemsSource = products;
+// map CategoryID column to show category name instead of ID
+var col = flex.columns.getColumn('CategoryID');
+col.dataMap = new wijmo.grid.DataMap(categories, 'CategoryID', 'CategoryName');
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a></td>
+      <td><p>The <b>FlexGrid</b> control provides a powerful and flexible way to
+display and edit data in a tabular format.</p>
+
+<p>The <b>FlexGrid</b> control is a full-featured grid, providing all the
+features you are used to including several selection modes, sorting,
+column reordering, grouping, filtering, editing,  custom cells,
+XAML-style star-sizing columns, row and column virtualization, etc.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a></td>
+      <td>Represents a logical part of the grid, such as the column headers, row headers,
+and scrollable data part.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.GroupRow.Class.html')"><b>GroupRow</b></a></td>
+      <td>Represents a row that serves as a header for a group of rows.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.HitTestInfo.Class.html')"><b>HitTestInfo</b></a></td>
+      <td>Contains information about a part of a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control at 
+a specified page coordinate.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.MergeManager.Class.html')"><b>MergeManager</b></a></td>
+      <td><p>Defines the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>'s cell merging behavior.</p>
+
+<p>An instance of this class is automatically created and assigned to 
+the grid's <b>mergeManager</b> property to implement the grid's default 
+merging behavior. </p>
+
+<p>If you want to customize the default merging behavior, create a class 
+that derives from <b>MergeManager</b> and override the <b>getMergedRange</b> method.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.Row.Class.html')"><b>Row</b></a></td>
+      <td>Represents a row in the grid.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowCol.Class.html')"><b>RowCol</b></a></td>
+      <td>Abstract class that serves as a base for the <a href="" ng-click="go('wijmo.grid.Row.Class.html')"><b>Row</b></a> and <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a> classes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowColCollection.Class.html')"><b>RowColCollection</b></a></td>
+      <td>Abstract class that serves as a base for row and column collections.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowCollection.Class.html')"><b>RowCollection</b></a></td>
+      <td>Represents a collection of <a href="" ng-click="go('wijmo.grid.Row.Class.html')"><b>Row</b></a> objects in a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Enumerations</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowDragging.Enum.html')"><b>AllowDragging</b></a></td>
+      <td>Specifies constants that define the row/column dragging behavior.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowMerging.Enum.html')"><b>AllowMerging</b></a></td>
+      <td>Specifies constants that define which areas of the grid support cell merging.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowResizing.Enum.html')"><b>AllowResizing</b></a></td>
+      <td>Specifies constants that define the row/column sizing behavior.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellType.Enum.html')"><b>CellType</b></a></td>
+      <td>Identifies the type of cell in a <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.HeadersVisibility.Enum.html')"><b>HeadersVisibility</b></a></td>
+      <td>Specifies constants that specify the visibility of row and column headers.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowColFlags.Enum.html')"><b>RowColFlags</b></a></td>
+      <td>Flags that specify the state of a grid row or column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.SelectedState.Enum.html')"><b>SelectedState</b></a></td>
+      <td>Specifies the selected state of a cell.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.SelectionMode.Enum.html')"><b>SelectionMode</b></a></td>
+      <td>Specifies constants that define the selection behavior.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.SelMove.Enum.html')"><b>SelMove</b></a></td>
+      <td>Specifies a type of movement for the selection.</td>
+    </tr>
+</tbody>
+</table>

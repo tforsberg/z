@@ -1,0 +1,40 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Chart series binding</h3>
+        <p>
+            This view shows how you can use the <b>FlexChart</b> to show data from
+            multiple data sources, one per series.</p>
+        <p>
+            The sample does the following:</p>
+        <ol>
+            <li>
+                Set the chart's <b>bindingX</b> and <b>binding</b> properties to "x" and "y".</li>
+            <li>
+                Add a <b>Series</b> object to the chart's <b>series</b> array and set its
+                <b>itemsSource</b> property to an array of objects that have "x" and "y" properties.
+            </li>
+            <li>
+                Add a second <b>Series</b> object to the chart's <b>series</b> array and set its
+                <b>itemsSource</b> property to a different array of objects that have "x" and "y" 
+                properties.</li>
+        </ol>
+        <p>
+            Alternatively, we could have set the <b>bindingX</b> and <b>binding</b> properties on the
+            <b>Series</b> objects instead of setting then on the chart. In this case this was not necessary
+            because the binding names are the same for all series.</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-flex-chart 
+            class="chart"
+            control="ctx.chart"
+            chart-type="Line"
+            binding-x="x"
+            binding="y">
+            <wj-flex-chart-series items-source="ctx.pts1" name="function 1"></wj-flex-chart-series>
+            <wj-flex-chart-series items-source="ctx.pts2" name="function 2"></wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+
+</div>

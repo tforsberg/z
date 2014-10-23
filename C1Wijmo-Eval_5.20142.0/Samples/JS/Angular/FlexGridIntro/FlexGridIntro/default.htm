@@ -1,0 +1,847 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FlexGrid Introduction</title>
+
+    <!-- ensure IE uses the latest version of IE (yes, yes...) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery/Angular/Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.chart.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/vendor/wijmo.min.css">
+
+    <!-- app scripts and styles -->
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/directives/appDctv.js" type="text/javascript"></script>
+    <script src="scripts/controllers/appCtrl.js" type="text/javascript"></script>
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+	<div class="header visible-xs visible-sm">
+		<div class="container">
+			<h1>
+				FlexGrid 101
+			</h1>
+		</div>
+	</div>
+	<div class="header hidden-xs hidden-sm">
+		<div class="container">
+			<img src="resources/wijmo5.png">
+			<h1>
+				FlexGrid 101</h1>
+			<p>
+				This page shows how to get started with Wijmo's FlexGrid control.</p>
+		</div>
+	</div>
+    <div class="container">
+
+        <!-- getting started -->
+        <h2>
+            Getting Started</h2>
+        <p>
+            Steps for getting started with FlexGrid in AngularJS applications:</p>
+        <ol>
+            <li>Add references to jQuery, AngularJS, Wijmo, and Wijmo's AngularJS directives.</li>
+            <li>Add a controller to provide data and logic.</li>
+            <li>Add a FlexGrid to the page and bind it to the data.</li>
+            <li>Add some CSS to customize the grid's appearance.</li>
+        </ol>
+
+        <div class="row started">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data">
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="scripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/angular.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/bootstrap.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/bootstrap.css"/&gt;
+
+  &lt;script src="scripts/wijmo.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.input.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.grid.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.chart.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.angular.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/wijmo.css" /&gt;
+
+  &lt;script src="scripts/app.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;link href="css/app.css" rel="stylesheet" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body ng-app="app" ng-controller="appCtrl"&gt;
+
+  &lt;!-- this is the grid --&gt;
+  &lt;wj-flex-grid items-source="data"&gt;
+  &lt;/wj-flex-grid&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// declare app module
+var app = angular.module('app');
+
+// app controller provides data
+app.controller('appCtrl', function appCtrl($scope) {
+
+    // generate some random data
+    var countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
+        data = [];
+    for (var i = 0; i &lt; 100; i++) {
+        data.push({
+            id: i,
+            country: countries[i % countries.length],
+            date: new Date(2014, i % 12, i % 28),
+            amount: Math.random() * 10000,
+            active: i % 4 == 0
+        });
+    }
+
+    // add data array to scope
+    $scope.data = data;
+});
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+/* set default grid style */
+.wj-flexgrid {
+    height: 300px;
+    background-color: white;
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+    margin-bottom: 12px;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".started .collapsed-content, .started .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".started .collapsed-content, .started .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- column definitions -->
+        <h2>
+            Column Definitions</h2>
+        <p>
+            The Getting Started example did not define any columns, so FlexGrid generated them
+            automatically.</p>
+        <p>
+            This example shows how you can define the columns using HTML markup.
+            You can also do this in code, but using markup allows you to have more separation 
+            between the controller and the view.</p>
+        <p>
+            Specifying the columns allows you to choose which columns to show, and in what order. 
+            This also gives you control over each column&#39;s width, heading, formatting, alignment, 
+            and other properties.</p>
+        <p>
+            In this case, we use star sizing to set the width of the "Country" column.
+            This tells the column to stretch to fill the available width of the grid so there is no 
+            empty space.
+            On the "Revenue" column, we set the format property to "n0", which results in numbers
+            with thousand separators and no decimal digits.</p>
+        
+        <div class="row definitions">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data">
+                    <wj-flex-grid-column header="Country" binding="country" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Active" binding="active"></wj-flex-grid-column>
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="data"&gt;
+  &lt;wj-flex-grid-column header="Country" binding="country"
+    width="*"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Revenue" binding="amount"
+    format="n0" &gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Active" binding="active"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".definitions .collapsed-content, .definitions .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".definitions .collapsed-content, .definitions .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- selection modes -->
+        <h2>
+            Selection Modes</h2>
+        <p>
+            By default, FlexGrid allows you to select a range of cells with the mouse or keyboard,
+            just like Excel. The <b>selectionMode</b> property allows you to change that so that you 
+            can select a row, a range of rows, non-contiguous rows (like in a list-box), a single cell,
+            or disable selection altogether.</p>
+        <p>
+            This example allows you to pick the <b>selectionMode</b> from a Wijmo Menu control.</p>
+
+        <div class="row selection">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data" selection-mode="{{selectionMode}}">
+                </wj-flex-grid>
+                <wj-menu value="selectionMode" header="Selection Mode">
+                    <wj-menu-item value="'None'">None</wj-menu-item>
+                    <wj-menu-item value="'Cell'">Cell</wj-menu-item>
+                    <wj-menu-item value="'CellRange'">CellRange</wj-menu-item>
+                    <wj-menu-item value="'Row'">Row</wj-menu-item>
+                    <wj-menu-item value="'RowRange'">RowRange</wj-menu-item>
+                    <wj-menu-item value="'ListBox'">ListBox</wj-menu-item>
+                </wj-menu>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div ng-non-bindable="" class="pane-content">
+&lt;wj-flex-grid items-source="data" selection-mode="{{selectionMode}}"&gt;
+&lt;/wj-flex-grid&gt;
+&lt;wj-menu value="selectionMode" header="Selection Mode" &gt;
+    &lt;wj-menu-item value="'None'"&gt;None&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'Cell'"&gt;Cell&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'CellRange'"&gt;CellRange&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'Row'"&gt;Row&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'RowRange'"&gt;RowRange&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'ListBox'"&gt;ListBox&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// initialize selection mode
+$scope.selectionMode = 'CellRange';
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".selection .collapsed-content, .selection .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".selection .collapsed-content, .selection .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- editing -->
+        <h2>
+            Editing</h2>
+        <p>
+            FlexGrid has built-in support for fast, in-cell editing like you find in Excel. There is no 
+            need to add extra columns with Edit buttons that switch between display and edit modes.</p>
+        <p>
+            Users can start editing by typing into any cell. This puts the cell in quick-edit mode. 
+            In this mode, pressing a cursor key finishes the editing and moves the selection to a different cell. 
+            </p>
+        <p>
+            Another way to start editing is by pressing F2 or by clicking a cell twice. This puts the cell in 
+            full-edit mode. In this mode, pressing a cursor key moves the caret within the cell text. 
+            To finish editing and move to another cell, the user must press the Enter, Tab, or Escape key.</p>
+        <p>
+            Data is automatically coerced to the proper type when editing finishes. If the user enters invalid
+            data, the edit is cancelled and the original data remains in place.</p>
+        <p>
+            You can disable editing at the grid, column, or row levels using the <b>isReadOnly</b> property of the 
+            grid, column, or row objects. In this example, we make the ID column read-only.</p>
+
+        <div class="row editing">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data">
+                    <wj-flex-grid-column header="ID" binding="id" is-read-only="true" width="50"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Country" binding="country" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Active" binding="active"></wj-flex-grid-column>
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="data"&gt;
+  &lt;wj-flex-grid-column header="ID" binding="id" 
+    is-read-only="true"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Country"  binding="country" 
+    width="*"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Revenue" binding="amount" 
+    format="n0" &gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Active"binding="active"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+                                      </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".editing .collapsed-content, .editing .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".editing .collapsed-content, .editing .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- grouping -->
+        <h2>
+            Grouping</h2>
+        <p>
+            FlexGrid supports grouping through the <b>ICollectionView</b> interface, which is identical to the 
+            one in .NET. To enable grouping, add one or more <b>GroupDescription</b> objects to the 
+            <b>CollectionView.groupDescriptions</b> property, and ensure that the grid's <b>showGroups</b> property 
+            is set to true (the default value).</p>
+        <p>
+            <b>GroupDescription</b> objects are flexible, allowing you to group data based on value or on grouping 
+            functions. The example below groups dates by year; amounts by range returning three ranges: over 5,000, 
+            500 to 5,000, and under 500; and anything else by value. Use the menu to see the effects of each grouping.</p>
+        <p>
+            Notice that the "Revenue" column displays the totals in the group rows. We do this by 
+            setting the column's <b>aggregate</b> property to "Sum." The aggregate is automatically 
+            updated when you edit the values in the column.</p>
+
+        <div class="row grouping">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="cvGroup">
+                    <wj-flex-grid-column header="Country" binding="country" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Revenue" binding="amount" format="n0" aggregate="Sum"></wj-flex-grid-column>
+                </wj-flex-grid>
+                <wj-menu value="groupBy" header="Group by">
+                    <wj-menu-item value="''">(no grouping)</wj-menu-item>
+                    <wj-menu-item value="'country'">Country</wj-menu-item>
+                    <wj-menu-item value="'amount'">Revenue</wj-menu-item>
+                    <wj-menu-item value="'date'">Date</wj-menu-item>
+                    <wj-menu-item value="'country,date'">Country and Date</wj-menu-item>
+                    <wj-menu-item value="'country,amount'">Country and Revenue</wj-menu-item>
+                    <wj-menu-item value="'country,date,amount'">Country, Date, and Revenue</wj-menu-item>
+                </wj-menu>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="cvGroup"&gt;
+    &lt;wj-flex-grid-column header="Country" binding="country" width="*"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Revenue" binding="amount" format="n0" aggregate="Sum" &gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+&lt;wj-menu value="groupBy" header="Group by" &gt;
+    &lt;wj-menu-item value="''"&gt;(no grouping)&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'country'"&gt;Country&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'amount'"&gt;Revenue&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'date'"&gt;Date&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'country,date'"&gt;Country and Date&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'country,amount'"&gt;Country and Revenue&lt;/wj-menu-item&gt;
+    &lt;wj-menu-item value="'country,date,amount'"&gt;Country, Date, and Revenue&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// expose the data as a CollectionView to show grouping
+$scope.cvGroup = new wijmo.collections.CollectionView(data);
+$scope.groupBy = '';
+
+// update CollectionView group descriptions when groupBy changes
+$scope.$watch('groupBy', function () {
+    var cv = $scope.cvGroup;
+    cv.groupDescriptions.clear(); // clear current groups
+    if ($scope.groupBy) {
+        var groupNames = $scope.groupBy.split(',');
+        for (var i = 0; i &lt; groupNames.length; i++) {
+            var groupName = groupNames[i];
+            if (groupName == 'date') { // ** group dates by year
+                var groupDesc = new wijmo.collections.PropertyGroupDescription(groupName, function (item, prop) {
+                    return item.date.getFullYear();
+                });
+                cv.groupDescriptions.push(groupDesc);
+            } else if (groupName == 'amount') { // ** group amounts in ranges
+                var groupDesc = new wijmo.collections.PropertyGroupDescription(groupName, function (item, prop) {
+                    return item.amount &gt;= 5000 ? '&gt; 5,000' : item.amount &gt;= 500 ? '500 to 5,000' : '&lt; 500';
+                });
+                cv.groupDescriptions.push(groupDesc);
+            } else { // ** group everything else by value
+                var groupDesc = new wijmo.collections.PropertyGroupDescription(groupName);
+                cv.groupDescriptions.push(groupDesc);
+            }
+        }
+    }
+});
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".grouping .collapsed-content, .grouping .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".grouping .collapsed-content, .grouping .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- filtering -->
+        <h2>
+            Filtering</h2>
+        <p>
+            The FlexGrid supports filtering through the <b>ICollectionView</b> interface, which is identical to the
+            one in .NET. To enable filtering, set the <b>CollectionView.filter</b> property to a function that
+            determines which objects to include in the view.</p>
+        <p>
+            In this example, we create a filter for the country, and get the filter value from the input control.</p>
+
+        <div class="row filtering">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="cvFilter">
+                </wj-flex-grid>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-filter"></span></span>
+                    <input type="text" class="form-control" placeholder="filter" ng-model="filter">
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="cvFilter"&gt;
+&lt;/wj-flex-grid&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-addon"&gt;
+    &lt;span class="glyphicon glyphicon-filter"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;input type="text" ng-model="filter" class="form-control" placeholder="filter"/&gt;
+&lt;/div&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// expose the data as a CollectionView to show filtering
+$scope.filter = '';
+var toFilter, lcFilter;
+$scope.cvFilter = new wijmo.collections.CollectionView(data);
+$scope.cvFilter.filter = function (item) { // ** filter function
+    if (!$scope.filter) {
+        return true;
+    }
+    return item.country.toLowerCase().indexOf(lcFilter) > -1;
+};
+$scope.$watch('filter', function () { // ** refresh view when filter changes
+    if (toFilter) {
+        clearTimeout(toFilter);
+    }
+    toFilter = setTimeout(function () {
+        lcFilter = $scope.filter.toLowerCase();
+        $scope.cvFilter.refresh();
+    }, 500);
+});
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".filtering .collapsed-content, .filtering .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".filtering .collapsed-content, .filtering .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- paging -->
+        <h2>
+            Paging</h2>
+        <p>
+            The FlexGrid supports paging through the <b>IPagedCollectionView</b> interface, which is nearly identical 
+            to the one in .NET. To enable paging, set the <b>IPagedCollectionView.pageSize</b> property to the number
+            of items you want on each page, and provide a UI for navigating the pages.</p>
+        <p>
+            In this example, we use JavaScript to show 10 items per page. We add navigation buttons, and call 
+            IPagedCollectionView methods in the button click directives. Note that we use the <strong>pageIndex</strong> 
+            and <strong>pageCount</strong> properties to show the current page and total number of pages. </p>
+
+        <div class="row paging">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="cvPaging" style="height:auto">
+                </wj-flex-grid>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" ng-click="cvPaging.moveToFirstPage()" ng-disabled="cvPaging.pageIndex <= 0">
+                        <span class="glyphicon glyphicon-fast-backward"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="cvPaging.moveToPreviousPage()" ng-disabled="cvPaging.pageIndex <= 0">
+                        <span class="glyphicon glyphicon-step-backward"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" disabled="" style="width:100px">
+                        {{cvPaging.pageIndex + 1 | number}} / {{cvPaging.pageCount | number}}
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="cvPaging.moveToNextPage()" ng-disabled="cvPaging.pageIndex >= cvPaging.pageCount - 1">
+                        <span class="glyphicon glyphicon-step-forward"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="cvPaging.moveToLastPage()" ng-disabled="cvPaging.pageIndex >= cvPaging.pageCount - 1">
+                        <span class="glyphicon glyphicon-fast-forward"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="cvPaging" style="height:auto"&gt;
+&lt;/wj-flex-grid&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn" ng-click="cvPaging.moveToFirstPage()"
+    &lt;span class="glyphicon glyphicon-fast-backward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn" ng-click="cvPaging.moveToPreviousPage()"
+    &lt;span class="glyphicon glyphicon-step-backward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn" disabled style="width:100px"&gt;
+    {&#8203;{cvPaging.pageIndex + 1 | number}} / {&#8203;{cvPaging.pageCount | number}}
+  &lt;/button&gt;
+  &lt;button type="button" class="btn" ng-click="cvPaging.moveToNextPage()"
+    &lt;span class="glyphicon glyphicon-step-forward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn" ng-click="cvPaging.moveToLastPage()"
+    &lt;span class="glyphicon glyphicon-fast-forward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// expose the data as a CollectionView to show paging
+$scope.cvPaging = new wijmo.collections.CollectionView(data);
+$scope.cvPaging.pageSize = 10;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".paging .collapsed-content, .paging .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".paging .collapsed-content, .paging .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- master-detail -->
+        <h2>
+            Master-Detail</h2>
+        <p>
+            The <b>ICollectionView</b> interface has built-in support for currency, which enables you to
+            implement master-detail scenarios with FlexGrid. You can refer to the <b>currentItem</b> and 
+            use it as a binding source for any elements on the page.</p>
+        <p>
+            Note that you have to tell AngularJS when the current item changes.
+            To do that, attach a handler to the <b>ICollectionView.currentChanged</b>
+            event and call <b>$scope.$apply</b> as shown in the JS tab of this sample.</p>
+
+        <div class="row detail">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="cvFilter" is-read-only="true">
+                    <wj-flex-grid-column header="Country" binding="country" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                </wj-flex-grid>
+                <dl class="dl-horizontal">
+                  <dt>ID</dt>
+                  <dd>{{cvFilter.currentItem.id}}</dd>
+                  <dt>Country</dt>
+                  <dd>{{cvFilter.currentItem.country}}</dd>
+                  <dt>Date</dt>
+                  <dd>{{cvFilter.currentItem.date | date}}</dd>
+                  <dt>Revenue</dt>
+                  <dd>{{cvFilter.currentItem.amount | number:2}}</dd>
+                </dl>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="cvFilter" is-read-only="true"&gt;
+    &lt;wj-flex-grid-column header="Country" binding="country" width="*"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+&lt;dl class="dl-horizontal"&gt;
+    &lt;dt&gt;ID&lt;/dt&gt;
+    &lt;dd&gt;{&#8203;{cvFilter.currentItem.id}}&lt;/dd&gt;
+    &lt;dt&gt;Country&lt;/dt&gt;
+    &lt;dd&gt;{&#8203;{cvFilter.currentItem.country}}&lt;/dd&gt;
+    &lt;dt&gt;Date&lt;/dt&gt;
+    &lt;dd&gt;{&#8203;{cvFilter.currentItem.date | date}}&lt;/dd&gt;
+    &lt;dt&gt;Revenue&lt;/dt&gt;
+    &lt;dd&gt;{&#8203;{cvFilter.currentItem.amount | number:2}}&lt;/dd&gt;
+&lt;/dl&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// tell scope when current item changes
+$scope.cvFilter.currentChanged.addHandler(function () {
+    $scope.$apply('cvFilter.currentItem');
+});
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".detail .collapsed-content, .detail .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".detail .collapsed-content, .detail .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- cell templates -->
+        <h2>
+            Cell Templates</h2>
+        <p>
+            FlexGrid has an <b>itemFormatter</b> property that gives you complete control over
+            the contents of the cells. The AngularJS directive we provide for the grid uses this
+            to support in-line cell templates, so you can define the appearance of the cells using
+            plain HTML.</p>
+        <p>
+            To define a cell template for a column, add the HTML to display in each cell to the 
+            column definition. Use the $item variable to access the data item from within the
+            template.</p>
+
+        <div class="row templates">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data">
+                    <wj-flex-grid-column header="Country" binding="country" width="*">
+                        <img src="resources/{{$item.country}}.png">
+                        {{$item.country}}
+                    </wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Active" binding="active"></wj-flex-grid-column>
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="data"&gt;
+    &lt;wj-flex-grid-column header="Country" binding="country" width="*"&gt;
+        &lt;img src="resources/{&#8203;{$item.country}}.png" /&gt;
+        {&#8203;{$item.country}}
+    &lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Revenue" binding="amount" format="n0" &gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Active" binding="active"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".templates .collapsed-content, .templates .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".templates .collapsed-content, .templates .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- conditional styling -->
+        <h2>
+            Conditional Styling</h2>
+        <p>
+            The <b>wj-flex-flex-grid-column</b> directive supports the <b>ng-style</b> directive. This allows 
+            you to customize the style used to display the data in each cell based on its value.</p>
+        <p>
+            This example uses a JavaScript function to create value ranges that return named
+            colors. We then call this function in the Revenue column inside the ng-style directive
+            and use the $item variable to pass in the data and set the color.</p>
+
+        <div class="row styling">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data">
+                    <wj-flex-grid-column header="Country" binding="country" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Date" binding="date"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Revenue" binding="amount" format="n0" ng-style="{color:getAmountColor($item.amount)}"></wj-flex-grid-column>
+                    <wj-flex-grid-column header="Active" binding="active"></wj-flex-grid-column>
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="data"&gt;
+    &lt;wj-flex-grid-column header="Country" binding="country" width="*"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Date" binding="date"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Revenue" binding="amount" format="n0"
+        ng-style="{color:getAmountColor($item.amount)}"&gt;
+    &lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Active" binding="active"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// get the color to use to display the amount
+$scope.getAmountColor = function (amount) {
+    if (amount &lt; 500) return 'darkred';
+    if (amount &lt; 2500) return 'black';
+    return 'darkgreen';
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".styling .collapsed-content, .styling .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".styling .collapsed-content, .styling .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- themes -->
+        <h2>
+            Themes</h2>
+        <p>
+            The appearance of the FlexGrid is defined in CSS. In addition to the default theme, we 
+            include about a dozen professionally designed themes that customize the appearance of
+            all Wijmo controls to achieve a consistent, attractive look.</p>
+        <p>
+            You can customize the appearance of the grid using CSS. To do this, copy CSS rules 
+            from the default theme to a new CSS file and modify the style attributes you want to change.</p>
+        <p>
+            In this example, we add a "custom-flex-grid" class to the grid element and define some
+            CSS rules to create a simple "black and white, no borders" theme for any grids that 
+            have the "custom-flex-grid" class.</p>
+
+        <div class="row themes">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid items-source="data" class="custom-flex-grid">
+                </wj-flex-grid>
+            </div>
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid items-source="data" class="custom-flex-grid"&gt;
+&lt;/wj-flex-grid&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="CSS">
+                        <div class="pane-content">
+/* create a 'custom-flex-grid' theme for the FlexGrid */
+.custom-flex-grid .wj-header.wj-cell {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    border-right: solid 1px #404040;
+    border-bottom: solid 1px #404040;
+}
+.custom-flex-grid .wj-cell {
+    border: none;
+    background-color: #fff;
+}
+.custom-flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+    background-color: #fff;
+}
+.custom-flex-grid .wj-state-selected {
+    background: #000;
+    color: #fff;
+}
+.custom-flex-grid .wj-state-multi-selected {
+    background: #222222;
+    color: #fff;
+}
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".themes .collapsed-content, .themes .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".themes .collapsed-content, .themes .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+
+        <!-- trees/hierarchical data -->
+        <h2>
+            Trees and Hierarchical Data</h2>
+        <p>
+            In addition to grouping, FlexGrid supports hierarchical data, that is, data with items 
+            that have lists of subitems. This type of hierarchical structure is very common, and is 
+            usually displayed in a tree-view control.</p>
+        <p>
+            To use FlexGrid with hierarchical data sources, set the <b>childItemsPath</b> property 
+            to the name of the data element that contains the child elements. The grid automatically 
+            scans the data and builds the tree for you.</p>
+
+        <div class="row trees">
+            <div class="col-md-6 col-md-push-6">
+                <h4>Result (live):</h4>
+                <wj-flex-grid class="custom-flex-grid" items-source="treeData" child-items-path="items" allow-resizing="None" selection-mode="ListBox" headers-visibility="None">
+                    <wj-flex-grid-column binding="name" width="*"></wj-flex-grid-column>
+                    <wj-flex-grid-column binding="length" width="80" align="center"></wj-flex-grid-column>
+                </wj-flex-grid>
+            </div>
+
+            <div class="col-md-6 col-md-pull-6 collapsed-content collapse app-lg-visible">
+                <app-tab>
+                    <app-tab-pane title="HTML">
+                        <div class="pane-content">
+&lt;wj-flex-grid
+  class="custom-flex-grid"
+  items-source="treeData" 
+  child-items-path="items" 
+  allow-resizing="None"
+  selection-mode="ListBox"
+  headers-visibility="None"&gt;
+  &lt;wj-flex-grid-column binding="name" width="*"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column binding="length" width="80" align="center"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+                        </div>
+                    </app-tab-pane>
+                    <app-tab-pane title="JS">
+                        <div class="pane-content">
+// hierarchical data
+$scope.treeData = [
+    { name: '\u266B Adriane Simione', items: [
+        { name: '\u266A Intelligible Sky', items: [
+            { name: 'Theories', length: '2:02' },
+            { name: 'Giant Eyes', length: '3:29' },
+            { name: 'Jovian Moons', length: '1:02' },
+            { name: 'Open Minds', length: '2:41' },
+            { name: 'Spacetronic Eyes', length: '3:41' }]
+        }
+    ]},
+    { name: '\u266B Amy Winehouse', items: [
+        { name: '\u266A Back to Black', items: [
+            { name: 'Addicted', length: '1:34' },
+            { name: 'He Can Only Hold Her', length: '2:22' },
+            { name: 'Some Unholy War', length: '2:21' },
+            { name: 'Wake Up Alone', length: '3:43' },
+            { name: 'Tears Dry On Their Own', length: '1:25' }]
+        },
+    // more hierarchical data...
+                        </div>
+                    </app-tab-pane>
+                </app-tab>
+            </div>
+			<div class="col-xs-12">
+				<button type="button" data-toggle="collapse" data-target=".trees .collapsed-content, .trees .btn" class="btn btn-default collapse in">View Source Code</button>
+				<button type="button" data-toggle="collapse" data-target=".trees .collapsed-content, .trees .btn" class="btn btn-default collapse">Hide Source Code</button>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

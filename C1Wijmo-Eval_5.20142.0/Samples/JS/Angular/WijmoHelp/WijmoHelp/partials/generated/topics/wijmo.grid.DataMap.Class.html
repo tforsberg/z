@@ -1,0 +1,112 @@
+<h2>DataMap Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p><p>Represents a data map for use with the column's <b>dataMap</b> property.</p>
+
+<p>Data maps provide the grid with automatic look up capabilities. For example, 
+you may want to display a customer name instead of his ID, or a color name 
+instead of its RGB value.</p>
+
+<p>For example, the code below creates binds a grid to a collection of products,
+then assigns a <b>DataMap</b> to the grid's 'CategoryID' column so the grid will
+display the category names rather than the raw IDs.</p>
+
+<p><pre>
+// bind grid to products
+var flex = new wijmo.grid.FlexGrid();
+flex.itemsSource = products;
+// map CategoryID column to show category name instead of ID
+var col = flex.columns.getColumn('CategoryID');
+col.dataMap = new wijmo.grid.DataMap(categories, 'CategoryID', 'CategoryName');
+</pre></p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(itemsSource, keyPath, displayPath)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>itemsSource</b> (<b>any</b>): Array or or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the map items.</li><li><b>keyPath</b> (<b>string</b>): Name of the property that contains the keys (data values).</li><li><b>displayPath</b> (<b>string</b>): Name of the property that contains the keys (data values).</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getDisplayValue</b>(key)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>key</b> (<b>any</b>): Key of the item to retrieve.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Gets the display value that corresponds to a given key.<br/><b>Returns</b> The display value of the item to retrieve.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getDisplayValues</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td>Gets an array with all possible display values on this map.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getKeyValue</b>(displayValue)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>displayValue</b> (<b>string</b>): Display value of the item to retrieve.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Gets the key that corresponds to a given display value.<br/><b>Returns</b> The key of the item to retrieve.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onMapChanged</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Raises the <b>mapChanged</b> event.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>mapChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs when the map data changes.</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿<br />
+
+Select a customer: 
+    <wj-combo-box
+        items-source="cvCst"
+        display-member-path="CompanyName">
+    </wj-combo-box>
+
+<br />
+<br />
+
+<p>
+    View/Edit orders for customer <b>{{cvCst.currentItem.CompanyName}}:</b></p>
+<wj-flex-grid class="grid" selection-mode="RowRange" allow-add-new="true" allow-delete="true" items-source="cvOrd">
+	<!--<wj-flex-grid-column binding="OrderID" header="ID" width="60"></wj-flex-grid-column>-->
+	<!--<wj-flex-grid-column binding="CustomerID" header="Customer" data-map="mapCst"></wj-flex-grid-column>-->
+	<wj-flex-grid-column binding="EmployeeID" header="Employee" data-map="mapEmp"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="OrderDate" header="Order Date"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="RequiredDate" header="Required Date"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="ShippedDate" header="Shipped Date"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Freight" header="Freight"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="ShipVia" header="Via" data-map="mapShp"></wj-flex-grid-column>
+</wj-flex-grid>
+
+<br />
+<br />
+
+<p>
+    View/Edit items in order <b>{{cvOrd.currentItem.OrderID}}</b>:</p>
+<wj-flex-grid class="grid" selection-mode="RowRange" allow-add-new="true" allow-delete="true" items-source="cvDtl">
+	<!--<wj-flex-grid-column binding="OrderID" header="Order"></wj-flex-grid-column>-->
+	<wj-flex-grid-column binding="ProductID" header="Product" data-map="mapPrd"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Quantity" header="Quantity" format="n2"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="UnitPrice" header="Unit Price" format="n2"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Discount" header="Discount" format="p0"></wj-flex-grid-column>
+</wj-flex-grid>

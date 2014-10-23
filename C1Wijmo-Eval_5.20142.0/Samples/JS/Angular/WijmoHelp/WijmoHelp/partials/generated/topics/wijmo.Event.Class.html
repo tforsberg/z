@@ -1,0 +1,87 @@
+<h2>Event Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Represents an event.</p>
+
+<p>Wijmo events are similar to .NET events. Any class may define events by 
+declaring them as fields. Any class may subscribe to events using the 
+event's <b>addHandler</b> method, or unsubscribe using the <b>removeHandler</b> 
+method.</p>
+
+<p>Wijmo event handlers take two parameters: <i>sender</i> and <i>args</i>. 
+The first is the object that raised the event, and the second is an object 
+that contains the the event parameters.</p>
+
+<p>Classes that define events follow the .NET pattern where for every event 
+there is an <i>on[EVENTNAME]</i> method that raises the event. This pattern 
+allows derived classes to override the <i>on[EVENTNAME]</i> method and 
+handle the event before and/or after the base class raises the event. 
+Derived classes may even suppress the event by not calling the base class 
+implementation.</p>
+
+<p>For example, the TypeScript code below overrides the <b>onValueChanged</b>
+event for a control to perform some processing before and after the 
+<b>valueChanged</b> event fires:
+<pre>
+  // override base class
+  onValueChanged(e: EventArgs) {
+  // execute some code before the event fires
+  console.log('about to fire valueChanged');
+  // optionally, call base class to fire the event
+  super.onValueChanged(e);
+  // execute some code after the event fired
+  console.log('valueChanged event just fired');
+}
+</pre></p></p>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>addHandler</b>(handler, self)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>handler</b> (<a href="" ng-click="go('wijmo.IEventHandler.Interface.html')"><b>IEventHandler</b></a>): Function invoked when the event is raised.</li><li><b>self</b> (<b>any</b>): Object that defines the event handler 
+(accessible as 'this' from the handler code).</li></ul>
+</td>
+      <td>void</td>
+      <td>Adds a handler to this event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>raise</b>(sender, args)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>sender</b> (<b>any</b>): Source object.</li><li><b>args</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>): Event parameters. <span class="text-info">(default Value: <b>null</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Raises this event, causing all associated handlers to be invoked.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeAllHandlers</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Removes all handlers associated with this event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeHandler</b>(handler, self)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>handler</b> (<a href="" ng-click="go('wijmo.IEventHandler.Interface.html')"><b>IEventHandler</b></a>): Function invoked when the event is raised.</li><li><b>self</b> (<b>any</b>): Object that defines the event handler (accessible as 'this' from the handler code).</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes a handler from this event.</td>
+    </tr>
+</tbody>
+</table>

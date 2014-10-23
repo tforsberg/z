@@ -1,0 +1,261 @@
+<h2>RowColCollection Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></dd>
+<dt>Derived Classes</dt><dd><a href="" ng-click="go('wijmo.grid.ColumnCollection.Class.html')"><b>ColumnCollection</b></a>, <a href="" ng-click="go('wijmo.grid.RowCollection.Class.html')"><b>RowCollection</b></a></dd>
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p>Abstract class that serves as a base for row and column collections.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(grid, defaultSize)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>grid</b> (<a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>): <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> that owns this collection.</li><li><b>defaultSize</b> (<b>number</b>): Default size of the elements in this collection.</li></ul>
+</td>
+      <td>Initializes a new instance of a <b>_RowColCollection</b>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>collectionChanged</b></td>
+      <td></td>
+      <td>Occurs when the collection changes.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>defaultSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the default size of elements in this collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isUpdating</b></td>
+      <td></td>
+      <td>Gets a value that indicates whether notifications are currently suspended
+(see <b>beginUpdate</b> and <b>endUpdate</b>).<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>maxSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the maximum size of elements in this collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>minSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the minimum size of elements in this collection.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>beginUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Suspends notifications until the next call to <b>endUpdate</b>.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canMoveElement</b>(src, dst)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>src</b> (<b>number</b>): Index of the element to move.</li><li><b>dst</b> (<b>number</b>): Position where the element should be moved to (-1 to append).</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether an element can be moved from one position to another.<br/><b>Returns</b> True if the move is valid, false otherwise.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>clear</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Overridden to clear list reference from child elements.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>deferUpdate</b>(fn)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fn</b> (<b>Function</b>): Function to be executed without updates.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Executes a function within a <b>beginUpdate</b>/<b>endUpdate</b> block.</p>
+
+<p>The collection will not be refreshed until the function finishes. 
+This method ensures <b>endUpdate</b> is called even if the function throws.</p><br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>endUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Resumes notifications suspended by a call to <b>beginUpdate</b>.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getItemAt</b>(position)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>position</b> (<b>number</b>): Position of the item in the collection, in pixels.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Gets the index of the element at a given physical position.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getNextCell</b>(index, move, pageSize)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Starting index for the search.</li><li><b>move</b> (<a href="" ng-click="go('wijmo.grid.SelMove.Enum.html')"><b>SelMove</b></a>): Type of move (size and direction).</li><li><b>pageSize</b> (<b>number</b>): Size of a page (in case the move is a page up/down).</li></ul>
+</td>
+      <td>void</td>
+      <td>Finds the next visible cell for a selection change.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getTotalSize</b>()</td>
+      <td></td>
+      <td><b>number</b></td>
+      <td>Gets the total size of the elements in this collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>implementsInterface</b>(interfaceName)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>interfaceName</b> (<b>string</b>): Name of the interface to look for.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns true if the caller queries for a supported interface.<br/><b>Returns</b> True if the caller queries for a supported interface.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>indexOf</b>(searchElement, fromIndex)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>searchElement</b> (<b>any</b>): Element to locate in the array.</li><li><b>fromIndex</b> (<b>number</b>): The index where the search should start.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Searches for an item in the array.<br/><b>Returns</b> The index of the item in the array, or -1 if the item was not found.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>insert</b>(index, item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Position where the item will be added.</li><li><b>item</b> (<b>any</b>): Item to add to the array.</li></ul>
+</td>
+      <td>void</td>
+      <td>Inserts an item at a specific position in the array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveElement</b>(src, dst)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>src</b> (<b>number</b>): Index of the element to move.</li><li><b>dst</b> (<b>number</b>): Position where the element should be moved to (-1 to append).</li></ul>
+</td>
+      <td>void</td>
+      <td>Moves an element from one position to another.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCollectionChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> () <span class="text-info">(default Value: <b>wijmo.collections.NotifyCollectionChangedEventArgs.reset</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Keeps track of dirty state and invalidate grid on changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>push</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to add to the array.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Appends an item to the array.<br/><b>Returns</b> The new length of the array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeAt</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Position of the item to remove.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes an item at a specific position in the array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>setAt</b>(index, item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Position where the item will be assigned.</li><li><b>item</b> (<b>any</b>): Item to assign to the array.</li></ul>
+</td>
+      <td>void</td>
+      <td>Assigns an item at a specific position in the array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>slice</b>(begin, end)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>begin</b> (<b>number</b>): Position where the copy starts.</li><li><b>end</b> (<b>number</b>): Position where the copy ends.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Creates a shallow copy of a portion of an array.<br/><b>Returns</b> A shallow copy of a portion of an array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>sort</b>(compareFn)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>compareFn</b> (<b>Function</b>): Specifies a function that defines the sort order. 
+If specified, the function should take two arguments and should return
+-1, +1, or 0 to indicate the first argument is smaller, greater than,
+or equal to the second argument.
+If omitted, the array is sorted in dictionary order according to the 
+string conversion of each element.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Sorts the elements of the array in place.<br/><b>Returns</b> A copy of the sorted array.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>splice</b>(index, count, item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Position where items will be added or removed.</li><li><b>count</b> (<b>number</b>): Number of items to remove from the array.</li><li><b>item</b> (<b>any</b>): Item to add to the array.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Removes and/or adds items to the array.<br/><b>Returns</b> An array containing the removed elements.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a>).</span></td>
+    </tr>
+</tbody>
+</table>

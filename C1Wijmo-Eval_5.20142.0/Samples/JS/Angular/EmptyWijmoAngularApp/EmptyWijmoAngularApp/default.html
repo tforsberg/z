@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Empty Wijmo/Angular app</title>
+
+    <!-- Wijmo/jQuery references (required) -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script> 
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.min.js" type="text/javascript"></script>
+    <link href="http://cdn.wijmo.com/5.20142.0/styles/wijmo.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Wijmo controls -->
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.chart.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.input.min.js" type="text/javascript"></script>
+
+    <!-- AngularJS and Wijmo directives -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/5.20142.0/interop/angular/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <!-- application scripts -->
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/controllers/appCtrl.js" type="text/javascript"></script>
+
+</head>
+<body style="font-family:Tahoma" ng-app="app" ng-controller="appCtrl">
+    <h1>
+        Welcome to Wijmo 5 and Angular</h1>
+    <p>
+        Here is a <b>FlexGrid</b> control:</p>
+    <wj-flex-grid 
+        style="max-height:350px;"
+        items-source="data">
+        <wj-flex-grid-column header="Country" binding="country" is-read-only="true"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Sales" binding="sales" format="c0"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Expenses" binding="expenses" format="c0"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Downloads" binding="downloads" ></wj-flex-grid-column>
+    </wj-flex-grid>
+
+    <hr />
+
+    <p>
+        And here is a <b>FlexChart</b> control:</p>
+    <wj-flex-chart 
+        style="height:350px;"
+        items-source="data"
+        binding-x="country">
+        <wj-flex-chart-series name="Sales" binding="sales"></wj-flex-chart-series>
+        <wj-flex-chart-series name="Expenses" binding="expenses"></wj-flex-chart-series>
+        <wj-flex-chart-series name="Downloads" binding="downloads" chart-type="LineSymbols"></wj-flex-chart-series>
+    </wj-flex-chart>
+</body>
+</html>

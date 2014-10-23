@@ -1,0 +1,191 @@
+<h2>CellRange Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p>Represents a rectangular group of cells defined by two row indices and
+two column indices.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(r, c, r2, c2)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the first row in this range. <span class="text-info">(default Value: <b>-1</b>)</span></li><li><b>c</b> (<b>number</b>): Index of the first column in this range. <span class="text-info">(default Value: <b>-1</b>)</span></li><li><b>r2</b> (<b>number</b>): Index of the last row in this range. <span class="text-info">(default Value: <b>r</b>)</span></li><li><b>c2</b> (<b>number</b>): Index of the first column in this range. <span class="text-info">(default Value: <b>c</b>)</span></li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>bottomRow</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of the bottom row in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>col</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the index of the first column in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>col2</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the index of the second column in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>columnSpan</b></td>
+      <td><b>number</b></td>
+      <td>Gets the number of columns in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isSingleCell</b></td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range corresponds to a single cell (row == row2 && col == col2).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isValid</b></td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range contains valid row and column indices (> -1).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>leftCol</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of the leftmost column in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rightCol</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of the rightmost column in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>row</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the index of the first row in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>row2</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the index of the second row in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rowSpan</b></td>
+      <td><b>number</b></td>
+      <td>Gets the number of rows in this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>topRow</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of the top row in this range.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>clone</b>()</td>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Creates a copy of this range.<br/><b>Returns</b> A copy of this range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>contains</b>(r, c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>any</b>): CellRange or row index.</li><li><b>c</b> (<b>number</b>): column index (required if the r parameter is not a CellRange).</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range contains another range or a specific cell.<br/><b>Returns</b> True if this range contains the given range or cell.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>containsColumn</b>(c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>c</b> (<b>number</b>): Index of the column to check.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range contains a given column.<br/><b>Returns</b> True if this range contains the given column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>containsRow</b>(r)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the row to check.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range contains a given row.<br/><b>Returns</b> True if this range contains the given row.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>equals</b>(rng)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>rng</b> (<a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>): CellRange to compare to this range.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range equals another range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getRenderSize</b>(panel)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>panel</b> (<a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>): <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the range.</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a></td>
+      <td>Gets the render size of this range.<br/><b>Returns</b> A <a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a> that represents the sum of row heights and column widths in the range.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>intersects</b>(rng)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>rng</b> (<a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>): CellRange to check.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this range intersects another range.<br/><b>Returns</b> True if this range intersects the given range.</td>
+    </tr>
+</tbody>
+</table>

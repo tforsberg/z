@@ -1,0 +1,169 @@
+<h2>Series Class</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><b>_ISeries</b></dd>
+<dt>Module</dt><dd>wijmo.chart</dd>
+<dt>File</dt><dd>wijmo.chart.js</dd>
+</dl>
+<p><p>Represents a series in the chart.</p>
+
+<p>The <b>Series</b> class supports all basic chart types. You may define
+additional chart types by creating classes that derive from <b>Series</b> 
+and override the <b>renderSeries</b> method.</p></p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>binding</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property that contains the Y values.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>bindingX</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property that contains the X values.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>chart</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> that owns this series.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>chartType</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.ChartType.Enum.html')"><b>ChartType</b></a></td>
+      <td>Gets or sets the series chart type.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>collectionView</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the data for this series.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cssClass</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the series CSS class.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hostElement</b></td>
+      <td><b>SVGGElement</b></td>
+      <td>Gets the series host element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsSource</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the series chart type.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>legendElement</b></td>
+      <td><b>SVGGElement</b></td>
+      <td>Gets the series element in legend.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>name</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets the series name.</p>
+
+<p>The series name is displayed in the chart legend. Series without names
+do not appear in the legend.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>style</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the series style.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>symbolMarker</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Marker.Enum.html')"><b>Marker</b></a></td>
+      <td>Gets or sets the series marker.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>symbolSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the size of the symbols used to render this <a href="" ng-click="go('wijmo.chart.Series.Class.html')"><b>Series</b></a>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>symbolStyle</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the series symbol style.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>visibility</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.SeriesVisibility.Enum.html')"><b>SeriesVisibility</b></a></td>
+      <td>Gets or sets the series visibility.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>drawLegendItem</b>(engine, rect)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>engine</b> (<a href="" ng-click="go('wijmo.chart.IRenderEngine.Interface.html')"><b>IRenderEngine</b></a>): Rendering engine.</li><li><b>rect</b> (<a href="" ng-click="go('wijmo.Rect.Class.html')"><b>Rect</b></a>): Position of legend item.</li></ul>
+</td>
+      <td>void</td>
+      <td>Draw legend item at the specified position.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getPlotElement</b>(pointIndex)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pointIndex</b> (<b>number</b>): Index of data point.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Gets plot element that corresponds to the specified point index.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hitTest</b>(pt, y)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pt</b> (<b>any</b>): Point to investigate, in window coordinates.</li><li><b>y</b> (<b>number</b>): Y coordinate of the point (if the first parameter is a number).</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.chart.HitTestInfo.Class.html')"><b>HitTestInfo</b></a></td>
+      <td>Gets a <a href="" ng-click="go('wijmo.chart.HitTestInfo.Class.html')"><b>HitTestInfo</b></a> object with information about a given point.<br/><b>Returns</b> HitTestInfo object with information about the point.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>measureLegendItem</b>(engine)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>engine</b> (<a href="" ng-click="go('wijmo.chart.IRenderEngine.Interface.html')"><b>IRenderEngine</b></a>): Rendering engine.</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a></td>
+      <td>Measures legend item size.</td>
+    </tr>
+</tbody>
+</table>

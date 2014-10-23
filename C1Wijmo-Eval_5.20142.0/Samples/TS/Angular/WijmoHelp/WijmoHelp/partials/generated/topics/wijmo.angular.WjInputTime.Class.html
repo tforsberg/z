@@ -1,0 +1,49 @@
+<h2>WjInputTime Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control.</p>
+
+<p>Use the <b>WjInputTime</b> directive to add <b>InputTime</b> controls to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputTime control:&lt;/p&gt;
+&lt;wj-input-time 
+  value="theDate" 
+  format="h:mm tt"
+  min="09:00" max="17:00"
+  step="15"&gt;
+&lt;/wj-input-time&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example edits a <b>Date</b> value (that includes date and time information)
+using an <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> and an an <b>InputTime</b> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control that can be
+used to select the date with a single click.</p>
+
+<p>The <b>WjInputTime</b> directive extends <a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a> with the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>   <dd><code>=</code> Reference to the <b>InputDate</b> control created by this directive.</dd>
+  <dt>format</dt>    <dd><code>@</code> Format used to display the selected time.</dd>
+  <dt>max</dt>       <dd><code>@</code> Earliest valid time (string in the format "hh:mm").</dd>
+  <dt>min</dt>       <dd><code>@</code> Latest valid time (string in the format "hh:mm").</dd>
+  <dt>required</dt>  <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>step</dt>      <dd><code>@</code> Number of minutes between entries in the drop-down list.</dd>
+  <dt>value</dt>     <dd><code>=</code> Time being edited (as a Date object).</dd>
+  <dt>valueChanged</dt>  <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"hh:mm". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]</a>, which is also the format 
+used with regular HTML5 input elements.</p></p>

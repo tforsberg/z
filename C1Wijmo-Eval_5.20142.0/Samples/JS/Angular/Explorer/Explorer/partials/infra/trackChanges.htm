@@ -1,0 +1,77 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Tracking Changes</h3>
+        <p>
+            Wijmo's <b>CollectionView</b> class can keep track of changes made to the 
+            data. This feature is useful in situations where you must submit changes
+            to the server. To turn on change tracking, set the <b>trackChanges</b>
+            property to true. Once you do that, the <b>CollectionView</b> keeps 
+            track of any changes made to the data and exposes them in three
+            arrays:</p>
+        <ul>
+            <li><b>itemsEdited</b>: This list contains items that are edited using 
+                the <b>beginEdit</b> and <b>commitEdit</b> methods.</li>
+            <li><b>itemsAdded</b>: This list contains items that are added using the 
+                <b>addNew</b> and <b>commitNew</b> methods.</li>
+            <li><b>itemsRemoved</b>: This list contains items that are removed using 
+                the <b>remove</b> method.</li>
+        </ul>
+        <p>
+            This feature is demonstrated below using a <b>FlexGrid</b>. The grid is bound
+            to a <b>CollectionView</b> with <b>trackChanges</b> set to true. As you edit
+            the grid, the changes are shown in three grids below.</p>
+    </div>
+    <div class="row">
+        <h4>Change the data here:</h4>
+        <wj-flex-grid 
+            items-source="ctx.data" 
+            allow-add-new="true"
+            allow-delete="true">
+            <wj-flex-grid-column binding="id" header="ID"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="start" header="Date"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="country" header="ID"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="amount" header="Amount"></wj-flex-grid-column>
+        </wj-flex-grid>
+        <button class="btn btn-default" ng-click="ctx.data.clearChanges()">
+            Clear Changes
+        </button>
+    </div>
+    <div class="row">
+        <h4>
+            See the changes here</h4>
+        <h5>
+            Items Edited ({{ctx.data.itemsEdited.length}} items)</h5>
+        <wj-flex-grid 
+            style="background:#eeeeff"
+            items-source="ctx.data.itemsEdited" 
+            is-read-only="true">
+            <wj-flex-grid-column binding="id" header="ID"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="start" header="Date"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="country" header="Country"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="amount" header="Amount"></wj-flex-grid-column>
+        </wj-flex-grid>
+        <h5>
+            Items Added ({{ctx.data.itemsAdded.length}} items)</h5>
+        <wj-flex-grid 
+            style="background:#eeffee"
+            items-source="ctx.data.itemsAdded" 
+            is-read-only="true">
+            <wj-flex-grid-column binding="id" header="ID"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="start" header="Date"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="country" header="Country"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="amount" header="Amount"></wj-flex-grid-column>
+        </wj-flex-grid>
+        <h5>
+            Items Removed ({{ctx.data.itemsRemoved.length}} items)</h5>
+        <wj-flex-grid 
+            style="background:#ffeeee"
+            items-source="ctx.data.itemsRemoved" 
+            is-read-only="true">
+            <wj-flex-grid-column binding="id" header="ID"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="start" header="Date"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="country" header="Country"></wj-flex-grid-column>
+            <wj-flex-grid-column binding="amount" header="Amount" data-type="Number"></wj-flex-grid-column>
+        </wj-flex-grid>
+    </div>
+</div>

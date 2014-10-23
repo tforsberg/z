@@ -1,0 +1,124 @@
+<h2>GridPanel Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p>Represents a logical part of the grid, such as the column headers, row headers,
+and scrollable data part.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(grid, cellType, rows, cols, element)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>grid</b> (<a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>): <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> that owns this panel.</li><li><b>cellType</b> (<a href="" ng-click="go('wijmo.grid.CellType.Enum.html')"><b>CellType</b></a>): Type of cell in this panel.</li><li><b>rows</b> (<a href="" ng-click="go('wijmo.grid.RowCollection.Class.html')"><b>RowCollection</b></a>): rows displayed in this panel.</li><li><b>cols</b> (<a href="" ng-click="go('wijmo.grid.ColumnCollection.Class.html')"><b>ColumnCollection</b></a>): columns displayed in this panel.</li><li><b>element</b> (<b>HTMLElement</b>): HTMLElement that will host the cells in the control.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>cellType</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellType.Enum.html')"><b>CellType</b></a></td>
+      <td>Gets the type of cell contained in this panel.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>columns</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.ColumnCollection.Class.html')"><b>ColumnCollection</b></a></td>
+      <td>Gets the panel's column collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>grid</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a></td>
+      <td>Gets the grid that owns this panel.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>height</b></td>
+      <td><b>number</b></td>
+      <td>Gets the total height of the content in this panel.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hostElement</b></td>
+      <td><b>HTMLElement</b></td>
+      <td>Gets the host element for this panel.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rows</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowCollection.Class.html')"><b>RowCollection</b></a></td>
+      <td>Gets the panel's row collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>viewRange</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Gets a <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> that indicates the range of cells currently visible on the panel.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>width</b></td>
+      <td><b>number</b></td>
+      <td>Gets the total width of the content in this panel.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getCellData</b>(r, c, formatted)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Row index of the cell.</li><li><b>c</b> (<b>number</b>): Column index of the cell.</li><li><b>formatted</b> (<b>boolean</b>): Whether to format the value for display.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Gets the content of a cell in this panel.<br/><b>Returns</b> The value stored in the cell.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>setCellData</b>(r, c, value, coerce)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the row that contains the cell.</li><li><b>c</b> (<b>any</b>): Index, name, or binding of the column that contains the cell.</li><li><b>value</b> (<b>any</b>): Value to store in the cell.</li><li><b>coerce</b> (<b>boolean</b>): Whether to change the value automatically to match the column's data type. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the content of a cell in this panel.<br/><b>Returns</b> True if the value was stored successfully, false otherwise (failed cast).</td>
+    </tr>
+</tbody>
+</table>

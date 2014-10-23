@@ -1,0 +1,22 @@
+﻿<br />
+
+Select a product category: 
+    <wj-combo-box
+        items-source="cvCat"
+        display-member-path="CategoryName">
+    </wj-combo-box>
+
+<br />
+<br />
+
+<p>
+    View/Edit products in category <b>{{cvCat.currentItem.CategoryName}}:</b></p>
+<wj-flex-grid class="grid" selection-mode="RowRange" allow-add-new="true" allow-delete="true" items-source="cvPrd">
+	<wj-flex-grid-column binding="ProductID" header="ID" width="50" is-read-only="true"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="ProductName" header="Name" width="*"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="QuantityPerUnit" header="Qty/Unit" width="*"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="SupplierID" header="Supplier" data-map="mapSup"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="UnitPrice" header="Unit Price" format="n2"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="UnitsInStock" header="In Stock"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Discontinued" header="Discontinued"></wj-flex-grid-column>
+</wj-flex-grid>

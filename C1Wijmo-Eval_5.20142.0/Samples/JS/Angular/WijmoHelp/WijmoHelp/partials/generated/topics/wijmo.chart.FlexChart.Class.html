@@ -1,0 +1,369 @@
+<h2>FlexChart Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></dd>
+<dt>Implements</dt><dd><b>_IPalette</b></dd>
+<dt>Module</dt><dd>wijmo.chart</dd>
+<dt>File</dt><dd>wijmo.chart.js</dd>
+</dl>
+<p><p>The <b>FlexChart</b> control provides a powerful and flexible way to visualize
+data.</p>
+
+<p>You can use the <b>FlexChart</b> control to create charts that display data in
+several formats, including bar, line, symbol, bubble, and others.</p>
+
+<p>To use the <b>FlexChart</b> control, set the <b>itemsSource</b> property to an 
+array containing the data, then add one or more <a href="" ng-click="go('wijmo.chart.Series.Class.html')"><b>Series</b></a> objects
+to the <b>series</b> property.</p>
+
+<p>Use the <b>chartType</b> property to define the chart type used for all series. 
+You may override the chart type for specific series by setting the <b>chartType</b> 
+property on each <b>Series</b> object.</p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(element, options)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that will host the control, or a jQuery selector (e.g. '#theCtrl').</li><li><b>options</b> (): Javascript object containing initialization data for the control.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>axisX</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Axis.Class.html')"><b>Axis</b></a></td>
+      <td>Gets the main x-axis.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>axisY</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Axis.Class.html')"><b>Axis</b></a></td>
+      <td>Gets the main y-axis.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>binding</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property that contains the Y values.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>bindingX</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property that contains the X values.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>chartType</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.ChartType.Enum.html')"><b>ChartType</b></a></td>
+      <td>Gets or sets the chart type.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>collectionView</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the chart data.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>footer</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text displayed in the chart footer.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>footerStyle</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the style of chart footer.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>header</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the chart header.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>headerStyle</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the style of chart header.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>interpolateNulls</b></td>
+      <td><b>boolean</b></td>
+      <td><p>Gets or sets whether to interpolate null values in the data.</p>
+
+<p>If true, the chart will interpolate the value of any missing data 
+based on neighboring points. If false, it will leave a break in 
+lines and areas at the points with null values.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemFormatter</b></td>
+      <td><b>Function</b></td>
+      <td>Gets or sets the item formatter function.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsSource</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the data used to create the chart.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>legend</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Legend.Class.html')"><b>Legend</b></a></td>
+      <td>Gets the main y-axis.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>legendToggle</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether clicking legend items should toggle the
+series visibility.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>options</b></td>
+      <td><b>any</b></td>
+      <td><p>Gets or sets various chart options.</p>
+
+<p>The following options are supported:</p>
+
+<p><b>bubble.minSize, bubble.maxSize</b>: specifies minimum and maximum pixel sizes 
+of symbols in Bubble chart. The default values are 5 and 30.</p>
+
+<p><pre>
+chart.options = { 
+  bubble: { minSize: 5, maxSize: 30 }
+}
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>palette</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets an array with default colors used for displaying each series.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>plotMargin</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the plot margin.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rotated</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether to flip the axes so X is vertical and Y horizontal.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selection</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Series.Class.html')"><b>Series</b></a></td>
+      <td>Gets or sets the chart selection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectionMode</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.SelectionMode.Enum.html')"><b>SelectionMode</b></a></td>
+      <td>Gets or sets the chart selection mode.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>series</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets the collection of series.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>stacking</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Stacking.Enum.html')"><b>Stacking</b></a></td>
+      <td>Gets or sets whether series should be stacked or plotted independently.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>symbolSize</b></td>
+      <td><b>number</b></td>
+      <td><p>Gets or sets the size of the symbols used to render this <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a>.</p>
+
+<p>This property may be overridden by the <a href="" ng-click="go('wijmo.chart.Series.Class.html')"><b>Series</b></a>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>tooltip</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.ChartTooltip.Class.html')"><b>ChartTooltip</b></a></td>
+      <td><p>Gets the chart <a href="" ng-click="go('wijmo.Tooltip.Class.html')"><b>Tooltip</b></a>.</p>
+
+<p>The tooltip content is generated using a template that may contain the following
+parameters:</p>
+
+<p><ul>
+ <li><b>seriesName</b>: The name of the series that contains the chart element.</li>
+ <li><b>pointIndex</b>: The index of the chart element within the series.</li>
+ <li><b>x</b>: The <b>x</b> value of the chart element.</li>
+ <li><b>y</b>: The <b>y</b> value of the chart element.</li>
+</ul></p>
+
+<p>To modify the template, assign the new value to the tooltip's content property.
+For example:
+<pre>
+chart.tooltip.content = '&lt;b&gt;{seriesName}&lt;/b&gt; &lt;img src="resources/{x}.png"/&gt;&lt;br/&gt;{y}';
+</pre></p>
+
+<p>You can disable the chart tooltips by setting the template to an empty string, or
+set the content to a function that takes a <a href="" ng-click="go('wijmo.chart.HitTestInfo.Class.html')"><b>HitTestInfo</b></a> as a parameter.</p>
+
+<p>You can also use the <b>tooltip</b> property to customize tooltip parameters such 
+as <b>showDelay</b> and <b>hideDelay</b>:
+<pre>
+chart.tooltip.showDelay = 1000;
+</pre></p></td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>dataToPoint</b>(pt, y)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pt</b> (<b>any</b>): Point in data coordinates.</li><li><b>y</b> (<b>number</b>): Y coordinate of the point (if the first parameter is a number).</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.Point.Class.html')"><b>Point</b></a></td>
+      <td>Converts point from data coordinates to page coordinates.<br/><b>Returns</b> The point in page coordinates.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getTemplate</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the HTML template used to create instances of the control.</p>
+
+<p>This method traverses up the class hierarchy to find the nearest ancestor that
+specifies a control template. For example, if you specify a prototype for the
+<a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control, it will override the template defined by the <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> 
+base class.</p><br/><b>Returns</b> The current template.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hitTest</b>(pt, y)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pt</b> (<b>any</b>): Point to investigate, in window coordinates.</li><li><b>y</b> (<b>number</b>): Y coordinate of the point (if the first parameter is a number).</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.chart.HitTestInfo.Class.html')"><b>HitTestInfo</b></a></td>
+      <td>Gets a <a href="" ng-click="go('wijmo.chart.HitTestInfo.Class.html')"><b>HitTestInfo</b></a> object with information about a given point.<br/><b>Returns</b> HitTestInfo object with information about the point.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onRendered</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Raises the <b>rendered</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSelectionChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>rendered</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSeriesVisibilityChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.chart.SeriesEventArgs.Class.html')"><b>SeriesEventArgs</b></a>): <a href="" ng-click="go('wijmo.chart.SeriesEventArgs.Class.html')"><b>SeriesEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>seriesVisibilityChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pointToData</b>(pt, y)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pt</b> (<b>any</b>): Point in control coordinates.</li><li><b>y</b> (<b>number</b>): Y coordinate of the point (if the first parameter is a number).</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.Point.Class.html')"><b>Point</b></a></td>
+      <td>Converts point from control coordinates to chart data coordinates.<br/><b>Returns</b> The point in data coordinates.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refresh</b>(fullUpdate)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullUpdate</b> (<b>boolean</b>): Whether to update the control layout as well as the content. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Refreshes the chart.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>rendered</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after chart finishes rendering.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectionChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after the selection changed.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>seriesVisibilityChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.SeriesEventArgs.Class.html')"><b>SeriesEventArgs</b></a></td>
+      <td>Occurs when series visibility changed.</td>
+    </tr>
+</tbody>
+</table>

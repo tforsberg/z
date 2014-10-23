@@ -1,0 +1,55 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            ListBox</h3>
+        <p>
+            The <b>ListBox</b> control displays a list of items, which may contain
+            plain text or HTML, and allows users to select items with the mouse or
+            keyboard.</p>
+    </div>
+    <p>
+        You may use an array of strings as the items source for the <b>ListBox:</b></p>
+
+    <wj-list-box
+        style="height:150px;width:250px"
+        control="ctx.listBox1"
+        items-source="ctx.countries">
+    </wj-list-box>
+    <p>
+        Selected Item: <b>{{ctx.listBox1.selectedItem}}</b><br />
+        Selected Index: <b>{{ctx.listBox1.selectedIndex}}</b>
+    </p>
+
+    <br />
+    <p>
+        Or you may use an array of objects and specify the <b>displayMemberPath</b>
+        property to indicate which property of the objects should be displayed
+        in the list:</p>
+
+    <wj-list-box 
+        style="height:150px;width:250px"
+        control="ctx.listBox2"
+        items-source="ctx.items"
+        display-member-path="country">
+    </wj-list-box>
+    <p>
+        Selected Item: <b>{{ctx.listBox2.selectedItem.country}}</b><br />
+        Selected Index: <b>{{ctx.listBox2.selectedIndex}}</b>
+    </p>
+
+    <br />
+    <p>
+        And you can use HTML in your ListBox controls by setting the <b>isContentHtml</b>
+        property to true:</p>
+
+    <wj-list-box 
+        style="height:150px;width:250px"
+        control="ctx.listBox3"
+        is-content-html="true"
+        items-source="ctx.htmlItems">
+    </wj-list-box>
+    <p>
+        Selected Item: <b>{{ctx.listBox3.selectedItem}}</b><br />
+        Selected Index: <b>{{ctx.listBox3.selectedIndex}}</b>
+    </p>
+</div>

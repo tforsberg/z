@@ -1,0 +1,38 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Events</h3>
+        <p>
+            Wijmo defines an <a href="http://wijmo.com/5/docs/topic/wijmo.Event.Class.html" 
+            target="_blank">Event Class</a> that is similar to the one in .NET. This allows 
+            any class to define events. A class can subscribe to an event using the 
+            <b>addHandler</b> method of the event, or unsubscribe using the <b>removeHandler</b> 
+            method.</p>
+        <p>
+            Wijmo event handlers take two parameters: <em>sender</em> and <em>args</em>.
+			The first is the object that raised the event, and the second is an object that
+			contains the event parameters.</p>
+        <p>
+            Classes that define events follow the .NET pattern: for every event there
+			is an on<em>EventName</em> method that raises the event. This pattern
+			allows derived classes to override the on<em>EventName</em> method and handle
+			the event before or after the base class raises it. Derived classes can suppress 
+            the event by not calling the base class implementation.</p>
+        <p>
+            For example, the TypeScript code below overrides the <strong>onValueChanged</strong>
+            event for a control to perform some processing before and after the 
+            <strong>valueChanged</strong> event fires:</p>
+    </div>
+    <pre>// override base class
+onValueChanged(e: EventArgs) {
+  // execute some code before the event fires
+  console.log('about to fire valueChanged');
+  // optionally, call base class to fire the event
+  super.onValueChanged(e);
+  // execute some code after the event fires
+  console.log('valueChanged event just fired');
+}</pre>
+
+</div>
+
+

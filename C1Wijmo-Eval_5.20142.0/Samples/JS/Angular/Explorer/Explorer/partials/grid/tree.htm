@@ -1,0 +1,48 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Tree
+		</h3>
+		<p>
+			This view shows you can use the FlexGrid to show hierarchical data trees (the grid
+			can be used as a TreeView control).
+		</p>
+
+		<div class="collapsed-content collapse">
+			<p>
+				The tree on the left was created by populating the grid and adding group rows in code.
+				The tree on the right was created automatically, using the <b>itemsSource</b> and
+				<b>childItemsPath</b> properties.
+			</p>
+			<p>
+				You can collapse or expand tree nodes by clicking the icons on the group rows or by
+				using the left/right arrow keys. Pressing the control key while clicking the icons
+				will collapse/expand the entire tree to the level desired.
+			</p>
+		</div>
+		<p>
+			<button type="button" data-toggle="collapse"
+					data-target=".collapsed-content, .btn.btn-default.btn-xs.collapse"
+					class="btn btn-default btn-xs collapse in">
+				Read more
+			</button>
+		</p>
+	</div>
+	<!-- unbound (populated in code) -->
+	<div class="col-md-6">
+		<h4>Populated in code</h4>
+		<wj-flex-grid class="grid" control="ctx.flexUnbound">
+		</wj-flex-grid>
+	</div>
+
+	<!-- bound (childItemsPath) -->
+	<div class="col-md-6">
+		<h4>Populated with childItemsPath property</h4>
+		<wj-flex-grid class="grid" control="ctx.flexBound" items-source="ctx.persons" child-items-path="children">
+			<wj-flex-grid-column header="Name" binding="name" width="*" min-width="120" allow-dragging="false"></wj-flex-grid-column>
+			<wj-flex-grid-column header="Level" binding="level"></wj-flex-grid-column>
+			<wj-flex-grid-column header="Children" binding="childCount"></wj-flex-grid-column>
+			<wj-flex-grid-column header="Descendants" binding="descendantCount"></wj-flex-grid-column>
+		</wj-flex-grid>
+	</div>
+</div>

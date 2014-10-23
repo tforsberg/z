@@ -1,0 +1,66 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Column Layout
+        </h3>
+        <p>
+            The <b>FlexGrid</b> has a <b>columnLayout</b> property that gets or sets a JSON string
+            containing the list of grid columns and their properties.
+        </p>
+        <p>
+            This sample uses the <b>columnLayout</b> property to persist the column layout to
+            the browser's
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">
+                localStorage
+            </a> using the following code:
+        </p>
+        </p>
+        <pre>// save/restore column layout to localStorage
+function saveColumnLayout(flex) {
+  localStorage['columns'] = flex.columnLayout;
+}
+function loadColumnLayout(flex) {
+  var columnLayout = localStorage['columns'];
+  if (columnLayout) {
+    flex.columnLayout = columnLayout;
+  }
+}</pre>
+        <p>
+            To see how this works, follow these steps:
+        </p>
+        <ol>
+            <li>
+                Resize some columns and drag some to new positions.
+            </li>
+            <li>
+                Click the "Save Column Layout" button to save the changes to local storage.
+            </li>
+            <li>
+                Refresh the page to restore the original layout.
+            </li>
+            <li>
+                Click the "Load Column Layout" button to restore the layout from local storage.
+            </li>
+        </ol>
+    </div>
+    <div class="row-fluid">
+
+        <!-- the grid -->
+        <wj-flex-grid class="grid"
+                      control="ctx.flex"
+                      items-source="ctx.data"
+                      items-source-changed="itemsSourceChangedHandler(s, e)">
+        </wj-flex-grid>
+    </div>
+
+    <!-- commands -->
+    <div class="row-fluid well">
+        <!-- testing the object model -->
+        <button class="btn btn-default" ng-click="saveColumnLayout()">
+            Save Column Layout
+        </button>
+        <button class="btn btn-default" ng-click="loadColumnLayout()">
+            Load Column Layout
+        </button>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+/* -- Background -- */
+.wj-content:not(.customEdit) {
+  background: #444444;
+  color: #ffffff;
+  background-image: -ms-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -moz-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -o-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444444), color-stop(1, #5e5e5e));
+  background-image: -webkit-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: linear-gradient(to top, #444444 0%, #5e5e5e 100%);
+}
+.wj-listbox-item:not(.wj-state-selected):hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background: rgba(255, 255, 255, 0.05);
+}
+/* -- Header -- */
+.wj-header {
+  background: #444444;
+  color: #ffffff;
+}
+.wj-flexgrid .wj-group {
+  background: #c3c3c3;
+  color: #000000;
+}
+/* -- Grid -- */
+div[wj-part='root'] {
+  background: #373737;
+}
+div[wj-part='cells'] {
+  background: #444444;
+  color: #ffffff;
+  background-image: -ms-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -moz-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -o-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444444), color-stop(1, #5e5e5e));
+  background-image: -webkit-linear-gradient(bottom, #444444 0%, #5e5e5e 100%);
+  background-image: linear-gradient(to top, #444444 0%, #5e5e5e 100%);
+}
+.wj-state-selected {
+  background: #ff6a00;
+  color: #ffffff;
+}
+.wj-state-multi-selected {
+  background: #ad5a1f;
+  color: #ffffff;
+}
+.wj-input-group .wj-form-control,
+.wj-grid-editor {
+  background: #fff;
+  color: #000000;
+}
+/* -- Buttons -- */
+.wj-content:not(.customEdit) .wj-input-group-btn > .wj-btn,
+.wj-content:not(.customEdit) .wj-btn-group > .wj-btn {
+  background: #555555;
+  color: #ffffff;
+  background-image: -ms-linear-gradient(bottom, #555555 0%, #6f6f6f 100%);
+  background-image: -moz-linear-gradient(bottom, #555555 0%, #6f6f6f 100%);
+  background-image: -o-linear-gradient(bottom, #555555 0%, #6f6f6f 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #555555), color-stop(1, #6f6f6f));
+  background-image: -webkit-linear-gradient(bottom, #555555 0%, #6f6f6f 100%);
+  background-image: linear-gradient(to top, #555555 0%, #6f6f6f 100%);
+}
+.wj-content:not(.customEdit) .wj-input-group-btn > .wj-btn:hover,
+.wj-content:not(.customEdit) .wj-btn-group > .wj-btn:hover {
+  background: #6f6f6f;
+}
+/* -- Border Radii -- */
+.wj-content,
+.wj-input-group,
+.wj-btn-group,
+.wj-btn-group-vertical,
+.wj-tooltip,
+.customEdit {
+  border-radius: 4px;
+}
+/* -------------------- Tooltip -------------------- */
+.wj-tooltip {
+  background: #e5d8cf;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* -------------------- Chart -------------------- */
+/* ---------- X Axis ---------- */
+/* ---------- Y Axis ---------- */
+

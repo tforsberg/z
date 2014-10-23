@@ -1,0 +1,25 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Chart header and footer</h3>
+        <p>
+            This view shows how you can add a header and a footer to the chart.</p>
+        <p>
+            The <b>header</b> and <b>footer</b> properties determine the content, and the
+            <b>headerStyle</b> and <b>footerStyle</b> properties determine the appearance
+            of the header and footer.</p>
+    </div>
+    <div class="row-fluid">
+        <wj-flex-chart 
+            class="chart"
+            control="ctx.chart"
+            binding-x="date"
+            items-source="ctx.itemsSource"
+            chart-type="LineSymbols">
+            <wj-flex-chart-series 
+                binding="sales" >
+            </wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+
+</div>

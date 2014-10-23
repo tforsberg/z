@@ -1,0 +1,26 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Item Formatter</h3>
+        <p>
+            This view demonstrates how you can use the <b>FlexChart</b>'s <b>itemFormatter</b>
+            property to customize the appearance of the data points based on their values.</p>
+        <p>
+            In this example, the <b>itemFormatter</b> property is a function that sets the
+            <b>fill</b> property of the chart's rendering engine to a value calculated based
+            on the value of the data point being plotted.</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-flex-chart
+            class="chart"
+            control="ctx.chart"
+            chart-type="LineSymbols">
+            <wj-flex-chart-series 
+                items-source="ctx.pts1" 
+                binding-x="x" 
+                binding="y">
+            </wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<h2>WjListBox Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDirective</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.ListBox.Class.html')"><b>ListBox</b></a> control.</p>
+
+<p>Use the <b>WjListBox</b> directive to add <b>ListBox</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>b&gt;Here is a ListBox control:&lt;/p&gt;
+&lt;wj-list-box
+  selected-item="theCountry" 
+  items-source="countries"
+  placeholder="country"&gt;
+&lt;/wj-list-box&gt;</pre></p>
+
+<p>The example below creates a <b>ListBox</b> control and binds it to a 'countries' array
+exposed by the controller. The value selected is bound to the 'theCountry' 
+controller property using the <b>selectedItem</b> attribute.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/37GHw/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjListBox</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>              <dd><code>=</code> Reference to the <b>ListBox</b> control created by this directive.</dd>
+  <dt>displayMemberPath</dt>    <dd><code>@</code> Property to use as the visual representation of the items.</dd>
+  <dt>isContentHtml</dt>        <dd><code>@</code> Whether items contain plain text or HTML.</dd>
+  <dt>itemFormatter</dt>        <dd><code>=</code> Function used to customize the values shown on the list.</dd>
+  <dt>itemsSource</dt>          <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the list items.</dd>
+  <dt>maxHeight</dt>            <dd><code>@</code> The maximum height of the list.</dd>
+  <dt>selectedIndex</dt>        <dd><code>=</code> Index of the currently selected item.</dd>
+  <dt>selectedItem</dt>         <dd><code>=</code> Item that is currently selected.</dd>
+  <dt>selectedValue</dt>        <dd><code>=</code> Value of the <b>selectedItem</b> obtained using the <b>selectedValuePath</b>.</dd>
+  <dt>selectedValuePath</dt>    <dd><code>@</code> Property used to get the <b>selectedValue</b> from the <b>selectedItem</b>.</dd>
+  <dt>itemsChanged</dt>         <dd><code>&</code> The itemsChanged event handler (see <b>itemsChanged</b>).</dd>
+  <dt>selectedIndexChanged</dt> <dd><code>&</code> The selectedIndexChanged event handler (see <b>selectedIndexChanged</b>).</dd>
+</dl></p></p>

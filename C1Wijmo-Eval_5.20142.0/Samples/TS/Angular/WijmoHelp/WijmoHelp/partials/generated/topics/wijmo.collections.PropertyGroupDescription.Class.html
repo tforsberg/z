@@ -1,0 +1,86 @@
+<h2>PropertyGroupDescription Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Describes the grouping of items using a property name as the criterion.</p>
+
+<p>For example, the code below causes a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> to group items 
+by the value of their 'country' property:
+<pre>
+var cv = new wijmo.collections.CollectionView(items);
+var gd = new wijmo.collections.PropertyGroupDescription('country');
+cv.groupDescriptions.push(gd);
+</pre></p>
+
+<p>You may also specify a callback function that generates the group name.
+For example, the code below causes a <b>CollectionView</b> to group items 
+by the first letter of the value of their 'country' property:
+<pre>
+var cv = new wijmo.collections.CollectionView(items);
+var gd = new wijmo.collections.PropertyGroupDescription('country', 
+  function(item, propName) {
+    return item[propName][0]; // return country's initial
+});
+cv.groupDescriptions.push(gd);
+</pre></p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(propertyName, converter)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>propertyName</b> (<b>string</b>): The name of the property that specifies
+which group an item belongs to.</li><li><b>converter</b> (<b>Function</b>): A callback function that takes an item and 
+a property name and returns the group name. If not specified, 
+the group name is the property value for the item.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.collections.PropertyGroupDescription.Class.html')"><b>PropertyGroupDescription</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>groupNameFromItem</b>(item, level)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): The item to get group name for.</li><li><b>level</b> (<b>number</b>): The zero-based group level index.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Returns the group name for the given item.<br/><b>Returns</b> The name of the group the item belongs to.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>namesMatch</b>(groupName, itemName)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>groupName</b> (<b>any</b>): The name of the group.</li><li><b>itemName</b> (<b>any</b>): The name of the item.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns a value that indicates whether the group name and the item name
+match (which implies that the item belongs to the group).<br/><b>Returns</b> True if the names match; otherwise, false.</td>
+    </tr>
+</tbody>
+</table>

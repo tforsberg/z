@@ -1,0 +1,248 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			InputNumber
+		</h3>
+		<p>
+			The <b>InputNumber</b> control allows users to edit numbers. It prevents users from
+			accidentally entering invalid data and formats the number as it is edited.
+		</p>
+		<p>
+			You can specify a valid range using the <b>min</b> and <b>max</b> properties, and
+			provide spinner buttons that increase or decrease the value with a click.
+		</p>
+	</div>
+	<div>
+		<wj-menu value="ctx.culture" header="Culture">
+			<wj-menu-item value="'en'">English</wj-menu-item>
+			<wj-menu-item value="'de'">German</wj-menu-item>
+			<wj-menu-item value="'it'">Italian</wj-menu-item>
+			<wj-menu-item value="'fr'">French</wj-menu-item>
+			<wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+			<wj-menu-item value="'ru'">Russian</wj-menu-item>
+			<wj-menu-item value="'ja'">Japanese</wj-menu-item>
+			<wj-menu-item value="'ko'">Korean</wj-menu-item>
+		</wj-menu>
+	</div>
+	<br />
+
+	<!-- BEGIN -->
+
+	<div class="row div-thick col-head">
+		<div class="col-sm-3 col-xs-12">
+			Description
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			Control
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			Bound value
+		</div>
+	</div>
+	<!-- plain html -->
+	<div class="row div-thick">
+		<div class="col-sm-3 col-xs-12">
+			HTML input (type='number', range 0-1000)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<input class="form-control"
+				   type="number"
+				   min="0"
+				   max="1000"
+				   ng-model="ctx.passengers" />
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.passengers | glbz:'n0'}}
+		</div>
+	</div>
+	<!-- InputNumber: positive integer values -->
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (n0: integer, [0-1000])
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.passengers"
+							 min="0"
+							 max="1000"
+							 format="n0">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.passengers | glbz:'n0'}}
+		</div>
+	</div>
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (n0: integer, [0-1000], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.passengers"
+							 min="0"
+							 max="1000"
+							 step="1"
+							 format="n0">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.passengers | glbz:'n0'}}
+		</div>
+	</div>
+	<div class="row div-thick">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (n0: integer, [0-1000], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number class="customEdit"
+							 value="ctx.passengers"
+							 min="0"
+							 max="1000"
+							 step="1"
+							 format="n0">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.passengers | glbz:'n0'}}
+		</div>
+	</div>
+	<!-- InputNumber: floats -->
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (c2: currency, [($200)-10,000], format:c2)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.price"
+							 min="-200"
+							 max="10000"
+							 format="c2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'c2'}}
+		</div>
+	</div>
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (c2: currency, [($200)-10,000], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.price"
+							 min="-200"
+							 max="10000"
+							 step="100"
+							 format="c2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'c2'}}
+		</div>
+	</div>
+	<div class="row div-thick">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (c2: currency, [($200)-10,000], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number class="customEdit"
+							 value="ctx.price"
+							 min="-200"
+							 max="10000"
+							 step="100"
+							 format="c2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'c2'}}
+		</div>
+	</div>
+	<!-- InputNumber: percentages -->
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (p2: percentage, [0-100%])
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.tax"
+							 min="0"
+							 max="1"
+							 format="p2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.tax | glbz:'p2'}}
+		</div>
+	</div>
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (p2: percentage, [0-100%], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.tax"
+							 min="0"
+							 max="1"
+							 step=".005"
+							 format="p2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.tax | glbz:'p2'}}
+		</div>
+	</div>
+	<div class="row div-thick">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (p2: percentage, [0-100%], spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number class="customEdit"
+							 value="ctx.tax"
+							 min="0"
+							 max="1"
+							 step=".005"
+							 format="p2">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.tax | glbz:'p2'}}
+		</div>
+	</div>
+	<!-- InputNumber: no format -->
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (no format)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.price">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'n0'}}
+		</div>
+	</div>
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (no format, spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number value="ctx.price"
+							 step="100">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'n0'}}
+		</div>
+	</div>
+	<div class="row div-thin">
+		<div class="col-sm-3 col-xs-12">
+			InputNumber (no format, spinner)
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<wj-input-number class="customEdit"
+							 value="ctx.price"
+							 step="100">
+			</wj-input-number>
+		</div>
+		<div class="col-sm-3 col-xs-12">
+			{{ctx.price | glbz:'n0'}}
+		</div>
+	</div>
+
+	<!-- END -->
+
+</div>

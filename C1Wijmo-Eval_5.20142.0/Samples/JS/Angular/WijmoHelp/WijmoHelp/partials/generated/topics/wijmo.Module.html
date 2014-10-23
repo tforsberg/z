@@ -1,0 +1,721 @@
+<h2>Module wijmo</h2>
+<dl class="dl-horizontal">
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Contains utilities used by all controls and modules, as well as the 
+<a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a> and <a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a> classes.</p>
+<br/>
+<h3>Classes</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a></td>
+      <td>Provides arguments for cancellable events.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></td>
+      <td><p>Base class for all Wijmo controls.</p>
+
+<p>The <b>Control</b> class handles the association between DOM elements and the
+actual control. Use the <b>hostElement</b> property to get the DOM element 
+that is hosting a control, or the <b>getControl</b> method to get the control 
+hosted in a given DOM element.</p>
+
+<p>The <b>Control</b> class also provides a common pattern for invalidating and
+refreshing controls, for updating the control layout when its size changes, 
+and for handling the HTML templates that define the control structure.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.DateTime.Class.html')"><b>DateTime</b></a></td>
+      <td>Provides date and time utilities.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a></td>
+      <td><p>Represents an event.</p>
+
+<p>Wijmo events are similar to .NET events. Any class may define events by 
+declaring them as fields. Any class may subscribe to events using the 
+event's <b>addHandler</b> method, or unsubscribe using the <b>removeHandler</b> 
+method.</p>
+
+<p>Wijmo event handlers take two parameters: <i>sender</i> and <i>args</i>. 
+The first is the object that raised the event, and the second is an object 
+that contains the the event parameters.</p>
+
+<p>Classes that define events follow the .NET pattern where for every event 
+there is an <i>on[EVENTNAME]</i> method that raises the event. This pattern 
+allows derived classes to override the <i>on[EVENTNAME]</i> method and 
+handle the event before and/or after the base class raises the event. 
+Derived classes may even suppress the event by not calling the base class 
+implementation.</p>
+
+<p>For example, the TypeScript code below overrides the <b>onValueChanged</b>
+event for a control to perform some processing before and after the 
+<b>valueChanged</b> event fires:
+<pre>
+  // override base class
+  onValueChanged(e: EventArgs) {
+  // execute some code before the event fires
+  console.log('about to fire valueChanged');
+  // optionally, call base class to fire the event
+  super.onValueChanged(e);
+  // execute some code after the event fired
+  console.log('valueChanged event just fired');
+}
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Base class for event arguments.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a></td>
+      <td><p>Class that implements formatting and parsing of numbers and Dates.</p>
+
+<p>By default, <b>Globalize</b> uses the American English culture.
+To switch cultures, include the appropriate <b>wijmo.culture.*.js</b> 
+file after the wijmo files.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Point.Class.html')"><b>Point</b></a></td>
+      <td>Class that represents a point (with x and y coordinates).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Rect.Class.html')"><b>Rect</b></a></td>
+      <td>Class that represents a rectangle (with left, top, width, and height).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a></td>
+      <td>Class that represents a size (with width and height).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Tooltip.Class.html')"><b>Tooltip</b></a></td>
+      <td><p>Provides a pop-up window that displays additional information about elements on the page.</p>
+
+<p>The <b>Tooltip</b> class can be used in two modes:</p>
+
+<p><b>Automatic Mode:</b> Use the <b>setTooltip</b> method to connect the <b>Tooltip</b> to
+one or more elements on the page. The <b>Tooltip</b> will automatically monitor events
+and display the tooltips when the user performs actions that trigger the tooltip.
+For example:</p>
+
+<p><pre>var tt = new wijmo.Tooltip();
+tt.setTooltip('#menu', 'Select commands.');
+tt.setTooltip('#tree', 'Explore the hierarchy.');
+tt.setTooltip('#chart', '#idChartTooltip');</pre></p>
+
+<p><b>Manual Mode:</b> The caller is responsible for showing and hiding the tooltip
+using the <b>show</b> and <b>hide</b> methods. For example:</p>
+
+<p><pre>var tt = new wijmo.Tooltip();
+element.addEventListener('click', function () {
+  if (tt.isVisible) {
+    tt.hide();
+  } else {
+    tt.show(element, 'This is an important element!');
+  }
+});</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.TooltipEventArgs.Class.html')"><b>TooltipEventArgs</b></a></td>
+      <td>Provides arguments for the <b>popup</b> event.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Interfaces</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.IEventHandler.Interface.html')"><b>IEventHandler</b></a></td>
+      <td><p>Represents an event handler.
+Event handlers are functions invoked when events are raised.</p>
+
+<p>Every event handler has two arguments:
+<ul>
+  <li><b>sender</b> is the object that raised the event, and</li>
+  <li><b>args</b> is an optional object that contains the event parameters.</li>
+</ul></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.IQueryInterface.Interface.html')"><b>IQueryInterface</b></a></td>
+      <td>Allows callers to verify whether an object implements an interface.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Enumerations</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a></td>
+      <td>Specifies the type of aggregate to calculate over a group of values.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a></td>
+      <td><p>Enumeration with value types.</p>
+
+<p>Use the <b>getType</b> method to get a <b>DataType</b> from a value.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.Key.Enum.html')"><b>Key</b></a></td>
+      <td><p>Enumeration with key values.</p>
+
+<p>This enumeration is useful when handling <b>keyDown</b> events.</p></td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>culture</b></td>
+      <td><b>any</b></td>
+      <td><p>Gets or sets an object that contains all localizable strings in the Wijmo library.</p>
+
+<p>The culture selector is a two-letter string that represents an 
+<a href='http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes'>ISO 639 culture</a>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hostElement</b></td>
+      <td><b>HTMLElement</b></td>
+      <td>Gets the DOM element that is hosting the control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isUpdating</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether the control is currently being updated.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>addClass</b>(e, className)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<b>HTMLElement</b>): Element that will have the class added.</li><li><b>className</b> (<b>string</b>): Class to add to the element.</li></ul>
+</td>
+      <td>void</td>
+      <td>Adds a class to an element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>applyTemplate</b>(classNames, template, parts, namePart)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>classNames</b> (<b>string</b>): Names of classes to add to the control's host element.</li><li><b>template</b> (<b>JQuery</b>): A jQuery variable that contains the instantiated template.</li><li><b>parts</b> (<b>Object</b>): A dictionary of part variables and their names.</li><li><b>namePart</b> (<b>string</b>): Name of the part to be named after the host element. This
+determines how the control submits data when used in forms.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Applies the template to a new instance of a control.</p>
+
+<p>This method should be called by constructors of templated controls.
+It is responsible for binding the template parts to the 
+corresponding control members.</p>
+
+<p>For example, the code below applies a template to an instance
+of an <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a> control. The template must contain elements 
+with the 'wj-part' attribute set to 'input', 'btn-inc', and 'btn-dec'.
+The control members '_tbx', '_btnUp', and '_btnDn' will be assigned
+references to these elements.</p>
+
+<p><pre>this.applyTemplate('wj-control wj-inputnumber', template, {
+  _tbx: 'input',
+  _btnUp: 'btn-inc',
+  _btnDn: 'btn-dec'
+}, 'input');</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asArray</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value supposed to be an array.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Checks that a value is an array.<br/><b>Returns</b> The array passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asBoolean</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>boolean</b>): Value supposed to be Boolean.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks that a value is a Boolean.<br/><b>Returns</b> The Boolean passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asCollectionView</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a>.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></td>
+      <td>Checks that a value is an <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> or an Array.<br/><b>Returns</b> The <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that was passed in or a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> 
+created from the array that was passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asDate</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Value supposed to be a Date.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Checks that a value is a Date.<br/><b>Returns</b> The Date passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asEnum</b>(value, enumType, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>number</b>): Value supposed to be a member of the enumeration.</li><li><b>enumType</b> (<b>any</b>): Enumeration to test for.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Checks that a value is a valid setting for an enumeration.<br/><b>Returns</b> The value passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asFunction</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value supposed to be a function.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><b>Function</b></td>
+      <td>Checks that a value is a function.<br/><b>Returns</b> The function passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asInt</b>(value, nullOK, positive)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>number</b>): Value supposed to be an integer.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>positive</b> (<b>boolean</b>): Whether to accept only positive integers. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Checks that a value is an integer.<br/><b>Returns</b> The number passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asNumber</b>(value, nullOK, positive)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>number</b>): Value supposed to be numeric.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>positive</b> (<b>boolean</b>): Whether to accept only positive numeric values. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Checks that a value is a number.<br/><b>Returns</b> The number passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>assert</b>(condition, msg)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>condition</b> (<b>boolean</b>): Condition expected to be true.</li><li><b>msg</b> (<b>string</b>): Message of the exception if the condition is not true.</li></ul>
+</td>
+      <td>void</td>
+      <td>Throws an exception if a condition is false.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asString</b>(value, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>string</b>): Value supposed to be a string.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><b>string</b></td>
+      <td>Checks that a value is a string.<br/><b>Returns</b> The string passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>asType</b>(value, type, nullOK)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to be checked.</li><li><b>type</b> (<b>any</b>): Type of value expected.</li><li><b>nullOK</b> (<b>boolean</b>): Whether null values are acceptable. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Checks that a value is an instance of a given type.<br/><b>Returns</b> The value passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>beginUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Suspends notifications until the next call to <b>endUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>changeType</b>(value, type, format)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to convert.</li><li><b>type</b> (<a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a>): <a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a> to convert the value to.</li><li><b>format</b> (<b>string</b>): Format to use when converting to or from strings.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td><p>Changes the type of a value.</p>
+
+<p>If the conversion fails, the original value is returned. To check if a 
+conversion succeeded, you should check the type of the returned value.</p><br/><b>Returns</b> The converted value, or the original value if a conversion was not possible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>containsFocus</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Checks whether this control contains the focused element.<br/><b>Returns</b> True if the control contains the focused element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>copy</b>(dst, src)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>dst</b> (<b>any</b>): The destination object.</li><li><b>src</b> (<b>any</b>): The source object.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Copies the properties from an object to another.</p>
+
+<p>The destination object must define all the properties defined in the source,
+or an error will be thrown.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>deferUpdate</b>(fn)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fn</b> (<b>Function</b>): Function to be executed.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Executes a function within a <b>beginUpdate</b>/<b>endUpdate</b> block.</p>
+
+<p>The control will not be updated until the function has been executed.
+This method ensures <b>endUpdate</b> is called even if the function throws.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>dispose</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Disposes of the control by removing its association with the host element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>endUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Resumes notifications suspended by calls to <b>beginUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>escapeHtml</b>(text)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>text</b> (<b>string</b>): Text to escape.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Escapes a string by replacing HTML characters as text entities.</p>
+
+<p>Strings entered by uses should always be escaped before they are displayed
+in HTML pages. This ensures page integrity and prevents HTML/javascript
+injection attacks.</p><br/><b>Returns</b> An HTML-escaped version of the original string.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>focus</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Sets the focus to this control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>format</b>(format, data, formatFunction)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>format</b> (<b>string</b>): A composite format string.</li><li><b>data</b> (<b>any</b>): The data object used to build the string.</li><li><b>formatFunction</b> (<b>Function</b>): An optional function used to format items in context.</li></ul>
+</td>
+      <td><b>string</b></td>
+      <td><p>Replaces each format item in a specified string with the text equivalent of an
+object's value.</p>
+
+<p>The function works by replacing parts of the <b>formatString</b> with the pattern
+'{name:format}' with properties of the <b>data</b> parameter. For example:</p>
+
+<p><pre>
+var data = { name: 'Joe', amount: 123456 };
+var msg = wijmo.format('Hello {name}, you won {amount:n2}!', data);
+</pre></p>
+
+<p>The optional <b>formatFunction</b> allows you to customize the content by providing
+context-sensitive formatting. If provided, the format function gets called for each
+format element and gets passed the data object, the parameter name, the format,
+and the value; it should return an output string. For example:</p>
+
+<p><pre>
+var data = { name: 'Joe', amount: 123456 };
+var msg = wijmo.format('Hello {name}, you won {amount:n2}!', data,
+            function (data, name, fmt, val) {
+              if (wijmo.isString(data[name])) {
+                  val = wijmo.escapeHtml(data[name]);
+              }
+              return val;
+            });
+</pre></p><br/><b>Returns</b> The formatted string.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>getControl</b>(element)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that is hosting the control, or a jQuery selector (e.g. '#theCtrl').</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></td>
+      <td>Gets the control that is hosted in a given DOM element.<br/><b>Returns</b> The control hosted in the DOM element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getType</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a></td>
+      <td>Gets the type of a value.<br/><b>Returns</b> A <a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a> value representing the type of the value passed in.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getVersion</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td>Gets the version of the Wijmo library that is currently loaded.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hasClass</b>(e, className)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<b>HTMLElement</b>): Element to check.</li><li><b>className</b> (<b>string</b>): Class to check for.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether an element has a class.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>initialize</b>(options)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>options</b> (<b>any</b>): Object that contains the initialization data.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Initializes the control by copying the properties from a given object.</p>
+
+<p>This method allows you to initialize controls using plain data objects
+instead of setting the value of each property in code.</p>
+
+<p>For example:
+<pre>
+grid.initialize({
+  itemsSource: myList,
+  autoGenerateColumns: false,
+  columns: [{ binding: 'ID', header: 'Code', width: 130 }, ... }]
+});
+// is equivalent to
+grid.itemsSource = myList;
+grid.autoGenerateColumns = false;
+// etc.
+</pre></p>
+
+<p>The initialization data is type-checked as it is set. If the 
+initialization object contains unknown property names or invalid
+data types, this method will throw.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>invalidate</b>(fullUpdate)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullUpdate</b> (<b>boolean</b>): Whether to update the control layout as well as the content. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Invalidates the control causing an asynchronous refresh.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isArray</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is an Array.<br/><b>Returns</b> Whether the value is an Array.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isBoolean</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a Boolean.<br/><b>Returns</b> Whether the value is a Boolean.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isDate</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a Date.<br/><b>Returns</b> Whether the value is a Date.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isFunction</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a function.<br/><b>Returns</b> Whether the value is a function.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isInt</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is an integer.<br/><b>Returns</b> Whether the value is an integer.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isNullOrWhiteSpace</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>string</b>): Value to test.</li></ul>
+</td>
+      <td>void</td>
+      <td>Determines is string null, empty or whitespace only.<br/><b>Returns</b> Whether the value is null, empty or whitespace.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isNumber</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a number.<br/><b>Returns</b> Whether the value is a number.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isObject</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is an object (as opposed to a value type or a date).<br/><b>Returns</b> Whether the value is an object.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isPrimitive</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a primitive type.<br/><b>Returns</b> Whether the value is a primitive type (string, number, boolean, or date).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isString</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is a string.<br/><b>Returns</b> Whether the value is a string.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isTouchDevice</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Determines whether the current device is touch-enabled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isUndefined</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to test.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Determines whether an object is undefined.<br/><b>Returns</b> Whether the value is undefined.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refresh</b>(fullUpdate)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullUpdate</b> (<b>boolean</b>): Whether to update the control layout as well as the content. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Refreshes the control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeClass</b>(e, className)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<b>HTMLElement</b>): Element that will have the class removed.</li><li><b>className</b> (<b>string</b>): Class to remove form the element.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes a class from an element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>toggleClass</b>(e, className, addOrRemove)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<b>HTMLElement</b>): Element that will have the class added.</li><li><b>className</b> (<b>string</b>): Class to add or remove.</li><li><b>addOrRemove</b> (<b>boolean</b>): Whether to add or remove the class.</li></ul>
+</td>
+      <td>void</td>
+      <td>Adds or removes a class to or from an element.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>tryCast</b>(value, type)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Value to cast.</li><li><b>type</b> (<b>any</b>): Type or interface name to cast to.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Casts a value to a type if possible.<br/><b>Returns</b> The value passed in if the cast was successful, null otherwise.</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿<br />
+<p>
+    This application is based on a Firebase version of the traditional Northwind database.</p>
+<p>
+    The database was created by loading the 
+    <a href="http://services.odata.org/Northwind/Northwind.svc/">OData version of Northwind</a>
+    and writing it to a set of Firebase tables.</p>
+<p>
+    The interesting thing about Firebase is that it supports real-time updates, so any changes
+    you make to any of the grids in the application will be immediately applied to the database,
+    and any other instances of the application currently running will show the changes 
+    immediately.</p>
+<p>
+    You can try that out by clicking <a href="#" target="_blank">this link</a> to start a new 
+    instance of the application and making some changes to the grids. If anyone else is running
+    the sample anywhere, you will see their changes and they will see yours, in real-time.</p>
+<p>
+    The <b>FirebaseCollectionView</b> class in this sample extends the <b>CollectionView</b>
+    class in Wijmo to connect to Firebase tables. <b>FirebaseCollectionView</b> loads data 
+    from Firebase tables and allows users to edit, add, and remove items. When the data 
+    changes, the Firebase tables are automatically updated.</p>
+<p>
+    Note that the grids have several data-mapped columns. For example, the orders grid shows
+    the name of the employee rather than the ID. If you change an employee's name, the orders
+    grid will be updated automatically.</p>

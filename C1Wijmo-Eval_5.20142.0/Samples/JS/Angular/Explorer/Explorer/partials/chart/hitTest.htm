@@ -1,0 +1,26 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>Hit Test</h3>
+        <p>
+            This view demonstrates the use of the <b>FlexChart</b>'s <b>hitTest</b> method.</p>
+        <p>
+            The <b>hitTest</b> method takes a point and returns the nearest chart element. It
+            can be used to provide interactive features such as clickable regions, drill-downs, etc.</p>
+        <p>
+            Move mouse over chart to see information about the chart element that is closest to
+            the mouse.</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-flex-chart
+            class="chart"
+            control="ctx.chart"
+            chart-type="LineSymbols">
+            <wj-flex-chart-series items-source="ctx.pts1" name="cos(x)" binding-x="x" binding="y"></wj-flex-chart-series>
+            <wj-flex-chart-series items-source="ctx.pts2" name="sin(x)" binding-x="x" binding="y"></wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+    <div class="row-fluid">
+        <div id="info"></div>
+    </div>
+</div>

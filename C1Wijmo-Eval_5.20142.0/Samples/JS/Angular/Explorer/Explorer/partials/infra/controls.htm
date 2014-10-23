@@ -1,0 +1,264 @@
+﻿<head>
+    <style type="text/css">
+        .auto-style1 {
+            width: 373px;
+        }
+    </style>
+</head>
+<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Controls</h3>
+		<p>
+			Wijmo defines a <b>Control</b> class that is the base class for all
+			Wijmo controls.</p>
+		<p>
+			The <b>Control</b> class provides the following functionality:</p>
+
+		<table>
+			<tr>
+				<td><b>constructor(element, options, invalidateOnResize)</b></td>
+				<td>Creates the control and associates it with the specified HTML element.</td>
+			</tr>
+			<tr>
+				<td><b>initialize(options)</b></td>
+				<td>Initializes the control by copying the properties from a given object.</td>
+			</tr>
+			<tr>
+				<td><b>applyTemplate(classNames, template, parts, namePart)</b></td>
+				<td>Applies the template to a new instance of a control.</td>
+			</tr>
+			<tr>
+				<td><b>getTemplate()</b></td>
+				<td>Gets the HTML template used to create instances of the control.</td>
+			</tr>
+			<tr>
+				<td><b>dispose()</b></td>
+				<td>Restores the original content of the host element and disposes of the control.</td>
+			</tr>
+			<tr>
+				<td><b>getControl(element)</b></td>
+				<td>Gets a reference to the control associated with the specified HTML element.</td>
+			</tr>
+			<tr>
+				<td><b>hostElement</b></td>
+				<td>Gets a reference to the HTML element that hosts the control.</td>
+			</tr>
+			<tr>
+				<td><b>isUpdating</b></td>
+				<td>Gets a value that indicates whether the control is currently being updated.</td>
+			</tr>
+			<tr>
+				<td><b>focus()</b></td>
+				<td>Sets focus to the element that hosts the control.</td>
+			</tr>
+			<tr>
+				<td><b>containsFocus()</b></td>
+				<td>Returns true if the host element or any of its children has focus.</td>
+			</tr>
+			<tr>
+				<td><b>invalidate(fullUpdate)</b></td>
+				<td>
+					Causes the control to refresh its contents asynchronously.
+					Calling this method multiple times in sequence only causes one actual refresh.
+				</td>
+			</tr>
+			<tr>
+				<td><b>refresh(fullUpdate)</b></td>
+				<td>Causes the control to refresh its contents synchronously.</td>
+			</tr>
+			<tr>
+				<td><b>beginUpdate()</b></td>
+				<td>Temporarily suspends all refreshes.</td>
+			</tr>
+			<tr>
+				<td><b>endUpdate()</b></td>
+				<td>Restores refreshes suspended by a call to <b>beginUpdate()</b>.</td>
+			</tr>
+			<tr>
+				<td><b>deferUpdate(function)</b></td>
+				<td>Suspends updates while executing the specified function.</td>
+			</tr>
+		</table>
+	</div>
+	<h4>
+		Control Layout and Dimensions</h4>
+	<p>
+		Wijmo controls do not have size or position properties. The host element 
+        determines their size and position, which we lay out using CSS and styles, 
+        the same as any regular HTML element.</p>
+	<p>
+		The controls below show how you can set the size of Wijmo controls to specific
+		values using CSS styles:</p>
+
+	<b>Regular Input Element:</b><br />
+	<div class="app-regular-inputs">
+		<input type="text"
+			   placeholder="auto-sized" />
+		<input type="text"
+			   style="width:100px"
+			   placeholder="width:100px" />
+		<input type="text"
+			   style="width:150px"
+			   placeholder="width:150px" />
+		<input type="tel"
+			   style="width:200px"
+			   placeholder="width:200px" />
+		<input type="number"
+			   style="width:100%"
+			   placeholder="width:100%" />
+	</div>
+	<br />
+	<br />
+	<b>ComboBox Control</b>:<br />
+	<wj-combo-box items-source="ctx.countries"
+				  placeholder="auto-sized">
+	</wj-combo-box>
+	<wj-combo-box style="width:100px"
+				  items-source="ctx.countries"
+				  placeholder="width:100px">
+	</wj-combo-box>
+	<wj-combo-box style="width:150px"
+				  items-source="ctx.countries"
+				  placeholder="width:150px">
+	</wj-combo-box>
+	<wj-combo-box style="width:200px"
+				  items-source="ctx.countries"
+				  placeholder="width:200px">
+	</wj-combo-box>
+	<wj-combo-box style="width:100%"
+				  items-source="ctx.countries"
+				  placeholder="width:100%">
+	</wj-combo-box>
+	<wj-combo-box style="width:50%"
+				  items-source="ctx.countries"
+				  placeholder="width:50%">
+	</wj-combo-box>
+	<wj-combo-box style="width:25%"
+				  items-source="ctx.countries"
+				  placeholder="width:25%">
+	</wj-combo-box>
+	<br />
+	<wj-combo-box items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="auto-sized">
+	</wj-combo-box>
+	<wj-combo-box style="width:100px"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:100px">
+	</wj-combo-box>
+	<wj-combo-box style="width:150px"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:150px">
+	</wj-combo-box>
+	<wj-combo-box style="width:200px"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:200px">
+	</wj-combo-box>
+	<wj-combo-box style="width:100%"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:100%">
+	</wj-combo-box>
+	<wj-combo-box style="width:50%"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:50%">
+	</wj-combo-box>
+	<wj-combo-box style="width:25%"
+				  items-source="ctx.countries"
+				  show-drop-down-button="false"
+				  placeholder="width:25%">
+	</wj-combo-box>
+	<br />
+	<br />
+	<b>InputNumber Control</b>:<br />
+	<wj-input-number value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="auto-sized">
+	</wj-input-number>
+	<wj-input-number style="width:100px"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:100px">
+	</wj-input-number>
+	<wj-input-number style="width:150px"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:150px">
+	</wj-input-number>
+	<wj-input-number style="width:200px"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:200px">
+	</wj-input-number>
+	<wj-input-number style="width:100%"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:100%">
+	</wj-input-number>
+	<wj-input-number style="width:50%"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:50%">
+	</wj-input-number>
+	<wj-input-number style="width:25%"
+					 value="ctx.passengers"
+					 min="0" max="1000" step="10" format="'n0'"
+					 placeholder="width:25%">
+	</wj-input-number>
+	<br />
+	<wj-input-number value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="auto-sized">
+	</wj-input-number>
+	<wj-input-number style="width:100px"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:100px">
+	</wj-input-number>
+	<wj-input-number style="width:150px"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:150px">
+	</wj-input-number>
+	<wj-input-number style="width:200px"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:200px">
+	</wj-input-number>
+	<wj-input-number style="width:100%"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:100%">
+	</wj-input-number>
+	<wj-input-number style="width:50%"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:50%">
+	</wj-input-number>
+	<wj-input-number style="width:25%"
+					 value="ctx.passengers"
+					 min="0" max="1000" format="'n0'"
+					 placeholder="width:25%">
+	</wj-input-number>
+	<br />
+	<br />
+	<b>FlexGrid Control</b>:<br />
+
+	<p>
+		This grid has its maximum height set to 200 pixels, and width set to 100%.
+		Because the data requires more than 200 pixels, the grid adds a vertical 
+        scrollbar automatically.</p>
+	<wj-flex-grid style="max-height:200px;"
+				  items-source="ctx.items">
+	</wj-flex-grid>
+	<p>
+		This grid has no explicit height. It sizes automatically to fit the data, 
+        and has no scrollbars.</p>
+	<wj-flex-grid items-source="ctx.items">
+	</wj-flex-grid>
+</div>

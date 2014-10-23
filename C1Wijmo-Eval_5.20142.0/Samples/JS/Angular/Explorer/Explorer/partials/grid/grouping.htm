@@ -1,0 +1,90 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Grouping
+        </h3>
+        <p>
+            This view shows grouping support in the <b>FlexGrid</b>. Most of the work is done
+            by the <b>CollectionView</b> class used as a data source for the grid.
+            To add grouping, add one or more <b>GroupDescription</b> objects to the
+            <b>CollectionView.groupDescriptions</b> property, exactly as you would do in .NET,
+            and make sure the grid's <b>showGroups</b> property is set to true.</p>
+        <p>
+            You may customize the text that is displayed in group header rows using the
+            <b>groupHeaderFormat</b> property.</div>
+    <!-- commands -->
+    <div class="row-fluid well app-filter">
+        <div class="col-sm-6 col-xs-12 app-nopad">
+            <!-- grouping -->
+            <wj-menu value="ctx.groupBy" header="Group by">
+                <wj-menu-item value="''">(no grouping)</wj-menu-item>
+                <wj-menu-item value="'Country'">Country</wj-menu-item>
+                <wj-menu-item value="'Product'">Product</wj-menu-item>
+                <wj-menu-item value="'Country/Product'">Country and Product</wj-menu-item>
+                <wj-menu-item value="'Product/Country'">Product and Country</wj-menu-item>
+                <wj-menu-item value="'Product/Country/Amount'">Product, Country and Amount</wj-menu-item>
+            </wj-menu>
+            <!-- culture -->
+            <wj-menu value="ctx.culture" header="Culture">
+                <wj-menu-item value="'en'">English</wj-menu-item>
+                <wj-menu-item value="'de'">German</wj-menu-item>
+                <wj-menu-item value="'it'">Italian</wj-menu-item>
+                <wj-menu-item value="'fr'">French</wj-menu-item>
+                <wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+                <wj-menu-item value="'ru'">Russian</wj-menu-item>
+                <wj-menu-item value="'ja'">Japanese</wj-menu-item>
+                <wj-menu-item value="'ko'">Korean</wj-menu-item>
+            </wj-menu>
+        </div>
+        <div class="col-sm-6 col-xs-12 app-nopad">
+            <!-- data size -->
+            <wj-menu value="ctx.itemCount" header="Data Size">
+                <wj-menu-item value="5">5</wj-menu-item>
+                <wj-menu-item value="50">50</wj-menu-item>
+                <wj-menu-item value="500">500</wj-menu-item>
+                <wj-menu-item value="5000">5,000</wj-menu-item>
+                <wj-menu-item value="50000">50,000</wj-menu-item>
+                <wj-menu-item value="100000">100,000</wj-menu-item>
+                <wj-menu-item value="500000">500,000</wj-menu-item>
+                <wj-menu-item value="1000000">1,000,000</wj-menu-item>
+            </wj-menu>
+            <!-- navigator -->
+            <wj-collection-view-navigator cv="ctx.flex.collectionView">
+            </wj-collection-view-navigator>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- the grid -->
+    <div class="row-fluid">
+
+        <!-- the grid -->
+        <wj-flex-grid
+            class="grid"
+            control="ctx.flex"
+            items-source="ctx.data"
+            items-source-changed="itemsSourceChangedHandler(s, e)">
+            <wj-flex-grid-column header="ID" binding="id"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Country" binding="country"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Product" binding="product"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Color" binding="color"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Amount" binding="amount" format="n0" aggregate="Sum"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Pending" binding="amount2" format="n0" aggregate="Sum"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Discount" binding="discount" format="p0" aggregate="Average"></wj-flex-grid-column>
+        </wj-flex-grid>
+
+        <!-- show the current item too -->
+        <h4>Current Item</h4>
+        <dl class="dl-horizontal current-item">
+            <dt>ID</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.id}}</dd>
+            <dt>Country</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.country}}</dd>
+            <dt>Product</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.product}}</dd>
+            <dt>Color</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.color}}</dd>
+            <dt>Amount</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.amount | number:2}}</dd>
+        </dl>
+    </div>
+</div>

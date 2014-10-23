@@ -1,0 +1,65 @@
+<h2>Control Class</h2>
+<dl class="dl-horizontal">
+<dt>Derived Classes</dt><dd><a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a>, <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>, <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a>, <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a>, <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a>, <a href="" ng-click="go('wijmo.input.ListBox.Class.html')"><b>ListBox</b></a></dd>
+<dt>Module</dt><dd>wijmo</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Base class for all Wijmo controls.</p>
+
+<p>The <b>Control</b> class handles the association between DOM elements and the
+actual control. Use the <b>hostElement</b> property to get the DOM element 
+that is hosting a control, or the <b>getControl</b> method to get the control 
+hosted in a given DOM element.</p>
+
+<p>The <b>Control</b> class also provides a common pattern for invalidating and
+refreshing controls, for updating the control layout when its size changes, 
+and for handling the HTML templates that define the control structure.</p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(element, options, invalidateOnResize)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that will host the control, or a jQuery selector (e.g. '#theCtrl').</li><li><b>options</b> (): Javascript object containing initialization data for the control. <span class="text-info">(default Value: <b>null</b>)</span></li><li><b>invalidateOnResize</b> (<b>boolean</b>): Whether the control should be invalidated when it is resized. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a> and attaches it to a DOM element.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getTemplate</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the HTML template used to create instances of the control.</p>
+
+<p>This method traverses up the class hierarchy to find the nearest ancestor that
+specifies a control template. For example, if you specify a prototype for the
+<a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control, it will override the template defined by the <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> 
+base class.</p><br/><b>Returns</b> The current template.</td>
+    </tr>
+</tbody>
+</table>

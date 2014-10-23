@@ -1,0 +1,136 @@
+<h2>RowCol Class</h2>
+<dl class="dl-horizontal">
+<dt>Derived Classes</dt><dd><a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a>, <a href="" ng-click="go('wijmo.grid.Row.Class.html')"><b>Row</b></a></dd>
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p>Abstract class that serves as a base for the <a href="" ng-click="go('wijmo.grid.Row.Class.html')"><b>Row</b></a> and <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a> classes.</p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>allowDragging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the user can move this row or column to a new position with the mouse.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowMerging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column can be merged.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowResizing</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets a whether the user can resize this row or column with the mouse.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cssClass</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets a CSS class name to be used when rendering this row or column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>grid</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a></td>
+      <td>Gets the FlexGrid that owns this row or column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>index</b></td>
+      <td><b>number</b></td>
+      <td>Gets the index of this row or column in the parent collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isContentHtml</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column contain HTML content rather than plain text.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isReadOnly</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column can be edited.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isSelected</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is selected.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isVisible</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is visible and not collapsed.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pos</b></td>
+      <td><b>number</b></td>
+      <td>Gets the position of this row or column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>renderSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets the render size of this row or column.
+This property accounts for visibility, default size, and min/max sizes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>size</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the size of this row or column.
+Setting this property to null or negative values causes the element to use the 
+parent collection's default size.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>visible</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether this row or column is visible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>wordWrap</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether cells in this row or column should wrap their content.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>onPropertyChanged</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Marks the owner list as dirty and refreshes the owner grid.</td>
+    </tr>
+</tbody>
+</table>

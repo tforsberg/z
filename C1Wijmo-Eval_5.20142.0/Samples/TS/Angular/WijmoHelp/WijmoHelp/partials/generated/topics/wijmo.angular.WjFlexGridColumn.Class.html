@@ -1,0 +1,61 @@
+<h2>WjFlexGridColumn Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDirective</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a> object.</p>
+
+<p>The <b>WjFlexGridColumn</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjFlexGrid.Class.html')"><b>WjFlexGrid</b></a> directive.
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>aggregate</dt>         <dd><code>@</code> <a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a> to display in the group header rows for this column.</dd>
+  <dt>align</dt>             <dd><code>@</code> Horizontal alignment of items in this column.</dd>
+  <dt>allowDragging</dt>     <dd><code>@</code> Whether the user can move this column to a new position with the mouse.</dd>
+  <dt>allowSorting</dt>      <dd><code>@</code> Whether the user can sort this column by clicking its header.</dd>
+  <dt>allowResizing</dt>     <dd><code>@</code> Whether the user can resize this column with the mouse.</dd>
+  <dt>allowMerging</dt>      <dd><code>@</code> Whether cells in this column can be merged.</dd>
+  <dt>binding</dt>           <dd><code>@</code> Name of the property this column is bound to.</dd>
+  <dt>cssClass</dt>          <dd><code>@</code> Name of a CSS class to be used when rendering this column.</dd>
+  <dt>dataMap</dt>           <dd><code>=</code> <a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a> used to convert raw values into display values for this column.</dd>
+  <dt>dataType</dt>          <dd><code>@</code> Type of value stored in this column (see <a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a>).</dd>
+  <dt>format</dt>            <dd><code>@</code> Format string used to convert raw values into display values for this column (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>header</dt>            <dd><code>@</code> String displayed in the column header.</dd>
+  <dt>isContentHtml</dt>     <dd><code>@</code> Whether cells in this column contain HTML content rather than plain text.</dd>
+  <dt>isReadOnly</dt>        <dd><code>@</code> Whether the user can edit values in this column.</dd>
+  <dt>isSelected</dt>        <dd><code>@</code> Whether this column is selected.</dd>
+  <dt>maxWidth</dt>          <dd><code>@</code> Maximum width for this column.</dd>
+  <dt>minWidth</dt>          <dd><code>@</code> Minimum width for this column.</dd>
+  <dt>name</dt>              <dd><code>@</code> Column name (can be used to retrieve the column).</dd>
+  <dt>visible</dt>           <dd><code>@</code> Whether this column is visible.</dd>
+  <dt>width</dt>             <dd><code>@</code> Width of this column (in pixels or as a star value).</dd>
+  <dt>wordWrap</dt>          <dd><code>@</code> Whether cells in this column should wrap their content.</dd>
+</dl class="dl-horizontal"></p>
+
+<p>In addition to regular attributes that match properties in the <b>Column</b> class,  
+<b>WjFlexGridColumn</b> directives may contain an <b>ng-style</b> attribute that provides
+conditional formatting and an HTML fragment that is used as a cell template.</p>
+
+<p>Both the <b>ng-style</b> attribute and the HTML fragment can use the <b>$item</b> property in 
+AngularJS bindings to refer to the item that is bound to the current row. For example:</p>
+
+<p><pre>&lt;wj-flex-grid-column header="Symbol" binding="symbol" read-only="true" width="*"&gt;
+  &lt;a href="https://finance.yahoo.com/q?s={&#8203;{$item.symbol}}"&gt;
+    {&#8203;{$item.symbol}}
+  &lt;/a&gt;
+&lt;/wj-flex-grid-column&gt;
+&lt;wj-flex-grid-column header="Change" binding="changePercent" format="p2" width="*"
+  ng-style="{color:getAmountColor($item.change)}"&gt;
+&lt;/wj-flex-grid-column&gt;</pre></p>
+
+<p>These directives create two columns. 
+The first has a template that produces a hyperlink based on the bound item's "symbol" property. 
+The second has a conditional style that renders values with a color determined by a function
+implemented in the controller.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/5L423/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></p>

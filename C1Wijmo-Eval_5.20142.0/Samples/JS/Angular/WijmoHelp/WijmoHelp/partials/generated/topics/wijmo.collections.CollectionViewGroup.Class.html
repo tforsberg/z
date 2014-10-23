@@ -1,0 +1,53 @@
+<h2>CollectionViewGroup Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Represents a group created by a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> object based on
+its <b>groupDescriptions</b> property.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(groupDescription, name, level, isBottomLevel)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>groupDescription</b> (<a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a>): <a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a> that owns the new group.</li><li><b>name</b> (<b>string</b>): Name of the new group.</li><li><b>level</b> (<b>number</b>): Level of the new group.</li><li><b>isBottomLevel</b> (<b>boolean</b>): Whether this group has any subgroups.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.collections.CollectionViewGroup.Class.html')"><b>CollectionViewGroup</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getAggregate</b>(aggType, binding)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>aggType</b> (<a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a>): Type of aggregate to calculate.</li><li><b>binding</b> (<b>string</b>): Property to aggregate on.</li></ul>
+</td>
+      <td>void</td>
+      <td>Calculates an aggregate value for the items in this group.<br/><b>Returns</b> The aggregate value.</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt" ng-app="app" ng-controller="appCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>Wijmo Finance</title>
+
+    <!-- ensure IE uses the latest version of IE (yes, yes...) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery/Angular/Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.chart.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="styles/vendor/wijmo.min.css">
+
+    <!-- app scripts and styles -->
+    <script src="scripts/portfolio.js" type="text/javascript"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/directives/appDctv.js" type="text/javascript"></script>
+    <script src="scripts/controllers/appCtrl.js" type="text/javascript"></script>
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>
+                <img src="resources/finance.png">
+                Wijmo Finance
+            </h1>
+            <p>
+                This application was developed using TypeScript, Bootstrap, and
+                <a href="http://www.componentone.com">ComponentOne's Wijmo 5</a> controls.
+                The data comes from <a href="http://finance.yahoo.com">Yahoo finance</a> services.
+                Yahoo services are not free; they are being used here for demonstration purposes
+                only.
+            </p>
+            <p>
+                This view uses a standard HTML table element to display the portfolio items.
+                <a href="defaultFlex.htm">
+                    Click here to switch to a view that shows the items in a FlexGrid.
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">Portfolio</div>
+            <div class="table-responsive">
+                <table class="table table-condensed">
+                    <thead ng-click="portfolio.view.moveCurrentTo(null)">
+                        <tr>
+                            <th class="text-left" style="width:23px"><app-sorter view="portfolio.view" binding="name">Name</app-sorter></th>
+                            <th class="text-left"><app-sorter view="portfolio.view" binding="symbol">Symbol</app-sorter></th>
+                            <th class="text-center"><app-sorter view="portfolio.view" binding="chart">Chart</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="lastPrice">Last Price</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="change">Change</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="shares">Shares</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="purchasePrice">Price</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="costBasis">Cost Basis</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="marketValue">Market Value</app-sorter></th>
+                            <th class="text-right"><app-sorter view="portfolio.view" binding="gain">Gain</app-sorter></th>
+                            <th class="text-center">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="cursor: pointer" ng-repeat="item in portfolio.view.items" ng-class="{active: item == portfolio.view.currentItem}" ng-click="portfolio.view.moveCurrentTo(item)">
+                            <td class="clipCell">
+                                <span ng-style="{'background-color' : item.color}">
+                                    &nbsp;&nbsp;&nbsp;
+                                </span>
+                                &nbsp;
+                                {{item.name}}
+                            </td>
+                            <td>
+                                <a ng-href="https://finance.yahoo.com/q?s={{item.symbol}}">
+                                    {{item.symbol}}
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <input type="checkbox" ng-model="item.chart">
+                            </td>
+                            <td class="text-right">
+                                {{item.lastPrice | glbz:'n2'}}
+                            </td>
+                            <td class="text-right">
+                                <span ng-style="{color: getAmountColor(item.change)}">
+                                    {{item.changePercent | glbz:'p2'}}
+                                </span>
+                            </td>
+                            <td class="text-right inputCell" style="padding: 2px;">
+                                <wj-input-number value="item.shares" required="false" min="0" format="n0">
+                                </wj-input-number>
+                            </td>
+                            <td class="text-right inputCell" style="padding: 2px;">
+                                <wj-input-number value="item.purchasePrice" required="false" min="0" format="n2">
+                                </wj-input-number>
+                            </td>
+                            <td class="text-right">
+                                {{item.costBasis | glbz:'n2'}}
+                            </td>
+                            <td class="text-right">
+                                {{item.marketValue | glbz:'n2'}}
+                            </td>
+                            <td class="text-right">
+                                <span ng-style="{color: getAmountColor(item.gain)}">
+                                    {{item.gainPercent | glbz:'p2'}}
+                                </span>
+                            </td>
+                            <td class="text-center">
+                                <a href="" ng-click="portfolio.removeItem(item.symbol)">
+                                    <span class="glyphicon glyphicon-remove" style="color:#D14836"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <!-- table footer -->
+                    <tfoot>
+                        <tr class="panel-footer" ng-click="portfolio.view.moveCurrentTo(null)">
+                            <td class="text-right">
+                                <b>Add to portfolio:</b>
+                            </td>
+                            <td colspan="4">
+                                <div class="input-group">
+                                    <wj-auto-complete items-source-function="searchCompany" display-member-path="symbolName" selected-value-path="symbol" selected-value="portfolio.newItemSymbol" show-drop-down-button="false" placeholder="company name or symbol" css-match="match">
+                                    </wj-auto-complete>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" ng-click="portfolio.addNewItem()" ng-disabled="!portfolio.canAddNewItem()">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="text-right" colspan="2">
+                                <b>Total:</b>
+                            </td>
+                            <td class="text-right">
+                                <b>{{portfolio.cost | glbz:'n2'}}</b>
+                            </td>
+                            <td class="text-right">
+                                <b>{{portfolio.value | glbz:'n2'}}</b>
+                            </td>
+                            <td class="text-right">
+                                <span ng-style="{color: getAmountColor(portfolio.gain)}">
+                                    <b>{{portfolio.gainPercent | glbz:'p2'}}</b>
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- chart -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Chart
+                <div class="btn-group btn-group-xs pull-right">
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=0" ng-class="{active: portfolio.chartPeriod == 0}">YTD</button>
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=1" ng-class="{active: portfolio.chartPeriod == 1}">6m</button>
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=2" ng-class="{active: portfolio.chartPeriod == 2}">12m</button>
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=3" ng-class="{active: portfolio.chartPeriod == 3}">24m</button>
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=4" ng-class="{active: portfolio.chartPeriod == 4}">36m</button>
+                    <button type="button" class="btn btn-default" ng-click="portfolio.chartPeriod=5" ng-class="{active: portfolio.chartPeriod == 5}">All</button>
+                </div>
+            </div>
+            <app-stock-chart portfolio="portfolio" style="height:300px;margin:14px">
+            </app-stock-chart>
+        </div>
+    </div>
+</body>
+</html>

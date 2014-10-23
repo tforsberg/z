@@ -1,0 +1,53 @@
+<h2>WjInputDate Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDropDown</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> control.</p>
+
+<p>Use the <b>WjInputDate</b> directive to add <b>InputDate</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputDate control:&lt;/p&gt;
+&lt;wj-input-date 
+  value="theDate" 
+  format="M/d/yyyy"&gt;
+&lt;/wj-input-date&gt;</pre></p>
+
+<p>The example below shows a <b>Date</b> value (that includes date and time information)
+using an <b>InputDate</b> and an an <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control that can be
+used to select the date with a single click.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjInputDate</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>             <dd><code>=</code> Reference to the <b>InputDate</b> control created by this directive.</dd>
+  <dt>format</dt>              <dd><code>@</code> Format used to display the date being edited (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>isDroppedDown</dt>       <dd><code>@</code> Whether the drop down is currently visible.</dd>
+  <dt>max</dt>                 <dd><code>@</code> Latest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>min</dt>                 <dd><code>@</code> Earliest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>placeHolder</dt>         <dd><code>@</code> String shown as a hint when the control is empty.</dd>
+  <dt>required</dt>            <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>showDropDownButton</dt>  <dd><code>@</code> Whether the control should display a drop-down button.</dd>
+  <dt>text</dt>                <dd><code>=</code> Text shown in the control.</dd>
+  <dt>value</dt>               <dd><code>=</code> Date being edited.</dd>
+  <dt>isDroppedDownChanged</dt> <dd><code>&</code> The isDroppedDownChanged event handler (see <b>isDroppedDownChanged</b>).</dd>
+  <dt>textChanged</dt>         <dd><code>&</code> The textChanged event handler (see <b>textChanged</b>).</dd>
+  <dt>valueChanged</dt>        <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl class="dl-horizontal"></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"yyyy-MM-dd". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]<a>, which is also the format 
+used with regular HTML5 input elements.</p></p>

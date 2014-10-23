@@ -1,0 +1,159 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			CollectionView</h3>
+		<p>
+			Wijmo has a solid infrastructure based on a powerful and familiar data layer.
+			The main data binding interface is <b>ICollectionView</b>, which provides currency,
+			filtering, grouping, and sorting services. Wijmo also includes the
+			<b>IEditableCollectionView</b> and <b>IPagedCollectionView</b> interfaces, which
+			support editing and paging.</p>
+		<p>
+			Wijmo's <b>ICollectionView</b> interface is virtually identical to the one
+			in .NET, so if you know .NET you will feel right at home.</p>
+		<p>
+			Wijmo includes several classes that implement <b>ICollectionView</b>.
+			The most basic is <b>CollectionView</b>, which uses regular JavaScript arrays
+			as data sources. We also have implementations that use BreezeJS and OData as
+			data sources.</p>
+		<p>
+			This page shows how <b>ICollectionView</b> works. It creates a <b>CollectionView</b>
+			based on an array with {{ctx.cv.sourceCollection.length}} items. 
+			The collection view is configured to show pages with {{ctx.cv.pageSize}}
+			items each. We show the collection in an HTML table that you can filter,
+			sort, and group, using the controls at the top of each column.</p>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Current Item</h4>
+			<dl class="dl-horizontal">
+				<dt>ID</dt>
+				<dd>
+					<input type="text" class="form-control" ng-model="ctx.cv.currentItem.id" ng-disabled="!isEditing()" />
+				</dd>
+				<dt>Country</dt>
+				<dd>
+					<input type="text" class="form-control" ng-model="ctx.cv.currentItem.country" ng-disabled="!isEditing()" />
+				</dd>
+				<dt>Color</dt>
+				<dd>
+					<input type="text" class="form-control" ng-model="ctx.cv.currentItem.color" ng-disabled="!isEditing()" />
+				</dd>
+				<dt>Amount</dt>
+				<dd>
+					<input type="text" class="form-control" ng-model="ctx.cv.currentItem.amount" ng-disabled="!isEditing()" />
+				</dd>
+				<dt></dt>
+				<dd>
+					<div class="btn-group data-btn-group">
+						<button ng-click="edit()" ng-hide="isEditing()" class="btn btn-default btn-sm">Edit</button>
+						<button ng-click="add()" ng-hide="isEditing()" class="btn btn-default btn-sm">Add</button>
+						<button ng-click="delete()" ng-hide="isEditing()" class="btn btn-default btn-sm">Delete</button>
+						<button ng-click="commit()" ng-hide="!isEditing()" class="btn btn-default btn-sm">Commit</button>
+						<button ng-click="cancel()" ng-hide="!isEditing()" class="btn btn-default btn-sm">Cancel</button>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<div class="col-md-6">
+			<h4>Navigation</h4>
+			<dl>
+				<dt>items</dt>
+				<dd><wj-collection-view-navigator cv="ctx.cv"></wj-collection-view-navigator></dd>
+				<dt>pages</dt>
+				<dd><wj-collection-view-pager cv="ctx.cv"></wj-collection-view-pager></dd>
+			</dl>
+			<wj-menu value="ctx.cv.pageSize" header="Page Size">
+				<wj-menu-item value="0">No Paging</wj-menu-item>
+				<wj-menu-item value="10">10</wj-menu-item>
+				<wj-menu-item value="15">15</wj-menu-item>
+				<wj-menu-item value="30">30</wj-menu-item>
+				<wj-menu-item value="50">50</wj-menu-item>
+			</wj-menu>
+		</div>
+	</div>
+
+	<div class="table-responsive">
+
+		<table class="table table-condensed table-bordered">
+			<thead>
+				<tr class="active">
+					<th class="text-center">
+						<div class="btn-group">
+							<wj-menu value="filter.id" header="ID">
+								<wj-menu-item value="">(All)</wj-menu-item>
+								<wj-menu-item value="'odd'">Odd</wj-menu-item>
+								<wj-menu-item value="'even'">Even</wj-menu-item>
+							</wj-menu>
+							<button class="btn btn-default" ng-click="toggleSort('id')">{{getSort('id')}}</button>
+						</div>
+					</th>
+					<th class="text-center">
+						<div class="btn-group">
+							<wj-menu value="filter.country" header="Country">
+								<wj-menu-item value="">(All)</wj-menu-item>
+								<wj-menu-item value="'US'">US</wj-menu-item>
+								<wj-menu-item value="'Germany'">Germany</wj-menu-item>
+								<wj-menu-item value="'UK'">UK</wj-menu-item>
+								<wj-menu-item value="'Japan'">Japan</wj-menu-item>
+								<wj-menu-item value="'Italy'">Italy</wj-menu-item>
+								<wj-menu-item value="'Greece'">Greece</wj-menu-item>
+								<wj-menu-item value="'France'">France</wj-menu-item>
+							</wj-menu>
+							<button class="btn btn-default" ng-click="toggleSort('country')">{{getSort('country')}}</button>
+							<button class="btn btn-default" ng-click="toggleGroup('country')">{{getGroup('country')}}</button>
+						</div>
+					</th>
+					<th class="text-center">
+						<div class="btn-group">
+							<wj-menu value="filter.color" header="Color">
+								<wj-menu-item value="">(All)</wj-menu-item>
+								<wj-menu-item value="'Black'">Black</wj-menu-item>
+								<wj-menu-item value="'White'">White</wj-menu-item>
+								<wj-menu-item value="'Red'">Red</wj-menu-item>
+								<wj-menu-item value="'Green'">Green</wj-menu-item>
+								<wj-menu-item value="'Blue'">Blue</wj-menu-item>
+								<wj-menu-item value="'Yellow'">Yellow</wj-menu-item>
+								<wj-menu-item value="'Brown'">Brown</wj-menu-item>
+								<wj-menu-item value="'Orange'">Orange</wj-menu-item>
+							</wj-menu>
+							<button class="btn btn-default" ng-click="toggleSort('color')">{{getSort('color')}}</button>
+							<button class="btn btn-default" ng-click="toggleGroup('color')">{{getGroup('color')}}</button>
+						</div>
+					</th>
+					<th class="text-center">
+						<div class="btn-group">
+							<wj-menu value="filter.minAmount" header="Amount">
+								<wj-menu-item value="">(All)</wj-menu-item>
+								<wj-menu-item value="0">&gt; 0</wj-menu-item>
+								<wj-menu-item value="500">&gt; 500</wj-menu-item>
+								<wj-menu-item value="1000">&gt; 1,000</wj-menu-item>
+							</wj-menu>
+							<button class="btn btn-default" ng-click="toggleSort('amount')">{{getSort('amount')}}</button>
+							<button class="btn btn-default" ng-click="toggleGroup('amount')">{{getGroup('amount')}}</button>
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="item in groupedList"
+					ng-class="{success: item == ctx.cv.currentItem}"
+					ng-click="moveCurrentTo(item)">
+
+					<!-- group row -->
+					<td ng-show="isGroup(item)" colspan="4" class="active">
+						<span ng-style="{display:'inline-block', width: (item.level * 25) + 'px'}"></span>
+						<b>{{item.name}}</b> ({{item.items.length}} items)
+					</td>
+
+					<!-- data row -->
+					<td ng-hide="isGroup(item)" class="text-center">{{item.id}}</td>
+					<td ng-hide="isGroup(item)" class="text-center">{{item.country}}</td>
+					<td ng-hide="isGroup(item)" class="text-center">{{item.color}}</td>
+					<td ng-hide="isGroup(item)" class="text-center">{{item.amount | number:2}}</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</div>

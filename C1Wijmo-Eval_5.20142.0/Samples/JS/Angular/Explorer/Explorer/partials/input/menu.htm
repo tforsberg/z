@@ -1,0 +1,153 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Menu</h3>
+        <p>
+            The <b>Menu</b> control extends the <b>ComboBox</b> control to provide a simple
+            drop-down list with clickable items.</p>
+        <p>
+            The <b>header</b> property determines the text shown on the menu, and the items
+            shown in the drop-down are defined by the <b>itemsSource</b> property as in the
+            <b>ComboBox</b>.</p>
+        <p>
+            The <b>Menu</b> controls provides two methods for handling user choices: you may
+            handle the <b>itemClicked</b> event, or attach commands to each menu choice.
+            Both methods are demonstrated below:</p>
+    </div>
+    <h4>
+        Handling Choices with the itemClicked event</h4>
+    <p>
+        When the user selects an item from the menu, the control raises the <b>itemClicked</b>
+        event. You can handle this event to inspect the menu's <b>selectedIndex</b>
+        property to determine which item was clicked and take an appropriate action.</p>
+    <p>
+        The three menus below use this method to call a <b>menuItemClicked</b> method in the
+        controller. The method inspects which item was selected and displays an alert:</p>
+
+    <div class="container">
+        <wj-menu header="File" item-clicked="menuItemClicked(s, e)">
+            <wj-menu-item><b>New</b><br /><span class=menuTip>create a new document</span></wj-menu-item>
+            <wj-menu-item><b>Open</b><br /><span class=menuTip>load an existing document from a file</span></wj-menu-item>
+            <wj-menu-item><b>Save</b><br /><span class=menuTip>save the current document to a file</span></wj-menu-item>
+            <wj-menu-separator></wj-menu-separator>
+            <wj-menu-item><b>Exit</b><br /><span class=menuTip>save changes and exit the application</span></wj-menu-item>
+        </wj-menu>
+        <wj-menu header="Edit" item-clicked="menuItemClicked(s, e)">
+            <wj-menu-item><b>Cut</b><br /><span class=menuTip>move the current selection to the clipboard</span></wj-menu-item>
+            <wj-menu-item><b>Copy</b><br /><span class=menuTip>copy the current selection to the clipboard</span></wj-menu-item>
+            <wj-menu-item><b>Paste</b><br /><span class=menuTip>insert the clipboard content at the cursor position</span></wj-menu-item>
+            <wj-menu-separator></wj-menu-separator>
+            <wj-menu-item><b>Find</b><br /><span class=menuTip>search the current document for some text</span></wj-menu-item>
+            <wj-menu-item><b>Replace</b><br /><span class=menuTip>replace occurrences of a string in the current document</span></wj-menu-item>
+        </wj-menu>
+        <wj-menu header="Format" item-clicked="menuItemClicked(s, e)">
+            <wj-menu-item><b>Bold</b></wj-menu-item>
+            <wj-menu-item><i>Italic</i></wj-menu-item>
+            <wj-menu-item><u>Underline</u></wj-menu-item>
+            <wj-menu-separator></wj-menu-separator>
+            <wj-menu-item><span style=background-color:red>&nbsp;&nbsp;&nbsp;</span>Red</wj-menu-item>
+            <wj-menu-item><span style=background-color:green>&nbsp;&nbsp;&nbsp;</span>Green</wj-menu-item>
+            <wj-menu-item><span style=background-color:blue>&nbsp;&nbsp;&nbsp;</span>Blue</wj-menu-item>
+        </wj-menu>
+    </div>
+    <br />
+    <h4>
+        Handling Choices with item Commands</h4>
+    <p>
+        The <b>Menu</b> control also supports commanding, which makes it easier to use the
+        MVVM pattern. Commands are objects that implement two methods:</p>
+    <ul>
+        <li>
+            <b>executeCommand(parameter)</b> This method executes the command.</li>
+        <li>
+            <b>canExecuteCommand(parameter)</b> This method returns a Boolean value
+            that determines whether the command can be executed by the controller.
+            If this method returns false, the menu option is disabled.
+        </li>
+    </ul>
+    <p>
+        The menu below has items bound to a command in the controller. The command is implemented as follows:</p>
+<pre>$scope.changeValueCommand = {
+  executeCommand: function (parm) {
+    if (wijmo.isNumber(parm)) {
+      $scope.ctx.passengers += parm;
+    } else {
+      $scope.ctx.passengers = 1; // reset
+    }
+    $scope.$apply('ctx.passengers');
+  },
+  canExecuteCommand: function (parm) {
+    if (wijmo.isNumber(parm)) {
+      var val = $scope.ctx.passengers + parm;
+      return val >= 0 && val <= 100;
+    }
+    return true;
+  }
+}</pre>
+    <p>
+        The <b>executeCommand</b> increments a variable in the model by an amount passed in as a parameter.
+        The use of parameters makes commands flexible (the same command is used by menu options that
+        increment or decrement the variable by different amounts).</p>
+    <p>
+        The <b>canExecuteCommand</b> checks whether adding the specifies amount to the variable would
+        violate the range constraint (the variable is supposed to be between zero and 100). If the command
+        is invalid, the corresponding menu options become disabled.</p>
+    <p>
+        This is a typical MVVM-style implementation. The logic stays in the controller, and the view
+        determines which elements should invoke the command, and with which parameters.</p>
+
+    <dl class="dl-horizontal">
+        <dt>Value (0 to 100)</dt>
+        <dd>
+            <wj-input-number
+                value="ctx.passengers"
+                min="0"
+                max="100"
+                step="1"
+                format="n0">
+            </wj-input-number>
+            <br />
+        </dd>
+        <dt>Change value</dt>
+        <dd>
+            <wj-menu header="Select Increment">
+                <wj-menu-item cmd="changeValueCommand" cmd-param="50">Increment by 50</wj-menu-item>
+                <wj-menu-item cmd="changeValueCommand" cmd-param="10">Increment by 10</wj-menu-item>
+                <wj-menu-item cmd="changeValueCommand" cmd-param="5">Increment by 5</wj-menu-item>
+                <wj-menu-separator></wj-menu-separator>
+                <wj-menu-item cmd="changeValueCommand" cmd-param="-5">Decrement by 5</wj-menu-item>
+                <wj-menu-item cmd="changeValueCommand" cmd-param="-10">Decrement by 10</wj-menu-item>
+                <wj-menu-item cmd="changeValueCommand" cmd-param="-50">Decrement by 50</wj-menu-item>
+                <wj-menu-separator></wj-menu-separator>
+                <wj-menu-item cmd="changeValueCommand"><b>Reset</b></wj-menu-item>
+            </wj-menu>
+            <br />
+        </dd>
+    </dl>
+
+    <br clear="all" />
+    <h4>
+        Binding menu options to values</h4>
+    <p>
+        The <b>Menu</b> control can also be used as a simple value picker. It extends the <b>ComboBox</b>
+        control, which allows you to bind scope variables to the control's <b>selectedValue</b> property
+        as you would with a <b>ComboBox</b>.</p>
+    <p>
+        The menu below allows users to pick a sales tax value from a pre-defined list. The markup is as follows:</p>
+    <pre>&lt;wj-menu value="ctx.tax"&gt;
+  Tax
+  &lt;wj-menu-item value="0"&gt;Exempt&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".05"&gt;5%&lt;/wj-menu-item&gt;
+  ...
+  &lt;wj-menu-item value=".15"&gt;15%&lt;/wj-menu-item&gt;
+  &lt;/wj-menu&gt;</pre>
+    <wj-menu header="Tax" value="ctx.tax">
+        <wj-menu-item value="0">Exempt</wj-menu-item>
+        <wj-menu-item value=".05">5%</wj-menu-item>
+        <wj-menu-item value=".085">8.5%</wj-menu-item>
+        <wj-menu-item value=".09">9%</wj-menu-item>
+        <wj-menu-item value=".1">10%</wj-menu-item>
+        <wj-menu-item value=".12">12%</wj-menu-item>
+        <wj-menu-item value=".15">15%</wj-menu-item>
+    </wj-menu>
+</div>

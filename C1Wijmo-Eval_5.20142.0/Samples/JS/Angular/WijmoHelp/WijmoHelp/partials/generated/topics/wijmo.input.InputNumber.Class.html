@@ -1,0 +1,223 @@
+<h2>InputNumber Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></dd>
+<dt>Module</dt><dd>wijmo.input</dd>
+<dt>File</dt><dd>wijmo.input.js</dd>
+</dl>
+<p><p>The <b>InputNumber</b> control allows users to edit numbers.</p>
+
+<p>The control prevents users from accidentally entering invalid data and 
+formats the number as it is edited.</p>
+
+<p>You may use the <b>min</b> and <b>max</b> properties to limit the range of
+acceptable values, and the <b>step</b> property to provide spinner buttons
+that increase or decrease the value with a click.</p>
+
+<p>Use the <b>value</b> property to get or set the currently selected number.</p>
+
+<p>The example below creates several <b>InputNumber</b> controls and shows 
+the effect of using different formats, ranges, and step values.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/Cf9L9/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(element, options)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that will host the control, or a jQuery selector (e.g. '#theCtrl').</li><li><b>options</b> (): Javascript object containing initialization data for the control.</li></ul>
+</td>
+      <td>Initializes a new instance of an <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a> control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Static">S</span><span class="badge" title="Field">F</span></td>
+      <td><b>controlTemplate</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the template used to instantiate <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a> controls.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>format</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the format used to display the number being edited (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>inputElement</b></td>
+      <td><b>HTMLInputElement</b></td>
+      <td><p>Gets the HTML input element hosted by the control.</p>
+
+<p>Use this property in situations where you want to customize the
+attributes of the input element.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>inputType</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets the "type" attribite of the HTML input element hosted by the control.</p>
+
+<p>By default, this property is set to "tel", a value that causes mobile devices to
+show a numeric keyboard that includes a negative sign and a decimal separator.</p>
+
+<p>Use this property to change the default setting if the default does not work well
+for the current culture, device, or application. In these cases, try changing
+the value to "number" or simply "text".</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>max</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the largest number that can be entered.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>min</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the smallest number that can be entered.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>placeholder</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the string shown as a hint when the control is empty.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>required</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the control value must be a number or whether it
+can be set to null (by deleting the content of the control).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>showSpinner</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the control should display spinner buttons to increment
+or decrement the value (the step property must be set to a non-zero value).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>step</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the amount to add or subtract to the value when the user clicks the spinner buttons.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>text</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text shown in the control.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>value</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the current value of the control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getTemplate</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the HTML template used to create instances of the control.</p>
+
+<p>This method traverses up the class hierarchy to find the nearest ancestor that
+specifies a control template. For example, if you specify a prototype for the
+<a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control, it will override the template defined by the <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> 
+base class.</p><br/><b>Returns</b> The current template.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onTextChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>textChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onValueChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>valueChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectAll</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Sets the focus to the control and selects all its content.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>textChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs when the value of the <b>text</b> property changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>valueChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs when the value of the <b>value</b> property changes.</td>
+    </tr>
+</tbody>
+</table>

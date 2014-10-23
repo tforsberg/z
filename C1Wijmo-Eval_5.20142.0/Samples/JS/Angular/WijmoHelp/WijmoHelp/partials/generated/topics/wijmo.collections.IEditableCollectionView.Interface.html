@@ -1,0 +1,143 @@
+<h2>IEditableCollectionView Interface</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Defines methods and properties that extend <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> to provide 
+editing capabilities.</p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canAddNew</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether a new item can be added to the collection.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canCancelEdit</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether the collection view can discard pending changes 
+and restore the original values of an edited object.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canRemove</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether items can be removed from the collection.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentAddItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the item that is being added during the current add transaction.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>currentEditItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the item that is being edited during the current edit transaction.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>isAddingNew</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether an add transaction is in progress.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>isEditingItem</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether an edit transaction is in progress.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>addNew</b>()</td>
+      <td></td>
+      <td><b>any</b></td>
+      <td>Adds a new item to the collection.<br/><b>Returns</b> The new item that was added to the collection..</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cancelEdit</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current edit transaction and, if possible, 
+restores the original value to the item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cancelNew</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current add transaction and discards the pending new item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>commitEdit</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current edit transaction and saves the pending changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>commitNew</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current add transaction and saves the pending new item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>editItem</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to edit.</li></ul>
+</td>
+      <td>void</td>
+      <td>Begins an edit transaction of the specified item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>remove</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to remove from the collection.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes the specified item from the collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeAt</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Index of the item to remove from the collection.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes the item at the specified index from the collection.</td>
+    </tr>
+</tbody>
+</table>

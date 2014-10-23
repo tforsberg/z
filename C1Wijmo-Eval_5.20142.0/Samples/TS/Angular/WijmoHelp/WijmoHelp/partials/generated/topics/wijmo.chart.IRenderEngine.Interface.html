@@ -1,0 +1,94 @@
+<h2>IRenderEngine Interface</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo.chart</dd>
+<dt>File</dt><dd>wijmo.chart.js</dd>
+</dl>
+<p>Represents rendering engine that performs basic drawing routines.</p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>fill</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets fill color.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>fontFamily</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the font family for text output.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>fontSize</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the font size for text output.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>stroke</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets stroke color.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>strokeWidth</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the stroke width.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>textFill</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text color.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>beginRender</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Clear viewport and start render cycle.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>endRender</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Finish render cycle.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>setViewportSize</b>(w, h)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>w</b> (<b>number</b>): Viewport width.</li><li><b>h</b> (<b>number</b>): Viewport height.</li></ul>
+</td>
+      <td>void</td>
+      <td>Set viewport size.</td>
+    </tr>
+</tbody>
+</table>

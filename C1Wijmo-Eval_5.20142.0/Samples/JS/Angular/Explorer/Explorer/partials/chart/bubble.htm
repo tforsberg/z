@@ -1,0 +1,30 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Bubble</h3>
+        <p>
+            This view shows how to create bubble charts using the <b>FlexChart</b> control.</p>
+        <p>
+            Bubble charts are similar to other chart types, except in addition to X and Y you must
+            specify a binding for the bubble size. This is done by setting the <b>binding</b> property
+            to a comma-delimited string that specifies the name of the properties to be used for the
+            Y and size values for each bubble.</p>
+        <p>
+            In this example, the chart is bound to a list containing objects with "x", "y", and "size"
+            properties. The chart contains a single series and its <b>binding</b> property is set to
+            the string "y,size".</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-flex-chart
+            class="chart"
+            control="ctx.chart"
+            chart-type="Bubble"
+            items-source="ctx.itemsSource"
+            binding-x="x">
+            <wj-flex-chart-series 
+                binding="y,size">
+            </wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+</div>

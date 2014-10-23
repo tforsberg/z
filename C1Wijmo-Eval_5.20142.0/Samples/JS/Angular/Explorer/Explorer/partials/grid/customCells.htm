@@ -1,0 +1,34 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Custom Cells</h3>
+        <p>
+            You can customize cells in the FlexGrid by setting the <b>itemFormatter</b> 
+            property to a function that creates arbitrary HTML elements based on the 
+            cell data, and passes them in using the <strong>innerHtml</strong> property 
+            of the cell element.</p>
+        <p>
+            This example shows how you can create cells with sparklines, sparkbars, 
+            and tickers. The <b>itemFormatter</b> function used here uses SVG to create 
+            these mini-charts.</p>
+    </div>
+
+    <!-- the grid -->
+    <wj-flex-grid
+        class="grid"
+        control="ctx.flex"
+        items-source="ctx.data"
+        items-source-changed="itemsSourceChangedHandler()"
+        is-read-only="true"
+        item-formatter="ctx.itemFormatter">
+        <wj-flex-grid-column header="ID" binding="id" width="80"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Date" binding="start"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Product" binding="product"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Expense" binding="amount2" format="n0"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Discount" binding="discount" format="p0"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Sparklines" name="sparklines" align="center" width="160"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Sparkbars" name="sparkbars" align="center" width="160"></wj-flex-grid-column>
+        <wj-flex-grid-column header="Ticker" name="ticker" align="center" width="160"></wj-flex-grid-column>
+    </wj-flex-grid>
+</div>

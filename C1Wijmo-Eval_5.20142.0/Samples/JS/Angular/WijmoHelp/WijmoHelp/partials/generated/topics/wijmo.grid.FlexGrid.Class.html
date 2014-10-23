@@ -1,0 +1,929 @@
+<h2>FlexGrid Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></dd>
+<dt>Module</dt><dd>wijmo.grid</dd>
+<dt>File</dt><dd>wijmo.grid.js</dd>
+</dl>
+<p><p>The <b>FlexGrid</b> control provides a powerful and flexible way to
+display and edit data in a tabular format.</p>
+
+<p>The <b>FlexGrid</b> control is a full-featured grid, providing all the
+features you are used to including several selection modes, sorting,
+column reordering, grouping, filtering, editing,  custom cells,
+XAML-style star-sizing columns, row and column virtualization, etc.</p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(element, options)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that will host the control, or a jQuery selector (e.g. '#theCtrl').</li><li><b>options</b> (): Javascript object containing initialization data for the control.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>activeEditor</b></td>
+      <td><b>HTMLInputElement</b></td>
+      <td>Gets the <b>HTMLInputElement</b> that represents the cell editor currently active.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowAddNew</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets a value that indicates whether the grid should provide a new row
+template so users can add items to the source collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowDelete</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets a value that indicates whether the grid should delete 
+selected rows when the user presses the Delete key.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowDragging</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowDragging.Enum.html')"><b>AllowDragging</b></a></td>
+      <td>Gets or sets whether users are allowed to drag rows and/or columns with the mouse.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowMerging</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowMerging.Enum.html')"><b>AllowMerging</b></a></td>
+      <td>Gets or sets which parts of the grid provide cell merging.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowResizing</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.AllowResizing.Enum.html')"><b>AllowResizing</b></a></td>
+      <td>Gets or sets whether users are allowed to resize rows and/or columns with the mouse.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>allowSorting</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether users are allowed to sort columns by clicking the column header cells.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>autoGenerateColumns</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the grid should generate columns automatically based on the <b>itemsSource</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cellFactory</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellFactory.Class.html')"><b>CellFactory</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.grid.CellFactory.Class.html')"><b>CellFactory</b></a> that creates and updates cells for this grid.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cells</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the data cells.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>childItemsPath</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the name of the property used to generate child rows in hierarchical grids.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>clientSize</b></td>
+      <td><a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a></td>
+      <td>Gets the client size of the control (control size minus headers minus scrollbars).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>collectionView</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the grid data.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>columnHeaders</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the column header cells.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>columnLayout</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets a JSON string that defines the current column layout.</p>
+
+<p>The column layout string represents an array with the columns and their
+properties. It can be used to persist column layouts defined by users so 
+they are preserved across sessions, and can also be used to implement undo/redo
+functionality in applications that allow users to modify the column layout.</p>
+
+<p>The column layout string does not include <b>dataMap</b> properties, because
+data maps are not serializable.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>columns</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.ColumnCollection.Class.html')"><b>ColumnCollection</b></a></td>
+      <td>Gets the grid's column collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>controlRect</b></td>
+      <td><a href="" ng-click="go('wijmo.Rect.Class.html')"><b>Rect</b></a></td>
+      <td>Gets the bounding rectangle of the control in page coordinates.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>editRange</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Gets a <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> that identifies the cell currently being edited.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>groupHeaderFormat</b></td>
+      <td><b>string</b></td>
+      <td><p>Gets or sets the format string used to create the group header content.</p>
+
+<p>The string may contain any text, plus the following replacement strings:
+<ul>
+  <li><b>{name}</b>: The name of the property being grouped on.</li>
+  <li><b>{value}</b>: The value of the property being grouped on.</li>
+  <li><b>{level}</b>: The group level.</li>
+  <li><b>{count}</b>: The total number of items in this group.</li>
+</ul></p>
+
+<p>The default value for this property is 
+'{name}: &lt;b&gt;{value}&lt;/b&gt;({count} items)',
+which creates group headers similar to 
+'Country: <b>UK</b> (12 items)' or 'Country: <b>Japan</b> (8 items)'.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>headersVisibility</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.HeadersVisibility.Enum.html')"><b>HeadersVisibility</b></a></td>
+      <td>Gets or sets a value that determines whether the row and column headers
+are visible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isReadOnly</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or whether the user can edit the grid cells by typing into them.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemFormatter</b></td>
+      <td><b>Function</b></td>
+      <td><p>Gets or sets a formatter function used to customize cells on this grid.</p>
+
+<p>The formatter function can add any content to any cell. It provides 
+complete flexibility over the appearance and behavior of grid cells.</p>
+
+<p>If specified, the function should take four parameters: the <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>
+that contains the cell, the row and column indices of the cell, and the
+HTML element that represents the cell. The function will typically change
+the <b>innerHTML</b> property of the cell element.</p>
+
+<p>For example:
+<pre>
+flex.itemFormatter = function(panel, r, c, cell) {
+  if (panel.cellType == wijmo.grid.CellType.Cell) {
+    // draw sparklines in the cell
+    var col = panel.columns[c];
+    if (col.name == 'sparklines') {
+      cell.innerHTML = getSparklike(panel, r, c);
+    }
+  }
+}
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsSource</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains items shown on the grid.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>mergeManager</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.MergeManager.Class.html')"><b>MergeManager</b></a></td>
+      <td>Gets or sets the <a href="" ng-click="go('wijmo.grid.MergeManager.Class.html')"><b>MergeManager</b></a> object responsible for determining how cells
+should be merged.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rowHeaders</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the row header cells.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rows</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.RowCollection.Class.html')"><b>RowCollection</b></a></td>
+      <td>Gets the grid's row collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>scrollPosition</b></td>
+      <td><a href="" ng-click="go('wijmo.Point.Class.html')"><b>Point</b></a></td>
+      <td>Gets or sets a <a href="" ng-click="go('wijmo.Point.Class.html')"><b>Point</b></a> that represents the value of the grid's scrollbars.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>scrollSize</b></td>
+      <td><a href="" ng-click="go('wijmo.Size.Class.html')"><b>Size</b></a></td>
+      <td>Gets the size of the grid content in pixels.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selection</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Gets or sets the current selection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectionMode</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.SelectionMode.Enum.html')"><b>SelectionMode</b></a></td>
+      <td>Gets or sets the current selection mode.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>showGroups</b></td>
+      <td><b>boolean</b></td>
+      <td><p>Gets or sets whether the grid should insert group rows to delimit data groups.</p>
+
+<p>Data groups are created by modifying the <b>groupDescriptions</b> property of the
+<a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> object used as a the grid's <b>itemsSource</b>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>showSort</b></td>
+      <td><b>boolean</b></td>
+      <td><p>Gets or sets whether the grid should display sort indicators in the column headers.</p>
+
+<p>Sorting is controlled by the <b>sortDescriptions</b> property of the
+<a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> object used as a the grid's <b>itemsSource</b>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>topLeftCells</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a></td>
+      <td>Gets the <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the top left cells.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>treeIndent</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the indent used to offset row groups of different levels.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>viewRange</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Gets the range of cells currently in view.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>autoSizeColumn</b>(c, header, extra)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>c</b> (<b>number</b>): Index of the column to resize.</li><li><b>header</b> (<b>boolean</b>): Whether the column index refers to a regular or a header row. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>extra</b> (<b>number</b>): Extra spacing, in pixels. <span class="text-info">(default Value: <b>4</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Resizes a column to fit its content.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>autoSizeColumns</b>(firstColumn, lastColumn, header, extra)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>firstColumn</b> (<b>number</b>): Index of the first column to resize.</li><li><b>lastColumn</b> (<b>number</b>): Index of the last column to resize.</li><li><b>header</b> (<b>boolean</b>): Whether the column indices refer to regular or header columns. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>extra</b> (<b>number</b>): Extra spacing, in pixels. <span class="text-info">(default Value: <b>4</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td><p>Resizes a range of columns to fit their content.</p>
+
+<p>The grid will always measure all rows in the current view range, plus up to 2,000 rows
+not currently in view. If the grid contains a large amount of data (say 50,000 rows), 
+then not all rows will be measured since that could potentially take a long time.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>autoSizeRow</b>(r, header, extra)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the row to resize.</li><li><b>header</b> (<b>boolean</b>): Whether the row index refers to a regular or a header row. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>extra</b> (<b>number</b>): Extra spacing, in pixels. <span class="text-info">(default Value: <b>0</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Resizes a row to fit its content.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>autoSizeRows</b>(firstRow, lastRow, header, extra)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>firstRow</b> (<b>number</b>): Index of the first row to resize.</li><li><b>lastRow</b> (<b>number</b>): Index of the last row to resize.</li><li><b>header</b> (<b>boolean</b>): Whether the row indices refer to regular or header rows. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>extra</b> (<b>number</b>): Extra spacing, in pixels. <span class="text-info">(default Value: <b>0</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Resizes a range of rows to fit their content.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>collapseGroupsToLevel</b>(level)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>level</b> (<b>number</b>): Maximum group level to show.</li></ul>
+</td>
+      <td>void</td>
+      <td>Collapses all the group rows to a given level.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>finishEditing</b>(cancel)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>cancel</b> (<b>boolean</b>): Whether pending edits should be canceled or committed. <span class="text-info">(default Value: <b>false</b>)</span></li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Commits any pending edits and exits edit mode.<br/><b>Returns</b> True if the edit operation finished successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getCellData</b>(r, c, formatted)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Row index of the cell.</li><li><b>c</b> (<b>number</b>): Column index of the cell.</li><li><b>formatted</b> (<b>boolean</b>): Whether to format the value for display.</li></ul>
+</td>
+      <td><b>any</b></td>
+      <td>Gets the content of a cell in the scrollable area of the grid.<br/><b>Returns</b> The value stored in the cell.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getMergedRange</b>(panel, r, c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>panel</b> (<a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>): <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a> that contains the range.</li><li><b>r</b> (<b>number</b>): Index of the row that contains the cell.</li><li><b>c</b> (<b>number</b>): Index of the column that contains the cell.</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a></td>
+      <td>Gets a <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> that specifies the merged extent of a cell
+in a <a href="" ng-click="go('wijmo.grid.GridPanel.Class.html')"><b>GridPanel</b></a>.<br/><b>Returns</b> A <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> that specifies the merged range, or null if the cell is not merged.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getSelectedState</b>(r, c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Row index of the cell to inspect.</li><li><b>c</b> (<b>number</b>): Column index of the cell to inspect.</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.grid.SelectedState.Enum.html')"><b>SelectedState</b></a></td>
+      <td>Gets a SelectedState value that indicates the selected state of a cell.<br/><b>Returns</b> the selected state of the cell.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>getTemplate</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the HTML template used to create instances of the control.</p>
+
+<p>This method traverses up the class hierarchy to find the nearest ancestor that
+specifies a control template. For example, if you specify a prototype for the
+<a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control, it will override the template defined by the <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> 
+base class.</p><br/><b>Returns</b> The current template.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>hitTest</b>(pt, y)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>pt</b> (<b>any</b>): Point to investigate, in window coordinates, or x coordinate of the point.</li><li><b>y</b> (<b>number</b>): Y coordinate of the point (if the first parameter is a number).</li></ul>
+</td>
+      <td><a href="" ng-click="go('wijmo.grid.HitTestInfo.Class.html')"><b>HitTestInfo</b></a></td>
+      <td><p>Gets a <a href="" ng-click="go('wijmo.grid.HitTestInfo.Class.html')"><b>HitTestInfo</b></a> object with information about a given point.</p>
+
+<p>For example:</p>
+
+<p><pre>
+// hit test a point when the user clicks on the grid
+flex.hostElement.addEventListener('click', function (e) {
+  var ht = flex.hitTest(e.pageX, e.pageY);
+  console.log('you clicked a cell of type "' + wijmo.grid.CellType[ht.cellType] + '".');
+});
+</pre></p><br/><b>Returns</b> HitTestInfo object with information about the point.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isRangeValid</b>(rng)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>rng</b> (<a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>): Range to check.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Checks whether a given CellRange is valid for this grid's row and column collections.<br/><b>Returns</b> True if the range is valid, false otherwise.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onBeginningEdit</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>beginningEdit</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCellEditEnded</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>cellEditEnded</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCellEditEnding</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>cellEditEnding</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onDeletingRow</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>deletingRow</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onDraggedColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>draggedColumn</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onDraggedRow</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>draggedRow</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onDraggingColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>draggingColumn</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onDraggingRow</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>draggingRow</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onGroupCollapsedChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>groupCollapsedChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onGroupCollapsedChanging</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>groupCollapsedChanging</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onItemsSourceChanged</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Raises the <b>itemsSourceChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onLoadedRows</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>loadedRows</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onLoadingRows</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>loadingRows</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onPrepareCellForEdit</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>prepareCellForEdit</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onResizedColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>resizedColumn</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onResizedRow</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>resizedRow</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onResizingColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>resizingColumn</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onResizingRow</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>resizingRow</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onRowAdded</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>rowAdded</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onRowEditEnded</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>rowEditEnded</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onRowEditEnding</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>rowEditEnding</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onScrollPositionChanged</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Raises the <b>scrollPositionChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSelectionChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>selectionChanged</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSelectionChanging</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>selectionChanging</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSortedColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>sortedColumn</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onSortingColumn</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a>): <a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>sortingColumn</b> event.<br/><b>Returns</b> True if the event was not canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refresh</b>(fullUpdate)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullUpdate</b> (<b>boolean</b>): Whether to update the grid layout and content, or just the content. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Refreshes the grid display.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refreshCells</b>(fullUpdate, recycle, cells)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullUpdate</b> (<b>boolean</b>): Whether to update the grid layout and content, or just the content.</li><li><b>recycle</b> (<b>boolean</b>): Whether to recycle existing elements. <span class="text-info">(default Value: <b>false</b>)</span></li><li><b>cells</b> (<a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>): List of <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a> objects that specifies which cells must be updated.</li></ul>
+</td>
+      <td>void</td>
+      <td>Refreshes the grid display.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>scrollIntoView</b>(r, c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the row to scroll into view.</li><li><b>c</b> (<b>number</b>): Index of the column to scroll into view.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Scrolls the grid to bring a specific cell into view.<br/><b>Returns</b> True if the grid scrolled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>select</b>(rng, show)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>rng</b> (<b>any</b>): Range to select.</li><li><b>show</b> (<b>any</b>): Whether to scroll the new selection into view. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Selects a cell range and optionally scrolls it into view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>setCellData</b>(r, c, value, coerce)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>r</b> (<b>number</b>): Index of the row that contains the cell.</li><li><b>c</b> (<b>any</b>): Index, name, or binding of the column that contains the cell.</li><li><b>value</b> (<b>any</b>): Value to store in the cell.</li><li><b>coerce</b> (<b>boolean</b>): Whether to change the value automatically to match the column's data type. <span class="text-info">(default Value: <b>true</b>)</span></li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the content of a cell in the scrollable area of the grid.<br/><b>Returns</b> True if the value was stored successfully, false otherwise.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>startEditing</b>(fullEdit, r, c)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fullEdit</b> (<b>boolean</b>): Whether to stay in edit mode when the user presses the cursor keys. Defaults to false. <span class="text-info">(default Value: <b>true</b>)</span></li><li><b>r</b> (<b>number</b>): Index of the row to be edited. Defaults to the currently selected row.</li><li><b>c</b> (<b>number</b>): Index of the column to be edited. Defaults to the currently selected column.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td><p>Starts editing a given cell.</p>
+
+<p>Editing in the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> is very similar to editing in Excel:
+Pressing F2 or double-clicking a cell puts the grid in <b>full-edit</b> mode. 
+In this mode, the cell editor remains active until the user presses Enter, Tab, 
+or Escape, or until he moves the selection with the mouse. In full-edit mode, 
+pressing the cursor keys does not cause the grid to exit edit mode.</p>
+
+<p>Typing text directly into a cell puts the grid in <b>quick-edit mode</b>.
+In this mode, the cell editor remains active until the user presses Enter, 
+Tab, or Escape, or any arrow keys.</p>
+
+<p>Full-edit mode is normally used to make changes to existing values. 
+Quick-edit mode is normally used for entering new data quickly.</p>
+
+<p>While editing, the user can toggle between full and quick modes by 
+pressing the F2 key.</p><br/><b>Returns</b> True if the edit operation started successfully.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>beginningEdit</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs before a cell enters edit mode.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cellEditEnded</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when a cell edit has been committed or canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cellEditEnding</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when a cell edit is ending.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>deletingRow</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td><p>Occurs when the user is deleting a selected row by pressing the Delete 
+key (see the <b>allowDelete</b> property).</p>
+
+<p>The event handler may cancel the row deletion.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>draggedColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user finishes dragging a column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>draggedRow</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user finishes dragging a row.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>draggingColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user starts dragging a column.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>draggingRow</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user starts dragging a row.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>groupCollapsedChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs after a group has been expanded or collapsed.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>groupCollapsedChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when a group is about to be expanded or collapsed.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsSourceChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after the grid has been bound to a new items source.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>loadedRows</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after the grid rows have been bound to the data source.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>loadingRows</b></td>
+      <td><a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a></td>
+      <td>Occurs before the grid rows are bound to the data source.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>prepareCellForEdit</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when an editor cell is created and before it becomes active.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>resizedColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user finishes resizing columns.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>resizedRow</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when the user finishes resizing rows.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>resizingColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs as columns are resized.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>resizingRow</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs as rows are resized.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rowAdded</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td><p>Occurs when the user creates a new item by editing the new row template
+(see the <b>allowAddNew</b> property).</p>
+
+<p>The event handler may customize the content of the new item or cancel
+the new item creation.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rowEditEnded</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when a row edit has been committed or canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>rowEditEnding</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs when a row edit is ending, before the changes are committed or canceled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>scrollPositionChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after the control has scrolled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectionChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs after selection changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectionChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs before selection changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>sortedColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs after the user applies a sort by clicking on a column header.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>sortingColumn</b></td>
+      <td><a href="" ng-click="go('wijmo.grid.CellRangeEventArgs.Class.html')"><b>CellRangeEventArgs</b></a></td>
+      <td>Occurs before the user applies a sort by clicking on a column header.</td>
+    </tr>
+</tbody>
+</table>

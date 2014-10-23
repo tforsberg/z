@@ -1,0 +1,167 @@
+<h2>DropDown Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a></dd>
+<dt>Derived Classes</dt><dd><a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a>, <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a></dd>
+<dt>Module</dt><dd>wijmo.input</dd>
+<dt>File</dt><dd>wijmo.input.js</dd>
+</dl>
+<p><p>DropDown control (abstract).</p>
+
+<p>Contains an input element and a button used to show or hide the drop-down.</p>
+
+<p>Derived classes must override the _createDropDown method to create whatever
+editor they want to show in the drop down area (a list of items, a calendar,
+a color editor, etc).</p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(element, options)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>element</b> (<b>any</b>): The DOM element that will host the control, or a jQuery selector (e.g. '#theCtrl').</li><li><b>options</b> (): Javascript object containing initialization data for the control.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Static">S</span><span class="badge" title="Field">F</span></td>
+      <td><b>controlTemplate</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the template used to instantiate <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> controls.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>inputElement</b></td>
+      <td><b>HTMLInputElement</b></td>
+      <td><p>Gets the HTML input element hosted by the control.</p>
+
+<p>Use this property in situations where you want to customize the
+attributes of the input element.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isDroppedDown</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the drop down is currently visible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>placeholder</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the string shown as a hint when the control is empty.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>showDropDownButton</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the control should display a drop-down button.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>text</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text shown on the control.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>getTemplate</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td><p>Gets the HTML template used to create instances of the control.</p>
+
+<p>This method traverses up the class hierarchy to find the nearest ancestor that
+specifies a control template. For example, if you specify a prototype for the
+<a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control, it will override the template defined by the <a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a> 
+base class.</p><br/><b>Returns</b> The current template.<br/><span class="text-info">(inherited from <a href="" ng-click="go('wijmo.Control.Class.html')"><b>Control</b></a>).</span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onIsDroppedDownChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>isDroppedDownChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onTextChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a>)</li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>textChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>selectAll</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Sets the focus to the control and selects all its content.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>isDroppedDownChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs after the drop down is shown or hidden.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>textChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.EventArgs.Class.html')"><b>EventArgs</b></a></td>
+      <td>Occurs when the value of the <b>text</b> property changes.</td>
+    </tr>
+</tbody>
+</table>

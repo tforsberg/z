@@ -1,0 +1,83 @@
+<h2>WjFlexGrid Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDirective</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</p>
+
+<p>Use the <b>WjFlexGrid</b> directive to add grids to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a FlexGrid control:&lt;/p&gt;
+&lt;wj-flex-grid items-source="data"&gt;
+  &lt;wj-flex-grid-column header="Country" binding="country"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Sales" binding="sales"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Expenses" binding="expenses"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Downloads" binding="downloads"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;</pre></p>
+
+<p>The example below creates a <b>FlexGrid</b> control and binds it to a 'data' array
+exposed by the controller. The grid has three columns, each corresponding to 
+a property of the objects contained in the source array.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/QNb9X/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjFlexGrid</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>allowAddNew</dt>           <dd><code>@</code> Whether to show a new row template so users can add items to the source collection.</dd>
+  <dt>allowDelete</dt>           <dd><code>@</code> Whether the grid should delete selected rows when the user presses the Delete key.</dd>
+  <dt>allowDragging</dt>         <dd><code>@</code> Whether rows and/or columns can be dragged with the mouse.</dd>
+  <dt>allowMerging</dt>          <dd><code>@</code> Determines which parts of the grid provide cell merging.</dd>
+  <dt>allowResizing</dt>         <dd><code>@</code> Whether users are allowed to resize rows and/or columns with the mouse.</dd>
+  <dt>allowSorting</dt>          <dd><code>@</code> Whether users are allowed to sort columns by clicking the column headers.</dd>
+  <dt>autoGenerateColumns</dt>   <dd><code>@</code> Whether the grid should generate columns automatically based on the <b>itemsSource</b>.</dd>
+  <dt>childItemsPath</dt>        <dd><code>@</code> Name of the property used to generate child rows in hierarchical grids.</dd>
+  <dt>control</dt>               <dd><code>=</code> Reference to the <b>FlexGrid</b> control created by this directive.</dd>
+  <dt>groupHeaderFormat</dt>     <dd><code>@</code> Format string used to create the group header content.</dd>
+  <dt>headersVisibility</dt>     <dd><code>=</code> Whether the row and column headers are visible. (see <a href="" ng-click="go('wijmo.grid.HeadersVisibility.Enum.html')"><b>HeadersVisibility</b></a>).</dd>
+  <dt>itemFormatter</dt>         <dd><code>=</code> Formatter function used to customize cells on this grid.</dd>
+  <dt>itemsSource</dt>           <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains items shown on the grid.</dd>
+  <dt>isReadOnly</dt>            <dd><code>@</code> Whether the user can edit the grid cells by typing into them.</dd>
+  <dt>mergeManager</dt>          <dd><code>=</code> Merge Manager (see <a href="" ng-click="go('wijmo.grid.MergeManager.Class.html')"><b>MergeManager</b></a>).</dd>
+  <dt>scrollPosition</dt>        <dd><code>=</code> Represents the value of the grid's scrollbars.</dd>
+  <dt>selection</dt>             <dd><code>=</code> Current selection (see <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>).</dd>
+  <dt>selectionMode</dt>         <dd><code>@</code> Selection mode (see <a href="" ng-click="go('wijmo.grid.SelectionMode.Enum.html')"><b>SelectionMode</b></a>).</dd>
+  <dt>showGroups</dt>            <dd><code>@</code> Whether to insert group rows to delimit data groups.</dd>
+  <dt>showSort</dt>              <dd><code>@</code> Whether to display sort indicators in the column headers.</dd>
+  <dt>treeIndent</dt>            <dd><code>@</code> Indentation used to offset row groups of different levels.</dd>
+  <dt>beginningEdit</dt>         <dd><code>&</code> The beginningEdit event handler (see <b>beginningEdit</b>).</dd>
+  <dt>cellEditEnded</dt>         <dd><code>&</code> The cellEditEnded event handler (see <b>cellEditEnded</b>).</dd>
+  <dt>cellEditEnding</dt>        <dd><code>&</code> The cellEditEnding event handler (see <b>cellEditEnding</b>).</dd>
+  <dt>prepareCellForEdit</dt>    <dd><code>&</code> The prepareCellForEdit event handler (see <b>prepareCellForEdit</b>).</dd>
+  <dt>resizingColumn</dt>        <dd><code>&</code> The resizingColumn event handler (see <b>resizingColumn</b>).</dd>
+  <dt>resizedColumn</dt>         <dd><code>&</code> The resizedColumn event handler (see <b>resizedColumn</b>).</dd>
+  <dt>draggedColumn</dt>         <dd><code>&</code> The draggedColumn event handler (see <b>draggedColumn</b>).</dd>
+  <dt>draggingColumn</dt>        <dd><code>&</code> The draggingColumn event handler (see <b>draggingColumn</b>).</dd>
+  <dt>sortedColumn</dt>          <dd><code>&</code> The sortedColumn event handler (see <b>sortedColumn</b>).</dd>
+  <dt>sortingColumn</dt>         <dd><code>&</code> The sortingColumn event handler (see <b>sortingColumn</b>).</dd>
+  <dt>deletingRow</dt>           <dd><code>&</code> The deletingRow event handler (see <b>deletingRow</b>).</dd>
+  <dt>draggingRow</dt>           <dd><code>&</code> The draggingRow event handler (see <b>draggingRow</b>).</dd>
+  <dt>draggedRow</dt>            <dd><code>&</code> The draggedRow event handler (see <b>draggedRow</b>).</dd>
+  <dt>resizingRow</dt>           <dd><code>&</code> The resizingRow event handler (see <b>resizingRow</b>).</dd>
+  <dt>resizedRow</dt>            <dd><code>&</code> The resizedRow event handler (see <b>resizedRow</b>).</dd>
+  <dt>rowAdded</dt>              <dd><code>&</code> The rowAdded event handler (see <b>rowAdded</b>).</dd>
+  <dt>rowEditEnded</dt>          <dd><code>&</code> The rowEditEnded event handler (see <b>rowEditEnded</b>).</dd>
+  <dt>rowEditEnding</dt>         <dd><code>&</code> The rowEditEnding event handler (see <b>rowEditEnding</b>).</dd>
+  <dt>loadedRows</dt>            <dd><code>&</code> The loadedRows event handler (see <b>loadedRows</b>).</dd>
+  <dt>loadingRows</dt>           <dd><code>&</code> The loadingRows event handler (see <b>loadingRows</b>).</dd>
+  <dt>groupCollapsedChanged</dt> <dd><code>&</code> The groupCollapsedChanged event handler (see <b>groupCollapsedChanged</b>).</dd>
+  <dt>groupCollapsedChanging</dt> <dd><code>&</code> The groupCollapsedChanging event handler (see <b>groupCollapsedChanging</b>).</dd>
+  <dt>itemsSourceChanged</dt>    <dd><code>&</code> The itemsSourceChanged event handler (see <b>itemsSourceChanged</b>).</dd>
+  <dt>selectionChanging</dt>     <dd><code>&</code> The selectionChanging event handler (see <b>selectionChanging</b>).</dd>
+  <dt>selectionChanged</dt>      <dd><code>&</code> The selectionChanged event handler (see <b>selectionChanged</b>).</dd>
+  <dt>scrollPositionChanged</dt> <dd><code>&</code> The scrollPositionChanged event handler (see <b>scrollPositionChanged</b>).</dd>
+</dl></p>
+
+<p>The <b>WjFlexGrid</b> directive may contain <a href="" ng-click="go('wijmo.angular.WjFlexGridColumn.Class.html')"><b>WjFlexGridColumn</b></a> child directives.</p></p>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Empty Wijmo App</title>
+
+    <!-- Wijmo/jQuery references (required) -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script> 
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.min.js" type="text/javascript"></script>
+    <link href="http://cdn.wijmo.com/5.20142.0/styles/wijmo.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Wijmo controls (optional, include the controls you need) -->
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.chart.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/5.20142.0/controls/wijmo.input.min.js" type="text/javascript"></script>
+</head>
+
+<body style="font-family:Tahoma">
+    <h1>
+        Welcome to Wijmo 5</h1>
+    <p>
+        Here is a <b>FlexGrid</b> control:</p>
+    <div id="theGrid" style="max-height:350px;"></div>
+
+    <hr />
+
+    <p>
+        And here is a <b>FlexChart</b> control:</p>
+    <div id="theChart" style="height:350px;"></div>
+</body>
+
+    <!--  -->
+    <script>
+        $(document).ready(function () {
+
+            // generate some random data
+            var countries = 'US,Germany,UK,Japan,Italy,Greece'.split(','),
+                data = [];
+            for (var i = 0; i < countries.length; i++) {
+                data.push({
+                    country: countries[i],
+                    downloads: Math.round(Math.random() * 20000),
+                    sales: Math.random() * 10000,
+                    expenses: Math.random() * 5000
+                });
+            }
+
+            // wrap data in a CollectionView to get updates
+            // (so editing the grid updates the chart)
+            var view = new wijmo.collections.CollectionView(data);
+
+            // create grid and bind it to the data
+            var grid = new wijmo.grid.FlexGrid('#theGrid');
+            grid.initialize({
+                autoGenerateColumns: false,
+                columns: [
+                    { header: 'Country', binding: 'country', isReadOnly: true },
+                    { header: 'Sales', binding: 'sales', format: 'c0' },
+                    { header: 'Expenses', binding: 'expenses', format: 'c0' },
+                    { header: 'Downloads', binding: 'downloads' }
+                ],
+                itemsSource: view
+            });
+
+            // create a chart and show the same data
+            var chart = new wijmo.chart.FlexChart('#theChart');
+            chart.initialize({
+                bindingX: 'country',
+                series: [
+                    { name: 'Sales', binding: 'sales' },
+                    { name: 'Expenses', binding: 'expenses' },
+                    { name: 'Downloads', binding: 'downloads', chartType: wijmo.chart.ChartType.LineSymbols }
+                ],
+                itemsSource: view
+            });
+        });
+
+    </script>
+
+</html>

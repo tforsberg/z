@@ -1,0 +1,160 @@
+<h2>Axis Class</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><b>_IAxis</b></dd>
+<dt>Module</dt><dd>wijmo.chart</dd>
+<dt>File</dt><dd>wijmo.chart.js</dd>
+</dl>
+<p>Represents an axis in the chart.</p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(position)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>position</b> (<a href="" ng-click="go('wijmo.chart.Position.Enum.html')"><b>Position</b></a>): Position of the axis on the chart.</li></ul>
+</td>
+      <td>Initializes a new instance of an <a href="" ng-click="go('wijmo.chart.Axis.Class.html')"><b>Axis</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>actualMax</b></td>
+      <td><b>number</b></td>
+      <td>Gets the actual axis maximum.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>actualMin</b></td>
+      <td><b>number</b></td>
+      <td>Gets the actual axis minimum.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>axisLine</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the axis line is visible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>axisType</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.AxisType.Enum.html')"><b>AxisType</b></a></td>
+      <td>Gets the axis type.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>format</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the format string used for the axis labels (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>labels</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the axis labels are visible.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>majorGrid</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the axis should include grid lines.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>majorTickMarks</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.TickMark.Enum.html')"><b>TickMark</b></a></td>
+      <td>Gets or sets the appearance of axis tick marks.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>majorUnit</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the distance between axis labels.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>max</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the maximum value shown on the axis. If not set, the maximum is calculated automatically.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>min</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the minimum value shown on the axis. If not set, the minimum is calculated automatically.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>position</b></td>
+      <td><a href="" ng-click="go('wijmo.chart.Position.Enum.html')"><b>Position</b></a></td>
+      <td>Gets or sets the axis position.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>reversed</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets or sets whether the axis is reversed (top to bottom/right to left).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>title</b></td>
+      <td><b>string</b></td>
+      <td>Gets or sets the text shown next to the axis.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>convert</b>(val)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>val</b> (<b>number</b>): Data value.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Converts value from data to pixel coordinate.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>convertBack</b>(val)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>val</b> (<b>number</b>): Pixel coordinate.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Converts value from pixel to data coordinate.</td>
+    </tr>
+</tbody>
+</table>

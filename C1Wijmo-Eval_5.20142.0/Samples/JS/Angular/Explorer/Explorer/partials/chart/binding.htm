@@ -1,0 +1,61 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Chart binding</h3>
+        <p>
+            This view shows how you can use the <b>FlexChart</b> to show two sets of values
+            from a single array of data. This is the most common usage scenario for the 
+            <b>FlexChart</b>.</p>
+        <p>
+            The sample does the following:</p>
+        <ol>
+            <li>
+                Set the chart's <b>itemsSource</b> property to an array of data objects.
+                Each data object has values for "date", "sales", and "downloads".</li>
+            <li>
+                Set the chart's <b>bindingX</b> property to "date".</li>
+            <li>
+                Add a <b>Series</b> object to the chart's <b>series</b> array and
+                set its <b>binding</b> property to "sales".</li>
+            <li>
+                Add a second <b>Series</b> object to the chart's <b>series</b> array
+                and set its <b>binding</b> property to "downloads".</li>
+        </ol>
+        <p>
+            In addition to binding, this sample shows the effect of the <b>interpolateNulls</b>
+            and <b>legendToggle</b> properties.
+            When you set <b>interpolateNulls</b> to true, the chart fills in gaps created by 
+            null values in the data.
+            When you set <b>legendToggle</b> to true, the chart toggles the visibility of the
+            series when you click its name in the legend.</p>
+    </div>
+    <div class="row-fluid">
+
+        <!-- menus for configuring the chart -->
+        <wj-menu value="ctx.chart.chartType" header="Chart Type">
+            <wj-menu-item value="3">Line</wj-menu-item>
+            <wj-menu-item value="4">LineSymbols</wj-menu-item>
+            <wj-menu-item value="5">Area</wj-menu-item>
+        </wj-menu>
+        <wj-menu value="ctx.chart.interpolateNulls" header="InterpolateNulls">
+            <wj-menu-item value="true">True</wj-menu-item>
+            <wj-menu-item value="false">False</wj-menu-item>
+        </wj-menu>
+        <wj-menu value="ctx.chart.legendToggle" header="LegendToggle">
+            <wj-menu-item value="true">True</wj-menu-item>
+            <wj-menu-item value="false">False</wj-menu-item>
+        </wj-menu>
+
+        <!-- the chart -->
+        <wj-flex-chart
+            class="chart"
+            control="ctx.chart"
+            chart-type="Line"
+            items-source="ctx.itemsSource"
+            binding-x="date">
+            <wj-flex-chart-series binding="downloads" name="Downloads"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="sales" name="Sales"></wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+
+</div>

@@ -1,0 +1,174 @@
+﻿<link href="styles/wijmo-custom-theme.css" rel="stylesheet" />
+<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Themes</h3>
+		<p>
+			Wijmo uses CSS (cascading style sheets) for styling.
+			The wijmo.css file defines styles for all controls and must be included in all
+			pages that use Wijmo controls.</p>
+		<p>
+			In addition to the basic wijmo.css default theme, we provide several custom themes.
+			Custom themes are defined in files named wijmo.theme.*.css. To use a custom theme,
+			choose the one you want and include a reference to the appropriate CSS file right
+			after the reference to the "wijmo.css" file.</p>
+		<p>
+			You can use the "Theme" button in the upper right corner of the page to see what the
+			custom Wijmo themes look like.</p>
+	</div>
+	<h4>
+		CSS 101</h4>
+	<p>
+		If you are not familiar with CSS, here is a very quick description of how it works:</p>
+	<p>
+		Every HTML element that makes up a control has a class attribute that specifies the role
+		played by the element. In Wijmo, the class names have a "wj-" prefix.</p>
+	<p>
+		The application includes one or more CSS files that specify the visual properties of these
+		classes. Each CSS file contains any number of rules that apply to specified elements. 
+        For example, the rule below specifies that elements with class "wj-header" 
+		have a light gray background and a darker gray bold font:</p>
+	<pre>.wj-header {
+  background-color: #EAEAEA;
+  font-weight: bold;
+  color: #444;
+}</pre>
+	<p>
+		The power and flexibility of CSS become apparent when you create rules based on multiple styles.
+		For example, the rule below specifies that elements with class "wj-header" have a slightly
+		smaller font only when they are contained in "wj-calendar-month" elements:</p>
+	<pre>.wj-calendar-month .wj-header {
+  font-size: 90%;
+}</pre>
+	<p>
+		The part of the rule that appears before the style definition is called the selector.
+		CSS has a rich syntax for selectors so you can be as specific or as flexible as you want
+		when specifying the elements to which the style applies.</p>
+	<p>
+		In order to allow full customization of control elements, Wijmo adds classes to each part
+		of each control. Some classes are control-specific, and some are related to state or role.
+		This allows you to customize the appearance of a control, of states (such as selected items),
+		or to roles (such as item headers).</p>
+	<h4>
+		Customizing existing themes</h4>
+	<p>
+		If you are not familiar with CSS and would like to create your own themes, you can start by 
+        making small modifications to the ones provided. If you prefer to use LESS themes, you can 
+        find more information and links to resources in the 
+        <a href="http://wijmo.com/5/docs/static/whatIsLess.html">Using LESS</a> topic in the help.</p>
+	<p>
+		If you are not sure about which classes to use in your CSS selectors, you can use the
+		Inspect Element command available in most browsers. This command shows everything
+		about any HTML element, including its classes, the computed style, and what CSS rules
+		were used to build the style.</p>
+	<p>
+		For example, this page includes a CSS file with the following rules:</p>
+
+	<pre>/* apply gray gradient background and white foreground to all wijmo controls */
+.wj-content {
+  background-image: linear-gradient(to top, #444 0%, #888 100%);
+  color: #fff;
+}
+/* show selected items in orange (grid cells, calendar dates, etc) */
+.wj-state-selected {
+  background: #ff6a00;
+}
+/* give all headers (grid, calendar, etc) light text on a dark background */
+.wj-header {
+  background-color: #444;
+  color: #fff;
+}
+/* remove gridlines from non-header grid cells */
+.wj-cell:not(.wj-header) {
+    border: none;
+}</pre>
+	<p>
+		These rules are applied in addition to the ones in the base wijmo.css file. You can see in 
+		the following examples how they affect the appearance of different Wijmo controls.</p>
+	<div class="row">
+		<dl class="dl-horizontal col-xs-12 ">
+			<dt>InputDate</dt>
+			<dd>
+				<wj-input-date 
+                    value="ctx.departureDate"
+					min="2014-1-15"
+					max="2014-2-15"
+					format="d">
+				</wj-input-date>
+				<br />
+			</dd>
+
+			<dt>InputTime</dt>
+			<dd>
+				<wj-input-time 
+                    value="ctx.departureDate"
+					min="07:00"
+					max="22:00"
+					format="t">
+				</wj-input-time>
+				<br />
+			</dd>
+
+			<dt>Calendar</dt>
+			<dd>
+				<wj-calendar 
+                    value="ctx.departureDate"
+					class="calendar">
+				</wj-calendar>
+				<br />
+			</dd>
+
+			<dt>FlexGrid</dt>
+			<dd>
+				<wj-flex-grid 
+                    style="height:250px"
+				    items-source="ctx.items">
+				</wj-flex-grid>
+				<br />
+			</dd>
+		</dl>
+	</div>
+	<h4>
+		Customizing the appearance of a single control</h4>
+	<p>
+		These rules are great if you want to customize the appearance of every control 
+        in your application. That is a typical scenario, but what if you only want to 
+        customize the appearance of a single control?</p>
+	<p>
+		To handle such a scenario, assign a new class to the control that you want to 
+        customize, and write CSS rules using that class as the selector. For example, the 
+        CSS below applies a blue background color to elements with the class "wj-btn-default" 
+        when they are contained in an element with the class "customInputTime."</p>
+<pre>.customInputTime .wj-btn-default {
+  background: #328efd;
+}
+.customInputTime .wj-btn-default:hover {
+  background: #58a2fb;
+} </pre>
+	<p>
+		Here is the HTML that adds the "customInputTime" class to our Customized InputTime
+		control.</p>
+<pre>&lt;wj-input-time class="customInputTime" value="ctx.departureDate" min="'07:00'" max="'22:00'" format="'t'"&gt;</pre>
+	<p>
+		Here is the result, along with a regular InputTime control that does not specify 
+        the customInputTime class.
+	</p>
+	<div class="row">
+		<dl class="dl-horizontal col-md-6">
+			<dt>Regular InputTime</dt>
+			<dd>
+				<wj-input-time value="ctx.departureDate" min="07:00" max="22:00" format="t">
+				</wj-input-time>
+				<br />
+			</dd>
+			<dt>Customized InputTime</dt>
+			<dd>
+				<wj-input-time class="customInputTime" value="ctx.departureDate" min="07:00" max="22:00" format="t">
+				</wj-input-time>
+				<br />
+			</dd>
+		</dl>
+	</div>
+</div>
+
+

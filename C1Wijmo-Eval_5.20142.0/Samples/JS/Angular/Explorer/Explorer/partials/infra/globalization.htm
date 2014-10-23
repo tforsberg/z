@@ -1,0 +1,204 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Globalization</h3>
+		<p>
+			Wijmo has a globalization module built into its core and exposed as a static
+			<b>Globalize</b> class.<p>
+			The <b>wijmo.Globalize</b> class has methods for formatting and parsing numbers and
+			dates. These methods are used by all Wijmo controls, and you can use them in your
+			code as well.</p>
+		<p>
+			The default culture used for formatting and parsing values is American English,
+			but you can switch languages by adding a reference to the appropriate
+			<b>wijmo.culture.*.js</b> file to your pages.</p>
+		<p>
+			The menu below provides a choice of cultures. Selecting one causes the controller to
+			load the appropriate culture file and refresh the page. This is done to demonstrate
+			that you can switch cultures dynamically, but that is not a common scenario.
+			Most applications would simply include the desired culture with a script tag.</p>
+
+	</div>
+	<div>
+		<wj-menu value="ctx.culture" header="Culture">
+			<wj-menu-item value="'en'">English</wj-menu-item>
+			<wj-menu-item value="'de'">German</wj-menu-item>
+			<wj-menu-item value="'it'">Italian</wj-menu-item>
+			<wj-menu-item value="'fr'">French</wj-menu-item>
+			<wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+			<wj-menu-item value="'ru'">Russian</wj-menu-item>
+			<wj-menu-item value="'ja'">Japanese</wj-menu-item>
+			<wj-menu-item value="'ko'">Korean</wj-menu-item>
+		</wj-menu>
+	</div>
+    <br />
+	<h4>
+		Formatting and parsing numbers, dates, and times</h4>
+	<p>
+		Use the <b>wijmo.Globalize.format</b> method to format dates and values 
+        using .NET-style formatting strings that reflect the current culture. The 
+        format method automatically chooses the formatDate or formatNumber method, 
+        so you need not specify. Here are some examples of formatted values.</p>
+
+	<table class="table table-condensed table-bordered">
+		<thead>
+		<th>Value</th>
+		<th>Format</th>
+		<th>Result</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>&pi;</td>
+				<td><code>n2</code></td>
+				<td>{{ctx.pi | glbz:'n2'}}</td>
+			</tr>
+			<tr>
+				<td>&pi; * 1000</td>
+				<td><code>n0</code></td>
+				<td>{{ctx.pi * 1000 | glbz:'n0'}}</td>
+			</tr>
+			<tr>
+				<td>&pi;</td>
+				<td><code>c</code></td>
+				<td>{{ctx.pi | glbz:'c'}}</td>
+			</tr>
+			<tr>
+				<td>-&pi;</td>
+				<td><code>c</code></td>
+				<td>{{-ctx.pi | glbz:'c'}}</td>
+			</tr>
+			<tr>
+				<td>&pi;</td>
+				<td><code>p0</code></td>
+				<td>{{ctx.pi | glbz:'p0'}}</td>
+			</tr>
+			<tr>
+				<td>Today</td>
+				<td><code>d</code></td>
+				<td>{{ctx.today | glbz:'d'}}</td>
+			</tr>
+			<tr>
+				<td>Today</td>
+				<td><code>dddd, MMMM dd, yyyy</code></td>
+				<td>{{ctx.today | glbz:'dddd, MMMM dd, yyyy hh:mm:ss tt'}}</td>
+			</tr>
+			<tr>
+				<td>Now</td>
+				<td><code>t</code></td>
+				<td>{{ctx.today | glbz:'t'}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		Use the <b>wijmo.Globalize.parseDate</b>, <b>wijmo.Globalize.parseInt</b>, and
+		<b>wijmo.Globalize.parseFloat</b> methods to convert formatted strings into values.
+		The parsing methods are essential if you want to provide two-way bindings or
+		create data-entry controls.</p>
+
+	<h4>
+		Translating strings</h4>
+	<p>
+		The <b>format</b> and <b>parse</b> methods described above have globalization
+		support built in. But many applications have modules that contain strings which
+		must also be translated. For example, you may have a log-in module that contains 
+        status and error messages, menu systems, buttons with text, and so on.</p>
+	<p>
+		To localize strings in JavaScript, create a single object and use it to store 
+        all of the localizable strings in your app. Then use this object in the app
+		instead of string literals.</p>
+	<p>
+		If you want to allow users to switch cultures dynamically, load the localized
+		strings using Ajax calls. For example, when you switch the culture using the
+		menu at the top of this page, the menu below updates to reflect the selected 
+        culture.</p>
+
+	<div>
+		<div class="btn-group">
+			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				{{i18n.menu.file._root}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="">{{i18n.menu.file.new}}</a></li>
+				<li><a href="">{{i18n.menu.file.open}}</a></li>
+				<li><a href="">{{i18n.menu.file.save}}</a></li>
+				<li class="divider"></li>
+				<li><a href="">{{i18n.menu.file.exit}}</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				{{i18n.menu.edit._root}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="">{{i18n.menu.edit.cut}}</a></li>
+				<li><a href="">{{i18n.menu.edit.copy}}</a></li>
+				<li><a href="">{{i18n.menu.edit.past}}</a></li>
+				<li class="divider"></li>
+				<li><a href="">{{i18n.menu.edit.find}}</a></li>
+				<li><a href="">{{i18n.menu.edit.replace}}</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				{{i18n.menu.format._root}}
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="">{{i18n.menu.format.bold}}</a></li>
+				<li><a href="">{{i18n.menu.format.italic}}</a></li>
+				<li><a href="">{{i18n.menu.format.underline}}</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<br />
+	<p>
+		This table is another example that uses Ajax calls to load 
+        localized strings when the current culture changes.</p>
+
+	<table class="table table-condensed table-bordered">
+		<thead>
+		<th>Path</th>
+		<th>English</th>
+		<th>Current Culture ({{ctx.culture}})</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>greetings/hello</code></td>
+				<td>Hello</td>
+				<td>{{i18n.greetings.hello}}</td>
+			</tr>
+			<tr>
+				<td><code>greetings/bye</code></td>
+				<td>Bye</td>
+				<td>{{i18n.greetings.bye}}</td>
+			</tr>
+			<tr>
+				<td><code>greetings/cheers</code></td>
+				<td>Cheers</td>
+				<td>{{i18n.greetings.cheers}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h4>
+		Globalizing controls
+	</h4>
+	<p>
+		If you use Wijmo's Globalization module in your controls, you get localization for free.
+		For example, the calendar below shows localized month and day names. This was done using
+		the <b>wijmo.Globalize.format</b> method to format the date parts used to create the
+		calendar.</p>
+
+	<wj-calendar 
+        class="calendar"
+		control="ctx.calendar"
+		value="ctx.departureDate">
+	</wj-calendar>
+
+</div>

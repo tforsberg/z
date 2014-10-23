@@ -1,0 +1,48 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Selection</h3>
+        <p>
+            This view demonstrates the <b>FlexChart</b>'s selection feature.</p>
+        <p>
+            The <b>selectionMode</b> property determines whether the chart should select series
+            or points when the user clicks on the chart.</p>
+        <p>
+            Selected elements can be styled using CSS, and the current selection is reflected in
+            the <b>series.CollectionView</b> as all list selections in Wijmo controls.</p>
+    </div>
+    <div class="row-fluid">
+
+        <wj-menu value="ctx.chart.chartType" header="Chart Type">
+            <wj-menu-item value="0">Column</wj-menu-item>
+            <wj-menu-item value="1">Bar</wj-menu-item>
+            <wj-menu-item value="2">Scatter</wj-menu-item>
+            <wj-menu-item value="3">Line</wj-menu-item>
+            <wj-menu-item value="4">LineSymbols</wj-menu-item>
+            <wj-menu-item value="5">Area</wj-menu-item>
+        </wj-menu>
+
+        <wj-menu value="ctx.chart.stacking" header="Stacking">
+            <wj-menu-item value="0">None</wj-menu-item>
+            <wj-menu-item value="1">Stacked</wj-menu-item>
+            <wj-menu-item value="2">Stacked 100%</wj-menu-item>
+        </wj-menu>
+
+        <wj-menu value="ctx.chart.selectionMode" header="Selection Mode">
+            <wj-menu-item value="0">None</wj-menu-item>
+            <wj-menu-item value="1">Series</wj-menu-item>
+            <wj-menu-item value="2">Point</wj-menu-item>
+        </wj-menu>
+
+        <wj-flex-chart 
+            class="chart"
+            binding-x="name"
+            selection-mode="Series"
+            items-source="ctx.itemsSource"
+            control="ctx.chart">
+            <wj-flex-chart-series name="Mar" binding="Mar"></wj-flex-chart-series>
+            <wj-flex-chart-series name="Apr" binding="Apr"></wj-flex-chart-series>
+            <wj-flex-chart-series name="May" binding="May"></wj-flex-chart-series>
+        </wj-flex-chart>
+    </div>
+</div>

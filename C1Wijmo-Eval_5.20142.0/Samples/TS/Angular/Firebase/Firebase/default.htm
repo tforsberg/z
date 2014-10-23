@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="appCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>Wijmo Firebase sample</title>
+
+    <!-- ensure IE uses the latest version of IE (yes, yes...) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+
+    <!-- jQuery/Angular/Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.chart.min.js" type="text/javascript"></script>
+    <link href="styles/vendor/wijmo.min.css" rel="stylesheet">
+
+    <!-- app scripts -->
+    <script src="scripts/wijmo.data/FirebaseCollectionView.js" type="text/javascript"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/directives/appDctv.js" type="text/javascript"></script>
+    <script src="scripts/controllers/appCtrl.js" type="text/javascript"></script>
+
+    <!-- Wijmo-Angular interop -->
+    <script src="scripts/vendor/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <!-- app styles -->
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="container" style="position:relative">
+            <h1>
+                <img src="resources/firebase.png">
+                Wijmo 5 and Firebase
+            </h1>
+            <p>
+                <a href="https://www.firebase.com">Firebase</a> is a powerful API to store and 
+                sync data in real time.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- use tabs to select the view -->
+        <ul class="nav nav-tabs">
+          <li ng-class="{active: currentView()=='/'}"><a href="#/home">Home</a></li>
+          <li ng-class="{active: currentView()=='/products'}"><a href="#/products">Products</a></li>
+          <li ng-class="{active: currentView()=='/customers'}"><a href="#/customers">Customers</a></li>
+          <li ng-class="{active: currentView()=='/employees'}"><a href="#/employees">Employees</a></li>
+          <li ng-class="{active: currentView()=='/restore'}"><a href="#/restore">Restore</a></li>
+        </ul>
+
+        <!-- view -->
+        <div class="container">
+            <ng-view>
+            </ng-view>
+        </div>
+    </div>
+</body>
+</html>

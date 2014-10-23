@@ -1,0 +1,47 @@
+<h2>WjCalendar Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDirective</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control.</p>
+
+<p>Use the <b>WjCalendar</b> directive to add <b>Calendar</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a Calendar control:&lt;/p&gt;
+&lt;wj-calendar 
+  value="theDate"&gt;
+&lt;/wj-calendar&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates a <b>Calendar</b> control and binds it to a 'date' variable
+exposed by the controller. The range of dates that may be selected is limited
+by the <b>min</b> and <b>max</b> properties.</p>
+
+<p>The <b>Calendar</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>        <dd><code>=</code> Reference to the <b>Calendar</b> control created by this directive.</dd>
+  <dt>displayMonth</dt>   <dd><code>=</code> The month being displayed in the calendar.</dd>
+  <dt>firstDayOfWeek</dt> <dd><code>@</code> The first day of the week.</dd>
+  <dt>itemFormatter</dt>  <dd><code>=</code> Function used to customize the dates shown in the calendar.</dd>
+  <dt>max</dt>            <dd><code>@</code> Latest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>min</dt>            <dd><code>@</code> Earliest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>monthView</dt>      <dd><code>@</code> Whether the control should display the month or year views.</dd>
+  <dt>showHeader</dt>     <dd><code>@</code> Whether the control should display the header area.</dd>
+  <dt>value</dt>          <dd><code>=</code> Date being edited.</dd>
+  <dt>valueChanged</dt>   <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"yyyy-MM-dd". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]<a>, which is also the format 
+used with regular HTML5 input elements.</p></p>

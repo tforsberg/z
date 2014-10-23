@@ -1,0 +1,135 @@
+<h2>IPagedCollectionView Interface</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p>Defines methods and properties that extend <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> to provide 
+paging capabilities.</p>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>canChangePage</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether the <b>pageIndex</b> value can change.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>isPageChanging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value that indicates whether the index is changing.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>itemCount</b></td>
+      <td><b>number</b></td>
+      <td><p>Gets the number of items in the view taking paging into account.</p>
+
+<p>To get the total number of items, use the <b>totalItemCount</b> property.</p>
+
+<p>Notice that this is different from the .NET <b>IPagedCollectionView</b>,
+where <b>itemCount</b> and <b>totalItemCount</b> both return the count
+before paging is applied.</p></td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>pageChanged</b></td>
+      <td><a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a></td>
+      <td>Occurs after the page index changes.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>pageChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.Event.Class.html')"><b>Event</b></a></td>
+      <td>Occurs before the page index changes.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>pageIndex</b></td>
+      <td><b>number</b></td>
+      <td>Gets the zero-based index of the current page.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>pageSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the number of items to display on a page.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Field">F</span></td>
+      <td><b>totalItemCount</b></td>
+      <td><b>number</b></td>
+      <td><p>Gets the total number of items in the view before paging is applied.</p>
+
+<p>To get the number of items in the current view not taking paging into 
+account, use the <b>itemCount</b> property.</p>
+
+<p>Notice that this is different from the .NET <b>IPagedCollectionView</b>,
+where <b>itemCount</b> and <b>totalItemCount</b> both return the count
+before paging is applied.</p></td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>moveToFirstPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the first page as the current page.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToLastPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the last page as the current page.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToNextPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page after the current page.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToPage</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Index of the page to move to.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page at the specified index.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToPreviousPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page before the current page.</td>
+    </tr>
+</tbody>
+</table>

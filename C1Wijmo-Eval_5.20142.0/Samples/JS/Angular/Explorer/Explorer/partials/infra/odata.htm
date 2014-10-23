@@ -1,0 +1,66 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			OData and CollectionView</h3>
+		<p>
+			The <b>ICollectionView</b> interface works great with OData sources, providing
+			a standard way to specify filtering, sorting, and paging on the server or on
+			the client.</p>
+		<p>
+			This sample shows how you can populate a <b>CollectionView</b> object directly
+			from OData sources and then use currency management to implement a simple
+			master-detail view. Click a category in the first table, and the bottom table
+			updates to show products from the selected category.</p>
+	</div>
+	<div class="row-fluid">
+		<h4>Categories</h4>
+		<div class="table-responsive">
+			<table class="table table-condensed table-bordered">
+				<thead>
+					<tr class="active">
+						<th>ID</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in ctx.categories.items"
+						ng-class="{success: item == ctx.categories.currentItem}"
+						ng-click="ctx.categories.moveCurrentTo(item)">
+						<td class="text-right">{{item.CategoryID}}</td>
+						<td>{{item.CategoryName}}</td>
+						<td>{{item.Description}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br /><br />
+		<h4>{{ctx.categories.currentItem.CategoryName}} ({{ctx.products.items.length}} items)</h4>
+		<div class="table-responsive">
+			<table class="table table-condensed table-bordered">
+				<thead>
+					<tr class="active">
+						<th class="text-right">ID</th>
+						<th>Name</th>
+						<th>Quantity Per Unit</th>
+						<th class="text-right">Unit Price</th>
+						<th class="text-right">Units In Stock</th>
+						<th class="text-center">Discontinued</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in ctx.products.items"
+						ng-class="{success: item == ctx.products.currentItem}"
+						ng-click="ctx.products.moveCurrentTo(item)">
+						<td class="text-right">{{item.ProductID}}</td>
+						<td>{{item.ProductName}}</td>
+						<td>{{item.QuantityPerUnit}}</td>
+						<td class="text-right">{{item.UnitPrice | number:2}}</td>
+						<td class="text-right">{{item.UnitsInStock | number:0}}</td>
+						<td class="text-center">{{item.Discontinued}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

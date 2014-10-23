@@ -1,0 +1,780 @@
+<h2>Module wijmo.angular</h2>
+<dl class="dl-horizontal">
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>Contains AngularJS directives for the Wijmo controls.</p>
+
+<p>The directives allow you to add Wijmo controls to
+<a href="https://angularjs.org/">AngularJS</a>
+applications using simple markup in HTML pages.</p>
+
+<p>Directives can be used as regular HTML tags on the page markup. The
+tag name corresponds to the control name, prefixed by "wj-", and the
+attributes correspond to the names of control properties and events.</p>
+
+<p>All control, property, and event names within directives should follow
+the usual AngularJS convention of replacing camel-case with hyphenated
+lower-case names.</p>
+
+<p>AngularJS directive parameters come in thee flavors, depending on the
+type of binding they use. The table below describes each one:</p>
+
+<p><dl class="dl-horizontal">
+  <dt><code>@</code></dt>   <dd>By-value, or one-way binding. The attribute value is interpreted as a literal.</dd>
+  <dt><code>=</code></dt>   <dd>By-reference, or two-way binding. The attribute value is interpreted as an expression.</dd>
+  <dt><code>&</code></dt>   <dd>Function binding. The attribute value is interpreted as a function call, including the parameters.</dd>
+</dl></p>
+
+<p>For more details on the different binding types, please see 
+<a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope">
+  Dan Wahlin's blog on directives
+</a>.</p>
+
+<p>The documentation does not describe the directive events because they are identical to
+the control events, and the binding mode is always the same (function binding).</p>
+
+<p>To illustrate, here is the markup used to create a <a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control:</p>
+
+<p><pre>&lt;wj-combo-box 
+  text="ctx.theCountry"
+  items-source="ctx.countries"
+  is-editable="true"
+  selected-index-changed="ctx.selChanged(s, e)"&gt;
+  &lt;/wj-combo-box&gt;</pre></p>
+
+<p>Notice that the <b>text</b> property of the <b>ComboBox</b> is bound to a controller 
+variable called "ctx.theCountry". The binding is two-way; changes in the control 
+udpate the scope, and changes in the scope update the control. If we wanted to
+initialize the <b>text</b> property with a string constant, we would have to enclose
+the attribute value in single quotes (for example, <code>text="'constant'"</code>).</p>
+
+<p>Notice also that the <b>selectedIndexChanged</b> event is bound to a controller
+method called "selChanged", and that the binding includes the two event parameters
+(without the parameters, the method won't be called).
+Whenever the control raises the event, the directive invokes the controller method.</p></p>
+<br/>
+<h3>Classes</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjAutoComplete.Class.html')"><b>WjAutoComplete</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.AutoComplete.Class.html')"><b>AutoComplete</b></a> control.</p>
+
+<p>Use the <b>WjAutoComplete</b> directive to add <b>AutoComplete</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an AutoComplete control:&lt;/p&gt;
+&lt;wj-auto-complete
+  text="theCountry" 
+  items-source="countries"
+  is-editable="false" 
+  placeholder="country"&gt;
+&lt;/wj-auto-complete&gt;</pre></p>
+
+<p>The example below creates an <b>AutoComplete</b> control and binds it to a 'countries' array
+exposed by the controller. The <b>AutoComplete</b> searches for the country as the user
+types, and narrows down the list of countries that match the current input.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/37GHw/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjAutoComplete</b> directive extends <a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a> with the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>cssMatch</dt>             <dd><code>@</code> Name of the css class used to highlight parts of the content that match the search terms.</dd>
+  <dt>delay</dt>                <dd><code>@</code> Delay in milliseconds between when a keystroke occurs and when a search is performed.</dd>
+  <dt>itemsSourceFunction</dt>  <dd><code>=</code> Function that provides the items dynamically as the user types.</dd>
+  <dt>maxItems</dt>             <dd><code>@</code> Maximum number of items to display in the dropdown.</dd>
+  <dt>minLength</dt>            <dd><code>@</code> Minimum input length needed before triggering autocomplete suggestions.</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjCalendar.Class.html')"><b>WjCalendar</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control.</p>
+
+<p>Use the <b>WjCalendar</b> directive to add <b>Calendar</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a Calendar control:&lt;/p&gt;
+&lt;wj-calendar 
+  value="theDate"&gt;
+&lt;/wj-calendar&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates a <b>Calendar</b> control and binds it to a 'date' variable
+exposed by the controller. The range of dates that may be selected is limited
+by the <b>min</b> and <b>max</b> properties.</p>
+
+<p>The <b>Calendar</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>        <dd><code>=</code> Reference to the <b>Calendar</b> control created by this directive.</dd>
+  <dt>displayMonth</dt>   <dd><code>=</code> The month being displayed in the calendar.</dd>
+  <dt>firstDayOfWeek</dt> <dd><code>@</code> The first day of the week.</dd>
+  <dt>itemFormatter</dt>  <dd><code>=</code> Function used to customize the dates shown in the calendar.</dd>
+  <dt>max</dt>            <dd><code>@</code> Latest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>min</dt>            <dd><code>@</code> Earliest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>monthView</dt>      <dd><code>@</code> Whether the control should display the month or year views.</dd>
+  <dt>showHeader</dt>     <dd><code>@</code> Whether the control should display the header area.</dd>
+  <dt>value</dt>          <dd><code>=</code> Date being edited.</dd>
+  <dt>valueChanged</dt>   <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"yyyy-MM-dd". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]<a>, which is also the format 
+used with regular HTML5 input elements.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjCollectionViewNavigator.Class.html')"><b>WjCollectionViewNavigator</b></a></td>
+      <td><p>AngularJS directive for an <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> navigator element.</p>
+
+<p>This directive requires a reference to <a href="http://getbootstrap.com/css/">Bootstrap</a>.</p>
+
+<p>Use the <b>WjCollectionViewNavigator</b> directive to add an element that allows users to
+navigate through the items in an <b>ICollectionView</b>. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>Here is a CollectionViewNavigator:&lt;/p&gt;
+&lt;wj-collection-view-navigator 
+  cv="myCollectionView"&gt;
+&lt;/wj-collection-view-navigator&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/s8tT4/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> with 100,000 items and 20 items per page.
+It defines a navigator to select the current page, another to select the current item,
+and shows the data in a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>.</p>
+
+<p>The <b>WjCollectionViewNavigator</b> directive has a single attribute:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>cv</dt>  <dd><code>=</code> Reference to the <b>ICollectionView</b> object to navigate.</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjCollectionViewPager.Class.html')"><b>WjCollectionViewPager</b></a></td>
+      <td><p>AngularJS directive for an <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> pager element.</p>
+
+<p>This directive requires a reference to <a href="http://getbootstrap.com/css/">Bootstrap</a>.</p>
+
+<p>Use the <b>WjCollectionViewPager</b> directive to add an element that allows users to
+navigate through the pages in a paged <b>ICollectionView</b>. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>Here is a CollectionViewPager:&lt;/p&gt;
+&lt;wj-collection-view-pager
+  cv="myCollectionView"&gt;
+&lt;/wj-collection-view-pager&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/s8tT4/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> with 100,000 items and 20 items per page.
+It defines a navigator to select the current page, another to select the current item,
+and shows the data in a <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a>.</p>
+
+<p>The <b>WjCollectionViewPager</b> directive has a single attribute:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>cv</dt>  <dd><code>=</code> Reference to the paged <b>ICollectionView</b> object to navigate.</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a> control.</p>
+
+<p>Use the <b>WjComboBox</b> directive to add <b>ComboBox</b> controls to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a ComboBox control:&lt;/p&gt;
+&lt;wj-combo-box 
+  text="theCountry" 
+  items-source="countries"
+  is-editable="false" 
+  placeholder="country"&gt;
+&lt;/wj-combo-box&gt;</pre></p>
+
+<p>The example below creates a <b>ComboBox</b> control and binds it to a 'countries' array
+exposed by the controller. The <b>ComboBox</b> searches for the country as the user
+types. The <b>isEditable</b> property is set to false, so the user is forced to
+select one of the items in the list.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/37GHw/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjComboBox</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>              <dd><code>=</code> Reference to the <b>ComboBox</b> control created by this directive.</dd>
+  <dt>displayMemberPath</dt>    <dd><code>@</code> Name of the property to use as the visual representation of the items.</dd>
+  <dt>isContentHtml</dt>        <dd><code>@</code> Whether the drop-down list should display the items as plain text or as HTML.</dd>
+  <dt>isDroppedDown</dt>        <dd><code>@</code> Whether the drop down is currently visible.</dd>
+  <dt>isEditable</dt>           <dd><code>@</code> Whether the user should be allowed to enter values not present on the list.</dd>
+  <dt>itemFormatter</dt>        <dd><code>=</code> Function used to customize the values shown on the drop-down list.</dd>
+  <dt>itemsSource</dt>          <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains items shown on the list.</dd>
+  <dt>maxDropDownHeight</dt>    <dd><code>@</code> Maximum height of the drop-down list.</dd>
+  <dt>maxDropDownWidth</dt>     <dd><code>@</code> Maximum width of the drop-down list.</dd>
+  <dt>placeholder</dt>          <dd><code>@</code> String shown as a hint when the control is empty.</dd>
+  <dt>showDropDownButton</dt>   <dd><code>@</code> Whether the control should display a drop-down button.</dd>
+  <dt>selectedIndex</dt>        <dd><code>=</code> Index of the currently selected item in the drop-down list.</dd>
+  <dt>selectedItem</dt>         <dd><code>=</code> Item that is currently selected item in the drop-down list.</dd>
+  <dt>selectedValue</dt>        <dd><code>=</code> Value of the selected item, obtained using the <b>selectedValuePath</b>.</dd>
+  <dt>selectedValuePath</dt>    <dd><code>@</code> Name of the property used to get the <b>selectedValue<b> from the <b>selectedItem</b>.</dd>
+  <dt>text</dt>                 <dd><code>=</code> Text shown in the control.</dd>
+  <dt>isDroppedDownChanged</dt> <dd><code>&</code> The isDroppedDownChanged event handler (see <b>isDroppedDownChanged</b>).</dd>
+  <dt>selectedIndexChanged</dt> <dd><code>&</code> The selectedIndexChanged event handler (see <b>selectedIndexChanged</b>).</dd>
+  <dt>textChanged</dt>          <dd><code>&</code> The textChanged event handler (see <b>textChanged</b>).</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexChart.Class.html')"><b>WjFlexChart</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> control.</p>
+
+<p>Use the <b>WjFlexChart</b> directive to add charts to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>Here is a &lt;b&gt;FlexChart&lt;/b&gt; control:&lt;/p&gt;
+&lt;wj-flex-chart style="height:300px" items-source="data" binding-x="country"&gt;
+  &lt;wj-flex-chart-axis axis-type="Y" major-unit="5000"&gt;&lt;/wj-flex-chart-axis&gt;
+  &lt;wj-flex-chart-series binding="sales" name="Sales"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series binding="expenses" name="Expenses"&gt;&lt;/wj-flex-chart-series&gt;
+  &lt;wj-flex-chart-series binding="downloads" name="Downloads" chart-type="LineSymbols"&gt;&lt;/wj-flex-chart-series&gt;
+&lt;/wj-flex-chart&gt;</pre></p>
+
+<p>The example below creates a <b>FlexChart</b> control and binds it to a 'data' array
+exposed by the controller. The chart has three series, each corresponding to 
+a property in the objects contained in the source array. The last series in the 
+example uses the 'chart-type' attribute to override the default chart type used 
+by the other series.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/QNb9X/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjFlexChart</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>binding</dt>          <dd><code>@</code> Name of the property that contains the X values (may be overridden by series).</dd>
+  <dt>bindingX</dt>         <dd><code>@</code> Name of the property that contains the Y values (may be overridden by series).</dd>
+  <dt>chartType</dt>        <dd><code>@</code> Default chart type (may be overridden by each series, see <a href="" ng-click="go('wijmo.chart.ChartType.Enum.html')"><b>ChartType</b></a>).</dd>
+  <dt>control</dt>          <dd><code>=</code> Reference to the <b>FlexChart</b> control created by this directive.</dd>
+  <dt>footer</dt>           <dd><code>@</code> Text displayed in the chart footer (plain text).</dd>
+  <dt>footerStyle</dt>      <dd><code>=</code> Style applied to the chart footer.</dd>
+  <dt>header</dt>           <dd><code>@</code> Text displayed in the chart header (plain text).</dd>
+  <dt>headerStyle</dt>      <dd><code>=</code> Style applied to the chart header.</dd>
+  <dt>interpolateNulls</dt> <dd><code>@</code> Whether to interpolate or leave gaps when there are null values in the data.</dd>
+  <dt>itemFormatter</dt>    <dd><code>=</code> Formatter function.</dd>
+  <dt>itemsSource</dt>      <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the data used to create the chart.</dd>
+  <dt>legendToggle</dt>     <dd><code>@</code> Whether clicking the legend items should toggle series visibility.</dd>
+  <dt>options</dt>          <dd><code>=</code> Miscellaneous chart options.</dd>
+  <dt>palette</dt>          <dd><code>=</code> Array with default colors used for displaying each series.</dd>
+  <dt>plotMargin</dt>       <dd><code>=</code> Plot margin.</dd>
+  <dt>rotated</dt>          <dd><code>@</code> Whether to flip the axes so X is vertical and Y horizontal.</dd>
+  <dt>selection</dt>         <dd><code>=</code> Chart selection.</dd>
+  <dt>selectionMode</dt>    <dd><code>@</code> Chart selection mode (see <a href="" ng-click="go('wijmo.chart.SelectionMode.Enum.html')"><b>SelectionMode</b></a>).</dd>
+  <dt>stacking</dt>         <dd><code>@</code> Whether series should be stacked or plotted independently (see <a href="" ng-click="go('wijmo.chart.Stacking.Enum.html')"><b>Stacking</b></a>).</dd>
+  <dt>symbolSize</dt>       <dd><code>@</code> Size of the symbols used to render this <b>FlexChart</b>.</dd>
+  <dt>rendered</dt>     <dd><code>&</code> The rendered event handler (see <b>rendered</b>).</dd>
+  <dt>seriesVisibilityChanged</dt>     <dd><code>&</code> The seriesVisibilityChanged event handler (see <b>seriesVisibilityChanged</b>).</dd>
+  <dt>selectionChanged</dt>     <dd><code>&</code> The selectionChanged event handler (see <b>selectionChanged</b>).</dd>
+</dl></p>
+
+<p>The <b>WjFlexChart</b> directive may contain the following child directives:
+<a href="" ng-click="go('wijmo.angular.WjFlexChartAxis.Class.html')"><b>WjFlexChartAxis</b></a> and <a href="" ng-click="go('wijmo.angular.WjFlexChartSeries.Class.html')"><b>WjFlexChartSeries</b></a>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexChartAxis.Class.html')"><b>WjFlexChartAxis</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> <a href="" ng-click="go('wijmo.chart.Axis.Class.html')"><b>Axis</b></a> object.</p>
+
+<p>The <b>WjFlexChartAxis</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjFlexChart.Class.html')"><b>WjFlexChart</b></a> directive. 
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>wjProperty</dt>       <dd><code>@</code> Defines the <b>FlexChart</b> property name, axisX or axisY, to initialize with this directive.</dd>
+  <dt>axisLine</dt>       <dd><code>@</code> Whether the axis line is visible.</dd>
+  <dt>format</dt>         <dd><code>@</code> Format string used for the axis labels (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>labels</dt>      <dd><code>@</code> Whether the axis labels are visible.</dd>
+  <dt>majorGrid</dt>      <dd><code>@</code> Whether the axis should include grid lines.</dd>
+  <dt>majorTickMarks</dt> <dd><code>@</code> Defines the appearance of the tick marks (see <a href="" ng-click="go('wijmo.chart.TickMark.Enum.html')"><b>TickMark</b></a>).</dd>
+  <dt>majorUnit</dt>      <dd><code>@</code> Distance between the labels and the.</dd>
+  <dt>max</dt>            <dd><code>@</code> Minimum value shown on the axis.</dd>
+  <dt>min</dt>            <dd><code>@</code> Maximum value shown on the axis.</dd>
+  <dt>position</dt>       <dd><code>@</code> Axis position (see <a href="" ng-click="go('wijmo.chart.Position.Enum.html')"><b>Position</b></a>).</dd>
+  <dt>reversed</dt>       <dd><code>@</code> Whether the axis is reversed (top to bottom/right to left).</dd>
+  <dt>title</dt>          <dd><code>@</code> Text shown next to the axis.</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexChartLegend.Class.html')"><b>WjFlexChartLegend</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> <a href="" ng-click="go('wijmo.chart.Legend.Class.html')"><b>Legend</b></a> object.</p>
+
+<p>The <b>WjFlexChartLegend</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjFlexChart.Class.html')"><b>WjFlexChart</b></a> directive. 
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>position</dt>       <dd><code>@</code> The legend position.</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexChartSeries.Class.html')"><b>WjFlexChartSeries</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.chart.FlexChart.Class.html')"><b>FlexChart</b></a> <a href="" ng-click="go('wijmo.chart.Series.Class.html')"><b>Series</b></a> object.</p>
+
+<p>The <b>WjFlexChartSeries</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjFlexChart.Class.html')"><b>WjFlexChart</b></a> directive.
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>binding</dt>       <dd><code>@</code> Name of the property that contains the X values.</dd>
+  <dt>bindingX</dt>      <dd><code>@</code> Name of the property that contains the Y values.</dd>
+  <dt>chartType</dt>     <dd><code>@</code> Chart type (see <a href="" ng-click="go('wijmo.chart.ChartType.Enum.html')"><b>ChartType</b></a>).</dd>
+  <dt>cssClass</dt>     <dd><code>@</code> The series CSS class.</dd>
+  <dt>itemsSource</dt>   <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the data for this series.</dd>
+  <dt>name</dt>          <dd><code>@</code> Name of the series as shown in the legend.</dd> 
+  <dt>style</dt>          <dd><code>=</code> The series style.</dd> 
+  <dt>symbolMarker</dt>     <dd><code>@</code> The series marker. (see <a href="" ng-click="go('wijmo.chart.Marker.Enum.html')"><b>Marker</b></a>).</dd>
+  <dt>symbolSize</dt>    <dd><code>@</code> Size of the symbols used to render this <b>Series</b>.</dd>
+  <dt>symbolStyle</dt>    <dd><code>=</code> The series symbol style.</dd>
+  <dt>visibility</dt>     <dd><code>=</code> The series visibility. (see <a href="" ng-click="go('wijmo.chart.SeriesVisibility.Enum.html')"><b>SeriesVisibility</b></a>).</dd>
+</dl></p>
+
+<p>In most cases, the <b>WjFlexChartSeries</b> specifies only the "name" and "binding" properties. The remaining
+values are inherited from the parent <b>WjFlexChart</b> directive.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexGrid.Class.html')"><b>WjFlexGrid</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> control.</p>
+
+<p>Use the <b>WjFlexGrid</b> directive to add grids to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a FlexGrid control:&lt;/p&gt;
+&lt;wj-flex-grid items-source="data"&gt;
+  &lt;wj-flex-grid-column header="Country" binding="country"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Sales" binding="sales"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Expenses" binding="expenses"&gt;&lt;/wj-flex-grid-column&gt;
+  &lt;wj-flex-grid-column header="Downloads" binding="downloads"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;</pre></p>
+
+<p>The example below creates a <b>FlexGrid</b> control and binds it to a 'data' array
+exposed by the controller. The grid has three columns, each corresponding to 
+a property of the objects contained in the source array.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/QNb9X/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjFlexGrid</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>allowAddNew</dt>           <dd><code>@</code> Whether to show a new row template so users can add items to the source collection.</dd>
+  <dt>allowDelete</dt>           <dd><code>@</code> Whether the grid should delete selected rows when the user presses the Delete key.</dd>
+  <dt>allowDragging</dt>         <dd><code>@</code> Whether rows and/or columns can be dragged with the mouse.</dd>
+  <dt>allowMerging</dt>          <dd><code>@</code> Determines which parts of the grid provide cell merging.</dd>
+  <dt>allowResizing</dt>         <dd><code>@</code> Whether users are allowed to resize rows and/or columns with the mouse.</dd>
+  <dt>allowSorting</dt>          <dd><code>@</code> Whether users are allowed to sort columns by clicking the column headers.</dd>
+  <dt>autoGenerateColumns</dt>   <dd><code>@</code> Whether the grid should generate columns automatically based on the <b>itemsSource</b>.</dd>
+  <dt>childItemsPath</dt>        <dd><code>@</code> Name of the property used to generate child rows in hierarchical grids.</dd>
+  <dt>control</dt>               <dd><code>=</code> Reference to the <b>FlexGrid</b> control created by this directive.</dd>
+  <dt>groupHeaderFormat</dt>     <dd><code>@</code> Format string used to create the group header content.</dd>
+  <dt>headersVisibility</dt>     <dd><code>=</code> Whether the row and column headers are visible. (see <a href="" ng-click="go('wijmo.grid.HeadersVisibility.Enum.html')"><b>HeadersVisibility</b></a>).</dd>
+  <dt>itemFormatter</dt>         <dd><code>=</code> Formatter function used to customize cells on this grid.</dd>
+  <dt>itemsSource</dt>           <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains items shown on the grid.</dd>
+  <dt>isReadOnly</dt>            <dd><code>@</code> Whether the user can edit the grid cells by typing into them.</dd>
+  <dt>mergeManager</dt>          <dd><code>=</code> Merge Manager (see <a href="" ng-click="go('wijmo.grid.MergeManager.Class.html')"><b>MergeManager</b></a>).</dd>
+  <dt>scrollPosition</dt>        <dd><code>=</code> Represents the value of the grid's scrollbars.</dd>
+  <dt>selection</dt>             <dd><code>=</code> Current selection (see <a href="" ng-click="go('wijmo.grid.CellRange.Class.html')"><b>CellRange</b></a>).</dd>
+  <dt>selectionMode</dt>         <dd><code>@</code> Selection mode (see <a href="" ng-click="go('wijmo.grid.SelectionMode.Enum.html')"><b>SelectionMode</b></a>).</dd>
+  <dt>showGroups</dt>            <dd><code>@</code> Whether to insert group rows to delimit data groups.</dd>
+  <dt>showSort</dt>              <dd><code>@</code> Whether to display sort indicators in the column headers.</dd>
+  <dt>treeIndent</dt>            <dd><code>@</code> Indentation used to offset row groups of different levels.</dd>
+  <dt>beginningEdit</dt>         <dd><code>&</code> The beginningEdit event handler (see <b>beginningEdit</b>).</dd>
+  <dt>cellEditEnded</dt>         <dd><code>&</code> The cellEditEnded event handler (see <b>cellEditEnded</b>).</dd>
+  <dt>cellEditEnding</dt>        <dd><code>&</code> The cellEditEnding event handler (see <b>cellEditEnding</b>).</dd>
+  <dt>prepareCellForEdit</dt>    <dd><code>&</code> The prepareCellForEdit event handler (see <b>prepareCellForEdit</b>).</dd>
+  <dt>resizingColumn</dt>        <dd><code>&</code> The resizingColumn event handler (see <b>resizingColumn</b>).</dd>
+  <dt>resizedColumn</dt>         <dd><code>&</code> The resizedColumn event handler (see <b>resizedColumn</b>).</dd>
+  <dt>draggedColumn</dt>         <dd><code>&</code> The draggedColumn event handler (see <b>draggedColumn</b>).</dd>
+  <dt>draggingColumn</dt>        <dd><code>&</code> The draggingColumn event handler (see <b>draggingColumn</b>).</dd>
+  <dt>sortedColumn</dt>          <dd><code>&</code> The sortedColumn event handler (see <b>sortedColumn</b>).</dd>
+  <dt>sortingColumn</dt>         <dd><code>&</code> The sortingColumn event handler (see <b>sortingColumn</b>).</dd>
+  <dt>deletingRow</dt>           <dd><code>&</code> The deletingRow event handler (see <b>deletingRow</b>).</dd>
+  <dt>draggingRow</dt>           <dd><code>&</code> The draggingRow event handler (see <b>draggingRow</b>).</dd>
+  <dt>draggedRow</dt>            <dd><code>&</code> The draggedRow event handler (see <b>draggedRow</b>).</dd>
+  <dt>resizingRow</dt>           <dd><code>&</code> The resizingRow event handler (see <b>resizingRow</b>).</dd>
+  <dt>resizedRow</dt>            <dd><code>&</code> The resizedRow event handler (see <b>resizedRow</b>).</dd>
+  <dt>rowAdded</dt>              <dd><code>&</code> The rowAdded event handler (see <b>rowAdded</b>).</dd>
+  <dt>rowEditEnded</dt>          <dd><code>&</code> The rowEditEnded event handler (see <b>rowEditEnded</b>).</dd>
+  <dt>rowEditEnding</dt>         <dd><code>&</code> The rowEditEnding event handler (see <b>rowEditEnding</b>).</dd>
+  <dt>loadedRows</dt>            <dd><code>&</code> The loadedRows event handler (see <b>loadedRows</b>).</dd>
+  <dt>loadingRows</dt>           <dd><code>&</code> The loadingRows event handler (see <b>loadingRows</b>).</dd>
+  <dt>groupCollapsedChanged</dt> <dd><code>&</code> The groupCollapsedChanged event handler (see <b>groupCollapsedChanged</b>).</dd>
+  <dt>groupCollapsedChanging</dt> <dd><code>&</code> The groupCollapsedChanging event handler (see <b>groupCollapsedChanging</b>).</dd>
+  <dt>itemsSourceChanged</dt>    <dd><code>&</code> The itemsSourceChanged event handler (see <b>itemsSourceChanged</b>).</dd>
+  <dt>selectionChanging</dt>     <dd><code>&</code> The selectionChanging event handler (see <b>selectionChanging</b>).</dd>
+  <dt>selectionChanged</dt>      <dd><code>&</code> The selectionChanged event handler (see <b>selectionChanged</b>).</dd>
+  <dt>scrollPositionChanged</dt> <dd><code>&</code> The scrollPositionChanged event handler (see <b>scrollPositionChanged</b>).</dd>
+</dl></p>
+
+<p>The <b>WjFlexGrid</b> directive may contain <a href="" ng-click="go('wijmo.angular.WjFlexGridColumn.Class.html')"><b>WjFlexGridColumn</b></a> child directives.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjFlexGridColumn.Class.html')"><b>WjFlexGridColumn</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.grid.FlexGrid.Class.html')"><b>FlexGrid</b></a> <a href="" ng-click="go('wijmo.grid.Column.Class.html')"><b>Column</b></a> object.</p>
+
+<p>The <b>WjFlexGridColumn</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjFlexGrid.Class.html')"><b>WjFlexGrid</b></a> directive.
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>aggregate</dt>         <dd><code>@</code> <a href="" ng-click="go('wijmo.Aggregate.Enum.html')"><b>Aggregate</b></a> to display in the group header rows for this column.</dd>
+  <dt>align</dt>             <dd><code>@</code> Horizontal alignment of items in this column.</dd>
+  <dt>allowDragging</dt>     <dd><code>@</code> Whether the user can move this column to a new position with the mouse.</dd>
+  <dt>allowSorting</dt>      <dd><code>@</code> Whether the user can sort this column by clicking its header.</dd>
+  <dt>allowResizing</dt>     <dd><code>@</code> Whether the user can resize this column with the mouse.</dd>
+  <dt>allowMerging</dt>      <dd><code>@</code> Whether cells in this column can be merged.</dd>
+  <dt>binding</dt>           <dd><code>@</code> Name of the property this column is bound to.</dd>
+  <dt>cssClass</dt>          <dd><code>@</code> Name of a CSS class to be used when rendering this column.</dd>
+  <dt>dataMap</dt>           <dd><code>=</code> <a href="" ng-click="go('wijmo.grid.DataMap.Class.html')"><b>DataMap</b></a> used to convert raw values into display values for this column.</dd>
+  <dt>dataType</dt>          <dd><code>@</code> Type of value stored in this column (see <a href="" ng-click="go('wijmo.DataType.Enum.html')"><b>DataType</b></a>).</dd>
+  <dt>format</dt>            <dd><code>@</code> Format string used to convert raw values into display values for this column (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>header</dt>            <dd><code>@</code> String displayed in the column header.</dd>
+  <dt>isContentHtml</dt>     <dd><code>@</code> Whether cells in this column contain HTML content rather than plain text.</dd>
+  <dt>isReadOnly</dt>        <dd><code>@</code> Whether the user can edit values in this column.</dd>
+  <dt>isSelected</dt>        <dd><code>@</code> Whether this column is selected.</dd>
+  <dt>maxWidth</dt>          <dd><code>@</code> Maximum width for this column.</dd>
+  <dt>minWidth</dt>          <dd><code>@</code> Minimum width for this column.</dd>
+  <dt>name</dt>              <dd><code>@</code> Column name (can be used to retrieve the column).</dd>
+  <dt>visible</dt>           <dd><code>@</code> Whether this column is visible.</dd>
+  <dt>width</dt>             <dd><code>@</code> Width of this column (in pixels or as a star value).</dd>
+  <dt>wordWrap</dt>          <dd><code>@</code> Whether cells in this column should wrap their content.</dd>
+</dl class="dl-horizontal"></p>
+
+<p>In addition to regular attributes that match properties in the <b>Column</b> class,  
+<b>WjFlexGridColumn</b> directives may contain an <b>ng-style</b> attribute that provides
+conditional formatting and an HTML fragment that is used as a cell template.</p>
+
+<p>Both the <b>ng-style</b> attribute and the HTML fragment can use the <b>$item</b> property in 
+AngularJS bindings to refer to the item that is bound to the current row. For example:</p>
+
+<p><pre>&lt;wj-flex-grid-column header="Symbol" binding="symbol" read-only="true" width="*"&gt;
+  &lt;a href="https://finance.yahoo.com/q?s={&#8203;{$item.symbol}}"&gt;
+    {&#8203;{$item.symbol}}
+  &lt;/a&gt;
+&lt;/wj-flex-grid-column&gt;
+&lt;wj-flex-grid-column header="Change" binding="changePercent" format="p2" width="*"
+  ng-style="{color:getAmountColor($item.change)}"&gt;
+&lt;/wj-flex-grid-column&gt;</pre></p>
+
+<p>These directives create two columns. 
+The first has a template that produces a hyperlink based on the bound item's "symbol" property. 
+The second has a conditional style that renders values with a color determined by a function
+implemented in the controller.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/5L423/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjInputDate.Class.html')"><b>WjInputDate</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> control.</p>
+
+<p>Use the <b>WjInputDate</b> directive to add <b>InputDate</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputDate control:&lt;/p&gt;
+&lt;wj-input-date 
+  value="theDate" 
+  format="M/d/yyyy"&gt;
+&lt;/wj-input-date&gt;</pre></p>
+
+<p>The example below shows a <b>Date</b> value (that includes date and time information)
+using an <b>InputDate</b> and an an <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control that can be
+used to select the date with a single click.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjInputDate</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>             <dd><code>=</code> Reference to the <b>InputDate</b> control created by this directive.</dd>
+  <dt>format</dt>              <dd><code>@</code> Format used to display the date being edited (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>isDroppedDown</dt>       <dd><code>@</code> Whether the drop down is currently visible.</dd>
+  <dt>max</dt>                 <dd><code>@</code> Latest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>min</dt>                 <dd><code>@</code> Earliest valid date (string in the format "yyyy-MM-dd").</dd>
+  <dt>placeHolder</dt>         <dd><code>@</code> String shown as a hint when the control is empty.</dd>
+  <dt>required</dt>            <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>showDropDownButton</dt>  <dd><code>@</code> Whether the control should display a drop-down button.</dd>
+  <dt>text</dt>                <dd><code>=</code> Text shown in the control.</dd>
+  <dt>value</dt>               <dd><code>=</code> Date being edited.</dd>
+  <dt>isDroppedDownChanged</dt> <dd><code>&</code> The isDroppedDownChanged event handler (see <b>isDroppedDownChanged</b>).</dd>
+  <dt>textChanged</dt>         <dd><code>&</code> The textChanged event handler (see <b>textChanged</b>).</dd>
+  <dt>valueChanged</dt>        <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl class="dl-horizontal"></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"yyyy-MM-dd". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]<a>, which is also the format 
+used with regular HTML5 input elements.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjInputNumber.Class.html')"><b>WjInputNumber</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a> control.</p>
+
+<p>Use the <b>WjInputNumber</b> directive to add <b>InputNumber</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputNumber control:&lt;/p&gt;
+&lt;wj-input-number
+  value="theNumber"
+  min="0"
+  max="10"
+  format="n0"
+  placeholder="number between zero and ten"&gt;
+&lt;/wj-input-number&gt;</pre></p>
+
+<p>The example below creates several <b>InputNumber</b> controls and shows the effect
+of using different formats, ranges, and step values.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/u7HpD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjInputNumber</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>       <dd><code>=</code> Reference to the <b>InputNumber</b> control created by this directive.</dd>
+  <dt>format</dt>        <dd><code>@</code> Format used to display the number (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>inputType</dt>           <dd><code>@</code> The "type" attribite of the HTML input element hosted by the control.</dd>
+  <dt>max</dt>           <dd><code>@</code> Largest valid number.</dd>
+  <dt>min</dt>           <dd><code>@</code> Smallest valid number.</dd>
+  <dt>placeHolder</dt>   <dd><code>@</code> String shown as a hint when the control is empty.</dd>
+  <dt>required</dt>      <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>showSpinner</dt>   <dd><code>@</code> Whether to show display spinner buttons to change the value by <b>step</b> units.</dd>
+  <dt>step</dt>          <dd><code>@</code> Amount to add or subtract to the value when the user clicks the spinner buttons.</dd>
+  <dt>text</dt>          <dd><code>=</code> Text shown in the control.</dd>
+  <dt>value</dt>         <dd><code>=</code> Number being edited.</dd>
+  <dt>textChanged</dt>         <dd><code>&</code> The textChanged event handler (see <b>textChanged</b>).</dd>
+  <dt>valueChanged</dt>         <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl class="dl-horizontal"></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjInputTime.Class.html')"><b>WjInputTime</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control.</p>
+
+<p>Use the <b>WjInputTime</b> directive to add <b>InputTime</b> controls to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputTime control:&lt;/p&gt;
+&lt;wj-input-time 
+  value="theDate" 
+  format="h:mm tt"
+  min="09:00" max="17:00"
+  step="15"&gt;
+&lt;/wj-input-time&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/46PhD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example edits a <b>Date</b> value (that includes date and time information)
+using an <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> and an an <b>InputTime</b> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control that can be
+used to select the date with a single click.</p>
+
+<p>The <b>WjInputTime</b> directive extends <a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a> with the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>   <dd><code>=</code> Reference to the <b>InputDate</b> control created by this directive.</dd>
+  <dt>format</dt>    <dd><code>@</code> Format used to display the selected time.</dd>
+  <dt>max</dt>       <dd><code>@</code> Earliest valid time (string in the format "hh:mm").</dd>
+  <dt>min</dt>       <dd><code>@</code> Latest valid time (string in the format "hh:mm").</dd>
+  <dt>required</dt>  <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>step</dt>      <dd><code>@</code> Number of minutes between entries in the drop-down list.</dd>
+  <dt>value</dt>     <dd><code>=</code> Time being edited (as a Date object).</dd>
+  <dt>valueChanged</dt>  <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl></p>
+
+<p>If provided, the <b>min</b> and <b>max</b> attributes should be strings in the format
+"hh:mm". Technically, you can use any full date as defined in the W3C
+<a href="http://tools.ietf.org/html/rfc3339">[RFC 3339]</a>, which is also the format 
+used with regular HTML5 input elements.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjListBox.Class.html')"><b>WjListBox</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.ListBox.Class.html')"><b>ListBox</b></a> control.</p>
+
+<p>Use the <b>WjListBox</b> directive to add <b>ListBox</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>b&gt;Here is a ListBox control:&lt;/p&gt;
+&lt;wj-list-box
+  selected-item="theCountry" 
+  items-source="countries"
+  placeholder="country"&gt;
+&lt;/wj-list-box&gt;</pre></p>
+
+<p>The example below creates a <b>ListBox</b> control and binds it to a 'countries' array
+exposed by the controller. The value selected is bound to the 'theCountry' 
+controller property using the <b>selectedItem</b> attribute.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/37GHw/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjListBox</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>              <dd><code>=</code> Reference to the <b>ListBox</b> control created by this directive.</dd>
+  <dt>displayMemberPath</dt>    <dd><code>@</code> Property to use as the visual representation of the items.</dd>
+  <dt>isContentHtml</dt>        <dd><code>@</code> Whether items contain plain text or HTML.</dd>
+  <dt>itemFormatter</dt>        <dd><code>=</code> Function used to customize the values shown on the list.</dd>
+  <dt>itemsSource</dt>          <dd><code>=</code> Array or <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> that contains the list items.</dd>
+  <dt>maxHeight</dt>            <dd><code>@</code> The maximum height of the list.</dd>
+  <dt>selectedIndex</dt>        <dd><code>=</code> Index of the currently selected item.</dd>
+  <dt>selectedItem</dt>         <dd><code>=</code> Item that is currently selected.</dd>
+  <dt>selectedValue</dt>        <dd><code>=</code> Value of the <b>selectedItem</b> obtained using the <b>selectedValuePath</b>.</dd>
+  <dt>selectedValuePath</dt>    <dd><code>@</code> Property used to get the <b>selectedValue</b> from the <b>selectedItem</b>.</dd>
+  <dt>itemsChanged</dt>         <dd><code>&</code> The itemsChanged event handler (see <b>itemsChanged</b>).</dd>
+  <dt>selectedIndexChanged</dt> <dd><code>&</code> The selectedIndexChanged event handler (see <b>selectedIndexChanged</b>).</dd>
+</dl></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjMenu.Class.html')"><b>WjMenu</b></a></td>
+      <td><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.Menu.Class.html')"><b>Menu</b></a> control.</p>
+
+<p>Use the <b>WjMenu</b> directive to add drop-down menus to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a Menu control used as a value picker:&lt;/p&gt;
+&lt;wj-menu header="Tax" value="tax"&gt;
+  &lt;wj-menu-item value="0"&gt;Exempt&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".05"&gt;5%&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".1"&gt;10%&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".15"&gt;15%&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/Wc5Mq/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates three <b>Menu</b> controls. The first is used as a value picker, 
+the second uses a list of commands with parameters, and the third is a group of
+three menus handled by an "itemClicked" function in the controller.</p>
+
+<p>The <b>WjMenu</b> directive extends <a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a> with the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>commandPath</dt>           <dd><code>@</code> Property that contains the command to be executed when the item is clicked.</dd>
+  <dt>commandParameterPath</dt>  <dd><code>@</code> Property that contains a parameter to be used with the command.</dd>
+  <dt>header</dt>                <dd><code>@</code> Text shown on the control.</dd>
+  <dt>value</dt>                 <dd><code>@</code> Value of the selected <a href="" ng-click="go('wijmo.angular.WjMenuItem.Class.html')"><b>WjMenuItem</b></a> value property. </dd>
+  <dt>itemClicked</dt>           <dd><code>&</code> The itemClicked event handler (see <b>itemClicked</b>).</dd>
+</dl></p>
+
+<p>The <b>WjMenu</b> directive may contain the following child directives:
+<b>WjMenuItem</b> and <a href="" ng-click="go('wijmo.angular.WjMenuSeparator.Class.html')"><b>WjMenuSeparator</b></a>.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjMenuItem.Class.html')"><b>WjMenuItem</b></a></td>
+      <td><p>AngularJS directive for menu items.</p>
+
+<p>The <b>WjMenuItem</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjMenu.Class.html')"><b>WjMenu</b></a> directive.
+It supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>cmd</dt>       <dd><code>=</code> Function to be executed in the controller when the item is clicked.</dd>
+  <dt>cmdParam</dt>  <dd><code>=</code> Parameter passed to the <b>cmd</b> function when the item is clicked.</dd>
+  <dt>value</dt>     <dd><code>=</code> Value selected when the item is clicked (use either this or <b>cmd</b>).</dd>
+</dl class="dl-horizontal"></p>
+
+<p>The content displayed by the item is defined by the HTML contained in <b>WjMenuItem</b> directive.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.angular.WjMenuSeparator.Class.html')"><b>WjMenuSeparator</b></a></td>
+      <td><p>AngularJS directive for menu separators.</p>
+
+<p>The <b>WjMenuSeparator</b> directive must be contained in a <a href="" ng-click="go('wijmo.angular.WjMenu.Class.html')"><b>WjMenu</b></a> directive.
+It adds a non-selectable separator to the menu, and has no attributes.</p></td>
+    </tr>
+</tbody>
+</table>

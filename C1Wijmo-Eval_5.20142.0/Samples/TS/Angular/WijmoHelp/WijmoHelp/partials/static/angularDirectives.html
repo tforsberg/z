@@ -1,0 +1,49 @@
+<h2>
+    Using Wijmo 5 in AngularJS Applications</h2>
+<p>
+    We at ComponentOne are big fans of <a href="https://angularjs.org/" target="_blank">AngularJS</a>, 
+    Google's framework for JavaScript applications. AngularJS provides templating, 
+    data-binding, MVVM, web components, and more.</p>
+<p>
+    One of the main advantages of AngularJS is that it supports the MVVM pattern,
+    where the application logic is contained in Models (aka controllers, implemented 
+    in JavaScript) and the appearance is contained in Views (HTML).</p>
+<p>
+    To achieve this, AngularJS supports <b>directives</b>, which are custom HTML
+    elements and attributes. AngularJS ships with a number of built-in directives,
+    and you can easily implement your own much as you can create your own controls
+    in WinForms or XAML applications.</p>
+<p>
+    Wijmo 5 ships with AngularJS directives for all its controls. The directives
+    are defined in the <b>wijmo.angular.js</b> file, and allow you to write code
+    such as:</p>
+<pre>&lt;div ng-app="app" ng-controller="appCtrl"&gt;
+    
+&lt;p&gt;This is a &lt;b&gt;FlexGrid&lt;/b&gt; control:&lt;/p&gt;
+&lt;wj-flex-grid items-source="data"&gt;
+    &lt;wj-flex-grid-column header="Country" binding="country"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Sales" binding="sales"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Expenses" binding="expenses"&gt;&lt;/wj-flex-grid-column&gt;
+    &lt;wj-flex-grid-column header="Downloads" binding="downloads"&gt;&lt;/wj-flex-grid-column&gt;
+&lt;/wj-flex-grid&gt;
+&lt;/div&gt;</pre>
+<p>
+    All Wijmo 5 directives start with the "wj" prefix, followed by the control's class name
+    using dashes instead of camel-case. The directives have attributes that match the 
+    control's properties, following the same convention.</p>
+<p>
+    Some of the directives support nested sub-directives. For example, the <b>wj-flex-grid</b>
+    directive may contain one or more <b>wj-flex-grid-column</b> directives, and the  
+    <b>wj-flex-chart</b> directive may contain one or more <b>wj-flex-chart-series</b>
+    directives. This results in a rich and expressive markup syntax that is very similar
+    to XAML. This flexibility is essential in order to achieve the true benefits of MVVM. 
+    The appearance and layout of the controls are defined by the view; the controller only 
+    provides the data.</p>
+<p>
+    The fiddle below shows how this works:</p>
+<p>
+    <a href="http://jsfiddle.net/Wijmo5/QNb9X/" target="_blank" class="btn btn-info">
+        <img src="../../images/fiddle.png" />
+        Wijmo Directives for AngularJS
+    </a>
+</p>

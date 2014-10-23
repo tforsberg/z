@@ -1,0 +1,253 @@
+﻿<div class="row-fluid">
+	<div class="copy">
+		<h3>
+			Editing
+		</h3>
+		<p>
+			<b>Excel-Style editing:</b>
+			The FlexGrid has built-in support for Excel-like, fast, in-cell editing.
+			There is no need to add extra columns with 'Edit' buttons that switch
+			between display and edit modes.</p>
+		<p>
+			Users can start editing simply by typing into any cell. This is called
+			'quick-edit' mode.
+			In this mode, the cursor keys finish the editing and the grid moves the selection.
+			They can also start editing by pressing F2 or by clicking a cell twice.
+			This is called 'full-edit' mode.
+			In this mode, the cursor keys move the caret within the editor and the user must
+			press the Enter, Tab, or Escape keys to finish editing.</p>
+		<div class="collapsed-content collapse">
+			<p>
+				You can disable editing at the grid, column, or row levels using the <b>isReadOnly</b>
+				property of the grid, column, or row objects.</p>
+			<p>
+				<b>Mobile Devices:</b>
+				Mobile devices use the double-click event to zoom in and out, and do not show
+				a keyboard by default. To start editing a cell on mobile devices, simply click
+				a cell to select it, then click it again to indicate you want to start editing.</p>
+			<p>
+				<b>IEditableCollectionView:</b>
+				The FlexGrid supports the <b>IEditableCollectionView</b> interface. When users
+				start editing an item, the grid calls the <b>startEdit</b> method to start
+				editing the item. The collection will not be sorted or filtered until the user
+				selects a different row. Pressing escape while an item is being edited cancels
+				the edits for the entire item, restoring the original values.
+				This is the same behavior used in .NET. It prevents items from moving away as
+				they are edited.</p>
+			<p>
+				<b>Automatic type Validation/Coercion:</b>
+				If the user types anything that is invalid for the column (e.g. "hello" for a
+				numeric or date column), the edits won't be applied and the cell will keep its
+				original value. Dates and times are parsed using the format assigned to the
+				column.</p>
+			<p>
+				<b>Checkboxes:</b>
+				By default (and unlike Excel), Boolean values are shown as checkboxes. Users
+				can change the checkbox values by clicking or by pressing the space bar.
+				Checkboxes are easier to read and to edit than fields containing "TRUE" or
+				"FALSE" strings.</p>
+			<p>
+				<b>DataMaps and Auto-complete:</b>
+				If the column has a data map, then the editor will auto-complete as the user types.
+				In the sample below, the <b>Country</b> column has a data map. Typing "G" will
+				set the editor content to "Germany" and select the "ermany" part of the text.
+				Typing an "r" after that will switch the value to "Greece" and select "eece".
+				Auto-complete allows for fast and safe data-entry.</p>
+			<p>
+				Data maps are ideal for displaying and editing key fields to linked tables.
+				For example, map customer and supplier ID columns to show their names. No need
+				to set up additional views with complex joins. Plus, edit the customers or
+				suppliers by picking their names in an auto-complete field, instead of typing
+				their IDs.</p>
+		</div>
+		<p>
+			<button type="button" data-toggle="collapse"
+					data-target=".collapsed-content, .btn.btn-default.btn-xs.collapse"
+					class="btn btn-default btn-xs collapse in">
+				Read more
+			</button>
+		</p>
+	</div>
+	<p>
+		Here is a typical editable grid:</p>
+	<div class="row-fluid">
+
+		<!-- search box -->
+		<div class="row">
+			<div class="col-md-4">
+				<input type="text" class="form-control" placeholder="Filter" ng-model="ctx.filter">
+			</div>
+			<div class="col-md-5 col-md-offset-3">
+				<wj-collection-view-navigator cv="ctx.flex.collectionView" class="pull-right" />
+			</div>
+		</div>
+
+		<!-- the grid -->
+		{{ctx.delayedFilter}}
+        <wj-flex-grid class="grid"
+                      control="ctx.flex"
+                      selection-mode="Row"
+                      items-source="ctx.data"
+                      items-source-changed="itemsSourceChangedHandler()"
+                      selection-changed="selectionChangedHandler()">
+            <wj-flex-grid-column header="ID" binding="id" width="80" is-read-only="true"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Date" binding="start"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Product" binding="productId"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Color" binding="colorId"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Country" binding="countryId"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Revenue" binding="amount" format="n0"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Expense" binding="amount2" format="n0"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Active" binding="active" data-type="Boolean"></wj-flex-grid-column>
+        </wj-flex-grid>
+
+		<!-- a dialog for editing item details -->
+		<div class="modal fade" id="dlgDetail">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button"
+								class="close"
+								data-dismiss="modal"
+								ng-click="ctx.flex.collectionView.commitEdit()"
+								aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title">Edit Item</h4>
+					</div>
+					<div class="modal-body">
+						<dl class="dl-horizontal">
+							<dt>ID</dt>
+							<dd>
+								<input class="form-control" disabled value="{{current.id}}" />
+							</dd>
+							<dt>Date</dt>
+							<dd>
+								<wj-input-date value="current.start"></wj-input-date>
+							</dd>
+							<dt>Product</dt>
+							<dd>
+								<wj-combobox 
+                                    items-source="ctx.products"
+									selected-index="current.productId"
+									is-editable="false"></wj-combobox>
+							</dd>
+							<dt>Color</dt>
+							<dd>
+								<wj-combobox 
+                                    items-source="ctx.colors"
+									selected-index="current.colorId"
+									is-editable="false"></wj-combobox>
+							</dd>
+							<dt>Country</dt>
+							<dd>
+								<wj-combobox 
+                                    items-source="ctx.countries"
+									selected-index="current.countryId"
+									is-editable="false"></wj-combobox>
+							</dd>
+							<dt>Revenue</dt>
+							<dd>
+								<wj-input-number 
+                                    value="current.amount"
+									format="c2"></wj-input-number>
+							</dd>
+							<dt>Expense</dt>
+							<dd>
+								<wj-input-number 
+                                    format="c2"
+									value="current.amount2"></wj-input-number>
+							</dd>
+						</dl>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal"
+								ng-click="ctx.flex.collectionView.commitEdit()">
+							<span class="glyphicon glyphicon-ok"></span>
+							OK
+						</button>
+						<button type="button" class="btn btn-warning" data-dismiss="modal"
+								ng-click="ctx.flex.collectionView.cancelEdit()">
+							<span class="glyphicon glyphicon-ban-circle"></span>
+							Cancel
+						</button>
+					</div>
+				</div><!-- modal-content -->
+			</div><!-- modal-dialog -->
+		</div><!-- modal -->
+	</div>
+
+	<!-- commands -->
+	<div class="row-fluid well grid-sort-group">
+
+		<!-- edit details in a popup -->
+		<button class="btn btn-default"
+				data-toggle="modal"
+				data-target="#dlgDetail"
+				ng-click="ctx.flex.collectionView.editItem(current)"
+				ng-disabled="current == null">
+			<span class="glyphicon glyphicon-new-window"></span>
+			Edit Detail...
+		</button>
+
+		<!-- formatting -->
+		<wj-menu value="ctx.alwaysEdit" header="Always Editing">
+			<wj-menu-item value="true">On</wj-menu-item>
+			<wj-menu-item value="false">Off</wj-menu-item>
+		</wj-menu>
+
+		<!-- formatting -->
+		<wj-menu value="ctx.formatting" header="Formatting">
+			<wj-menu-item value="true">On</wj-menu-item>
+			<wj-menu-item value="false">Off</wj-menu-item>
+		</wj-menu>
+
+		<!-- culture -->
+		<wj-menu value="ctx.culture" header="Culture">
+			<wj-menu-item value="'en'">English</wj-menu-item>
+			<wj-menu-item value="'de'">German</wj-menu-item>
+			<wj-menu-item value="'it'">Italian</wj-menu-item>
+			<wj-menu-item value="'fr'">French</wj-menu-item>
+			<wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+			<wj-menu-item value="'ru'">Russian</wj-menu-item>
+			<wj-menu-item value="'ja'">Japanese</wj-menu-item>
+			<wj-menu-item value="'ko'">Korean</wj-menu-item>
+		</wj-menu>
+	</div>
+
+	<h4>
+		Popup editing</h4>
+	<p>
+		Popup editing keeps the native editing enabled for quick Excel-like data entry, and adds
+		an "Edit Detail" button to invoke a form where the user can edit the item details.</p>
+	<p>
+		To see this in action, select an item on the grid and click the "Edit Detail" button below.
+		This will bring up a form where users can edit the data for the currently selected item.</p>
+	<p>
+		The detail form uses specialized input controls that take up more space but can make data
+		entry easier in some cases. The form has "OK" and "Cancel" buttons that commit the changes
+		or restore the original data. Both actions are accomplished with a single call to the
+		<b>CollectionView</b> used as a data source for the grid.</p>
+</div>
+<br />
+<h4>
+	Inline editing</h4>
+<p>
+	If for some reason you don't like the Excel-style editing and prefer to add editing
+	buttons to every row (typical of editable HTML tables), you can accomplish that
+	using a <b>cellFormatter</b> and a few controller methods.</p>
+<p>
+	The grid below demonstrates this approach. The buttons in the cells call
+	methods in the controller to perform the required actions:</p>
+
+<div class="row-fluid">
+    <wj-flex-grid class="grid"
+                  control="ctx.flexInline"
+                  selection-mode="None"
+                  items-source="ctx.data"
+                  items-source-changed="itemsSourceChangedHandler()">
+        <wj-flex-grid-column name="id" header="ID" binding="id" width="80" align="right" is-read-only="true"></wj-flex-grid-column>
+        <wj-flex-grid-column name="date" header="Date" binding="start"></wj-flex-grid-column>
+        <wj-flex-grid-column name="product" header="Product" binding="product" width="*"></wj-flex-grid-column>
+        <wj-flex-grid-column name="buttons" width="200"></wj-flex-grid-column>
+    </wj-flex-grid>
+</div>

@@ -1,0 +1,627 @@
+<h2>CollectionView Class</h2>
+<dl class="dl-horizontal">
+<dt>Implements</dt><dd><a href="" ng-click="go('wijmo.collections.IEditableCollectionView.Interface.html')"><b>IEditableCollectionView</b></a>, <a href="" ng-click="go('wijmo.collections.IPagedCollectionView.Interface.html')"><b>IPagedCollectionView</b></a></dd>
+<dt>Module</dt><dd>wijmo.collections</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Class that implements the <a href="" ng-click="go('wijmo.collections.ICollectionView.Interface.html')"><b>ICollectionView</b></a> interface to expose data in
+regular JavaScript arrays.</p>
+
+<p>The <b>CollectionView</b> class implements the following interfaces:
+<ul>
+  <li><b>ICollectionView</b>: provides current record management, 
+      custom sorting, filtering, and grouping.</li>
+  <li><a href="" ng-click="go('wijmo.collections.IEditableCollectionView.Interface.html')"><b>IEditableCollectionView</b></a>: provides methods for editing,
+      adding, and removing items.</li>
+  <li><a href="" ng-click="go('wijmo.collections.IPagedCollectionView.Interface.html')"><b>IPagedCollectionView</b></a>: provides paging.</li>
+</ul></p>
+
+<p>To use the <b>CollectionView</b> class, start by declaring it and passing a 
+regular array as a data source. Then configure the view using the 
+<b>filter</b>, <b>sortDescriptions</b>, <b>groupDescriptions</b>, and 
+<b>pageSize</b> properties. Finally, access the view using the <b>items</b>
+property. For example:</p>
+
+<p><pre>
+  // create a new CollectionView 
+  var cv = new wijmo.collections.CollectionView(myArray);
+  // sort items by amount in descending order
+  var sd = new wijmo.collections.SortDescription('amount', false);
+  cv.sortDescriptions.push(sd);
+  // show only items with amounts greater than 100
+  cv.filter = function(item) { return item.amount > 100 };
+  // show the sorted, filtered result on the console
+  for (var i = 0; i &lt; cv.items.length; i++) {
+    var item = cv.items[i]; 
+    console.log(i + ': ' + item.name + ' ' + item.amount);
+  }
+</pre></p></p>
+<br/>
+<h3>Constructor</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>constructor</b>(sourceCollection)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>sourceCollection</b> (<b>any</b>): Array that serves as a source for this 
+<a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a>.</li></ul>
+</td>
+      <td>Initializes a new instance of a <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a>.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Properties</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>canAddNew</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether a new item can be added to the collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canCancelEdit</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether the collection view can discard pending changes 
+and restore the original values of an edited object.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canChangePage</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether the <b>pageIndex</b> value can change.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canFilter</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether this view supports filtering via the 
+<b>filter</b> property.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canGroup</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether this view supports grouping via the 
+<b>groupDescriptions</b> property.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canRemove</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether items can be removed from the collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>canSort</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether this view supports sorting via the 
+<b>sortDescriptions</b> property.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentAddItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the item that is being added during the current add transaction.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentEditItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the item that is being edited during the current edit transaction.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentItem</b></td>
+      <td><b>any</b></td>
+      <td>Gets the current item in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentPosition</b></td>
+      <td><b>number</b></td>
+      <td>Gets the ordinal position of the current item in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>filter</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.IPredicate.Interface.html')"><b>IPredicate</b></a></td>
+      <td><p>Gets or sets a callback used to determine if an item is suitable for 
+inclusion in the view.</p>
+
+<p>The callback function should return true if the item passed in as a
+parameter should be included in the view.</p>
+
+<p>NOTE: If the filter function needs a scope (i.e. a meaningful 'this'
+value) remember to set the filter using the 'bind' function to  specify 
+the 'this' object. For example:
+<pre>
+  collectionView.filter = this._filter.bind(this);
+</pre></p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>groupDescriptions</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets a collection of <a href="" ng-click="go('wijmo.collections.GroupDescription.Class.html')"><b>GroupDescription</b></a> objects that describe how the 
+items in the collection are grouped in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>groups</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.CollectionViewGroup.Class.html')"><b>CollectionViewGroup</b></a></td>
+      <td>Gets an array of <a href="" ng-click="go('wijmo.collections.CollectionViewGroup.Class.html')"><b>CollectionViewGroup</b></a> objects that represents the 
+top-level groups.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isAddingNew</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether an add transaction is in progress.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isEditingItem</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether an edit transaction is in progress.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isEmpty</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether this view contains no items.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isPageChanging</b></td>
+      <td><b>boolean</b></td>
+      <td>Gets a value indicating whether the index is changing.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>isUpdating</b></td>
+      <td></td>
+      <td>Gets a value that indicates whether notifications are currently suspended
+(see <b>beginUpdate</b> and <b>endUpdate</b>).</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemCount</b></td>
+      <td><b>number</b></td>
+      <td>Gets the number of known items in the view before paging is applied.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>items</b></td>
+      <td><b>any</b></td>
+      <td>Gets items in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsAdded</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets an <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a> containing the records that were added to
+the collection since <b>changeTracking</b> was enabled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsEdited</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets an <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a> containing the records that were edited in
+the collection since <b>changeTracking</b> was enabled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>itemsRemoved</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets an <a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a> containing the records that were removed from
+the collection since <b>changeTracking</b> was enabled.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>newItemCreator</b></td>
+      <td><b>Function</b></td>
+      <td><p>Gets or sets a function that creates new items for the collection.</p>
+
+<p>If the creator function is not supplied, the <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a>
+will try to create an uninitilized item of the appropriate type.</p>
+
+<p>If the creator function is supplied, it should be a function that 
+takes no parameters and returns an initialized object of the proper 
+type for the collection.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pageCount</b></td>
+      <td><b>number</b></td>
+      <td>Gets the total number pages.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pageIndex</b></td>
+      <td><b>number</b></td>
+      <td>Gets the zero-based index of the current page.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pageSize</b></td>
+      <td><b>number</b></td>
+      <td>Gets or sets the number of items to display on a page.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>sortDescriptions</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.ObservableArray.Class.html')"><b>ObservableArray</b></a></td>
+      <td>Gets a collection of <a href="" ng-click="go('wijmo.collections.SortDescription.Class.html')"><b>SortDescription</b></a> objects that describe how the items 
+in the collection are sorted in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>sourceCollection</b></td>
+      <td><b>any</b></td>
+      <td>Gets or sets the underlying (unfiltered and unsorted) collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>totalItemCount</b></td>
+      <td><b>number</b></td>
+      <td>Gets the total number of items in the view before paging is applied.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>trackChanges</b></td>
+      <td><b>boolean</b></td>
+      <td><p>Gets or sets a value that determines whether the control should
+track changes to the data.</p>
+
+<p>If <b>trackChanges</b> is set to true, the <a href="" ng-click="go('wijmo.collections.CollectionView.Class.html')"><b>CollectionView</b></a> keeps
+track of changes to the data and exposes them through the 
+<b>itemsAdded</b>, <b>itemsRemoved</b>, and <b>itemsEdited</b> collections.</p>
+
+<p>Tracking changes is useful in situations where you need to to update 
+the server after the user has confirmed that the modifications are 
+valid.</p>
+
+<p>After committing or cancelling changes, use the <b>clearChanges</b> method
+to clear the <b>itemsAdded</b>, <b>itemsRemoved</b>, and <b>itemsEdited</b> 
+collections.</p>
+
+<p>The <b>CollectionView</b> only tracks changes made when the proper 
+<b>CollectionView</b> methods are used (<b>beginEdit</b>/<b>commitEdit</b>, 
+<b>addNew</b>/<b>commitNew</b>, and <b>remove</b>). 
+Changes made directly to the data are not tracked.</p></td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>addNew</b>()</td>
+      <td></td>
+      <td><b>any</b></td>
+      <td>Adds a new item to the collection.<br/><b>Returns</b> The new item that was added to the collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>beginUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Suspend refreshes until the next call to <b>endUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cancelEdit</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current edit transaction and, if possible, 
+restores the original value to the item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>cancelNew</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current add transaction and discards the pending new item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>clearChanges</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td><p>Clears all changes by removing all items in the <b>itemsAdded</b>, 
+<b>itemsRemoved</b>, and <b>itemsEdited</b> collections.</p>
+
+<p>Call this method after committing changes to the server or 
+after refreshing the data from the server.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>commitEdit</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current edit transaction and saves the pending changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>commitNew</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Ends the current add transaction and saves the pending new item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>contains</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to seek.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns a value indicating whether a given item belongs to this view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>deferUpdate</b>(fn)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>fn</b> (<b>Function</b>): Function to be executed without updates.</li></ul>
+</td>
+      <td>void</td>
+      <td><p>Executes a function within a <b>beginUpdate</b>/<b>endUpdate</b> block.</p>
+
+<p>The collection will not be refreshed until the function finishes. 
+This method ensures <b>endUpdate</b> is called even if the function throws.</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>editItem</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to be edited.</li></ul>
+</td>
+      <td>void</td>
+      <td>Begins an edit transaction of the specified item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>endUpdate</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Resume refreshes suspended by a call to <b>beginUpdate</b>.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>implementsInterface</b>(interfaceName)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>interfaceName</b> (<b>string</b>): Name of the interface to look for.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Returns true if the caller queries for a supported interface.<br/><b>Returns</b> True if the caller queries for a supported interface.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentTo</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item that will become current.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the specified item to be the current item in the view.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToFirst</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the first item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToLast</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the last item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToNext</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the item after the current item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToPosition</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Index of the item that will become current.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Sets the item at the specified index in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveCurrentToPrevious</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the item before the current item in the view as the current item.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToFirstPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the first page as the current page.<br/><b>Returns</b> True if the page index was changed successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToLastPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Sets the last page as the current page.<br/><b>Returns</b> True if the page index was changed successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToNextPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page after the current page.<br/><b>Returns</b> True if the page index was changed successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToPage</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Index of the page to move to.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page at the specified index.<br/><b>Returns</b> True if the page index was changed successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>moveToPreviousPage</b>()</td>
+      <td></td>
+      <td><b>boolean</b></td>
+      <td>Moves to the page before the current page.<br/><b>Returns</b> True if the page index was changed successfully.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCollectionChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (): Contains a description of the change. <span class="text-info">(default Value: <b>NotifyCollectionChangedEventArgs.reset</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>collectionChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCurrentChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> () <span class="text-info">(default Value: <b>EventArgs.empty</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>currentChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onCurrentChanging</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a>): <a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>currentChanging</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onPageChanged</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> () <span class="text-info">(default Value: <b>EventArgs.empty</b>)</span></li></ul>
+</td>
+      <td>void</td>
+      <td>Raises the <b>pageChanged</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>onPageChanging</b>(e)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>e</b> (<a href="" ng-click="go('wijmo.collections.PageChangingEventArgs.Class.html')"><b>PageChangingEventArgs</b></a>): <a href="" ng-click="go('wijmo.collections.PageChangingEventArgs.Class.html')"><b>PageChangingEventArgs</b></a> that contains the event data.</li></ul>
+</td>
+      <td><b>boolean</b></td>
+      <td>Raises the <b>pageChanging</b> event.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>refresh</b>()</td>
+      <td></td>
+      <td>void</td>
+      <td>Re-creates the view using the current sort, filter, and group parameters.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>remove</b>(item)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>item</b> (<b>any</b>): Item to be removed from the collection.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes the specified item from the collection.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>removeAt</b>(index)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>index</b> (<b>number</b>): Index of the item to be removed from the collection.
+The index is relative to the view, not to the source collection.</li></ul>
+</td>
+      <td>void</td>
+      <td>Removes the item at the specified index from the collection.</td>
+    </tr>
+</tbody>
+</table>
+<br/>
+<h3>Events</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><b>collectionChanged</b></td>
+      <td></td>
+      <td>Occurs when the collection changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentChanged</b></td>
+      <td></td>
+      <td>Occurs after the current item changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>currentChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.CancelEventArgs.Class.html')"><b>CancelEventArgs</b></a></td>
+      <td>Occurs before the current item changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pageChanged</b></td>
+      <td></td>
+      <td>Occurs after the page index changes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>pageChanging</b></td>
+      <td><a href="" ng-click="go('wijmo.collections.PageChangingEventArgs.Class.html')"><b>PageChangingEventArgs</b></a></td>
+      <td>Occurs before the page index changes.</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,42 @@
+<h2>WjMenu Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.Menu.Class.html')"><b>Menu</b></a> control.</p>
+
+<p>Use the <b>WjMenu</b> directive to add drop-down menus to your AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is a Menu control used as a value picker:&lt;/p&gt;
+&lt;wj-menu header="Tax" value="tax"&gt;
+  &lt;wj-menu-item value="0"&gt;Exempt&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".05"&gt;5%&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".1"&gt;10%&lt;/wj-menu-item&gt;
+  &lt;wj-menu-item value=".15"&gt;15%&lt;/wj-menu-item&gt;
+&lt;/wj-menu&gt;</pre></p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/Wc5Mq/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>This example creates three <b>Menu</b> controls. The first is used as a value picker, 
+the second uses a list of commands with parameters, and the third is a group of
+three menus handled by an "itemClicked" function in the controller.</p>
+
+<p>The <b>WjMenu</b> directive extends <a href="" ng-click="go('wijmo.angular.WjComboBox.Class.html')"><b>WjComboBox</b></a> with the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>commandPath</dt>           <dd><code>@</code> Property that contains the command to be executed when the item is clicked.</dd>
+  <dt>commandParameterPath</dt>  <dd><code>@</code> Property that contains a parameter to be used with the command.</dd>
+  <dt>header</dt>                <dd><code>@</code> Text shown on the control.</dd>
+  <dt>value</dt>                 <dd><code>@</code> Value of the selected <a href="" ng-click="go('wijmo.angular.WjMenuItem.Class.html')"><b>WjMenuItem</b></a> value property. </dd>
+  <dt>itemClicked</dt>           <dd><code>&</code> The itemClicked event handler (see <b>itemClicked</b>).</dd>
+</dl></p>
+
+<p>The <b>WjMenu</b> directive may contain the following child directives:
+<b>WjMenuItem</b> and <a href="" ng-click="go('wijmo.angular.WjMenuSeparator.Class.html')"><b>WjMenuSeparator</b></a>.</p></p>

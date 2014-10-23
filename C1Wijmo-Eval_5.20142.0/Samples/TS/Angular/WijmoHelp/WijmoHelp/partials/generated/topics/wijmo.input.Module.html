@@ -1,0 +1,233 @@
+<h2>Module wijmo.input</h2>
+<dl class="dl-horizontal">
+<dt>File</dt><dd>wijmo.input.js</dd>
+</dl>
+<p>Defines input controls for strings, numbers, dates, and times.</p>
+<br/>
+<h3>Classes</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.AutoComplete.Class.html')"><b>AutoComplete</b></a></td>
+      <td><p>The <b>AutoComplete</b> control is an auto-complete control that allows callers 
+to customize the item list as the user types.</p>
+
+<p>The control is similar to the <a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a>, except the item source is a 
+function (<b>itemsSourceFunction</b>) rather than a static list. For example,
+you may look up items on remote databases as the user types.</p>
+
+<p>The example below creates an <b>AutoComplete</b> control and populates it using
+a 'countries' array. The <b>AutoComplete</b> searches for the country as the user
+types, and narrows down the list of countries that match the current input.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/8HnLx/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a></td>
+      <td><p>The <b>Calendar</b> control displays a month calendar and allows users
+to select a date.</p>
+
+<p>You may use the <b>min</b> and <b>max</b> properties to restrict the range
+of dates that may be selected. </p>
+
+<p>Use the <b>value</b> property to get or set the currently selected date.</p>
+
+<p>The example below shows a <b>Date</b> value (that includes date and time information)
+using an <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> and an an <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <b>Calendar</b> control that can be
+used to select the date with a single click.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/vgc3Y/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a></td>
+      <td><p>The <b>ComboBox</b> control allows users to pick strings from lists.</p>
+
+<p>The control automatically completes entries as the user types, and allows users 
+to show a drop-down list with the items available.</p>
+
+<p>Use the <b>selectedIndex</b> or the <b>text</b> properties to determine which 
+item is currently selected.</p>
+
+<p>The <b>isEditable</b> property determines whether users should be allowed to
+enter values that are not present on the list.</p>
+
+<p>The example below creates a <b>ComboBox</b> control and populates it with a list
+of countries. The <b>ComboBox</b> searches for the country as the user types. 
+The <b>isEditable</b> property is set to false, so the user is forced to
+select one of the items in the list.</p>
+
+<p>The example also shows how to create and populate a <b>ComboBox</b> using a
+an HTML <b>&lt;select;&gt</b> element with <b>&lt;option;&gt</b> child
+elements.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/8HnLx/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.DropDown.Class.html')"><b>DropDown</b></a></td>
+      <td><p>DropDown control (abstract).</p>
+
+<p>Contains an input element and a button used to show or hide the drop-down.</p>
+
+<p>Derived classes must override the _createDropDown method to create whatever
+editor they want to show in the drop down area (a list of items, a calendar,
+a color editor, etc).</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a></td>
+      <td><p>The <b>InputDate</b> control allows users to type in dates using any format 
+supported by the <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a> class, or to pick dates from a drop-down 
+that shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control.</p>
+
+<p>You may use the <b>min</b> and <b>max</b> properties to restrict the range of 
+values that can be entered by the user.</p>
+
+<p>Use the <b>value</b> property to gets or set the currently selected date.</p>
+
+<p>The example below shows a <b>Date</b> value (that includes date and time information)
+using an <b>InputDate</b> and an an <a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <b>Calendar</b> control that can be
+used to select the date with a single click.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/vgc3Y/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a></td>
+      <td><p>The <b>InputNumber</b> control allows users to edit numbers.</p>
+
+<p>The control prevents users from accidentally entering invalid data and 
+formats the number as it is edited.</p>
+
+<p>You may use the <b>min</b> and <b>max</b> properties to limit the range of
+acceptable values, and the <b>step</b> property to provide spinner buttons
+that increase or decrease the value with a click.</p>
+
+<p>Use the <b>value</b> property to get or set the currently selected number.</p>
+
+<p>The example below creates several <b>InputNumber</b> controls and shows 
+the effect of using different formats, ranges, and step values.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/Cf9L9/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.InputTime.Class.html')"><b>InputTime</b></a></td>
+      <td><p>The <b>InputTime</b> control allows users to type in times using any format 
+supported by globalize.js, or to pick times from a drop-down that shows a 
+list of times.</p>
+
+<p>The <b>min</b>, <b>max</b>, and <b>step</b> properties determine the values shown 
+on the list.</p>
+
+<p>The <b>value</b> property gets or sets a Date object that represents the time 
+selected by the user.</p>
+
+<p>The example below shows a <b>Date</b> value (that includes date and time information)
+using an <a href="" ng-click="go('wijmo.input.InputDate.Class.html')"><b>InputDate</b></a> and an an <b>InputTime</b> control. Notice how both controls
+are bound to the same controller variable, and each edits the appropriate information
+(either date or time). The example also shows a <a href="" ng-click="go('wijmo.input.Calendar.Class.html')"><b>Calendar</b></a> control that can be
+used to select the date with a single click.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/vgc3Y/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.ListBox.Class.html')"><b>ListBox</b></a></td>
+      <td><p>The <b>ListBox</b> control displays a list of items which may contain 
+plain text or HTML, and allows users to select items with the mouse or 
+the keyboard.</p>
+
+<p>Use the <b>selectedIndex</b> property to determine which item is currently
+selected.</p>
+
+<p>You may populate a <b>ListBox</b> using an array of strings or you may use
+an array of objects, in which case the <b>displayPath</b> property determines
+which object property is displayed on the list.</p>
+
+<p>To display HTML rather than plain text, set the <b>isContentHtml</b> property
+to true.</p>
+
+<p>The example below creates a <b>ListBox</b> control and populates it using
+a 'countries' array. The control updates its <b>selectedIndex</b> and 
+<b>selectedItem</b> properties as the user moves the selection.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/8HnLx/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="" ng-click="go('wijmo.input.Menu.Class.html')"><b>Menu</b></a></td>
+      <td><p>The <b>Menu</b> control shows a text element with a drop-down list of commands that can be
+invoked by click or touch.</p>
+
+<p>The <b>Menu</b> control inherits from <a href="" ng-click="go('wijmo.input.ComboBox.Class.html')"><b>ComboBox</b></a>, so populating and styling it is done
+in the same way as with the <b>ComboBox</b> (see the <b>itemsSource</b> property).</p>
+
+<p>The <b>Menu</b> control adds an <b>itemClicked</b> event that fires when the user selects
+an item from the menu. The event handler can inspect the <b>Menu</b> control to determine
+which item was clicked. For example:</p>
+
+<p><pre>
+var menu = new wijmo.input.Menu(hostElement);
+menu.header = 'Main Menu';
+menu.itemsSource = ['option 1', 'option 2', 'option 3'];
+menu.itemClicked.addHandler(function(sender, args) {
+var menu = sender;
+  alert('Thanks for selecting item ' + menu.selectedIndex + ' from menu ' + menu.header + '!');
+});
+</pre></p>
+
+<p>The example below illustrates how you can create value pickers, command-based menus, and
+menus that respond to the <b>itemClicked</b> event. The menus in this example are based
+on HTML <b>&lt;select;&gt</b> and <b>&lt;option;&gt</b> elements.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/BX853/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p></td>
+    </tr>
+</tbody>
+</table>

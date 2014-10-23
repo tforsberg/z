@@ -1,0 +1,48 @@
+<h2>WjInputNumber Class</h2>
+<dl class="dl-horizontal">
+<dt>Base Class</dt><dd><b>WjDirective</b></dd>
+<dt>Module</dt><dd>wijmo.angular</dd>
+<dt>File</dt><dd>wijmo.angular.js</dd>
+</dl>
+<p><p>AngularJS directive for the <a href="" ng-click="go('wijmo.input.InputNumber.Class.html')"><b>InputNumber</b></a> control.</p>
+
+<p>Use the <b>WjInputNumber</b> directive to add <b>InputNumber</b> controls to your 
+AngularJS applications. 
+Note that directive and parameter names must be formatted as lower-case with dashes 
+instead of camel-case. For example:</p>
+
+<p><pre>&lt;p&gt;Here is an InputNumber control:&lt;/p&gt;
+&lt;wj-input-number
+  value="theNumber"
+  min="0"
+  max="10"
+  format="n0"
+  placeholder="number between zero and ten"&gt;
+&lt;/wj-input-number&gt;</pre></p>
+
+<p>The example below creates several <b>InputNumber</b> controls and shows the effect
+of using different formats, ranges, and step values.</p>
+
+<p><a href="http://jsfiddle.net/Wijmo5/u7HpD/" target="_blank" class="btn btn-info">
+  <img src="../../images/fiddle.png"/>
+  Live Example
+</a>
+</p>
+
+<p>The <b>WjInputNumber</b> directive supports the following attributes:</p>
+
+<p><dl class="dl-horizontal">
+  <dt>control</dt>       <dd><code>=</code> Reference to the <b>InputNumber</b> control created by this directive.</dd>
+  <dt>format</dt>        <dd><code>@</code> Format used to display the number (see <a href="" ng-click="go('wijmo.Globalize.Class.html')"><b>Globalize</b></a>).</dd>
+  <dt>inputType</dt>           <dd><code>@</code> The "type" attribite of the HTML input element hosted by the control.</dd>
+  <dt>max</dt>           <dd><code>@</code> Largest valid number.</dd>
+  <dt>min</dt>           <dd><code>@</code> Smallest valid number.</dd>
+  <dt>placeHolder</dt>   <dd><code>@</code> String shown as a hint when the control is empty.</dd>
+  <dt>required</dt>      <dd><code>@</code> Whether to prevent null values.</dd>
+  <dt>showSpinner</dt>   <dd><code>@</code> Whether to show display spinner buttons to change the value by <b>step</b> units.</dd>
+  <dt>step</dt>          <dd><code>@</code> Amount to add or subtract to the value when the user clicks the spinner buttons.</dd>
+  <dt>text</dt>          <dd><code>=</code> Text shown in the control.</dd>
+  <dt>value</dt>         <dd><code>=</code> Number being edited.</dd>
+  <dt>textChanged</dt>         <dd><code>&</code> The textChanged event handler (see <b>textChanged</b>).</dd>
+  <dt>valueChanged</dt>         <dd><code>&</code> The valueChanged event handler (see <b>valueChanged</b>).</dd>
+</dl class="dl-horizontal"></p></p>

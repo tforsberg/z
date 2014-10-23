@@ -1,0 +1,112 @@
+<h2>Globalize Class</h2>
+<dl class="dl-horizontal">
+<dt>Module</dt><dd>wijmo</dd>
+<dt>File</dt><dd>wijmo.js</dd>
+</dl>
+<p><p>Class that implements formatting and parsing of numbers and Dates.</p>
+
+<p>By default, <b>Globalize</b> uses the American English culture.
+To switch cultures, include the appropriate <b>wijmo.culture.*.js</b> 
+file after the wijmo files.</p></p>
+<br/>
+<h3>Methods</h3>
+<table class="table table-condensed" style="font:inherit">
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>format</b>(value, format)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>any</b>): Number or Date to format.</li><li><b>format</b> (<b>string</b>): Format string to use when formatting numbers or dates.</li></ul>
+</td>
+      <td><b>string</b></td>
+      <td><p>Formats a number or a date.</p>
+
+<p>The format strings used with the <b>format</b> function are similar to 
+the ones used by <b>Globalize.js</b> and by the .NET Globalization
+library. The tables below contains links that describe the formats
+available:</p>
+
+<p><ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx">
+     Numeric Format Strings</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx">
+     Standard Date and Time Format Strings</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx">
+     Custom Date and Time Format Strings</a></li>
+</ul></p><br/><b>Returns</b> A string representation of the given number or date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>formatDate</b>(value, format)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>Date</b>): Number or Date to format.</li><li><b>format</b> (<b>string</b>): .NET-style <a href="http://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx">Date format string</a>.</li></ul>
+</td>
+      <td><b>string</b></td>
+      <td>Formats a date using the current culture.<br/><b>Returns</b> A string representation of the given date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>formatNumber</b>(value, format)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>number</b>): Number to format.</li><li><b>format</b> (<b>string</b>): .NET-style standard numeric format string (e.g. 'n2', 'c4', 'p0').</li></ul>
+</td>
+      <td><b>string</b></td>
+      <td>Formats a number using the current culture.<br/><b>Returns</b> A string representation of the given number.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>getFirstDayOfWeek</b>()</td>
+      <td></td>
+      <td><b>number</b></td>
+      <td><p>Gets the first day of the week according to the current culture.</p>
+
+<p>The value returned is between zero (Sunday) and six (Saturday).</p></td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>getNumberDecimalSeparator</b>()</td>
+      <td></td>
+      <td><b>string</b></td>
+      <td>Gets the symbol used as a decimal separator in numbers.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>parseDate</b>(value, format)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>string</b>): String to convert to a Date.</li><li><b>format</b> (<b>string</b>): Format string used to parse the date.</li></ul>
+</td>
+      <td><b>Date</b></td>
+      <td>Parses a string into a Date.<br/><b>Returns</b> The date represented by the given string, or null if the string
+cannot be parsed into a Date.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>parseFloat</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>string</b>): String to convert to a number.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Parses a string into a floating point number.<br/><b>Returns</b> The floating point number represented by the given string, 
+or <b>NaN</b> if the string cannot be parsed into a floating point number.</td>
+    </tr>
+    <tr>
+      <td><span class="badge" title="Static">S</span></td>
+      <td><b>parseInt</b>(value)</td>
+      <td><ul style="margin-left:-25px;list-style-type: none">
+<li><b>value</b> (<b>string</b>): String to convert to an integer.</li></ul>
+</td>
+      <td><b>number</b></td>
+      <td>Parses a string into an integer.<br/><b>Returns</b> The integer represented by the given string, 
+or <b>NaN</b> if the string cannot be parsed into an integer.</td>
+    </tr>
+</tbody>
+</table>

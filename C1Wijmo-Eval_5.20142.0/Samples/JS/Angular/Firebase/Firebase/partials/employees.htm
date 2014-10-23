@@ -1,0 +1,22 @@
+﻿<br />
+
+<p>
+    View/Edit the Northwind Employees:</p>
+
+<wj-flex-grid class="grid" selection-mode="RowRange" allow-add-new="true" allow-delete="true" items-source="cvEmp">
+	<!--<wj-flex-grid-column binding="EmployeeID" header="ID" width="50"></wj-flex-grid-column>-->
+	<wj-flex-grid-column binding="FirstName" header="First Name"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="LastName" header="Last Name"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Title" header="Title"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="TitleOfCourtesy" header="Title Of Courtesy"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Address" header="Address"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="City" header="City"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Region" header="Region"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Country" header="Country"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="PostalCode" header="Postal Code"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="HomePhone" header="Phone"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="Extension" header="Extension"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="BirthDate" header="Birth Date"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="HireDate" header="Hire Date"></wj-flex-grid-column>
+	<wj-flex-grid-column binding="ReportsTo" header="Reports To" data-map="mapEmp"></wj-flex-grid-column>
+</wj-flex-grid>
