@@ -1,0 +1,244 @@
+﻿<div class="row-fluid" >
+    <div class="copy">
+        <h3>
+            ComboBox</h3>
+        <p>
+            The <a href="http://wijmo.com/5/docs/topic/wijmo.input.ComboBox.Class.html" 
+            target="_blank">ComboBox</a> control is simple and powerful. These are the 
+            main properties of the ComboBox:</p>
+        <dl class="dl-horizontal">
+            <dt>
+                itemsSource</dt>
+            <dd>
+                Gets or sets an 
+                <a href="http://wijmo.com/5/docs/topic/wijmo.collections.ObservableArray.Class.html"
+                target="_blank"> array</a> or an 
+                <a href="http://wijmo.com/5/docs/topic/wijmo.collections.ICollectionView.Interface.html"
+                target="_blank"> ICollectionView</a> that contains the items to display.</dd>
+            <dt>
+                displayMemberPath</dt>
+            <dd>
+                If the items from the itemsSource are objects (as opposed to strings), use this property to 
+                specify which property of the items to display in the ComboBox.</dd>
+            <dt>
+                text</dt>
+            <dd>
+                Gets or sets the text in the control. Use this property to collect text that the user 
+                enters or selects.</dd>
+            <dt>
+                selectedIndex</dt>
+            <dd>
+                Gets or sets the index of the currently selected item in the itemsSource.</dd>
+            <dt>
+                selectedItem</dt>
+            <dd>
+                Gets or sets currently selected item in the itemsSource.</dd>
+            <dt>
+                isEditable</dt>
+            <dd>
+                Gets or sets whether the user can type values that are not in the itemsSource.</dd>
+        </dl>
+        <p>
+            The <b>itemsSource</b> and <b>displayMemberPath</b> properties are responsible for populating the
+            option list. They are mainly input properties. The <b>text</b>, <b>selectedItem</b>, and
+            <b>selectedIndex</b> properties change to reflect user input. They are mainly output
+            properties.</p>
+        <p>
+            These samples use the <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjComboBox.Class.html" 
+            target="_blank">WjComboBox</a> directive and AngularJS.</p>
+        <p>
+            The table below contains a regular input element and some <b>ComboBox</b> controls, with and
+            without drop-down items. Try typing the names of some countries. As you type, the ComboBox
+            automatically completes the entry. You can use the up and down keys to select the previous 
+            or next item that matches the text you typed.</p>
+        <p>
+            Notice how the list of items automatically positions above or below the control to fit the 
+            available space. Notice also how you can customize the control appearance using regular CSS.</p>
+    </div>
+
+    <!-- BEGIN -->
+
+    <div class="row div-thick col-head">
+        <div class="col-sm-3 col-xs-12">
+            Description
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            Live Control
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            Bound Value
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Regular input element
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="regular input"
+                ng-model="ctx.country1" />
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country1}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Regular input element, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <input 
+                type="text"
+                class="form-control customEdit"
+                placeholder="regular input"
+                ng-model="ctx.country1" />
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country1}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            ComboBox with no items
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="country1"
+                placeholder="anything (no items)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{country1}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Array source, editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box
+                text="ctx.country2"
+                items-source="ctx.countries"
+                is-editable="true"
+                placeholder="country (selectable and editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country2}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Array source, editable, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                class="customEdit"
+                text="ctx.country2"
+                items-source="ctx.countries"
+                is-editable="true"
+                placeholder="country (selectable and editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country2}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Array source, non-editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.country3"
+                items-source="ctx.countries"
+                is-editable="false"
+                placeholder="country (selectable but not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country3}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            Array source, non-editable, styled
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                class="customEdit"
+                text="ctx.country3"
+                items-source="ctx.countries"
+                is-editable="false"
+                placeholder="country (selectable but not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.country3}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView source, editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.item1"
+                control="ctx.cmb1"
+                items-source="ctx.items"
+                display-member-path="country"
+                selected-value-path="id"
+                is-editable="true"
+                placeholder="item (displayMember=country, editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.item1}}, ID: {{ctx.cmb1.selectedItem.id}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView source, non-editable
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                text="ctx.item2"
+                control="ctx.cmb2"
+                items-source="ctx.items"
+                display-member-path="country"
+                selected-value-path="id"
+                is-editable="false"
+                placeholder="item (displayMemberPath=country, not editable)">
+            </wj-combo-box>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.item2}}, ID: {{ctx.cmb2.selectedItem.id}}
+        </div>
+    </div>
+    <div class="row div-thick">
+        <div class="col-sm-3 col-xs-12">
+            CollectionView in a grid
+        </div>
+        <div class="col-sm-6 col-xs-12 app-resize-grid">
+            <wj-flex-grid 
+                style="height:250px;width:350px"
+                items-source="ctx.items"
+                selection-mode="Row">
+            </wj-flex-grid>
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            HTML content
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-combo-box 
+                items-source="ctx.htmlItems"
+                is-editable="false"
+                is-content-html="true">
+            </wj-combo-box>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.wj-content {
+	/* Common background for all controls */
+	background-image: -ms-linear-gradient(bottom, #444 0%, #888 100%);
+	background-image: -moz-linear-gradient(bottom, #444 0%, #888 100%);
+	background-image: -o-linear-gradient(bottom, #444 0%, #888 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444), color-stop(1, #888));
+	background-image: -webkit-linear-gradient(bottom, #444 0%, #888 100%);
+	background-image: linear-gradient(to top, #444 0%, #888 100%);
+	color: #fff;
+	}
+.wj-input-group .wj-form-control, .wj-grid-editor {
+	/* Text input elements */
+	background-color: #fff;
+	color: #444;
+}
+.wj-state-selected {
+	/* Selected item color */
+	background-color: #ff6a00;
+}
+.wj-state-multi-selected {
+	/* Multiple selected item color - shown in Grid */
+	background-color: #ff9f5b;
+}
+.wj-header {
+	/* Header section of controls - shown in Grid and Calendar */
+	background-color: #444;
+	color: #fff;
+}
+.wj-btn-default:hover {
+	/* Hover state of buttons */
+	background-color: #ff6a00;
+}
+.wj-cell:not(.wj-header) {
+	/* Remove gridlines from cells that are not header cells */
+	border: none;
+}
+
+/* Customizing a single control (with class customInputTime) */
+.customInputTime .wj-btn-default {
+	background-color: #328efd;
+}
+.customInputTime .wj-btn-default:hover {
+	background-color: #58a2fb;
+}

@@ -1,0 +1,13 @@
+/*
+    *
+    * Wijmo Library 5.20142.8
+    * http://wijmo.com/
+    *
+    * Copyright(c) GrapeCity, Inc.  All rights reserved.
+    * 
+    * Licensed under the Wijmo Commercial License. 
+    * sales@wijmo.com
+    * http://wijmo.com/widgets/license/
+    *
+    */
+.wj-content:not(.customEdit){background:#2b4157;color:#fff}.wj-listbox-item:not(.wj-state-selected):hover{background:rgba(255,255,255,.05)}.wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected){background:rgba(255,255,255,.05)}.wj-header{background:#132b3f;color:#fff}.wj-flexgrid .wj-group{background:#87acca;color:#000}div[wj-part='root']{background:#2d343b}div[wj-part='cells']{background:#2b4157;color:#fff}.wj-state-selected{background:#19a26b;color:#fff}.wj-state-multi-selected{background:#85cfb1;color:#fff}.wj-input-group .wj-form-control,.wj-grid-editor{background:#fff;color:#000}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn{background:#3b546b;color:#fff;background-image:-ms-linear-gradient(bottom,#3b546b 0%,#4d6e8c 100%);background-image:-moz-linear-gradient(bottom,#3b546b 0%,#4d6e8c 100%);background-image:-o-linear-gradient(bottom,#3b546b 0%,#4d6e8c 100%);background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#3b546b),color-stop(1,#4d6e8c));background-image:-webkit-linear-gradient(bottom,#3b546b 0%,#4d6e8c 100%);background-image:linear-gradient(to top,#3b546b 0%,#4d6e8c 100%)}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn:hover,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn:hover{background:#4d6e8c}.wj-content,.wj-input-group,.wj-btn-group,.wj-btn-group-vertical,.wj-tooltip,.customEdit{border-radius:4px}.wj-tooltip{background:#e6edf2;color:#000;border:1px solid rgba(0,0,0,.1)}

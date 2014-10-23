@@ -1,0 +1,13 @@
+/*
+    *
+    * Wijmo Library 5.20142.8
+    * http://wijmo.com/
+    *
+    * Copyright(c) GrapeCity, Inc.  All rights reserved.
+    * 
+    * Licensed under the Wijmo Commercial License. 
+    * sales@wijmo.com
+    * http://wijmo.com/widgets/license/
+    *
+    */
+.wj-content:not(.customEdit){background:#fff;color:#666}.wj-listbox-item:not(.wj-state-selected):hover{background:rgba(0,0,0,.04)}.wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected){background:rgba(0,0,0,.04)}.wj-header{background:#eaeaea;color:#666}.wj-flexgrid .wj-group{background:#ddd;color:#666}div[wj-part='root']{background:#f2f2f2}div[wj-part='cells']{background:#fff;color:#666}.wj-state-selected{background:#9ec5e7;color:#666}.wj-state-multi-selected{background:#8fabc3;color:#fff}.wj-input-group .wj-form-control,.wj-grid-editor{background:#fff;color:#000}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn{background:#eaeaea;color:#666}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn:hover,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn:hover{background:#d1d1d1}.wj-content,.wj-input-group,.wj-btn-group,.wj-btn-group-vertical,.wj-tooltip,.customEdit{border-radius:4px}.wj-tooltip{background:#fff;color:#000;border:1px solid rgba(0,0,0,.1)}

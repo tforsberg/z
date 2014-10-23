@@ -1,0 +1,194 @@
+﻿body {
+	background-color: #f8f8f8;
+	font-family: -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: -apple-system-font, 'Segoe UI Light', 'Segoe UI', 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.header {
+	background-color: #80044d;
+	margin-bottom: 14px;
+	padding: 12px 0px;
+	color: #e3bfd5;
+}
+
+	.header h1 {
+		font-size: 40px;
+		line-height: 1;
+		margin: 8px 0 5px 0;
+		color: #fff;
+	}
+
+	.header img {
+		float: left;
+		margin: 0 10px 5px 0;
+	}
+
+h2 {
+	margin: 15px 0 30px -12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #80044d;
+}
+
+.pane-content {
+	background-color: white;
+	padding: 0px 8px;
+	border: 1px solid #dddddd;
+	border-top: none;
+	white-space: pre;
+	overflow: auto;
+	font-size: 13px;
+	font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+}
+
+/* set default grid height and some shadow */
+.wj-flexgrid {
+	height: 300px;
+	background-color: white;
+	box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+	margin-bottom: 12px;
+}
+
+/* create a 'custom-flex-grid' theme for the FlexGrid */
+.custom-flex-grid .wj-header.wj-cell {
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	border-right: solid 1px #404040;
+	border-bottom: solid 1px #404040;
+}
+.custom-flex-grid .wj-cell {
+	border: none;
+	background-color: #fff;
+}
+.custom-flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+	background-color: #fff;
+}
+.custom-flex-grid .wj-state-selected {
+	background: #000;
+	color: #fff;
+}
+.custom-flex-grid .wj-state-multi-selected {
+	background: #222222;
+	color: #fff;
+}
+
+/* override the glyphs used to show sorting and grouping */
+.custom-flex-grid .wj-glyph-up {
+	background-image:url('../resources/ascending.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 1em; height: 1em;
+	border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px;
+	opacity: 1;
+}
+.custom-flex-grid .wj-glyph-down {
+	background-image:url('../resources/descending.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 1em; height: 1em;
+	border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px;
+	opacity: 1;
+}
+.custom-flex-grid .wj-glyph-right {
+	background-image:url('../resources/collapsed.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 1em; height: 1em;
+	border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px;
+}
+.custom-flex-grid .wj-glyph-down-right {
+	background-image:url('../resources/expanded.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	width: 1em; height: 1em;
+	border-top: 0px; border-bottom: 0px; border-left: 0px; border-right: 0px;
+}
+
+
+/* customize Bootstrap styles */
+.row {
+	margin-top: 40px;
+	margin-bottom: 25px;
+}
+
+@media(min-width: 992px) {
+	.collapse.app-lg-visible {
+		display: block;
+	}
+
+	.btn.collapse {
+		display: none !important;
+	}
+}
+
+
+
+@media(max-width: 991px) {
+	.header h1 {
+		font-size: 22px;
+		line-height: 1;
+		margin-top: 7px;
+		color: #fff;
+	}
+
+	h2 {
+		font-size: 22px;
+		margin: 10px 0 25px 0;
+	}
+
+	h4 {
+		display: none;
+	}
+
+	.wj-flexgrid {
+		box-shadow: 2px 2px 8px 0 rgba(50, 50, 50, 0.5);
+		margin-bottom: 12px;
+	}
+
+	.tabbable {
+		margin-bottom: 20px;
+	}
+
+	.wj-dropdown {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.dl-horizontal, .btn-group, .input-group {
+		margin-bottom: 10px;
+	}
+
+	.btn[data-target] {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.row {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+}
+
+@media(max-width: 767px) {
+
+	body {
+		font-size: 16px;
+	}
+
+	.dl-horizontal dd {
+		width: 48%;
+		float: right;
+	}
+
+	.dl-horizontal dt {
+		width: 48%;
+		float: left;
+		text-align: right;
+	}
+}

@@ -1,0 +1,108 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            Grouping</h3>
+        <p>
+            This sample shows grouping support in the 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.grid.FlexGrid.Class.html" 
+            target="_blank">FlexGrid</a>. Most of the work is done by the 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.collections.CollectionView.Class.html" 
+            target="_blank">CollectionView</a> class used as a data source for the grid.
+            To add grouping, add one or more 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.collections.GroupDescription.Class.html" 
+            target="_blank">GroupDescription</a> objects to the
+            <b>CollectionView.groupDescriptions</b> property, exactly as you would do in .NET,
+            and ensure that the grid's <b>showGroups</b> property is set to true.</p>
+        <p>
+            You can customize the text that is displayed in group header rows using the grid's
+            <b>groupHeaderFormat</b> property, or use the <b>format</b> property on each 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.grid.Column.Class.html" 
+            target="_blank">Column</a> object. Here, we also use the column's <b>aggregate</b> 
+            property to specify how the data for each column is aggregated in the group header
+            when grouping is specified.</p>
+        <p>
+            This sample uses the 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjFlexGrid.Class.html" 
+            target="_blank">WjFlexGrid</a>, 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjFlexGridColumn.Class.html" 
+            target="_blank">WjFlexGridColumn</a>, and 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjCollectionViewNavigator.Class.html" 
+            target="_blank">WjCollectionViewNavigator</a> directives and AngularJS.</p></div>
+    <!-- commands -->
+    <div class="row-fluid well app-filter">
+        <div class="col-sm-6 col-xs-12 app-nopad">
+            <!-- grouping -->
+            <wj-menu value="ctx.groupBy" header="Group by">
+                <wj-menu-item value="''">(no grouping)</wj-menu-item>
+                <wj-menu-item value="'Country'">Country</wj-menu-item>
+                <wj-menu-item value="'Product'">Product</wj-menu-item>
+                <wj-menu-item value="'Country/Product'">Country and Product</wj-menu-item>
+                <wj-menu-item value="'Product/Country'">Product and Country</wj-menu-item>
+                <wj-menu-item value="'Product/Country/Amount'">Product, Country and Amount</wj-menu-item>
+            </wj-menu>
+            <!-- culture -->
+            <wj-menu value="ctx.culture" header="Culture">
+                <wj-menu-item value="'en'">English</wj-menu-item>
+                <wj-menu-item value="'de'">German</wj-menu-item>
+                <wj-menu-item value="'it'">Italian</wj-menu-item>
+                <wj-menu-item value="'fr'">French</wj-menu-item>
+                <wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+                <wj-menu-item value="'ru'">Russian</wj-menu-item>
+                <wj-menu-item value="'ja'">Japanese</wj-menu-item>
+                <wj-menu-item value="'ko'">Korean</wj-menu-item>
+            </wj-menu>
+        </div>
+        <div class="col-sm-6 col-xs-12 app-nopad">
+            <!-- data size -->
+            <wj-menu value="ctx.itemCount" header="Data Size">
+                <wj-menu-item value="5">5</wj-menu-item>
+                <wj-menu-item value="50">50</wj-menu-item>
+                <wj-menu-item value="500">500</wj-menu-item>
+                <wj-menu-item value="5000">5,000</wj-menu-item>
+                <wj-menu-item value="50000">50,000</wj-menu-item>
+                <wj-menu-item value="100000">100,000</wj-menu-item>
+                <wj-menu-item value="500000">500,000</wj-menu-item>
+                <wj-menu-item value="1000000">1,000,000</wj-menu-item>
+            </wj-menu>
+            <!-- navigator -->
+            <wj-collection-view-navigator cv="ctx.flex.collectionView">
+            </wj-collection-view-navigator>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- the grid -->
+    <div class="row-fluid">
+
+        <!-- the grid -->
+        <wj-flex-grid
+            class="grid"
+            control="ctx.flex"
+            items-source="ctx.data"
+            allow-add-new="true"
+            allow-delete="true"
+            items-source-changed="itemsSourceChangedHandler(s, e)">
+            <wj-flex-grid-column header="ID" binding="id"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Country" binding="country"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Product" binding="product"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Color" binding="color"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Amount" binding="amount" format="n0" aggregate="Sum"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Pending" binding="amount2" format="n0" aggregate="Sum"></wj-flex-grid-column>
+            <wj-flex-grid-column header="Discount" binding="discount" format="p0" aggregate="Avg"></wj-flex-grid-column>
+        </wj-flex-grid>
+
+        <!-- show the current item too -->
+        <h4>Current Item</h4>
+        <dl class="dl-horizontal current-item">
+            <dt>ID</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.id}}</dd>
+            <dt>Country</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.country}}</dd>
+            <dt>Product</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.product}}</dd>
+            <dt>Color</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.color}}</dd>
+            <dt>Amount</dt>
+            <dd>{{ctx.flex.collectionView.currentItem.amount | number:2}}</dd>
+        </dl>
+    </div>
+</div>

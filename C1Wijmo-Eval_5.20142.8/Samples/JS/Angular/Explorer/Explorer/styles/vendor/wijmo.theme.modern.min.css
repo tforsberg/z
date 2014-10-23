@@ -1,0 +1,13 @@
+/*
+    *
+    * Wijmo Library 5.20142.8
+    * http://wijmo.com/
+    *
+    * Copyright(c) GrapeCity, Inc.  All rights reserved.
+    * 
+    * Licensed under the Wijmo Commercial License. 
+    * sales@wijmo.com
+    * http://wijmo.com/widgets/license/
+    *
+    */
+.wj-content:not(.customEdit){background:#fff;color:#333}.wj-listbox-item:not(.wj-state-selected):hover{background:rgba(0,0,0,.04)}.wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected){background:rgba(0,0,0,.04)}.wj-header{background:#8bc730;color:#fff}.wj-flexgrid .wj-group{background:#abcd77;color:#333}div[wj-part='root']{background:#f2f2f2}div[wj-part='cells']{background:#fff;color:#333}.wj-state-selected{background:#29a3cc;color:#fff}.wj-state-multi-selected{background:#b3d1db;color:#333}.wj-input-group .wj-form-control,.wj-grid-editor{background:#fff;color:#000}div[wj-part='rhcells'] .wj-header{background:#e3e5e1}.wj-cell{border:none}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn{background:#29a3cc;color:#fff}.wj-content:not(.customEdit) .wj-input-group-btn>.wj-btn:hover,.wj-content:not(.customEdit) .wj-btn-group>.wj-btn:hover{background:#4db7db}.wj-content,.wj-input-group,.wj-btn-group,.wj-btn-group-vertical,.wj-tooltip,.customEdit{border-radius:0}.wj-tooltip{background:#f6f6d4;color:#000;border:1px solid rgba(0,0,0,.1)}

@@ -1,0 +1,176 @@
+﻿<div class="row-fluid">
+    <div class="copy">
+        <h3>
+            InputDate, InputTime, and Calendar controls</h3>
+        <p>
+            Wijmo includes three controls for date and time input: 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.input.InputDate.Class.html" 
+            target="_blank">InputDate</a>,
+            <a href="http://wijmo.com/5/docs/topic/wijmo.input.InputTime.Class.html" 
+            target="_blank">InputTime</a>, and 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.input.Calendar.Class.html" 
+            target="_blank">Calendar</a>.</p>
+        <p>
+            The InputDate control allows users to type dates using any format supported by
+            the <a href="http://wijmo.com/5/docs/topic/wijmo.Globalize.Class.html" 
+            target="_blank"> Globalize</a> class, or to pick dates from a drop-down that shows
+            a Calendar control. The appearance and behavior of the control are similar to what 
+            Chrome provides for input elements of type date. The <b>min</b> and <b>max</b> 
+            properties allow you to restrict the range of values that the user can enter.
+            The <b>value</b> property gets or sets a Date object that represents the date 
+            selected by the user, and the <b>format</b> property specifies the .NET-style 
+            format string.</p>
+        <p>
+            These samples use the 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjInputDate.Class.html" 
+            target="_blank">WjInputDate</a>, 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjInputTime.Class.html" 
+            target="_blank">WjInputTime</a>, and 
+            <a href="http://wijmo.com/5/docs/topic/wijmo.angular.WjCalendar.Class.html" 
+            target="_blank">WjCalendar</a> directives and AngularJS.</p>
+        <div class="collapsed-content collapse">
+            <p>
+                The InputTime control allows users to type times using any format supported by
+                globalize.js, or to pick times from a drop-down that shows a list of times. The 
+                <b>min</b>, <b>max</b>, and <b>step</b> properties determine the values shown in the 
+                list. The <b>value</b> property gets or sets a Date object that represents the time 
+                selected by the user, and the <b>format</b> property specifies the .NET-style 
+                format string.</p>
+            <p>
+                Finally, the Calendar control displays a whole month and allows users to select
+                a date using the keyboard or pointing device. It is used in the drop-down portion of the
+                InputDate control but can also be used in stand-alone mode. The Calendar shows
+                one month at a time, and allows the user to select a date or to navigate to other
+                months and years.</p>
+            <p>
+                The InputDate and Calendar controls only modify the date portion of the
+                <b>value</b> property (the time of day is preserved). Similarly, the InputTime
+                control only changes the time portion (the date is preserved). This allows you to bind the
+                controls to a single Date object and edit the date and time parts of the Date object
+                independently. The example below shows how this works. All controls are bound to a 
+                single 'departureDate' property in the controller, and you can modify the date and 
+                time portions independently.</p>
+        </div>
+        <p>
+            <button type="button" 
+                data-toggle="collapse"
+                data-target=".collapsed-content, .btn.btn-default.btn-xs.collapse"
+                class="btn btn-default btn-xs collapse in">
+                Read more
+            </button>
+        </p>
+    </div>
+    <div>
+        <wj-menu value="ctx.culture" header="Culture">
+            <wj-menu-item value="'en'">English</wj-menu-item>
+            <wj-menu-item value="'de'">German</wj-menu-item>
+            <wj-menu-item value="'it'">Italian</wj-menu-item>
+            <wj-menu-item value="'fr'">French</wj-menu-item>
+            <wj-menu-item value="'pt'">Portuguese</wj-menu-item>
+            <wj-menu-item value="'ru'">Russian</wj-menu-item>
+            <wj-menu-item value="'ja'">Japanese</wj-menu-item>
+            <wj-menu-item value="'ko'">Korean</wj-menu-item>
+        </wj-menu>
+    </div>
+    <br />
+
+    <!-- BEGIN -->
+
+    <div class="row div-thick col-head">
+        <div class="col-sm-3 col-xs-12">
+            Description
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            Control
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            Bound value
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            InputDate<br />between Jan 15 and Feb 15, 2014
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-input-date 
+                value="ctx.departureDate" 
+                min="2014-01-15" 
+                max="2014-02-15" 
+                format="d">
+            </wj-input-date>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.departureDate | glbz:'f'}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            InputDate, custom style<br />between Jan 15 and Feb 15, 2014
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-input-date
+                class="customEdit"
+                value="ctx.departureDate"
+                min="2014-01-15" 
+                max="2014-02-15"
+                format="d">
+            </wj-input-date>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.departureDate | glbz:'f'}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            Calendar<br />between Jan 15 and Feb 15, 2014
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-calendar
+                class="calendar"
+                value="ctx.departureDate"
+                min="2014-01-15" 
+                max="2014-02-15">
+            </wj-calendar>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.departureDate | glbz:'f'}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            InputTime<br />between 7am and 10pm
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-input-time
+                value="ctx.departureDate"
+                min="07:00" 
+                max="22:00"
+                format="t">
+            </wj-input-time>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.departureDate | glbz:'f'}}
+        </div>
+    </div>
+    <div class="row div-thin">
+        <div class="col-sm-3 col-xs-12">
+            InputTime, Custom Style<br />15 minute step<br />between 7am and 10pm
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <wj-input-time
+                class="customEdit" 
+                value="ctx.departureDate"
+                min="07:00" 
+                max="22:00"
+                step="15"
+                format="t">
+            </wj-input-time>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+            {{ctx.departureDate | glbz:'f'}}
+        </div>
+    </div>
+
+    <!-- END -->
+
+</div>

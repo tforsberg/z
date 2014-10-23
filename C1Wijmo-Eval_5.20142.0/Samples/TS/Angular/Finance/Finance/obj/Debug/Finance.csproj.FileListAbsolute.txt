@@ -1,5 +1,0 @@
-C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.0\Samples\TS\Angular\Finance\Finance\bin\Finance.dll
-C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.0\Samples\TS\Angular\Finance\Finance\bin\Finance.pdb
-C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.0\Samples\TS\Angular\Finance\Finance\obj\Debug\Finance.csprojResolveAssemblyReference.cache
-C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.0\Samples\TS\Angular\Finance\Finance\obj\Debug\Finance.dll
-C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.0\Samples\TS\Angular\Finance\Finance\obj\Debug\Finance.pdb
