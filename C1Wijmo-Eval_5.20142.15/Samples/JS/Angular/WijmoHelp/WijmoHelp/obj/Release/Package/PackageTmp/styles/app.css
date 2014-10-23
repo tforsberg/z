@@ -1,0 +1,17 @@
+﻿body {
+	font-family: -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 11pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: -apple-system-font, 'Segoe UI Light', 'Segoe UI', 'Roboto', sans-serif;
+}
+
+h1.header {
+	cursor: pointer;
+}
+
+.flatList {
+    list-style-type: none;
+    padding-left: 6px;
+}

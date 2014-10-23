@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DataServices QuickStart Sample</title>
+
+    <!-- jQuery/Angular/Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+    <!--<script wj-src="wijmo.chart" src="bin/Devel/loaders/wijmo.load.module.js" type="text/javascript"></script>-->
+    <link href="styles/vendor/wijmo.min.css" rel="stylesheet">
+
+    <!-- Wijmo-Angular interop -->
+    <script src="scripts/vendor/wijmo.angular.min.js" type="text/javascript"></script>
+
+    <!-- Application scripts and styles -->
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/appCtrl.js" type="text/javascript"></script>
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="app" ng-controller="appCtrl">
+
+    <!-- header -->
+    <div class="header">
+        <div class="container">
+            <h1>
+                DataServices QuickStart Sample
+            </h1>
+            <p>
+                This is an HTML5 version of a classic Microsoft Silverlight sample available on
+                <a href="http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/#/?sref=DataServicesQuickStart">MSDN</a>.
+                To see the original Silverlight sample, click 
+                <a href="http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/ClientBin/DataServicesQuickStart.html" target="_blank">here</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- body -->
+    <div class="container">
+
+        <!-- commands/details -->
+        <dl class="col-md-6 dl-horizontal">
+            <dt></dt>
+            <dd>
+                <button type="button" class="btn btn-success" style="min-width:120px" ng-click="startButton_Click()">
+                    Start
+                </button>
+            </dd>
+            <dt>
+                OrderID:
+            </dt>
+            <dd>
+                <wj-combo-box is-editable="false" items-source="orders" display-member-path="OrderID">
+                </wj-combo-box>
+            </dd>
+            <dt>
+                Freight:
+            </dt>
+            <dd>
+                <wj-input-number required="false" format="c2" value="orders.currentItem.Freight">
+                </wj-input-number>
+            </dd>
+        </dl>
+
+        <dl class="col-md-6 dl-horizontal">
+            <dt>
+                Customer:
+            </dt>
+            <dd>
+                <wj-combo-box is-editable="false" items-source="customers" display-member-path="CompanyName">
+                </wj-combo-box>
+            </dd>
+            <dt>
+                Order Date:
+            </dt>
+            <dd>
+                <wj-input-date required="false" value="orders.currentItem.OrderDate">
+                </wj-input-date>
+            </dd>
+            <dt>
+                Shipped Date:
+            </dt>
+            <dd>
+                <wj-input-date required="false" value="orders.currentItem.ShippedDate">
+                </wj-input-date>
+            </dd>
+        </dl>
+
+        <!-- grid with details for the currently selected order -->
+        <wj-flex-grid style="max-height:300px;margin-bottom:20px" headers-visibility="Column" selection-mode="Row" items-source="details">
+                <wj-flex-grid-column binding="ProductID" header="Product ID" width="80*"></wj-flex-grid-column>
+                <wj-flex-grid-column binding="Quantity" header="Quantity" width="60*"></wj-flex-grid-column>
+                <wj-flex-grid-column binding="Discount" header="Discount" width="60*" format="p0"></wj-flex-grid-column>
+                <wj-flex-grid-column binding="UnitPrice" header="Cost Per Unit" width="60*" format="c2"></wj-flex-grid-column>
+        </wj-flex-grid>
+
+        <!-- monitor query resources -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Query resources
+            </div>
+            <div style="font-size:75%;" class="panel-body">
+                <div class="text-muted" ng-repeat="qh in queryResources">
+                    ({{$index}}) {{qh.table}}: <a href="{{qh.url}}">{{qh.url}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

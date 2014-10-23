@@ -1,0 +1,947 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FlexGrid Introduction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="styles/vendor/wijmo.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/app.css">
+
+    <!-- jQuery and Bootstrap -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Wijmo -->
+    <script src="scripts/vendor/wijmo.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.input.min.js" type="text/javascript"></script>
+    <script src="scripts/vendor/wijmo.grid.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <img src="resources/wijmo5.png">
+            <h1>FlexGrid 101</h1>
+            <p>
+                This page shows how to get started with Wijmo's FlexGrid control.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+
+        <!-- getting started -->
+        <div>
+            <h2>Getting Started</h2>
+            <p>
+                Steps for getting started with FlexGrid in JavaScript applications:
+            </p>
+            <ol>
+                <li>Add references to jQuery and Wijmo.</li>
+                <li>Add markup to serve as the Wijmo control's host.</li>
+                <li>Initialize the Wijmo control(s) via JavaScript.</li>
+                <li>(Optional) Add some CSS to customize the FlexGrid control's appearance.</li>
+            </ol>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#gsHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#gsJs" role="tab" data-toggle="tab">JS</a></li>
+                            <li><a href="#gsCss" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="gsHtml">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/bootstrap.css"/&gt;
+  &lt;link rel="stylesheet" type="text/css" href="css/wijmo.css" /&gt;
+  &lt;link href="css/app.css" rel="stylesheet" type="text/css" /&gt;
+
+  &lt;script src="scripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/bootstrap.js" type="text/javascript"&gt;&lt;/script&gt;
+
+  &lt;script src="scripts/wijmo.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.input.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;script src="scripts/wijmo.grid.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- this is the grid --&gt;
+  &lt;div id="gsFlexGrid"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="gsJs">
+var countries = 'US,Germany,UK,Japan,Italy,Greece'.split(',');
+var data = [];
+
+for (var i = 0; i < count;="" i++)="" {="" data.push({="" id:="" i,="" country:="" countries[i="" %="" countries.length],="" date:="" new="" date(2014,="" i="" %="" 12,="" i="" %="" 28),="" amount:="" math.random()="" *="" 10000,="" active:="" i="" %="" 4="=" 0="" });="" }="" var="" grid="new" wijmo.grid.flexgrid('#gsflexgrid');="" var="" cv="new" wijmo.collections.collectionview(data);="" grid.itemssource="cv;"></div>
+                            <div class="tab-pane pane-content" id="gsCss">
+/* set default grid style */
+.wj-flexgrid {
+  height: 300px;
+  background-color: white;
+  box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.75);
+  margin-bottom: 12px;
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="gsFlexGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- column definitions -->
+        <div>
+            <h2>Column Definitions</h2>
+            <p>
+                The Getting Started example did not define any columns, so FlexGrid generated them
+                automatically.
+            </p>
+            <p>
+                This example shows how you can define the columns using the FlexGrid's <b>initialize</b> method
+                and <b>columns</b> collection directly.
+            </p>
+            <p>
+                Specifying the columns allows you to choose which columns to show, and in what order.
+                This also gives you control over each column&#39;s width, heading, formatting, alignment,
+                and other properties.
+            </p>
+            <p>
+                In this case, we use star sizing to set the width of the "Country" column. This tells the 
+                column to stretch to fill the available width of the grid so there is no empty space.  On 
+                the "Revenue" column, we set the format property to "n0", which results in numbers with 
+                thousand separators and no decimal digits.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#cdHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#cdJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="cdHtml">
+&lt;b&gt;Initialize Method&lt;/b&gt;
+&lt;div id="cdInitMethod"&gt;&lt;/div&gt;
+
+&lt;b&gt;Column Definitions&lt;/b&gt;
+&lt;div id="cdColsCollection"&gt;&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="cdJs">
+var fgInitMethod = new wijmo.grid.FlexGrid('#cdInitMethod');
+var fgColsCollection = new wijmo.grid.FlexGrid('#cdColsCollection');
+var cv = new wijmo.collections.CollectionView(data);
+
+// initialize method
+fgInitMethod.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { header: 'Country', binding: 'country', width: '*' },
+    { header: 'Date', binding: 'date' },
+    { header: 'Revenue', binding: 'amount', format: 'n0' },
+    { header: 'Active', binding: 'active' },
+  ],
+  itemsSource: cv
+});
+
+// columns collection
+fgColsCollection.autoGenerateColumns = false;
+fgColsCollection.itemsSource = cv;
+
+var countryCol = new wijmo.grid.Column();
+countryCol.binding = 'country';
+countryCol.header = 'Country';
+countryCol.width = '*';
+fgColsCollection.columns.push(countryCol);
+
+var dateCol = new wijmo.grid.Column();
+dateCol.binding = 'date';
+dateCol.header = 'Date';
+fgColsCollection.columns.push(dateCol);
+
+var revenueCol = new wijmo.grid.Column();
+revenueCol.binding = 'amount';
+revenueCol.header = 'Revenue';
+revenueCol.format = 'n0';
+fgColsCollection.columns.push(revenueCol);
+
+var activeCol = new wijmo.grid.Column();
+activeCol.binding = 'active';
+activeCol.header = 'Active';
+fgColsCollection.columns.push(activeCol);
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <b>Initialize Method</b>
+                    <div id="cdInitMethod"></div>
+
+                    <b>Columns Collection</b>
+                    <div id="cdColsCollection"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- selection modes -->
+        <div>
+            <h2>Selection Modes</h2>
+            <p>
+                By default, FlexGrid allows you to select a range of cells with the mouse or keyboard,
+                just like Excel. The <b>selectionMode</b> property allows you to change that so that you
+                can select a row, a range of rows, non-contiguous rows (like in a list-box), a single cell,
+                or disable selection altogether.
+            </p>
+            <p>
+                This example allows you to pick the <b>selectionMode</b> from a Wijmo Menu control.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#smHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#smJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="smHtml">
+&lt;div id="smFlexGrid"&gt;&lt;/div&gt;
+&lt;select id="smMenu"&gt;
+  &lt;option value="None"&gt;None&lt;/option&gt;
+  &lt;option value="Cell"&gt;Cell&lt;/option&gt;
+  &lt;option value="CellRange" selected&gt;CellRange&lt;/option&gt;
+  &lt;option value="Row"&gt;Row&lt;/option&gt;
+  &lt;option value="RowRange"&gt;RowRange&lt;/option&gt;
+  &lt;option value="ListBox"&gt;ListBox&lt;/option&gt;
+&lt;/select&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="smJs">
+var grid = new wijmo.grid.FlexGrid('#smFlexGrid');
+var menu = new wijmo.input.Menu('#smMenu');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.itemsSource = cv;
+
+updateMenuHeader();
+
+menu.selectedIndexChanged.addHandler(function (sender) {
+
+ // update FlexGrid's selectionMode when the menu selection changes
+ grid.selectionMode = sender.selectedValue;
+
+ updateMenuHeader();
+});
+
+// update menu header
+function updateMenuHeader() {
+    menu.header = '&lt;b&gt;Selection Mode:&lt;/b&gt; ' + menu.text;
+} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="smFlexGrid"></div>
+                    <select id="smMenu">
+                        <option value="None">None
+                        <option value="Cell">Cell
+                        <option value="CellRange" selected="">CellRange
+                        <option value="Row">Row
+                        <option value="RowRange">RowRange
+                        <option value="ListBox">ListBox
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- editing -->
+        <div>
+            <h2>Editing</h2>
+            <p>
+                FlexGrid has built-in support for fast, in-cell editing like you find in Excel. There is no
+                need to add extra columns with Edit buttons that switch between display and edit modes.
+            </p>
+            <p>
+                Users can start editing by typing into any cell. This puts the cell in quick-edit mode.
+                In this mode, pressing a cursor key finishes the editing and moves the selection to a different cell.
+            </p>
+            <p>
+                Another way to start editing is by pressing F2 or by clicking a cell twice. This puts the cell in
+                full-edit mode. In this mode, pressing a cursor key moves the caret within the cell text.
+                To finish editing and move to another cell, the user must press the Enter, Tab, or Escape key.
+            </p>
+            <p>
+                Data is automatically coerced to the proper type when editing finishes. If the user enters invalid
+                data, the edit is cancelled and the original data remains in place.
+            </p>
+            <p>
+                You can disable editing at the grid, column, or row levels using the <b>isReadOnly</b> property of the
+                grid, column, or row objects. In this example, we make the ID column read-only.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#eHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#eJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="eHtml">
+&lt;div id="eFlexGrid"&gt;&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="eJs">
+var grid = new wijmo.grid.FlexGrid('#eFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { header: 'ID', binding: 'id', width: '*', isReadOnly: true },  // cannot edit
+    { header: 'Country', binding: 'country' },
+    { header: 'Date', binding: 'date' },
+    { header: 'Revenue', binding: 'amount', format: 'n0' },
+    { header: 'Active', binding: 'active' },
+  ],
+  itemsSource: cv
+});
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="eFlexGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- grouping -->
+        <div>
+            <h2>
+                Grouping
+            </h2>
+            <p>
+                FlexGrid supports grouping through the <b>ICollectionView</b> interface, which is identical to the
+                one in .NET. To enable grouping, add one or more <b>GroupDescription</b> objects to the
+                <b>CollectionView.groupDescriptions</b> property, and ensure that the grid's <b>showGroups</b> property
+                is set to true (the default value).
+            </p>
+            <p>
+                <b>GroupDescription</b> objects are flexible, allowing you to group data based on value or on grouping
+                functions. The example below groups dates by year; amounts by range returning three ranges: over 5,000,
+                500 to 5,000, and under 500; and anything else by value. Use the menu to see the effects of each grouping.
+            </p>
+            <p>
+                Notice that the "Revenue" column displays the totals in the group rows. We do this by
+                setting the column's <b>aggregate</b> property to "Sum." The aggregate is automatically
+                updated when you edit the values in the column.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#gHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#gJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="gHtml">
+&lt;div id="gFlexGrid"&gt;&lt;/div&gt;
+&lt;select id="gMenu"&gt;
+  &lt;option value="" selected&gt;(no grouping)&lt;/option&gt;
+  &lt;option value="country"&gt;Country&lt;/option&gt;
+  &lt;option value="amount"&gt;Revenue&lt;/option&gt;
+  &lt;option value="date"&gt;Date&lt;/option&gt;
+  &lt;option value="country,date"&gt;Country and Date&lt;/option&gt;
+  &lt;option value="country,amount"&gt;Country and Revenue&lt;/option&gt;
+  &lt;option value="country,date,amount"&gt;Country, Date, and Revenue&lt;/option&gt;
+&lt;/select&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="gJs">
+var grid = new wijmo.grid.FlexGrid('#gFlexGrid');
+var menu = new wijmo.input.Menu('#gMenu');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { header: 'Country', binding: 'country', width: '*' },
+    { header: 'Date', binding: 'date' },
+    { header: 'Revenue', binding: 'amount', format: 'n0' }
+  ],
+  itemsSource: cv
+});
+
+updateMenuHeader();
+
+// handle the Menu control's selectedIndexChanged event
+menu.selectedIndexChanged.addHandler(function (sender) {
+
+  // menu's selected value
+  var groupBy = sender.selectedValue;
+
+  // clear current groups
+  cv.groupDescriptions.clear();
+
+  if (groupBy) {
+    var groupNames = groupBy.split(',');
+
+    for (var i = 0; i < groupnames.length;="" i++)="" {="" var="" groupname="groupNames[i];" if="" (groupname="=" 'date')="" {="" group="" dates="" by="" year="" var="" groupdesc="new" wijmo.collections.propertygroupdescription(groupname,="" function="" (item,="" prop)="" {="" return="" item.date.getfullyear();="" });="" cv.groupdescriptions.push(groupdesc);="" }="" else="" if="" (groupname="=" 'amount')="" {="" group="" amounts="" in="" ranges="" var="" groupdesc="new" wijmo.collections.propertygroupdescription(groupname,="" function="" (item,="" prop)="" {="" return="" item.amount="">= 5000 ? '> 5,000' : item.amount >= 500 ? '500 to 5,000' : '< 500';="" });="" cv.groupdescriptions.push(groupdesc);="" }="" else="" {="" group="" everything="" else="" by="" value="" var="" groupdesc="new" wijmo.collections.propertygroupdescription(groupname);="" cv.groupdescriptions.push(groupdesc);="" }="" }="" }="" updatemenuheader();="" });="" update="" menu="" header="" function="" updatemenuheader()="" {="" menu.header='&lt;b&gt;Group By:&lt;/b&gt; ' +="" menu.text;="" }=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="gFlexGrid"></div>
+                    <select id="gMenu">
+                        <option value="" selected="">(no grouping)
+                        <option value="country">Country
+                        <option value="amount">Revenue
+                        <option value="date">Date
+                        <option value="country,date">Country and Date
+                        <option value="country,amount">Country and Revenue
+                        <option value="country,date,amount">Country, Date, and Revenue
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- filtering -->
+        <div>
+            <h2>Filtering</h2>
+            <p>
+                The FlexGrid supports filtering through the <b>ICollectionView</b> interface, which is identical to the
+                one in .NET. To enable filtering, set the <b>CollectionView.filter</b> property to a function that
+                determines which objects to include in the view.
+            </p>
+            <p>
+                In this example, we create a filter for the country, and get the filter value from the input control.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#fHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#fJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="fHtml">
+&lt;div id="fFlexGrid"&gt;&lt;/div&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-addon"&gt;
+    &lt;i class="glyphicon glyphicon-filter"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+  &lt;input id="fFilter" type="text" class="form-control" placeholder="Filter by Country..." /&gt;
+&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="fJs">
+var grid = new wijmo.grid.FlexGrid('#fFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+var filterText = '';
+
+grid.itemsSource = cv;
+
+// keyup event handler for filter textbox
+$('#fFilter').on('keyup', function () {
+
+  // get filter's text in lowercase
+  filterText = $(this).val().toLowerCase();
+
+  // refresh CollectionView
+  cv.refresh();
+});
+
+// CollectionView filter
+cv.filter = function (item) {
+
+  // always show data if the filter textbox is empty
+  if (!filterText) {
+    return true;
+  }
+
+  // compare CollectionView's data with filter text
+  return item.country.toLowerCase().indexOf(filterText) > -1;
+};
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="fFlexGrid"></div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-filter"></i>
+                        </span>
+                        <input id="fFilter" type="text" class="form-control" placeholder="Filter by Country...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- paging -->
+        <div>
+            <h2>Paging</h2>
+            <p>
+                The FlexGrid supports paging through the <b>IPagedCollectionView</b> interface, which is nearly identical
+                to the one in .NET. To enable paging, set the <b>IPagedCollectionView.pageSize</b> property to the number
+                of items you want on each page, and provide a UI for navigating the pages.
+            </p>
+            <p>
+                In this example, we use JavaScript to show 10 items per page. We add navigation buttons, and call
+                IPagedCollectionView methods when a button is clicked. Note that we use the <strong>pageIndex</strong>
+                and <strong>pageCount</strong> properties to show the current page and total number of pages.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#pHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#pJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="pHtml">
+&lt;div id="pFlexGrid" style="height:auto"&gt;&lt;/div&gt;
+&lt;div class="btn-group" id="pPager"&gt;
+  &lt;button type="button" class="btn btn-default" data-action="fast-backward" id="pfb"&gt;
+    &lt;span class="glyphicon glyphicon-fast-backward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn btn-default" data-action="step-backward" id="psb"&gt;
+    &lt;span class="glyphicon glyphicon-step-backward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn btn-default" disabled style="width:100px" data-action="none" id="pn"&gt;&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default" data-action="step-forward" id="psf"&gt;
+    &lt;span class="glyphicon glyphicon-step-forward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="btn btn-default" data-action="fast-forward" id="pff"&gt;
+    &lt;span class="glyphicon glyphicon-fast-forward"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="pJs">
+var grid = new wijmo.grid.FlexGrid('#pFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.itemsSource = cv;
+cv.pageSize = 10; // set collectionView's pageSize
+
+// init pager
+updatePager();
+
+// click handler for pager buttons
+$('#pPager button').on('click', function () {
+
+  // update pager
+  updatePager($(this).data('action'));
+});
+
+// disable/enable buttons and update display text for pager
+function updatePager(action) {
+
+  // get buttons by id
+  var $display = $('#pn'),
+      $fb = $('#pfb'), $sb = $('#psb'),
+      $sf = $('#psf'), $ff = $('#pff'),
+      enableBackwards = false,
+      enableForwards = false;
+
+  // handle pager operation based on button's attribute
+  switch (action) {
+    case 'fast-backward':
+      cv.moveToFirstPage();
+      break;
+    case 'step-backward':
+      cv.moveToPreviousPage();
+      break;
+    case 'step-forward':
+      cv.moveToNextPage();
+      break;
+    case 'fast-forward':
+      cv.moveToLastPage();
+      break;
+  }
+
+  // update the pager text
+  $display.text((cv.pageIndex + 1) + ' / ' + (cv.pageCount));
+
+  // determine which pager buttons to enable/disable
+  enableBackwards = cv.pageIndex <= 0;="" enableforwards="cv.pageIndex">= cv.pageCount - 1;
+
+  // enable/disable pager buttons
+  $fb.prop('disabled', enableBackwards);
+  $sb.prop('disabled', enableBackwards);
+  $sf.prop('disabled', enableForwards);
+  $ff.prop('disabled', enableForwards);
+}
+                            </=></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="pFlexGrid" style="height:auto"></div>
+                    <div class="btn-group" id="pPager">
+                        <button type="button" class="btn btn-default" data-action="fast-backward" id="pfb">
+                            <span class="glyphicon glyphicon-fast-backward"></span>
+                        </button>
+                        <button type="button" class="btn btn-default" data-action="step-backward" id="psb">
+                            <span class="glyphicon glyphicon-step-backward"></span>
+                        </button>
+                        <button type="button" class="btn btn-default" disabled="" style="width:100px" data-action="none" id="pn"></button>
+                        <button type="button" class="btn btn-default" data-action="step-forward" id="psf">
+                            <span class="glyphicon glyphicon-step-forward"></span>
+                        </button>
+                        <button type="button" class="btn btn-default" data-action="fast-forward" id="pff">
+                            <span class="glyphicon glyphicon-fast-forward"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- master-detail -->
+        <div>
+            <h2>Master-Detail</h2>
+            <p>
+                The <b>ICollectionView</b> interface has built-in support for currency, which enables you to
+                implement master-detail scenarios with FlexGrid. You can refer to the <b>currentItem</b> and
+                use it as a binding source for any elements on the page.
+            </p>
+            <p>
+                Note that you have to update the details view when the current item changes.
+                To do that, attach a handler to the <b>ICollectionView.currentChanged</b>
+                event and update the details view as needed.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#mdHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#mdJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="mdHtml">
+&lt;div id="mdFlexGrid"&gt;&lt;/div&gt;
+&lt;dl class="dl-horizontal"&gt;
+  &lt;dt&gt;ID&lt;/dt&gt;
+  &lt;dd id="mdCurId"&gt;&lt;/dd&gt;
+  &lt;dt&gt;Country&lt;/dt&gt;
+  &lt;dd id="mdCurCountry"&gt;&lt;/dd&gt;
+  &lt;dt&gt;Date&lt;/dt&gt;
+  &lt;dd id="mdCurDate"&gt;&lt;/dd&gt;
+  &lt;dt&gt;Revenue&lt;/dt&gt;
+  &lt;dd id="mdCurRevenue"&gt;&lt;/dd&gt;
+  &lt;dt&gt;Active&lt;/dt&gt;
+  &lt;dd id="mdCurActive"&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="mdJs">
+var grid = new wijmo.grid.FlexGrid('#mdFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { header: 'Country', binding: 'country', width: '*' },
+    { header: 'Date', binding: 'date' }
+  ],
+  itemsSource: cv
+});
+
+// init details pane
+updateDetails(cv.currentItem);
+
+// handle CollectionView's currentChanged event to update details
+cv.currentChanged.addHandler(function (sender, args) {
+  updateDetails(sender.currentItem);
+});
+
+// update the details when the CollectionView's currentItem changes
+function updateDetails(item) {
+  $('#mdCurId').text(item.id);
+  $('#mdCurCountry').text(item.country);
+  $('#mdCurDate').text(wijmo.Globalize.format(item.date, 'd'));
+  $('#mdCurRevenue').text(wijmo.Globalize.format(item.amount, 'c'));
+  $('#mdCurActive').text(item.active);
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="mdFlexGrid"></div>
+                    <dl class="dl-horizontal">
+                        <dt>ID</dt>
+                        <dd id="mdCurId"></dd>
+                        <dt>Country</dt>
+                        <dd id="mdCurCountry"></dd>
+                        <dt>Date</dt>
+                        <dd id="mdCurDate"></dd>
+                        <dt>Revenue</dt>
+                        <dd id="mdCurRevenue"></dd>
+                        <dt>Active</dt>
+                        <dd id="mdCurActive"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- conditional styling -->
+        <div>
+            <h2>Conditional Styling</h2>
+            <p>
+                FlexGrid has an <b>itemFormatter</b> property that gives you complete control over
+                the contents of the cells.
+            </p>
+            <p>
+                This example uses a JavaScript function to create value ranges that return named
+                colors. We then call this function in the FlexGrid's <b>itemFormatter</b> and pass the cell's data
+                in order to conditionally set the cell's foreground color.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#csHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#csJs" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="csHtml">
+&lt;div id="csFlexGrid"&gt;&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="csJs">
+var grid = new wijmo.grid.FlexGrid('#csFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { header: 'Country', binding: 'country', width: '*', isContentHtml: true, isReadOnly: true },
+    { header: 'Date', binding: 'date' },
+    { header: 'Revenue', binding: 'amount', format: 'n0' },
+    { header: 'Active', binding: 'active' },
+  ],
+  itemsSource: cv,
+  itemFormatter: function (panel, r, c, cell) {
+
+    // validate CellType and if correct column
+    if (wijmo.grid.CellType.Cell === panel.cellType &&
+      'amount' === panel.columns[c].binding) {
+
+      // get the cell's data
+      var cellData = panel.getCellData(r, c);
+
+      // set the cell's foreground color
+      cell.style.color = getAmountColor(cellData);
+    }
+  }
+});
+
+function getAmountColor(amount) {
+
+  // convert to number if not already a number
+  amount = wijmo.changeType(amount, wijmo.DataType.Number);
+
+  // ensure that conversion was a success
+  if (wijmo.isNumber(amount)) {
+
+    // return a color
+    if (amount < 500)="" return="" 'red';="" if="" (amount="">< 2500)="" return="" 'black';="" return="" 'green';="" }="" }=""></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="csFlexGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- themes -->
+        <div>
+            <h2>Themes</h2>
+            <p>
+                The appearance of the FlexGrid is defined in CSS. In addition to the default theme, we
+                include about a dozen professionally designed themes that customize the appearance of
+                all Wijmo controls to achieve a consistent, attractive look.
+            </p>
+            <p>
+                You can customize the appearance of the grid using CSS. To do this, copy CSS rules
+                from the default theme to a new CSS file and modify the style attributes you want to change.
+            </p>
+            <p>
+                In this example, we add a "custom-flex-grid" class to the grid element and define some
+                CSS rules to create a simple "black and white, no borders" theme for any grids that
+                have the "custom-flex-grid" class.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#tHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#tJs" role="tab" data-toggle="tab">JS</a></li>
+                            <li><a href="#tCss" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="tHtml">
+&lt;div id="tFlexGrid" class="custom-flex-grid"&gt;&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="tJs">
+var grid = new wijmo.grid.FlexGrid('#tFlexGrid');
+var cv = new wijmo.collections.CollectionView(data);
+
+grid.itemsSource = cv;
+                            </div>
+                            <div class="tab-pane pane-content" id="tCss">
+.custom-flex-grid .wj-header.wj-cell {
+  color: #fff;
+  background-color: #000;
+  border-bottom: solid 1px #404040;
+  border-right: solid 1px #404040;
+  font-weight: bold;
+}
+
+.custom-flex-grid .wj-cell {
+  background-color: #fff;
+  border: none;
+}
+
+.custom-flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background-color: #fff;
+}
+
+.custom-flex-grid .wj-state-selected {
+  background: #000;
+  color: #fff;
+}
+
+.custom-flex-grid .wj-state-multi-selected {
+  background: #222;
+  color: #fff;
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="tFlexGrid" class="custom-flex-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- trees/hierarchical data -->
+        <div>
+            <h2>Trees and Hierarchical Data</h2>
+            <p>
+                In addition to grouping, FlexGrid supports hierarchical data, that is, data with items
+                that have lists of subitems. This type of hierarchical structure is very common, and is
+                usually displayed in a tree-view control.
+            </p>
+            <p>
+                To use FlexGrid with hierarchical data sources, set the <b>childItemsPath</b> property
+                to the name of the data element that contains the child elements. The grid automatically
+                scans the data and builds the tree for you.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#tvHtml" role="tab" data-toggle="tab">HTML</a></li>
+                            <li><a href="#tvJs" role="tab" data-toggle="tab">JS</a></li>
+                            <li><a href="#tvCss" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active pane-content" id="tvHtml">
+&lt;div id="tvFlexGrid" class="custom-flex-grid"&gt;&lt;/div&gt;
+                            </div>
+                            <div class="tab-pane pane-content" id="tvJs">
+var grid = new wijmo.grid.FlexGrid('#tvFlexGrid');
+var cv = new wijmo.collections.CollectionView(treeData);
+
+grid.initialize({
+  autoGenerateColumns: false,
+  columns: [
+    { binding: 'name', width: '*' },
+    { binding: 'length', width: 80, align: 'center' }
+  ],
+  itemsSource: cv,
+  childItemsPath: 'items',    // set hierarchy path
+  allowResizing: wijmo.grid.AllowResizing.None,   // disable reszing
+  headersVisibility: wijmo.grid.HeadersVisibility.None,   // hide headers
+  selectionMode: wijmo.grid.SelectionMode.ListBox // use ListBox selection
+});
+                            </div>
+                            <div class="tab-pane pane-content" id="tvCss">
+.custom-flex-grid .wj-header.wj-cell {
+  color: #fff;
+  background-color: #000;
+  border-bottom: solid 1px #404040;
+  border-right: solid 1px #404040;
+  font-weight: bold;
+}
+
+.custom-flex-grid .wj-cell {
+  background-color: #fff;
+  border: none;
+}
+
+.custom-flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background-color: #fff;
+}
+
+.custom-flex-grid .wj-state-selected {
+  background: #000;
+  color: #fff;
+}
+
+.custom-flex-grid .wj-state-multi-selected {
+  background: #222;
+  color: #fff;
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Result (live):</h4>
+                    <div id="tvFlexGrid" class="custom-flex-grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- sample scripts -->
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/gettingStarted.js" type="text/javascript"></script>
+    <script src="scripts/columnDefinitions.js" type="text/javascript"></script>
+    <script src="scripts/selectionModes.js" type="text/javascript"></script>
+    <script src="scripts/editing.js" type="text/javascript"></script>
+    <script src="scripts/grouping.js" type="text/javascript"></script>
+    <script src="scripts/filtering.js" type="text/javascript"></script>
+    <script src="scripts/paging.js" type="text/javascript"></script>
+    <script src="scripts/masterDetail.js" type="text/javascript"></script>
+    <script src="scripts/conditionalStyling.js" type="text/javascript"></script>
+    <script src="scripts/themes.js" type="text/javascript"></script>
+    <script src="scripts/hierarchicalData.js" type="text/javascript"></script>
+</body>
+</html>

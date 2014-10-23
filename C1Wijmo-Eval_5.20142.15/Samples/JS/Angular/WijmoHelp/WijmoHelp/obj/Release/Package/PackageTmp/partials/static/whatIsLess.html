@@ -1,0 +1,138 @@
+<h2>
+	What Is LESS?</h2>
+<p>
+	LESS is a dynamic style sheet language that extends CSS through the addition of variables, 
+    mixins, operations and nested rules.</p>
+<ul>
+	<li>
+		<b>Variables:</b> Reusable common values, such as color and style information.</li>
+	<li>
+		<b>Mixins:</b> Properties from existing styles that you use inside new styles.</li>
+	<li>
+		<b>Operations:</b> Mathematical creation and manipulation of CSS properties.</li>
+	<li>
+		<b>Nested rules:</b> CSS selectors placed inside of other CSS selectors.</li>
+</ul>
+<p>
+	LESS is also referred to as a CSS preprocessor because you can write style sheets in the 
+    extended LESS language first, and then compile them into plain CSS. LESS is open-source 
+    and you can run it on the client-side or server-side, or compile it and output it as 
+    plain CSS.</p>
+<p>
+	For downloads, detailed documentation, and resources, see the LESS web site: 
+    <a href="http://lesscss.org" target="_blank">http://lesscss.org</a>.</p>
+<h2>
+	Using LESS</h2>
+<p>
+	You can use LESS from the command line, download it as a JS file for in-browser use, 
+    or use a third party application.</p>
+<p>
+	<b>Command line</b></p>
+<p>
+	You can find specific instructions and a list of command-line prompts on the LESS 
+    web site under 
+    <a href="http://lesscss.org/usage/#command-line-usage" target="_blank">Command Line Usage</a>.</p>
+<p>
+	<b>In-browser</b></p>
+<ol>
+	<li>
+		Download a copy of <a href="http://lesscss.org/#download-options" target="_blank">less.js</a>
+        and save it.</li>
+	<li>
+		Create a style sheet and save it using the .less file extension instead of the usual
+        .css extension.</li>
+	<li>
+		Add the following code within the &lt;head&gt; element of your HTML page:</li>
+</ol>
+
+<pre>
+&lt;link rel="stylesheet/less" type="text/css" href="styles.less"&gt;
+&lt;script src="less.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+
+<p>
+	<b>Note:</b> In the link element, you must replace the typical rel="stylesheet" with 
+    rel="stylesheet<b>/less</b>" in order for LESS to compile in the browser. LESS style 
+    sheets must come before the LESS script.</p>
+<p>
+	When the page loads, <b>less.js</b> processes and compiles your LESS code live in the 
+    browser. While this is a convenient way to start developing with LESS, it is not 
+    recommended in production environments where performance is important.</p>
+<p>
+	<b>Third party applications</b></p>
+<p>
+	It is advisable to compile LESS into plain CSS for production environments. If you want
+    something more than the command line prompts offer, a wide array of third party tools 
+    is available. The LESS web site has a list of compilers and editors for various platforms 
+    and IDEs. See
+    <a href="http://lesscss.org/usage/index.html#online-less-compilers" target="_blank">Online LESS Compilers</a>.</p>
+<h2>
+	Customizing Variables</h2>
+<p>
+	We built Wijmo 5 themes with LESS and make the source files available along with their 
+    compiled CSS counterparts. You can update existing themes and create new ones using the 
+    provided files.</p>
+<p>
+	The Wijmo 5 themes have this file naming structure: wijmo.theme.<i>ThemeName</i>.css. 
+    To update a theme using LESS, find the corresponding wijmo.theme.<i>ThemeName</i>.less 
+    file, modify it, and re-compile it using one of the methods listed above.</p>
+<p>
+	Every theme is built upon a base set of colors and style options. We declare variables
+    for these common values that we reuse throughout the theme. Note that LESS variables 
+    start with the @ symbol.</p>
+<pre>
+@background: #f3f3f3;
+@header: #54443b;
+@primary: #2780ec;
+@text: #26211f;
+@button: #5f534c;
+@tool-tip: #e5d9cf;
+@grid-cell-border: true;
+@grid-right-side-col: none;
+@border-radius: 4px;
+@background-grad: false;
+@button-grad: false;
+@header-grad: false;
+</pre>
+<p>
+	In addition to base variables, we use import statements to include additional LESS files
+    to use as mixins. These contain color functions, style mixins, and mixin guards.</p>
+<pre>
+@import "mixins/color-functions";
+@import "mixins/guards";
+@import "mixins/styles";
+@import "mixins/chart";
+</pre>
+<p>
+	The color functions generate a wider pallet of additional colors based on the initial 
+    colors selected and the mixin guards are designed to ensure contrast. The mixin guards 
+    evaluate colors based on their lightness and write CSS accordingly:  If an area's 
+    background color is greater than 50% in lightness, the text in that area renders in 
+    a darker color, and vice versa.</p>
+<h3>
+	Creating New Themes</h3>
+<p>
+	You can create new themes by duplicating an existing theme and then modifying the base
+    set of colors and style options. Here is a key to the color and style variables.</p>
+<p>
+	<b>@background</b> - Background color for the control.<br />
+	<b>@header</b> - Background color for control headers (e.g. FlexGrid, FlexChart).<br />
+	<b>@primary</b> - Primary accent color used throughout the theme.<br />
+	<b>@text</b> - Default text color.<br />
+	<b>@button</b> - Background color for buttons.<br />
+	<b>@tool-tip</b> - Background color for tooltips.<br />
+	<b>@border-radius</b> - Global border radius setting for all controls.<br />
+	<b>@grid-cell-border</b> - Toggle for FlexGrid cell borders. Set to 'false' to turn off all grid borders.<br />
+	<b>@grid-right-side-col</b> - Background color for FlexGrid right side column (none by default).<br />
+	<b>@background-grad</b> - Toggle for control background color gradient. Set to 'true' to add a gradient.<br />
+	<b>@button-grad</b> - Toggle for button background color gradient. Set to 'true' to add a gradient.<br />
+	<b>@header-grad</b> - Toggle for header background color gradient. Set to 'true' to add a gradient.</p>
+<h3>
+	Deploying New Themes</h3>
+<p>
+	Once you create a new theme and output it as plain CSS, place it in the styles directory 
+    and include it in your project. Now you can link to it from any HTML page that contains
+    Wijmo 5 controls.</p>
+<pre>
+&lt;link href="styles/NewTheme.css" rel="stylesheet" type="text/css"&gt;
+</pre>

@@ -1,0 +1,5 @@
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\bin\WijmoHelp.dll
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\bin\WijmoHelp.pdb
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\obj\Debug\WijmoHelp.csprojResolveAssemblyReference.cache
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\obj\Debug\WijmoHelp.dll
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\obj\Debug\WijmoHelp.pdb

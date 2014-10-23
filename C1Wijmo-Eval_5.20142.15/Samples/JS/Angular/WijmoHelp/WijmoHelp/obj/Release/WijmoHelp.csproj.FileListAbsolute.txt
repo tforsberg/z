@@ -1,0 +1,4 @@
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\bin\WijmoHelp.dll
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\bin\WijmoHelp.pdb
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\obj\Release\WijmoHelp.dll
+C:\Users\ToddForsberg\Downloads\C1Wijmo-Eval_5.20142.8\Samples\JS\Angular\WijmoHelp\WijmoHelp\obj\Release\WijmoHelp.pdb

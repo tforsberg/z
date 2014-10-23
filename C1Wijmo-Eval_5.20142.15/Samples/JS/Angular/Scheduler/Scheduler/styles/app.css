@@ -1,0 +1,57 @@
+﻿/* overall page appearance */
+body {
+    background-color: #f8f8f8;
+    font-family: -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+}
+.header {
+    background-color: #045780;
+    margin-bottom: 14px;
+    padding: 12px 0px;
+    color: #e0e0e0;
+}
+.header h1 {
+    color: #fff;
+}
+h2, h3, h4, h5, h6 {
+    color: #045780;
+}
+
+/* highlight dates available for appointments */
+/* created with http://www.colorzilla.com/gradient-editor/ */
+.date-available {
+    border-radius: 40px;
+    border-color: #fecf1b;
+    background: #fefcea; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #fefcea 0%, #f1da36 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fefcea), color-stop(100%,#f1da36)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #fefcea 0%,#f1da36 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #fefcea 0%,#f1da36 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #fefcea 0%,#f1da36 100%); /* IE10+ */
+    background: linear-gradient(135deg, #fefcea 0%,#f1da36 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/* make calendar selection bolder */
+.wj-calendar-month .wj-state-selected {
+    border-radius: 40px;
+    font-size: 150%;
+    font-weight: bold;
+    background-color: black;
+}
+
+/* make calendar cells taller */
+.wj-calendar-month tr:not(.wj-header) {
+    height: 40px;
+}
+
+/* make calendar more spacious*/
+.wj-calendar .wj-content {
+    padding: 16px;
+}
+
+/* login buttons with images aligned to the left (no padding) */
+.btn-login {
+    padding: 0px 4px 0px 0px;
+    margin: 0px 12px 0px 0px
+}
+

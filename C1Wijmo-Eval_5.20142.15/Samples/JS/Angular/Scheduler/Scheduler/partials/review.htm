@@ -1,0 +1,32 @@
+﻿<p>
+    You have the following appointments scheduled:</p>
+<table class="table table-condensed" style="padding:12px">
+    <thead>
+        <tr>
+            <th class="text-center">Date</th>
+            <th class="text-center">Time</th>
+            <th class="text-center">Delete</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="app in ctx.userApps">
+        <td class="text-center">
+            {{app.date | date:'longDate'}}
+        </td>
+        <td class="text-center">
+            {{app.date | date:'shortTime'}}
+        </td>
+        <td class="text-center">
+            <a href="" ng-click="unbookIt(app)">
+                <span class="glyphicon glyphicon-remove" style="color:#D14836"></span>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<button
+    type="button"
+    class="btn btn-success btn-lg"
+    ng-click="gotoView('book')">
+    Go back to booking
+</button>
+

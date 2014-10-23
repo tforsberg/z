@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortingFromSL", "PortingFromSL\PortingFromSL.csproj", "{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Evaluation|Any CPU = Evaluation|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Evaluation|Any CPU.ActiveCfg = Release|Any CPU
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Evaluation|Any CPU.Build.0 = Release|Any CPU
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2665AAB-4D64-4E88-AA7E-0106D68D4C58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

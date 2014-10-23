@@ -1,0 +1,78 @@
+<h2>
+    Using Enumerations in Wijmo 5</h2>
+<p>
+    Several Wijmo 5 controls have properties that take enumeration values.</p>
+<p>
+    For example, the <b>FlexChart</b>'s <b>chartType</b> property takes 
+    <b>wijmo.chart.ChartType</b> values.<p>
+<h3>
+    Setting enumeration properties</h3>
+<p>
+    The recommended way to set enumeration properties is as follows:</p>
+<pre>// setting the value of an enumeration property
+chart.chartType = wijmo.chart.ChartType.Line;
+</pre>
+<p>
+    The following alternatives are also valid and produce the same result:</p>
+<pre>// wijmo.chart.ChartType.Line has value 3:
+chart.chartType = 3;
+
+// enumerations are automatically parsed
+chart.chartType = 'Line';</pre>
+<h3>
+    Getting enumeration properties</h3>
+<p>
+    Getting the property will return 3 in all cases. If you want to get the value 
+    as a string (to show in the UI for example), you can do it as follows:</p>
+<pre>// getting the enumerated value as a number
+console.log(chart.chartType); // outputs "3"
+
+// getting the enumerated value as a string
+console.log(wijmo.chart.ChartType[chart.chartType]); // outputs "Line"</pre>
+<h3>
+    Converting enumeration values</h3>
+<p>
+    You can use the enumeration classes to convert between strings and
+    the corresponding numbers by indexing. For example:</p>
+<pre>// convert enumeration value to string
+console.log(wijmo.chart.ChartType[3]); // outputs "Line"
+console.log(wijmo.chart.ChartType[1000]); // outputs "null"
+
+// convert string to enumeration value
+console.log(wijmo.chart.ChartType['Line']); // outputs "3"
+console.log(wijmo.chart.ChartType['NoSuchValue']); // outputs "null"</pre>
+
+<h3>
+    Note for .NET Developers</h3>
+<p>
+    The .NET, <b>Enum</b> class provides methods called 
+    <a href="http://msdn.microsoft.com/en-us/library/system.enum.getnames(v=vs.110).aspx">GetNames</a> and
+    <a href="http://msdn.microsoft.com/en-us/library/system.enum.getvalues(v=vs.110).aspx">GetValues</a> 
+    that return the names and values defined by any enumeration.</p>
+<p>
+    The code below shows how you could implement similar methods to get the names
+    and values defined by TypeScript enumerations (as used in Wijmo 5):</p>
+<pre>// get the names defined by an enumeration
+function getEnumNames(enumClass) {
+    var names = [];
+    for (var key in enumClass) {
+        var val = parseInt(key);
+        if (isNaN(val)) names.push(key);
+    }
+    return names;
+}
+
+// get the values defined by an enumeration
+function getEnumValues(enumClass) {
+    var values = [];
+    for (var key in enumClass) {
+        var val = parseInt(key);
+        if (!isNaN(val)) values.push(val);
+    }
+    return values;
+}
+
+// sample usage:
+var nn = getEnumNames(wijmo.DataType); // returns [ 'Object', 'String', 'Number', 'Boolean', 'Array' ]
+var vv = getEnumValues(wijmo.DataType); // returns [ 0, 1, 2, 3, 4 ]</pre>
+

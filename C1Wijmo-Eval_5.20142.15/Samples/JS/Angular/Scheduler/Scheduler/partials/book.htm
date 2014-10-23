@@ -1,0 +1,63 @@
+﻿<div class="row">
+
+    <div class="col-md-6">
+        <p>
+            Please select the <b>date</b> for your appointment<br />
+            (available dates are highlighted in yellow):</p>
+        <br />
+        <div style="padding:12px">
+            <wj-calendar
+                control="ctx.calendar"
+                value="ctx.appDate"
+                item-formatter="itemFormatter"
+                min="{{ctx.minDate}}"
+                max="{{ctx.maxDate}}" >
+            </wj-calendar>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Please select the <b>time</b> for your appointment on<br />
+            <b>{{ctx.appDate | date:'fullDate'}}</b>:</p>
+        <br />
+        <div style="padding:12px">
+            <div ng-repeat="slot in ctx.slots">
+                <button 
+                    type="button" 
+                    class="btn btn-block btn-default"
+                    ng-style="slot.customer == null && { fontWeight: 'bold' }"
+                    ng-disabled="slot.customer != null"
+                    ng-click="ctx.appSlot = slot">
+                    {{slot.header}}
+                </button>
+                <hr ng-show="$index == 3" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top:20px">
+
+    <!-- make a new appointment -->
+    <button
+        type="button"
+        class="btn btn-success btn-lg"
+        ng-hide="ctx.appSlot == null"
+        ng-click="bookIt()">
+        Book at {{ctx.appSlot.header}} on {{ctx.appDate | date:'longDate'}}</button>
+
+    <!-- review current appointments -->
+    <div ng-show="ctx.userApps.length > 0">
+        <a ng-href="#/review">
+            You have 
+            <ng-pluralize 
+                count="ctx.userApps.length" 
+                when="{'1': 'one appointment',
+                       '2': 'two appointments',
+                       '3': 'three appointments',
+                       'other': '{} appointments'}">
+            </ng-pluralize>
+            currently scheduled.
+        </a>
+    </div>
+</div>
