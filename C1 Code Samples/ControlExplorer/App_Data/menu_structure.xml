@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root text="root">
+  <menuitem text="Breaking News">
+    <menuitem text="header" header="true"></menuitem>
+    <menuitem text="Entertainment"></menuitem>
+    <menuitem text="Politics"></menuitem>
+    <menuitem text="A&amp;E"></menuitem>
+    <menuitem text="Sports">
+      <menuitem text="Baseball"></menuitem>
+      <menuitem text="Basketball"></menuitem>
+      <menuitem text="A really long label would wrap nicely as you can see"></menuitem>
+      <menuitem text="Swimming">
+        <menuitem text="High School"></menuitem>
+        <menuitem text="College"></menuitem>
+        <menuitem text="Professional">
+          <menuitem text="Mens Swimming">
+            <menuitem text="News"></menuitem>
+            <menuitem text="Events"></menuitem>
+            <menuitem text="Awards"></menuitem>
+            <menuitem text="Schedule"></menuitem>
+            <menuitem text="Team Members"></menuitem>
+            <menuitem text="Fan Site"></menuitem>
+          </menuitem>
+          <menuitem text="Womens Swimming">
+            <menuitem text="News"></menuitem>
+            <menuitem text="Events"></menuitem>
+            <menuitem text="Awards"></menuitem>
+            <menuitem text="Schedule"></menuitem>
+            <menuitem text="Team Members"></menuitem>
+            <menuitem text="Fan Site"></menuitem>
+          </menuitem>
+        </menuitem>
+        <menuitem text="Adult Recreational"></menuitem>
+        <menuitem text="Younth Recreational"></menuitem>
+        <menuitem text="Senior Recreational"></menuitem>
+      </menuitem>
+      <menuitem text="Tennis"></menuitem>
+      <menuitem text="Ice Skating"></menuitem>
+      <menuitem text="Javascript Programming"></menuitem>
+      <menuitem text="Running"></menuitem>
+      <menutiem text="Walking"></menutiem>
+    </menuitem>
+    <menuitem text="Local"></menuitem>
+    <menuitem text="Health"></menuitem>
+  </menuitem>
+  <menuitem text="Entertainment">
+    <menuitem text="Celebrity news"></menuitem>
+    <menuitem text="Gossip"></menuitem>
+    <menuitem text="Movies"></menuitem>
+    <menuitem text="Music">
+      <menuitem text="Alternative"></menuitem>
+      <menuitem text="Country"></menuitem>
+      <menuitem text="Dance"></menuitem>
+      <menuitem text="Electronica"></menuitem>
+      <menuitem text="Metal"></menuitem>
+      <menuitem text="Pop"></menuitem>
+      <menuitem text="Rock">
+        <menuitem text="Bands">
+          <menuitem text="Dokken"></menuitem>
+        </menuitem>
+        <menuitem text="Fan Clubs"></menuitem>
+        <menuitem text="Songs"></menuitem>
+      </menuitem>
+    </menuitem>
+    <menuitem text="Slide Shows"></menuitem>
+    <menuitem text="Red carpet"></menuitem>
+  </menuitem>
+  <menuitem text="Finance">
+    <menuitem text="Personal">
+      <menuitem text="Loans"></menuitem>
+      <menuitem text="Savings"></menuitem>
+      <menuitem text="Mortgage"></menuitem>
+      <menuitem text="Debt"></menuitem>
+    </menuitem>
+    <menuitem text="Business"></menuitem>    
+  </menuitem>
+  <menuitem text="Food &#38; Cooking">
+    <menuitem text="Breakfast"></menuitem>
+    <menuitem text="Lunch"></menuitem>
+    <menuitem text="Dinner"></menuitem>
+    <menuitem text="Dessert">
+      <menuitem text="Dump cake"></menuitem>
+      <menuitem text="Doritos"></menuitem>
+      <menuitem text="Both please"></menuitem>
+    </menuitem>
+  </menuitem>
+  <menuitem text="Lifestyle"></menuitem>
+  <menuitem text="News"></menuitem>
+  <menuitem text="Politics"></menuitem>
+  <menuitem text="Sports">
+    <menuitem text="Baseball"></menuitem>
+    <menuitem text="Basketball"></menuitem>
+    <menuitem text="A really long label would wrap nicely as you can see"></menuitem>
+    <menuitem text="Swimming">
+      <menuitem text="High School"></menuitem>
+      <menuitem text="College"></menuitem>
+      <menuitem text="Professional">
+        <menuitem text="Mens Swimming">
+          <menuitem text="News"></menuitem>
+          <menuitem text="Events"></menuitem>
+          <menuitem text="Awards"></menuitem>
+          <menuitem text="Schedule"></menuitem>
+          <menuitem text="Team Members"></menuitem>
+          <menuitem text="Fan Site"></menuitem>
+        </menuitem>
+        <menuitem text="Womens Swimming">
+          <menuitem text="News"></menuitem>
+          <menuitem text="Events"></menuitem>
+          <menuitem text="Awards"></menuitem>
+          <menuitem text="Schedule"></menuitem>
+          <menuitem text="Team Members"></menuitem>
+          <menuitem text="Fan Site"></menuitem>
+        </menuitem>
+      </menuitem>
+      <menuitem text="Adult Recreational"></menuitem>
+      <menuitem text="Younth Recreational"></menuitem>
+      <menuitem text="Senior Recreational"></menuitem>
+    </menuitem>
+    <menuitem text="Tennis"></menuitem>
+    <menuitem text="Ice Skating"></menuitem>
+    <menuitem text="Javascript Programming"></menuitem>
+    <menuitem text="Running"></menuitem>
+    <menutiem text="Walking"></menutiem>
+  </menuitem>
+ 
+</root>

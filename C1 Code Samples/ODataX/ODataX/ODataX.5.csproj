@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A82E25F-F630-433B-A3E0-19B3C252A65F}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ODataX</RootNamespace>
+    <AssemblyName>ODataX.5</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ODataX.5.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ODataX.App</SilverlightAppEntry>
+    <TestPageFileName>ODataXTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject></LinkedServerProject>
+<TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;SL5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;SL5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Data">
+      <SpecificVersion>False</SpecificVersion>
+      
+    <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll</HintPath></Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App_SL5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util\GridSplitter.cs" />
+    <Compile Include="Util\ListCollectionView.cs" />
+    <Compile Include="Util\ModalDialog.xaml.cs">
+      <DependentUpon>ModalDialog_SL5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\DataSource.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage_SL5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\BaseObject.cs" />
+    <Compile Include="ViewModel\DataTable.cs" />
+    <Compile Include="ViewModel\NavigateBackCommand.cs" />
+    <Compile Include="ViewModel\ODataCellFactory.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="View\DataTableEditor.xaml.cs">
+      <DependentUpon>DataTableEditor_SL5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataSourceEditor.xaml.cs">
+      <DependentUpon>DataSourceEditor_SL5.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App_SL5.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></ApplicationDefinition>
+    <Page Include="MainPage_SL5.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></Page>
+    <Page Include="Util\ModalDialog_SL5.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></Page>
+    <Page Include="View\DataTableEditor_SL5.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></Page>
+    <Page Include="View\DataSourceEditor_SL5.xaml"><Generator>MSBuild:Compile</Generator><SubType>Designer</SubType></Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ODataSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="C1.Silverlight.Data.5" />
+    <Reference Include="C1.Silverlight.FlexGridFilter.5" />
+    <Reference Include="C1.Silverlight.FlexGrid.5" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+<PropertyGroup><C1_MSBuildToolsVersion>v4.0</C1_MSBuildToolsVersion><C1_MSBuildToolsVersion Condition="$(VisualStudioVersion) != '10.0' And $(VisualStudioVersion) != '11.0'">v12.0</C1_MSBuildToolsVersion></PropertyGroup><UsingTask TaskName="CorrectNet4BamlNamesInline" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.$(C1_MSBuildToolsVersion).dll"><ParameterGroup><Sources ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" /><Outputs ParameterType="Microsoft.Build.Framework.ITaskItem[]" Output="true" /><ResDictNameSuffix ParameterType="System.String" Required="true" /><ResDictNameExtension ParameterType="System.String" Required="true" /><BuildingProject /></ParameterGroup><Task><Reference Include="System.Xml" /><Reference Include="$(MSBuildToolsPath)\Microsoft.Build.Framework.dll" /><Reference Include="$(MSBuildToolsPath)\Microsoft.Build.Tasks.$(C1_MSBuildToolsVersion).dll" /><Reference Include="$(MSBuildToolsPath)\Microsoft.Build.Utilities.$(C1_MSBuildToolsVersion).dll" /><Using Namespace="System" /><Using Namespace="System.IO" /><Using Namespace="System.Collections.Generic" /><Using Namespace="System.Diagnostics.CodeAnalysis" /><Using Namespace="System.Linq" /><Using Namespace="System.Text" /><Using Namespace="Microsoft.Build.Utilities" /><Using Namespace="Microsoft.Build.Framework" /><Using Namespace="System.Diagnostics" /><Using Namespace="System.Xml.Linq" /><Using Namespace="System.Globalization" /><Code Type="Class" Language="cs">
+          
+public class CorrectNet4BamlNamesInline : Microsoft.Build.Utilities.Task
+    {
+        System.Collections.Generic.List&lt;Microsoft.Build.Framework.ITaskItem&gt; _outputs = new System.Collections.Generic.List&lt;Microsoft.Build.Framework.ITaskItem&gt;();
+
+        [Microsoft.Build.Framework.Required]
+        public string ResDictNameSuffix { get; set; }
+        
+        [Microsoft.Build.Framework.Required]
+        public string ResDictNameExtension { get; set; }
+        
+        [Microsoft.Build.Framework.Required]
+        public Microsoft.Build.Framework.ITaskItem[] Sources { get; set; }
+
+		[Microsoft.Build.Framework.Output]
+		public Microsoft.Build.Framework.ITaskItem[] Outputs
+        {
+            get
+            {
+                return _outputs.ToArray();
+            }
+
+            set
+            {
+                _outputs.AddRange(value);
+            }
+        }
+
+        public string BuildingProject { get; set; }
+
+        public override bool Execute()
+        {
+            string project = BuildingProject ?? "";
+            _outputs.Clear();
+            if (Sources == null || Sources.Length == 0)
+                return true;
+            foreach (Microsoft.Build.Framework.ITaskItem item in Sources)
+            {
+                Microsoft.Build.Framework.ITaskItem newItem = new Microsoft.Build.Utilities.TaskItem(item);
+                _outputs.Add(newItem);
+                string srcLink = newItem.GetMetadata("Link");
+                string path = string.IsNullOrEmpty(srcLink) ? item.ItemSpec : srcLink;
+                string suffix = ResDictNameSuffix + "." + ResDictNameExtension;
+                if (path.EndsWith(suffix, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    string link = path.Remove(path.Length - suffix.Length, ResDictNameSuffix.Length);
+                    newItem.SetMetadata("Link", link);
+                }
+            }
+
+            return true;
+        }
+
+    }
+
+        </Code></Task></UsingTask><PropertyGroup><PrepareResourcesDependsOn>BeforeBuild;;C1RenameXamlResDicts;$(PrepareResourcesDependsOn)</PrepareResourcesDependsOn></PropertyGroup><Target Name="C1RenameXamlResDicts"><ItemGroup><_convertedXaml Remove="@(_convertedXaml)" /></ItemGroup><CorrectNet4BamlNamesInline Sources="@(Resource)" BuildingProject="$(MSBuildProjectFullPath)" ResDictNameSuffix="_SL5rd" ResDictNameExtension="xaml"><Output TaskParameter="Outputs" ItemName="_convertedXaml" /></CorrectNet4BamlNamesInline><ItemGroup><Resource Remove="@(Resource)" /><Resource Include="@(_convertedXaml)" /><_convertedXaml Remove="@(_convertedXaml)" /></ItemGroup><CorrectNet4BamlNamesInline Sources="@(EmbeddedResource)" BuildingProject="$(MSBuildProjectFullPath)" ResDictNameSuffix="_SL5rd" ResDictNameExtension="xaml"><Output TaskParameter="Outputs" ItemName="_convertedXaml" /></CorrectNet4BamlNamesInline><ItemGroup><EmbeddedResource Remove="@(EmbeddedResource)" /><EmbeddedResource Include="@(_convertedXaml)" /><_convertedXaml Remove="@(_convertedXaml)" /></ItemGroup></Target></Project>

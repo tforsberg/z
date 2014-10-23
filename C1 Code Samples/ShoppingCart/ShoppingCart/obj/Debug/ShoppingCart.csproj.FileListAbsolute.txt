@@ -1,0 +1,4 @@
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\ShoppingCart\ShoppingCart\bin\ShoppingCart.dll
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\ShoppingCart\ShoppingCart\bin\ShoppingCart.pdb
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\ShoppingCart\ShoppingCart\obj\Debug\ShoppingCart.dll
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\ShoppingCart\ShoppingCart\obj\Debug\ShoppingCart.pdb

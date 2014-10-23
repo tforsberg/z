@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WijmoSite.master.cs" Inherits="ToolkitExplorer.WijmoSite" %>
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>Wijmo Toolkit Extender Explorer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link id="Link2" runat="server" rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="<%# ResolveUrl("~/explore/js/modernizr.custom.js") %>"></script>
+    <link runat="server" href="~/explore/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" style="width: 100%; height: 100%;">
+    <div class="wrapper">
+        <header>
+            <div class="branding ui-helper-clearfix">
+                <h1 id="logo">
+                    <a href="~/" runat="server">ASP.NET Wijmo Control Explorer</a></h1>
+                <div id="button-container">
+                    <a class="downloadlink" href="http://www.componentone.com/StudioASPNET/Download/"><span class="downloadlink-inner"><span class="download-get">Download</span> <span class="download-wijmo">Free Trial</span> </span></a>
+                </div>
+            </div>
+            <div class="title-bar ui-helper-clearfix">
+                <div class="menu-container">
+                    <div class="menu-extender">
+                    </div>
+                    <div class="padder">
+                        <asp:ContentPlaceHolder ID="HeaderButtons" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div class="ribbon">
+                    <div class="ribbon-right">
+                    </div>
+                    <h2>
+                        <asp:ContentPlaceHolder ID="HeaderTitle" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </h2>
+                </div>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer class="ui-helper-clearfix" id="colophon">
+            <p>
+                     <img runat="server" src="~/explore/css/images/c1logo.png" />
+                © 2013 GrapeCity, Inc. All Rights Reserved. All product and company names herein may be trademarks of their respective owners.
+            </p>
+            <div class="social">
+                <a href="http://twitter.com/wijmo">
+                    <img runat="server" src="~/explore/css/images/icons/32/picons33.png" alt="Twitter" /></a> <a href="http://facebook.com/wijmo">
+                        <img runat="server" src="~/explore/css/images/icons/32/picons36.png" alt="Twitter" /></a>
+            </div>
+        </footer>
+    </div>
+    </form>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/explore/js/init.js") %>"></script>
+</body>
+</html>

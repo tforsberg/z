@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="NorthWindDashboard.MapNavigator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="20"
+    d:DesignHeight="130" d:DesignWidth="80">
+    
+    <UserControl.Resources>
+        <Style TargetType="HyperlinkButton" >
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Webdings" />
+            <Setter Property="RenderTransformOrigin" Value=".5 .5" />
+        </Style>
+    </UserControl.Resources>
+    
+    <!-- layout root -->
+    <Grid x:Name="LayoutRoot" Background="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- hyperlink buttons: set content to TextBlock to avoid underline on MouseOver -->
+        <HyperlinkButton Name="_btnZoomIn" Grid.Column="1" Click="_btnZoomIn_Click" >
+            <TextBlock Text="&#xfe;" />
+            <HyperlinkButton.RenderTransform>
+                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+            </HyperlinkButton.RenderTransform>
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnZoomExtent" Grid.Row="2" Grid.Column="1" Click="_btnZoomExtent_Click" >
+            <TextBlock Text="&#xfe;" />
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnZoomOut" Grid.Row="4" Grid.Column="1" Click="_btnZoomOut_Click"  >
+            <TextBlock Text="&#xfe;" />
+            <HyperlinkButton.RenderTransform>
+                <ScaleTransform ScaleX=".7" ScaleY=".7" />
+            </HyperlinkButton.RenderTransform>
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnPanUp" Grid.Column="1" Click="_btnPanUp_Click" Grid.Row="1" >
+            <TextBlock Text="5" />
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnPanLeft" Grid.Row="2" Click="_btnPanLeft_Click" >
+            <TextBlock Text="3" />
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnPanRight" Grid.Row="2" Grid.Column="2" Click="_btnPanRight_Click" >
+            <TextBlock Text="4" />
+        </HyperlinkButton>
+        <HyperlinkButton Name="_btnPanDown" Grid.Row="3" Grid.Column="1" Click="_btnPanDown_Click" >
+            <TextBlock Text="6" />
+        </HyperlinkButton>
+    </Grid>
+</UserControl>

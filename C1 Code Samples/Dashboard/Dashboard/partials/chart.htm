@@ -1,0 +1,32 @@
+﻿<div class="row-fluid">
+
+    <!-- select chart type -->
+    <div class="well span2">
+        <button class="btn btn-block btn-link" ng-click="setChartType('column')">Column</button>
+        <button class="btn btn-block btn-link" ng-click="setChartType('bar')">Bar</button>
+        <button class="btn btn-block btn-link" ng-click="setChartType('line')">Line</button>
+        <button class="btn btn-block btn-link" ng-click="setChartType('area')">Area</button>
+        <button class="btn btn-block btn-link" ng-click="setChartType('pie')">Pie</button>
+    </div>
+
+    <!-- the chart -->
+    <div class="span10">
+        <p class="text-info" >
+            Chart shows unit sales <b>forecast</b> for the current quarter ({{qThis}}).
+            The order of the products reflects average units shipped per trimester.
+        </p>
+        <dash-chart 
+            class="span12"
+            height="500"
+            type="{{chartType}}"
+            data="chartData"
+            min-value="0" 
+            x-axis-title="Product"
+            y-axis-title="Units" >
+        </dash-chart>
+    </div>
+</div>
+
+<p class="text-right" ng-hide="loading">
+    <a class="btn btn-link" href="default.htm#/bullets">show bullets</a>
+</p>

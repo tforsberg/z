@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindDashboard2010.Web.5", "NorthWindDashboard.Web\NorthWindDashboard2010.Web.5.csproj", "{3790F1F5-6A67-4067-9FA9-B9FE7877944B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWindDashboard2010.5", "NorthWindDashboard\NorthWindDashboard2010.5.csproj", "{981D7B6E-66D5-4103-90DC-0EC335B4DDFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{981D7B6E-66D5-4103-90DC-0EC335B4DDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981D7B6E-66D5-4103-90DC-0EC335B4DDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981D7B6E-66D5-4103-90DC-0EC335B4DDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981D7B6E-66D5-4103-90DC-0EC335B4DDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3790F1F5-6A67-4067-9FA9-B9FE7877944B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3790F1F5-6A67-4067-9FA9-B9FE7877944B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3790F1F5-6A67-4067-9FA9-B9FE7877944B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3790F1F5-6A67-4067-9FA9-B9FE7877944B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

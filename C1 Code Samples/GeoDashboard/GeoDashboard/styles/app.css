@@ -1,0 +1,53 @@
+﻿ /* information tiles */
+ .tile
+{
+    color: black;
+    background: #fafafa;
+    margin: 4px;
+    padding: 6px;
+    border: 1px solid #f0f0f0;
+    border-top-width: 3px;
+}
+/* bound content in tiles */
+.tile b 
+{
+    color: #8f5ca6;
+}
+/* effect when mouse hovers over tiles*/ 
+.tile:hover
+{
+    border-top-color: #8f5ca6;
+    cursor: pointer;
+}
+/* background images */
+.symbol
+{
+    width:80px;
+    height:80px;
+    text-align:center;
+    background-repeat:no-repeat;
+}
+
+/* change Wijmo widgets font to match bootstrap */
+.ui-widget
+{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
+{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* use auto-width for Wijmo menu items (really should be the default) */
+.wijmo-wijmenu .wijmo-wijmenu-parent .wijmo-wijmenu-child 
+{
+    width: auto;
+    min-width: 150px;
+}
+
+/* custom back color for Wijmo tooltips*/
+.wijmo-wijtooltip 
+{
+    background-color: #fff9d1;
+}
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="ODataX.DataTableEditor" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+  <Grid x:Name="LayoutRoot" Background="White">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <TextBlock Text="Name:" />
+    <TextBox Text="{Binding Name}" Grid.Column="1" IsReadOnly="True" />
+
+    <TextBlock Text="Filter:" Grid.Row="1" />
+    <TextBox Text="{Binding Filter, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
+
+    <TextBlock Text="Sort:" Grid.Row="2" />
+    <TextBox Text="{Binding Sort, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
+
+    <TextBlock Text="Top:" Grid.Row="3" />
+    <TextBox Text="{Binding Top, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
+  </Grid>
+</UserControl>

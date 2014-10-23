@@ -1,0 +1,39 @@
+﻿<h4>{{product.name}}</h4>
+
+<div class="row-fluid">
+
+    <!-- summary info -->
+    <div class="well span3">
+        <p><b>Rank: #{{product.id}}</b></p>
+        <p><b>Total:</b> {{product.sales.total | number:0}}</p>
+        <p><b>Average:</b> {{product.sales.avg | number:0}}</p>
+        <p><b>Current:</b> {{product.sales.qThis | number:0}}</p>
+        <div class="pagination-centered">
+            <dash-gauge
+                value="{{product.sales.qThis}}"
+                max="{{product.sales.max}}"
+                gauge="#e0e0e0"
+                fill="#ff4c55"
+                target-value="{{product.levels.target}}"
+                target-fill="#7ccc7f" 
+                width="150" >
+                </dash-gauge>
+        </div>
+    </div>
+
+    <!-- the chart -->
+    <dash-chart 
+        class="span9"
+        height="500"
+        type="line" 
+        data="product.chartData" 
+        regression="true" 
+        min="0" 
+        x-axis-title="Quarter"
+        y-axis-title="Units Sold" >
+    </dash-chart>
+</div>
+
+<p class="text-right" ng-hide="loading">
+    <button class="btn btn-link" onclick="window.location.href='default.htm#/bullets'">see bullets</button>
+</p>

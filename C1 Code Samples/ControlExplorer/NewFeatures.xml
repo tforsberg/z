@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<features>
+  <feature name="C1BinaryImage" title="New C1BinaryImage" icon="~/explore/css/images/icons/widget/BinaryImage.png"
+           description="Overview!" link="~/C1BinaryImage/Overview.aspx"/>
+  <feature name="C1FileExplorer" title="New C1FileExplorer" icon="~/explore/css/images/icons/widget/FileExplorer.png"
+           description="Overview!" link="~/C1FileExplorer/Overview.aspx"/>
+  <feature name="C1FlipCard" title="New C1FlipCard" icon="~/explore/css/images/icons/widget/FlipCard.png"
+           description="Overview!" link="~/C1FlipCard/Overview.aspx"/>
+  <feature name="C1SiteMap" title="New C1SiteMap" icon="~/explore/css/images/icons/widget/SiteMap.png"
+           description="Overview!" link="~/C1SiteMap/Overview.aspx"/>
+  <feature name="C1Sparkline" title="New C1Sparkline" icon="~/explore/css/images/icons/widget/Sparkline.png"
+           description="Overview!" link="~/C1Sparkline/Overview.aspx"/>
+  <feature name="ChartExport" title="C1Chart Export" icon="~/explore/css/images/icons/widget/BarChart.png"
+           description="Export Service!" link="~/C1BarChart/ExportingImage.aspx"/>
+  <feature name="GridExport" title="C1GridView Export" icon="~/explore/css/images/icons/widget/GridView.png"
+           description="Export Service!" link="~/C1GridView/ExportingExcel.aspx"/>
+ </features>

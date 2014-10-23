@@ -1,0 +1,243 @@
+﻿body {
+
+}
+html {
+    height: 100%;
+    
+   
+}
+.container-Title {
+    /*left:900px;*/
+    font-size: xx-large;
+    color: #993300;
+    font-weight: 700;
+    font-family: 'Segoe UI';
+    left:950px;
+    position: absolute
+}
+.header {
+    background-color:darkred;
+    height:45px;
+    width:1165px;
+    padding-left:15px;
+    padding-top:8px;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.CenterPB{
+ overflow: hidden;
+}
+
+#blur
+{
+    width: 100%;
+    background-color: black;
+   opacity: 0.5;
+       opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 120;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#progress
+{
+    z-index: 200;
+    background-color: White;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    border: solid 1px black;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+.controlpanel1 {
+    
+    left:70px;
+    position: absolute;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    
+}
+ 
+.controlpanel2 {
+     left:960px;
+     position: absolute
+}
+.controlpanel3 {
+     left:250px;
+     position: absolute
+}
+.Container1 {
+    
+     background-color:white;
+      border-radius:16px;
+    width: auto; 
+        margin: auto; top: 70px; left: 25px; position: absolute;
+    box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+    
+}
+.Container1 header {
+        z-index: 1000;
+        margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+          font-family:'Segoe UI';
+          
+    }
+.Container2 {
+     
+     background-color:white;
+     border-radius:16px;
+    width: auto; top: 370px; height: auto; 
+     margin: auto;  left: 930px; position: absolute;
+     position: absolute;
+  box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+ 
+}
+.Container2 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+          font-family:'Segoe UI';
+    }
+.panel1 {
+     padding-bottom: 5px;   padding-right: 10px;  top: 5px;  width: 1170px; height: 830px;
+      background-color:lightgrey; 
+}
+.Container3 {
+       
+     background-color:white;
+     border-radius:16px;
+    width: auto;  margin: auto; top: 370px; left: 25px; position: absolute; 
+    box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+}
+.Container3 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+          font-family:'Segoe UI';
+    }
+.Container4 {
+   
+     background-color:white;
+     border-radius:16px;
+    margin: auto; top: 370px; left: 670px; position: absolute; 
+   box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+}
+.Container4 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+          font-family:'Segoe UI';
+    }
+.Container5 {
+    
+    background-color:white;
+         border-radius:16px;
+     margin: auto; left: 350px; top:630px;  position: absolute; 
+    box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+}
+.Container5 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+          font-family:'Segoe UI';
+    }
+.Container6 {
+    background-color:white;
+        border-radius:16px;
+    width: auto;  margin: auto; top: 630px; left: 25px; position: absolute;
+    box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+}
+.Container6 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+        border-top-right-radius:16px;
+         text-align:center;
+         color:white;
+         font-family:'Segoe UI';
+    }
+.Container7 {
+    
+    background-color:white;
+    border-radius:16px;
+    width: 500px; height: 200px;   margin: auto; top: 630px; left: 670px; position: absolute;
+   box-shadow:  5px 5px 5px #888888;
+    -moz-box-shadow: 5px 5px 5px #888888;
+    -webkit-box-shadow: 5px 5px 5px #888888;
+}
+.Container8 {
+   
+    border-radius:16px;
+    width: auto; height: 200px;  margin: auto;  position: absolute;
+}
+.Container8 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-left-radius:16px;
+       text-align:center;
+    }
+.Container9 {
+  
+    border-radius:16px;
+    width: auto; height: 200px;  margin: auto;  left: 175px; position: absolute;
+}
+.Container9 header {
+        z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+       text-align:center;
+    }
+.Container10 {
+   
+    border-radius:16px;
+    width: auto; height: 200px;  margin: auto;  left: 340px; position: absolute;
+}
+.Container10 header {
+           z-index: 1000;
+         margin :0 auto;
+        background-color:#737373 ;
+        border-top-right-radius:16px;
+        text-align:center;
+    }

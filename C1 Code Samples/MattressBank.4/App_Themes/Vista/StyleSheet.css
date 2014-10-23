@@ -1,0 +1,130 @@
+﻿
+html
+{
+    background: #E3ECF2;
+}
+body
+{
+	background: #E3ECF2;
+	color: #374555;
+	margin: 0;
+	padding: .5em 0;
+	font-family: Segoe UI, Myriad, Myriad Pro, Calibri, Arial, Sans-Serif;
+}
+a, a:link, a:active, a:visited
+{
+	color: #0099cc;
+	text-decoration:none;
+}
+a:hover, a:focus
+{
+	color: #0099cc;
+	text-decoration:underline;
+}
+h1
+{
+	font-weight:100;
+}
+h2, h3, h4, h5, h6
+{
+    font-weight: 100;
+}
+fieldset
+{
+    padding: .5em;
+    outline: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+legend
+{
+	margin: 0 .5em;
+}
+label
+{
+	display: block;
+}
+
+#doc2
+{
+	background: #ffffff;
+	border:solid 1px #000;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0 4px 10px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.75);
+}
+#hd
+{
+	position:relative;
+	zoom:1;
+	display:block;
+	padding: 0;
+	background: #084f75 url(images/FadeDark.png) repeat-x bottom left;
+	border:solid 1px #fff;
+	border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+}
+#bd
+{
+	min-height: 500px;
+}
+#ft
+{
+	margin: .5em;
+	padding: 1em;
+	text-align:center;
+}
+#hd h2
+{
+	padding: .5em 0;
+	margin: 0 1em;
+	color: #fff;
+	font-size: 3em;
+	line-height: 1;
+	text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+.content
+{
+	margin: .5em;
+	padding: .5em;
+}
+.sidebar
+{
+	background: #E8EAEE;
+	padding: .5em;
+	margin: .5em 0 .5em .5em;
+	min-height: 300px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.error
+{
+	font-size: .9em;
+	padding: 4px;
+	margin: 3px;
+	line-height: 1;
+	color: #ffffff;
+	background: #ffff99 url(images/FadeLightShort.png) repeat-x top left;
+	border: solid 1px #ffcc00;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+	outline: none;
+}
+.right
+{
+    float:right;
+}

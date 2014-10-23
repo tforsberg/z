@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html ng-app="gdash">
+<head>
+    <title>GeoDashboard</title>
+
+    <!-- jQuery/jQueryUI -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+    <!-- Angular -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" />
+
+    <!-- Esri Map api -->
+    <link type="text/css" rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css">
+    <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"></script>
+
+    <!-- Google's geocoder -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+    <!-- Wijmo -->
+    <link type="text/css" href="http://cdn.wijmo.com/themes/metro/jquery-wijmo.css" rel="stylesheet" title="metro-jqueryui" />
+    <link type="text/css" href="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.1.5.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://cdn.wijmo.com/jquery.wijmo-open.all.2.1.5.min.js"></script>
+    <script type="text/javascript" src="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.1.5.min.js"></script>
+
+    <!-- app -->
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/viewModel.js"></script>
+    <script type="text/javascript" src="scripts/gdashApp.js"></script>
+    <script type="text/javascript" src="scripts/filters/gdashFilters.js"></script>
+    <script type="text/javascript" src="scripts/controllers/gdashCtrl.js"></script>
+    <script type="text/javascript" src="scripts/directives/gdashDctv.js"></script>
+    <script type="text/javascript" src="scripts/directives/esriDctv.js"></script>
+</head>
+<body ng-controller="gdashCtrl">
+
+    <div class="container-fluid">
+
+        <!-- header -->
+        <div class="row-fluid">
+            <div class="pull-left" 
+                style="white-space: nowrap"
+                title="Drag the map to select a location and update the tiles. Click the tiles to update the map." >
+                <img src="images/wijmoLogo_48.png" style="float:left;margin:12px;" />
+                <h3 class="text-info" style="margin-bottom:0px">
+                    ComponentOne GeoDashboard</h3>
+                <p class="text-info">
+                    Built with Wijmo, Esri maps, and AngularJS.</p>
+            </div>
+            <div class="pull-right" style="margin-top:6px">
+                <div class="row-fluid">
+                    <div class="input-append pull-right">
+                        <input class="span8" type="text" 
+                            ng-model="search" 
+                            gdash-enter="geoCode()" />
+                        <button class="btn" type="button" 
+                            title="Search for a location" ng-click="geoCode()" ng-disabled="search.length == 0" >
+                            <i class="icon-search"></i>
+                        </button>
+                        <button class="btn" type="button" 
+                            title="Go to current location" ng-click="gotoCurrentLocation()" >
+                            <i class="icon-home"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <h4 class="text-info text-right" style="margin-top:0px">
+                        {{location.name}} 
+                        <span style="font-size:10pt">
+                            ({{location.lat | latitude:0}}, {{location.lon | longitude:0}})                            
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+	
+        <!-- map with cross-hairs -->
+        <esri-map 
+            extent="extent" 
+            tile-source="selectedSource"
+            style="height:400px;margin:0px 12px 12px 12px;border:1px solid black;box-shadow:0 3px 25px black;"> 
+            <esri-crosshair color="#8f5ca6"></esri-crosshair>
+        </esri-map>
+
+        <!-- no info? -->
+        <div class="row-fluid text-center" ng-show="!location.isValid" >
+            <div class="alert">
+                No data is available for this location.<br />
+                Please drag the map to select a mainland location within the USA.
+            </div>
+        </div>
+    
+        <!-- info tiles -->
+        <div class="span11 offset1">
+            <div ng-show="location.isValid" >
+
+                <gdash-tile header="{{location.name}}" click="selectSource(sources.tapestry)">
+                    The dominant tapestry<br />
+                    is <b>{{sources.tapestry.values.TAPSEGNAM.value}}</b>.
+                    <p class="muted" style="max-width:200px;margin-left:6px;">
+                        {{domTapDescription}}
+                    </p>
+                </gdash-tile>
+
+                <gdash-tile header="Population by Sex" click="selectSource(sources.populationBySex)" >
+                    <p>Total Population: <b>{{sources.populationBySex.values.TOTPOP_CY.value | number:0}}</b></p>
+                    <table>
+                        <tr>
+                            <td class="symbol" style="background-image:url(images/male.png);background-position:left center">
+                                <b>{{sources.populationBySex.values.PMALE_CY.value | number:1}}%<br />male</b>
+                            </td>
+                            <td class="symbol" style="background-image:url(images/female.png);background-position:right center">
+                                <b>{{sources.populationBySex.values.PFEMALE_CY.value | number:1}}%<br />female</b>
+                            </td>
+                        </tr>
+                    </table>
+                </gdash-tile>
+
+                <gdash-tile header="Median Age" click="selectSource(sources.age)">
+                    The median age is <b>{{sources.age.values.MEDAGE_CY.value | number:1}} years</b><br />
+                    <gdash-barchart 
+                        data="sources.age.shortList" 
+                        x="name" 
+                        y="value" 
+                        hint="{y} people ({y%})\n are {x}"
+                        color="#8f5ca6">
+                    </gdash-barchart>
+                </gdash-tile>
+
+                <gdash-tile header="Household Income" click="selectSource(sources.householdIncome)">
+                    The average income is <b>${{sources.householdIncome.values.MEDHINC_CY.value | number:0}}</b><br />
+                    <gdash-barchart 
+                        data="sources.householdIncome.shortList"
+                        x="name"
+                        y="value"
+                        hint="{y} households ({y%})\nearn {x}"
+                        color="#8f5ca6">
+                    </gdash-barchart>
+                </gdash-tile>
+
+                <gdash-tile header="Median Household Net Worth" click="selectSource(sources.netWorth)">
+                    <p>
+                        The median net worth is
+                        <b>${{sources.netWorth.values.MEDNW_CY.value | number:0}}</b>
+                    </p>
+                    <gdash-gauge 
+                        value="{{sources.netWorth.values.MEDNW_CY.value}}" 
+                        max="300000"
+                        color="#8f5ca6">
+                    </gdash-gauge>
+                </gdash-tile>
+
+                <gdash-tile header="Home Values" click="selectSource(sources.homeValue)">
+                    <b>{{sources.homeValue.values.NAME.value}}'s</b> median home value is<br />
+                    <b>${{sources.homeValue.values.MEDVAL_CY.value | number:0}}</b>
+                    ({{getIndexDescription(sources.homeValue.values.MEDVAL_I.value)}}).<br />
+                    <table>
+                        <tr>
+                            <td>Home Value Index</td>
+                            <td>
+                                <gdash-slider 
+                                    value="{{sources.homeValue.values.MEDVAL_I.value}}" 
+                                    color="#8f5ca6">
+                                </gdash-slider>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Household Income Index</td>
+                            <td>
+                                <gdash-slider 
+                                    value="{{sources.homeValue.values.MEDHINC_I.value}}" 
+                                    color="#8f5ca6">
+                                </gdash-slider>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Net Worth Index</td>
+                            <td>
+                                <gdash-slider 
+                                    value="{{sources.homeValue.values.MEDNW_I.value}}"
+                                    color="#8f5ca6">
+                                </gdash-slider>
+                            </td>
+                        </tr>
+                    </table>
+                    <gdash-barchart 
+                        data="sources.homeValue.shortList"
+                        x="name"
+                        y="value"
+                        hint="{y} homes ({y%}) in the\n{x} range"
+                        color="#8f5ca6">
+                    </gdash-barchart>
+                </gdash-tile>
+
+                <gdash-tile header="Home Value Distribution" click="selectSource(sources.homeValue)">
+                    <gdash-barchart 
+                        data="sources.homeValue.list" 
+                        x="name" 
+                        y="value"
+                        hint="{y} homes ({y%}) in the\n{x} value range"
+                        column="true"
+                        color="#8f5ca6"
+                        width="400" height="300">
+                    </gdash-barchart>
+                </gdash-tile>
+
+                <gdash-tile header="About this app" click="selectSource()">
+                    This application was created using<br />
+                    ComponentOne's <a href="http://wijmo.com">Wijmo</a>,<br />
+                    Esri's <a href="http://developers.arcgis.com/en/javascript/jshelp/">map widget</a>
+                    and <a href="http://www.esri.com/data/free-data">data services</a>,<br />
+                    and Google's <a href="http://angularjs.org/">AngularJS</a> framework.
+                </gdash-tile>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

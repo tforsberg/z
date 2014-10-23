@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<C1NWind Name="Report1">
+		<Products>
+			<Product ProductName="Chai" ProductID="1" />
+			<Product ProductName="Chang" ProductID="2" />
+			<Product ProductName="Aniseed Syrup" ProductID="3" />
+			<Product ProductName="Chef Anton's Cajun Seasoning" ProductID="4" />
+			<Product ProductName="Chef Anton's Gumbo Mix" ProductID="5" />
+			<Product ProductName="Grandma's Boysenberry Spread" ProductID="6" />
+			<Product ProductName="Uncle Bob's Organic Dried Pears" ProductID="7" />
+			<Product ProductName="Northwoods Cranberry Sauce" ProductID="8" />
+			<Product ProductName="Mishi Kobe Niku" ProductID="9" />
+			<Product ProductName="Ikura" ProductID="10" />
+			<Product ProductName="Queso Cabrales" ProductID="11" />
+			<Product ProductName="Queso Manchego La Pastora" ProductID="12" />
+			<Product ProductName="Konbu" ProductID="13" />
+			<Product ProductName="Tofu" ProductID="14" />
+			<Product ProductName="Genen Shouyu" ProductID="15" />
+			<Product ProductName="Pavlova" ProductID="16" />
+			<Product ProductName="Alice Mutton" ProductID="17" />
+			<Product ProductName="Carnarvon Tigers" ProductID="18" />
+			<Product ProductName="Teatime Chocolate Biscuits" ProductID="19" />
+			<Product ProductName="Sir Rodney's Marmalade" ProductID="20" />
+			<Product ProductName="Sir Rodney's Scones" ProductID="21" />
+			<Product ProductName="Gustaf's Knäckebröd" ProductID="22" />
+			<Product ProductName="Tunnbröd" ProductID="23" />
+			<Product ProductName="Guaraná Fantástica" ProductID="24" />
+			<Product ProductName="NuNuCa Nuß-Nougat-Creme" ProductID="25" />
+			<Product ProductName="Gumbär Gummibärchen" ProductID="26" />
+			<Product ProductName="Schoggi Schokolade" ProductID="27" />
+			<Product ProductName="Rössle Sauerkraut" ProductID="28" />
+			<Product ProductName="Thüringer Rostbratwurst" ProductID="29" />
+			<Product ProductName="Nord-Ost Matjeshering" ProductID="30" />
+			<Product ProductName="Gorgonzola Telino" ProductID="31" />
+			<Product ProductName="Mascarpone Fabioli" ProductID="32" />
+			<Product ProductName="Geitost" ProductID="33" />
+			<Product ProductName="Sasquatch Ale" ProductID="34" />
+			<Product ProductName="Steeleye Stout" ProductID="35" />
+			<Product ProductName="Inlagd Sill" ProductID="36" />
+			<Product ProductName="Gravad lax" ProductID="37" />
+			<Product ProductName="Côte de Blaye" ProductID="38" />
+			<Product ProductName="Chartreuse verte" ProductID="39" />
+			<Product ProductName="Boston Crab Meat" ProductID="40" />
+			<Product ProductName="Jack's New England Clam Chowder" ProductID="41" />
+			<Product ProductName="Singaporean Hokkien Fried Mee" ProductID="42" />
+			<Product ProductName="Ipoh Coffee" ProductID="43" />
+			<Product ProductName="Gula Malacca" ProductID="44" />
+			<Product ProductName="Røgede sild" ProductID="45" />
+			<Product ProductName="Spegesild" ProductID="46" />
+			<Product ProductName="Zaanse koeken" ProductID="47" />
+			<Product ProductName="Chocolade" ProductID="48" />
+			<Product ProductName="Maxilaku" ProductID="49" />
+			<Product ProductName="Valkoinen suklaa" ProductID="50" />
+			<Product ProductName="Manjimup Dried Apples" ProductID="51" />
+			<Product ProductName="Filo Mix" ProductID="52" />
+			<Product ProductName="Perth Pasties" ProductID="53" />
+			<Product ProductName="Tourtière" ProductID="54" />
+			<Product ProductName="Pâté chinois" ProductID="55" />
+			<Product ProductName="Gnocchi di nonna Alice" ProductID="56" />
+			<Product ProductName="Ravioli Angelo" ProductID="57" />
+			<Product ProductName="Escargots de Bourgogne" ProductID="58" />
+			<Product ProductName="Raclette Courdavault" ProductID="59" />
+			<Product ProductName="Camembert Pierrot" ProductID="60" />
+			<Product ProductName="Sirop d'érable" ProductID="61" />
+			<Product ProductName="Tarte au sucre" ProductID="62" />
+			<Product ProductName="Vegie-spread" ProductID="63" />
+			<Product ProductName="Wimmers gute Semmelknödel" ProductID="64" />
+			<Product ProductName="Louisiana Fiery Hot Pepper Sauce" ProductID="65" />
+			<Product ProductName="Louisiana Hot Spiced Okra" ProductID="66" />
+			<Product ProductName="Laughing Lumberjack Lager" ProductID="67" />
+			<Product ProductName="Scottish Longbreads" ProductID="68" />
+			<Product ProductName="Gudbrandsdalsost" ProductID="69" />
+			<Product ProductName="Outback Lager" ProductID="70" />
+			<Product ProductName="Fløtemysost" ProductID="71" />
+			<Product ProductName="Mozzarella di Giovanni" ProductID="72" />
+			<Product ProductName="Röd Kaviar" ProductID="73" />
+			<Product ProductName="Longlife Tofu" ProductID="74" />
+			<Product ProductName="Rhönbräu Klosterbier" ProductID="75" />
+			<Product ProductName="Lakkalikööri" ProductID="76" />
+			<Product ProductName="Original Frankfurter grüne Soße" ProductID="77" />
+		</Products>
+</C1NWind>

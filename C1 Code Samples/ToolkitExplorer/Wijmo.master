@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/WijmoSite.Master"
+    CodeBehind="Wijmo.master.cs" Inherits="ToolkitExplorer.Wijmo" %>
+
+<%@ Register Assembly="C1.Web.Wijmo.Extenders.3" Namespace="C1.Web.Wijmo.Extenders.C1Tabs"
+    TagPrefix="wijmo" %>
+<%@ Register Assembly="Wilco.SyntaxHighlighter" Namespace="Wilco.Web.SyntaxHighlighting"
+    TagPrefix="cc1" %>
+<asp:Content ID="headContent" runat="server" ContentPlaceHolderID="head">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeaderButtons">
+    <a href="~/widgets.aspx" runat="server" class="button button-icon">
+        <img runat="server" src="~/explore/css/images/dots.png"></a> <span id="switcherContainer"
+            runat="server">
+            <select id="themeswitcher">
+                <optgroup label="Wijmo">
+                    <option value="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css">Aristo</option>
+                    <option value="http://cdn.wijmo.com/themes/midnight/jquery-wijmo.css">Midnight</option>
+                    <option value="http://cdn.wijmo.com/themes/rocket/jquery-wijmo.css">Rocket</option>
+                    <option value="http://cdn.wijmo.com/themes/cobalt/jquery-wijmo.css">Cobalt</option>
+                    <option value="http://cdn.wijmo.com/themes/sterling/jquery-wijmo.css">Sterling</option>
+                    <option value="http://cdn.wijmo.com/themes/metro/jquery-wijmo.css">Metro</option>
+                    <option value="http://cdn.wijmo.com/themes/metro-dark/jquery-wijmo.css">Metro Dark</option>
+                </optgroup>
+                <optgroup label="jQuery UI">
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/black-tie/jquery-ui.css">
+                        Black Tie</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/blitzer/jquery-ui.css">
+                        Blitzer</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/cupertino/jquery-ui.css">
+                        Cupertino</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/dark-hive/jquery-ui.css">
+                        Dark Hive</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/dot-luv/jquery-ui.css">
+                        Dot Luv</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/eggplant/jquery-ui.css">
+                        Eggplant</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/excite-bike/jquery-ui.css">
+                        Excite Bike</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/flick/jquery-ui.css">
+                        Flick</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/hot-sneaks/jquery-ui.css">
+                        Hot Sneaks</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/humanity/jquery-ui.css">
+                        Humanity</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/le-frog/jquery-ui.css">
+                        Le Frog</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/mint-choc/jquery-ui.css">
+                        Mint Chocolate</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/overcast/jquery-ui.css">
+                        overcast</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/pepper-grinder/jquery-ui.css">
+                        Pepper Grinder</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/redmond/jquery-ui.css">
+                        Redmond</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css">
+                        Smoothness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/south-street/jquery-ui.css">
+                        South Street</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/start/jquery-ui.css">
+                        Start</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/sunny/jquery-ui.css">
+                        Sunny</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/swanky-purse/jquery-ui.css">
+                        Swanky Purse</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/trontastic/jquery-ui.css">
+                        Trontastic</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-darkness/jquery-ui.css">
+                        UI Darkness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css">
+                        UI Lightness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/vader/jquery-ui.css">
+                        Vader</option>
+                </optgroup>
+            </select>
+        </span>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="HeaderTitle">
+    <asp:Label ID="WidgetNameLebel" runat="server" Text="Label"></asp:Label></asp:Content>
+<asp:Content ID="Content3" runat="server" ContentPlaceHolderID="MainContent">
+    <section>
+        <aside>
+            <div class="padder">
+                <h4 class="sample-title">
+                    Samples</h4>
+                <!--qq-->
+                <asp:Panel runat="server" ID="navigation" CssClass="navigation" role="navigation">
+                </asp:Panel>
+                <!--qq-->
+            </div>
+        </aside>
+        <article class="ui-helper-clearfix">
+            <div class="main-content" id="sampleContent">
+                <div class="padder">
+                    <h3 class="main-sample-title">
+                        <asp:Label ID="WidgetSampleLebel" runat="server" Text="Label"></asp:Label>
+                    </h3>
+                    <asp:Panel ID="WidgetTabs" runat="server">
+                    <ul>
+			            <li><a href="#sampleContainer">Sample</a></li>
+			            <li><a href="#descriptionContainer">Description</a></li>
+		            </ul>
+                    <div id="sampleContainer">
+			<p>
+				<div class="widget-wrapper">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                <div class="ui-widget-content ui-corner-all" style="margin-top: 5px; clear: both; float: none; border: none">
+                                    <asp:ContentPlaceHolder ID="ControlOptions" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                        </div>
+                        </p>
+		</div>
+		<div id="descriptionContainer">
+			<p>
+				<div class="widget-description">
+                            <asp:ContentPlaceHolder ID="Description" runat="server">
+                            </asp:ContentPlaceHolder>
+                </div>
+            </p>
+		</div>
+                    </asp:Panel>
+
+
+    <wijmo:C1TabsExtender ID="TabsExtender1" runat="server" TargetControlID="WidgetTabs" />
+                    <a id="docs" class="ui-helper-hidden-accessible" runat="server" href="http://our.componentone.com/wiki/index.php?title=Studio_for_ASP.NET_Wijmo" target="_blank">Documentation</a>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#ctl00_ctl00_MainContent_WidgetTabs").wijtabs({ load: function () {
+                                $("#sourceTab").wijtabs();
+                            },
+                                show: function (e, ui) {
+                                    var tab = $(ui.tab).parent("li"),
+										tabs = tab.parent(),
+										selectedClass = 'ui-explore-tabs-selected';
+                                    $("." + selectedClass, tabs).removeClass(selectedClass);
+                                    tab.addClass(selectedClass);
+                                },
+                                spinner: "Source"
+                            });
+
+                            $("#ctl00_ctl00_MainContent_WidgetTabs").wijtabs("add", "../GetSourceCode.aspx?t=" + Math.random(), "Source", 2);
+
+                            $("#ctl00_ctl00_MainContent_docs").appendTo("<li></li>").parent().appendTo("#ctl00_ctl00_MainContent_WidgetTabs > ul").find("#ctl00_ctl00_MainContent_docs").removeClass("ui-helper-hidden-accessible");
+                            $("#ui-tabs-2").addClass("ui-tabs-hide");
+                        }); 
+                    </script>                    
+                    <script type="text/javascript" src="<%= Page.ResolveUrl("~/explore/js/jquery.wijmo.wijdropdown.min.js") %>"></script>
+                </div>
+            </div>
+        </article>
+    </section>
+</asp:Content>

@@ -1,0 +1,38 @@
+﻿/*!
+ * Extend Bootstrap v2.3.1 to provide cell alignment (doh)
+ *
+ */
+.table th, .table td 
+{
+    border-top: none; /* remove table borders */
+}
+.table td.tdRight
+{
+    text-align: right;
+}
+.table td.tdCenter
+{
+    text-align: center;
+}
+.table td.tdWide
+{
+    text-align: center;
+    width: 120px;
+}
+.table td.tdNarrow
+{
+    width: 50px;
+}
+.table-nonfluid
+{
+    width: auto;
+}
+.no-margin
+{
+    margin: 0;
+}
+.no-padding
+{
+    padding-bottom: 0;
+    padding-right: 4px;
+}

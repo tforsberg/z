@@ -1,0 +1,345 @@
+﻿.album
+{
+    padding: 4px;
+    background: #fff;
+    height: 128px;
+    width: 128px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+label
+{
+    font-weight: 800;
+    display: block;
+}
+#toaster
+{
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.toast
+{
+    display: none;
+    position: relative;
+    clear: both;
+    padding: 20px;
+    margin: 4px;
+    background: #333;
+    background: rgba(0,0,0,0.75);
+    border: 1px solid #000;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.empty
+{
+    background: #fff;
+    border: 1px solid #999;
+    padding: 2em;
+    margin: 1em;
+    font-size: 2em;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.loader
+{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: #fff;
+    border: 1px solid #999;
+    padding: 2em;
+    margin: 1em;
+    font-size: 2em;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.C1wContentTemplate
+{
+    padding: 5px;
+}
+.C1Window_Vista .C1wContentTemplate
+{
+    padding: 0;
+}
+.C1MultiPage_Vista .C1pvOuter
+{
+    border: none;
+}
+
+#bd
+{
+    background: #d9dee7;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: solid 1px #6a6c70;
+}
+
+#yui-main
+{
+}
+.yui-t2 #yui-main .yui-b
+{
+    margin-left: 13.8461em;
+}
+
+.yui-t2 .yui-b .sidebar
+{
+    padding: 0 10px;
+}
+.content
+{
+    margin: 30px;
+}
+.wijmo-wijgrid
+{
+    margin: 0;
+}
+
+.C1GridView_ArcticFox .C1OuterTable
+{
+    border: none;
+    border-left: 1px solid #999999;
+}
+
+
+.C1GridView_ArcticFox .C1Heading th
+{
+    border-top: none;
+}
+
+.searchbox
+{
+    background: #fff;
+    border: 1px solid #999;
+    margin: 1em;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    border: 1px solid #999999;
+    margin: 1em;
+    padding: 1px;
+    position: absolute;
+    right: 16px;
+    top: 2px;
+}
+.searchbox input
+{
+    border: none;
+}
+
+.C1Menu_ArcticFox-C1Vertical, .C1Menu_ArcticFox-C1Context-C1Vertical, .C1Menu_ArcticFox .C1SubMenu-C1Vertical
+{
+    background: none;
+    border: none;
+    font-size: 12px;
+}
+
+.C1Menu_ArcticFox .C1ScrollContainer
+{
+    border: none;
+}
+
+.sidebar h3
+{
+    margin: 0;
+    color: #627080;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 5px 0;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.C1GridView_ArcticFox .C1AlternatingItems
+{
+    background: none repeat scroll 0 0 #f3f7fb;
+}
+
+.C1TabControl_Vista_C1Top .C1MultiPage_Vista
+{
+    margin-top: -3px;
+}
+
+
+C1TabControl_Vista
+{
+    padding: 5px;
+}
+
+
+.C1MultiPage_Vista .C1pvInner
+{
+    padding: 8px 5px;
+    border-top: solid 1px #999;
+    margin-top: 2px;
+    background: #fff;
+}
+
+.C1Window_Vista .C1wContentPanel .C1wContentTemplate
+{
+    background: #f0f0f0;
+}
+
+
+.C1GridView_ArcticFox .C1Content .C1HoverRow .C1Gtd
+{
+    background: none repeat scroll 0 0 #4b95e5;
+}
+
+.C1GridView_ArcticFox
+{
+    font-size: 11px;
+}
+
+.C1GridView_ArcticFox tfoot .C1PagerRow
+{
+    background: #7b8391 url(Images/footer.png) repeat-x top;
+    height: 47px;
+}
+
+.C1GridView_ArcticFox .C1PagerRow span
+{
+    color: #fff;
+    font-weight: bold;
+    margin: 0 3px;
+}
+
+.C1GridView_ArcticFox .C1PagerRow .C1Link
+{
+    color: #fff;
+    font-size: 10px;
+    text-shadow: 1px 1px 0 #363636;
+}
+
+.C1GridView_ArcticFox .C1PagerRow .C1NextButton
+{
+    background: transparent url(Images/next.png) no-repeat top;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+
+.C1GridView_ArcticFox .C1PagerRow .C1PreviousButton
+{
+    background: transparent url(Images/prev.png) no-repeat top;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+.C1GridView_ArcticFox .C1Heading th
+{
+    background: #fff url(Images/header.png) repeat-x top;
+    font-weight: bold;
+    color: #2a2a2a;
+    padding: 3px 5px 0 5px;
+    height: 12px;
+}
+
+
+.C1GridView_ArcticFox thead
+{
+}
+
+.C1GridView_ArcticFox .C1Heading .C1ActiveHeaderCell
+{
+    background: #fff url(Images/header_active.png) repeat-x top;
+    color: #2a2a2a;
+    text-shadow: 1px 1px 0 #d6deea;
+}
+
+.C1GridView_ArcticFox .C1ImageSortAsc
+{
+    background: transparent url(Images/asc.png) no-repeat center;
+}
+
+.C1GridView_ArcticFox .C1ImageSortDesc
+{
+    background: transparent url(Images/desc.png) no-repeat center;
+}
+
+.yui-t1 #yui-main, .yui-t2 #yui-main, .yui-t3 #yui-main
+{
+    margin-bottom: -11px;
+}
+
+
+.menublock
+{
+}
+
+.C1Menu_ArcticFox .C1Link .C1TextNode
+{
+    color: #000;
+    display: block;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 11px;
+}
+
+
+.C1Menu_ArcticFox .C1Active, .C1Menu_ArcticFox .C1Hover, .C1Menu_ArcticFox .C1Focus, .C1Menu_ArcticFox .C1Opened
+{
+    display: block;
+    background: #1e6cbb url(Images/menu_hover.png) repeat-x top;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px 0 #22568c;
+    -moz-border-radius: 10px;
+}
+
+.C1Menu_ArcticFox .C1CheckableSupport .C1Checked
+{
+    display: block;
+    background: #1e6cbb url(Images/menu_hover.png) repeat-x top;
+    text-decoration: none;
+    color: #fff;
+    -moz-border-radius: 10px;
+}
+
+.C1Menu_ArcticFox .c1-v-flow .C1Active, .C1Menu_ArcticFox .c1-v-flow .C1Hover, .C1Menu_ArcticFox .c1-v-flow .C1Focus, .C1Menu_ArcticFox .c1-v-flow .C1Opened
+{
+    border-bottom: solid 1px transparent;
+    border-top: solid 1px transparent;
+    border-left: solid 0px;
+    border-right: solid 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #fff;
+}
+
+.C1Menu_ArcticFox .C1Hover .C1TextNode
+{
+    color: #fff;
+    font-weight: bold;
+}
+
+.C1Menu_ArcticFox .C1Checked .C1TextNode
+{
+    color: #fff;
+    font-weight: bold;
+}

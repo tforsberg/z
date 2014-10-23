@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title></title>    <!--Wijmo Theme-->
+    <link href="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css" rel="stylesheet" type="text/css">
+    <!--Wijmo Widget CSS-->
+    <link href="http://cdn.wijmo.com/jquery.wijmo-pro.all.<%= pkg.version %>.min.css" rel="stylesheet" type="text/css">
+    <!--RequireJS AMD Loader-->
+    <script src="http://cdn.wijmo.com/external/require.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	    var viewModel;
+
+	    requirejs.config({
+	        baseUrl: "../../amd-js/",
+	        paths: {
+	            "jquery": "jquery-<%= pkg.dependencies.jquery %>.min",
+	            "jquery-ui": "jquery-ui-<%= pkg.dependencies['jquery-ui'] %>.custom.min",
+	            "jquery.ui": "jquery-ui",
+	            "jquery.mousewheel": "jquery.mousewheel.min",
+	            "globalize": "globalize.min",
+	            "knockout": "knockout-<%= pkg.dependencies.knockout %>"
+	        }
+	    });
+
+		require(["knockout.wijmo", "wijmo.wijgrid", "wijmo.data.ajax"], function () {
+	  
+	        function ViewModel() { 
+	            var geonameView = new wijmo.data.AjaxDataView("http://ws.geonames.org/searchJSON", { 
+	                pageSize: 10, 
+	  
+	                // jQuery AJAX settings 
+	                ajax: { 
+	                    dataType: "jsonp", 
+	                    data: { 
+	                        featureClass: "P", 
+	                        style: "full", 
+	                        name_startsWith: 'ab'
+	                    } 
+	                }, 
+	  
+	                serverSettings: { 
+	                    // query string parameters for a request 
+	                    skip: "startRow", 
+	                    take: "maxRows", 
+	  
+	                    // mapping to property names of a server response 
+	                    results: "geonames", 
+	                    totalItemCount: "totalResultsCount"
+	                } 
+	            }); 
+	            geonameView.refresh(); 
+	  
+	            this.geonames = geonameView; 
+	  
+	            this.clearPaging = function () { 
+	                geonameView.pageSize(0); 
+	            }; 
+	            this.setPaging = function () { 
+	                geonameView.pageSize(10); 
+	            }; 
+	            this.prevPage = function () { 
+	                geonameView.prevPage(); 
+	            }; 
+	            this.nextPage = function () { 
+	                geonameView.nextPage(); 
+	            }; 
+	        } 
+	  
+            $(document).ready(function () { 
+                viewModel = new ViewModel(); 
+                ko.applyBindings(viewModel); 
+            }); 
+
+		});
+	</script>
+</head>
+<body>
+
+	<table> 
+        <tr> 
+            <th>Pages</th> 
+            <td> 
+                <button data-bind="click:clearPaging, button: {}" type="button">pageSize = 0</button> 
+                <button data-bind="click:setPaging, button: {}" type="button">pageSize = 10</button> 
+                <button data-bind="click:prevPage, button: {}" type="button">prev</button> 
+                <button data-bind="click:nextPage, button: {}" type="button">next</button> 
+            </td> 
+        </tr> 
+    </table> 
+
+    <!--<h3>geonames. page #<span data-bind='text: geonames.pageIndex() + 1'></span>/<span data-bind='text: geonames.totalPages()'></span></h3>-->
+
+    <table id="demo-grid" data-bind='wijgrid: { data: geonames, allowPaging: true, columnsAutogenerationMode: "none", columns: [ 
+        { headerText: "Country", dataKey: "countryName" }, 
+        { headerText: "Country code", dataKey: "countryCode" }, 
+        { headerText: "Latitude", dataKey: "lat" }, 
+        { headerText: "Longitude", dataKey: "lng" } 
+        ] }' > 
+    </table> 
+
+</body>
+</html>

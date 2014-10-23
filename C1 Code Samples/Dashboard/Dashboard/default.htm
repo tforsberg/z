@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>ComponentOne Dashboard</title>
+
+    <!-- jQuery, jQueryUI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" type="text/javascript"></script>
+
+    <!-- Angular (after jQuery) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js" type="text/javascript" ></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js" type="text/javascript" ></script> -->
+
+    <!-- Wijmo -->
+    <link href="http://cdn.wijmo.com/themes/metro/jquery-wijmo.css" rel="stylesheet" title="metro-jqueryui" type="text/css" />
+    <link href="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.3.1.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.wijmo.com/jquery.wijmo-open.all.2.3.1.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.3.1.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript" ></script>
+
+    <!-- app -->
+    <script src="scripts/dashApp.js" type="text/javascript"></script>
+    <script src="scripts/product.js" type="text/javascript"></script>
+    <script src="scripts/controllers/dashCtrl.js" type="text/javascript"></script>
+    <script src="scripts/directives/dashDctv.js" type="text/javascript"></script>
+    <link href="styles/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body ng-app="dashApp" ng-controller="dashCtrl">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+
+                <!-- app title -->
+                <div class="well no-padding" onclick="window.location.href='default.htm'" >
+                    <h3>
+                        <img src="resources/dashboard.png" />
+                        Sales Dashboard
+                    </h3>
+                    <p class="text-info">
+                        Quarterly sales dashboard using sparklines and bullet charts. 
+                        The main view was created based on design principles described in Stephen Few's book 
+                        <a href="http://www.amazon.com/Information-Dashboard-Design-Effective-Communication/dp/0596100167">
+                        "Information Dashboard Design: The Effective Visual Communication of Data"</a>.
+                    </p>
+                    <p class="text-info text-right no-margin">
+                        <dash-tooltip content-id="fineprint">
+                            unit sales from {{qStart}} to {{qThis}}
+                        </dash-tooltip>
+                    </p>
+                </div>
+
+                <!-- view -->
+                <div ng-view></div>
+
+                <!-- status messages -->
+                <div ng-show="loading" >
+                    <div class='progress progress-striped active'>
+                        <div class='bar' style='width: 100%;'></div>
+                    </div>
+                    <p class="text-info text-center no-margin">loading...</p>
+                </div>
+                <p class="text-error" ng-show="error && error.length > 0">
+                    *** {{ error }} ***
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fineprint" style="display:none">
+        <h3>Important Note</h3>
+        <p>
+            Data for the current quarter is estimated by pro-rating the current 
+            data. The estimates grow more accurate as the end of each quarter
+            approaches.</p>
+        <p>
+            Estimates for the months of <b>January</b>, <b>April</b>, <b>July</b>, 
+            and <b>October</b> are not as good as those for the months of <b>March</b>,
+            <b>June</b>, <b>September</b>, and <b>December</b>.</p>
+    </div>
+</body>
+</html>

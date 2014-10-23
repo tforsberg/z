@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChinookModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ChinookModelStoreContainer">
+          <EntitySet Name="Album" EntityType="ChinookModel.Store.Album" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Artist" EntityType="ChinookModel.Store.Artist" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Customer" EntityType="ChinookModel.Store.Customer" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Employee" EntityType="ChinookModel.Store.Employee" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Genre" EntityType="ChinookModel.Store.Genre" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Invoice" EntityType="ChinookModel.Store.Invoice" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="InvoiceLine" EntityType="ChinookModel.Store.InvoiceLine" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="MediaType" EntityType="ChinookModel.Store.MediaType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Playlist" EntityType="ChinookModel.Store.Playlist" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PlaylistTrack" EntityType="ChinookModel.Store.PlaylistTrack" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="ChinookModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Track" EntityType="ChinookModel.Store.Track" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <AssociationSet Name="FK__Album__ArtistId__108B795B" Association="ChinookModel.Store.FK__Album__ArtistId__108B795B">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Suppor__15502E78" Association="ChinookModel.Store.FK__Customer__Suppor__15502E78">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Report__145C0A3F" Association="ChinookModel.Store.FK__Employee__Report__145C0A3F">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Employee1" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__Custome__164452B1" Association="ChinookModel.Store.FK__Invoice__Custome__164452B1">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__InvoiceLi__Invoi__182C9B23" Association="ChinookModel.Store.FK__InvoiceLi__Invoi__182C9B23">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="InvoiceLine" EntitySet="InvoiceLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK__InvoiceLi__Track__173876EA" Association="ChinookModel.Store.FK__InvoiceLi__Track__173876EA">
+            <End Role="Track" EntitySet="Track" />
+            <End Role="InvoiceLine" EntitySet="InvoiceLine" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlaylistT__Playl__1A14E395" Association="ChinookModel.Store.FK__PlaylistT__Playl__1A14E395">
+            <End Role="Playlist" EntitySet="Playlist" />
+            <End Role="PlaylistTrack" EntitySet="PlaylistTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlaylistT__Track__1920BF5C" Association="ChinookModel.Store.FK__PlaylistT__Track__1920BF5C">
+            <End Role="Track" EntitySet="Track" />
+            <End Role="PlaylistTrack" EntitySet="PlaylistTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__AlbumId__117F9D94" Association="ChinookModel.Store.FK__Track__AlbumId__117F9D94">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__GenreId__1367E606" Association="ChinookModel.Store.FK__Track__GenreId__1367E606">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__MediaType__1273C1CD" Association="ChinookModel.Store.FK__Track__MediaType__1273C1CD">
+            <End Role="MediaType" EntitySet="MediaType" />
+            <End Role="Track" EntitySet="Track" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Name="AlbumId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="160" />
+          <Property Name="ArtistId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="ArtistId" />
+          </Key>
+          <Property Name="ArtistId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Company" Type="nvarchar" MaxLength="80" />
+          <Property Name="Address" Type="nvarchar" MaxLength="70" />
+          <Property Name="City" Type="nvarchar" MaxLength="40" />
+          <Property Name="State" Type="nvarchar" MaxLength="40" />
+          <Property Name="Country" Type="nvarchar" MaxLength="40" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="60" />
+          <Property Name="SupportRepId" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" />
+          <Property Name="ReportsTo" Type="int" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="HireDate" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="70" />
+          <Property Name="City" Type="nvarchar" MaxLength="40" />
+          <Property Name="State" Type="nvarchar" MaxLength="40" />
+          <Property Name="Country" Type="nvarchar" MaxLength="40" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+          <Property Name="Email" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="GenreId" />
+          </Key>
+          <Property Name="GenreId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+          <Property Name="BillingAddress" Type="nvarchar" MaxLength="70" />
+          <Property Name="BillingCity" Type="nvarchar" MaxLength="40" />
+          <Property Name="BillingState" Type="nvarchar" MaxLength="40" />
+          <Property Name="BillingCountry" Type="nvarchar" MaxLength="40" />
+          <Property Name="BillingPostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Total" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="InvoiceLine">
+          <Key>
+            <PropertyRef Name="InvoiceLineId" />
+          </Key>
+          <Property Name="InvoiceLineId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvoiceId" Type="int" Nullable="false" />
+          <Property Name="TrackId" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MediaType">
+          <Key>
+            <PropertyRef Name="MediaTypeId" />
+          </Key>
+          <Property Name="MediaTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="Playlist">
+          <Key>
+            <PropertyRef Name="PlaylistId" />
+          </Key>
+          <Property Name="PlaylistId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="PlaylistTrack">
+          <Key>
+            <PropertyRef Name="PlaylistId" />
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="PlaylistId" Type="int" Nullable="false" />
+          <Property Name="TrackId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="TrackId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="AlbumId" Type="int" />
+          <Property Name="MediaTypeId" Type="int" Nullable="false" />
+          <Property Name="GenreId" Type="int" />
+          <Property Name="Composer" Type="nvarchar" MaxLength="220" />
+          <Property Name="Milliseconds" Type="int" Nullable="false" />
+          <Property Name="Bytes" Type="int" />
+          <Property Name="UnitPrice" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <Association Name="FK__Album__ArtistId__108B795B">
+          <End Role="Artist" Type="ChinookModel.Store.Artist" Multiplicity="1" />
+          <End Role="Album" Type="ChinookModel.Store.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="ArtistId" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__Suppor__15502E78">
+          <End Role="Employee" Type="ChinookModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Customer" Type="ChinookModel.Store.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="SupportRepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__Report__145C0A3F">
+          <End Role="Employee" Type="ChinookModel.Store.Employee" Multiplicity="0..1" />
+          <End Role="Employee1" Type="ChinookModel.Store.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeId" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="ReportsTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__Custome__164452B1">
+          <End Role="Customer" Type="ChinookModel.Store.Customer" Multiplicity="1" />
+          <End Role="Invoice" Type="ChinookModel.Store.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__InvoiceLi__Invoi__182C9B23">
+          <End Role="Invoice" Type="ChinookModel.Store.Invoice" Multiplicity="1" />
+          <End Role="InvoiceLine" Type="ChinookModel.Store.InvoiceLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="InvoiceId" />
+            </Principal>
+            <Dependent Role="InvoiceLine">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__InvoiceLi__Track__173876EA">
+          <End Role="Track" Type="ChinookModel.Store.Track" Multiplicity="1" />
+          <End Role="InvoiceLine" Type="ChinookModel.Store.InvoiceLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track">
+              <PropertyRef Name="TrackId" />
+            </Principal>
+            <Dependent Role="InvoiceLine">
+              <PropertyRef Name="TrackId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlaylistT__Playl__1A14E395">
+          <End Role="Playlist" Type="ChinookModel.Store.Playlist" Multiplicity="1" />
+          <End Role="PlaylistTrack" Type="ChinookModel.Store.PlaylistTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Playlist">
+              <PropertyRef Name="PlaylistId" />
+            </Principal>
+            <Dependent Role="PlaylistTrack">
+              <PropertyRef Name="PlaylistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlaylistT__Track__1920BF5C">
+          <End Role="Track" Type="ChinookModel.Store.Track" Multiplicity="1" />
+          <End Role="PlaylistTrack" Type="ChinookModel.Store.PlaylistTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track">
+              <PropertyRef Name="TrackId" />
+            </Principal>
+            <Dependent Role="PlaylistTrack">
+              <PropertyRef Name="TrackId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__AlbumId__117F9D94">
+          <End Role="Album" Type="ChinookModel.Store.Album" Multiplicity="0..1" />
+          <End Role="Track" Type="ChinookModel.Store.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__GenreId__1367E606">
+          <End Role="Genre" Type="ChinookModel.Store.Genre" Multiplicity="0..1" />
+          <End Role="Track" Type="ChinookModel.Store.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="GenreId" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="GenreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Track__MediaType__1273C1CD">
+          <End Role="MediaType" Type="ChinookModel.Store.MediaType" Multiplicity="1" />
+          <End Role="Track" Type="ChinookModel.Store.Track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MediaType">
+              <PropertyRef Name="MediaTypeId" />
+            </Principal>
+            <Dependent Role="Track">
+              <PropertyRef Name="MediaTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChinookModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ChinookEntities">
+          <EntitySet Name="Albums" EntityType="ChinookModel.Album" />
+          <EntitySet Name="Artists" EntityType="ChinookModel.Artist" />
+          <EntitySet Name="Customers" EntityType="ChinookModel.Customer" />
+          <EntitySet Name="Employees" EntityType="ChinookModel.Employee" />
+          <EntitySet Name="Genres" EntityType="ChinookModel.Genre" />
+          <EntitySet Name="Invoices" EntityType="ChinookModel.Invoice" />
+          <EntitySet Name="InvoiceLines" EntityType="ChinookModel.InvoiceLine" />
+          <EntitySet Name="MediaTypes" EntityType="ChinookModel.MediaType" />
+          <EntitySet Name="Playlists" EntityType="ChinookModel.Playlist" />
+          <EntitySet Name="sysdiagrams" EntityType="ChinookModel.sysdiagram" />
+          <EntitySet Name="Tracks" EntityType="ChinookModel.Track" />
+          <AssociationSet Name="FK__Album__ArtistId__108B795B" Association="ChinookModel.FK__Album__ArtistId__108B795B">
+            <End Role="Artist" EntitySet="Artists" />
+            <End Role="Album" EntitySet="Albums" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__AlbumId__117F9D94" Association="ChinookModel.FK__Track__AlbumId__117F9D94">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Suppor__15502E78" Association="ChinookModel.FK__Customer__Suppor__15502E78">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__Custome__164452B1" Association="ChinookModel.FK__Invoice__Custome__164452B1">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Report__145C0A3F" Association="ChinookModel.FK__Employee__Report__145C0A3F">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Employee1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__GenreId__1367E606" Association="ChinookModel.FK__Track__GenreId__1367E606">
+            <End Role="Genre" EntitySet="Genres" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__InvoiceLi__Invoi__182C9B23" Association="ChinookModel.FK__InvoiceLi__Invoi__182C9B23">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="InvoiceLine" EntitySet="InvoiceLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__InvoiceLi__Track__173876EA" Association="ChinookModel.FK__InvoiceLi__Track__173876EA">
+            <End Role="Track" EntitySet="Tracks" />
+            <End Role="InvoiceLine" EntitySet="InvoiceLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Track__MediaType__1273C1CD" Association="ChinookModel.FK__Track__MediaType__1273C1CD">
+            <End Role="MediaType" EntitySet="MediaTypes" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+          <AssociationSet Name="PlaylistTrack" Association="ChinookModel.PlaylistTrack">
+            <End Role="Playlist" EntitySet="Playlists" />
+            <End Role="Track" EntitySet="Tracks" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Type="Int32" Name="AlbumId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="160" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Artist" Relationship="ChinookModel.FK__Album__ArtistId__108B795B" FromRole="Album" ToRole="Artist" />
+          <NavigationProperty Name="Tracks" Relationship="ChinookModel.FK__Track__AlbumId__117F9D94" FromRole="Album" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="ArtistId" />
+          </Key>
+          <Property Type="Int32" Name="ArtistId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Albums" Relationship="ChinookModel.FK__Album__ArtistId__108B795B" FromRole="Artist" ToRole="Album" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Type="Int32" Name="CustomerId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Company" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="ChinookModel.FK__Customer__Suppor__15502E78" FromRole="Customer" ToRole="Employee" />
+          <NavigationProperty Name="Invoices" Relationship="ChinookModel.FK__Invoice__Custome__164452B1" FromRole="Customer" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="BirthDate" />
+          <Property Type="DateTime" Name="HireDate" />
+          <Property Type="String" Name="Address" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="ChinookModel.FK__Customer__Suppor__15502E78" FromRole="Employee" ToRole="Customer" />
+          <NavigationProperty Name="Employee1" Relationship="ChinookModel.FK__Employee__Report__145C0A3F" FromRole="Employee" ToRole="Employee1" />
+          <NavigationProperty Name="Employee2" Relationship="ChinookModel.FK__Employee__Report__145C0A3F" FromRole="Employee1" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="GenreId" />
+          </Key>
+          <Property Type="Int32" Name="GenreId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tracks" Relationship="ChinookModel.FK__Track__GenreId__1367E606" FromRole="Genre" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Type="Int32" Name="InvoiceId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" />
+          <Property Type="String" Name="BillingAddress" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BillingCity" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BillingState" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BillingCountry" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BillingPostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Customer" Relationship="ChinookModel.FK__Invoice__Custome__164452B1" FromRole="Invoice" ToRole="Customer" />
+          <NavigationProperty Name="InvoiceLines" Relationship="ChinookModel.FK__InvoiceLi__Invoi__182C9B23" FromRole="Invoice" ToRole="InvoiceLine" />
+        </EntityType>
+        <EntityType Name="InvoiceLine">
+          <Key>
+            <PropertyRef Name="InvoiceLineId" />
+          </Key>
+          <Property Type="Int32" Name="InvoiceLineId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="ChinookModel.FK__InvoiceLi__Invoi__182C9B23" FromRole="InvoiceLine" ToRole="Invoice" />
+          <NavigationProperty Name="Track" Relationship="ChinookModel.FK__InvoiceLi__Track__173876EA" FromRole="InvoiceLine" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="MediaType">
+          <Key>
+            <PropertyRef Name="MediaTypeId" />
+          </Key>
+          <Property Type="Int32" Name="MediaTypeId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tracks" Relationship="ChinookModel.FK__Track__MediaType__1273C1CD" FromRole="MediaType" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="Playlist">
+          <Key>
+            <PropertyRef Name="PlaylistId" />
+          </Key>
+          <Property Type="Int32" Name="PlaylistId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tracks" Relationship="ChinookModel.PlaylistTrack" FromRole="Playlist" ToRole="Track" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Type="Int32" Name="TrackId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Composer" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Milliseconds" Nullable="false" />
+          <Property Type="Int32" Name="Bytes" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Album" Relationship="ChinookModel.FK__Track__AlbumId__117F9D94" FromRole="Track" ToRole="Album" />
+          <NavigationProperty Name="Genre" Relationship="ChinookModel.FK__Track__GenreId__1367E606" FromRole="Track" ToRole="Genre" />
+          <NavigationProperty Name="InvoiceLines" Relationship="ChinookModel.FK__InvoiceLi__Track__173876EA" FromRole="Track" ToRole="InvoiceLine" />
+          <NavigationProperty Name="MediaType" Relationship="ChinookModel.FK__Track__MediaType__1273C1CD" FromRole="Track" ToRole="MediaType" />
+          <NavigationProperty Name="Playlists" Relationship="ChinookModel.PlaylistTrack" FromRole="Track" ToRole="Playlist" />
+        </EntityType>
+        <Association Name="FK__Album__ArtistId__108B795B">
+          <End Type="ChinookModel.Artist" Role="Artist" Multiplicity="1" />
+          <End Type="ChinookModel.Album" Role="Album" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Track__AlbumId__117F9D94">
+          <End Type="ChinookModel.Album" Role="Album" Multiplicity="0..1" />
+          <End Type="ChinookModel.Track" Role="Track" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Customer__Suppor__15502E78">
+          <End Type="ChinookModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="ChinookModel.Customer" Role="Customer" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Invoice__Custome__164452B1">
+          <End Type="ChinookModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ChinookModel.Invoice" Role="Invoice" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Employee__Report__145C0A3F">
+          <End Type="ChinookModel.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="ChinookModel.Employee" Role="Employee1" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Track__GenreId__1367E606">
+          <End Type="ChinookModel.Genre" Role="Genre" Multiplicity="0..1" />
+          <End Type="ChinookModel.Track" Role="Track" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__InvoiceLi__Invoi__182C9B23">
+          <End Type="ChinookModel.Invoice" Role="Invoice" Multiplicity="1" />
+          <End Type="ChinookModel.InvoiceLine" Role="InvoiceLine" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__InvoiceLi__Track__173876EA">
+          <End Type="ChinookModel.Track" Role="Track" Multiplicity="1" />
+          <End Type="ChinookModel.InvoiceLine" Role="InvoiceLine" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__Track__MediaType__1273C1CD">
+          <End Type="ChinookModel.MediaType" Role="MediaType" Multiplicity="1" />
+          <End Type="ChinookModel.Track" Role="Track" Multiplicity="*" />
+        </Association>
+        <Association Name="PlaylistTrack">
+          <End Type="ChinookModel.Playlist" Role="Playlist" Multiplicity="*" />
+          <End Type="ChinookModel.Track" Role="Track" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChinookModelStoreContainer" CdmEntityContainer="ChinookEntities">
+          <EntitySetMapping Name="Albums">
+            <EntityTypeMapping TypeName="ChinookModel.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artists">
+            <EntityTypeMapping TypeName="ChinookModel.Artist">
+              <MappingFragment StoreEntitySet="Artist">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ChinookModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ChinookModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="ChinookModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="ChinookModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="BillingPostalCode" ColumnName="BillingPostalCode" />
+                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
+                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
+                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceLines">
+            <EntityTypeMapping TypeName="ChinookModel.InvoiceLine">
+              <MappingFragment StoreEntitySet="InvoiceLine">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="InvoiceLineId" ColumnName="InvoiceLineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediaTypes">
+            <EntityTypeMapping TypeName="ChinookModel.MediaType">
+              <MappingFragment StoreEntitySet="MediaType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MediaTypeId" ColumnName="MediaTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Playlists">
+            <EntityTypeMapping TypeName="ChinookModel.Playlist">
+              <MappingFragment StoreEntitySet="Playlist">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PlaylistId" ColumnName="PlaylistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ChinookModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tracks">
+            <EntityTypeMapping TypeName="ChinookModel.Track">
+              <MappingFragment StoreEntitySet="Track">
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Bytes" ColumnName="Bytes" />
+                <ScalarProperty Name="Milliseconds" ColumnName="Milliseconds" />
+                <ScalarProperty Name="Composer" ColumnName="Composer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK__Album__ArtistId__108B795B" TypeName="ChinookModel.FK__Album__ArtistId__108B795B" StoreEntitySet="Album">
+            <EndProperty Name="Album">
+              <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+            </EndProperty>
+            <EndProperty Name="Artist">
+              <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Track__AlbumId__117F9D94" TypeName="ChinookModel.FK__Track__AlbumId__117F9D94" StoreEntitySet="Track">
+            <EndProperty Name="Track">
+              <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            </EndProperty>
+            <EndProperty Name="Album">
+              <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+            </EndProperty>
+            <Condition ColumnName="AlbumId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Customer__Suppor__15502E78" TypeName="ChinookModel.FK__Customer__Suppor__15502E78" StoreEntitySet="Customer">
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            </EndProperty>
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="EmployeeId" ColumnName="SupportRepId" />
+            </EndProperty>
+            <Condition ColumnName="SupportRepId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Invoice__Custome__164452B1" TypeName="ChinookModel.FK__Invoice__Custome__164452B1" StoreEntitySet="Invoice">
+            <EndProperty Name="Invoice">
+              <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+            </EndProperty>
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Employee__Report__145C0A3F" TypeName="ChinookModel.FK__Employee__Report__145C0A3F" StoreEntitySet="Employee">
+            <EndProperty Name="Employee1">
+              <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+            </EndProperty>
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="EmployeeId" ColumnName="ReportsTo" />
+            </EndProperty>
+            <Condition ColumnName="ReportsTo" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Track__GenreId__1367E606" TypeName="ChinookModel.FK__Track__GenreId__1367E606" StoreEntitySet="Track">
+            <EndProperty Name="Track">
+              <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            </EndProperty>
+            <EndProperty Name="Genre">
+              <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+            </EndProperty>
+            <Condition ColumnName="GenreId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__InvoiceLi__Invoi__182C9B23" TypeName="ChinookModel.FK__InvoiceLi__Invoi__182C9B23" StoreEntitySet="InvoiceLine">
+            <EndProperty Name="InvoiceLine">
+              <ScalarProperty Name="InvoiceLineId" ColumnName="InvoiceLineId" />
+            </EndProperty>
+            <EndProperty Name="Invoice">
+              <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__InvoiceLi__Track__173876EA" TypeName="ChinookModel.FK__InvoiceLi__Track__173876EA" StoreEntitySet="InvoiceLine">
+            <EndProperty Name="InvoiceLine">
+              <ScalarProperty Name="InvoiceLineId" ColumnName="InvoiceLineId" />
+            </EndProperty>
+            <EndProperty Name="Track">
+              <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Track__MediaType__1273C1CD" TypeName="ChinookModel.FK__Track__MediaType__1273C1CD" StoreEntitySet="Track">
+            <EndProperty Name="Track">
+              <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            </EndProperty>
+            <EndProperty Name="MediaType">
+              <ScalarProperty Name="MediaTypeId" ColumnName="MediaTypeId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PlaylistTrack" TypeName="ChinookModel.PlaylistTrack" StoreEntitySet="PlaylistTrack">
+            <EndProperty Name="Track">
+              <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+            </EndProperty>
+            <EndProperty Name="Playlist">
+              <ScalarProperty Name="PlaylistId" ColumnName="PlaylistId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Chinook" ZoomLevel="64" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <EntityTypeShape EntityType="ChinookModel.Album" Width="1.5" PointX="3" PointY="1.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ChinookModel.Artist" Width="1.5" PointX="0.75" PointY="1.75" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="ChinookModel.Customer" Width="1.5" PointX="3" PointY="12.5" Height="3.7109993489583388" />
+        <EntityTypeShape EntityType="ChinookModel.Employee" Width="1.5" PointX="0.75" PointY="12.25" Height="4.2879036458333246" />
+        <EntityTypeShape EntityType="ChinookModel.Genre" Width="1.5" PointX="3" PointY="4.875" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="ChinookModel.Invoice" Width="1.5" PointX="5.25" PointY="12.875" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="ChinookModel.InvoiceLine" Width="1.5" PointX="7.5" PointY="1.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="ChinookModel.MediaType" Width="1.5" PointX="3" PointY="7.25" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="ChinookModel.Playlist" Width="1.5" PointX="3" PointY="9.625" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="ChinookModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" Height="1.9802864583333246" />
+        <EntityTypeShape EntityType="ChinookModel.Track" Width="1.5" PointX="5.25" PointY="1" Height="3.1340950520833246" />
+        <AssociationConnector Association="ChinookModel.FK__Album__ArtistId__108B795B">
+          <ConnectorPoint PointX="2.25" PointY="2.547841796874998" />
+          <ConnectorPoint PointX="3" PointY="2.547841796874998" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Track__AlbumId__117F9D94">
+          <ConnectorPoint PointX="4.5" PointY="2.5189925130208337" />
+          <ConnectorPoint PointX="5.25" PointY="2.5189925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Customer__Suppor__15502E78">
+          <ConnectorPoint PointX="2.25" PointY="14.355499674479169" />
+          <ConnectorPoint PointX="3" PointY="14.355499674479169" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Invoice__Custome__164452B1">
+          <ConnectorPoint PointX="4.5" PointY="14.345896809895834" />
+          <ConnectorPoint PointX="5.25" PointY="14.345896809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Employee__Report__145C0A3F">
+          <ConnectorPoint PointX="1.2819230769230767" PointY="16.537903645833325" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="16.787903645833325" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="16.787903645833325" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="16.537903645833325" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Track__GenreId__1367E606">
+          <ConnectorPoint PointX="4.5" PointY="5.28125" />
+          <ConnectorPoint PointX="5.2447891666666671" PointY="5.2812499999999991" />
+          <ConnectorPoint PointX="5.4114558333333331" PointY="5.28125" />
+          <ConnectorPoint PointX="5.46875" PointY="5.28125" />
+          <ConnectorPoint PointX="5.46875" PointY="4.1340950520833246" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__InvoiceLi__Invoi__182C9B23">
+          <ConnectorPoint PointX="6.75" PointY="14.345896809895834" />
+          <ConnectorPoint PointX="8.25" PointY="14.345896809895834" />
+          <ConnectorPoint PointX="8.25" PointY="3.4802864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__InvoiceLi__Track__173876EA">
+          <ConnectorPoint PointX="6.75" PointY="2.4901432291666694" />
+          <ConnectorPoint PointX="7.5" PointY="2.4901432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.FK__Track__MediaType__1273C1CD">
+          <ConnectorPoint PointX="4.5" PointY="8.31923502604166" />
+          <ConnectorPoint PointX="5.3281225" PointY="8.31923502604166" />
+          <ConnectorPoint PointX="5.3281225" PointY="4.1340950520833246" />
+        </AssociationConnector>
+        <AssociationConnector Association="ChinookModel.PlaylistTrack">
+          <ConnectorPoint PointX="4.5" PointY="10.422841796874998" />
+          <ConnectorPoint PointX="5.6093775" PointY="10.422841796874998" />
+          <ConnectorPoint PointX="5.6093775" PointY="4.1340950520833246" />
+        </AssociationConnector>
+      </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

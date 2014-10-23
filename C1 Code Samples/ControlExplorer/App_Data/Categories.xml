@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<C1NWind>
+	<Categories>
+		<Category Description="Soft drinks, coffees, teas, beers, and ales" CategoryName="Beverages" CategoryID="1" />
+		<Category Description="Sweet and savory sauces, relishes, spreads, and seasonings" CategoryName="Condiments" CategoryID="2" />
+		<Category Description="Desserts, candies, and sweet breads" CategoryName="Confections" CategoryID="3" />
+		<Category Description="Cheeses" CategoryName="Dairy Products" CategoryID="4" />
+		<Category Description="Breads, crackers, pasta, and cereal" CategoryName="Grains/Cereals" CategoryID="5" />
+		<Category Description="Prepared meats" CategoryName="Meat/Poultry" CategoryID="6" />
+		<Category Description="Dried fruit and bean curd" CategoryName="Produce" CategoryID="7" />
+		<Category Description="Seaweed and fish" CategoryName="Seafood" CategoryID="8" />
+	</Categories>
+</C1NWind>

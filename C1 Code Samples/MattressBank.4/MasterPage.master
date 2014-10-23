@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1Menu" TagPrefix="c1" %>
+<%@ Register Assembly="C1.Web.Wijmo.Extenders.4" Namespace="C1.Web.Wijmo.Extenders.C1FormDecorator" TagPrefix="c1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>My Web App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="doc2" class="yui-t3 wrapper">
+        <form id="form1" runat="server">
+            <div id="hd">
+                <h2>
+                    Mattress Bank</h2>
+            </div>
+            <div id="bd">
+                <div id="yui-main">
+                    <div class="yui-b">
+                        <div class="content">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+                <div class="yui-b">
+                    <div class="sidebar">
+                       <%-- <c1:c1menu id="MnuAppNav" runat="server" orientation="Vertical" Width="96%" >
+                                <Items>
+                                    <c1:C1MenuItem runat="server" Text="Accounts">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Bills">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Transfer">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Statements">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Reports">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Taxes">
+                                    </c1:C1MenuItem>
+                                    <c1:C1MenuItem runat="server" Text="Tools">
+                                    </c1:C1MenuItem>
+                                </Items>
+                            </c1:c1menu>--%>
+                        <asp:ContentPlaceHolder ID="SidebarContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+            <div id="ft">
+                Powered by <a href="http://www.componentone.com/SuperProducts/StudioASPNET/" runat="server">Studio for ASP.NET Wijmo</a>
+            </div>
+            <c1:C1ButtonExtender ID="DecBtns" TargetControlID="form1" runat="server" TargetSelector=":input[type='submit']"></c1:C1ButtonExtender>
+        </form>
+    </div>
+</body>
+</html>

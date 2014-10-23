@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="RootNodeUrl" title="C1Controls" description="Root Node Description">
+    <siteMapNode url="" title="Charts" description="Asp.NET Wijmo Charts">
+      <siteMapNode url="" title="Bar Chart" description="Bar Chart" />
+      <siteMapNode url="" title="Bubble Chart" description="Bubble Chart" />
+      <siteMapNode url="" title="Line Chart" description="Line Chart" />
+      <siteMapNode url="" title="Pie Chart" description="Pie Chart" />
+      <siteMapNode url="" title="Scatter Chart" description="Scatter Chart" />
+    </siteMapNode>
+    <siteMapNode url="" title="Input" description="Asp.NET Wijmo Inputs">
+      <siteMapNode url="" title="Date Input" description="Date Input" />
+      <siteMapNode url="" title="Number Input" description="Number Input" />
+      <siteMapNode url="" title="Text Input" description="Text Input" />
+      <siteMapNode url="" title="Masked Input" description="Masked Input" />
+      <siteMapNode url="" title="Event Calendar" description="Event Calendar" />
+    </siteMapNode>
+    <siteMapNode url="" title="Data" description="Asp.NET Wijmo Data Controls" >
+      <siteMapNode url="" title="Grid View" description="Grid View" />
+      <siteMapNode url="" title="Menu" description="Menu" />
+      <siteMapNode url="" title="Tree View" description="Tree View" />
+      <siteMapNode url="" title="Editor" description="Editor" />
+      <siteMapNode url="" title="Super Panel" description="Super Panel" />
+    </siteMapNode>
+    <siteMapNode url="" title="Other" description="Asp.NET Wijmo Other Controls" >
+      <siteMapNode url="" title="Carousel" description="Carousel" />
+      <siteMapNode url="" title="Excel" description="Excel" />
+      <siteMapNode url="" title="PDF" description="PDF" />
+      <siteMapNode url="" title="Tabs" description="Tabs" />
+      <siteMapNode url="" title="Upload" description="Upload" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

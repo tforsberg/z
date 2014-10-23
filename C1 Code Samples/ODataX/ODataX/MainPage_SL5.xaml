@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="ODataX.MainPage" mc:Ignorable="d" FontSize="14" FontFamily="Segoe UI" d:DesignHeight="250" d:DesignWidth="800" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:ODataX">
+
+  <UserControl.Resources>
+
+    <!-- ViewModel -->
+    <my:ViewModel x:Name="_vm" />
+
+    <!-- progress animation: make logo pulsate -->
+    <Storyboard x:Name="_sbLogo">
+      <DoubleAnimation Storyboard.TargetName="_imgLogo" Storyboard.TargetProperty="Opacity" From="1.0" To="0.2" Duration="0:0:1" AutoReverse="True" RepeatBehavior="Forever" />
+    </Storyboard>
+  </UserControl.Resources>
+
+  <Grid x:Name="LayoutRoot" DataContext="{StaticResource _vm}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.Background>
+      <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#20000040" Offset="0" />
+        <GradientStop Color="#60000040" Offset="0.2" />
+        <GradientStop Color="#60000040" Offset="0.8" />
+        <GradientStop Color="#20000040" Offset="1" />
+      </LinearGradientBrush>
+    </Grid.Background>
+
+    <!-- application title -->
+    <Border Padding="4">
+      <StackPanel Orientation="Horizontal">
+        <Image Name="_imgLogo" Source="Images/ODataSmall.png" Margin="6" />
+        <TextBlock Text="ComponentOne OData Explorer" FontSize="25" FontWeight="Bold" VerticalAlignment="Center" />
+      </StackPanel>
+    </Border>
+
+    <!-- content area -->
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="160" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="220" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+
+      <!-- data sources -->
+      <Border Padding="4 0 0 0">
+        <TextBlock Text="Sources" FontSize="18" FontWeight="Bold" />
+      </Border>
+      <c1:C1FlexGrid Grid.Row="1" Margin="4 0" Background="White" ItemsSource="{Binding DataSources}" SelectionMode="RowRange" AutoGenerateColumns="False" HeadersVisibility="None">
+        <c1:C1FlexGrid.Columns>
+          <c1:Column Binding="{Binding Name}" Width="*" />
+        </c1:C1FlexGrid.Columns>
+      </c1:C1FlexGrid>
+
+      <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="4 0 4 0">
+        <Button Name="_btnAddSource" ToolTipService.ToolTip="Add data source" Style="{StaticResource _btnMetroRound}">
+          <TextBlock Text="+" Style="{StaticResource _btnMetroRoundContent}" Margin="0 0 0 6" />
+        </Button>
+        <Button Name="_btnRemoveSource" ToolTipService.ToolTip="Remove data source" Style="{StaticResource _btnMetroRound}">
+          <TextBlock Text="-" Style="{StaticResource _btnMetroRoundContent}" Margin="0 0 0 6" />
+        </Button>
+        <Button Name="_btnEditSource" ToolTipService.ToolTip="Edit data source properties" Style="{StaticResource _btnMetroRound}">
+          <TextBlock Text="…" Style="{StaticResource _btnMetroRoundContent}" FontSize="16" Margin="0 0 0 8" />
+        </Button>
+      </StackPanel>
+
+      <my:GridSplitter Grid.Column="1" Width="6" Grid.RowSpan="2" />
+
+      <!-- tables -->
+      <Border Grid.Column="2" Padding="4 0 0 0">
+        <TextBlock Text="Tables" FontSize="18" FontWeight="Bold" />
+      </Border>
+      <c1:C1FlexGrid Grid.Row="1" Grid.Column="2" Margin="4 0" Background="White" ItemsSource="{Binding DataSources.CurrentItem.Tables}" SelectionMode="RowRange" AutoGenerateColumns="False" HeadersVisibility="None">
+        <c1:C1FlexGrid.Columns>
+          <c1:Column Binding="{Binding Name}" Width="*" />
+        </c1:C1FlexGrid.Columns>
+      </c1:C1FlexGrid>
+
+      <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Margin="4 0 4 0">
+        <Button Name="_btnEditTable" ToolTipService.ToolTip="Edit data table properties" Style="{StaticResource _btnMetroRound}">
+          <TextBlock Text="…" Style="{StaticResource _btnMetroRoundContent}" FontSize="16" Margin="0 0 0 8" />
+        </Button>
+      </StackPanel>
+
+      <my:GridSplitter Grid.Column="3" Width="6" Grid.RowSpan="2" />
+
+      <!-- data -->
+      <Border Grid.Column="4" Padding="4 0 0 0">
+        <TextBlock Text="Data" FontSize="18" FontWeight="Bold" />
+      </Border>
+      <c1:C1FlexGrid Name="_flex" Grid.Row="1" Grid.Column="4" Margin="4 0" Background="#80ffffff" RowBackground="White" AlternatingRowBackground="White" TopLeftCellBackground="#e0e0e0e0" ColumnHeaderBackground="#e0e0e0e0" RowHeaderBackground="#e0e0e0e0" SelectionMode="RowRange" ItemsSource="{Binding DataSources.CurrentItem.Tables.CurrentItem.DefaultView}">
+      </c1:C1FlexGrid>
+      <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="4" Margin="4 0">
+        <Button Command="{Binding NavigateBack}" ToolTipService.ToolTip="Navigate back to the source table" Style="{StaticResource _btnMetroRound}">
+          <TextBlock Text="ß" FontFamily="WingDings" FontWeight="Normal" Style="{StaticResource _btnMetroRoundContent}" Margin="0 0 2 0" />
+        </Button>
+        <StackPanel>
+          <TextBlock Text="{Binding DataSources.CurrentItem.Tables.CurrentItem.SourceUrl}" />
+          <TextBlock Text="{Binding Rows.Count, ElementName=_flex, StringFormat='Rows: {0:n0}'}" />
+        </StackPanel>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

@@ -1,0 +1,2157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{331D8BA1-A0A0-4235-A531-FB70BE332E0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToolkitExplorer</RootNamespace>
+    <AssemblyName>ToolkitExplorer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+<UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Web.Wijmo.Extenders.3">
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Wilco.SyntaxHighlighter, Version=0.0.9.6, Culture=neutral, PublicKeyToken=fb87150479c2990b, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Accordion\Animation.aspx" />
+    <Content Include="Accordion\ExpandDirection.aspx" />
+    <Content Include="Accordion\Hover.aspx" />
+    <Content Include="Accordion\RequireOpenedPane.aspx" />
+    <Content Include="App_Data\C1NWind.mdb" />
+    <Content Include="App_Data\Players.xml" />
+    <Content Include="BarChart\Origin.aspx" />
+    <Content Include="BarChart\SeriesTransition.aspx" />
+    <Content Include="bin\Wilco.SyntaxHighlighter.dll" />
+    <Content Include="BubbleChart\ChartMarker.aspx" />
+    <Content Include="BubbleChart\images\buble.png" />
+    <Content Include="BubbleChart\images\chrome.png" />
+    <Content Include="BubbleChart\images\firefox.png" />
+    <Content Include="BubbleChart\images\ie.png" />
+    <Content Include="BubbleChart\images\opera.png" />
+    <Content Include="BubbleChart\images\safari.png" />
+    <Content Include="BubbleChart\InvisibleLabel.aspx" />
+    <Content Include="BubbleChart\Negative.aspx" />
+    <Content Include="BubbleChart\OutsideLabel.aspx" />
+    <Content Include="BubbleChart\Overlap.aspx" />
+    <Content Include="BubbleChart\Overview.aspx" />
+    <Content Include="BubbleChart\Symbols.aspx" />
+    <Content Include="Calendar\Animation.aspx" />
+    <Content Include="Calendar\CustomDates.aspx" />
+    <Content Include="Calendar\Images\xmas.png" />
+    <Content Include="Calendar\MultiViews.aspx" />
+    <Content Include="Calendar\OtherMonth.aspx" />
+    <Content Include="Calendar\Overview.aspx" />
+    <Content Include="Calendar\Preview.aspx" />
+    <Content Include="Calendar\QuickNav.aspx" />
+    <Content Include="Calendar\Range.aspx" />
+    <Content Include="Calendar\Selection.aspx" />
+    <Content Include="CandlestickChart\CandlestickFormatter.aspx" />
+    <Content Include="CandlestickChart\HighLow.aspx" />
+    <Content Include="CandlestickChart\Ohlc.aspx" />
+    <Content Include="CandlestickChart\OhlcColor.aspx" />
+    <Content Include="CandlestickChart\Overview.aspx" />
+    <Content Include="CandlestickChart\ValueLabels.aspx" />
+    <Content Include="Carousel\Animation.aspx" />
+    <Content Include="Carousel\ClientSideEvents.aspx" />
+    <Content Include="Carousel\Content.aspx" />
+    <Content Include="Carousel\Flickr.aspx" />
+    <Content Include="Carousel\LightBox.aspx" />
+    <Content Include="Carousel\Orientation.aspx" />
+    <Content Include="Carousel\Overview.aspx" />
+    <Content Include="Carousel\Paging.aspx" />
+    <Content Include="Carousel\Preview.aspx" />
+    <Content Include="Carousel\Thumbnails.aspx" />
+    <Content Include="CompositeChart\ComboRegression.aspx" />
+    <Content Include="CompositeChart\CompositeChartWithCandlestick.aspx" />
+    <Content Include="CompositeChart\MultipleAxes.aspx" />
+    <Content Include="CompositeChart\Overview.aspx" />
+    <Content Include="ControlList.xml" />
+    <Content Include="Editor\BBCode.aspx" />
+    <Content Include="Editor\Compact.aspx" />
+    <Content Include="Editor\CustomizeSimple.aspx" />
+    <Content Include="Editor\EditingModes.aspx" />
+    <Content Include="Editor\Simple.aspx" />
+    <Content Include="Editor\Overview.aspx" />
+    <Content Include="EventsCalendar\CustomDataStorage.aspx" />
+    <Content Include="EventsCalendar\CustomTimeInterval.aspx" />
+    <Content Include="EventsCalendar\DataModel.aspx" />
+    <Content Include="EventsCalendar\Overview.aspx" />
+    <Content Include="explore\css\images\ajax-loader.gif" />
+    <Content Include="explore\css\images\bottom_left.png" />
+    <Content Include="explore\css\images\bottom_right.png" />
+    <Content Include="explore\css\images\c1logo.png" />
+    <Content Include="explore\css\images\callout.png" />
+    <Content Include="explore\css\images\dots.png" />
+    <Content Include="explore\css\images\dots94x94.png" />
+    <Content Include="explore\css\images\header_background.png" />
+    <Content Include="explore\css\images\header_background_blue.png" />
+    <Content Include="explore\css\images\icon-fullscreen.png" />
+    <Content Include="explore\css\images\icons\16\arrow.png" />
+    <Content Include="explore\css\images\icons\24\back.png" />
+    <Content Include="explore\css\images\icons\24\home.png" />
+    <Content Include="explore\css\images\icons\32\picons01.png" />
+    <Content Include="explore\css\images\icons\32\picons02.png" />
+    <Content Include="explore\css\images\icons\32\picons03.png" />
+    <Content Include="explore\css\images\icons\32\picons04.png" />
+    <Content Include="explore\css\images\icons\32\picons05.png" />
+    <Content Include="explore\css\images\icons\32\picons06.png" />
+    <Content Include="explore\css\images\icons\32\picons07.png" />
+    <Content Include="explore\css\images\icons\32\picons08.png" />
+    <Content Include="explore\css\images\icons\32\picons09.png" />
+    <Content Include="explore\css\images\icons\32\picons10.png" />
+    <Content Include="explore\css\images\icons\32\picons11.png" />
+    <Content Include="explore\css\images\icons\32\picons12.png" />
+    <Content Include="explore\css\images\icons\32\picons13.png" />
+    <Content Include="explore\css\images\icons\32\picons14.png" />
+    <Content Include="explore\css\images\icons\32\picons15.png" />
+    <Content Include="explore\css\images\icons\32\picons16.png" />
+    <Content Include="explore\css\images\icons\32\picons17.png" />
+    <Content Include="explore\css\images\icons\32\picons18.png" />
+    <Content Include="explore\css\images\icons\32\picons19.png" />
+    <Content Include="explore\css\images\icons\32\picons20.png" />
+    <Content Include="explore\css\images\icons\32\picons21.png" />
+    <Content Include="explore\css\images\icons\32\picons22.png" />
+    <Content Include="explore\css\images\icons\32\picons23.png" />
+    <Content Include="explore\css\images\icons\32\picons24.png" />
+    <Content Include="explore\css\images\icons\32\picons25.png" />
+    <Content Include="explore\css\images\icons\32\picons26.png" />
+    <Content Include="explore\css\images\icons\32\picons27.png" />
+    <Content Include="explore\css\images\icons\32\picons28.png" />
+    <Content Include="explore\css\images\icons\32\picons29.png" />
+    <Content Include="explore\css\images\icons\32\picons30.png" />
+    <Content Include="explore\css\images\icons\32\picons31.png" />
+    <Content Include="explore\css\images\icons\32\picons32.png" />
+    <Content Include="explore\css\images\icons\32\picons33.png" />
+    <Content Include="explore\css\images\icons\32\picons34.png" />
+    <Content Include="explore\css\images\icons\32\picons35.png" />
+    <Content Include="explore\css\images\icons\32\picons36.png" />
+    <Content Include="explore\css\images\icons\32\picons37.png" />
+    <Content Include="explore\css\images\icons\32\picons38.png" />
+    <Content Include="explore\css\images\icons\32\picons39.png" />
+    <Content Include="explore\css\images\icons\32\picons40.png" />
+    <Content Include="explore\css\images\icons\32\picons41.png" />
+    <Content Include="explore\css\images\icons\32\picons42.png" />
+    <Content Include="explore\css\images\icons\32\picons43.png" />
+    <Content Include="explore\css\images\icons\32\picons44.png" />
+    <Content Include="explore\css\images\icons\32\picons45.png" />
+    <Content Include="explore\css\images\icons\32\picons46.png" />
+    <Content Include="explore\css\images\icons\32\picons47.png" />
+    <Content Include="explore\css\images\icons\32\picons48.png" />
+    <Content Include="explore\css\images\icons\32\picons49.png" />
+    <Content Include="explore\css\images\icons\32\picons50.png" />
+    <Content Include="explore\css\images\icons\32\picons51.png" />
+    <Content Include="explore\css\images\icons\32\picons52.png" />
+    <Content Include="explore\css\images\icons\32\picons53.png" />
+    <Content Include="explore\css\images\icons\32\picons54.png" />
+    <Content Include="explore\css\images\icons\32\picons55.png" />
+    <Content Include="explore\css\images\icons\32\picons56.png" />
+    <Content Include="explore\css\images\icons\32\picons57.png" />
+    <Content Include="explore\css\images\icons\32\picons58.png" />
+    <Content Include="explore\css\images\icons\32\picons59.png" />
+    <Content Include="explore\css\images\icons\32\picons60.png" />
+    <Content Include="explore\css\images\icons\widget\Accordion.png" />
+    <Content Include="explore\css\images\icons\widget\AutoComplete.png" />
+    <Content Include="explore\css\images\icons\widget\BarChart.png" />
+    <Content Include="explore\css\images\icons\widget\BubbleChart.png" />
+    <Content Include="explore\css\images\icons\widget\Calendar.png" />
+    <Content Include="explore\css\images\icons\widget\Carousel.png" />
+    <Content Include="explore\css\images\icons\widget\ComboBox.png" />
+    <Content Include="explore\css\images\icons\widget\CompositeChart.png" />
+    <Content Include="explore\css\images\icons\widget\Dialog.png" />
+    <Content Include="explore\css\images\icons\widget\Editor.png" />
+    <Content Include="explore\css\images\icons\widget\EventsCalendar.png" />
+    <Content Include="explore\css\images\icons\widget\Expander.png" />
+    <Content Include="explore\css\images\icons\widget\FormDecorator.png" />
+    <Content Include="explore\css\images\icons\widget\Gallery.png" />
+    <Content Include="explore\css\images\icons\widget\Grid.png" />
+    <Content Include="explore\css\images\icons\widget\InputDate.png" />
+    <Content Include="explore\css\images\icons\widget\InputMask.png" />
+    <Content Include="explore\css\images\icons\widget\InputNumber.png" />
+    <Content Include="explore\css\images\icons\widget\LightBox.png" />
+    <Content Include="explore\css\images\icons\widget\LinearGauge.png" />
+    <Content Include="explore\css\images\icons\widget\LineChart.png" />
+    <Content Include="explore\css\images\icons\widget\List.png" />
+    <Content Include="explore\css\images\icons\widget\Menu.png" />
+    <Content Include="explore\css\images\icons\widget\Pager.png" />
+    <Content Include="explore\css\images\icons\widget\PieChart.png" />
+    <Content Include="explore\css\images\icons\widget\ProgressBar.png" />
+    <Content Include="explore\css\images\icons\widget\RadialGauge.png" />
+    <Content Include="explore\css\images\icons\widget\Rating.png" />
+    <Content Include="explore\css\images\icons\widget\ReportViewer.png" />
+    <Content Include="explore\css\images\icons\widget\ScatterChart.png" />
+    <Content Include="explore\css\images\icons\widget\Slider.png" />
+    <Content Include="explore\css\images\icons\widget\Splitter.png" />
+    <Content Include="explore\css\images\icons\widget\SuperPanel.png" />
+    <Content Include="explore\css\images\icons\widget\Tabs.png" />
+    <Content Include="explore\css\images\icons\widget\ToolTip.png" />
+    <Content Include="explore\css\images\icons\widget\Tree.png" />
+    <Content Include="explore\css\images\icons\widget\Upload.png" />
+    <Content Include="explore\css\images\icons\widget\Video.png" />
+    <Content Include="explore\css\images\icons\widget\Wizard.png" />
+    <Content Include="explore\css\images\museo\wijmo_300-webfont.svg" />
+    <Content Include="explore\css\images\museo\wijmo_700italic-webfont.svg" />
+    <Content Include="explore\css\images\museo\wijmo_900-webfont.svg" />
+    <Content Include="explore\css\images\ribbon-right.png" />
+    <Content Include="explore\css\images\studioaspnetwijmo_sm.png" />
+    <Content Include="explore\css\images\texture.jpg" />
+    <Content Include="explore\css\images\top_left.png" />
+    <Content Include="explore\css\images\top_right.png" />
+    <Content Include="explore\css\images\widget_bg.png" />
+    <Content Include="explore\css\images\wijmo_logo-asp.png" />
+    <Content Include="explore\css\images\wijmo_logo.png" />
+    <Content Include="explore\css\style.css" />
+    <Content Include="explore\images\ajax-loader.gif" />
+    <Content Include="explore\images\studioaspnetwijmo_sm.png" />
+    <Content Include="explore\images\studioaspnetwijmo_sm_extender.png" />
+    <Content Include="explore\images\studioaspnetwijmo_sm_extender_splash.png" />
+    <Content Include="explore\images\studiowijmo_white_sm.png" />
+    <Content Include="explore\images\wijmo_insert_0411_b.png" />
+    <Content Include="explore\images\wijmo_logo.png" />
+    <Content Include="explore\js\init.js" />
+    <Content Include="explore\js\jquery.cookie.js" />
+    <Content Include="explore\js\jquery.hoverIntent.minified.js" />
+    <Content Include="explore\js\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="explore\js\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="explore\js\jquery.wijmo.wijdropdown.min.js" />
+    <Content Include="explore\js\modernizr.custom.js" />
+    <Content Include="Gallery\Animation.aspx" />
+    <Content Include="Gallery\Flash.aspx" />
+    <Content Include="Gallery\IFrame.aspx" />
+    <Content Include="Gallery\Orientation.aspx" />
+    <Content Include="Gallery\Overview.aspx" />
+    <Content Include="Gallery\Paging.aspx" />
+    <Content Include="Gallery\Video.aspx" />
+    <Content Include="GetSourceCode.aspx" />
+    <Content Include="Grid\GroupArea.aspx" />
+    <Content Include="Images\a2_favicon.ico" />
+    <Content Include="Images\apple\airportexpress.jpg" />
+    <Content Include="Images\apple\airportextreme.jpg" />
+    <Content Include="Images\apple\display.jpg" />
+    <Content Include="Images\apple\imac.jpg" />
+    <Content Include="Images\apple\keyboard.jpg" />
+    <Content Include="Images\apple\macbook.jpg" />
+    <Content Include="Images\apple\macbookair.jpg" />
+    <Content Include="Images\apple\macbookpro.jpg" />
+    <Content Include="Images\apple\macmini.jpg" />
+    <Content Include="Images\apple\macosx.jpg" />
+    <Content Include="Images\apple\macpro.jpg" />
+    <Content Include="Images\apple\magicmouse.jpg" />
+    <Content Include="Images\apple\magictrackpad.jpg" />
+    <Content Include="Images\apple\timecapsule.jpg" />
+    <Content Include="Images\apply.png" />
+    <Content Include="Images\apply_button_bg.gif" />
+    <Content Include="Images\apply_hover.png" />
+    <Content Include="Images\art\small\zeka1.jpg" />
+    <Content Include="Images\art\small\zeka10.jpg" />
+    <Content Include="Images\art\small\zeka2.jpg" />
+    <Content Include="Images\art\small\zeka3.jpg" />
+    <Content Include="Images\art\small\zeka4.jpg" />
+    <Content Include="Images\art\small\zeka5.jpg" />
+    <Content Include="Images\art\small\zeka6.jpg" />
+    <Content Include="Images\art\small\zeka7.jpg" />
+    <Content Include="Images\art\small\zeka8.jpg" />
+    <Content Include="Images\art\small\zeka9.jpg" />
+    <Content Include="Images\art\zeka1.jpg" />
+    <Content Include="Images\art\zeka10.jpg" />
+    <Content Include="Images\art\zeka2.jpg" />
+    <Content Include="Images\art\zeka3.jpg" />
+    <Content Include="Images\art\zeka4.jpg" />
+    <Content Include="Images\art\zeka5.jpg" />
+    <Content Include="Images\art\zeka6.jpg" />
+    <Content Include="Images\art\zeka7.jpg" />
+    <Content Include="Images\art\zeka8.jpg" />
+    <Content Include="Images\art\zeka9.jpg" />
+    <Content Include="Images\BgTop.png" />
+    <Content Include="Images\bottomcap.png" />
+    <Content Include="Images\c1aspnet_accordion_16.png" />
+    <Content Include="Images\c1aspnet_calendar_16.png" />
+    <Content Include="Images\c1aspnet_combobox_16.png" />
+    <Content Include="Images\c1aspnet_contentheader_16.png" />
+    <Content Include="Images\c1aspnet_editor_16.png" />
+    <Content Include="Images\c1aspnet_expander_16.png" />
+    <Content Include="Images\c1aspnet_formdecorator_16.png" />
+    <Content Include="Images\c1aspnet_gauges_16.png" />
+    <Content Include="Images\c1aspnet_gauges_32.png" />
+    <Content Include="Images\c1aspnet_gridview_16.png" />
+    <Content Include="Images\c1aspnet_maskedit_16.png" />
+    <Content Include="Images\c1aspnet_menu_16.png" />
+    <Content Include="Images\c1aspnet_multipage_16.png" />
+    <Content Include="Images\c1aspnet_navpanel_16.png" />
+    <Content Include="Images\c1aspnet_progressbar_16.png" />
+    <Content Include="Images\c1aspnet_reportviewer_16.png" />
+    <Content Include="Images\c1aspnet_reportviewer_32.png" />
+    <Content Include="Images\c1aspnet_schedule_16.png" />
+    <Content Include="Images\c1aspnet_slider_16.png" />
+    <Content Include="Images\c1aspnet_splitter_16.png" />
+    <Content Include="Images\c1aspnet_superpanel_16.png" />
+    <Content Include="Images\c1aspnet_tabcontrol_16.png" />
+    <Content Include="Images\c1aspnet_tabstrip_16.png" />
+    <Content Include="Images\c1aspnet_toolbar_16.png" />
+    <Content Include="Images\c1aspnet_tooltip_16.png" />
+    <Content Include="Images\c1aspnet_treeview_16.png" />
+    <Content Include="Images\c1aspnet_upload_16.png" />
+    <Content Include="Images\c1aspnet_webchart_16.png" />
+    <Content Include="Images\c1aspnet_webreports_16.png" />
+    <Content Include="Images\c1aspnet_window_16.png" />
+    <Content Include="Images\c1logo_215x150.png" />
+    <Content Include="Images\c1resize-ew.png" />
+    <Content Include="Images\c1\arrow_nav_left.png" />
+    <Content Include="Images\c1\arrow_nav_right.png" />
+    <Content Include="Images\c1\olapsl2011_repeater.png" />
+    <Content Include="Images\c1\productheaderse2011.png" />
+    <Content Include="Images\c1\productheader_olapsl_2011.png" />
+    <Content Include="Images\c1\productheader_winforms_2011.png" />
+    <Content Include="Images\c1\se2011_chart_repeater.png" />
+    <Content Include="Images\c1\thumb\olapsl2011_thumb.png" />
+    <Content Include="Images\c1\thumb\pdfviewer_thumb.png" />
+    <Content Include="Images\c1\thumb\secharts2011_thumb.png" />
+    <Content Include="Images\c1\thumb\winforms2011_thumb.png" />
+    <Content Include="Images\c1\winforms2011_repeater.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\headers\berries-thumbnail.jpg" />
+    <Content Include="Images\headers\berries.jpg" />
+    <Content Include="Images\headers\cherryblossoms-thumbnail.jpg" />
+    <Content Include="Images\headers\cherryblossoms.jpg" />
+    <Content Include="Images\headers\concave-thumbnail.jpg" />
+    <Content Include="Images\headers\concave.jpg" />
+    <Content Include="Images\headers\fern-thumbnail.jpg" />
+    <Content Include="Images\headers\fern.jpg" />
+    <Content Include="Images\headers\forestfloor-thumbnail.jpg" />
+    <Content Include="Images\headers\forestfloor.jpg" />
+    <Content Include="Images\headers\inkwell-thumbnail.jpg" />
+    <Content Include="Images\headers\inkwell.jpg" />
+    <Content Include="Images\headers\path-thumbnail.jpg" />
+    <Content Include="Images\headers\path.jpg" />
+    <Content Include="Images\headers\sunset-thumbnail.jpg" />
+    <Content Include="Images\headers\sunset.jpg" />
+    <Content Include="Images\LaunchDemoASPNETaw.png" />
+    <Content Include="Images\LaunchDemoASPNETiTunes.png" />
+    <Content Include="Images\LaunchDemoASPNETStock.png" />
+    <Content Include="Images\LogoControlExplorer.png" />
+    <Content Include="Images\map_icon.gif" />
+    <Content Include="Images\searchbutton.gif" />
+    <Content Include="Images\splash.png" />
+    <Content Include="Images\topcap.png" />
+    <Content Include="Images\waiting.gif" />
+    <Content Include="Images\wjmo_aspnet_logo.png" />
+    <Content Include="Images\wjmo_aspnet_logo_v2.png" />
+    <Content Include="InputDate\BlurOnLastChar.aspx" />
+    <Content Include="InputDate\BlurOnLeftRightKey.aspx" />
+    <Content Include="InputDate\CustomEra.aspx" />
+    <Content Include="InputDate\DisplayFormat.aspx" />
+    <Content Include="InputDate\NullText.aspx" />
+    <Content Include="InputDate\SpinnerAlign.aspx" />
+    <Content Include="InputDate\TimePicker.aspx" />
+    <Content Include="InputMask\BlurOnLastChar.aspx" />
+    <Content Include="InputMask\BlurOnLeftRightKey.aspx" />
+    <Content Include="InputMask\DBCS.aspx" />
+    <Content Include="InputMask\Hirigana.aspx" />
+    <Content Include="InputMask\SSN.aspx" />
+    <Content Include="InputNumber\NegativeClass.aspx" />
+    <Content Include="InputText\DropDown.aspx" />
+    <Content Include="InputText\Format.aspx" />
+    <Content Include="InputText\MaxLength.aspx" />
+    <Content Include="InputText\MultiLine.aspx" />
+    <Content Include="InputText\Overview.aspx" />
+    <Content Include="InputText\ReadingImeString.aspx" />
+    <Content Include="LightBox\AutoPlay.aspx" />
+    <Content Include="LightBox\AutoSize.aspx" />
+    <Content Include="LightBox\Flash.aspx" />
+    <Content Include="LightBox\FlashVideo.aspx" />
+    <Content Include="LightBox\FullSize.aspx" />
+    <Content Include="LightBox\IFrame.aspx" />
+    <Content Include="LightBox\images\small\caveman.png" />
+    <Content Include="LightBox\images\small\componentone.png" />
+    <Content Include="LightBox\images\small\flash.png" />
+    <Content Include="LightBox\images\small\happygirl.png" />
+    <Content Include="LightBox\images\small\iceflow.png" />
+    <Content Include="LightBox\images\small\keyboardcat.png" />
+    <Content Include="LightBox\images\small\lightning.png" />
+    <Content Include="LightBox\images\small\mediaplayer.png" />
+    <Content Include="LightBox\images\small\microsoft.png" />
+    <Content Include="LightBox\images\small\mindrelic.png" />
+    <Content Include="LightBox\images\small\oldman.png" />
+    <Content Include="LightBox\images\small\panda.png" />
+    <Content Include="LightBox\images\small\quicktime.png" />
+    <Content Include="LightBox\images\small\rochester.png" />
+    <Content Include="LightBox\images\small\talkingcats.png" />
+    <Content Include="LightBox\images\small\yahoo.png" />
+    <Content Include="LightBox\KeyNav.aspx" />
+    <Content Include="LightBox\movies\caveman.swf" />
+    <Content Include="LightBox\movies\old_man.swf" />
+    <Content Include="LightBox\movies\sample.mpeg" />
+    <Content Include="LightBox\movies\skip.swf" />
+    <Content Include="LightBox\OverView.aspx" />
+    <Content Include="LightBox\player\expressInstall.swf" />
+    <Content Include="LightBox\player\player.swf" />
+    <Content Include="LightBox\PlayPause.aspx" />
+    <Content Include="LightBox\QuickTime.aspx" />
+    <Content Include="LightBox\SeqCounter.aspx" />
+    <Content Include="LightBox\TextPosition.aspx" />
+    <Content Include="LightBox\Transition.aspx" />
+    <Content Include="LightBox\Vimeo.aspx" />
+    <Content Include="LightBox\WMP.aspx" />
+    <Content Include="LightBox\YouTube.aspx" />
+    <Content Include="LinearGauge\Interactive.aspx" />
+    <Content Include="LinearGauge\Level.aspx" />
+    <Content Include="LinearGauge\Logarithmic.aspx" />
+    <Content Include="LinearGauge\Orientation.aspx" />
+    <Content Include="LinearGauge\Overview.aspx" />
+    <Content Include="LinearGauge\Temperature.aspx" />
+    <Content Include="LinearGauge\Volume.aspx" />
+    <Content Include="LineChart\Animation.aspx" />
+    <Content Include="LineChart\Area.aspx" />
+    <Content Include="LineChart\AreaSpline.aspx" />
+    <Content Include="LineChart\Origin.aspx" />
+    <Content Include="PieChart\SeriesTransition.aspx" />
+    <Content Include="RadialGauge\HalfCircle.aspx" />
+    <Content Include="RadialGauge\Logarithmic.aspx" />
+    <Content Include="RadialGauge\Margin.aspx" />
+    <Content Include="RadialGauge\Overview.aspx" />
+    <Content Include="RadialGauge\Position.aspx" />
+    <Content Include="RadialGauge\RPM.aspx" />
+    <Content Include="RadialGauge\Speedometer.aspx" />
+    <Content Include="RadialGauge\Template.aspx" />
+    <Content Include="Rating\Animation.aspx" />
+    <Content Include="Rating\CustomizedIcon.aspx" />
+    <Content Include="Rating\Events.aspx" />
+    <Content Include="Rating\Overview.aspx" />
+    <Content Include="ScatterChart\Overview.aspx" />
+    <Content Include="ToolkitExplorer.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Expander\Animation.aspx" />
+    <Content Include="Expander\ContentUrl.aspx" />
+    <Content Include="Expander\ExpandDirection.aspx" />
+    <Content Include="Grid\Bands.aspx" />
+    <Content Include="Grid\CellRowFormatting.aspx" />
+    <Content Include="Grid\ColumnMoving.aspx" />
+    <Content Include="Grid\ColumnResizing.aspx" />
+    <Content Include="Grid\ColumnVisibility.aspx" />
+    <Content Include="Grid\CustomDataParsers.aspx" />
+    <Content Include="Grid\CustomEditors.aspx" />
+    <Content Include="Grid\CustomFilterOperators.aspx" />
+    <Content Include="Grid\CustomPaging.aspx" />
+    <Content Include="Grid\DataSources.aspx" />
+    <Content Include="Grid\DataTypes.aspx" />
+    <Content Include="Grid\Editing.aspx" />
+    <Content Include="Grid\Filtering.aspx" />
+    <Content Include="Grid\GroupingAndAggregates.aspx" />
+    <Content Include="Grid\HeaderIcons.aspx" />
+    <Content Include="Grid\Overview.aspx" />
+    <Content Include="Grid\Paging.aspx" />
+    <Content Include="Grid\PreventCurrentAndHovering.aspx" />
+    <Content Include="Grid\Scrolling.aspx" />
+    <Content Include="Grid\Selection.aspx" />
+    <Content Include="Grid\Sorting.aspx" />
+    <Content Include="LineChart\Trends.aspx" />
+    <Content Include="Menu\MenuitemTrigger.aspx" />
+    <Content Include="Menu\Position.aspx" />
+    <Content Include="Menu\TriggerEvent.aspx" />
+    <Content Include="Progressbar\Direction.aspx" />
+    <Content Include="ToolkitExplorer.png" />
+    <Content Include="Tooltip\Ajax.aspx" />
+    <Content Include="Tooltip\CalloutFilled.aspx" />
+    <Content Include="Tooltip\Closebehavior.aspx" />
+    <Content Include="Tooltip\Modal.aspx" />
+    <Content Include="Tooltip\Position.aspx" />
+    <Content Include="Tooltip\Trigger.aspx" />
+    <Content Include="Upload\Overview.aspx" />
+    <Content Include="Video\Overview.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\ExpandDirection.aspx.cs">
+      <DependentUpon>ExpandDirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion\ExpandDirection.aspx.designer.cs">
+      <DependentUpon>ExpandDirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\Hover.aspx.cs">
+      <DependentUpon>Hover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion\Hover.aspx.designer.cs">
+      <DependentUpon>Hover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accordion\RequireOpenedPane.aspx.cs">
+      <DependentUpon>RequireOpenedPane.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accordion\RequireOpenedPane.aspx.designer.cs">
+      <DependentUpon>RequireOpenedPane.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BarChart\AjaxData.aspx.cs">
+      <DependentUpon>AjaxData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\Clusters.aspx.cs">
+      <DependentUpon>Clusters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\ColumnBar.aspx.cs">
+      <DependentUpon>ColumnBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\FixedLabelWidth.aspx.cs">
+      <DependentUpon>FixedLabelWidth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\Origin.aspx.cs">
+      <DependentUpon>Origin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\Origin.aspx.designer.cs">
+      <DependentUpon>Origin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BarChart\OverView.aspx.cs">
+      <DependentUpon>OverView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\SeriesTransition.aspx.cs">
+      <DependentUpon>SeriesTransition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\SeriesTransition.aspx.designer.cs">
+      <DependentUpon>SeriesTransition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BarChart\Simple.aspx.cs">
+      <DependentUpon>Simple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\StackedBar.aspx.cs">
+      <DependentUpon>StackedBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BarChart\StackedPercentageBar.aspx.cs">
+      <DependentUpon>StackedPercentageBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\ChartMarker.aspx.cs">
+      <DependentUpon>ChartMarker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\ChartMarker.aspx.designer.cs">
+      <DependentUpon>ChartMarker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\InvisibleLabel.aspx.cs">
+      <DependentUpon>InvisibleLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\InvisibleLabel.aspx.designer.cs">
+      <DependentUpon>InvisibleLabel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\Negative.aspx.cs">
+      <DependentUpon>Negative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\Negative.aspx.designer.cs">
+      <DependentUpon>Negative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\OutsideLabel.aspx.cs">
+      <DependentUpon>OutsideLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\OutsideLabel.aspx.designer.cs">
+      <DependentUpon>OutsideLabel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\Overlap.aspx.cs">
+      <DependentUpon>Overlap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\Overlap.aspx.designer.cs">
+      <DependentUpon>Overlap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BubbleChart\Symbols.aspx.cs">
+      <DependentUpon>Symbols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BubbleChart\Symbols.aspx.designer.cs">
+      <DependentUpon>Symbols.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\CustomDates.aspx.cs">
+      <DependentUpon>CustomDates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\MultiViews.aspx.cs">
+      <DependentUpon>MultiViews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\OtherMonth.aspx.cs">
+      <DependentUpon>OtherMonth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\QuickNav.aspx.cs">
+      <DependentUpon>QuickNav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\Range.aspx.cs">
+      <DependentUpon>Range.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\Selection.aspx.cs">
+      <DependentUpon>Selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\CandlestickFormatter.aspx.cs">
+      <DependentUpon>CandlestickFormatter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\CandlestickFormatter.aspx.designer.cs">
+      <DependentUpon>CandlestickFormatter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandlestickChart\HighLow.aspx.cs">
+      <DependentUpon>HighLow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\HighLow.aspx.designer.cs">
+      <DependentUpon>HighLow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandlestickChart\Ohlc.aspx.cs">
+      <DependentUpon>Ohlc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\Ohlc.aspx.designer.cs">
+      <DependentUpon>Ohlc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandlestickChart\OhlcColor.aspx.cs">
+      <DependentUpon>OhlcColor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\OhlcColor.aspx.designer.cs">
+      <DependentUpon>OhlcColor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandlestickChart\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CandlestickChart\ValueLabels.aspx.cs">
+      <DependentUpon>ValueLabels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CandlestickChart\ValueLabels.aspx.designer.cs">
+      <DependentUpon>ValueLabels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\ClientSideEvents.aspx.cs">
+      <DependentUpon>ClientSideEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\ClientSideEvents.aspx.designer.cs">
+      <DependentUpon>ClientSideEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Content.aspx.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Content.aspx.designer.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Flickr.aspx.cs">
+      <DependentUpon>Flickr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Flickr.aspx.designer.cs">
+      <DependentUpon>Flickr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\LightBox.aspx.cs">
+      <DependentUpon>LightBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\LightBox.aspx.designer.cs">
+      <DependentUpon>LightBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Orientation.aspx.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Orientation.aspx.designer.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Paging.aspx.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Paging.aspx.designer.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Preview.aspx.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Preview.aspx.designer.cs">
+      <DependentUpon>Preview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carousel\Thumbnails.aspx.cs">
+      <DependentUpon>Thumbnails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carousel\Thumbnails.aspx.designer.cs">
+      <DependentUpon>Thumbnails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBox\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\DynamicData.aspx.cs">
+      <DependentUpon>DynamicData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\MultipleColumns.aspx.cs">
+      <DependentUpon>MultipleColumns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\Position.aspx.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\RemoteData.aspx.cs">
+      <DependentUpon>RemoteData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComboBox\Select.aspx.cs">
+      <DependentUpon>Select.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompositeChart\ComboRegression.aspx.cs">
+      <DependentUpon>ComboRegression.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompositeChart\ComboRegression.aspx.designer.cs">
+      <DependentUpon>ComboRegression.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompositeChart\CompositeChartWithCandlestick.aspx.cs">
+      <DependentUpon>CompositeChartWithCandlestick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompositeChart\CompositeChartWithCandlestick.aspx.designer.cs">
+      <DependentUpon>CompositeChartWithCandlestick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompositeChart\MultipleAxes.aspx.cs">
+      <DependentUpon>MultipleAxes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompositeChart\MultipleAxes.aspx.designer.cs">
+      <DependentUpon>MultipleAxes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompositeChart\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompositeChart\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSource\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\ContentUrl.aspx.cs">
+      <DependentUpon>ContentUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\ModalAlert.aspx.cs">
+      <DependentUpon>ModalAlert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\ModalConfirm.aspx.cs">
+      <DependentUpon>ModalConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\ModalDialog.aspx.cs">
+      <DependentUpon>ModalDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\BBCode.aspx.cs">
+      <DependentUpon>BBCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\Compact.aspx.cs">
+      <DependentUpon>Compact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\Compact.aspx.designer.cs">
+      <DependentUpon>Compact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\CustomizeSimple.aspx.cs">
+      <DependentUpon>CustomizeSimple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\CustomizeSimple.aspx.designer.cs">
+      <DependentUpon>CustomizeSimple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\EditingModes.aspx.cs">
+      <DependentUpon>EditingModes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\Simple.aspx.cs">
+      <DependentUpon>Simple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalendar\CustomDataStorage.aspx.cs">
+      <DependentUpon>CustomDataStorage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalendar\CustomDataStorage.aspx.designer.cs">
+      <DependentUpon>CustomDataStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsCalendar\CustomTimeInterval.aspx.cs">
+      <DependentUpon>CustomTimeInterval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalendar\CustomTimeInterval.aspx.designer.cs">
+      <DependentUpon>CustomTimeInterval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsCalendar\DataModel.aspx.cs">
+      <DependentUpon>DataModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalendar\DataModel.aspx.designer.cs">
+      <DependentUpon>DataModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsCalendar\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsCalendar\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expander\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expander\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expander\ContentUrl.aspx.cs">
+      <DependentUpon>ContentUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expander\ContentUrl.aspx.designer.cs">
+      <DependentUpon>ContentUrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expander\ExpandDirection.aspx.cs">
+      <DependentUpon>ExpandDirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expander\ExpandDirection.aspx.designer.cs">
+      <DependentUpon>ExpandDirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expander\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expander\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDecorator\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Flash.aspx.cs">
+      <DependentUpon>Flash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Flash.aspx.designer.cs">
+      <DependentUpon>Flash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\IFrame.aspx.cs">
+      <DependentUpon>IFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\IFrame.aspx.designer.cs">
+      <DependentUpon>IFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Orientation.aspx.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Orientation.aspx.designer.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Paging.aspx.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Paging.aspx.designer.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetSourceCode.aspx.cs">
+      <DependentUpon>GetSourceCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetSourceCode.aspx.designer.cs">
+      <DependentUpon>GetSourceCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Bands.aspx.cs">
+      <DependentUpon>Bands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Bands.aspx.designer.cs">
+      <DependentUpon>Bands.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CellRowFormatting.aspx.cs">
+      <DependentUpon>CellRowFormatting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\CellRowFormatting.aspx.designer.cs">
+      <DependentUpon>CellRowFormatting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ColumnMoving.aspx.cs">
+      <DependentUpon>ColumnMoving.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\ColumnMoving.aspx.designer.cs">
+      <DependentUpon>ColumnMoving.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ColumnResizing.aspx.cs">
+      <DependentUpon>ColumnResizing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\ColumnResizing.aspx.designer.cs">
+      <DependentUpon>ColumnResizing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\ColumnVisibility.aspx.cs">
+      <DependentUpon>ColumnVisibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\ColumnVisibility.aspx.designer.cs">
+      <DependentUpon>ColumnVisibility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CustomDataParsers.aspx.cs">
+      <DependentUpon>CustomDataParsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\CustomDataParsers.aspx.designer.cs">
+      <DependentUpon>CustomDataParsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CustomEditors.aspx.cs">
+      <DependentUpon>CustomEditors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\CustomEditors.aspx.designer.cs">
+      <DependentUpon>CustomEditors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CustomFilterOperators.aspx.cs">
+      <DependentUpon>CustomFilterOperators.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\CustomFilterOperators.aspx.designer.cs">
+      <DependentUpon>CustomFilterOperators.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\CustomPaging.aspx.cs">
+      <DependentUpon>CustomPaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\CustomPaging.aspx.designer.cs">
+      <DependentUpon>CustomPaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\DataSources.aspx.cs">
+      <DependentUpon>DataSources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\DataSources.aspx.designer.cs">
+      <DependentUpon>DataSources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\DataTypes.aspx.cs">
+      <DependentUpon>DataTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\DataTypes.aspx.designer.cs">
+      <DependentUpon>DataTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Editing.aspx.cs">
+      <DependentUpon>Editing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Editing.aspx.designer.cs">
+      <DependentUpon>Editing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Filtering.aspx.cs">
+      <DependentUpon>Filtering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Filtering.aspx.designer.cs">
+      <DependentUpon>Filtering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\GroupArea.aspx.cs">
+      <DependentUpon>GroupArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\GroupArea.aspx.designer.cs">
+      <DependentUpon>GroupArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\GroupingAndAggregates.aspx.cs">
+      <DependentUpon>GroupingAndAggregates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\GroupingAndAggregates.aspx.designer.cs">
+      <DependentUpon>GroupingAndAggregates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\HeaderIcons.aspx.cs">
+      <DependentUpon>HeaderIcons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\HeaderIcons.aspx.designer.cs">
+      <DependentUpon>HeaderIcons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Paging.aspx.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Paging.aspx.designer.cs">
+      <DependentUpon>Paging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\PreventCurrentAndHovering.aspx.cs">
+      <DependentUpon>PreventCurrentAndHovering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\PreventCurrentAndHovering.aspx.designer.cs">
+      <DependentUpon>PreventCurrentAndHovering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Scrolling.aspx.cs">
+      <DependentUpon>Scrolling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Scrolling.aspx.designer.cs">
+      <DependentUpon>Scrolling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Selection.aspx.cs">
+      <DependentUpon>Selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Selection.aspx.designer.cs">
+      <DependentUpon>Selection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Sorting.aspx.cs">
+      <DependentUpon>Sorting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grid\Sorting.aspx.designer.cs">
+      <DependentUpon>Sorting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\BlurOnLastChar.aspx.cs">
+      <DependentUpon>BlurOnLastChar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\BlurOnLastChar.aspx.designer.cs">
+      <DependentUpon>BlurOnLastChar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\BlurOnLeftRightKey.aspx.cs">
+      <DependentUpon>BlurOnLeftRightKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\BlurOnLeftRightKey.aspx.designer.cs">
+      <DependentUpon>BlurOnLeftRightKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\CustomEra.aspx.cs">
+      <DependentUpon>CustomEra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\CustomEra.aspx.designer.cs">
+      <DependentUpon>CustomEra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\DatePicker.aspx.cs">
+      <DependentUpon>DatePicker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\DisplayFormat.aspx.cs">
+      <DependentUpon>DisplayFormat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\DisplayFormat.aspx.designer.cs">
+      <DependentUpon>DisplayFormat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\Dropdown.aspx.cs">
+      <DependentUpon>Dropdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\Dropdown.aspx.designer.cs">
+      <DependentUpon>Dropdown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\NullText.aspx.cs">
+      <DependentUpon>NullText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\NullText.aspx.designer.cs">
+      <DependentUpon>NullText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\SpinnerAlign.aspx.cs">
+      <DependentUpon>SpinnerAlign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\SpinnerAlign.aspx.designer.cs">
+      <DependentUpon>SpinnerAlign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputDate\TimePicker.aspx.cs">
+      <DependentUpon>TimePicker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputDate\TimePicker.aspx.designer.cs">
+      <DependentUpon>TimePicker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputMask\BlurOnLastChar.aspx.cs">
+      <DependentUpon>BlurOnLastChar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\BlurOnLastChar.aspx.designer.cs">
+      <DependentUpon>BlurOnLastChar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputMask\BlurOnLeftRightKey.aspx.cs">
+      <DependentUpon>BlurOnLeftRightKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\BlurOnLeftRightKey.aspx.designer.cs">
+      <DependentUpon>BlurOnLeftRightKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputMask\DBCS.aspx.cs">
+      <DependentUpon>DBCS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\DBCS.aspx.designer.cs">
+      <DependentUpon>DBCS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputMask\Dropdown.aspx.cs">
+      <DependentUpon>Dropdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\FirstName.aspx.cs">
+      <DependentUpon>FirstName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\Hirigana.aspx.cs">
+      <DependentUpon>Hirigana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\Hirigana.aspx.designer.cs">
+      <DependentUpon>Hirigana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputMask\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\Password.aspx.cs">
+      <DependentUpon>Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\SSN.aspx.cs">
+      <DependentUpon>SSN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputMask\SSN.aspx.designer.cs">
+      <DependentUpon>SSN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputNumber\Currency.aspx.cs">
+      <DependentUpon>Currency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputNumber\Dropdown.aspx.cs">
+      <DependentUpon>Dropdown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputNumber\Increment.aspx.cs">
+      <DependentUpon>Increment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputNumber\NegativeClass.aspx.cs">
+      <DependentUpon>NegativeClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputNumber\NegativeClass.aspx.designer.cs">
+      <DependentUpon>NegativeClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputNumber\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputNumber\Percent.aspx.cs">
+      <DependentUpon>Percent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\DropDown.aspx.cs">
+      <DependentUpon>DropDown.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\DropDown.aspx.designer.cs">
+      <DependentUpon>DropDown.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputText\Format.aspx.cs">
+      <DependentUpon>Format.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\Format.aspx.designer.cs">
+      <DependentUpon>Format.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputText\MaxLength.aspx.cs">
+      <DependentUpon>MaxLength.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\MaxLength.aspx.designer.cs">
+      <DependentUpon>MaxLength.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputText\MultiLine.aspx.cs">
+      <DependentUpon>MultiLine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\MultiLine.aspx.designer.cs">
+      <DependentUpon>MultiLine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputText\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputText\ReadingImeString.aspx.cs">
+      <DependentUpon>ReadingImeString.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputText\ReadingImeString.aspx.designer.cs">
+      <DependentUpon>ReadingImeString.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\AutoPlay.aspx.cs">
+      <DependentUpon>AutoPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\AutoPlay.aspx.designer.cs">
+      <DependentUpon>AutoPlay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\AutoSize.aspx.cs">
+      <DependentUpon>AutoSize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\AutoSize.aspx.designer.cs">
+      <DependentUpon>AutoSize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\Flash.aspx.cs">
+      <DependentUpon>Flash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\Flash.aspx.designer.cs">
+      <DependentUpon>Flash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\FlashVideo.aspx.cs">
+      <DependentUpon>FlashVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\FlashVideo.aspx.designer.cs">
+      <DependentUpon>FlashVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\FullSize.aspx.cs">
+      <DependentUpon>FullSize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\FullSize.aspx.designer.cs">
+      <DependentUpon>FullSize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\IFrame.aspx.cs">
+      <DependentUpon>IFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\IFrame.aspx.designer.cs">
+      <DependentUpon>IFrame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\KeyNav.aspx.cs">
+      <DependentUpon>KeyNav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\KeyNav.aspx.designer.cs">
+      <DependentUpon>KeyNav.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\OverView.aspx.cs">
+      <DependentUpon>OverView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\OverView.aspx.designer.cs">
+      <DependentUpon>OverView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\PlayPause.aspx.cs">
+      <DependentUpon>PlayPause.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\PlayPause.aspx.designer.cs">
+      <DependentUpon>PlayPause.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\QuickTime.aspx.cs">
+      <DependentUpon>QuickTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\QuickTime.aspx.designer.cs">
+      <DependentUpon>QuickTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\SeqCounter.aspx.cs">
+      <DependentUpon>SeqCounter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\SeqCounter.aspx.designer.cs">
+      <DependentUpon>SeqCounter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\TextPosition.aspx.cs">
+      <DependentUpon>TextPosition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\TextPosition.aspx.designer.cs">
+      <DependentUpon>TextPosition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\Transition.aspx.cs">
+      <DependentUpon>Transition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\Transition.aspx.designer.cs">
+      <DependentUpon>Transition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\Vimeo.aspx.cs">
+      <DependentUpon>Vimeo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\Vimeo.aspx.designer.cs">
+      <DependentUpon>Vimeo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\WMP.aspx.cs">
+      <DependentUpon>WMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\WMP.aspx.designer.cs">
+      <DependentUpon>WMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LightBox\YouTube.aspx.cs">
+      <DependentUpon>YouTube.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LightBox\YouTube.aspx.designer.cs">
+      <DependentUpon>YouTube.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Interactive.aspx.cs">
+      <DependentUpon>Interactive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Interactive.aspx.designer.cs">
+      <DependentUpon>Interactive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Level.aspx.cs">
+      <DependentUpon>Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Level.aspx.designer.cs">
+      <DependentUpon>Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Logarithmic.aspx.cs">
+      <DependentUpon>Logarithmic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Logarithmic.aspx.designer.cs">
+      <DependentUpon>Logarithmic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Orientation.aspx.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Orientation.aspx.designer.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Temperature.aspx.cs">
+      <DependentUpon>Temperature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Temperature.aspx.designer.cs">
+      <DependentUpon>Temperature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LinearGauge\Volume.aspx.cs">
+      <DependentUpon>Volume.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinearGauge\Volume.aspx.designer.cs">
+      <DependentUpon>Volume.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\AjaxData.aspx.cs">
+      <DependentUpon>AjaxData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\Area.aspx.cs">
+      <DependentUpon>Area.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Area.aspx.designer.cs">
+      <DependentUpon>Area.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\AreaSpline.aspx.cs">
+      <DependentUpon>AreaSpline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\AreaSpline.aspx.designer.cs">
+      <DependentUpon>AreaSpline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\DateTime.aspx.cs">
+      <DependentUpon>DateTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Origin.aspx.cs">
+      <DependentUpon>Origin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Origin.aspx.designer.cs">
+      <DependentUpon>Origin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\SimulateData.aspx.cs">
+      <DependentUpon>SimulateData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\SimulateData.aspx.designer.cs">
+      <DependentUpon>SimulateData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LineChart\Symbols.aspx.cs">
+      <DependentUpon>Symbols.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Trends.aspx.cs">
+      <DependentUpon>Trends.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LineChart\Trends.aspx.designer.cs">
+      <DependentUpon>Trends.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="List\MultipleSelection.aspx.cs">
+      <DependentUpon>MultipleSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Icon.aspx.cs">
+      <DependentUpon>Icon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuFunctions.aspx.cs">
+      <DependentUpon>MenuFunctions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuitemTrigger.aspx.cs">
+      <DependentUpon>MenuitemTrigger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\MenuitemTrigger.aspx.designer.cs">
+      <DependentUpon>MenuitemTrigger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Orientation.aspx.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Position.aspx.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Position.aspx.designer.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Shortcut.aspx.cs">
+      <DependentUpon>Shortcut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Template.aspx.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\TriggerEvent.aspx.cs">
+      <DependentUpon>TriggerEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\TriggerEvent.aspx.designer.cs">
+      <DependentUpon>TriggerEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pager\Modes.aspx.cs">
+      <DependentUpon>Modes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pager\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pager\PagedTable.aspx.cs">
+      <DependentUpon>PagedTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pager\PagedTable.aspx.designer.cs">
+      <DependentUpon>PagedTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PieChart\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PieChart\Donut.aspx.cs">
+      <DependentUpon>Donut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PieChart\OverView.aspx.cs">
+      <DependentUpon>OverView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PieChart\SeriesTransition.aspx.cs">
+      <DependentUpon>SeriesTransition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PieChart\SeriesTransition.aspx.designer.cs">
+      <DependentUpon>SeriesTransition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Progressbar\Direction.aspx.cs">
+      <DependentUpon>Direction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Progressbar\Direction.aspx.designer.cs">
+      <DependentUpon>Direction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Progressbar\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RadialGauge\HalfCircle.aspx.cs">
+      <DependentUpon>HalfCircle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\HalfCircle.aspx.designer.cs">
+      <DependentUpon>HalfCircle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Logarithmic.aspx.cs">
+      <DependentUpon>Logarithmic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Logarithmic.aspx.designer.cs">
+      <DependentUpon>Logarithmic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Margin.aspx.cs">
+      <DependentUpon>Margin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Margin.aspx.designer.cs">
+      <DependentUpon>Margin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Position.aspx.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Position.aspx.designer.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\RPM.aspx.cs">
+      <DependentUpon>RPM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\RPM.aspx.designer.cs">
+      <DependentUpon>RPM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Speedometer.aspx.cs">
+      <DependentUpon>Speedometer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Speedometer.aspx.designer.cs">
+      <DependentUpon>Speedometer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RadialGauge\Template.aspx.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RadialGauge\Template.aspx.designer.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rating\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rating\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rating\CustomizedIcon.aspx.cs">
+      <DependentUpon>CustomizedIcon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rating\CustomizedIcon.aspx.designer.cs">
+      <DependentUpon>CustomizedIcon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rating\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rating\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rating\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rating\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScatterChart\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScatterChart\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Slider\Dragfill.aspx.cs">
+      <DependentUpon>Dragfill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Slider\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Slider\Range.aspx.cs">
+      <DependentUpon>Range.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Slider\Thumbs.aspx.cs">
+      <DependentUpon>Thumbs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Splitter\FullSplit.aspx.cs">
+      <DependentUpon>FullSplit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Splitter\Nested.aspx.cs">
+      <DependentUpon>Nested.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Splitter\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperPanel\ClientSideAPI.aspx.cs">
+      <DependentUpon>ClientSideAPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperPanel\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperPanel\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperPanel\ScrollMode.aspx.cs">
+      <DependentUpon>ScrollMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Alignment.aspx.cs">
+      <DependentUpon>Alignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Collapsible.aspx.cs">
+      <DependentUpon>Collapsible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Hover.aspx.cs">
+      <DependentUpon>Hover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Scrollable.aspx.cs">
+      <DependentUpon>Scrollable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Ajax.aspx.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Ajax.aspx.designer.cs">
+      <DependentUpon>Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tooltip\CalloutAnimation.aspx.cs">
+      <DependentUpon>CalloutAnimation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\CalloutFilled.aspx.cs">
+      <DependentUpon>CalloutFilled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\CalloutFilled.aspx.designer.cs">
+      <DependentUpon>CalloutFilled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tooltip\Closebehavior.aspx.cs">
+      <DependentUpon>Closebehavior.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Closebehavior.aspx.designer.cs">
+      <DependentUpon>Closebehavior.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tooltip\Modal.aspx.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Modal.aspx.designer.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tooltip\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Position.aspx.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Position.aspx.designer.cs">
+      <DependentUpon>Position.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tooltip\Trigger.aspx.cs">
+      <DependentUpon>Trigger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tooltip\Trigger.aspx.designer.cs">
+      <DependentUpon>Trigger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\AutoCollapse.aspx.cs">
+      <DependentUpon>AutoCollapse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\CheckBox.aspx.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\DragDrop.aspx.cs">
+      <DependentUpon>DragDrop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\ExpandOnHover.aspx.cs">
+      <DependentUpon>ExpandOnHover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\Icons.aspx.cs">
+      <DependentUpon>Icons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\ObjectModel.aspx.cs">
+      <DependentUpon>ObjectModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\Overview.aspx.designer.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Video\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewStateHandler.cs" />
+    <Compile Include="WidgetData.cs" />
+    <Compile Include="Widgets.aspx.cs">
+      <DependentUpon>Widgets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Widgets.aspx.designer.cs">
+      <DependentUpon>Widgets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wijmo.Master.Callbacks.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wijmo.Master.cs">
+      <DependentUpon>Wijmo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wijmo.Master.designer.cs">
+      <DependentUpon>Wijmo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WijmoSite.Master.cs">
+      <DependentUpon>WijmoSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WijmoSite.Master.designer.cs">
+      <DependentUpon>WijmoSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\Animation.aspx.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wizard\Animation.aspx.designer.cs">
+      <DependentUpon>Animation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\AutoPlay.aspx.cs">
+      <DependentUpon>AutoPlay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wizard\Overview.aspx.cs">
+      <DependentUpon>Overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wizard\Simple.aspx.cs">
+      <DependentUpon>Simple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accordion\Overview.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BarChart\AjaxData.aspx" />
+    <Content Include="BarChart\Clusters.aspx" />
+    <Content Include="BarChart\ColumnBar.aspx" />
+    <Content Include="BarChart\FixedLabelWidth.aspx" />
+    <Content Include="BarChart\OverView.aspx" />
+    <Content Include="BarChart\Simple.aspx" />
+    <Content Include="BarChart\StackedBar.aspx" />
+    <Content Include="BarChart\StackedPercentageBar.aspx" />
+    <Content Include="ComboBox\Animation.aspx" />
+    <Content Include="ComboBox\DynamicData.aspx" />
+    <Content Include="ComboBox\MultipleColumns.aspx" />
+    <Content Include="ComboBox\Overview.aspx" />
+    <Content Include="ComboBox\Position.aspx" />
+    <Content Include="ComboBox\RemoteData.aspx" />
+    <Content Include="ComboBox\Select.aspx" />
+    <Content Include="DataSource\Overview.aspx" />
+    <Content Include="Dialog\Animation.aspx" />
+    <Content Include="Dialog\ContentUrl.aspx" />
+    <Content Include="Dialog\ModalAlert.aspx" />
+    <Content Include="Dialog\ModalConfirm.aspx" />
+    <Content Include="Dialog\ModalDialog.aspx" />
+    <Content Include="Dialog\Overview.aspx" />
+    <Content Include="Expander\Overview.aspx" />
+    <Content Include="FormDecorator\Overview.aspx" />
+    <Content Include="InputDate\DatePicker.aspx" />
+    <Content Include="InputDate\Dropdown.aspx" />
+    <Content Include="InputDate\Overview.aspx" />
+    <Content Include="InputMask\Dropdown.aspx" />
+    <Content Include="InputMask\FirstName.aspx" />
+    <Content Include="InputMask\Overview.aspx" />
+    <Content Include="InputMask\Password.aspx" />
+    <Content Include="InputNumber\Currency.aspx" />
+    <Content Include="InputNumber\Dropdown.aspx" />
+    <Content Include="InputNumber\Increment.aspx" />
+    <Content Include="InputNumber\Overview.aspx" />
+    <Content Include="InputNumber\Percent.aspx" />
+    <Content Include="LineChart\AjaxData.aspx" />
+    <Content Include="LineChart\DateTime.aspx" />
+    <Content Include="LineChart\Images\hatemo.png" />
+    <Content Include="LineChart\Images\wijmo.png" />
+    <Content Include="LineChart\Overview.aspx" />
+    <Content Include="LineChart\SimulateData.aspx" />
+    <Content Include="LineChart\Symbols.aspx" />
+    <Content Include="List\MultipleSelection.aspx" />
+    <Content Include="List\Overview.aspx" />
+    <Content Include="Menu\Icon.aspx" />
+    <Content Include="Menu\MenuFunctions.aspx" />
+    <Content Include="Menu\Orientation.aspx" />
+    <Content Include="Menu\Overview.aspx" />
+    <Content Include="Menu\Shortcut.aspx" />
+    <Content Include="Menu\Template.aspx" />
+    <Content Include="Pager\Modes.aspx" />
+    <Content Include="Pager\Overview.aspx" />
+    <Content Include="Pager\PagedTable.aspx" />
+    <Content Include="PieChart\Animation.aspx" />
+    <Content Include="PieChart\Donut.aspx" />
+    <Content Include="PieChart\OverView.aspx" />
+    <Content Include="Progressbar\Overview.aspx" />
+    <Content Include="Slider\Dragfill.aspx" />
+    <Content Include="Slider\Overview.aspx" />
+    <Content Include="Slider\Range.aspx" />
+    <Content Include="Slider\Thumbs.aspx" />
+    <Content Include="Splitter\FullSplit.aspx" />
+    <Content Include="Splitter\Nested.aspx" />
+    <Content Include="Splitter\Overview.aspx" />
+    <Content Include="SuperPanel\ClientSideAPI.aspx" />
+    <Content Include="SuperPanel\Overview.aspx" />
+    <Content Include="SuperPanel\ScrollMode.aspx" />
+    <Content Include="Tabs\Alignment.aspx" />
+    <Content Include="Tabs\Animation.aspx" />
+    <Content Include="Tabs\Collapsible.aspx" />
+    <Content Include="Tabs\Hover.aspx" />
+    <Content Include="Tabs\Overview.aspx" />
+    <Content Include="Tabs\Scrollable.aspx" />
+    <Content Include="Tooltip\CalloutAnimation.aspx" />
+    <Content Include="Tooltip\Overview.aspx" />
+    <Content Include="Tree\AutoCollapse.aspx" />
+    <Content Include="Tree\CheckBox.aspx" />
+    <Content Include="Tree\DragDrop.aspx" />
+    <Content Include="Tree\ExpandOnHover.aspx" />
+    <Content Include="Tree\Icons.aspx" />
+    <Content Include="Tree\ObjectModel.aspx" />
+    <Content Include="Tree\Overview.aspx" />
+    <Content Include="Widgets.aspx" />
+    <Content Include="Wijmo.Master" />
+    <Content Include="Wizard\Animation.aspx" />
+    <Content Include="Wizard\AutoPlay.aspx" />
+    <Content Include="Wizard\Overview.aspx" />
+    <Content Include="Wizard\Simple.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Upload\upload.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="explore\css\images\museo\wijmo_300-webfont.eot" />
+    <None Include="explore\css\images\museo\wijmo_300-webfont.ttf" />
+    <None Include="explore\css\images\museo\wijmo_300-webfont.woff" />
+    <None Include="explore\css\images\museo\wijmo_700italic-webfont.eot" />
+    <None Include="explore\css\images\museo\wijmo_700italic-webfont.ttf" />
+    <None Include="explore\css\images\museo\wijmo_700italic-webfont.woff" />
+    <None Include="explore\css\images\museo\wijmo_900-webfont.eot" />
+    <None Include="explore\css\images\museo\wijmo_900-webfont.ttf" />
+    <None Include="explore\css\images\museo\wijmo_900-webfont.woff" />
+    <None Include="Images\apple\Thumbs.db" />
+    <None Include="Images\art\small\Thumbs.db" />
+    <None Include="Images\art\Thumbs.db" />
+    <None Include="Images\c1\Thumbs.db" />
+    <None Include="Images\headers\Thumbs.db" />
+    <None Include="LightBox\movies\racing.flv" />
+    <None Include="Video\sintel-trailer.mp4" />
+    <None Include="Video\sintel-trailer.ogv" />
+    <Content Include="WijmoSite.Master" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20623</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

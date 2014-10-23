@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="RootNodeUrl" title="Root Node"  description="Root Node Description" >
+    <siteMapNode url="" title="Products"  description="Products" >
+      <siteMapNode url="" title="Studio Enterprise"  description="Studio Enterprise">
+        <siteMapNode url="" title="Studio for WinForms"  description="Studio for WinForms" />
+        <siteMapNode url="" title="Studio for ASP.NET"  description="Studio for ASP.NET" />
+        <siteMapNode url="" title="Studio for WPF"  description="Studio for WPF" />
+        <siteMapNode url="" title="Studio for Mobile"  description="Studio for Mobile" />
+        <siteMapNode url="" title="Studio for ActiveX"  description="Studio for ActiveX" />
+        <siteMapNode url="" title="Studio for Silverlight"  description="Studio for Silverlight" />
+      </siteMapNode>
+      <siteMapNode url="" title="IntelliSpell"  description="IntelliSpell" />
+      <siteMapNode url="" title="Report Designer Edition"  description="Report Designer Edition" />
+    </siteMapNode>
+    <siteMapNode url="" title="Support"  description="Support" >
+      <siteMapNode url="" title="Support Services"  description="Support Services" />
+      <siteMapNode url="" title="HelpCentral"  description="HelpCentral" />
+      <siteMapNode url="" title="Product Forums"  description="Product Forums" />
+    </siteMapNode>
+    <siteMapNode url="" title="Company"  description="Company" >
+      <siteMapNode url="" title="About Us"  description="About Us" />
+      <siteMapNode url="" title="Partners"  description="Partners" />
+      <siteMapNode url="" title="Contact Us"  description="Contact Us" />
+      <siteMapNode url="" title="Join Us"  description="Join Us" />
+      <siteMapNode url="" title="Press Center"  description="Press Center" />
+      <siteMapNode url="" title="Governance"  description="Governance" />
+    </siteMapNode>
+    <siteMapNode url="" title="Store"  description="Store">
+      <siteMapNode url="" title="Buy Now"  description="Buy Now" />
+      <siteMapNode url="" title="Resellers"  description="Resellers" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

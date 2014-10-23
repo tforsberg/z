@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!doctype html>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                    <img src="~/Styles/Images/stock_logo.png" runat="server" alt="" />
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" Orientation="Horizontal" Visible="false">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="My Stocks"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

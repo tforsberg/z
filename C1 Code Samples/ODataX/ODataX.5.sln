@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataX.5", "ODataX\ODataX.5.csproj", "{8A82E25F-F630-433B-A3E0-19B3C252A65F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		GCDebug|Any CPU = GCDebug|Any CPU
+		GCRelease|Any CPU = GCRelease|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseGC|Any CPU = ReleaseGC|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.GCDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.GCDebug|Any CPU.Build.0 = Debug|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.GCRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.GCRelease|Any CPU.Build.0 = Release|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.ReleaseGC|Any CPU.ActiveCfg = Release|Any CPU
+		{8A82E25F-F630-433B-A3E0-19B3C252A65F}.ReleaseGC|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Players>
+  <Player Number="27" Nationality="Canada" Player="Adams, Craig" Position="RW" Handedness="R" Age="32" Acquired="2009" Birthplace="Seria, Brunei" />
+  <Player Number="43" Nationality="Canada" Player="Boucher, Philippe" Position="D" Handedness="R" Age="36" Acquired="2008" Birthplace="Saint-Apollinaire, Quebec" />
+  <Player Number="24" Nationality="Canada" Player="Cooke, Matt" Position="LW" Handedness="L" Age="30" Acquired="2008" Birthplace="Belleville, Ontario" />
+  <Player Number="87" Nationality="Canada" Player="Crosby, Sidney (C)" Position="C" Handedness="L" Age="21" Acquired="2005" Birthplace="Cole Harbour, Nova Scotia" />
+  <Player Number="1" Nationality="United States" Player="Curry, John" Position="G" Handedness="L" Age="25" Acquired="2007" Birthplace="Shorewood, Minnesota" />
+  <Player Number="9" Nationality="Canada" Player="Dupuis, Pascal" Position="W" Handedness="L" Age="30" Acquired="2008" Birthplace="Laval, Quebec" />
+  <Player Number="7" Nationality="United States" Player="Eaton, Mark" Position="D" Handedness="L" Age="32" Acquired="2006" Birthplace="Wilmington, Delaware" />
+  <Player Number="26" Nationality="Ukraine" Player="Fedotenko, Ruslan" Position="LW" Handedness="L" Age="30" Acquired="2008" Birthplace="Kiev, U.S.S.R." />
+  <Player Number="29" Nationality="Canada" Player="Fleury, Marc-Andre" Position="G" Handedness="L" Age="24" Acquired="2003" Birthplace="Sorel, Quebec" />
+  <Player Number="32" Nationality="Canada" Player="Garon, Mathieu" Position="G" Handedness="R" Age="31" Acquired="2009" Birthplace="Chandler, Quebec" />
+  <Player Number="2" Nationality="United States" Player="Gill, Hal" Position="D" Handedness="L" Age="34" Acquired="2008" Birthplace="Concord, Massachusetts" />
+  <Player Number="28" Nationality="Canada" Player="Godard, Eric" Position="RW" Handedness="R" Age="29" Acquired="2008" Birthplace="Vernon, British Columbia" />
+  <Player Number="3" Nationality="United States" Player="Goligoski, Alex" Position="D" Handedness="L" Age="23" Acquired="2004" Birthplace="Grand Rapids, Minnesota" />
+  <Player Number="55" Nationality="Russia" Player="Gonchar, Sergei (A)" Position="D" Handedness="L" Age="35" Acquired="2005" Birthplace="Chelyabinsk, U.S.S.R." />
+  <Player Number="13" Nationality="United States" Player="Guerin, Bill" Position="RW" Handedness="R" Age="38" Acquired="2009" Birthplace="Worcester, Massachusetts" />
+  <Player Number="42" Nationality="Canada" Player="Jeffrey, Dustin" Position="C" Handedness="L" Age="21" Acquired="2007" Birthplace="Sarnia, Ontario" />
+  <Player Number="48" Nationality="Canada" Player="Kennedy, Tyler" Position="C" Handedness="R" Age="22" Acquired="2004" Birthplace="Sault Ste. Marie, Ontario" />
+  <Player Number="14" Nationality="Canada" Player="Kunitz, Chris" Position="LW" Handedness="L" Age="29" Acquired="2009" Birthplace="Regina, Saskatchewan" />
+  <Player Number="58" Nationality="Canada" Player="Letang, Kristopher" Position="D" Handedness="R" Age="22" Acquired="2005" Birthplace="Montreal, Quebec" />
+  <Player Number="65" Nationality="United States" Player="Lovejoy, Ben" Position="D" Handedness="R" Age="25" Acquired="2008" Birthplace="Canaan, New Hampshire" />
+  <Player Number="71" Nationality="Russia" Player="Malkin, Evgeni (A)" Position="C" Handedness="L" Age="22" Acquired="2004" Birthplace="Magnitogorsk, U.S.S.R." />
+  <Player Number="14" Nationality="Canada" Player="Minard, Chris" Position="C" Handedness="L" Age="27" Acquired="2007" Birthplace="Owen Sound, Ontario" />
+  <Player Number="44" Nationality="United States" Player="Orpik, Brooks" Position="D" Handedness="L" Age="28" Acquired="2001" Birthplace="San Francisco, California" />
+  <Player Number="81" Nationality="Slovakia" Player="Satan, Miroslav" Position="RW" Handedness="L" Age="34" Acquired="2008" Birthplace="Topoľčany, Czechoslovakia" />
+  <Player Number="4" Nationality="United States" Player="Scuderi, Rob" Position="D" Handedness="L" Age="30" Acquired="1998" Birthplace="Syosset, New York" />
+  <Player Number="11" Nationality="Canada" Player="Staal, Jordan" Position="C" Handedness="L" Age="20" Acquired="2006" Birthplace="Thunder Bay, Ontario" />
+  <Player Number="17" Nationality="Czech Republic" Player="Sykora, Petr" Position="RW" Handedness="L" Age="32" Acquired="2007" Birthplace="Plzeň, Czechoslovakia" />
+  <Player Number="22" Nationality="United States" Player="Taffe, Jeff" Position="LW" Handedness="L" Age="28" Acquired="2007" Birthplace="Hastings, Minnesota" />
+  <Player Number="25" Nationality="Canada" Player="Talbot, Maxime" Position="C" Handedness="L" Age="25" Acquired="2002" Birthplace="LeMoyne, Quebec" />
+  <Player Number="15" Nationality="Canada" Player="Zigomanis, Michael" Position="C" Handedness="R" Age="28" Acquired="2008" Birthplace="Toronto, Ontario" />
+</Players>

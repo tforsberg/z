@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WijmoSite.master.cs" Inherits="ControlExplorer.WijmoSite" %>
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>Control Explorer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link id="Link2" runat="server" rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="<%# ResolveUrl("~/explore/js/modernizr.custom.js") %>"></script>
+    <link runat="server" href="~/explore/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" style="width: 100%; height: 100%;">
+        <div class="wrapper">
+            <header>
+                <div class="content">
+                    <div class="branding ui-helper-clearfix">
+                        <h1 id="logo">
+                            <a href="~/" runat="server">ASP.NET Wijmo Control Explorer</a></h1>
+                    </div>
+                </div>
+                <div class="page-header ui-helper-clearfix">
+                    <div class="menu-container content">
+                        <%--<div class="menu-extender menu-extender-left"></div>--%>
+                        <div class="padder">
+                            <asp:ContentPlaceHolder ID="HeaderButtons" runat="server">
+                            </asp:ContentPlaceHolder> 
+                        </div>                               
+                        <a class="downloadlink" href="http://www.componentone.com/StudioASPNET/Download/">
+                            <img runat="server" src="~/explore/css/images/download.png"/></a>
+                        <%--<div class="menu-extender menu-extender-right"></div>--%>
+                    </div>
+                </div>
+            </header>
+            <section class="content">
+                <div class="page-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </section>
+            <footer class="ui-helper-clearfix content" id="colophon">
+                <div class="padder">
+                    <a href="http://www.componentone.com" class="c1logo">
+                        <img runat="server" src="~/explore/css/images/c1logo.png"/></a>
+                    <asp:Label ID="lblColophon" runat="server"></asp:Label>
+                    <a href="http://facebook.com/wijmo">
+                        <img runat="server" src="~/explore/css/images/icons/32/picons36.png" alt="facebook" /></a>
+                    <a href="http://twitter.com/wijmo">
+                        <img runat="server" src="~/explore/css/images/icons/32/picons33.png" alt="Twitter" /></a>
+                </div>
+            </footer>
+        </div>
+    </form>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/explore/js/init.js") %>"></script>
+</body>
+</html>

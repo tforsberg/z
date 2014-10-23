@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ae17b63-f316-4269-994b-880035b99b7a" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://services.odata.org/Northwind/Northwind.svc/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="5b0d2a90-5f96-4a01-91af-e7393b2ccbf6" SourceId="1" SourceUrl="http://services.odata.org/Northwind/Northwind.svc/" />
+  </Metadata>
+  <Extensions />
+  <Parameters>
+    <Parameter Name="UseDataServiceCollection" Value="true" />
+    <Parameter Name="Version" Value="2.0" />
+  </Parameters>
+</ReferenceGroup>

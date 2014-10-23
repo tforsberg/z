@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+    <Control name="Accordion" isFavorite="true">
+        <action name="Overview" page ="~/Accordion/Overview.aspx">
+        </action>
+        <action name="Animation" page ="~/Accordion/Animation.aspx">
+        </action>
+        <action name="Expand Direction" page ="~/Accordion/ExpandDirection.aspx">
+        </action>
+        <action name="Open on Hover Event" page ="~/Accordion/Hover.aspx">
+        </action>
+        <action name="Multiple Open Panes" page ="~/Accordion/RequireOpenedPane.aspx">
+        </action>
+    </Control>
+
+
+
+    <Control name="Calendar" isFavorite="true">
+        <action name="Overview" page ="~/Calendar/Overview.aspx">
+        </action>
+        <action name="Animation" page ="~/Calendar/Animation.aspx">
+        </action>
+        <action name="Customize Date" page ="~/Calendar/CustomDates.aspx">
+        </action>
+        <action name="Mutiple Views" page ="~/Calendar/MultiViews.aspx">
+        </action>
+        <action name="Other Month Days" page ="~/Calendar/OtherMonth.aspx">
+        </action>
+        <action name="Preview" page ="~/Calendar/Preview.aspx">
+        </action>
+        <action name="Quick Navigation" page ="~/Calendar/QuickNav.aspx">
+        </action>
+        <action name="Range" page ="~/Calendar/Range.aspx">
+        </action>
+        <action name="Selection Modes" page ="~/Calendar/Selection.aspx">
+        </action>
+    </Control>
+
+    <Control name="Charts">
+        <ChildControl name="BarChart" text="Bar &amp; Column Charts" isFavorite="true">
+            <action name="Overview" page ="~/BarChart/Overview.aspx">
+            </action>
+            <action name="Origin" page ="~/BarChart/Origin.aspx">
+            </action>
+            <action name="Series transition" page ="~/BarChart/SeriesTransition.aspx">
+            </action>
+            <action name="Simple bar chart" page ="~/BarChart/Simple.aspx">
+            </action>
+            <action name="Column bar chart" page ="~/BarChart/ColumnBar.aspx">
+            </action>
+            <action name="Clustered bar chart" page ="~/BarChart/Clusters.aspx">
+            </action>
+            <action name="Stacked bar chart" page ="~/BarChart/StackedBar.aspx">
+            </action>
+            <action name="Stacked percentage bar chart" page ="~/BarChart/StackedPercentageBar.aspx">
+            </action>
+            <action name="External dataSource" page ="~/BarChart/AjaxData.aspx">
+            </action>
+            <action name="Fixed label width" page ="~/BarChart/FixedLabelWidth.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="BubbleChart" text="Bubble Charts" isFavorite="true">
+            <action name="Overview" page="~/BubbleChart/Overview.aspx">
+            </action>
+            <action name="ChartMarker" page="~/BubbleChart/ChartMarker.aspx">
+            </action>
+            <action name="Invisible Label" page="~/BubbleChart/InvisibleLabel.aspx">
+            </action>
+            <action name="Negative" page="~/BubbleChart/Negative.aspx">
+            </action>
+            <action name="OutsideLabel" page="~/BubbleChart/OutsideLabel.aspx">
+            </action>
+            <action name="Symbols" page="~/BubbleChart/Symbols.aspx">
+            </action>
+            <action name="Overlap" page="~/BubbleChart/Overlap.aspx">
+            </action>
+        </ChildControl>
+
+		<ChildControl name="CandlestickChart" text="Candlestick Charts" isFavorite="true">
+			<action name="Overview" page="~/CandlestickChart/Overview.aspx">
+			</action>
+			<action name="High Low" page="~/CandlestickChart/HighLow.aspx">
+			</action>
+			<action name="Open High Low Close" page="~/CandlestickChart/Ohlc.aspx">
+			</action>
+			<action name="Candlestick Formatter" page="~/CandlestickChart/CandlestickFormatter.aspx">
+			</action>
+			<action name="Ohlc Color" page="~/CandlestickChart/OhlcColor.aspx">
+			</action>
+            <action name="ValueLabels" page="~/CandlestickChart/ValueLabels.aspx">
+            </action>
+		</ChildControl>
+        <ChildControl name="CompositeChart" text="Composite Charts" isFavorite="true">
+            <action name="Overview" page ="~/CompositeChart/Overview.aspx">
+            </action>
+            <action name="Scatter with regression line" page ="~/CompositeChart/ComboRegression.aspx">
+            </action>
+            <action name="Multiple Axes" page ="~/CompositeChart/MultipleAxes.aspx">
+            </action>
+            <action name="Line, Bar and Candlestick" page="~/CompositeChart/CompositeChartWithCandlestick.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="LineChart" text="Line &amp; Area Charts" isFavorite="true">
+            <action name="Overview" page ="~/LineChart/Overview.aspx">
+            </action>
+            <action name="Area" page ="~/LineChart/Area.aspx">
+            </action>
+            <action name="Animation" page ="~/LineChart/Animation.aspx">
+            </action>
+            <action name="AreaSpline" page ="~/LineChart/AreaSpline.aspx">
+            </action>
+            <action name="Origin" page ="~/LineChart/Origin.aspx">
+            </action>
+            <action name="Trends" page ="~/LineChart/Trends.aspx">
+            </action>
+            <action name="Symbols" page ="~/LineChart/Symbols.aspx">
+            </action>
+            <action name="AjaxData" page ="~/LineChart/AjaxData.aspx">
+            </action>
+            <action name="DateTime" page ="~/LineChart/DateTime.aspx">
+            </action>
+            <action name="Streaming Data" page ="~/LineChart/SimulateData.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="PieChart" text="Pie &amp; Donut Charts" isFavorite="true">
+            <action name="Overview" page ="~/PieChart/Overview.aspx">
+            </action>
+            <action name="Doughnut" page ="~/PieChart/Donut.aspx">
+            </action>
+            <action name="Animation" page ="~/PieChart/Animation.aspx">
+            </action>
+            <action name="Series transition" page="~/PieChart/SeriesTransition.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="ScatterChart" text="Scatter Plot Charts" isFavorite="true">
+            <action name="Overview" page="~/ScatterChart/Overview.aspx">
+            </action>
+        </ChildControl>
+    </Control>
+
+    <Control name="Dialog" isFavorite="true">
+        <action name="Overview" page ="~/Dialog/Overview.aspx">
+        </action>
+        <action name="Animation" page ="~/Dialog/Animation.aspx">
+        </action>
+        <action name="External Content" page ="~/Dialog/ContentUrl.aspx">
+        </action>
+        <action name="Modal Dialog" page ="~/Dialog/ModalDialog.aspx">
+        </action>
+        <action name="Modal Alert" page ="~/Dialog/ModalAlert.aspx">
+        </action>
+        <action name="Modal Confirm" page ="~/Dialog/ModalConfirm.aspx">
+        </action>
+    </Control>
+
+    <Control name="Editor" isFavorite="true">
+        <action name="Overview" page="~/Editor/Overview.aspx">
+        </action>
+        <action name="Simple" page="~/Editor/Simple.aspx">
+        </action>
+        <action name="EditingModes" page="~/Editor/EditingModes.aspx">
+        </action>
+        <action name="CustomizeSimple" page="~/Editor/CustomizeSimple.aspx">
+        </action>
+        <action name="Compact" page="~/Editor/Compact.aspx">
+        </action>
+        <action name="BBCode" page="~/Editor/BBCode.aspx">
+        </action>
+    </Control>
+
+	<Control name="EventsCalendar" isFavorite="true">
+		<action name="Overview" page="~/EventsCalendar/Overview.aspx">
+		</action>
+		<action name="CustomDataStorage" page="~/EventsCalendar/CustomDataStorage.aspx">
+		</action>
+		<action name="CustomTimeInterval" page="~/EventsCalendar/CustomTimeInterval.aspx">
+		</action>
+		<action name="DataModel" page="~/EventsCalendar/DataModel.aspx">
+		</action>
+	</Control>
+
+	
+
+	<Control name="Expander">
+        <action name="Overview" page ="~/Expander/Overview.aspx">
+        </action>
+        <action name="Animation" page ="~/Expander/Animation.aspx">
+        </action>
+        <action name="External Content" page ="~/Expander/ContentUrl.aspx">
+        </action>
+        <action name="Expand Direction" page ="~/Expander/ExpandDirection.aspx">
+        </action>
+    </Control>
+
+    <Control name="Forms">
+        <ChildControl name="ComboBox" isFavorite="true">
+            <action name="Overview" page ="~/ComboBox/Overview.aspx">
+            </action>
+            <action name="Animation" page ="~/ComboBox/Animation.aspx">
+            </action>
+            <action name="Position" page ="~/ComboBox/Position.aspx">
+            </action>
+            <action name="MultipleColumns" page ="~/ComboBox/MultipleColumns.aspx">
+            </action>
+            <action name="Select" page ="~/ComboBox/Select.aspx">
+            </action>
+            <action name="DynamicData" page ="~/ComboBox/DynamicData.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="FormDecorator">
+            <action name="Overview" page ="~/FormDecorator/Overview.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="InputDate">
+            <action name="Overview" page ="~/InputDate/Overview.aspx"></action>
+            <action name="DatePicker" page ="~/InputDate/DatePicker.aspx"></action>
+            <action name="TimePicker" page ="~/InputDate/TimePicker.aspx"></action>
+            <action name="Dropdown" page ="~/InputDate/Dropdown.aspx"></action>
+            <action name="Placeholder" page ="~/InputDate/NullText.aspx"></action>
+            <action name="DisplayFormat" page ="~/InputDate/DisplayFormat.aspx"></action>
+            <action name="SpinnerAlign" page ="~/InputDate/SpinnerAlign.aspx"></action>
+            <action name="BlurOnLeftRightKey" page ="~/InputDate/BlurOnLeftRightKey.aspx"></action>
+            <action name="BlurOnLastChar" page ="~/InputDate/BlurOnLastChar.aspx"></action>
+            <action name="CustomEra" page ="~/InputDate/CustomEra.aspx"></action>
+        </ChildControl>
+
+        <ChildControl name="InputMask">
+            <action name="Overview" page ="~/InputMask/Overview.aspx"></action>
+            <action name="First Name" page ="~/InputMask/FirstName.aspx"></action>
+            <action name="Password" page ="~/InputMask/Password.aspx"></action>
+            <action name="Dropdown" page ="~/InputMask/Dropdown.aspx"></action>
+            <action name="SSN" page ="~/InputMask/SSN.aspx"></action>
+            <action name="DBCS" page ="~/InputMask/DBCS.aspx"></action>
+            <action name="Hirigana" page ="~/InputMask/Hirigana.aspx"></action>
+            <action name="BlurOnLeftRightKey" page ="~/InputMask/BlurOnLeftRightKey.aspx"></action>
+            <action name="BlurOnLastChar" page ="~/InputMask/BlurOnLastChar.aspx"></action>
+        </ChildControl>
+
+        <ChildControl name="InputNumber">
+            <action name="Overview" page ="~/InputNumber/Overview.aspx"></action>
+            <action name="Currency" page ="~/InputNumber/Currency.aspx"></action>
+            <action name="Percent" page ="~/InputNumber/Percent.aspx"></action>
+            <action name="Increment" page ="~/InputNumber/Increment.aspx"></action>
+            <action name="Dropdown" page ="~/InputNumber/Dropdown.aspx"></action>
+            <action name="NegativeClass" page ="~/InputNumber/NegativeClass.aspx"></action>
+        </ChildControl>
+      <ChildControl name="InputText">
+            <action name="Overview" page="~/InputText/Overview.aspx"></action>
+            <action name="Format" page="~/InputText/Format.aspx"></action>
+            <action name="Drop Down" page="~/InputText/DropDown.aspx"></action>
+            <action name="Max Length" page="~/InputText/MaxLength.aspx"></action>
+            <action name="MultiLine" page="~/InputText/MultiLine.aspx"></action>
+            <action name="Reading Ime String" page="~/InputText/ReadingImeString.aspx"></action>
+      </ChildControl>
+        <ChildControl name="Upload">
+            <action name="Overview" page="~/Upload/Overview.aspx"></action>
+        </ChildControl>
+    </Control>
+
+
+    <Control name="Gauges">
+        <ChildControl name="LinearGauge" text="Linear Gauges" isFavorite="true">
+            <action name="Overview" page="~/LinearGauge/Overview.aspx">
+            </action>
+            <action name="Interactive" page="~/LinearGauge/Interactive.aspx">
+            </action>
+            <action name="Level" page="~/LinearGauge/Level.aspx">
+            </action>
+            <action name="Logarithmic" page="~/LinearGauge/Logarithmic.aspx">
+            </action>
+            <action name="Orientation" page="~/LinearGauge/Orientation.aspx">
+            </action>
+            <action name="Temperature" page="~/LinearGauge/Temperature.aspx">
+            </action>
+            <action name="Volume" page="~/LinearGauge/Volume.aspx">
+            </action>
+        </ChildControl>
+        <ChildControl name="RadialGauge" text="Radial Gauges">
+            <action name="Overview" page="~/RadialGauge/Overview.aspx">
+            </action>
+            <action name="HalfCircle" page="~/RadialGauge/HalfCircle.aspx">
+            </action>
+            <action name="Logarithmic" page="~/RadialGauge/Logarithmic.aspx">
+            </action>
+            <action name="Margin" page="~/RadialGauge/Margin.aspx">
+            </action>
+            <action name="Position" page="~/RadialGauge/Position.aspx">
+            </action>
+            <action name="RPM" page="~/RadialGauge/RPM.aspx">
+            </action>
+            <action name="Speedometer" page="~/RadialGauge/Speedometer.aspx">
+            </action>
+            <action name="Template" page="~/RadialGauge/Template.aspx">
+            </action>
+        </ChildControl>
+    </Control>
+
+    <Control name="Grid" isFavorite="true">
+        <action name="Overview" page ="~/Grid/Overview.aspx">
+        </action>
+        <action name="Bands" page ="~/Grid/Bands.aspx">
+        </action>
+        <action name="Cell and row formatting" page ="~/Grid/CellRowFormatting.aspx">
+        </action>
+        <action name="Column moving" page ="~/Grid/ColumnMoving.aspx">
+        </action>
+        <action name="Column resizing" page ="~/Grid/ColumnResizing.aspx">
+        </action>
+        <action name="action column visibility" page ="~/Grid/ColumnVisibility.aspx">
+        </action>
+        <action name="Custom data parsers" page ="~/Grid/CustomDataParsers.aspx">
+        </action>
+        <action name="Custom editors" page ="~/Grid/CustomEditors.aspx">
+        </action>
+        <action name="Custom filter operators" page ="~/Grid/CustomFilterOperators.aspx">
+        </action>
+        <action name="Custom paging" page ="~/Grid/CustomPaging.aspx">
+        </action>
+        <action name="Data sources" page ="~/Grid/DataSources.aspx">
+        </action>
+        <action name="Data types" page ="~/Grid/DataTypes.aspx">
+        </action>
+        <action name="Editing" page ="~/Grid/Editing.aspx">
+        </action>
+        <action name="Filtering" page ="~/Grid/Filtering.aspx">
+        </action>
+        <action name="Grouping and aggregates" page ="~/Grid/GroupingAndAggregates.aspx">
+        </action>
+        <action name="Group area" page ="~/Grid/GroupArea.aspx">
+        </action>
+        <action name="Custom header icons" page ="~/Grid/HeaderIcons.aspx">
+        </action>
+        <action name="Paging" page ="~/Grid/Paging.aspx">
+        </action>
+        <action name="Preventing formatting of the current position and hovering" page ="~/Grid/PreventCurrentAndHovering.aspx">
+        </action>
+        <action name="Scrolling" page ="~/Grid/Scrolling.aspx">
+        </action>
+        <action name="Selection" page ="~/Grid/Selection.aspx">
+        </action>
+        <action name="Sorting" page ="~/Grid/Sorting.aspx">
+        </action>
+    </Control>
+
+    <Control name="List">
+        <action name="Overview" page ="~/List/Overview.aspx">
+        </action>
+        <action name="MultipleSelection" page ="~/List/MultipleSelection.aspx">
+        </action>
+    </Control>
+
+
+    <Control name="Menu">
+        <action name="Overview" page ="~/Menu/Overview.aspx">
+        </action>
+        <action name="Orientation" page ="~/Menu/Orientation.aspx">
+        </action>
+        <action name="Icon" page ="~/Menu/Icon.aspx">
+        </action>
+        <action name="Functions" page ="~/Menu/MenuFunctions.aspx">
+        </action>
+        <action name="Menu item triggers" page ="~/Menu/MenuitemTrigger.aspx">
+        </action>
+        <action name="Positioning context menu" page ="~/Menu/Position.aspx">
+        </action>
+        <action name="Shortcuts" page ="~/Menu/Shortcut.aspx">
+        </action>
+        <action name="Templates" page ="~/Menu/Template.aspx">
+        </action>
+        <action name="Displaying Context menus" page ="~/Menu/TriggerEvent.aspx">
+        </action>
+    </Control>
+
+    <Control name="Multimedia">
+        <ChildControl name="Carousel" isFavorite="true">
+            <action name="Overview" page="~/Carousel/Overview.aspx">
+            </action>
+            <action name="Animation" page="~/Carousel/Animation.aspx">
+            </action>
+            <action name="ClientSideEvents" page="~/Carousel/ClientSideEvents.aspx">
+            </action>
+            <action name="Content" page="~/Carousel/Content.aspx">
+            </action>
+            <action name="Flickr" page="~/Carousel/Flickr.aspx">
+            </action>
+            <action name="LightBox" page="~/Carousel/LightBox.aspx">
+            </action>
+            <action name="Orientation" page="~/Carousel/Orientation.aspx">
+            </action>
+            <action name="Paging" page="~/Carousel/Paging.aspx">
+            </action>
+            <action name="Preview" page="~/Carousel/Preview.aspx">
+            </action>
+            <action name="Thumbnails" page="~/Carousel/Thumbnails.aspx"></action>
+        </ChildControl>
+        <ChildControl name="Gallery">
+            <action name="Overview" page="~/Gallery/Overview.aspx">
+            </action>
+            <action name="Orientation" page="~/Gallery/Orientation.aspx">
+            </action>
+            <action name="Paging" page="~/Gallery/Paging.aspx">
+            </action>
+            <action name="Animation" page="~/Gallery/Animation.aspx"></action>
+            <action name="Flash" page="~/Gallery/Flash.aspx"></action>
+            <action name="Iframe" page="~/Gallery/Iframe.aspx"></action>
+            <action name="Paging" page="~/Gallery/Paging.aspx"></action>
+            <action name="Video" page="~/Gallery/Video.aspx"></action>
+        </ChildControl>
+        <ChildControl name="LightBox">
+            <action name="Overview" page="~/LightBox/Overview.aspx"></action>
+            <action name="Auto Play" page="~/LightBox/AutoPlay.aspx"></action>
+            <action name="Auto Size" page="~/LightBox/AutoSize.aspx"></action>
+            <action name="Flash" page="~/LightBox/Flash.aspx"></action>
+            <action name="Flash Video" page="~/LightBox/FlashVideo.aspx"></action>
+            <action name="Full Size" page="~/LightBox/FullSize.aspx"></action>
+            <action name="IFrame" page="~/LightBox/IFrame.aspx"></action>
+            <action name="Keyboard Navigation" page="~/LightBox/KeyNav.aspx"></action>
+            <action name="Play Pause" page="~/LightBox/PlayPause.aspx"></action>
+            <action name="QuickTime" page="~/LightBox/QuickTime.aspx"></action>
+            <action name="Sequence Counter" page="~/LightBox/SeqCounter.aspx"></action>
+            <action name="Text Position" page="~/LightBox/TextPosition.aspx"></action>
+            <action name="Transition" page="~/LightBox/Transition.aspx"></action>
+            <action name="Vimeo" page="~/LightBox/Vimeo.aspx"></action>
+            <action name="Windows Media Player" page="~/LightBox/WMP.aspx"></action>
+            <action name="YouTube" page="~/LightBox/YouTube.aspx"></action>
+        </ChildControl>
+        <ChildControl name="Video">
+            <action name="Overview" page ="~/Video/Overview.aspx">
+            </action>
+        </ChildControl>
+    </Control>
+
+    <Control name="Pager">
+        <action name="Overview" page ="~/Pager/Overview.aspx">
+        </action>
+        <action name="Modes" page ="~/Pager/Modes.aspx">
+        </action>
+        <action name="Paged Table" page ="~/Pager/PagedTable.aspx">
+        </action>
+    </Control>
+
+    <Control name="Progressbar">
+        <action name="Overview" page ="~/Progressbar/Overview.aspx">
+        </action>
+        <action name="Direction" page ="~/Progressbar/Direction.aspx">
+        </action>
+    </Control>
+
+    <Control name="Rating">
+        <action name="Overview" page="~/Rating/Overview.aspx">
+        </action>
+        <action name="Animation" page="~/Rating/Animation.aspx">
+        </action>
+        <action name="CustomizedIcon" page="~/Rating/CustomizedIcon.aspx">
+        </action>
+        <action name="Events" page="~/Rating/Events.aspx">
+        </action>
+    </Control>
+
+    <Control name="Slider">
+        <action name="Overview" page ="~/Slider/Overview.aspx">
+        </action>
+        <action name="Thumbs" page ="~/Slider/Thumbs.aspx">
+        </action>
+        <action name="Range" page ="~/Slider/Range.aspx">
+        </action>
+        <action name="Dragfill" page ="~/Slider/Dragfill.aspx">
+        </action>
+    </Control>
+
+    <Control name="Splitter">
+        <action name="Overview" page ="~/Splitter/Overview.aspx">
+        </action>
+        <action name="FullSplit" page ="~/Splitter/FullSplit.aspx">
+        </action>
+        <action name="Nested" page ="~/Splitter/Nested.aspx">
+        </action>
+    </Control>
+
+    <Control name="SuperPanel">
+        <action name="Overview" page ="~/SuperPanel/Overview.aspx">
+        </action>
+        <action name="ClientSideAPI" page ="~/SuperPanel/ClientSideAPI.aspx">
+        </action>
+        <action name="ScrollMode" page ="~/SuperPanel/ScrollMode.aspx">
+        </action>
+    </Control>
+
+    <Control name="Tabs">
+        <action name="Overview" page ="~/Tabs/Overview.aspx">
+        </action>
+        <action name="Alignment" page ="~/Tabs/Alignment.aspx">
+        </action>
+        <action name="Animation" page ="~/Tabs/Animation.aspx">
+        </action>
+        <action name="Collapsible" page ="~/Tabs/Collapsible.aspx">
+        </action>
+        <action name="Hover" page ="~/Tabs/Hover.aspx">
+        </action>
+        <action name="Scrollable" page ="~/Tabs/Scrollable.aspx">
+        </action>
+    </Control>
+
+    <Control name="Tooltip">
+        <action name="Overview" page ="~/Tooltip/Overview.aspx">
+        </action>
+        <action name="Ajax" page ="~/Tooltip/Ajax.aspx">
+        </action>
+        <action name="CalloutAnimation" page ="~/Tooltip/CalloutAnimation.aspx">
+        </action>
+        <action name="CalloutFilled" page ="~/Tooltip/CalloutFilled.aspx">
+        </action>
+        <action name="CloseBehavior" page ="~/Tooltip/CloseBehavior.aspx">
+        </action>
+        <action name="Modal" page ="~/Tooltip/Modal.aspx">
+        </action>
+        <action name="Position" page ="~/Tooltip/Position.aspx">
+        </action>
+        <action name="Trigger" page ="~/Tooltip/Trigger.aspx">
+        </action>
+    </Control>
+
+    <Control name="Tree">
+        <action name="Overview" page ="~/Tree/Overview.aspx">
+        </action>
+        <action name="Auto Collapse" page ="~/Tree/AutoCollapse.aspx">
+        </action>
+        <action name="Expand On Hover" page ="~/Tree/ExpandOnHover.aspx">
+        </action>
+        <action name="CheckBox" page ="~/Tree/CheckBox.aspx">
+        </action>
+        <action name="Object Model" page ="~/Tree/ObjectModel.aspx">
+        </action>
+        <action name="Node Icons" page ="~/Tree/Icons.aspx">
+        </action>
+        <action name="Drag &amp; Drop" page ="~/Tree/DragDrop.aspx">
+        </action>
+    </Control>
+
+    <Control name="Wizard">
+        <action name="Overview" page ="~/Wizard/Overview.aspx">
+        </action>
+        <action name="Animation" page ="~/Wizard/Animation.aspx">
+        </action>
+        <action name="Auto-Play" page ="~/Wizard/AutoPlay.aspx">
+        </action>
+        <action name="No Step Headers" page ="~/Wizard/Simple.aspx">
+        </action>
+    </Control>
+</Controls>

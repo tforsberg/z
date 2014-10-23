@@ -1,0 +1,50 @@
+﻿<!-- legend for bullet charts -->
+<dash-bullet-legend class="pull-right"></dash-bullet-legend>
+
+<!-- dashboard -->
+<table class="table table-condensed table-hover" style="clear:both">
+    <tr class="well">
+        <td><b>Sales/Quarter</b></td>
+        <td/>
+        <td><b>Product</b></td>
+        <td><b>Actual vs Target</b></td>
+        <td class="tdRight" title="(actual)"><b>{{qPrev}}</b></td>
+        <td class="tdRight" title="(estimated)"><b>{{qThis}}</b></td>
+    </tr>
+    <tr ng-repeat="p in products | orderBy:'rank' | limitTo:25" 
+        ng-show="p.sales.qThis > 0" >
+        <td class="tdWide" >
+            <dash-sparkline data="p.salesValues"></dash-sparkline>
+        </td>
+        <td class="tdCenter">
+            <span ng-show="p.sales.qThis < p.levels.critical">
+                <dash-popover 
+                    header=" <b class='badge badge-important'>Warning!</b> "
+                    content="<b>{{p.name}}</b> unit sales this quarter are {{(1 - p.sales.qThis / p.levels.critical) * 100 | number:0}}% below the critical level ({{p.sales.qThis | number:0}} vs {{p.levels.critical | number:0}} units)." >
+                    <span class="badge badge-important">!</span>
+                </dash-popover>
+            </span>
+        </td>
+        <td>
+            <a href="#/product/{{p.id}}">
+                {{p.name}}
+            </a>
+        </td>
+        <td class="tdWide">
+            <dash-bullet 
+                actual="{{p.sales.qThis}}"
+                target="{{p.levels.target}}"
+                poor="{{p.levels.poor}}"
+                satisfactory="{{p.levels.satisfactory}}"
+                good="{{p.levels.good}}"
+                max="{{p.levels.good * 1.5}}" >
+            </dash-bullet>
+        </td>
+        <td class="tdRight">{{p.sales.qPrev | number:0 }}</td>
+        <td class="tdRight">{{p.sales.qThis | number:0 }}</td>
+    </tr>
+</table>
+
+<p class="text-right" ng-hide="loading">
+    <a class="btn btn-link" href="default.htm#/chart">show chart</a>
+</p>

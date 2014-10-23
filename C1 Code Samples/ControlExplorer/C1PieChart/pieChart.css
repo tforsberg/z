@@ -1,0 +1,21 @@
+﻿body{
+    font-family: "Segoe UI",Segoe,"Roboto","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.footer p {
+    color: #000000;
+    font-size: 14px;
+}
+ .demoPieOption > div {
+    display:inline-block;
+}
+ .demoPieOption
+ {
+     padding-bottom:2px;
+ }
+ .footer h3{
+    color: #717276;
+    font-size: 25px;
+    font-weight: lighter;
+    margin: 0;
+    padding: 0;
+ }

@@ -1,0 +1,4 @@
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\Dashboard\Dashboard\bin\Dashboard.dll
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\Dashboard\Dashboard\bin\Dashboard.pdb
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\Dashboard\Dashboard\obj\Debug\Dashboard.dll
+C:\Users\ToddForsberg\Downloads\C1 Code Samples\Dashboard\Dashboard\obj\Debug\Dashboard.pdb

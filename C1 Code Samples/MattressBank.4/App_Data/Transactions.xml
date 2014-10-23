@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Transactions>
+    <Transaction>
+        <ID>1</ID>
+        <Date>10/08/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>1653</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>2</ID>
+        <Date>10/01/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits>2139</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>3</ID>
+        <Date>10/30/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6273</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>4</ID>
+        <Date>10/22/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits>560</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>5</ID>
+        <Date>10/29/2011</Date>
+        <Location>Legal Department</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3121</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>6</ID>
+        <Date>10/02/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits>4280</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>7</ID>
+        <Date>10/23/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4230</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>8</ID>
+        <Date>10/20/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits>6630</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>9</ID>
+        <Date>10/27/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2286</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>10</ID>
+        <Date>10/01/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits>635</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>11</ID>
+        <Date>10/03/2011</Date>
+        <Location>Research and Development</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4935</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>12</ID>
+        <Date>10/12/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits>1851</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>13</ID>
+        <Date>10/27/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4870</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>14</ID>
+        <Date>10/26/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits>1497</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>15</ID>
+        <Date>10/13/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6009</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>16</ID>
+        <Date>10/02/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits>6646</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>17</ID>
+        <Date>10/01/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3750</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>18</ID>
+        <Date>10/07/2011</Date>
+        <Location>Finances</Location>
+        <Deposits>2917</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>19</ID>
+        <Date>10/24/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>1226</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>20</ID>
+        <Date>10/30/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits>612</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>21</ID>
+        <Date>10/21/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5443</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>22</ID>
+        <Date>10/09/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits>2200</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>23</ID>
+        <Date>10/12/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6166</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>24</ID>
+        <Date>10/12/2011</Date>
+        <Location>Finances</Location>
+        <Deposits>2753</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>25</ID>
+        <Date>10/29/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3927</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>26</ID>
+        <Date>10/13/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits>6603</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>27</ID>
+        <Date>10/05/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3932</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>28</ID>
+        <Date>10/12/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits>6062</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>29</ID>
+        <Date>10/07/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>679</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>30</ID>
+        <Date>10/24/2011</Date>
+        <Location>Tech Support</Location>
+        <Deposits>1475</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>31</ID>
+        <Date>10/11/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2110</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>32</ID>
+        <Date>10/02/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits>5632</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>33</ID>
+        <Date>10/29/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3870</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>34</ID>
+        <Date>10/22/2011</Date>
+        <Location>Quality Assurance</Location>
+        <Deposits>3058</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>35</ID>
+        <Date>10/20/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4781</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>36</ID>
+        <Date>10/15/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits>1763</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>37</ID>
+        <Date>10/28/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>1713</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>38</ID>
+        <Date>10/26/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits>6098</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>39</ID>
+        <Date>10/20/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2023</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>40</ID>
+        <Date>10/16/2011</Date>
+        <Location>Finances</Location>
+        <Deposits>2626</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>41</ID>
+        <Date>10/08/2011</Date>
+        <Location>Quality Assurance</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3732</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>42</ID>
+        <Date>10/04/2011</Date>
+        <Location>Research and Development</Location>
+        <Deposits>4190</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>43</ID>
+        <Date>10/26/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5854</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>44</ID>
+        <Date>10/22/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits>5221</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>45</ID>
+        <Date>10/02/2011</Date>
+        <Location>Quality Assurance</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6770</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>46</ID>
+        <Date>10/12/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits>5337</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>47</ID>
+        <Date>10/16/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6659</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>48</ID>
+        <Date>10/25/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits>401</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>49</ID>
+        <Date>10/12/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits>3883</Deposits>
+        <Withdrawals>2175</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>50</ID>
+        <Date>10/02/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6663</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>51</ID>
+        <Date>10/21/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits>3401</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>52</ID>
+        <Date>10/02/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3982</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>53</ID>
+        <Date>10/04/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits>4820</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>54</ID>
+        <Date>10/11/2011</Date>
+        <Location>Quality Assurance</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6286</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>55</ID>
+        <Date>10/20/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits>3027</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>56</ID>
+        <Date>10/30/2011</Date>
+        <Location>Research and Development</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5042</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>57</ID>
+        <Date>10/11/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits>1415</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>58</ID>
+        <Date>10/08/2011</Date>
+        <Location>Quality Assurance</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6069</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>59</ID>
+        <Date>10/01/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits>2816</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>60</ID>
+        <Date>10/15/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3911</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>61</ID>
+        <Date>10/29/2011</Date>
+        <Location>Legal Department</Location>
+        <Deposits>519</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>62</ID>
+        <Date>10/24/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits></Deposits>
+        <Withdrawals>1838</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>63</ID>
+        <Date>10/14/2011</Date>
+        <Location>Finances</Location>
+        <Deposits>1881</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>64</ID>
+        <Date>10/15/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6155</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>65</ID>
+        <Date>10/29/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits>6502</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>66</ID>
+        <Date>10/08/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4874</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>67</ID>
+        <Date>10/07/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits>1765</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>68</ID>
+        <Date>10/11/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3170</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>69</ID>
+        <Date>10/26/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits>4821</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>70</ID>
+        <Date>10/06/2011</Date>
+        <Location>Research and Development</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2111</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>71</ID>
+        <Date>10/04/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits>1506</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>72</ID>
+        <Date>10/28/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits></Deposits>
+        <Withdrawals>4103</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>73</ID>
+        <Date>10/08/2011</Date>
+        <Location>Advertising</Location>
+        <Deposits>3411</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>74</ID>
+        <Date>10/02/2011</Date>
+        <Location>Finances</Location>
+        <Deposits></Deposits>
+        <Withdrawals>642</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>75</ID>
+        <Date>10/05/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits>815</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>76</ID>
+        <Date>10/03/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>1224</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>77</ID>
+        <Date>10/08/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits>4993</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>78</ID>
+        <Date>10/06/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6580</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>79</ID>
+        <Date>10/26/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits>3156</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>80</ID>
+        <Date>10/28/2011</Date>
+        <Location>Research and Development</Location>
+        <Deposits></Deposits>
+        <Withdrawals>3828</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>81</ID>
+        <Date>10/15/2011</Date>
+        <Location>Legal Department</Location>
+        <Deposits>5826</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>82</ID>
+        <Date>10/17/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2818</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>83</ID>
+        <Date>10/26/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits>4257</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>84</ID>
+        <Date>10/26/2011</Date>
+        <Location>Human Resources</Location>
+        <Deposits></Deposits>
+        <Withdrawals>561</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>85</ID>
+        <Date>10/26/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits>4084</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>86</ID>
+        <Date>10/15/2011</Date>
+        <Location>Legal Department</Location>
+        <Deposits></Deposits>
+        <Withdrawals>2664</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>87</ID>
+        <Date>10/23/2011</Date>
+        <Location>Customer Service</Location>
+        <Deposits>1372</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>88</ID>
+        <Date>10/19/2011</Date>
+        <Location>Media Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6659</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>89</ID>
+        <Date>10/21/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits>337</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>90</ID>
+        <Date>10/19/2011</Date>
+        <Location>Customer Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6142</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>91</ID>
+        <Date>10/04/2011</Date>
+        <Location>Sales and Marketing</Location>
+        <Deposits>5075</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>92</ID>
+        <Date>10/10/2011</Date>
+        <Location>Finances</Location>
+        <Deposits></Deposits>
+        <Withdrawals>6550</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>93</ID>
+        <Date>10/05/2011</Date>
+        <Location>Tech Support</Location>
+        <Deposits>979</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>94</ID>
+        <Date>10/23/2011</Date>
+        <Location>Public Relations</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5391</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>95</ID>
+        <Date>10/14/2011</Date>
+        <Location>Finances</Location>
+        <Deposits>3233</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>96</ID>
+        <Date>10/28/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5657</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>97</ID>
+        <Date>10/25/2011</Date>
+        <Location>Payroll</Location>
+        <Deposits>4505</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>98</ID>
+        <Date>10/16/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5775</Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>99</ID>
+        <Date>10/15/2011</Date>
+        <Location>Asset Management</Location>
+        <Deposits>4968</Deposits>
+        <Withdrawals></Withdrawals>
+    </Transaction>
+    <Transaction>
+        <ID>100</ID>
+        <Date>10/19/2011</Date>
+        <Location>Accounting</Location>
+        <Deposits></Deposits>
+        <Withdrawals>5052</Withdrawals>
+    </Transaction>
+</Transactions>
+

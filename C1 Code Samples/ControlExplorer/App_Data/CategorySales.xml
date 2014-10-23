@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<C1NWind>
+	<CategorySales>
+        <CategorySale Sales="102479.4400" CategoryName="Beverages" CT="12"/>
+        <CategorySale Sales="51041.8000" CategoryName="Condiments" CT="12"/>
+        <CategorySale Sales="79752.2100" CategoryName="Confections" CT="13"/>
+        <CategorySale Sales="116495.4300" CategoryName="Dairy Products" CT="10"/>
+        <CategorySale Sales="53823.4700" CategoryName="Grains/Cereals" CT="7"/>
+        <CategorySale Sales="77164.7500" CategoryName="Meat/Poultry" CT="6"/>
+        <CategorySale Sales="45973.6800" CategoryName="Produce" CT="5"/>
+        <CategorySale Sales="64195.5200" CategoryName="Seafood" CT="12"/>
+	</CategorySales>
+</C1NWind>
