@@ -1,0 +1,6 @@
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\bin\jQuery-Desktop.dll.config
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\bin\jQuery-Desktop.dll
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\bin\jQuery-Desktop.pdb
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\obj\Debug\jQuery-Desktop.csprojResolveAssemblyReference.cache
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\obj\Debug\jQuery-Desktop.dll
+c:\users\toddforsberg\documents\visual studio 2013\Projects\jQuery-Desktop\jQuery-Desktop\obj\Debug\jQuery-Desktop.pdb

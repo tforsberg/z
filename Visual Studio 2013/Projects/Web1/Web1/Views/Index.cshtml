@@ -1,0 +1,14 @@
+﻿@{
+    PageData["title"] = "AngularJS SPA Template for Visual Studio";
+}
+<h2>Welcome!</h2>
+<p>This is just a demo page.</p>
+
+<div ng-controller="Controller">
+    <div my-customer></div>
+</div>
+
+<div ng-controller="AlertDemoCtrl">
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+</div>

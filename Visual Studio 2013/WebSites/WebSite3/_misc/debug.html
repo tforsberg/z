@@ -1,0 +1,153 @@
+﻿<html __fvdsurfcanyoninserted="1">
+<head>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="lib/durandal/css/durandal.css">
+    <link rel="stylesheet" href="css/starterkit.css">
+    <style id="clearly_highlighting_css" type="text/css">
+        /* selection */ html.clearly_highlighting_enabled ::-moz-selection {
+            background: rgba(246, 238, 150, 0.99);
+        }
+
+        html.clearly_highlighting_enabled ::selection {
+            background: rgba(246, 238, 150, 0.99);
+        }
+        /* cursor */
+
+        html.clearly_highlighting_enabled { /* cursor and hot-spot position -- requires a default cursor, after the URL one */
+            cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text;
+        }
+        /* highlight tag */
+
+        em.clearly_highlight_element {
+            font-style: inherit !important;
+            font-weight: inherit !important;
+            background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");
+            background-repeat: repeat-x;
+            background-position: top left;
+            background-size: 100% 100%;
+        }
+            /* the delete-buttons are positioned relative to this */
+
+            em.clearly_highlight_element.clearly_highlight_first {
+                position: relative;
+            }
+            /* delete buttons */
+
+            em.clearly_highlight_element a.clearly_highlight_delete_element {
+                display: none;
+                cursor: pointer;
+                padding: 0;
+                margin: 0;
+                line-height: 0;
+                position: absolute;
+                width: 34px;
+                height: 34px;
+                left: -17px;
+                top: -17px;
+                background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png");
+                background-repeat: no-repeat;
+                background-position: 0px 0px;
+            }
+
+                em.clearly_highlight_element a.clearly_highlight_delete_element:hover {
+                    background-position: -34px 0px;
+                }
+        /* retina */
+
+        @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+            em.clearly_highlight_element {
+                background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png");
+            }
+
+                em.clearly_highlight_element a.clearly_highlight_delete_element {
+                    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png");
+                    background-size: 68px 34px;
+                }
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="app/main.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/system" src="app/../lib/durandal/js/system.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/app" src="app/../lib/durandal/js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="app/../lib/jquery/jquery-2.1.0.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/viewEngine" src="app/../lib/durandal/js/viewEngine.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/composition" src="app/../lib/durandal/js/composition.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/events" src="app/../lib/durandal/js/events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/viewLocator" src="app/../lib/durandal/js/viewLocator.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/binder" src="app/../lib/durandal/js/binder.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/activator" src="app/../lib/durandal/js/activator.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="knockout" src="app/../lib/knockout/knockout-3.1.0.js"></script>
+    <title>Home | Durandal Starter Kit</title>
+    <style>
+        [touch-action="none"] {
+            -ms-touch-action: none;
+            touch-action: none;
+        }
+
+        [touch-action="pan-x"] {
+            -ms-touch-action: pan-x;
+            touch-action: pan-x;
+        }
+
+        [touch-action="pan-y"] {
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+        }
+
+        [touch-action="scroll"], [touch-action="pan-x pan-y"], [touch-action="pan-y pan-x"] {
+            -ms-touch-action: pan-x pan-y;
+            touch-action: pan-x pan-y;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/router" src="app/../lib/durandal/js/plugins/router.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/dialog" src="app/../lib/durandal/js/plugins/dialog.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/history" src="app/../lib/durandal/js/plugins/history.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shell" src="app/shell.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="app/../lib/require/text.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="home" src="app/home.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="transitions/entrance" src="app/../lib/durandal/js/transitions/entrance.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="todd" src="app/todd.js"></script>
+</head>
+<body>
+    TEST
+    <div id="applicationHost">
+        <div data-view="shell" data-active-view="true">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <ul class="nav" data-bind="foreach: router.navigationModel">
+                        <li data-bind="css: { active: isActive }" class="active">
+                            <a data-bind="attr: { href: hash }, html: title" href="#">Home</a>
+                        </li>
+
+                        <li data-bind="css: { active: isActive }" class="">
+                            <a data-bind="attr: { href: hash }, html: title" href="#rainier">Mount Rainier</a>
+                        </li>
+
+                        <li data-bind="css: { active: isActive }" class="">
+                            <a data-bind="attr: { href: hash }, html: title" href="#todd">Todd</a>
+                        </li>
+                    </ul>
+                    <div class="loader pull-right active" data-bind="css: { active: router.isNavigating }">
+                        <i class="icon-spinner icon-2x icon-spin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid page-host" data-bind="router: { transition:'entrance' }">
+                <section data-view="home" data-active-view="true" style="">
+                    <h2>Hello! What is your name?</h2>
+                    <form class="form-inline">
+                        <fieldset>
+                            <label>Name</label>
+                            <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'">
+                            <button type="submit" class="btn" data-bind="click: sayHello, enable: name" disabled="">Click Me</button>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="lib/require/require.js" data-main="app/main"></script>
+
+
+</body>
+</html>
