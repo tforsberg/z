@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Flash Video";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				controlsPosition: 'outside',
+				textPosition: 'outside',
+				flvPlayer:'@Url.Content("~/Content/LightBox/player/player.swf")',
+				flashInstall: '@Url.Content("~/Content/LightBox/player/expressInstall.swf")'
+			});
+		});
+	</script>
+}
+<h2>Flash Video</h2>
+
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<a id="lightbox" href="http://cdn.wijmo.com/movies/racing.flv" rel="wijlightbox;width=600;height=400">
+				<img src="http://cdn.wijmo.com/images/flash.png" title="Auto Scrollers Racing" alt="Auto Scrollers Racing" /></a> 
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>
+                This sample demonstrates the default wijlightbox behavior.</p>
+}

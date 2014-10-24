@@ -1,0 +1,60 @@
+﻿@{
+	ViewBag.Title = "ModalConfirmation";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			//$(":wijmo-wijdialog").wijdialog("destroy").remove();
+			$("#dialog-confirm").wijdialog({
+				autoOpen: true,
+				resizable: false,
+				height: 180,
+				width: 400,
+				modal: true,
+				buttons: {
+					"Delete all items": function () {
+						$(this).wijdialog("close");
+					},
+					Cancel: function () {
+						$(this).wijdialog("close");
+					}
+				}
+
+			});
+		});
+	</script>
+}
+<h2>
+	ModalConfirmation</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+		<input type="button" value="Show Confirm" onclick="$('#dialog-confirm').wijdialog('open')" />
+		<div id="dialog-confirm" title="Empty recycle bin?">
+			<p>
+				<span class="ui-icon ui-icon-alert"></span>These items will be permanently deleted
+				and cannot be recovered. Are you sure?</p>
+		</div>
+	</div>
+	<!-- End sample page content -->
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+        {
+	<p>
+		This sample illustrates how to use a modal wijdialog widget to create a confirmation
+		dialog box.
+	</p>
+	<div>
+		This feature is enabled if the <b>modal</b> option is set to true.</div>
+	<div>
+		The <b>buttons</b> option adds buttons on the bottom of this dialog box.</div>
+	<div>
+		The <b>captionButtons</b> option determines the visibility of the caption bar buttons.</div>
+}

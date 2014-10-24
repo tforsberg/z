@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Preview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijcarousel0").wijcarousel({
+                display: 1,
+                showTimer: false,
+                showPager: false,
+                loop: false,
+                showContorlsOnHover: false,
+                preview: true
+            });
+
+            $("#Button1").click(function () {
+                $("#div1").css({ opacity: "" });
+            });
+        });
+    </script>
+    <style type="text/css">
+        #wijcarousel0
+        {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <div id="wijcarousel0">
+            <ul>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/1" alt="Sports 1" />
+                    <span>
+                        <h3>
+                            Word Caption 1</h3>
+                        Word Caption 1</span> </li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/2" alt="Sports 2" />
+                    <span>Word Caption 2</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/3" alt="Sports 3" />
+                    <span>Word Caption 3</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/4" alt="Sports 4" />
+                    <span>Word Caption 4</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/5" alt="Sports 5" />
+                    <span>Word Caption 5</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/6" alt="Sports 6" />
+                    <span>Word Caption 6</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/7" alt="Sports 7" />
+                    <span>Word Caption 7</span></li>
+                <li>
+                    <img src="http://lorempixum.com/750/300/sports/8" alt="Sports 8" />
+                    <span>Word Caption 8</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        In this sample, you will see the preview mode of carousel, the next and previous
+        picture will show partially for preview.
+    </p>
+}

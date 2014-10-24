@@ -1,0 +1,49 @@
+﻿@{
+	ViewBag.Title = "ExpandDirection";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#expander").wijexpander({ expandDirection: "top" });
+    	});
+    </script>
+}
+<h2>Expand Direction</h2>
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <div id="expander">
+                <h3>
+                    Header</h3>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna.
+                    Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien,
+                    cursus in.
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <div style="clear:both;float:none;">&nbsp;</div>
+                <label for="selEasing2">
+                    Easing</label>
+                <select id="expandDirection" onchange="applyOptions()" onclick="applyOptions()">
+                    <option value="top" selected="selected">top</option>
+                    <option value="right">right</option>
+                    <option value="bottom">bottom</option>
+                    <option value="left">left</option>
+                </select>
+                <script type="text/javascript" language="javascript">
+                	function applyOptions() {
+                		$("#expander").wijexpander("option", "expandDirection", $("#expandDirection").get(0).value);
+                	}    
+                </script>
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            
+        }

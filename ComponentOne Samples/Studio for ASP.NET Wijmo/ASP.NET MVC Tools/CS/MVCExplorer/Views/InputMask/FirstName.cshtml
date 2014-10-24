@@ -1,0 +1,39 @@
+﻿@{
+	ViewBag.Title = "FirstName";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputmask(
+			{
+			    mask: '>L|LLLLLLLLL',
+			    hidePromptOnLeave: true
+			});
+		});
+	</script>
+}
+<h2>FirstName</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<input type="text" id="textbox1" />
+	<h6>
+		Mask</h6>
+	<p>
+		>L|LLLLLLLLL</p>
+	</td> </tr> </table>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		This sample illustrates how you can use the <b>mask</b> option to allow only text input.
+	</p>
+}
+

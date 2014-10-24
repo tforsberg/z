@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "ObjectModel";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var tv = $("#tree").wijtree();
+
+            function getNode() {
+                return $("#tree").wijtree("findNodeByText", "Folder 1"); ;
+            }
+
+            $('#addNode').click(function () {
+                var node = getNode();
+                if (node != null)
+                    node.element.wijtreenode("add", 'New node', parseInt($("#addIndex").val()));
+            });
+
+            $('#removeNode').click(function () {
+                var node = getNode();
+                if (node != null)
+                    node.element.wijtreenode("remove", parseInt($("#removeIndex").val()));
+            });
+        });       
+    </script>
+}
+<h2>
+    ObjectModel</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <ul id="tree">
+            <li><a><span>Folder 1</span></a>
+                <ul>
+                    <li><a><span>Folder 1.1</span></a></li>
+                    <li><a><span>Folder 1.2</span></a></li>
+                    <li><a><span>Folder 1.3</span></a></li>
+                    <li><a><span>Folder 1.4</span></a></li>
+                    <li><a><span>Folder 1.5</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div>
+            <input id="addNode" type="button" value="Add" />
+            at index
+            <input id="addIndex" type="text" value="0" />
+        </div>
+        <div>
+            <input id="removeNode" type="button" value="Remove" />
+            at index
+            <input id="removeIndex" type="text" value="0" />
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+{
+    <p>
+        This sample shows how to dynamically add and remove nodes from the wijtree widget.
+    </p>
+}

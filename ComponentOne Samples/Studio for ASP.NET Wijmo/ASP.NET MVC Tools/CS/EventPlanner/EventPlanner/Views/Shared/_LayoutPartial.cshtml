@@ -1,0 +1,19 @@
+﻿<div data-role="appviewpage" data-title="@ViewBag.Title" data-url="@Request.Url">
+    @if (IsSectionDefined("Header"))
+    {
+        <div data-role="header" data-position="fixed">
+            @RenderSection("Header")
+        </div>
+    }
+@*else
+        {
+            <div data-role="header" data-position="fixed">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        }*@
+    <div data-role="content">
+        @RenderBody()
+    </div>
+
+    @RenderSection("scripts", required: false)
+</div>

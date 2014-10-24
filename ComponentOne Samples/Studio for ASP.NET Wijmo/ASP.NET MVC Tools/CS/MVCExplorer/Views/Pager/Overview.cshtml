@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Overview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#demo").wijpager({ pageCount: 150, pageIndex: 40, mode: "numericFirstLast" });
+        });
+    </script>
+}
+
+<h2>Overview</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="demo">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+        Wijmo Pager allows users to scroll through elements or pages by clicking on a visible element.
+        The wijpager widget allows you to use several modes; for example, you can set it up to use a numeric
+        paging system or a next/previous system.
+    </p>
+}

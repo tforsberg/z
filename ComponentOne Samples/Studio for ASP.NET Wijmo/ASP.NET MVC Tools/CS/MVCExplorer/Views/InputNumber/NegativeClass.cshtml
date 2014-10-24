@@ -1,0 +1,39 @@
+﻿@{
+	ViewBag.Title = "Negative Class";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+        <style type="text/css">
+        .negative {
+            background: yellow;
+            color: red !important;
+        }
+    </style>
+
+    <script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputnumber(
+			{
+			    negativeClass: 'negative'
+			});
+		});
+	</script>
+}
+<h2>Negative Class</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <input type="text" id="textbox1" value="-123" />
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                This sample demonstrates how you can set the negative style by setting the <b>negativeClass</b> option.</p>
+}

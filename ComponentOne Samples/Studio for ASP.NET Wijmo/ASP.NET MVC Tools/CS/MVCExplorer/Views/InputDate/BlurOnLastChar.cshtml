@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Blur On Last Char";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputdate({
+		        blurOnLastChar: true
+		    });
+		    $("#textbox2").wijinputtext({
+		    });
+		});
+	</script>
+}
+<h2>Blur On Last Char</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <input type="text" id="textbox1" />
+             <input type="text" id="textbox2" />
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+@section description
+{
+            <p>
+                This sample demonstrates that when the <b>blurOnLastChar</b> option is set to <b>true</b>,
+                after input finished on the last field, the focus will move to the next control.</p>
+}
+
+

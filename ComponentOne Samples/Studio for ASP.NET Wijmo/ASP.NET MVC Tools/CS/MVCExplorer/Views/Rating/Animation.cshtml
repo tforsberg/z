@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Animation";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$('#rating').wijrating({
+				split: 2,
+				animation: {
+					animated: 'fade',
+					duration: 500,
+					easing: 'linear',
+					delay: 250
+				}
+			});
+		});
+
+		function apply() {
+			var val = $("#effectTypes").val();
+			$('#rating').wijrating({ animation: {
+				animated: val
+			}
+			});
+		};
+	</script>
+}
+<h2>Animation</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+			<select id="rating">
+				<option value="1">Below Average</option>
+				<option value="2">Average</option>
+				<option selected="selected" value="3">Above Average</option>
+				<option value="4">Awesome</option>
+				<option value="5">Epic</option>
+			</select>
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<select id="effectTypes" name="effects">
+			<option value="scroll">Scroll</option>
+			<option value="blind">Blind</option>
+			<option value="bounce">Bounce</option>
+			<option value="clip">Clip</option>
+			<option value="drop">Drop</option>
+			<option value="explode">Explode</option>
+			<option value="fade">Fade</option>
+			<option value="fold">Fold</option>
+			<option value="highlight">Highlight</option>
+			<option value="puff">Puff</option>
+			<option value="pulsate">Pulsate</option>
+			<option value="scale">Scale</option>
+			<option value="shake">Shake</option>
+			<option value="size">Size</option>
+			<option value="slide">Slide</option>
+		</select>
+		<input id="apply" type="button" onclick="apply()" value="apply" />
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+	This sample demonstrates how to set the animation of your wijrating. 
+	This example uses the <b>animation</b>  option of the rating.
+	</p>
+}

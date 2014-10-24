@@ -1,0 +1,34 @@
+﻿@{
+	ViewBag.Title = "MinMaxRange";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#calendar1").wijcalendar({
+		        displayDate: new Date('2010/08/1'),
+		        minDate: new Date('2010/08/16'),
+		        maxDate: new Date('2010/08/25')
+		    });
+		});
+	</script>
+}
+<h2>MinMaxRange</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	This sample shows how to set the minDate option and the maxDate option to show a specific range of dates.
+	</p>
+}
+

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Overview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#vsplitter").wijsplitter({ orientation: "vertical" });
+            $("#hsplitter").wijsplitter({ orientation: "horizontal" });
+        });
+    </script>
+    <style type="text/css">
+        .splitterContainer
+        {
+            height: 210px;
+        }
+        
+        #vsplitter, #hsplitter
+        {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .layout
+        {
+            float: left;
+        }
+    </style>
+}
+<h2>
+    Overview</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div class="splitterContainer">
+        <div class="layout">
+            <h3>
+                Vertical</h3>
+            <div id="vsplitter">
+                <div>
+                    panel1
+                </div>
+                <div>
+                    panel2
+                </div>
+            </div>
+        </div>
+        <div class="layout" style="width: 100px;">
+            &nbsp;</div>
+        <div class="layout">
+            <h3>
+                Horizontal</h3>
+            <div id="hsplitter">
+                <div>
+                    panel1
+                </div>
+                <div>
+                    panel2
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        Create a professional and polished website with the help of the wijsplitter widget.
+        wijsplitter is a container widget featuring a movable and collapsible bar that divides
+        a container's display area into two resizable panels. Splitters are able to be nested
+        indefinitely, providing you infinite possibilities in UI design. The samples in
+        this section will help to get you started with the wijsplitter widget.
+    </p>
+}

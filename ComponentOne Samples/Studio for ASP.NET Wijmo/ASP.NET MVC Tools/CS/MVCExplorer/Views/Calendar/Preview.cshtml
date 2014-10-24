@@ -1,0 +1,29 @@
+﻿@{
+	ViewBag.Title = "Preview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+	    $(document).ready(function () {
+	        $("#calendar1").wijcalendar({ allowPreview: true });
+	    });
+	</script>
+}
+<h2>Preview</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	This sample illustrates the wijcalendar widget's ability to show preview months. To show preview months, set the allowPreview option to true. When the project is loaded, users can preview the next or previous month by hovering over the indicators on either side of the control.
+	</p>
+}

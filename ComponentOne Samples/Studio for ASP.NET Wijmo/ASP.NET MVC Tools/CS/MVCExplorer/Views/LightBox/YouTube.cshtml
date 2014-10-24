@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "YouTube";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				controlsPosition: 'outside',
+				textPosition: 'outside'
+			});
+		});
+	</script>
+}
+<h2>YouTube</h2>
+
+		<div class="main demo">
+			<!-- Begin demo markup -->
+
+			<div id="lightbox">
+				<a title="Keyboard Cat" href="https://www.youtube.com/v/J---aiyznGQ?version=3" rel="wijlightbox;player=swf">
+					<img class=border alt="" src="http://cdn.wijmo.com/images/keyboardcat.png"/></a>
+				<a title="Sneezing Panda" href="http://www.youtube.com/v/FzRH3iTQPrk?version=3" rel="wijlightbox;player=swf">
+					<img class=border alt="" src="http://cdn.wijmo.com/images/panda.png"/></a>
+				<a title="Talking Cats" href="http://www.youtube.com/v/z3U0udLH974?version=3" rel="wijlightbox;player=swf">
+					<img class=border alt="" src="http://cdn.wijmo.com/images/talkingcats.png"/></a>
+			</div>
+
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>This sample demonstrates how the wijlightbox widget can be used to show videos.</p>
+}

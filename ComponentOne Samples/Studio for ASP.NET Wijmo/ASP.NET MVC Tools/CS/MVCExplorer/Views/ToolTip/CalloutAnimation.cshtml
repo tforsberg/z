@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "CalloutAnimation";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#boxes").wijtooltip({
+                showCallOut: true,
+                closeBehavior: "none",
+                position: { my: "center bottom", at: "center top", offset: "50 0" }
+            });
+            //the first show is to create the tooltip element.
+            $("#boxes").wijtooltip("show");
+            var tooltip = $("#boxes").wijtooltip("widget");
+            tooltip.width(500);
+            tooltip.height(50);
+            $("#boxes").wijtooltip("show");
+            var colors = ["red", "blue", "yellow", "black", "green"];
+            $("#boxes").wijtooltip("option", "content", colors[2]);
+            $("#boxes>div").each(function (i) {
+                $(this).css("background-color", colors[i]);
+                $(this).bind("click", function () {
+                    var value = 50 + 100 * i;
+                    $("#boxes").wijtooltip("option", "content", colors[i]);
+                    $("#boxes").wijtooltip("option", "position", { offset: value + " 0" });
+                });
+            });
+
+        });
+            
+    </script>
+    <style type="text/css">
+        .boxes
+        {
+            width: 500px;
+            height: 50px;
+            margin-top: 100px;
+        }
+        .boxes div
+        {
+            width: 100px;
+            height: 50px;
+            float: left;
+        }
+    </style>
+}
+
+<h2>CalloutAnimation</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <div class="boxes" id="boxes">
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            <p>This sample shows how the <b>position</b> option can be used to animate the tooltip.</p>
+<p>Click one of the colored blocks to move the tooltip.</p>
+        }

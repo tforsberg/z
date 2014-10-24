@@ -1,0 +1,44 @@
+﻿@{
+	ViewBag.Title = "Popup";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#calendar").wijcalendar({
+		        popupMode: true,
+		        selectedDatesChanged: function () {
+		            var selDate = $(this).wijcalendar("getSelectedDate");
+		            if (!!selDate) $("#popdate").val(selDate.toDateString());
+		        }
+		    });
+
+		    $("#popdate").click(function () {
+		        $("#calendar").wijcalendar("popup", {
+		            of: $("#popdate"),
+		            offset: '0 2'
+		        });
+		    })
+        });
+	</script>
+}
+<h2>Popup</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="calendar">
+	</div>
+	<label for="popdate">Choose a Date:</label>
+	<input name="popdate" type="text" id="popdate" style="width: 180px;" />
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	This sample shows you how to create a popup calendar using the popupMode option.
+	</p>
+}

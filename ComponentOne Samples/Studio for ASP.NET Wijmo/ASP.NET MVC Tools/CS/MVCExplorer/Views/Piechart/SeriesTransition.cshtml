@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "SeriesTransition";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #wijpiechart
+        {
+            width: 756px;
+            height: 475px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijpiechart").wijpiechart({
+                radius: 140,
+                legend: { visible: true },
+                hint: {
+                    content: function () {
+                        return this.data.label + " : " + Globalize.format(this.value / this.total, "p2");
+                    }
+                },
+                seriesList: createRandomSeriesList()
+            });
+        });
+
+        function changeProperties() {
+            var animation = {};
+            enabled = $("#chkEnabled").is(":checked"),
+				duration = $("#inpDuration").val(),
+				easing = $("#selEasing").val();
+            animation.enabled = enabled;
+            if (duration && duration.length) {
+                animation.duration = parseFloat(duration);
+            }
+            animation.easing = easing;
+            $("#wijpiechart").wijpiechart("option", "reloadAnimation", animation);
+        }
+
+        function reload() {
+            $("#wijpiechart").wijpiechart("option", "seriesList", createRandomSeriesList());
+        }
+
+        function createRandomSeriesList() {
+            var seriesList = [],
+				randomDataValuesCount = 6,
+				labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+				idx;
+            for (idx = 0; idx < randomDataValuesCount; idx++) {
+                seriesList.push({
+                    label: labels[idx],
+                    legendEntry: true,
+                    data: createRandomValue()
+                });
+            }
+            return seriesList;
+        }
+
+        function createRandomValue() {
+            var val = Math.round(Math.random() * 100);
+            return val;
+        }
+    </script>
+}
+<h2>
+    Seriesransition</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <input type="button" value="reload" onclick="reload()" />
+    <div id="wijpiechart" class="ui-widget ui-widget-content ui-corner-all">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div>
+            <label for="chkEnabled">
+                seriesTransition Settings: Enabled
+            </label>
+            <input id="chkEnabled" type="checkbox" checked="checked" />
+            <label for="inpDuration">
+                Duration
+            </label>
+            <input id="inpDuration" type="text" value="1000" />
+            <label for="selEasing">
+                Easing
+            </label>
+            <select id="selEasing">
+                <option value=">">></option>
+                <option value="<"><</option>
+                <option value="<>"><></option>
+                <option value="backIn">backIn</option>
+                <option value="backOut">backOut</option>
+                <option value="bounce">bounce</option>
+                <option value="elastic">elastic</option>
+            </select>
+            <input type="button" value="Apply" onclick="changeProperties()" />
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample demonstrates how to set the reloadAnimation of your pie charts when
+        reload data. This example uses the <b>seriesTransition</b> options of the pie chart.</p>
+}

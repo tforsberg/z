@@ -1,0 +1,106 @@
+﻿@{
+	ViewBag.Title = "Editing";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			var $element = $("#demo").wijgrid(
+				{
+					allowEditing: true,
+					allowKeyboardNavigation: true,
+					highlightCurrentCell: true,
+					showRowHeader: true,
+					selectionMode: "none",
+					afterCellUpdate: onAfterCellUpdate,
+					invalidCellValue: onInvalidCellValue,
+					afterCellEdit: onAfterCellEdit,
+					columns: [
+						{ /*readOnly: true*/ },
+						{ dataType: "currency", valueRequired: true },
+						{ dataType: "number" },
+						{ dataType: "number", dataFormatString: "p0" },
+						{ dataType: "boolean" }
+					]
+				});
+
+			$("#log").html(dump($element.wijgrid("data")));
+		});
+
+		function onAfterCellUpdate(e, args) {
+			$("#log").html(dump($("#demo").wijgrid("data")));
+		}
+
+		function onInvalidCellValue(e, args) {
+			$(args.cell.container())
+				//.removeClass("ui-state-active")
+				.addClass("ui-state-error");
+		}
+
+		function onAfterCellEdit(e, args) {
+			$(args.cell.container())
+				//.addClass("ui-state-active")
+				.removeClass("ui-state-error");
+		}
+
+		function dump(d2array) {
+			
+			var str = "<table class=\"ui-widget ui-widget-content\" rules=\"all\">";
+			str += "<caption class=\"ui-widget-header\">dump</caption>";
+
+			for (var i = 0, rowLen = d2array.length; i < rowLen; i++) {
+				var row = d2array[i];
+				str += "<tr>";
+
+				for (var j = 0, cellLen = row.length; j < cellLen; j++) {
+					str += "<td>" + row[j] + "</td>";
+				}
+
+				str + "</tr>";
+			}
+
+			return str + "</table>";
+		}
+	</script>
+}
+
+<h2>Editing</h2>
+
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<table id="demo">
+		<thead>
+			<tr>
+				<th>ProductID</th><th>UnitPrice</th><th>Quantity</th><th>Discount</th><th>Discontinued</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>11</td><td>14</td><td>12</td><td>0</td><td>false</td>
+			</tr><tr>
+				<td>42</td><td>9.8</td><td>10</td><td>0</td><td>false</td>
+			</tr><tr>
+				<td>72</td><td>34.8</td><td>5</td><td>0</td><td>false</td>
+			</tr><tr>
+				<td>14</td><td>18.6</td><td>9</td><td>0</td><td>false</td>
+			</tr><tr>
+				<td>35</td><td>12.1</td><td>5</td><td>0.5</td><td>true</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="log">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description{
+	<p>
+		This sample shows how you can edit the grid by enabling the <b>allowEditing</b> option. 
+	</p>
+}

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "MVC Explorer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeaderButtons
+{
+    <a runat="server" href="@Url.Action("Index", "Home")" class="button">
+        <img runat="server" src=@Url.Content("~/explore/css/images/icons/24/home.png")></a>
+}
+@section HeaderTitle
+ {
+Welcome
+}
+<section class="nosidebar">
+        <article class="ui-helper-clearfix">
+            <div class="main-content">
+                <div class="padder">
+                   <ul class="widget-icons widget-icons-grid ui-helper-clearfix">
+                       @{
+                           MVCExplorer.WidgetData data = new MVCExplorer.WidgetData();
+                           IEnumerable<System.Xml.Linq.XElement> res = data.GetAllWidgetData();
+                           string widgetName, icon, title, href;
+                           foreach (var obj in res)
+                           {
+                               widgetName = obj.Attribute("name").Value;
+                               href = "C1" + widgetName + "/Overview.aspx";
+                               title = obj.Attribute("text") != null ? obj.Attribute("text").Value : widgetName;
+                               icon = "~/explore/css/images/icons/widget/" + widgetName + ".png";
+                                 <li><a runat="server" href="@Url.Action("OverView", widgetName)">
+                                  <img runat="server" src="@Url.Content(icon)" alt="@title" />@title                                 
+                                 </a>                           
+                                 </li> 
+                           }
+                         }
+                     </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+@section description
+{
+}

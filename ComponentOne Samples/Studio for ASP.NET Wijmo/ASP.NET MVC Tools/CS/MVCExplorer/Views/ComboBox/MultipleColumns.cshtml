@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "MultipleColumns";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var testArray = generateData(30, 6);
+            var myReader = new wijarrayreader([{
+                name: 'label'
+            }, {
+                name: 'value'
+            }, {
+                name: 'selected',
+                defaultValue: false
+            }, {
+                name: 'cells'
+            }]);
+            var datasourceOptions = {
+                reader: myReader,
+                data: testArray
+            };
+            var datasource = new wijdatasource({
+                reader: myReader,
+                data: testArray
+            })
+            $("#tags").wijcombobox({
+                data: datasource,
+                dropdownWidth: 627,
+                width: 150,
+                columns: [{
+                    name: 'header1'
+                }, {
+                    name: 'header2'
+                }, {
+                    name: 'header3'
+                }, {
+                    name: 'header4'
+                }, {
+                    name: 'header5'
+                }, {
+                    name: 'header6'
+                }]
+            });
+        });
+
+        function generateData(count, cell) {
+            var arr = [];
+            for (var i = 0; i < count; i++) {
+                var o = {};
+                o.label = 'label' + i;
+                o.value = 'value' + i;
+                var cells = [];
+                for (var j = 0; j < cell; j++) {
+                    cells.push('cell' + i + j);
+                }
+                o.cells = cells;
+                arr.push(o);
+            }
+            return arr;
+        }
+    </script>
+}
+<h2>
+    MultipleColumns</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <input id="tags" />
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+            {
+    <p>
+        This sample shows how you can easily create multiple columns in the wijcombobox
+        by setting the <b>columns</b> option.
+    </p>
+}

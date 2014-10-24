@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Column resizing";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#demo").wijgrid({
+                scrollMode: "auto",
+                allowColSizing: true
+            });
+        });
+    </script>
+}
+
+<h2>Column resizing</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <table id="demo">
+        <thead>
+            <tr>
+                <th>EmployeeID</th><th>LastName</th><th>FirstName</th><th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>Davolio</td><td>Nancy</td><td>Sales Representative</td>
+            </tr>
+            <tr>
+                <td>2</td><td>Fuller</td><td>Andrew</td><td>Vice President</td>
+            </tr>
+            <tr>
+                <td>3</td><td>Leverling</td><td>Janet</td><td>Sales Representative</td>
+            </tr>
+            <tr>
+                <td>4</td><td>Peacock</td><td>Margaret</td><td>Sales Representative</td>
+            </tr>
+            <tr>
+                <td>5</td><td>Buchanan</td><td>Steven</td><td>Sales Manager</td>
+            </tr>
+            <tr>
+                <td>6</td><td>Suyama</td><td>Michael</td><td>Sales Representative</td>
+            </tr>
+            <tr>
+                <td>7</td><td>King</td><td>Robert</td><td>Sales Representative</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+       wijgrid allows columns resizing when the <b>allowColSizing</b> option is set to true.
+       The column width can be changed by dragging the right border of its title.
+    </p>
+}

@@ -1,0 +1,47 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			// debugger
+			// $(":wijmo-wijdialog").wijdialog("destroy").remove();
+			$('#dialog').wijdialog({
+				autoOpen: true,
+				captionButtons: {
+					refresh: { visible: false }
+				}
+			});
+		});
+	</script>
+}
+<h2>
+	Overview</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+		<input type="button" value="Hide Dialog" onclick="$('#dialog').wijdialog('close')" />
+		<input type="button" value="Show Dialog" onclick="$('#dialog').wijdialog('open')" />
+		<div id="dialog" title="Basic dialog">
+			<p>
+				This is the default dialog which is useful for displaying information. The dialog
+				window can be moved, resized and closed with the 'x' icon.</p>
+		</div>
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+        {
+	<p>
+		This sample illustrates the default wijdialog widget, which is useful for displaying
+		information such as error messages or instructions. The dialog window can be moved,
+		resized and closed with the 'x' icon. Other samples in the wijdialog section will
+		demonstrate how to use animation effects, modal dialog boxes, and iFrame elements.
+	</p>
+}

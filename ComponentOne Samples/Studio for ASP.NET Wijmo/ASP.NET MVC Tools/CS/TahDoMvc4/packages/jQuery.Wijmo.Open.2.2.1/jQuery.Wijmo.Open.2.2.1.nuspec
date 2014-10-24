@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>jQuery.Wijmo.Open</id>
+    <version>2.2.1</version>
+    <title>Wijmo Open</title>
+    <authors>ComponentOne</authors>
+    <owners>ComponentOne</owners>
+    <licenseUrl>http://wijmo.com/widgets/license/wijmo-mit-license/</licenseUrl>
+    <projectUrl>http://wijmo.com/</projectUrl>
+    <iconUrl>http://wijmo.com/img/media/wijmo_wijmo_150.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Wijmo Open is open source and is free to use under either the MIT or GPL licenses. The MIT License is recommended for most projects since it follows jQuery's model. It is simple and easy to understand and it places almost no restrictions on what you can do with Wijmo Open. It includes Accordion, Calendar, Checkbox, Dialog, Expander, Form Decorator, List, Menu, Progressbar, Radio Button, Slider, Splitter, Super Panel, Tabs, Textbox and Tooltip.</description>
+    <language>en-US</language>
+    <tags>jQuery,jQueryUI,Wijmo,widgets,plugins,JavaScript,UI,AJAX,Menu,Tooltip,Accordion,Calendar</tags>
+    <dependencies>
+      <dependency id="jQuery" version="1.8.2" />
+      <dependency id="jQuery.UI.Combined" version="1.8.23" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>

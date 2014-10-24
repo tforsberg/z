@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Custom paging";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <style type="text/css">
+        .wijmo-wijgrid
+        {
+            min-height: 100px;
+        }
+    </style>
+
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+
+            // * local data
+            $("#demo-local").wijgrid({
+                allowPaging: true,
+                pageSize: 5,
+
+                data: new wijdatasource({
+                    dynamic: true,
+                    loading: function (dataSource, userData) {
+                        var r = userData.data.paging;
+                        var fooData = [];
+
+                        for (var i = r.pageIndex * r.pageSize; i < (r.pageIndex + 1) * r.pageSize; i++) {
+                            fooData.push({ "ID": i, "Name": "Name" + i });
+                        }
+
+                        dataSource.data = {
+                            totalRows: 100,
+                            rows: fooData
+                        }
+                    }
+                })
+            });
+            // * local data
+
+            // * remote data
+            $("#demo-remote").wijgrid({
+                allowPaging: true,
+                pageSize: 5,
+
+				data: new wijdatasource({
+					dynamic: true,
+
+					proxy: new wijhttpproxy({
+						url: "http://ws.geonames.org/searchJSON",
+						dataType: "jsonp",
+						data: {
+						    username: "demo",
+						    style: "SHORT"
+						}
+					}),
+
+					reader: {
+						read: function (dataSource) {
+							var count = parseInt(dataSource.data.totalResultsCount, 10);
+
+							$("#entries").text("(" + count + " entries found)");
+
+							dataSource.data = dataSource.data.geonames;
+							dataSource.data.totalRows = count;
+						}
+					},
+
+					loading: function (dataSource, userData) {
+						var r = userData.data.paging;
+
+						dataSource.proxy.options.data.startRow = r.pageIndex * r.pageSize;
+						dataSource.proxy.options.data.maxRows = r.pageSize;
+					}
+				})
+            });
+            // * remote data
+        });
+    </script>
+}
+
+<h2>Custom paging</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <p>Custom paging using local data</p>
+    <table id="demo-local">
+    </table>
+
+    <p>Custom paging using remote data <span id="entries">...</span></p>
+    <table id="demo-remote">
+    </table>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+        This sample shows how to use custom paging using local and remote data.
+    </p>
+}

@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Orientation";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+
+@section header
+{
+     <script id="scriptInit" type="text/javascript">
+         $(document).ready(function () {
+             $("#wijcarousel0").wijcarousel({
+                 display: 3,
+                 step: 2,
+                 orientation: "horizontal"
+             });
+
+             $("#wijcarousel1").wijcarousel({
+                 display: 3,
+                 step: 2,
+                 orientation: "vertical"
+             });
+         });
+    </script>
+    <style type="text/css">
+        #wijcarousel0
+        {
+            width: 390px;
+            height: 90px;
+            margin-bottom: 1em;
+        }
+        
+        #wijcarousel1
+        {
+            width: 120px;
+            height: 300px;
+            margin-bottom: 1em;
+        }
+    </style>
+}
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <div>
+                <div id="wijcarousel0">
+                    <ul>
+                        <li>
+                            <img alt="1" src="http://lorempixum.com/200/150/sports/1" title="Word" /><span>Word Caption 1</span></li>
+                        <li>
+                            <img alt="2" src="http://lorempixum.com/200/150/sports/2" title="Word2" /><span>Word Caption 2</span></li>
+                        <li>
+                            <img alt="3" src="http://lorempixum.com/200/150/sports/3" title="Word3" /><span>Word Caption 3</span></li>
+                        <li>
+                            <img alt="4" src="http://lorempixum.com/200/150/sports/4" title="Word4" /><span>Word Caption 4</span></li>
+                        <li>
+                            <img alt="5" src="http://lorempixum.com/200/150/sports/5" title="Word5" /><span>Word Caption 5</span></li>
+                        <li>
+                            <img alt="6" src="http://lorempixum.com/200/150/sports/6" title="Word" /><span>Word Caption 6</span></li>
+                        <li>
+                            <img alt="7" src="http://lorempixum.com/200/150/sports/7" title="Word2" /><span>Word Caption 7</span></li>
+                        <li>
+                            <img alt="8" src="http://lorempixum.com/200/150/sports/8" title="Word3" /><span>Word Caption 8</span></li>
+                        <li>
+                            <img alt="9" src="http://lorempixum.com/200/150/sports/9" title="Word4" /><span>Word Caption 9</span></li>
+                        <li>
+                            <img alt="10" src="http://lorempixum.com/200/150/sports/10" title="Word5" /><span>Word Caption 10</span></li>
+                    </ul>
+                </div>
+                <div id="wijcarousel1">
+                    <ul>
+                        <li>
+                            <img alt="1" src="http://lorempixum.com/200/150/abstract/1" title="Word" /><span>Word Caption 1</span></li>
+                        <li>
+                            <img alt="2" src="http://lorempixum.com/200/150/abstract/2" title="Word2" /><span>Word Caption 2</span></li>
+                        <li>
+                            <img alt="3" src="http://lorempixum.com/200/150/abstract/3" title="Word3" /><span>Word Caption 3</span></li>
+                        <li>
+                            <img alt="4" src="http://lorempixum.com/200/150/abstract/4" title="Word4" /><span>Word Caption 4</span></li>
+                        <li>
+                            <img alt="5" src="http://lorempixum.com/200/150/abstract/5" title="Word5" /><span>Word Caption 5</span></li>
+                        <li>
+                            <img alt="6" src="http://lorempixum.com/200/150/abstract/6" title="Word" /><span>Word Caption 6</span></li>
+                        <li>
+                            <img alt="7" src="http://lorempixum.com/200/150/abstract/7" title="Word2" /><span>Word Caption 7</span></li>
+                        <li>
+                            <img alt="8" src="http://lorempixum.com/200/150/abstract/8" title="Word3" /><span>Word Caption 8</span></li>
+                        <li>
+                            <img alt="9" src="http://lorempixum.com/200/150/abstract/9" title="Word4" /><span>Word Caption 9</span></li>
+                        <li>
+                            <img alt="10" src="http://lorempixum.com/200/150/abstract/10" title="Word5" /><span>Word Caption 10</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+        {
+    <p>
+    This sample illustrates the orientation ("vertical" or "horizontal") of the items of wijcarousel.
+    </p>
+}
+

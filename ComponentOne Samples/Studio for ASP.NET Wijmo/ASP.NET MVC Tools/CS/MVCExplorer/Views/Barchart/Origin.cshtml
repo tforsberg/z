@@ -1,0 +1,70 @@
+﻿@{
+	ViewBag.Title = "Origin";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#wijbarchart").wijbarchart({
+				axis: {
+					y: {
+						alignment: "far",
+						visible: true,
+						origin: 0
+					},
+					x: {
+						origin: 2.6
+					}
+				},
+				showChartLabels: false,
+				hint: {
+					content: function () {
+					    return this.data.label + '\n ' + this.y + '';
+					}
+				},
+				header: {
+					text: "Bar chart with negative series values"
+				},
+				seriesList: [{
+					label: "s1",
+					legendEntry: true,
+					data: { x: [1, 2, 3, 4, 5], y: [-5, -3, 1, 7, 2] }
+				}, {
+					label: "s2",
+					legendEntry: true,
+					data: { x: [1, 2, 3, 4, 5], y: [-2, -6, 2, 4, 3] }
+				}, {
+					label: "s3",
+					legendEntry: true,
+					data: { x: [1, 2, 3, 4, 5], y: [-3, -5, 3, 2, 5] }
+				}],
+				animation: {
+					duration: 1000
+				}
+			});
+		});
+	</script>
+}
+<h2>Origin</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px; height: 475px">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		The Wijmo Bar Chart widget (wijbarchart) supports negative values
+		and can display them nicely using the "origin" option for each axis.
+		The origin property tell the axis where to draw its starting point.
+		This is optimal for diaplying positive and negative values on the same chart.
+	</p>
+}
+

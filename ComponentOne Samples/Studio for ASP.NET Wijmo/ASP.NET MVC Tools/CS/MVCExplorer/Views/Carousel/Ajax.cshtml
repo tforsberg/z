@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Ajax";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #wijcarousel0
+        {
+            width: 300px;
+            height: 75px;
+        }
+        #wijcarousel1
+        {
+            width: 750px;
+            height: 300px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var images = [
+            {
+                imageUrl: "http://lorempixum.com/750/300/abstract/1",
+                linkUrl: "http://lorempixum.com/750/300/abstract/1",
+                content: "",
+                caption: "<span>Word Caption 1</span>"
+            },
+            {
+                imageUrl: "http://lorempixum.com/750/300/abstract/2",
+                linkUrl: "http://lorempixum.com/750/300/abstract/2",
+                content: "",
+                caption: "<span>Word Caption 2</span>"
+            },
+            {
+                imageUrl: "http://lorempixum.com/750/300/abstract/3",
+                linkUrl: "http://lorempixum.com/750/300/abstract/3",
+                content: "",
+                caption: "<span>Word Caption 3</span>"
+            },
+            {
+                imageUrl: "http://lorempixum.com/750/300/abstract/4",
+                linkUrl: "http://lorempixum.com/750/300/abstract/4",
+                content: "",
+                caption: "<span>Word Caption 4</span>"
+            },
+            {
+                imageUrl: "http://lorempixum.com/750/300/abstract/5",
+                linkUrl: "http://lorempixum.com/750/300/abstract/5",
+                content: "",
+                caption: "<span>Word Caption 5</span>"
+            }
+            ];
+            $("#wijcarousel1").wijcarousel({
+                display: 1,
+                step: 1,
+                showTimer: false,
+
+                data: images
+            });
+            $("#wijcarousel0").wijcarousel({
+                display: 4,
+                step: 3,
+                showTimer: false,
+                loadCallback: function () {
+                    $.get("AjaxDoc", function (self, status, data) {
+                        ajaxCallback(data.responseText);
+                    });
+                }
+            });
+
+            function ajaxCallback(images) {
+                var imgs = images.split('|'), data = [];
+                for (i = 0; i < imgs.length; i++) {
+                    data[i] = {
+                        imageUrl: imgs[i],
+                        linkUrl: "",
+                        content: "",
+                        caption: "<span>Image " + (i + 1) + "</span>"
+                    }
+                }
+                $("#wijcarousel0").wijcarousel("option",
+                    "data",
+                     data);
+            }
+        });
+    </script>
+}
+<h2>
+    Overview</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <h3>
+            Load data from data array
+        </h3>
+        <div id="wijcarousel1">
+        </div>
+        <br />
+        <h3>
+            Load data from ajax.
+        </h3>
+        <div id="wijcarousel0">
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the wijcarousel get data from ajax data source.
+    </p>
+}

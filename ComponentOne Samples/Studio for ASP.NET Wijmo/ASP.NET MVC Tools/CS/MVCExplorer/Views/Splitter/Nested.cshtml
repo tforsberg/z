@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Nested";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #vsplitter
+        {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#vsplitter").wijsplitter({ orientation: "vertical", fullSplit: false, expanded: function (e) { $("#hsplitter").wijsplitter("refresh"); }, collapsed: function (e) { $("#hsplitter").wijsplitter("refresh"); }, sized: function (e) { $("#hsplitter").wijsplitter("refresh"); } });
+            $("#hsplitter").wijsplitter({ orientation: "horizontal", fullSplit: true });
+        });
+    </script>
+}
+<h2>
+    Nested</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="vsplitter">
+        <div>
+            panel1
+        </div>
+        <div>
+            <div id="hsplitter">
+                <div>
+                    panel2</div>
+                <div>
+                    panel3</div>
+            </div>
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample shows a horizontal wijsplitter nested within a vertical wijsplitter.
+        The nested splitter in this sample is easy to create; simply put the div tags for
+        the second splitter within the div tags of the second splitter.
+    </p>
+}

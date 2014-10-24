@@ -1,0 +1,32 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#calendar1").wijcalendar(
+				{ easing: "easeOutExpo" }
+			);
+		});
+	</script>
+}
+<h2>Overview</h2>
+
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>With the Wijmo Calendar widget (wijcalendar), you can show a single month or a table of months with customizable styles and navigation elements.
+		The samples in this section will introduce you to some of the features of the wijcalendar widget.
+	</p>
+}

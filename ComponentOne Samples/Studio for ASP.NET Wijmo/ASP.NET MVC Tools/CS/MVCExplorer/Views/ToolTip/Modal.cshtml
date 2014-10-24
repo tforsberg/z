@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Modal";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+     <script id="scriptInit" type="text/javascript">
+         $(document).ready(function () {
+             $("#target>a").wijtooltip({
+                 modal: true,
+                 closeBehavior: "sticky"
+             });
+             $("#isModal").click(function () {
+                 $("#target>a").wijtooltip("option", "modal", !!$("#isModal").is(":checked"));
+             });
+
+         });
+        
+      
+    </script>
+}
+
+<h2>Modal</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <div id="tooltip">
+            </div>
+            <h3 id="target"  class="ui-helper-reset ui-widget-header ui-corner-all" style="padding: 1em;">
+                <a href="#" title="Hover on me to close">Hover on the element</a>
+            </h3>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <label for="isModal">
+                    Modal</label>
+                <input type="checkbox" id="isModal" checked="checked" />
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            <p>
+                This sample demonstrates how to create a modal tooltip by setting the <b>modal</b> option to <b>true</b>.</p>
+<p>With the <b>Modal</b> checkbox checked, hover over "Hover on the element". The tooltip appears, but the rest of the page cannot be accessed until the tooltip is closed.</p>
+        }

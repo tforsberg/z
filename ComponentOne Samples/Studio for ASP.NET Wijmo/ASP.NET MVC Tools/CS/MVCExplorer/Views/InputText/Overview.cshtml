@@ -1,0 +1,40 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputtext({
+		        format: "A"
+		    });
+		});
+	</script>
+}
+<h2>Text</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+
+            <input type="text" id="textbox1" value="abc" />
+
+            <h6>Options</h6>
+            <p>format='A'</p>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                The wijinputtext widget can input text to the control according to the specified format.
+            </p>
+            <p>
+                In this example, the default value is "ABC"; only upper case alphabet(A-Z) can be inputed to the widget;
+                If input the lower case alphabet, it will be converted to upper case alphabet, others will not be accepeted.
+            </p>
+}

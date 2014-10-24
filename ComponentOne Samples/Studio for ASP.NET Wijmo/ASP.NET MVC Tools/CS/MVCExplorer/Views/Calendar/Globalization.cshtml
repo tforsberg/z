@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Globalization";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script src="http://cdn.wijmo.com/external/cultures/globalize.cultures.js" type="text/javascript"></script>
+
+	<script id="scriptInit" type="text/javascript">
+
+	    function sortByName(map) {
+	        // converts a dictionary into a sorted dictionary based on obj.name
+	        var arr = [];
+	        $.each(map, function (name, value) {
+	            arr.push(value);
+	        });
+	        arr.sort(function (a, b) {
+	            return a.name < b.name ? -1 : 1;
+	        });
+	        return arr;
+	    }
+
+	    $(document).ready(function () {
+	        $("#calendar1").wijcalendar();
+
+	        var sortedCultures = sortByName(Globalize.cultures);
+	        var list = $(".cultures");
+
+	        $.each(sortedCultures, function (i, culture) {
+	            $("<option/>", {
+	                value: culture.name,
+	                text: culture.name + ": " + (culture.englishName || "Invariant")
+	            }).appendTo(list);
+	        });
+	        list.val("en");
+	        list.bind("change keyup", function () {
+	            culture = list.val();
+	            $("#calendar1").wijcalendar({ culture: culture });
+	        });
+	    });
+	</script>
+}
+<h2>Globalization</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="calendar1">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<div class="option-row">
+			<label for="cultures">
+				Culture</label>
+			<select class="cultures">
+			</select>
+		</div>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>This sample illustrates how to set the localization of the wijcalendar using the culture option. </p>
+}

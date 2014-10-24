@@ -1,0 +1,37 @@
+﻿@inherits System.Web.Mvc.WebViewPage<System.Decimal?>
+@if (Model.HasValue)
+{ 
+    @Html.TextBox("", (Model.Value), new { @class = "decimalEditor" })
+}
+else
+{
+    @Html.TextBox("", "", new { @class = "decimalEditor" })
+    
+}
+<script type='text/javascript'>
+    $(document).ready(function () {
+     @{
+            int MinValue = 0;
+            int MaxValue = 100;
+            foreach (var r in @ViewData.ModelMetadata.GetValidators(this.ViewContext))
+            {
+                if (r.GetType() == typeof(System.Web.Mvc.RangeAttributeAdapter))
+                {
+                    foreach (ModelClientValidationRule mcvr in ((System.Web.Mvc.RangeAttributeAdapter)r).GetClientValidationRules())
+                    {
+                        MinValue=(int)mcvr.ValidationParameters["min"];
+                        MaxValue=(int)mcvr.ValidationParameters["max"];
+                    }
+                }
+            }
+        }
+        var minValue = @MinValue;
+        var maxValue = @MaxValue;
+        $("#@ViewData.TemplateInfo.GetFullHtmlFieldId("")").wijinputnumber({
+			decimalPlaces: 2,
+            min: minValue,
+            max: maxValue,
+			showSpinner: true
+		});
+    });
+</script>

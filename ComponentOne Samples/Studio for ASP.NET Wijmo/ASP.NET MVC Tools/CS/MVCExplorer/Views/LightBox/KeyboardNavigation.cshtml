@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Keyboard Navigation";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				textPosition: 'titleOverlay',
+				keyNav: true
+			}).focus();
+		});
+	</script>
+}
+<h2>Keyboard Navigation</h2>
+
+		<div class="main demo">
+			<!-- Begin demo markup -->
+
+				<div id="lightbox">
+				<a href="http://lorempixum.com/600/400/sports/1" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/1"  title="Grass Field" alt="Grass Field with a car in the background" /></a>
+				<a href="http://lorempixum.com/600/400/sports/2" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/2"  title="Mountains" alt="Mountains and a blue cloudy sky" /></a>
+				<a href="http://lorempixum.com/600/400/sports/3"  rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/3" title="Bridge" alt="Bridge with mountains" /></a>
+				<a href="http://lorempixum.com/600/400/sports/4" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/4"  title="Building" alt="Building with interesting architecture" /></a>
+				</div>
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>
+                This sample demonstrates the default wijlightbox behavior.</p>
+}

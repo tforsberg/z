@@ -1,0 +1,126 @@
+﻿@{
+	ViewBag.Title = "Speedometer";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#gauge").wijradialgauge({
+			    radius: "auto",
+			    value: 90,
+			    max: 100,
+			    min: 0,
+			    startAngle: 300,
+			    sweepAngle: 300,
+			    labels: {
+			        style: {
+			            "font-size": 15,
+			            fill: "#000",
+			            stroke: "none"
+			        },
+			        offset: 42
+			    },
+			    pointer: {
+			        length: 0.8,
+			        width: 4,
+			        style: { fill: "180-rgb(255,255,255)", stroke: "rgb(255,255,255)", "stroke-width": 1.5 }
+			    },
+			    cap: {
+			        style: {
+			            fill: "270-#777d8d-#555b6b",
+			            stroke: "#555b6b"
+			        }
+			    },
+			    tickMajor: {
+			        factor: 4,
+			        offset: 44,
+			        position: "inside",
+			        style: { fill: "#555b6b", stroke: "#555b6b", "stroke-width": 4 }
+			    },
+			    tickMinor: {
+			        visible: true,
+			        offset: 44,
+			        interval: 2,
+			        position: "inside",
+			        style: { fill: "#606779", stroke: "#606779", "stroke-width": 1.5 }
+			    },
+			    face: {
+			        style: {},
+			        template: function (ui) {
+			            var set = ui.canvas.set();
+			            var circle = ui.canvas.circle(ui.origin.x, ui.origin.y, ui.r);
+			            circle.attr({ "stroke": "#8f8f8f", "stroke-width": 3, fill: "#e2e2e2" });
+			            set.push(circle);
+			            var circle2 = ui.canvas.circle(ui.origin.x, ui.origin.y, ui.r - 14);
+			            circle2.attr({ "stroke": "#717171", "stroke-width": 2, fill: "270-#a6a6a6-#efefef" });
+			            set.push(circle2);
+
+			            //                    					var c1 = ui.canvas.circle(ui.origin.x - 30, ui.origin.y - ui.r / 2, 20);
+			            //                    					c1.attr({ fill: "#ff00ff", opacity: 0.8 });
+			            //                    					set.push(c1);
+			            return set;
+			        }
+			    },
+			    ranges: [{
+			        startWidth: 10,
+			        endWidth: 10,
+			        startValue: 0,
+			        endValue: 100,
+			        startDistance: 0.64,
+			        endDistance: 0.64,
+			        style: {
+			            fill: "#555b6b", stroke: "none"
+			        }
+			    }, {
+			        startWidth: 10,
+			        endWidth: 10,
+			        startValue: 40,
+			        endValue: 60,
+			        startDistance: 0.58,
+			        endDistance: 0.58,
+			        style: {
+			            fill: "90-rgb(248,255,1)-rgb(248,255,39)", stroke: "rgb(249,255,73)", "stroke-width": 1.5
+			        }
+			    }, {
+			        startWidth: 10,
+			        endWidth: 10,
+			        startValue: 60,
+			        endValue: 80,
+			        startDistance: 0.58,
+			        endDistance: 0.58,
+			        style: {
+			            fill: "90-rgb(255,158,1)-rgb(255,177,53)", stroke: "rgb(255,195,101)", "stroke-width": 1.5
+			        }
+			    }, {
+			        startWidth: 10,
+			        endWidth: 10,
+			        startValue: 80,
+			        endValue: 100,
+			        startDistance: 0.58,
+			        endDistance: 0.58,
+			        style: {
+			            fill: "180-rgb(255,15,3)-rgb(212,10,0)", stroke: "rgb(255,15,3)", "stroke-width": 1.5
+			        }
+			    }]
+			});
+		});
+	
+	</script>
+}
+<h2>
+	Speedometer</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="gauge" class="ui-corner-all">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>This sample use <b>range</b> and <b>face</b> option</p>
+}

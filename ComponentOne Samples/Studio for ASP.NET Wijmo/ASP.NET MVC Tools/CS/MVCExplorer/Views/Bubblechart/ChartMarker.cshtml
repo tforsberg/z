@@ -1,0 +1,62 @@
+﻿@{
+	ViewBag.Title = "ChartMarker";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#wijbubblechart").wijbubblechart({
+				minimumSize: 3,
+				MaximumSize: 15,
+				axis: {
+					y: {
+						text: "Total Hardware"
+
+					},
+					x: {
+						text: ""
+					}
+				},
+				hint: {
+					content: function () {
+						return 'x:' + this.x + ',y:' + this.y + ",y1:" + this.data.y1;
+					}
+				},
+				header: {
+					text: "Hardware Distribution"
+				},
+				seriesList: [{
+					label: "West",
+					legendEntry: true,
+					data: { x: [5, 14, 20, 18, 22], y: [5500, 12200, 60000, 24400, 32000], y1: [3, 12, 33, 10, 42] },
+					markers: {
+						type: 'tri'
+					}
+				}]
+			});
+		});
+	</script>
+}
+<h2>
+	ChartMarker</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<h3>
+		Hardware Distribution</h3>
+	<div id="wijbubblechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+		height: 475px;">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		This sample uses seriesList's <b>markers</b> type option</p>
+	<p>
+		The type can set to circle, tri, invertedTri, box, diamond, cross</p>
+}

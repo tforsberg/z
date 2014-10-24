@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Shortcut";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#menu1").wijmenu();
+            $(".wijmo-wijmenu-text").parent().bind("click", function () {
+                $("#menu1").wijmenu("hideAllMenus");
+            });
+            $(".wijmo-wijmenu-link").hover(function () {
+                $(this).addClass("ui-state-hover");
+            }, function () {
+                $(this).removeClass("ui-state-hover");
+            })
+        });
+    </script>
+}
+
+<h2>Shortcut</h2>
+
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <ul id="menu1">
+                <li><a href="#">File</a>
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">New</a><span class="wijmo-wijmenu-icon-right">Ctrl+N</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Open</a><span class="wijmo-wijmenu-icon-right">Ctrl+O</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Save</a><span class="wijmo-wijmenu-icon-right">Ctrl+S</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Edit</a>
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Undo</a><span class="wijmo-wijmenu-icon-right">Ctrl+Z</span>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Cut</a><span class="wijmo-wijmenu-icon-right">Ctrl+X</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Copy</a><span class="wijmo-wijmenu-icon-right">Ctrl+C</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="#" class="wijmo-wijmenu-text">Paste</a><span class="wijmo-wijmenu-icon-right">Ctrl+V</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            This sample demonstrates how to create a menu with shortcut menu items.
+        }

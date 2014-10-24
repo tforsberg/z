@@ -1,0 +1,115 @@
+﻿@{
+	ViewBag.Title = "WithTable";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#tb").wijbubblechart({
+				minimumSize: 3,
+				MaximumSize: 15,
+				width: 756,
+				height: 475,
+				axis: {
+					y: {
+						text: "Total Hardware"
+
+					},
+					x: {
+						text: ""
+					}
+				},
+				hint: {
+					content: function () {
+					    return this.data.label + '\n x:' + this.x + ',y:' + this.y + ",y1:" + this.data.y1;
+					}
+				},
+				header: {
+					text: "Hardware Distribution"
+				}
+			});
+		});
+	</script>
+}
+<h2>
+	WithTable</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<table id="tb" border="1">
+		<caption>
+			Hardware Sales by Category</caption>
+		<thead>
+			<tr>
+				<th>
+					Number of products
+				</th>
+				<th>
+					Sales
+				</th>
+				<th>
+					Market share
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					14
+				</td>
+				<td>
+					12200
+				</td>
+				<td>
+					15
+				</td>
+			</tr>
+			<tr>
+				<td>
+					20
+				</td>
+				<td>
+					60000
+				</td>
+				<td>
+					23
+				</td>
+			</tr>
+			<tr>
+				<td>
+					18
+				</td>
+				<td>
+					24400
+				</td>
+				<td>
+					10
+				</td>
+			</tr>
+			<tr>
+				<td>
+					16
+				</td>
+				<td>
+					30200
+				</td>
+				<td>
+					30
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		This sample demonstrates how to use a table as a data source. It's as easy as creating
+		a table with rows and headers and then setting the table's ID property to the ID
+		of the wijbubblechart widget.
+	</p>
+}

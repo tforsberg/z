@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Ajax";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+     <script id="scriptInit" type="text/javascript">
+         $(document).ready(function () {
+             $(".tooltip>a").wijtooltip({ showcallout: true, calloutFilled: false,
+                 position: { my: 'left bottom', at: 'right top' },
+                 height: 300, width: 400,
+                 ajaxCallback: function () {
+                     var ele = this;
+                     ele.wijtooltip("option", "content", "This is a tooltip for " + ele.html());
+                 }
+             });
+         });
+    </script>
+}
+<h2>Ajax</h2>
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <ul class="ui-helper-reset ui-widget-header ui-corner-all" style="padding: 1em;">
+                <li class="tooltip"><a href="#">Anchor1</a></li>
+                <li class="tooltip"><a href="#">Anchor2</a></li>
+                <li class="tooltip"><a href="#">Anchor3</a></li>
+                <li class="tooltip"><a href="#">Anchor4</a></li>
+            </ul>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+        
+        @section description
+        {
+            This sample uses the <b>showCallOut</b>, <b>calloutFilled</b>, and <b>position</b> options to show and format the tooltip.
+        }

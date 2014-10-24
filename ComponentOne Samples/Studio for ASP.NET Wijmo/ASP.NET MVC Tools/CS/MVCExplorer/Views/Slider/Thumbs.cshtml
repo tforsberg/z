@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Thumbs";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #hSlider
+        {
+            width: 300px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#hSlider").wijslider({ orientation: "horizontal", range: false, min: 0, max: 500, step: 50, values: [100, 400] });
+        });
+    </script>
+}
+<h2>
+    Thumbs</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="hSlider">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description{
+	<p>
+                Users can specify the number of thumb buttons displayed on the wijslider by using the values option.
+            </p>
+}

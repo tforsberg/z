@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "CustomTimeInterval";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#eventscalendar").wijevcal(
+						{
+							timeInterval: 60,
+							timeIntervalHeight: 25,
+							timeRulerInterval: 120
+						}
+					);
+		});
+	</script>
+}
+<h2>
+	Day view time interval</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="eventscalendar"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+
+			<p>
+				This sample demonstrates how to change the day view time interval.
+			</p>
+			<p>Options used in the sample:</p>
+			<ul>
+			<li><strong>timeInterval</strong> - the time interval in minutes for the Day view.</li>
+			<li><strong>timeIntervalHeight</strong> - the Day view time interval row height in pixels.</li>
+			<li><strong>timeRulerInterval</strong> - the time ruler interval in minutes for the Day view..</li>			
+			</ul>
+			<p>
+				
+			</p>
+
+}

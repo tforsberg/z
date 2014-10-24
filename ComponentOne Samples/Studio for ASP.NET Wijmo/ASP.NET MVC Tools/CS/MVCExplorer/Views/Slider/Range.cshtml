@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Range";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #hSlider
+        {
+            width: 300px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#hSlider").wijslider({ orientation: "horizontal", range: true, dragFill: false, min: 0, max: 500, step: 2, values: [100, 400] });
+        });    
+    </script>
+}
+<h2>
+    Range</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="hSlider">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description{
+	<p>
+                The range option detects if there are two thumb buttons set and then creates a stylable range element between them.</p>
+}

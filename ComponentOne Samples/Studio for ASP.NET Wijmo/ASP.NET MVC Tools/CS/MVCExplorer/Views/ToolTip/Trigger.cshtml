@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Trigger";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#tooltip>a").wijtooltip();
+            $("#trigger").change(function () {
+                $("#tooltip>a").wijtooltip("option", "triggers", this.value);
+            });
+            $("#show").click(function () {
+                $("#tooltip>a").wijtooltip("show");
+            });
+
+        });        
+      
+    </script>
+}
+
+<h2>Trigger</h2>
+
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <h3 id="tooltip"  class="ui-helper-reset ui-widget-header ui-corner-all" style="padding: 1em;">
+                <a href="#" title="tooltip">tooltip</a>
+            </h3>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <label>
+                    Trigger</label>
+                <select id="trigger">
+                    <option value="hover">hover</option>
+                    <option value="click">click</option>
+                    <option value="focus">focus</option>
+                    <option value="rightClick">rightClick</option>
+                    <option value="custom">custom</option>
+                </select>
+                <div><input id="show" type="button" value="Show tooltip when set 'trigger' to custom" /></div>
+                <!-- End options markup -->
+            </div>
+        </div>
+
+@section description
+{
+    <p>This sample demonstrates how to use the <b>triggers</b> option to set the event that will open the tooltip.</p>
+}

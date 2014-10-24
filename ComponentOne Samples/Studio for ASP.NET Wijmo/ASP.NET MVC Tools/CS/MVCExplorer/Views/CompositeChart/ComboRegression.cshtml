@@ -1,0 +1,68 @@
+﻿@{
+	ViewBag.Title = "ComboRegression";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#wijcompositechart").wijcompositechart({
+				axis: {
+					y: {
+						text: "y values"
+					},
+					x: {
+						text: "",
+						autoMax: false,
+						autoMin: false,
+						max: 6,
+						min: -0.5
+					}
+				},
+				hint: {
+					content: function () {
+						return this.label + ": x=" + this.x + ', y=' + this.y + '';
+					}
+				},
+				stacked: false,
+				header: {
+					text: "Scatter plot with regression line"
+				},
+				seriesList: [{
+					type: 'scatter',
+					label: 'Observations',
+					legendEntry: true,
+					data: { x: [0, 1, 2, 3, 4, 5], y: [1, 1.5, 2.8, 3.5, 3.9, 4.2] },
+					markerType: "circle"
+				}, {
+					type: "line",
+					label: "Regression Line",
+					legendEntry: true,
+					data: { x: [0, 5], y: [1.11, 4.51] },
+					marker: {
+						visible: false
+					}
+				}
+				]
+			});
+		});
+	</script>
+}
+<h2>ComboRegression</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="wijcompositechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 800px; height: 350px">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		This sample demonstrates a Scatter Plot with a regression line to indicate the trend (regression) line.
+	</p>
+}

@@ -1,0 +1,40 @@
+﻿@{
+	ViewBag.Title = "Percent";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputnumber(
+			{
+			    type: 'percent',
+			    decimalPlaces: 4,
+			    showSpinner: true
+			});
+		});
+	</script>
+}
+<h2>Percent</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<input type="text" id="textbox1" value="50%" />
+	<h6>
+		Options</h6>
+	<p>
+		value=50; decimalPlaces=4</p>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		This example shows how to create a percentage input with four decimal places by setting the <b>type</b> and <b>decimalPlaces</b> options.
+	</p>
+}
+

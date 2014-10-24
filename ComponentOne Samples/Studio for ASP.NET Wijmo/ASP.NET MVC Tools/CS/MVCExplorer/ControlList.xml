@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+
+    <Control name="Accordion" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/accordion">
+        <action name="Overview" title="Overview"></action>
+        <action name="Animation" title="Animation"></action>
+        <action name="ExpandDirection" title="Expand Direction"></action>
+        <action name="Hover" title="Hover"></action>
+        <action name="RequireOpenedPane" title="Require Opened Pane"></action>
+    </Control>
+
+    <Control name="Calendar" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/calendar">
+        <action name="Overview" title="Overview"></action>
+        <action name="Animation" title="Animation"></action>
+        <action name="CustomDates" title="Customized Dates"></action>
+        <action name="Globalization" title="Globalization"></action>
+        <action name="MinMaxRange" title="MinMax Dates"></action>
+        <action name="MultipleViews" title="Multiple Views"></action>
+        <action name="OtherMonth" title="Hide Other Month Days"></action>
+        <action name="Popup" title="Popup"></action>
+        <action name="Preview" title="Allow Preview"></action>
+        <action name="QuickSteps" title="Quick Steps"></action>
+        <action name="Selection" title="Selection Modes"></action>
+    </Control>
+ 
+    <Control name="Charts">
+        <ChildControl name="BarChart" text="Bar &amp; Column Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/barchart">
+            <action name="Overview" title="Overview">
+            </action>
+            <action name="Origin"  title="Origin">
+            </action>
+            <action name="SeriesTransition" title="Series transition">
+            </action>
+            <action name="Simple" title="Simple bar chart">
+            </action>
+            <action name="ColumnBar" title="Column bar chart">
+            </action>
+            <action name="Clusters" title="Clustered bar chart">
+            </action>
+            <action name="StackedBar" title="Stacked bar chart">
+            </action>
+            <action name="StackedPercentageBar" title="Stacked percentage bar chart">
+            </action>
+            <action name="AjaxData" title="External dataSource">
+            </action>
+            <action name="TableasDatasource" title="Table as dataSource">
+            </action>
+            <action name="FixedLabelWidth" title="Fixed label width">
+            </action>
+        </ChildControl>
+        <ChildControl name="BubbleChart" text="Bubble Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/bubblechart">
+            <action name="Overview" title="Overview">
+            </action>
+            <action name="ChartMarker" title="Chart marker">
+            </action>
+            <action name="InvisibleLabel" title="Invisible label">
+            </action>
+            <action name="Negative" title="Negative">
+            </action>
+            <action name="OutsideLabel" title="Label outside">
+            </action>
+            <action name="Symbols" title="Symbols">
+            </action>
+            <action name="Overlap" title="Overlap">
+            </action>
+            <action name="WithTable" title="Table as dataSource">
+            </action>
+        </ChildControl>
+        <ChildControl name="CompositeChart" text="Composite Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/compositechart">
+            <action name="Overview" title="Overview">
+            </action>
+            <action name="ComboRegression" title="Scatter with regression line">
+            </action>
+        </ChildControl>
+        <ChildControl name="LineChart" text="Line &amp; Area Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/linechart">
+            <action name="Overview" title="Overview">
+            </action>
+            <action name="Origin" title="Origin">
+            </action>
+            <action name="Animation" title="Animation">
+            </action>
+            <action name="Area" title ="Area">
+            </action>
+            <action name="AreaSpline" title ="AreaSpline">
+            </action>
+            <action name="Trends" title="Trends">
+            </action>
+            <action name="Symbols" title="Symbols">
+            </action>
+            <action name="AjaxData" title="Ajax data">
+            </action>
+            <action name="DateTime" title="DateTime">
+            </action>
+            <action name="SimulateData" title="Streaming data">
+            </action>
+            <action name="WithTable" title="Table as dataSource">
+            </action>
+        </ChildControl>
+        <ChildControl name="PieChart" text="Pie &amp; Donut Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/piechart">
+            <action name="Overview" title="Overview">
+            </action>
+            <action name="Doughnut" title="Doughnut">
+            </action>
+            <action name="Animation" title="Animation">
+            </action>
+            <action name="SeriesTransition" title="Series transition">
+            </action>
+            <action name="TableasDatasource" title="Table as dataSource">
+            </action>
+        </ChildControl>
+        <ChildControl name="ScatterChart" text="Scatter Plot Charts" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/scatterchart">
+            <action name="Overview" title="Overview">
+            </action>
+        </ChildControl>
+    </Control>
+
+  <Control name="DataSource" documentation="http://wijmo.com/wiki/index.php/datasource">
+    <action name="Overview" title="Overview"></action>
+  </Control>
+
+  <Control name="DatePager" documentation="http://wijmo.com/wiki/index.php/datePager">
+    <action name="Overview" title="Overview" ></action>
+  </Control>
+
+  <Control name="Dialog" documentation="http://wijmo.com/wiki/index.php/dialog">
+    <action name="Overview" title="Overview"></action>
+    <action name="Animation" title="Animation"></action>
+    <action name="ContentUrl" title="External Content"></action>
+    <action name="ModalDialog" title="Modal Dialog"></action>
+    <action name="ModalAlert" title="Alert Dialog"></action>
+    <action name="ModalConfirmation" title="Confirm Dialog"></action>
+  </Control>
+
+    <Control name="Editor" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/editor">
+        <action name="Overview" title="Overview"></action>
+        <action name="Simple" title="Simple"></action>
+        <action name="EditMode" title="Edit modes"></action>
+        <action name="CustomizeSimple" title="Customize simple"></action>
+        <action name="Customize" title="Customize"></action>
+        <action name="Compact" title="Compact"></action>
+        <action name="BBCode" title="BBCode"></action>
+    </Control>
+
+	<Control name="EventsCalendar" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/events_Calendar">
+		<action name="Overview" title="Overview"></action>
+		<action name="CustomDataStorage" title="CustomDataStorage"></action>
+		<action name="CustomTimeInterval" title="Custom time interval"></action>
+		<action name="DataModel" title="Data model"></action>
+		<action name="UICustomization" title="UI customization"></action>
+	</Control>	
+
+    <Control name="Expander" documentation="http://wijmo.com/wiki/index.php/expander">
+        <action name="Overview" title="Overview"></action>
+        <action name="Animation" title="Animation"></action>
+        <action name="ContentUrl" title="ContentUrl"></action>
+        <action name="ExpandDirection" title="Expand Direction"></action>
+    </Control>
+
+
+    <Control name="Forms">
+        <ChildControl name="ComboBox" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/combobox">
+            <action name="Overview" title="Overview"></action>
+            <action name="Animation" title="Animation"></action>
+            <action name="Position" title="Dropdown position"></action>
+            <action name="MultipleColumns" title="Multiple columns"></action>
+            <action name="RemoteData" title="Remote data"></action>
+            <action name="Select" title="Select element"></action>
+            <action name="DynamicData" title="Dynamic Data"></action>
+        </ChildControl>
+        <ChildControl name="FormDecorator" documentation="http://wijmo.com/wiki/index.php/checkbox">
+            <action name="Overview" title="Overview"></action>
+        </ChildControl>
+        <ChildControl name="InputDate" documentation="http://wijmo.com/wiki/index.php/inputDate">
+            <action name="Overview" title="Overview"></action>
+            <action name="DatePicker" title="Date Picker"></action>
+      <action name="TimePicker" title="Time Picker"></action>
+            <action name="DropDown" title="Drop Down"></action>
+      <action name="NullText" title="Place holder"></action>
+      <action name="DisplayFormat" title="Didplay Format"></action>
+      <action name="SpinnerAlign" title="Spinner Align"></action>
+      <action name="BlurOnLeftRightKey" title="Blur On Left Right Key"></action>
+      <action name="BlurOnLastChar" title="Blur On Last Char"></action>
+      <action name="CustomEra" title="Custom Era"></action>
+        </ChildControl>
+
+        <ChildControl name="InputMask" documentation="http://wijmo.com/wiki/index.php/inputMask">
+            <action name="Overview" title="Overview"></action>
+            <action name="DropDown" title="Drop Down"></action>
+            <action name="FirstName" title="First Name"></action>
+            <action name="Password" title="Password"></action>
+            <action name="SSN" title="SSN"></action>
+      <action name="DBCS" title="DBCS"></action>
+      <action name="Hirigana" title="Hirigana"></action>
+      <action name="BlurOnLeftRightKey" title="Blur On Left Right Key"></action>
+      <action name="BlurOnLastChar" title="Blur On Last Char"></action>
+        </ChildControl>
+
+        <ChildControl name="InputNumber" documentation="http://wijmo.com/wiki/index.php/inputNumber">
+            <action name="Overview" title="Overview"></action>
+            <action name="Currency" title="Currency"></action>
+            <action name="Percent" title="Percent"></action>
+            <action name="DropDown" title="Drop Down"></action>
+            <action name="Increment" title="Increment"></action>
+      <action name="NegativeClass" title="Negative Class"></action>
+    </ChildControl>
+
+      <ChildControl name="InputText"  documentation="http://wijmo.com/wiki/index.php/inputText">
+        <action name="Overview" title="Overview"></action>
+        <action name="Format" title="Format"></action>
+        <action name="DropDown" title="Drop Down"></action>
+        <action name="MaxLength" title="MaxLength"></action>
+        <action name="MultiLine" title="Multi Line"></action>
+        <action name="ReadingImeString" title="Reading Ime String"></action>
+      </ChildControl>
+      
+      <ChildControl name="Upload" documentation="http://wijmo.com/wiki/index.php/uploader">
+        <action name="Overview" title="Overview"></action>
+      </ChildControl>
+    </Control>
+
+    <Control name="Gauges" >
+        <ChildControl name="LinearGauge" text ="Linear gauges" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/linearGauge">
+            <action name="Overview" title="Overview"></action>
+            <action name="Interactive" title="Interactive"></action>
+            <action name="Level" title="Level"></action>
+            <action name="Logarithmic" title="Logarithmic"></action>
+            <action name="Orientation" title="Orientation"></action>
+            <action name="Temperature" title="Temperature"></action>
+            <action name="Volume" title="Volume"></action>
+        </ChildControl>
+        <ChildControl name="RadialGauge" text ="Radial gauges" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/radialGauge">
+            <action name="Overview" title="Overview"></action>
+            <action name="HalfCircle" title="Half Circle"></action>
+            <action name="Logarithmic" title="Logarithmic"></action>
+            <action name="Margin" title="Margin"></action>
+            <action name="Position" title="Position"></action>
+            <action name="RPM" title="RPM"></action>
+            <action name="Speedometer" title="Speedometer"></action>
+            <action name="Templated" title="Templated"></action>
+        </ChildControl>
+    </Control>
+
+    <Control name="Grid" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/grid">
+        <action name="Overview" title="Overview"></action>
+        <action name="DataTypes" title="Data types"></action>
+        <action name="DataSources" title="Data sources"></action>
+        <action name="CustomDataParsers" title="Custom data parsers"></action>
+        <action name="Bands" title="Bands"></action>
+        <action name="Paging" title="Paging"></action>
+        <action name="Sorting" title="Sorting"></action>
+        <action name="Filtering" title="Filtering"></action>
+        <action name="ColumnResizing" title="Column resizing"></action>
+        <action name="Selection" title="Selection"></action>
+        <action name="GroupingAndAggregates" title="Grouping and aggregates"></action>
+        <action name="GroupArea" title="Group area"></action>
+        <action name="Editing" title="Editing"></action>
+        <action name="CellRowFormatting" title="Cell and row formatting"></action>
+        <action name="CustomPaging" title="Custom paging"></action>
+        <action name="ColumnVisibility" title="Control column visibility"></action>
+        <action name="CustomEditors" title="Custom editors"></action>
+        <action name="PreventCurrentAndHovering" title="Preventing formatting of the current position and hovering"></action>
+        <action name="HeaderIcons" title="Custom header icons"></action>
+        <action name="ColumnMoving" title="Column moving"></action>
+        <action name="Totals" title="Totals"></action>
+        <action name="AttributesWithinData" title="Attributes within data"></action>
+    </Control>
+    <Control name="List" documentation="http://wijmo.com/wiki/index.php/list">
+        <action name="Overview" title="Overview"></action>
+        <action name="MultipleSelection" title="Multiple Selection"></action>
+        <action name="DataBound" title="DataBound List"></action>
+    </Control>
+
+
+  <Control name="Popup" documentation="http://wijmo.com/wiki/index.php/popup">
+    <action name="Overview" title="Overview"></action>
+    <action name="Animation" title="Animation"></action>
+  </Control>
+
+
+    <Control name="Menu" documentation="http://wijmo.com/wiki/index.php/menu">
+        <action name="Overview" title="Overview"></action>
+        <action name="Orientation" title="Orientation"></action>
+        <action name="Icon" title="Icon"></action>
+        <action name="Functions" title="Functions"></action>
+        <action name="MenuItemTrigger" title="Menu Item Trigger"></action>
+        <action name="Position" title="Position"></action>
+        <action name="Shortcut" title="Shortcut"></action>
+        <action name="Template" title="Template"></action>
+        <action name="TriggerEvent" title="Context Menu"></action>
+    </Control>
+
+    <Control name="Multimedia" >
+        <ChildControl name="Carousel" documentation="http://wijmo.com/wiki/index.php/carousel">
+            <action name="Overview" title="Overview"></action>
+            <action name="Ajax" title="Ajax Data"></action>
+            <action name="Animation" title="Animation"></action>
+            <action name="Events" title="Client-side events"></action>
+            <action name="Content" title="Custom content"></action>
+            <action name="CustomControl" title="Custom control"></action>
+            <action name="Flickr" title="Images from flick"></action>
+            <action name="LightBox" title="Connect with lightbox"></action>
+            <action name="Orientation" title="Orientation"></action>
+            <action name="Paging" title="Paging"></action>
+            <action name="Preview" title="Preview"></action>
+            <action name="Thumbnails" title="Thumbnails"></action>
+            <action name="Videos" title="Videos"></action>
+        </ChildControl>
+        <ChildControl name="Gallery" documentation="http://wijmo.com/wiki/index.php/gallery">
+            <action name="Overview" title="Overview"></action>
+            <action name="Ajax" title="Ajax Data"></action>
+            <action name="Animation" title="Animation"></action>
+            <action name="Iframe" title="Iframe"></action>
+            <action name="Flash" title="Flash"></action>
+            <action name="Orientation" title="Orientation"></action>
+            <action name="Paging" title="Paging"></action>
+            <action name="Video" title="Video"></action>
+        </ChildControl>
+        <ChildControl name="Video" documentation="http://wijmo.com/wiki/index.php/video_Player">
+            <action name="Overview" title="Overview"></action>
+        </ChildControl>
+      <ChildControl name="LightBox" documentation="http://wijmo.com/wiki/index.php/lightBox">
+        <action name="Overview" title="Overview"></action>
+        <action name="AutoPlay" title="Auto Play"></action>
+        <action name="AutoSize" title="Auto Size"></action>
+        <action name="Flash" title="Flash"></action>
+        <action name="FlashVideo" title="Flash Video"></action>
+        <action name="FullSize" title="Full Size"></action>
+        <action name="IFrame" title="IFrame"></action>
+        <action name="InlineContent" title="Inline-Content"></action>
+        <action name="KeyboardNavigation" title="Keyboard Navigation"></action>
+        <action name="Links" title="Links"></action>
+        <action name="PlayPause" title="Play Pause"></action>
+        <action name="QuickTime" title="QuickTime"></action>
+        <action name="SequenceCounter" title="Sequence Counter"></action>
+        <action name="TextPosition" title="Text Position"></action>
+        <action name="Transition"  title="Transition"></action>
+        <action name="Usage" title="Usage"></action>
+        <action name="Video" title="Video"></action>
+        <action name="Vimeo" title="Vimeo"></action>
+        <action name="WindowsMediaPlayer" title="Windows Media Player"></action>
+        <action name="YouTube" title="YouTube"></action>
+        <action name="Html5Video" title="Wijmo HTML5 Video Player"></action>
+      </ChildControl>
+    </Control>
+
+    <Control name="Pager" documentation="http://wijmo.com/wiki/index.php/pager">
+        <action name="Overview" title="Overview"></action>
+        <action name="Modes" title="Paging modes"></action>
+        <action name="PagedTable" title="Paged table"></action>
+    </Control>
+
+    <Control name="ProgressBar" documentation="http://wijmo.com/wiki/index.php/progressbar">
+        <action name="Overview" title="Overview"></action>
+        <action name="Direction" title="Direction"></action>
+    </Control>
+
+    <Control name="Rating" documentation="http://wijmo.com/wiki/index.php/rating">
+        <action name="Overview" title="Overview">
+        </action>
+        <action name="Animation" title="Animation">
+        </action>
+        <action name="CustomizedIcon" title="CustomizedIcon">
+        </action>
+        <action name="Events" title="Events">
+        </action>
+        <action name="Options" title="Options">
+        </action>
+    </Control>
+
+    <Control name="Slider" documentation="http://wijmo.com/wiki/index.php/slider">
+        <action name="Overview" title="Overview"></action>
+        <action name="Thumbs" title="Thumbs"></action>
+        <action name="MinRange" title="MinRange"></action>
+        <action name="Range" title="Range"></action>
+        <action name="DragFill" title="Dragfill"></action>
+    </Control>
+
+    <Control name="Splitter" documentation="http://wijmo.com/wiki/index.php/splitter">
+        <action name="Overview" title="Overview"></action>
+        <action name="FullSplit" title="FullSplit"></action>
+        <action name="Nested" title="Nested"></action>
+    </Control>
+
+    <Control name="SuperPanel" documentation="http://wijmo.com/wiki/index.php/superpanel">
+        <action name="Overview" title="Overview"></action>
+        <action name="ClientSideApi" title="Client API"></action>
+        <action name="ScrollMode" title="Scroll Mode"></action>
+    </Control>
+
+    <Control name="Tabs" documentation="http://wijmo.com/wiki/index.php/tabs">
+        <action name="Overview" title="Overview"></action>
+        <action name="AddRemove" title="Add Remove"></action>
+        <action name="Ajax" title="Ajax"></action>
+        <action name="Alignment" title="Alignment"></action>
+        <action name="Animation" title="Animation"></action>
+        <action name="Collapsible" title="Collapsible"></action>
+        <action name="CustomContent" title="Custom Content"></action>
+        <action name="Hover" title="Hover"></action>
+        <action name="Scrollable" title="Scrollable"></action>
+    </Control>
+
+    <Control name="ToolTip" documentation="http://wijmo.com/wiki/index.php/tooltip">
+        <action name="Overview" title="Overview"></action>
+        <action name="Ajax" title="Ajax"></action>
+        <action name="CalloutAnimation" title="Callout Animation"></action>
+        <action name="CalloutFilled" title="Callout Filled"></action>
+        <action name="CloseBehavior" title="Close Behavior"></action>
+        <action name="Modal" title="Modal"></action>
+        <action name="Position" title="Position"></action>
+        <action name="Trigger" title="Trigger"></action>
+    </Control>
+    <Control name="Tree" isFavorite="true" documentation="http://wijmo.com/wiki/index.php/tree">
+        <action name="Overview" title="Overview"></action>
+        <action name="AutoCollapse" title="Auto collapse"></action>
+        <action name="ExpandonHover" title="Expand on hover"></action>
+        <action name="CustomDragDrop" title="Custom Drag &amp; Drop"></action>
+        <action name="Checkbox" title="CheckBox"></action>
+        <action name="ObjectModel" title="Object model"></action>
+        <action name="Icons" title="Node icons"></action>
+        <action name="DragDrop" title="Drag &amp; Drop"></action>
+    </Control>
+
+
+    <Control name="Wizard" documentation="http://wijmo.com/wiki/index.php/wizard">
+        <action name="Overview" title="Overview"></action>
+        <action name="Ajax" title="Ajax"></action>
+        <action name="Animation" title="Animation"></action>
+        <action name="AutoPlay" title="Auto Play"></action>
+        <action name="Pager" title="Pager"></action>
+        <action name="Simple" title="Simple"></action>
+    </Control>
+
+  <Control name="Ribbon" documentation="http://wijmo.com/wiki/index.php/ribbon">
+    <action name="Overview" title="Overview"></action>
+    <action name="Simple" title="Simple"></action>
+  </Control>
+
+</Controls>

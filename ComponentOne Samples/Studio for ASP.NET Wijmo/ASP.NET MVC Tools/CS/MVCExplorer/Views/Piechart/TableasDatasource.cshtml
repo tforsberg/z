@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "TableasDatasource";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#tb").wijpiechart().hide();
+        });
+    </script>
+    <style type="text/css">
+        #tb
+        {
+            width: 756px;
+            height: 475px;
+        }
+    </style>
+}
+<h2>
+    TableasDatasource</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <table id="tb">
+        <caption>
+            Average Bytes per Page by Content Type</caption>
+        <thead>
+            <tr>
+                <td>
+                </td>
+                <th>
+                    kB
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    HTML
+                </th>
+                <td>
+                    34
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Images
+                </th>
+                <td>
+                    450
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Stylesheets
+                </th>
+                <td>
+                    27
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Scripts
+                </th>
+                <td>
+                    123
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Flash
+                </th>
+                <td>
+                    84
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    Other
+                </th>
+                <td>
+                    25
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample shows how to create a pie chart using a table as the data source for
+        the chart. It's as easy as creating a table with rows, headers, and tables and then
+        setting the table's ID property to the ID of the wijpiechart widget.
+    </p>
+}

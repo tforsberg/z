@@ -1,0 +1,47 @@
+﻿@{
+	ViewBag.Title = "CustomDates";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+	    $(document).ready(function () {
+	        $("#calendar1").wijcalendar(
+				{
+				    displayDate: new Date('2010/12/1'),
+				    customizeDate: function ($daycell, date, dayType, hover, preview) {
+				        if (date.getMonth() === 11 && date.getDate() === 24) {
+				            var $img = $('<div></div>').width(16).height(16).css('background-image', 'url(/Content/Calendar/images/xmas.png)');
+				            $daycell.attr('align', 'right').empty().append($img);
+
+				            if ($daycell.hasClass('ui-datepicker-current-day')) {
+				                $daycell.css('background-color', '#aaa');
+				            } else
+				                $daycell.css('background-color', hover ? 'lightgray' : '');
+				            return true;
+				        }
+
+				        return false;
+				    }
+				}
+			);
+	    });
+	</script>
+}
+<h2>CustomDates</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>With the Wijmo Calendar widget (wijcalendar), you can show a single month or a table of months with customizable styles and navigation elements.
+		The samples in this section will introduce you to some of the features of the wijcalendar widget.
+	</p>
+}

@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$('#vid1').wijvideo();
+		});
+	</script>
+}
+<h2>
+	Overview</h2>
+	<div class="main demo">
+			<!-- Begin demo markup -->
+            <video controls="controls" id="vid1" width="720" height="486">
+                <source src="http://cdn.wijmo.com/movies/wijmo.theora.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                <source src="http://cdn.wijmo.com/movies/wijmo.mp4video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            </video>
+			<!-- End demo markup -->
+			<div class="demo-options">
+				<!-- Begin options markup -->
+				<!-- End options markup -->
+			</div>
+		</div>
+
+@section description
+{
+		<p>
+			This sample shows editor widget support bbcode mode.
+		</p>
+}
+
+
+
+

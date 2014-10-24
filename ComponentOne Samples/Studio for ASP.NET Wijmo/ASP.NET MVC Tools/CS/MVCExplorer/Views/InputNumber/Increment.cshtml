@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "Increment";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputnumber(
+			{
+			    type: 'currency',
+			    minValue: -100,
+			    maxValue: 1000,
+			    increment: 10,
+			    showSpinner: true
+			});
+		});
+	</script>
+}
+<h2>Increment</h2>
+<div class="main demo">
+		   
+	<input type="text" id="textbox1" />
+	<h6>Options</h6>
+	<p>increment=10, minValue=-100, maxValue=1000</p>
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		This sample demonstrates how to use the <b>increment</b> option to create a custom increment. In this example, if the up or down arrows are clicked, the currency input is incremented by 10. 
+	</p>
+}

@@ -1,0 +1,24 @@
+﻿@{
+    var attrs = new Dictionary<string, object>();
+    string[] keys = { "min", "max" };
+    foreach (var validator in @ViewData.ModelMetadata.GetValidators(this.ViewContext).OfType<System.Web.Mvc.RangeAttributeAdapter>())
+    {
+        foreach (var rule in validator.GetClientValidationRules())
+        {
+            foreach (var key in keys) 
+            {
+                object value;
+                if (rule.ValidationParameters.TryGetValue(key, out value)) {
+                    attrs[key] = value;
+                }
+            }
+        }
+        
+    }
+
+    if (attrs.ContainsKey("min") && attrs.ContainsKey("max")) {
+        attrs["type"] = "range";
+    }
+}
+
+@Html.TextBox("", (object)this.Model, htmlAttributes: attrs)

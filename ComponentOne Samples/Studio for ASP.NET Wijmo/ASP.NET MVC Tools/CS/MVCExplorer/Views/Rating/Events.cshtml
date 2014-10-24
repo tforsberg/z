@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Events";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$('#rating').wijrating({
+				split: 2,
+				hover: function (e, args) {
+					$("#hover").html(args.value);
+				},
+				rated: function (e, args) {
+					$("#rated").html(args.value);
+				}
+			});
+		});
+	</script>
+}
+<h2>Events</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+			<select id="rating">
+				<option value="1">Below Average</option>
+				<option value="2">Average</option>
+				<option selected="selected" value="3">Above Average</option>
+				<option value="4">Awesome</option>
+				<option value="5">Epic</option>
+			</select>
+			<div>hover value is:<label id="hover"></label></div>
+			<div>rated value is:<label id="rated"></label></div>
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>This sample shows how to use the events of your rating.</p>
+}

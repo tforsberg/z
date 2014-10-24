@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "FullSplit";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#splitter").wijsplitter({ orientation: "vertical", fullSplit: true });
+        });       
+    </script>
+    <style type="text/css">
+        #splitter
+        {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+}
+<h2>
+    FullSplit</h2>
+<div class="main demo" style="height: 300px">
+    <!-- Begin demo markup -->
+    <div id="splitter">
+        <div>
+            Panel 1
+        </div>
+        <div>
+            Panel 2
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        You can create a full-size splitter by setting the fullSplit option to true. Resize
+        your Web browser and observe how the wijsplitter widget expands or contracts fluidly.
+    </p>
+}

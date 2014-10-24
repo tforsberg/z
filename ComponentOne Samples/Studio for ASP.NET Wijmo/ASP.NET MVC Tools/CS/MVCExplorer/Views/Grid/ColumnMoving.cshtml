@@ -1,0 +1,97 @@
+﻿@{
+	ViewBag.Title = "Column moving";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#demo").wijgrid({
+				allowSorting: true,
+				allowColMoving: true,
+				columns: [
+					{}, // id
+					{}, // company
+					{
+						headerText: "Additional information",
+						columns: [
+							{
+							headerText: "Contact",
+							columns: [
+								{}, // name
+								{} // title
+							]
+							},
+							{
+								headerText: "Regional information",
+								columns: [
+									{
+										headerText: "Address information",
+										columns: [
+											{}, // address
+											{}, // city
+											{} // country
+										]
+									},
+									{
+										headerText: "Communication",
+										columns: [
+											{}, // phone
+											{} // fax
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			});
+		});
+	</script>
+}
+
+<h2>Column moving</h2>
+
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<table id="demo">
+			<thead>
+				<tr>
+                  <th>ID</th><th>Company</th><th>Name</th><th>Title</th><th>Address</th><th>City</th><th>Country</th><th>Phone</th><th>Fax</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+                  <td>ALFKI</td><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Sales Representative</td><td>Obere Str. 57</td><td>Berlin</td><td>Germany</td><td>030-0074321</td><td>030-0076545</td>
+				</tr>
+				<tr>
+                  <td>ANATR</td><td>Ana Trujillo Emparedados y helados</td><td>Ana Trujillo</td><td>Owner</td><td>Avda. de la Constitucion 2222</td><td>Mexico D.F.</td><td>Mexico</td><td>(5) 555-4729</td><td>(5) 555-3745</td>
+				</tr>
+				<tr>
+                  <td>ANTON</td><td>Antonio Moreno Taqueria</td><td>Antonio Moreno</td><td>Owner</td><td>Mataderos 2312</td><td>Mexico D.F.</td><td>Mexico</td><td>(5) 555-3932</td><td> </td>
+				</tr>
+				<tr>
+                  <td>AROUT</td><td>Around the Horn</td><td>Thomas Hardy</td><td>Sales Representative</td><td>120 Hanover Sq.</td><td>London</td><td>UK</td><td>(171) 555-7788</td><td>(171) 555-6750</td>
+				</tr>
+				<tr>
+                  <td>BERGS</td><td>Berglunds snabbkop</td><td>Christina Berglund</td><td>Order Administrator</td><td>Berguvsvagen 8</td><td>Lulea</td><td>Sweden</td><td>0921-12 34 65</td><td>0921-12 34 67</td>
+				</tr>
+			</tbody>
+		</table>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+	<!-- End options markup -->
+	</div>
+</div>
+
+@section description{
+	<p>
+		This sample shows how to use column moving feature.
+	</p>
+	<p>
+		Column moving is done by dragging a source column header on a target column header. Column can be inserted
+		either to the right or to the left of the target column, depending upon closer to which border dragged column
+		is dropped. To add column to a band its header should be dropped to the center of band header.
+	</p>
+}

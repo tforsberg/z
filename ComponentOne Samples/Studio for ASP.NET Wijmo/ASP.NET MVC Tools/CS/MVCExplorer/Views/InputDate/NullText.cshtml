@@ -1,0 +1,42 @@
+﻿@{
+	ViewBag.Title = "NullText";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputdate({ dateFormat: 'd', placeholder: 'Birth date' });
+		    $("#textbox2").wijinputdate({ dateFormat: 'g', placeholder: 'Flight time' });
+		    $("#textbox3").wijinputdate({ dateFormat: 'U', placeholder: 'Type date here...' });
+		});
+	</script>
+}
+<h2>NullText</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<ul class="ui-helper-reset">
+		<li>
+			<input type="text" id="textbox1" />
+		</li>
+		<li>
+			<input type="text" id="textbox2" />
+		</li>
+		<li>
+			<input type="text" id="textbox3" />
+		</li>
+	</ul>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+   <p>
+                wijinputdate displays inputting tips when blank date value is applied.<p>
+            <p>
+                Tips text is determined by the 'placeholder' option.</p>
+}
+

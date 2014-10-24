@@ -1,0 +1,149 @@
+﻿@{
+	ViewBag.Title = "Position";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#gauge").wijradialgauge({
+			    value: 100,
+			    max: 150,
+			    min: 0,
+			    startAngle: -45,
+			    sweepAngle: 270,
+			    radius: 170,
+			    islogarithmic: false,
+			    origin: {
+			        x: 0.5, y: 0.5
+			    },
+			    labels: {
+			        offset: -30, //4F6B82
+			        style: {
+			            fill: "#556A7C",
+			            stroke: "none"
+			        }
+			    },
+			    tickMinor: {
+			        position: "inside",
+			        style: {
+			            fill: "#556A7C",
+			            stroke: "#556A7C"
+			        },
+			        interval: 2,
+			        visible: true,
+			        offset: 0
+			    },
+			    tickMajor: {
+			        position: "center",
+			        style: {
+			            fill: "#556A7C",
+			            stroke: "#556A7C"
+			        },
+			        interval: 10,
+			        visible: true
+			    },
+			    ranges: [{
+			        startWidth: 15,
+			        endWidth: 20,
+			        startValue: 20,
+			        endValue: 50,
+			        startDistance: 1,
+			        endDistance: 1,
+			        style: {
+			            fill: "#BC8A8E",
+			            stroke: "#BC8A8E"
+			        }
+			    }
+                ],
+			    face: {
+			        style: {
+			            fill: "#E0E8EF",
+			            stroke: "#E0E8EF"
+			        }
+			    },
+			    pointer: {
+			        length: 1,
+			        style: {
+			            fill: "#BF551C",
+			            stroke: "#BF551C"
+			        }
+			    },
+			    cap: {
+			        style: {
+			            fill: "#7F9CAD",
+			            stroke: "#7F9CAD"
+			        }
+			    }
+			});
+
+			$("#applyOption").click(function () {
+				var option = {}, pointer = {}, label = {}, tick = {}, range1 = {};
+				pointer.length = getInputNum("p_length");
+				pointer.offset = getInputNum("p_offset");
+				label.offset = getInputNum("l_offset");
+				tick.offset = getInputNum("t_offset");
+				tick.position = $("#t_position").val();
+				range1 = $("#gauge").wijradialgauge("option", "ranges")[0];
+				range1.startDistance = getInputNum("rs_distance");
+				range1.endDistance = getInputNum("re_distance");
+
+				option.pointer = pointer;
+				option.labels = label;
+				option.tickMinor = tick;
+				option.tickMajor = tick;
+				option.ranges = [];
+				option.ranges[0] = range1;
+
+				$("#gauge").wijradialgauge("option", option);
+			});
+
+			var getInputNum = function (id) {
+				var val = $("#" + id).val();
+				return val ? parseInt(val) : undefined;
+			}
+		});
+	
+	</script>
+}
+<h2>
+	Position</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="gauge">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<div>
+			<p>
+				pointer</p>
+			Length:<input id="p_length" type="text" />
+			Offset:<input id="p_offset" type="text" />
+			<p>
+				label</p>
+			Offset:<input id="l_offset" type="text" />
+			<p>
+				tick</p>
+			Offset:<input id="t_offset" type="text" />
+			Position:<select id="t_position"><option value="inside">Inside</option>
+				<option value="outside">Outside</option>
+			</select>
+			<p>
+				range1</p>
+			start Distance<input id="rs_distance" type="text" />
+			end Distance<input id="re_distance" type="text" />
+			<br />
+			<input id="applyOption" type="button" value="Apply" />
+		</div>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		User can use <b>tickMajor</b> and <b>tickMinor</b> options's <b>position</b> child
+		option setting the marker's position.</p>
+	<p>
+		The position option can set to inside and outside.</p>
+}

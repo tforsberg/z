@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Paging modes";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#pagerNextPrevious").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPrevious" });
+            $("#pagerNextPrevious2").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPrevious",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: ""
+            });
+            $("#pagerNextPrevious3").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPrevious",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: "",
+                firstPageText: "<<", previousPageText: "<", nextPageText: ">", lastPageText: ">>"
+            });
+
+            $("#pagerNextPreviousFirstLast").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPreviousFirstLast" });
+            $("#pagerNextPreviousFirstLast2").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPreviousFirstLast",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: ""
+            });
+            $("#pagerNextPreviousFirstLast3").wijpager({ pageCount: 150, pageIndex: 40, mode: "nextPreviousFirstLast",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: "",
+                firstPageText: "<<", previousPageText: "<", nextPageText: ">", lastPageText: ">>"
+            });
+
+            $("#pagerNumeric").wijpager({ pageCount: 150, pageIndex: 40, mode: "numeric" });
+
+            $("#pagerNumericFirstLast").wijpager({ pageCount: 150, pageIndex: 40, mode: "numericFirstLast" });
+            $("#pagerNumericFirstLast2").wijpager({ pageCount: 150, pageIndex: 40, mode: "numericFirstLast",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: ""
+            });
+            $("#pagerNumericFirstLast3").wijpager({ pageCount: 150, pageIndex: 40, mode: "numericFirstLast",
+                firstPageClass: "", previousPageClass: "", nextPageClass: "", lastPageClass: "",
+                firstPageText: "<<", previousPageText: "<", nextPageText: ">", lastPageText: ">>"
+            });
+        });
+    </script>
+}
+
+<h2>Paging modes</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="demo">
+        <h6>
+            nextPrevious</h6>
+        <div id="pagerNextPrevious">
+        </div>
+        <div id="pagerNextPrevious2">
+        </div>
+        <div id="pagerNextPrevious3">
+        </div>
+        <h6>
+            nextPreviousFirstLast</h6>
+        <div id="pagerNextPreviousFirstLast">
+        </div>
+        <div id="pagerNextPreviousFirstLast2">
+        </div>
+        <div id="pagerNextPreviousFirstLast3">
+        </div>
+        <h6>
+            Numeric</h6>
+        <div id="pagerNumeric">
+        </div>
+        <h6>
+            numericFirstLast</h6>
+        <div id="pagerNumericFirstLast">
+        </div>
+        <div id="pagerNumericFirstLast2">
+        </div>
+        <div id="pagerNumericFirstLast3">
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+        The Paging Modes sample illustrates the different ways that the wijpager widget can be configured by setting the <b>mode</b> option.
+    </p>
+}

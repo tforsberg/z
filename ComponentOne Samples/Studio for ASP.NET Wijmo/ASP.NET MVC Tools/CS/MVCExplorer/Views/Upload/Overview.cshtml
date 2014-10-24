@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		var supportXhr;
+		$(document).ready(function () {
+			var progressbar = $("#progressbar");
+			var upload = $("#upload").wijupload({
+				change: function (e, data) {
+				},
+				upload: function (e, data) {
+				},
+				totalUpload: function () {
+					progressbar.show();
+				},
+				complete: function (e, data) {
+				},
+				totalComplete: function () {
+					progressbar.fadeOut(1500, function () {
+						if (supportXhr) {
+							$("#progressbar").wijprogressbar("option", "value", 0);
+						}
+					});
+				},
+				totalProgress: function (e, data) {
+					if (supportXhr) {
+						$("#progressbar").wijprogressbar("option", "maxValue", data.total);
+						$("#progressbar").wijprogressbar("option", "value", data.loaded);
+					}
+				},
+				//action: "@Url.Content("~/Content/Upload/upload.ashx")"
+				action: "@Url.Action("Upload")"
+			});
+			supportXhr = $("#upload").wijupload("supportXhr");
+			if (supportXhr) {
+				progressbar.wijprogressbar({ value: 0 });
+			} else {
+				progressbar.addClass("Loading");
+			}
+			progressbar.hide();
+		});
+	</script>
+}
+<h2>Overview</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="upload" style="width: 300px">
+	</div>
+	<div id="progressbar"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>The wijrating widget that generates a customizable star rating widget automatically.</p>
+	<p> The widget is based on a set of select options, or radio inputs, or div with widget options. </p>
+}

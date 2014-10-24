@@ -1,0 +1,54 @@
+﻿@{
+	ViewBag.Title = "Ajax";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#pages").wijwizard();
+		});
+	</script>
+}
+<h2>Ajax</h2>
+<div class="main demo">
+<div id="pages">
+	<ul>
+		<li>
+			<h1>
+				Step 1</h1>
+			Preloaded</li>
+		<li>
+			<h1>
+				Step 2</h1>
+			Via Ajax</li>
+		<li>
+			<h1>
+				Step 3</h1>
+			Via Ajax</li>
+	</ul>
+	<div>
+		<p>
+			Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec
+			arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante.
+			Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper
+			leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales
+			tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel
+			pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum.
+			Nunc tristique tempus lectus.</p>
+	</div>
+	<div src="/Ajax/content1.html"></div>
+	<div src="/Ajax/content2.html"></div>
+</div>
+<!-- End demo markup -->
+<div class="demo-options">
+	<!-- Begin options markup -->
+	<!-- End options markup -->
+</div>
+</div>
+@section description
+{
+	<p>
+	In this sample, the wijwizard widget loads pages via Ajax. The sample shows you how the wijwizard handles different pages in Ajax. For example, it shows you how it would work preloaded, how it would work normally, how it would work with a slow page, and how it would work if a page were disabled.
+	</p>
+}

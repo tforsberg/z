@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "StackedPercentageBar";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijbarchart").wijbarchart({
+                stacked: true,
+                is100Percent: true,
+                axis: {
+                    y: {
+                        text: "Total Hardware"
+
+                    },
+                    x: {
+                        text: ""
+                    }
+                },
+                hint: {
+                    content: function () {
+                        return this.data.label + '\n ' + this.y + '';
+                    }
+                },
+                header: {
+                    text: "Hardware Distribution"
+                },
+                seriesList: [{
+                    label: "West",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [5, 3, 4, 7, 2] }
+                }, {
+                    label: "Central",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [2, 2, 3, 2, 1] }
+                }, {
+                    label: "East",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [3, 4, 4, 2, 5] }
+                }],
+                seriesStyles: [{
+                    fill: "#c3ff00", stroke: "#afe500", opacity: 0.8
+                }, {
+                    fill: "#a6a6a6", stroke: "#959595", opacity: 0.8
+                }, {
+                    fill: "#333333", stroke: "#2d2d2d", opacity: 0.8
+                }],
+                seriesHoverStyles: [{
+                    "stroke-width": 1.5, opacity: 1
+                }, {
+                    "stroke-width": 1.5, opacity: 1
+                }, {
+                    "stroke-width": 1.5, opacity: 1
+                }]
+            });
+        });
+    </script>
+}
+<h2>
+    StackedPercentageBar</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates a stacked percentage chart. To get this result, all you
+        need to do is set the is100Percent option to true and the stacked property to true.
+    </p>
+}

@@ -1,0 +1,88 @@
+﻿@{
+	ViewBag.Title = "Symbols";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#wijbubblechart").wijbubblechart({
+				minimumSize: 12,
+				MaximumSize: 64,
+				axis: {
+					y: {
+						autoMin: false,
+						text: "Percent"
+
+					},
+					x: {
+						autoMin: false,
+						text: ""
+					}
+				},
+				hint: {
+					content: function () {
+						return this.data.y1 + "%";
+					}
+				},
+				header: {
+					text: "Browser Wars"
+				},
+				seriesStyles: [
+					{
+						opacity: 0.5
+					}
+				],
+				chartLabel: {
+					position: "outside"
+				},
+				seriesList: [{
+					label: "Market Share",
+					legendEntry: true,
+					data: { x: [1, 2, 3, 4, 5], y: [22.9, 39.7, 30.5, 4.0, 2.2], y1: [22.9, 39.7, 30.5, 4.0, 2.2] },
+					markers: {
+						symbol: [
+								{
+									index: 1,
+									url: "@Url.Content("~/Content/Bubblechart/images/chrome.png")"
+								},
+								{
+									index: 2,
+									url: "@Url.Content("~/Content/Bubblechart/images/firefox.png")"
+								},
+								{
+									index: 3,
+									url: "@Url.Content("~/Content/Bubblechart/images/ie.png")"
+								},
+								{
+									index: 4,
+									url: "@Url.Content("~/Content/Bubblechart/images/opera.png")"
+								},
+								{
+									index: 5,
+									url: "@Url.Content("~/Content/Bubblechart/images/safari.png")"
+								}
+							]
+					}
+				}]
+			});
+		});
+	</script>
+}
+<h2>
+	Symbols</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="wijbubblechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+		height: 475px;">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>This sample use <b>markers</b> to customize the gauge background image.</p>
+}

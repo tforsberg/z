@@ -1,0 +1,261 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "MVC Explorer";
+
+    System.Xml.Linq.XElement xEle;
+    if (Cache["ControlList"] == null)
+    {
+        xEle = System.Xml.Linq.XElement.Load(Server.MapPath("~/ControlList.xml"));
+        Cache["ControlList"] = xEle;
+    }
+    else
+    {
+        xEle = (System.Xml.Linq.XElement)Cache["ControlList"];
+    }
+    IEnumerable<System.Xml.Linq.XElement> catalogs = from c in xEle.Elements("Control") select c;
+
+    var relativePaths = Request.AppRelativeCurrentExecutionFilePath.Split('/');
+    var widgetName = relativePaths[1].Replace("C1", "").ToLower();
+    var documentation = "";
+    IEnumerable<System.Xml.Linq.XElement> pageList = null; 
+    if (Cache["WidgetName"] == null || Cache["WidgetName"] != widgetName)
+    {
+        Cache["WidgetName"] = widgetName;
+        pageList = from control2 in catalogs
+                                             where control2.Attribute("name").Value.ToLower() == relativePaths[1].Replace("C1", "").ToLower()
+                                             select control2;        
+        if (pageList != null)
+        {
+            if (pageList.Count() < 1)
+            {
+                var childControls = from c in xEle.Descendants("ChildControl") select c;
+
+                pageList = from control2 in childControls
+                           where control2.Attribute("name").Value.ToLower() == relativePaths[1].Replace("C1", "").ToLower()
+                           select control2;
+            }
+        }
+        Cache["PageList"] = pageList;
+    } else {
+        pageList = (IEnumerable<System.Xml.Linq.XElement>)Cache["PageList"];
+    }
+
+    string curAction = this.Url.RequestContext.RouteData.Values["action"].ToString().ToLower();
+    string curController = this.Url.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    documentation = pageList.First().Attribute("documentation").Value;
+}
+
+
+@section header
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".samples").wijsuperpanel({ vScroller: { scrollMode: 'scrollbar', scrollBarVisibility: 'auto'} });
+            if ($("#themeSession").val() === "") {
+		        $("#themeswitcher").val("http://cdn.wijmo.com/themes/rocket/jquery-wijmo.css");
+	        }
+	        else {
+		        $("#themeswitcher").val($("#themeSession").val());
+	        }
+            $("#themeswitcher").bind("change", function() {
+                    $.post("@Url.Action("SaveThemeSession", "Home")", {theme: this.value});
+                    $(".wijmo-stylesheet-wijmo_theme").attr("href", $(this).val());
+                    //executeCallback("theme=" + $(this).val());
+                }).wijdropdown();
+            //$(".button").button();                          
+            $("#ctl00_WidgetTabs").wijtabs();
+            $("#DocLink").click(function(){
+                window.location = "@documentation"; 
+            })
+             window.setTimeout(function(){
+                $("#sourceTab").wijtabs();
+                loadViewSource();
+                loadControllerSource();
+            }, 200);
+
+        });
+
+        function loadViewSource() {
+            var path = "@Url.Action("GetViewSource", "Home")";
+            var data = {controllerName: "@curController", actionName: "@curAction"};
+            $.post(path, data, function(data){
+                $('<div class="source-block">' +
+		        '<pre class="brush:js;gutter: false;toolbar:false;html-script:true">' +
+		        '</pre></div>').appendTo($('#demo-source'));
+		        $("#SourceContainer").css({ 'padding': '0', 'height': '510px', 'overflow': 'auto', 'position': "relative" });
+		        $('#demo-source>div>pre').text(data);
+                SyntaxHighlighter.highlight();
+            })
+        }
+
+      function loadControllerSource() {
+                var path = "@Url.Action("GetControllerSource", "Home")";
+                var data = {controllerName: "@curController"};
+                $.post(path, data, function(data){
+                    var pre = $("<pre></pre>");
+                    pre.text(data);
+                    $("#pagecs").append(pre);
+                })
+        }
+
+    </script>
+    @RenderSection("header", false)
+}
+
+
+
+@section HeaderButtons
+{
+    <a href="@Url.Action("Widgets", "Home")" runat="server" class="button button-icon">
+        <img runat="server" src=@Url.Content("~/explore/css/images/dots.png")></a> <span id="switcherContainer"
+            runat="server">
+            <select id="themeswitcher">
+                <optgroup label="Wijmo">
+                    <option value="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css">Aristo</option>
+                    <option value="http://cdn.wijmo.com/themes/midnight/jquery-wijmo.css">Midnight</option>
+                    <option value="http://cdn.wijmo.com/themes/rocket/jquery-wijmo.css" selected>Rocket</option>
+                    <option value="http://cdn.wijmo.com/themes/cobalt/jquery-wijmo.css">Cobalt</option>
+                    <option value="http://cdn.wijmo.com/themes/sterling/jquery-wijmo.css">Sterling</option>
+                    <option value="http://cdn.wijmo.com/themes/metro/jquery-wijmo.css">Metro</option>
+                    <option value="http://cdn.wijmo.com/themes/metro-dark/jquery-wijmo.css">Metro Dark</option>
+                </optgroup>
+                <optgroup label="jQuery UI">
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/black-tie/jquery-ui.css">
+                        Black Tie</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/blitzer/jquery-ui.css">
+                        Blitzer</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/cupertino/jquery-ui.css">
+                        Cupertino</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/dark-hive/jquery-ui.css">
+                        Dark Hive</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/dot-luv/jquery-ui.css">
+                        Dot Luv</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/eggplant/jquery-ui.css">
+                        Eggplant</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/excite-bike/jquery-ui.css">
+                        Excite Bike</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/flick/jquery-ui.css">
+                        Flick</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/hot-sneaks/jquery-ui.css">
+                        Hot Sneaks</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/humanity/jquery-ui.css">
+                        Humanity</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/le-frog/jquery-ui.css">
+                        Le Frog</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/mint-choc/jquery-ui.css">
+                        Mint Chocolate</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/overcast/jquery-ui.css">
+                        overcast</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/pepper-grinder/jquery-ui.css">
+                        Pepper Grinder</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/redmond/jquery-ui.css">
+                        Redmond</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css">
+                        Smoothness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/south-street/jquery-ui.css">
+                        South Street</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/start/jquery-ui.css">
+                        Start</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/sunny/jquery-ui.css">
+                        Sunny</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/swanky-purse/jquery-ui.css">
+                        Swanky Purse</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/trontastic/jquery-ui.css">
+                        Trontastic</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-darkness/jquery-ui.css">
+                        UI Darkness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/ui-lightness/jquery-ui.css">
+                        UI Lightness</option>
+                    <option value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/vader/jquery-ui.css">
+                        Vader</option>
+                </optgroup>
+            </select>
+        </span>
+}
+@section HeaderTitle
+{
+    @widgetName
+}
+<section>
+        <aside>
+            <div class="padder">
+                <h4 class="sample-title">
+                    Samples</h4>
+                <!--qq-->
+                <div class="samples">
+                  <!-- ko with: currentWidget -->
+                  <ul id="sampleList" class="sample-list">
+                    @{
+                        string widgetSampleLebel = "";
+                        if (pageList.Count() > 0)
+                        {
+                            string actionName, actionTitle, selectedClass = "";
+
+                            foreach (var action in pageList.First().Elements("action"))
+                            {
+                                actionName = action.Attribute("name").Value;
+                                actionTitle = action.Attribute("title").Value;
+
+                                if (actionName.ToLower() == relativePaths[relativePaths.Count() - 1].ToLower())
+                                {
+                                    selectedClass = "demo-config-on";
+                                    Page.Title = action.Parent.Attribute("name").Value + " - " + action.Attribute("name").Value;
+                                    widgetSampleLebel = action.Attribute("title").Value;
+
+                                }
+                                
+                                  <li class ="@selectedClass"><a runat="server" href="@Url.Action(actionName, widgetName)">
+                                    @actionTitle                                
+                                    </a>                           
+                                </li> 
+                                selectedClass = "";
+                            }
+                        }
+                    }                  
+                  </ul>
+                  <!-- /ko -->
+                </div>
+                <!--qq-->
+            </div>
+        </aside>
+        <article class="ui-helper-clearfix">
+            <div class="main-content" id="mainContent">
+                <div class="padder">
+                    <h3 class="main-sample-title">
+                    <span id="WidgetSampleLebel">@widgetSampleLebel</span></h3>
+                <div id="ctl00_WidgetTabs">
+                  <ul id="ctl00_WidgetTabs_ul">
+                    <li><a href="#SampleContainer">Sample</a></li>
+                    <li><a href="#InfoContainer">Info</a></li>
+                    <li><a href="#SourceContainer">Source</a></li>
+                    <li><a id="DocLink" href="#DocContainer" >Docs <span class="ui-icon ui-icon-newwin"></span></a></li>
+                   </ul>
+                  <div id="SampleContainer" class="SampleContainer">
+                    <div>@RenderBody()</div>
+                  </div>
+                  <div id="InfoContainer" class="InfoContainer">
+                    <div>@RenderSection("description", false)</div>
+                  </div>
+                  <div id="SourceContainer" class="SourceContainer">
+                  	<div id="sourceTab">
+		                <ul>
+			                <li><a href="#pageaspx">View</a></li>
+			                <li><a href="#pagecs">Controller</a></li>
+		                </ul>
+		                <div id="pageaspx" style="height: 472px; overflow: auto">
+                          <div id="demo-source"></div>
+                         </div>
+		                <div id="pagecs" style="height: 472px; overflow: auto">
+		                </div>
+	                </div>                  
+                   </div>
+                  <div id="DocContainer" class="DocContainer"> </div>
+                    
+                </div>
+            </div>
+            </div>
+        </article>
+    </section>
+@Html.Hidden("themeSession", Session["Theme"])
+
+

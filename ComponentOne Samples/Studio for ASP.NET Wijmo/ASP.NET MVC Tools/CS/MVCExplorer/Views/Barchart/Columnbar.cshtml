@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Columnbar";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijbarchart").wijbarchart({
+                horizontal: false,
+                axis: {
+                    y: {
+                        text: "Total Hardware"
+                    },
+                    x: {
+                        text: ""
+                    }
+                },
+                hint: {
+                    content: function () {
+                        return this.data.label + '\n ' + this.y + '';
+                    }
+                },
+                header: {
+                    text: "Hardware Distribution"
+                },
+                seriesList: [{
+                    label: "West",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [5, 3, 4, 7, 2] }
+                }, {
+                    label: "Central",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [2, 2, 3, 2, 1] }
+                }, {
+                    label: "East",
+                    legendEntry: true,
+                    data: { x: ['Desktops', 'Notebooks', 'AIO', 'Tablets', 'Phones'], y: [3, 4, 4, 2, 5] }
+                }]
+            });
+        });
+    </script>
+}
+<h2>
+    Columnbar</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample depicts a clustered column bar chart. This is similar to the "Clustered
+        Chart" sample, although the horizontal option of the bar chart is set to false here.
+    </p>
+}

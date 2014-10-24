@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Dropdown";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputtext({
+		        format: "a",
+		        pickers: {
+		            list: [
+                        { label: 'red', value: "red" },
+                        { label: 'green', value: "green" },
+                        { label: 'blue', value: "blue" },
+                        { label: 'yellow', value: "yellow" }
+		            ]
+		        },
+		        showDropDownButton: true
+		    });
+		});
+	</script>
+}
+<h2>Format</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <input type="text" id="textbox1" />
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                This sample demonstrates how you can create a drop-down list with text items.</p>
+}

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "StackedBar";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijbarchart").wijbarchart({
+                stacked: true,
+                axis: {
+                    y: {
+                        text: "Total Hardware"
+                    },
+                    x: {
+                        text: ""
+                    }
+                },
+                hint: {
+                    content: function () {
+                        return this.data.label + '\n ' + this.y + '';
+                    }
+                },
+                header: {
+                    text: "Console Wars"
+                },
+                seriesList: [{
+                    label: "US",
+                    legendEntry: true,
+                    data: { x: ['PS3', 'XBOX360', 'Wii'], y: [12.35, 21.50, 30.56] }
+                }, {
+                    label: "Japan",
+                    legendEntry: true,
+                    data: { x: ['PS3', 'XBOX360', 'Wii'], y: [4.58, 1.23, 9.67] }
+                }, {
+                    label: "Other",
+                    legendEntry: true,
+                    data: { x: ['PS3', 'XBOX360', 'Wii'], y: [31.59, 37.14, 65.32] }
+                }],
+                seriesStyles: [{
+                    fill: "#8ede43", stroke: "#7fc73c", opacity: 0.8
+                }, {
+                    fill: "#6aaba7", stroke: "#5f9996", opacity: 0.8
+                }, {
+                    fill: "#466a85", stroke: "#3e5f77", opacity: 0.8
+                }],
+                seriesHoverStyles: [{
+                    "stroke-width": "1.5", opacity: 1
+                }, {
+                    "stroke-width": "1.5", opacity: 1
+                }, {
+                    "stroke-width": "1.5", opacity: 1
+                }]
+            });
+        });
+    </script>
+}
+<h2>
+    StackedBar</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        You can set stacked option to true to create a stacked bar chart.</p>
+}

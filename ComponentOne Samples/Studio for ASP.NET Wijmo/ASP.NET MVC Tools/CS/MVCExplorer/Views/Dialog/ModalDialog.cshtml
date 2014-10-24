@@ -1,0 +1,45 @@
+﻿@{
+	ViewBag.Title = "ModalDialog";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			// $(":wijmo-wijdialog").wijdialog("destroy").remove();
+			$("#dialog-modal").wijdialog({
+				autoOpen: true,
+				height: 180,
+				width: 400,
+				modal: true
+			});
+		});
+	</script>
+}
+<h2>
+	ModalDialog</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+		<input type="button" value="Show Dialog" onclick="$('#dialog-modal').wijdialog('open')" />
+		<div id="dialog-modal" title="Basic modal dialog">
+			<p>
+				Adding the modal overlay screen makes the dialog look more prominent because it
+				dims out the page content.</p>
+		</div>
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+        {
+	<p>
+		Adding the modal overlay screen makes the dialog look more prominent because it
+		dims out the page content.
+	</p>
+	<div>
+		This feature is enabled when the <b>modal</b> option is set to True .</div>
+}

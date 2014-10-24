@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Iframe";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijgallery,#wijgallery2").wijgallery({
+                showControlsOnHover: false,
+                thumbsDisplay: 4,
+                thumbsLength: 100,
+                mode: "iframe",
+                showCaption: false,
+                showTimer: false
+            });
+        });
+    </script>
+    <style type="text/css">
+        #wijgallery
+        {
+            width: 750px;
+            height:500px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <div id="wijgallery" class="">
+            <ul class="">
+                <li class=""><a href="http://www.yahoo.com/">
+                    <img src="http://cdn.wijmo.com/images/yahoo_thumb.png" title="Yahoo" alt="Yahool" /></a>
+                </li>
+                <li class=""><a href="http://www.componentone.com">
+                    <img src="http://cdn.wijmo.com/images/componentone_thumb.png" title="ComponentOne"
+                        alt="ComponentOne" /></a> </li>
+                <li class=""><a href="http://www.microsoft.com">
+                    <img src="http://cdn.wijmo.com/images/microsoft_thumb.png" title="Microsoft" alt="Microsoft" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End demo markup -->
+<div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the iframe mode of wijgallery.
+    </p>
+}

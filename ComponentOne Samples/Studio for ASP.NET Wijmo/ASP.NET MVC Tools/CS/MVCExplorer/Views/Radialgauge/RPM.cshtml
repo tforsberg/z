@@ -1,0 +1,106 @@
+﻿@{
+	ViewBag.Title = "RPM";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#gauge").wijradialgauge({
+			    width: 500,
+			    height: 500,
+			    radius: "auto",
+			    value: 468,
+			    max: 1200,
+			    min: 0,
+			    startAngle: 270,
+			    sweepAngle: 240,
+			    labels: {
+			        style: {
+			            "font-size": 15,
+			            "font-weight": "800",
+			            fill: "#000"
+			        },
+			        offset: -5
+			    },
+			    pointer: {
+			        length: 1,
+			        width: 16,
+			        style: { fill: "340-#FB7800-#C00100", stroke: "none" }
+			    },
+			    cap: {
+			        style: {
+			            fill: "#C00100",
+			            stroke: "none"
+			        }
+			    },
+			    tickMajor: {
+			        factor: 8,
+			        offset: 0,
+			        interval: 100,
+			        position: "inside",
+			        style: { fill: "#333333", stroke: "none", height: 4 }
+			    },
+			    tickMinor: {
+			        factor: 3,
+			        visible: true,
+			        offset: 10,
+			        interval: 25,
+			        position: "inside",
+			        style: { fill: "#333333", stroke: "none", height: 1 }
+			    },
+			    face: {
+			        style: {},
+			        template: function (ui) {
+			            var set = ui.canvas.set();
+			            var circle = ui.canvas.circle(ui.origin.x, ui.origin.y, ui.r);
+			            circle.attr({ "stroke": "#474747", "stroke-width": 3, fill: "#fff" });
+			            set.push(circle);
+			            var circle2 = ui.canvas.circle(ui.origin.x, ui.origin.y, 100);
+			            circle2.attr({ fill: "#060606" });
+			            set.push(circle2);
+			            return set;
+			        }
+			    },
+			    ranges: [{
+			        startWidth: 73,
+			        endWidth: 73,
+			        startValue: 1000,
+			        endValue: 1200,
+			        startDistance: 0.575,
+			        endDistance: 0.575,
+			        style: {
+			            fill: "40-#FB7800-#C00100", stroke: "none"
+			        }
+			    }, {
+			        startWidth: 10,
+			        endWidth: 1,
+			        startValue: 625,
+			        endValue: 1175,
+			        startDistance: 0.75,
+			        endDistance: 0.8,
+			        style: {
+			            fill: "#333333", stroke: "none"
+			        }
+			    }]
+			});
+		});
+	
+	</script>
+}
+<h2>
+	RPM</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="gauge" style="background: #000" class="ui-corner-all">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>This sample use <b>face</b>'s <b>template</b> and <b>range</b>.</p>
+}

@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "MultipleSelection";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        #list
+        {
+            height: 200px;
+            width: 300px;
+        }
+        
+        #testinput
+        {
+            width: 150px;
+            padding: 5px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+        $(function () {
+            var testArray = [{
+                label: 'c++',
+                value: 'c++'
+            }, {
+                label: 'java',
+                value: 'java'
+            }, {
+                label: 'php',
+                value: 'php'
+            }, {
+                label: 'coldfusion',
+                value: 'coldfusion'
+            }, {
+                label: 'javascript',
+                value: 'javascript'
+            }, {
+                label: 'asp',
+                value: 'asp'
+            }, {
+                label: 'ruby',
+                value: 'ruby'
+            }, {
+                label: 'python',
+                value: 'python'
+            }, {
+                label: 'c',
+                value: 'c'
+            }, {
+                label: 'scala',
+                value: 'scala'
+            }, {
+                label: 'groovy',
+                value: 'groovy'
+            }, {
+                label: 'haskell',
+                value: 'haskell'
+            }, {
+                label: 'perl',
+                value: 'perl'
+            }];
+            var list = $("#list");
+            var input = $('#testinput');
+            list.wijlist({
+                selected: function (event, ui) {
+                    var selectedItems = ui.selectedItems;
+                    var str = $.map(selectedItems, function (n) {
+                        return n.label;
+                    }).join(",");
+                    input.val(str);
+                },
+                selectionMode: 'multiple'
+            });
+            //list.wijlist('load');
+            list.wijlist('setItems', testArray);
+            list.wijlist('renderList');
+            list.wijlist('refreshSuperPanel');
+            input.bind("keydown.wijcombobox", function (event) {
+                var keyCode = $.ui.keyCode;
+                switch (event.keyCode) {
+                    case keyCode.UP:
+                        list.wijlist('previous', event);
+                        // prevent moving cursor to beginning of text field in some browsers
+                        event.preventDefault();
+                        break;
+                    case keyCode.DOWN:
+                        if (!list.is(':visible')) {
+                            list.show();
+                            return;
+                        }
+                        list.wijlist('next', event);
+                        // prevent moving cursor to end of text field in some browsers
+                        event.preventDefault();
+                        break;
+                    case keyCode.ENTER:
+                        event.preventDefault();
+                        list.wijlist('select', event);
+                        break;
+                    case keyCode.PAGE_UP:
+                        list.wijlist('previousPage');
+                        break;
+                    case keyCode.PAGE_DOWN:
+                        list.wijlist('nextPage');
+                        break;
+                    default:
+                        break;
+                }
+            });
+        });
+
+        function selectButtonClick(select) {
+            var list = $("#list").data('wijlist');
+            var indices = $('#indices').val().split(',');
+            var newArray = [];
+            $.each(indices, function (index, value) {
+                newArray[newArray.length] = parseInt(value);
+            });
+            if (select) {
+                list.selectItems(newArray);
+            }
+            else {
+                list.unselectItems(newArray);
+            }
+        }
+    </script>
+}
+<h2>
+    MultipleSelection</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div class="ui-widget">
+        <input readonly="readonly" id="testinput" type="text" class="ui-widget-content ui-corner-all" />
+        <div id="list">
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the multiple selection mode of the wijlist widget.
+    </p>
+}

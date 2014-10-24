@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Videos";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijcarousel0").wijcarousel({
+                showContorlsOnHover: true
+            });
+        });
+    </script>
+    <style type="text/css">
+        #wijcarousel0
+        {
+            width: 600px;
+            height: 338px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <div id="wijcarousel0" class="ui-corner-all ui-widget-content">
+            <ul>
+                <li>
+                    <iframe src="https://www.youtube.com/v/J---aiyznGQ?version=3"
+                        width="600" height="338" frameborder="0"></iframe>
+                </li>
+                <li>
+                    <iframe src="http://www.youtube.com/v/FzRH3iTQPrk?version=3"
+                        width="600" height="338" frameborder="0"></iframe>
+                </li>
+                <li>
+                    <iframe src="http://www.youtube.com/v/z3U0udLH974?version=3"
+                        width="600" height="338" frameborder="0"></iframe>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates how to play video by wijcarousel.
+    </p>
+}

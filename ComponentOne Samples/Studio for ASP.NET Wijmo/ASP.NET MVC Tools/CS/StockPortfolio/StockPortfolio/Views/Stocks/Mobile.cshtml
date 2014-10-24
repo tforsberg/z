@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Stocks";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+<style type="text/css">
+    .ui-btn-inner
+    {
+        padding: 0.4em 10px;
+    }
+</style>
+<div id="listView" data-role="page">
+    <div data-role="header">
+        <h1>
+            @ViewBag.Title</h1>
+        <a href="#editView" data-icon="gear" class="ui-btn-right">Options</a>
+    </div>
+    <div data-role="content">
+        <ul id="stockList" data-role="listview" data-inset="true">
+        </ul>
+        <div id="rangeButtons" data-role="controlgroup" data-type="horizontal">
+            <a data-role="button">1w</a> <a data-role="button">1m</a> <a data-role="button">6m</a> <a data-role="button">1y</a>
+        </div>
+        <div id="stockHistory" class="ui-btn-active ui-shadow ui-corner-all">
+        </div>
+    </div>
+</div>
+<div id="editView" data-role="page">
+    <div data-role="header">
+        <h1>
+            Edit @ViewBag.Title</h1>
+        <a id="editDone" href="#listView" data-role="button" data-theme="b">Done</a>
+    </div>
+    <div data-role="content">
+        <ul id="editStockList" data-role="listview" data-inset="true">
+        </ul>
+    </div>
+</div>
+<script id="stockListTmpl" type="text/x-jquery-tmpl">
+    <li data-val="${Symbol}"><a>${Symbol}<span class="ui-li-count">${Ask}</span></a></li>
+</script>
+<script id="editStockListTmpl" type="text/x-jquery-tmpl">
+    <li data-val="${Symbol}" data-icon="delete"><a>${Symbol}</a></li>
+</script>
+<script type="text/javascript">
+    var stockApp = {
+        symbols: "",
+        currentSymbol: "",
+        dateRange: ""
+    };
+
+    stockApp.init = function () {
+
+        stockApp.symbols = "MSFT,GOOG,YHOO,AAPL";
+        stockApp.currentSymbol = "MSFT";
+        stockApp.dateRange = "1w";
+
+        $("#stockHistory").wijlinechart({
+            type: "area",
+            showChartLabels: false,
+            height: 200,
+            animation: {
+                duration: 500,
+                direction: "vertical"
+            },
+            seriesTransition: {
+                duration: 500,
+                direction: "vertical"
+            },
+            axis: {
+                y: {
+                    labels: { style: { fill: "#fff", "font-size": "14pt"} },
+                    gridMajor: { style: { stroke: "#f1f1f1"} }
+                },
+                x: {
+                    text: "",
+                    textVisible: false,
+                    style: { stroke: "#f1f1f1" }
+                }
+            },
+            hint: {
+                contentStyle: { "font-size": "24pt", stroke: "none" },
+                content: function () {
+                    return this.data.lineSeries.label + " : " + this.y;
+                }
+            },
+            legend: {
+                visible: false
+            },
+            header: {
+                text: "Stock History",
+                visible: false
+            },
+            textStyle: { fill: "#fff", "font-size": "10pt", stroke: "none" },
+            seriesStyles: [{ stroke: "#fff", opacity: 0.9, "stroke-width": "6"}],
+            seriesHoverStyles: [{ stroke: "#fff", opacity: 1, "stroke-width": "10"}]
+        });
+
+        $("#listView").page();
+        $("#stockList").listview();
+        $("#editView").page();
+        $("#editStockList").listview();
+
+        $("#rangeButtons a:first").addClass("ui-btn-active");
+        $("#rangeButtons a").click(function () {
+            stockApp.dateRange = $(this).text();
+            stockApp.dateChange();
+            $("#rangeButtons a").removeClass("ui-btn-active");
+            $(this).addClass("ui-btn-active");
+        });
+
+        stockApp.loadStocks();
+        stockApp.loadHistory();
+    };
+
+
+    stockApp.loadStocks = function () {
+        $.ajax({
+            url: "StockSymbols",
+            data: { symbols: stockApp.symbols },
+            dataType: "json",
+            success: function (data) {
+                $("#stockListTmpl").tmpl(data).appendTo("#stockList");
+                $("#stockList").listview('refresh');
+                $("#stockList li:first").addClass("ui-btn-active");
+                $("#stockList li").click(function () {
+                    stockApp.currentSymbol = $(this).attr("data-val");
+                    stockApp.stockChange();
+                    $("#stockList li").removeClass("ui-btn-active");
+                    $(this).addClass("ui-btn-active");
+                });
+                $("#editStockListTmpl").tmpl(data).appendTo("#editStockList");
+                $("#editStockList").listview("refresh");
+                $("#editStockList li").click(function () {
+                    $(this).remove();
+                });
+//                $("#editDone").click(function () {
+//                    $("#editStockList li").each(function (index) {
+//                        if (index === 0) {
+//                            stockApp.symbols = $(this).text();
+//                        }
+//                        else {
+//                            stockApp.symbols += "," + $(this).text();
+//                        }
+//                    });
+//                    stockApp.stockListChange();
+//                });
+            }
+        });
+    };
+
+    stockApp.loadHistory = function () {
+        $.ajax({
+            url: "StockSymbolHistory",
+            data: { symbol: stockApp.currentSymbol, dateRange: stockApp.dateRange },
+            dataType: "json",
+            success: function (data) {
+                var stockSeriesList = [];
+                var stockDates = [];
+                var stockPoints = [];
+
+                for (var i = 0; i < data.length - 1; i++) {
+                    stockDates.push(data[i].DateString);
+                    stockPoints.push(data[i].Close);
+                }
+                var stockSeries = {
+                    label: data[i].Symbol,
+                    legendEntry: true,
+                    data: {
+                        x: stockDates,
+                        y: stockPoints
+                    },
+                    markers: {
+                        visible: false,
+                        type: "circle",
+                        width: 10,
+                        style: { fill: "#7fa5da", stroke: "#7fa5da", "stroke-width": "10" }
+                    }
+                };
+                stockSeriesList.push(stockSeries);
+                $("#stockHistory").removeAttr("style");
+                $("#stockHistory").wijlinechart("option", "seriesList", stockSeriesList);
+            }
+        });
+    };
+
+    stockApp.dateChange = function () {
+        stockApp.loadHistory();
+    };
+
+    stockApp.stockChange = function () {
+        stockApp.loadHistory();
+    };
+
+    stockApp.stockListChange = function () {
+        stockApp.loadStocks();
+        stockApp.loadHistory();
+    };
+
+    $(document).ready(function () {
+        stockApp.init();
+    });
+
+</script>

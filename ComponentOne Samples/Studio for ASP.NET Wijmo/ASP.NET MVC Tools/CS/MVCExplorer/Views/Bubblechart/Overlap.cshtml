@@ -1,0 +1,91 @@
+﻿@{
+	ViewBag.Title = "Overlap";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#wijbubblechart").wijbubblechart({
+				minimumSize: 3,
+				MaximumSize: 15,
+				chartLabel: {
+					chartLabelFormatString: "c2'kkk'"
+				},
+				axis: {
+					y: {
+						text: "Total Hardware"
+
+					},
+					x: {
+						text: ""
+						//						,
+						//    					autoMin: false,
+						//						autoMax: false,
+						//						min: 2005,
+						//						max: 2011
+					}
+				},
+				hint: {
+					content: function () {
+						return 'x:' + this.x + ',y:' + this.y + ",y1:" + this.data.y1;
+					}
+				},
+				header: {
+					text: "Hardware Distribution"
+				},
+				seriesList: [{
+					label: "Toyota",
+					legendEntry: true,
+					data: { x: [2006, 2007, 2008, 2009, 2010],
+						y: [5, 6, 8, 7, 8.5], y1: [4, 4.4, 5.1, 5.5, 5.7]
+					}
+				}, {
+					label: "General Motors",
+					legendEntry: true,
+					data: { x: [2006, 2007, 2008, 2009, 2010],
+						y: [3, 4, 6, 7.5, 8], y1: [2, 2.5, 3, 4, 5]
+					}
+				}, {
+					label: "Volkswagon",
+					legendEntry: true,
+					data: { x: [2006, 2007, 2008, 2009, 2010],
+						y: [4, 5, 6.5, 7.3, 6.6], y1: [2, 2.5, 4.5, 6, 5.5]
+					}
+				}, {
+					label: "Hyundai",
+					legendEntry: true,
+					data: { x: [2006, 2007, 2008, 2009, 2010],
+						y: [6, 1, 5, 2, 4], y1: [2, 3, 4.5, 1.5, 1]
+					}
+				}, {
+					label: "Ford",
+					legendEntry: true,
+					data: { x: [2006, 2007, 2008, 2009, 2010],
+						y: [6, 2, 3, 4.6, 5], y1: [4.5, 4, 3.8, 3, 2]
+					}
+				}]
+			});
+		});
+	</script>
+}
+<h2>
+	Overlap</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<h3>
+		Hardware Distribution</h3>
+	<div id="wijbubblechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+		height: 475px;">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		User can click the serie's legend to show/hide the serie bubbles.</p>
+}

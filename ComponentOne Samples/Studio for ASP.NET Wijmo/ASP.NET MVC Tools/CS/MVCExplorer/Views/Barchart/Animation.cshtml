@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Animation";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijbarchart").wijbarchart({
+                axis: {
+                    y: {
+                        text: "Number of Hits",
+                        autoMax: false,
+                        max: 100,
+                        autoMin: false,
+                        min: 0
+
+                    },
+                    x: {
+                        text: "Month of the Year"
+                    }
+                },
+                hint: {
+                    content: function () {
+                        return this.data.label + '\n ' + this.y + '';
+                    }
+                },
+                stacked: true,
+                clusterRadius: 5,
+                seriesList: [createRandomSeriesList("2010")]
+            });
+        });
+
+
+        function changeProperties() {
+            var animation = {};
+            enabled = $("#chkEnabled").is(":checked"),
+				duration = $("#inpDuration").val(),
+				easing = $("#selEasing").val();
+            animation.enabled = enabled;
+            if (duration && duration.length) {
+                animation.duration = parseFloat(duration);
+            }
+            animation.easing = easing;
+            $("#wijbarchart").wijbarchart("option", "animation", animation);
+        }
+
+        function reload() {
+            $("#wijbarchart").wijbarchart("option", "seriesList", [createRandomSeriesList("2010")]);
+        }
+
+        function createRandomSeriesList(label) {
+            var data = [],
+				randomDataValuesCount = 12,
+				labels = ["January", "February", "March", "April", "May", "June",
+					"July", "August", "September", "October", "November", "December"],
+				idx;
+            for (idx = 0; idx < randomDataValuesCount; idx++) {
+                data.push(createRandomValue());
+            }
+            return {
+                label: label,
+                legendEntry: false,
+                data: { x: labels, y: data }
+            };
+        }
+
+        function createRandomValue() {
+            var val = Math.round(Math.random() * 100);
+            return val;
+        }
+    </script>
+}
+<h2>
+    Animation</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <input type="button" value="reload" onclick="reload()" />
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div>
+            <label for="chkEnabled">
+                Animation Settings: Enabled
+            </label>
+            <input id="chkEnabled" type="checkbox" checked="checked" />
+            <label for="inpDuration">
+                Duration
+            </label>
+            <input id="inpDuration" type="text" value="1000" />
+            <label for="selEasing">
+                Easing
+            </label>
+            <select id="selEasing">
+                <option value=">">></option>
+                <option value="<"><</option>
+                <option value="<>"><></option>
+                <option value="backIn">backIn</option>
+                <option value="backOut">backOut</option>
+                <option value="bounce">bounce</option>
+                <option value="elastic">elastic</option>
+            </select>
+            <input type="button" value="Apply" onclick="changeProperties()" />
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample demonstrates how to set the animation of your barcharts. This example
+        uses the <b>animation</b> options of the bar chart.</p>
+}

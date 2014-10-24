@@ -1,0 +1,112 @@
+﻿@{
+	ViewBag.Title = "Cell and row formatting";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+	<style type="text/css">
+        .wijmo-wijgrid 
+        {
+            min-height: 100px;
+        }
+
+		#flagContainer
+		{
+			width: 300px;
+			height: 200px;
+		}
+		
+		#imgFlagLarge
+		{
+			max-width: 300px;
+			max-height: 200px;
+		}
+	</style>
+
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#demo").wijgrid({
+				allowPaging: true,
+				pageSize: 5,
+
+				data: new wijdatasource({
+					proxy: new wijhttpproxy({
+						url: "http://ws.geonames.org/searchJSON",
+						dataType: "jsonp",
+						data: {
+						    username: "demo",
+						    featureClass: "P",
+							style: "full",
+							maxRows: 15,
+							name_startsWith: "ab"
+						},
+						key: "geonames"
+					}),
+					reader: new wijarrayreader([
+						{ name: "Name", mapping: "name" },
+						{ name: "CountryName", mapping: "countryName" },
+						{ name: "CountryCode", mapping: "countryCode" },
+						{ name: "ContinentCode", mapping: "continentCode" }
+					])
+				}),
+
+				columns: [
+					{}, // Name
+					{ headerText: "Country name" }, // CountryName
+					{
+						headerText: "National flag",
+						cellFormatter: function (args) {
+							if (args.row.type & $.wijmo.wijgrid.rowType.data) {
+								args.$container
+									.css("text-align", "center")
+									.empty()
+									.append($("<img />")
+									.attr("src", "http://www.geonames.org/flags/m/" + args.row.data.CountryCode.toLowerCase() + ".png"));
+
+								return true;
+							}
+						}
+					},
+					{ headerText: "Continent code" }
+				],
+
+				rowStyleFormatter: function (args) {
+					if ((args.state & $.wijmo.wijgrid.renderState.rendering) && (args.type & $.wijmo.wijgrid.rowType.data)) {
+						args.$rows
+						.css("cursor", "pointer")
+						.click(function (e) {
+							$("#imgFlagLarge").show().attr("src", "http://www.geonames.org/flags/x/" + args.data.CountryCode.toLowerCase() + ".gif")
+						});
+					}
+				}
+			});
+		});
+	</script>
+}
+
+<h2>Cell and row formatting</h2>
+
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<table id="demo">
+	</table>
+
+	<p>National flag (click any row to show):</p>
+	<div id="flagContainer" class="ui-widget-content">
+		<img id="imgFlagLarge" style="display:none" alt="Flag"/>
+	</div>
+
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description{
+	<p>
+		This sample shows how to change the content, style and attributes of the column and row cells using jQuery.
+		The <b>cellFormatter</b> option is used to format the cells and the <b>rowStyleFormatter</b> option is used
+		to format the rows.
+	</p>
+}

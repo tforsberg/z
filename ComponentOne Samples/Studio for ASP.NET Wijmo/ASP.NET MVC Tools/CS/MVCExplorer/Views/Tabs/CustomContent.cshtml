@@ -1,0 +1,64 @@
+﻿@{
+	ViewBag.Title = "CustomContent";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			function loadContent(ui, ajaxOptions) {
+				var url = '/Ajax/content' + (ui.index + 1) + '.html';
+				$.ajax($.extend({}, ajaxOptions, {
+					url: url,
+					success: function (r, s) {
+						r = "<p style='color:blue'>Customized content:</p>" + r;
+						$(ui.panel).html(r);
+						try {
+							ajaxOptions.success(r, s);
+						}
+						catch (e1) { }
+					},
+					error: function (xhr, s, e) {
+						$(ui.panel).html(
+							"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+							"If this wouldn't be a demo.");
+						try {
+							ajaxOptions.error(xhr, s, ui.index, ui.tab);
+						}
+						catch (e2) { }
+					}
+				}));
+			}
+
+			$("#tabs").wijtabs({
+				beforeShow: function (event, ui) {
+					loadContent(ui);
+					return false;
+				}
+			});
+		});
+	</script>
+}
+
+<h2>CustomContent</h2>
+<div class="main demo">
+	<div id="tabs">
+		<ul>
+			<li><a>Tab 1</a></li>
+			<li><a>Tab 2</a></li>
+			<li><a>Tab 3</a></li>
+		</ul>
+	</div>
+
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		In this sample, the wijwizard widget loads pages via Ajax. The sample shows you how the wijwizard handles different pages in Ajax. For example, it shows you how it would work preloaded, how it would work normally, how it would work with a slow page, and how it would work if a page were disabled.
+	</p>
+}

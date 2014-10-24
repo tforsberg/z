@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Control column visibility";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var grid = $("#demo").wijgrid(),
+                columns = grid.wijgrid("option", "columns"),
+                listContainer = $("#columnsList"),
+                checkBox, isChecked;
+
+            $.each(columns, function (index, col) {
+                isChecked = (col.visible)
+                    ? "checked = 'checked'"
+                    : "";
+
+                checkBox = $("<label><input type='checkbox' " + isChecked + " />" + col.headerText + "</label>");
+                listContainer.append(checkBox);
+                checkBox.click(function (e) {
+                    columns[index].visible = $(this).children("input")[0].checked;
+                    grid.wijgrid("doRefresh");
+                })
+            })
+        });
+    </script>
+}
+
+<h2>Control column visibility</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <table id="demo">
+        <thead>
+            <tr>
+                <th>ProductID</th><th>UnitPrice</th><th>Quantity</th><th>Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>11</td><td>14</td><td>12</td><td>0</td>
+            </tr>
+            <tr>
+                <td>42</td><td>9,8</td><td>10</td><td>0</td>
+            </tr>
+            <tr>
+                <td>72</td><td>34,8</td><td>5</td><td>0</td>
+            </tr>
+            <tr>
+                <td>14</td><td>18.6</td><td>9</td><td>0</td>
+            </tr>
+            <tr>
+                <td>51</td><td>42.4</td><td>40</td><td>0</td>
+            </tr>
+            <tr>
+                <td>41</td><td>7.7</td><td>10</td><td>0</td>
+            </tr>
+            <tr>
+                <td>51</td><td>42.4</td><td>35</td><td>0.15</td>
+            </tr>
+            <tr>
+                <td>65</td><td>16.8</td><td>15</td><td>0.15</td>
+            </tr>
+            <tr>
+                <td>22</td><td>16.8</td><td>6</td><td>0.05</td>
+            </tr>
+            <tr>
+                <td>57</td><td>15.6</td><td>15</td><td>0.05</td>
+            </tr>
+            <tr>
+                <td>65</td><td>16.8</td><td>20</td><td>0</td>
+            </tr>
+            <tr>
+                <td>20</td><td>64.8</td><td>40</td><td>0.05</td>
+            </tr>
+            <tr>
+                <td>33</td><td>2</td><td>25</td><td>0.05</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End demo markup -->
+    <div class="demo-options">
+    <!-- Begin options markup -->
+        <label for="columnsList">Columns in Grid:</label>
+        <div id="columnsList">
+        </div>
+    <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+        This sample illustrates how columns can be hidden using the <b>visible</b> option.
+        To hide a particular column deselect the appropriate checkbox shown at the bottom of the grid.
+        To show a particular column select the appropriate checkbox shown at the bottom of the grid.  
+    </p>
+}

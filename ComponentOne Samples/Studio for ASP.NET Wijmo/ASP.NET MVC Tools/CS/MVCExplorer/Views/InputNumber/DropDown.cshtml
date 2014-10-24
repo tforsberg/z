@@ -1,0 +1,35 @@
+﻿@{
+	ViewBag.Title = "DropDown";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputnumber(
+			{
+			    type: 'currency',
+			    comboItems: [{ label: '100,12$', value: 100.12 }, { label: '1200$', value: 1200 }, { label: '2000$', value: 2000 }, { label: '5200$', value: 5200}],
+			    showTrigger: true
+			});
+		});
+	</script>
+}
+<h2>DropDown</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<input type="text" id="textbox1" />
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		This sample demonstrates how you can create a drop-down list with currency items by setting the <b>currency</b> and <b>comboItems</b> options.
+	</p>
+}

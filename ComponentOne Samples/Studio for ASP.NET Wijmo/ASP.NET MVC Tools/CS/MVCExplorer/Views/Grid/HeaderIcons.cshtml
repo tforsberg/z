@@ -1,0 +1,77 @@
+﻿@{
+	ViewBag.Title = "Custom header icons";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+
+			// bind the grid
+			$("#demo").wijgrid({
+				data: getData(12),
+				columnsAutogenerationMode: "none",
+				columns: [
+					{ dataKey: "Country", headerText: "<span class='ui-icon ui-icon-flag'/> Country", dataType: "string" },
+					{ dataKey: "ProductName", headerText: "<span class='ui-icon ui-icon-gear'/> Product Name", dataType: "string" },
+					{ dataKey: "UnitPrice", headerText: "<span class='ui-icon ui-icon-tag'/> Unit Price", dataType: "currency" },
+					{ dataKey: "Quantity", headerText: "<span class='ui-icon ui-icon-cart'/> Quantity", dataType: "number", dataFormatString: "n0" },
+					{ dataKey: "Discount", headerText: "<span class='ui-icon ui-icon-calculator'/> Discount", dataType: "number", dataFormatString: "p0" }
+				]
+			});
+		});
+
+		// random data generators
+		function getData(count) {
+			var data = [];
+			var country = "USA,UK,Germany,Italy,Japan,Brazil,Canada".split(",");
+			var name = "Lorem,Ipsum,Dolor,Amet,Consectetur".split(",");
+			var suffix = "LLC,Inc".split(",");
+			for (var i = 0; i < count; i++) {
+				data.push({
+					TransactionID: i,
+					Country: getString(country),
+					ProductName: getString(name) + " " + getString(suffix),
+					UnitPrice: Math.floor(getNumber(5, 10)),
+					Quantity: Math.floor(getNumber(1, 5)) * 10,
+					Discount: getNumber(0, 0.3)
+				});
+			}
+			return data;
+		}
+		function getString(arr) {
+			return arr[Math.floor((Math.random() * arr.length))];
+		}
+		function getNumber(lo, hi) {
+			return lo + Math.random() * (hi - lo);
+		}
+		function getDate(daysAgo) {
+			return new Date((new Date()).getTime() - daysAgo * 24 * 3600 * 1000);
+		}
+	</script>
+}
+
+<h2>Custom header icons</h2>
+
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<table id="demo">
+	</table>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+	<!-- End options markup -->
+	</div>
+</div>
+
+@section description{
+	<p>
+		This sample shows how you can add icons to column headers using jQueryUI's
+		icon classes.
+	</p>
+	<p>
+		The <b>headerText</b> option of the column objects accepts HTML content, not
+		just plain text. This means you can easily customize the style of the column
+		headers using HTML.
+	</p>
+}

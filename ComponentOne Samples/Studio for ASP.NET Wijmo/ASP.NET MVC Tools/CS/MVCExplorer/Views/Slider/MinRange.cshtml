@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "MinRange";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <style type="text/css">
+        #hSlider
+        {
+            width: 300px;
+        }
+    </style>
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#hSlider").wijslider({ orientation: "horizontal", minRange: 100, range: true, dragFill: false, min: 0, max: 500, step: 2, values: [100, 400] });
+    		$("#getVals").click(function () {
+    			$(".vals").text($("#hSlider").wijslider("option", "values").toString());
+    		});
+    	});
+    </script>
+}
+
+<h2>MinRange</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+	<br/>
+    <div id="hSlider">
+    </div><br/>
+    <div class="vals">
+    </div><br/>
+    <button id="getVals" type="button">Check Values</button>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description{
+	 <p>
+                wijslider allows the user to set an min range of the slider.  This sample
+                illustrates that behavior using the <b>minRange</b> option</p>
+}

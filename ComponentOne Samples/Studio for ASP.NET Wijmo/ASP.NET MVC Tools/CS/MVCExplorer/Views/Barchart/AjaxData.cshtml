@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "AjaxData";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+
+    	$(document).ready(function () {
+    		var netflx = "http://demo.componentone.com/aspnet/Northwind/northwind.svc/Products?$format=json&$top=10&$orderby=Unit_Price%20desc";
+
+    		$.ajax({
+    			dataType: "jsonp",
+    			url: netflx,
+    			jsonp: "$callback",
+    			success: callback
+    		});
+    	});
+
+    	function callback(result) {
+    		// unwrap result
+    		var names = [];
+    		var prices = [];
+
+    		var products = result["d"];
+
+    		for (var i = 0; i < products.length; i++) {
+
+    			names.push(products[i].Product_Name);
+    			prices.push(products[i].Unit_Price);
+    		}
+
+    		$("#wijbarchart").wijbarchart({
+    			axis: {
+    				y: {
+    					text: "Prices"
+
+    				},
+    				x: {
+    					text: "Products"
+    				}
+    			},
+    			hint: {
+    				content: function () {
+    					return this.data.label + '\n ' + this.y + '';
+    				}
+    			},
+    			header: {
+    				text: "Top 10 Products by Unit Price - Northwind OData"
+    			},
+    			seriesList: [
+                    {
+                    	label: "Prices",
+                    	legendEntry: true,
+                    	data: {
+                    		x: names,
+                    		y: prices
+                    	}
+                    }
+                ]
+    		});
+    	}
+    </script>
+}
+<h2>
+    AjaxData</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+    {
+    <p>
+        This sample illustrates how to create a chart using data from an external data source.
+        In this example, we are using data from the Netflix OData feed.
+    </p>
+    <ul>
+       <li>Data URL: <a href="http://demo.componentone.com/aspnet/Northwind/northwind.svc/Products?$format=json&$top=10&$orderby=Unit_Price%20desc">http://demo.componentone.com/aspnet/Northwind/northwind.svc/Products?$format=json&$top=10&$orderby=Unit_Price%20desc</a> </li>
+    </ul>
+}

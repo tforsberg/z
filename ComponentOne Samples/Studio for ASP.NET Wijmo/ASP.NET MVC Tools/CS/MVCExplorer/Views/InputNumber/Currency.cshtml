@@ -1,0 +1,36 @@
+﻿@{
+	ViewBag.Title = "Currency";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputnumber(
+			{
+			    type: 'currency',
+			    decimalPlaces: 2,
+			    showSpinner: true
+			});
+		});
+	</script>
+}
+<h2>Currency</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<input type="text" id="textbox1" value="25.5" />
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+
+@section description
+{
+	<p>
+		This sample demonstrates how to create currency input simply by setting the <b>type</b> to 'currency'.
+	</p>
+}
+

@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Overview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#expander").wijexpander();
+        });
+    </script>
+}
+<h2>Overview</h2>
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <div id="expander">
+                <h3>
+                    Header</h3>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna.
+                    Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien,
+                    cursus in.
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+             The wijexpander widget allows you to show or hide embedded or external 
+			 content within an expanding panel using various animation effects. 
+			 The expanding content can be shown or hidden by clicking on the expander header at run time.
+        }

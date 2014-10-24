@@ -1,0 +1,64 @@
+﻿@model EventPlanner.Models.EventObj
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@section Header {
+    @Html.ActionLink("Cancel", "Index", routeValues: null)
+    <h2>Edit</h2>
+    <input type="submit" value="Save" class="ui-btn-right" data-theme="b" onclick="$('form').trigger('submit')" />
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Id)
+
+    <ul data-role="listview" data-inset="true" data-theme="c">
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.Subject)
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.Location)
+            @Html.EditorFor(model => model.Location)
+            @Html.ValidationMessageFor(model => model.Location)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.Start)
+            @Html.EditorFor(model => model.Start)
+            @Html.ValidationMessageFor(model => model.Start)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.End)
+            @Html.EditorFor(model => model.End)
+            @Html.ValidationMessageFor(model => model.End)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(model => model.AllDay)
+            @Html.EditorFor(model => model.AllDay)
+            @Html.ValidationMessageFor(model => model.AllDay)
+        </li>
+
+    </ul>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

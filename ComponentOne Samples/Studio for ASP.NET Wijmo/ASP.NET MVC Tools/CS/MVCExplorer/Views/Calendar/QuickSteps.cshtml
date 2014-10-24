@@ -1,0 +1,30 @@
+﻿@{
+	ViewBag.Title = "QuickSteps";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#calendar1").wijcalendar({ navButtons: "quick" });
+		});
+	</script>
+}
+<h2>QuickSteps</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	This sample shows you how you can add quick navigation to the wijcalendar widget using the navButtons option. The quick navigation buttons jump ahead a year rather than one month.
+	</p>
+}
+

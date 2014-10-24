@@ -1,0 +1,23 @@
+﻿@model EventPlanner.Models.EventObj
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@section Header {
+    <h2>Delete</h2>
+}
+
+
+@using (Html.BeginForm()) 
+{
+    <ul data-role="listview" data-inset="true" data-theme="c">
+        <li data-role="fieldcontain">
+            <label>@Html.DisplayNameFor(model => model.Subject)</label>
+            @Html.DisplayFor(model => model.Subject)
+        </li>
+    </ul>
+    <input type="submit" value="Delete" data-theme="e" />
+    @Html.ActionLink("Cancel", "Index", null, htmlAttributes: new { data_role="button", data_theme="c" })
+}
+

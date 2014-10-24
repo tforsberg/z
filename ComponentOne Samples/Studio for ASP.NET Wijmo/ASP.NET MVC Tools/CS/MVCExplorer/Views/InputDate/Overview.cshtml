@@ -1,0 +1,59 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$(function () {
+				$("#textbox1").wijinputdate({ dateFormat: 'T' });
+				$("#textbox2").wijinputdate({ dateFormat: 'd' });
+				$("#textbox3").wijinputdate({ dateFormat: 'g' });
+				$("#textbox4").wijinputdate({ dateFormat: 'U' });
+			});
+		});
+	</script>
+}
+<h2>Overview</h2>
+
+<div class="main demo">
+<!-- Begin demo markup -->
+<ul class="ui-helper-reset">
+	<li>
+		<label>
+			dateFormat='T' (Long time pattern)</label>
+		<input type="text" id="textbox1" />
+	</li>
+	<li>
+		<label>
+			dateFormat='d' (Short date pattern)</label>
+		<input type="text" id="textbox2" />
+	</li>
+	<li>
+		<label>
+			dateFormat='g' (General Date & Short Time)
+		</label>
+		<input type="text" id="textbox3" />
+	</li>
+	<li>
+		<label>
+			dateFormat='U' (Universal Date & Long Time)</label>
+		<input type="text" id="textbox4" />
+	</li>
+</ul>
+<!-- End demo markup -->
+<div class="demo-options">
+	<!-- Begin options markup -->
+	<!-- End options markup -->
+</div>
+</div>
+@section description
+{
+	<p>
+		The wijinputdate widget converts an input element into a date/time input tool.</p>
+	<p>
+		The wijinputdate widget also supports the variant date/time format, which is determined by the dateFormat option.</p>
+}
+

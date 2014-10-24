@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Spinner Align";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputdate({
+		        showSpinner: true,
+		        spinnerAlign: "verticalLeft"
+		    });
+		    $("#textbox2").wijinputdate({
+		        showSpinner: true,
+		        spinnerAlign: "verticalRight"
+		    });
+		    $("#textbox3").wijinputdate({
+		        showSpinner: true,
+		        spinnerAlign: "horizontalDownLeft"
+		    });
+		    $("#textbox4").wijinputdate({
+		        showSpinner: true,
+		        spinnerAlign: "horizontalUpLeft"
+		    });
+		});
+	</script>
+}
+<h2>Time Picker</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <b>spinnerAlign="verticalLeft"</b>
+            <input type="text" id="textbox1" />
+            <br/>
+            <b>spinnerAlign="verticalRight"</b>
+            <input type="text" id="textbox2" />
+            <br/>
+             <b>spinnerAlign="horizontalDownLeft"</b>
+            <input type="text" id="textbox3" />
+            <br/>
+             <b>spinnerAlign="horizontalUpLeft"</b>
+            <input type="text" id="textbox4" />
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+@section description
+{
+ <p>
+                This sample demonstrates the <b>spinnerAlign</b> option, it can change the alignment of the spinner button.</p>
+}
+
+

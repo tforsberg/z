@@ -1,0 +1,41 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#eventscalendar").wijevcal();
+		});
+	</script>
+    <style type="text/css">
+        #eventscalendar
+        {
+            width: 750px;
+        }
+    </style>
+}
+<h2>
+	Overview</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="eventscalendar"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+			<p>
+				The sample demonstrates default <strong>wijevcal</strong> widget behavior.
+			</p>
+			<p>
+				The <strong>wijevcal</strong> widget is a fully functional schedule that allows users to add, edit, and manage their appointments.  
+			</p>
+			<p>
+				By default the wijevcal uses an offline data source, so you can easily add this widget to your page without additional configuration. 
+			</p>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+}

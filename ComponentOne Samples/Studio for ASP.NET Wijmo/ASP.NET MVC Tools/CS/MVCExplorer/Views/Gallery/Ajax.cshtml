@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Ajax";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $.get("AjaxDoc", function (self,status,data) {
+                ajaxCallback(data.responseText);
+            });
+
+            function ajaxCallback(images) {
+                var imgs = images.split('|'), data = [];
+                for (i = 0; i < imgs.length; i++) {
+                    data[i] = {
+                        url: imgs[i],
+                        thumbUrl: imgs[i],
+                        content: "",
+                        caption: "<span>Image " + (i + 1) + "</span>"
+                    }
+                }
+                $("#wijgallery1").wijgallery({
+                    data: data,
+                    showTimer: false,
+                    thumbsLength: 100,
+                    thumbsDisplay: 3,
+                    showCaption: false
+                });
+            }
+        });
+    </script>
+    <style type="text/css">
+        .wijmo-wijcarousel-text span
+        {
+            padding: 5px;
+        }
+        
+        
+        #wijgallery1
+        {
+            width: 400px;
+        }
+    </style>
+}
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <div>
+
+                <div id="wijgallery1" class="">
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+        {
+    <p>
+        This sample illustrates the wijgallery get data from ajax data source.
+    </p>
+}
+

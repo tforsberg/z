@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "RemoteData";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var proxy = new wijhttpproxy({
+                url: "http://ws.geonames.org/searchJSON",
+                dataType: "jsonp",
+                data: {
+                    username: "demo",
+                    featureClass: "P",
+                    style: "full",
+                    maxRows: 12
+                },
+                key: 'geonames'
+            });
+
+            var myReader = new wijarrayreader([{
+                name: 'label',
+                mapping: function (item) {
+                    return item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName
+                }
+            }, {
+                name: 'value',
+                mapping: 'name'
+            }, {
+                name: 'selected',
+                defaultValue: false
+            }]);
+
+
+            var datasource = new wijdatasource({
+                reader: myReader,
+                proxy: proxy
+            });
+            $("#tags").wijcombobox({
+                data: datasource,
+                showTrigger: false,
+                search: function (e, obj) {
+                    obj.datasrc.proxy.options.data.name_startsWith = obj.term.value;
+                },
+                select: function (e, item) {
+                    $('#output').html('I come from ' + item.label + '!');
+                }
+            });
+        });
+            
+            
+    </script>
+}
+<h2>
+    RemoteData</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <label for="tags">
+        Type 4 chars to lookup a city</label>
+    <input id="tags" style="width: 300px" />
+    <p>
+        <label id="output">
+        </label>
+    </p>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample demonstrates how the <b>search</b> method and event can be used to locate
+        a city name using four values entered in the textbox of wijcombobox.
+    </p>
+}

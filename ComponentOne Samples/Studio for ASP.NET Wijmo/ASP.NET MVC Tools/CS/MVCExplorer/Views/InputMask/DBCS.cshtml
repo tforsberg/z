@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "DBCS";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#textbox1").wijinputmask(
+			{
+			    maskFormat: /\Ａ{5}/
+			});
+		});
+	</script>
+}
+<h2>SSN</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <input type="text" id="textbox1" />
+            <h6>
+                maskFormat</h6>
+            <p>
+                /\Ａ{5}/</p>
+            
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+  <p>
+                This sample illustrates how you can use the <b>maskFormat</b> option to allow input the DBCS uppercase alphabet.</p>
+}
+

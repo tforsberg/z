@@ -1,0 +1,120 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var superPanelRefreshed = false;
+            var proxy = new wijhttpproxy({
+                url: "http://ws.geonames.org/searchJSON",
+                dataType: "jsonp",
+                data: {
+                    featureClass: "P",
+                    style: "full",
+                    maxRows: 12,
+                    name_startsWith: 'ab'
+                },
+                key: 'geonames'
+            });
+            var myReader = new wijarrayreader([{
+                name: 'label',
+                mapping: function (item) {
+                    return item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName
+                }
+            }, {
+                name: 'value',
+                mapping: 'name'
+            }, {
+                name: 'selected',
+                defaultValue: false
+            }]);
+            var list = $("#list");
+            var input = $('#testinput');
+            list.wijlist({
+                selected: function (event, ui) {
+                    var item = ui.item;
+                    input.val(item.value);
+                    list.wijlist('deactivate');
+                }
+            });
+            datasource = new wijdatasource({
+                reader: myReader,
+                proxy: proxy,
+                loading: function () {
+                    input.addClass('wijmo-wijcombobox-loading');
+                },
+                loaded: function (data) {
+                    list.wijlist('setItems', data.items);
+                    list.wijlist('renderList');
+                    list.wijlist('refreshSuperPanel');
+                    input.removeClass('wijmo-wijcombobox-loading');
+                }
+            });
+
+            datasource.load();
+            input.bind("keydown.wijcombobox", function (event) {
+                var keyCode = $.ui.keyCode;
+                switch (event.keyCode) {
+                    case keyCode.UP:
+                        list.wijlist('previous', event);
+                        // prevent moving cursor to beginning of text field in some browsers
+                        event.preventDefault();
+                        break;
+                    case keyCode.DOWN:
+                        if (!list.is(':visible')) {
+                            list.show();
+                            return;
+                        }
+                        list.wijlist('next', event);
+                        // prevent moving cursor to end of text field in some browsers
+                        event.preventDefault();
+                        break;
+                    case keyCode.ENTER:
+                        event.preventDefault();
+                        list.wijlist('select', event);
+                        break;
+                    case keyCode.PAGE_UP:
+                        list.wijlist('previousPage');
+                        break;
+                    case keyCode.PAGE_DOWN:
+                        list.wijlist('nextPage');
+                        break;
+                    default:
+                        break;
+                }
+            });
+        });
+
+        function loadRemoteData() {
+            datasource.proxy.options.data.name_startsWith = $('#testinput').val();
+            datasource.load();
+        }
+    </script>
+}
+<h2>Overview</h2>
+
+        <div class="main demo">
+            <!-- Begin demo markup -->
+            <div class="ui-widget">
+                <input style="width: 400px" id="testinput" type="textbox" class="ui-widget-content ui-corner-all" /><input type="button" onclick="loadRemoteData()" id="loadremote" value="Load Remote Data" />
+                <div id="list" style="height: 300px; width: 400px;">
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+{
+	<p>       
+            wijpopup is a tool widget that can be used by other widgets to flexibly display
+                or hide an element. wijpopup allows a target element (such as a DIV) to pop up or
+                hide at a specified position. The target element is placed in the topmost position
+                above other elements, and a transparent FRAME is created automatically beneath the
+                element in IE6 (or lower) browser.
+	</p>
+}

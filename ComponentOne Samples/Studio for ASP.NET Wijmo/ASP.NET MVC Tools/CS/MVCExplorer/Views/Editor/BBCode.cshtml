@@ -1,0 +1,37 @@
+﻿@{
+	ViewBag.Title = "BBCode";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#wijeditor").wijeditor({ mode: "bbcode", editorMode: "split" });
+		});
+	</script>
+}
+<h2>
+	BBCode</h2>
+	<div class="main demo">
+			<!-- Begin demo markup -->
+			<div class="ui-helper-clearfix">
+				<textarea id="wijeditor" style="width: 450px; height: 200px;">
+					This is some [B]sample text[/B]. You can visit [URL=http://componentone.com/]C-ONE[/URL].
+				</textarea>
+			</div>
+			<!-- End demo markup -->
+			<div class="demo-options">
+				<!-- Begin options markup -->
+				<!-- End options markup -->
+			</div>
+		</div>
+
+@section description
+{
+		<p>
+			This sample shows editor widget support bbcode mode.
+		</p>
+}
+
+

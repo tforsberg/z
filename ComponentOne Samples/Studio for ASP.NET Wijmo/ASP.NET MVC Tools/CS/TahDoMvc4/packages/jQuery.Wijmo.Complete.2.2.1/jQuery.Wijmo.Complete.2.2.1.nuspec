@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>jQuery.Wijmo.Complete</id>
+    <version>2.2.1</version>
+    <title>Wijmo Complete</title>
+    <authors>ComponentOne</authors>
+    <owners>ComponentOne</owners>
+    <licenseUrl>http://wijmo.com/widgets/license/wijmo-commercial-license-agreement/</licenseUrl>
+    <projectUrl>http://wijmo.com/</projectUrl>
+    <iconUrl>http://wijmo.com/img/media/wijmo_wijmo_150.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Wijmo Complete is a commercial kit of jQuery UI widgets for building Web applications. It includes Bar Chart, Line Chart, Pie Chart, Combobox, Grid, Input Date, Input Mask, Input Number, Pager, Tree and Wizard. It also includes everything from Wijmo Open which has Accordion, Calendar, Checkbox, Dialog, Expander, Form Decorator, List, Menu, Progressbar, Radio Button, Slider, Splitter, Super Panel, Tabs, Textbox and Tooltip.</description>
+    <language>en-US</language>
+    <tags>jQuery,jQueryUI,Wijmo,widgets,plugins,JavaScript,UI,AJAX,SVG,Chart,Grid,Data</tags>
+    <dependencies>
+      <dependency id="jQuery.Wijmo.Open" version="2.2.1" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>

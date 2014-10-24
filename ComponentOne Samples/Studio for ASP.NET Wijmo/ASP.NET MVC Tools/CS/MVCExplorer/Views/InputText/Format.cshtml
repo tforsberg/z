@@ -1,0 +1,35 @@
+﻿@{
+	ViewBag.Title = "Format";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputtext({
+		        format: '9'
+		    });
+		});
+	</script>
+}
+<h2>Format</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <input type="text" id="textbox1" />
+            <h6>
+                Format</h6>
+            <p>
+                9</p>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                This sample illustrates how you can use the <b>format</b> option to allow only input numbers (0-9).</p>
+}

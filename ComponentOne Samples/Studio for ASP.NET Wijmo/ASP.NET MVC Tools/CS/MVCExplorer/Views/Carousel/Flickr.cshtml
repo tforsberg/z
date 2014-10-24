@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Flickr";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+
+@section header
+{
+     <script id="scriptInit" type="text/javascript">
+         var count = 15;
+         var tags = "Siberian Tiger";
+
+         $(document).ready(function () {
+
+             $("#wijcarousel0").wijcarousel({
+                 imageSize: {
+                     width: 120,
+                     height: 90
+                 },
+                 display: 3,
+                 step: 1,
+                 showTimer: false,
+                 showPager: false,
+                 loop: true,
+                 loadCallback: function () {
+                     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=" + tags + "&tagmode=any&format=json&jsoncallback=?", function (data) {
+                         var images = [];
+                         $.each(data.items, function (idx, item) {
+                             var img = {};
+                             img.imageUrl = item.media.m;
+                             img.caption = item.title;
+                             images.push(img);
+                             if (idx == count - 1) return false;
+                         });
+
+                         $("#wijcarousel0").wijcarousel("option", "data", images);
+                     });
+                 }
+             });
+
+         });
+    </script>
+    <style type="text/css">
+    #wijcarousel0
+    {
+        width:720px;
+        height:260px;	
+    }
+    </style>
+}
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <div>
+                <div id="wijcarousel0" class="ui-widget-content ui-corner-all" style="padding: 15px 15px 15px 15px;">
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+        {
+    <p>
+        This sample illustrates how to get images from flickr for items of wijcarousel.
+    </p>
+}
+

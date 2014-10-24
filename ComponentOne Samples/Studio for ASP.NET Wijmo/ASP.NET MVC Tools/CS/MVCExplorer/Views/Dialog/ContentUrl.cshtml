@@ -1,0 +1,36 @@
+﻿@{
+	ViewBag.Title = "ContentUrl";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(function () {
+			//$(":wijmo-wijdialog").wijdialog("destroy").remove();
+			$("#dialog").wijdialog({ width: 840, height: 640, contentUrl: 'http://www.wijmo.com', autoOpen: true });
+		});
+	</script>
+}
+<h2>
+	ContentUrl</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div>
+		<div id="dialog" title="Wijmo">
+		</div>
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+        {
+	<p>
+		This sample shows a dialog box with a inner iFrame that links to another URL.
+	</p>
+	<div>
+		The <b>contentUrl</b> option sets a URL string that specifies the URL for the iFrame
+		element inside of a wijdialog widget.</div>
+}

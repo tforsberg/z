@@ -1,0 +1,138 @@
+﻿@{
+	ViewBag.Title = "Temperature";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#gauge").wijlineargauge({
+			    width: 50,
+			    height: 400,
+			    orientation: "vertical",
+			    xAxisLocation: 0.02,
+			    xAxisLength: 0.95,
+			    value: 65,
+			    labels: {
+			        style: {
+			            fill: "#1E395B",
+			            "font-size": 10,
+			            "font-weight": "300"
+			        }
+			    },
+			    tickMajor: {
+			        position: "inside",
+			        offset: -12,
+			        factor: 2,
+			        style: {
+			            fill: "#000",
+			            stroke: "none",
+			            opacity: 0.2
+			        }
+			    },
+			    tickMinor: {
+			        position: "inside",
+			        offset: -12,
+			        visible: true,
+			        style: {
+			            fill: "#000",
+			            stroke: "none",
+			            opacity: 0.2
+			        }
+			    },
+			    animation: {
+			        enabled: false
+			    },
+			    pointer: {
+			        visible: true,
+			        shape: "tri",
+			        length: 0.5,
+			        width: 4,
+			        style: {
+			            fill: "#000",
+			            stroke: "#434343",
+			            "stroke-width": 0.5,
+			            opacity: 0.8
+			        }
+			    },
+			    face: {
+			        style: {
+			            fill: "180-#e4e4e4-#c0c0c0",
+			            stroke: "#8d8d8d",
+			            "stroke-width": 0.5
+			        }
+			    },
+			    ranges: [
+                {
+                    startValue: 0,
+                    endValue: 50,
+                    startDistance: 0.75,
+                    endDistance: 0.75,
+                    startWidth: 0.15,
+                    endWidth: 0.15,
+                    style: {
+                        fill: "180-#CC00CC-#AA00AA",
+                        stroke: "none"
+                    }
+                }
+                ]
+			});
+
+            var state = 0;
+            // the jQuery 1.9 remove the old toggle method and add toggle effect.
+
+            $("#btn").button().click(function () {
+            	if (state === 0) {
+            		$("#gauge").wijlineargauge("option", "ranges", [{
+            			startValue: 0,
+            			endValue: 98.6,
+            			startDistance: 0.75,
+            			endDistance: 0.75,
+            			startWidth: 0.15,
+            			endWidth: 0.15,
+            			style: {
+            				fill: "180-#FF0000-#CC0000",
+            				stroke: "none"
+            			}
+            		}]).wijlineargauge("redraw");
+            		state = 1
+            	}
+            	else {
+            		$("#gauge").wijlineargauge("option", "ranges", [{
+            			startValue: 0,
+            			endValue: 10,
+            			startDistance: 0.75,
+            			endDistance: 0.75,
+            			startWidth: 0.15,
+            			endWidth: 0.15,
+            			style: {
+            				fill: "180-#0099FF-#0066CC",
+            				stroke: "none"
+            			}
+            		}]).wijlineargauge("redraw");
+            		state = 0;
+            	}
+
+            })
+		});
+	
+	</script>
+}
+<h2>
+	Temperature</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="gauge" class="ui-corner-all">
+	</div>
+	<button id="btn" type="button">
+		Change</button>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>This sample use <b>range</b>. User can change this option' value to change the range's length.</p>
+}

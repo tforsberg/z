@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Wijmo HTML5 Video Player";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+	    $(function () {
+	        $("#lightbox").wijlightbox({
+                controlsPosition: 'outside',
+				textPosition: 'outside',
+				dialogButtons: 'close|fullSize'
+            });
+	    });
+	</script>
+}
+<h2>Wijmo HTML5 Video Player</h2>
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<a id="lightbox" href="http://cdn.wijmo.com/movies/wijmo.mp4video.mp4" wijvideosrc="http://cdn.wijmo.com/movies/wijmo.theora.ogv" rel="wijlightbox;player=wijvideo" width="600" height="450">
+				<img src="http://cdn.wijmo.com/images/wijmo.png" title="Movie" alt="Played by Wijmo HTML5 Video Player" /></a> 
+				
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+				
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>
+                This sample demonstrates the default wijlightbox behavior.</p>
+}

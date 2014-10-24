@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "QuickTime";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				controlsPosition: 'outside',
+				textPosition: 'outside'
+			});
+		});
+	</script>
+}
+<h2>QuickTime</h2>
+
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<div id="lightbox">
+				<a title="Despicable Me" rel="wijlightbox;player=qt" href="http://trailers.apple.com/movies/universal/despicableme/despicableme-tlr1_r640s.mov?width=640&height=360">
+					<img src="http://cdn.wijmo.com/images/quicktime.png" alt="Despicable Me" /></a>
+			</div>
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>
+C1LightBox supports hosting media that could be played by QuickTime.
+</p>
+
+<p>
+If the URL is the file with following extension, QuickTime Object will be used to play them by default. They are ".dv", ".mov", ".moov", ".movie", ".mp4", ".avi", ".mpg", ".mpeg".
+</p>
+
+<p>
+You can also force the LightBox to use the QuickTime explicitly by setting the <b>Player</b> property to "Qt".
+</p>
+}

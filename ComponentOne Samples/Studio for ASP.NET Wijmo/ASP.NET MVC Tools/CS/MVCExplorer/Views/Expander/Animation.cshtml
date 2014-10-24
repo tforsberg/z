@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "OverView";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#expander").wijexpander();
+
+    		$("#expander2").wijexpander({
+    			animated: "custom1", expanded: false
+    		});
+    		$("#expander3").wijexpander({
+    			animated: "custom2"
+    		});
+    		$("#expander4").wijexpander({
+    			animated: false
+    		});
+    		jQuery.wijmo.wijexpander.animations.custom1 = function (options) {
+    			this.slide(options, {
+    				easing: "easeOutExpo",
+    				duration: 900
+    			});
+    		}
+    		jQuery.wijmo.wijexpander.animations.custom2 = function (options) {
+    			if (options.expand)
+    				options.content.show("puff", options, 300);
+    			else
+    				options.content.hide("explode", options, 300);
+    		}
+    	});
+    </script>
+}
+<h2>OverView</h2>
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <h4>
+                Default expander animation</h4>
+            <div id="expander">
+                <h3>
+                    Header</h3>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus
+                    non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris
+                    sapien, cursus in.
+                </div>
+            </div>
+            <h4>
+                Custom expander animation</h4>
+            <div id="expander2">
+                <div>
+                    Header</div>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus
+                    non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris
+                    sapien, cursus in.
+                </div>
+            </div>
+            <h4>
+                Custom animation using jQuery effects</h4>
+            <div id="expander3">
+                <div>
+                    Header</div>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus
+                    non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris
+                    sapien, cursus in.
+                </div>
+            </div>
+            <h4>
+                Disabled animation</h4>
+            <div id="expander4">
+                <div>
+                    Header</div>
+                <div>
+                    Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus
+                    non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris
+                    sapien, cursus in.
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+
+        }

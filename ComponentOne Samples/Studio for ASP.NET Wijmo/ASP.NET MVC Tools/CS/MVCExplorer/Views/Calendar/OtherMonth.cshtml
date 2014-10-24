@@ -1,0 +1,29 @@
+﻿@{
+	ViewBag.Title = "OtherMonth";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#calendar1").wijcalendar({ showOtherMonthDays: false });
+		});
+	</script>
+}
+<h2>OtherMonth</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+		<div id="calendar1"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+	<!-- Begin options markup -->
+				
+	<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	In this sample, the showOtherMonthDays option is set to false so that the calendar days for the next and previous month are not shown on the c1calendar widget.
+	</p>
+}

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Auto Play";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				showNavButtons: false,
+				autoPlay: true
+			});
+		});
+	</script>
+}
+<h2>Auto Play</h2>
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<div id="lightbox">
+				<a href="http://lorempixum.com/600/400/sports/1" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/1" title="Sports 1" alt="Sports 1" /></a>
+				<a href="http://lorempixum.com/600/400/sports/2" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/2" title="Sports 2" alt="Sports 2" /></a>
+				<a href="http://lorempixum.com/600/400/sports/3" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/3" title="Sports 3" alt="Sports 3" /></a>
+				<a href="http://lorempixum.com/600/400/sports/4" rel="wijlightbox[stock];player=img">
+					<img src="http://lorempixum.com/150/125/sports/4" title="Sports 4" alt="Sports 4" /></a>
+			</div>
+
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>
+				This sample demonstrates how to automatically scroll through the images in a wijlightbox widget by setting the autoPlay option.</p>
+		
+}

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "CalloutFilled";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("[title]").wijtooltip();
+            $("#calloutFilled").change(function () {
+                $("h3 a").wijtooltip("option", "calloutFilled", this.checked);
+            });
+
+        });     
+    </script>
+}
+
+<h2>CalloutFilled</h2>
+
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <h3  class="ui-helper-reset ui-widget-header ui-corner-all" style="padding: 1em;">
+                <a href="#" title="tooltip">Anchor</a>
+            </h3>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <label >
+                    Fill</label>
+                <input type="checkbox" id="calloutFilled" checked="checked" />
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            This sample demonstrates how the <b>calloutFilled</b> option can be used to create a solid box for the callout.
+        }

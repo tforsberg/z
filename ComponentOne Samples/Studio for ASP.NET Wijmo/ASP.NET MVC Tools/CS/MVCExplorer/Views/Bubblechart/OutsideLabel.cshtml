@@ -1,0 +1,77 @@
+﻿@{
+	ViewBag.Title = "OutsideLabel";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#wijbubblechart").wijbubblechart({
+				minimumSize: 3,
+				MaximumSize: 15,
+				axis: {
+					y: {
+						text: "Total Hardware"
+
+					},
+					x: {
+						text: ""
+					}
+				},
+				hint: {
+					content: function () {
+					    return this.data.label + '\n x:' + this.x + ',y:' + this.y + ",y1:" + this.data.y1;
+					}
+				},
+				header: {
+					text: "Hardware Distribution"
+				},
+
+				chartLabel: {
+					position: "outside",
+					compass: $("#dpcompass").val()
+				},
+				seriesList: [{
+					label: "West",
+					legendEntry: true,
+					data: { x: [5, 14, 20, 18, 22], y: [5500, 12200, 60000, 24400, 32000], y1: [3, 12, 33, 10, 42] }
+				}]
+			});
+
+			$("#dpcompass").change(function () {
+				$("#wijbubblechart").wijbubblechart("option", "chartLabel", { compass: $(this).val() });
+			});
+
+		});
+	</script>
+}
+<h2>
+	OutsideLabel</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<h3>
+		Hardware Distribution</h3>
+	<div id="wijbubblechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+		height: 475px;">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<label>
+			Choose Compass</label>
+		<select id="dpcompass">
+			<option>east</option>
+			<option>west</option>
+			<option selected="selected">north</option>
+			<option>south</option>
+		</select>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		This sample use <b>chartLabel</b>'s child option <b>compass</b>.</p>
+	<p>
+		This option can be seted to north, south, east, west.</p>
+}

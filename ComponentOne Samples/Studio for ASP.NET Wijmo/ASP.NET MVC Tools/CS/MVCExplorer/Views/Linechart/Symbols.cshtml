@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Symbols";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijlinechart").wijlinechart({
+                showChartLabels: false,
+                header: {
+                    text: "Twitter trends in October 2010"
+                },
+                hint: {
+                    content: function () {
+                        return this.y;
+                    },
+                    offsetY: -10
+                },
+                seriesList: [
+                    {
+                        label: "#Wijmo",
+                        legendEntry: true,
+                        data: {
+                            x: [new Date("10/21/2010"), new Date("10/22/2010"), new Date("10/23/2010"), new Date("10/24/2010"), new Date("10/25/2010"), new Date("10/26/2010"), new Date("10/27/2010"), new Date("10/28/2010"), new Date("10/29/2010")],
+                            y: [12, 30, 6, 22, 14, 25, 41, 14, 3]
+                        },
+                        markers: {
+                            visible: true,
+                            type: "circle",
+                            symbol: [
+                                {
+                                    index: 6,
+                                    url: "@Url.Content("~/Content/Linechart/images/wijmo.png")",
+                                    width: 30,
+                                    height: 30
+                                },
+                                {
+                                    index: 2,
+                                    url: "@Url.Content("~/Content/Linechart/images/hatemo.png")",
+                                    width: 30,
+                                    height: 30
+                                }
+                            ]
+                        }
+                    }
+                ],
+                seriesStyles: [{
+                    stroke: "#00a6dd", "stroke-width": 5, opacity: 0.8
+                }],
+                seriesHoverStyles: [{
+                    "stroke-width": 8, opacity: 1
+                }]
+            });
+            
+        })
+    </script>
+}
+<h2>
+    Symbols</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijlinechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample shows how to use symbols, such as images, as markers in a line chart.
+    </p>
+}

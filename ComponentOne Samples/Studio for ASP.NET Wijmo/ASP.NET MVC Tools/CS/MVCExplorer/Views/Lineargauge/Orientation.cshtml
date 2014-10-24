@@ -1,0 +1,83 @@
+﻿@{
+	ViewBag.Title = "Orientation";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#gauge").wijlineargauge({
+				value: 50,
+				labels: {
+					style: {
+						fill: "#1E395B",
+						"font-size": "12pt",
+						"font-weight": "800"
+					}
+				},
+				tickMajor: {
+					position: "inside",
+					interval: 20,
+					style: {
+						fill: "#1E395B",
+						stroke: "none"
+					}
+				},
+				tickMinor: {
+					position: "inside",
+					visible: true,
+					interval: 4,
+					style: {
+						fill: "#1E395B",
+						stroke: "none"
+					}
+				},
+				pointer: {
+					shape: "rect",
+					length: 0.5,
+					style: {
+						fill: "#1E395B",
+						stroke: "#1E395B"
+					}
+				},
+				face: {
+					style: {
+						fill: "270-#FFFFFF-#D9E3F0",
+						stroke: "#7BA0CC",
+						"stroke-width": "4"
+					}
+				}
+			});
+
+			$("#orientation").change(function () {
+				var orientation = $(this).val();
+				$("#gauge").wijlineargauge("option", "orientation", orientation);
+			});
+		});
+	
+	</script>
+}
+<h2>
+	Orientation</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="gauge">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<select id="orientation">
+			<option>horizontal</option>
+			<option>vertical</option>
+		</select>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+		This demo shows we can use <b>orientation</b> option to control the gauge showing
+		as horizontal and vertical lineargauge</p>
+	<p>
+		The orientation option can set to horizontal and vertical.</p>
+}

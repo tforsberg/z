@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Position";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var testArray = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"];
+            var myReader = new wijarrayreader([{ name: 'label' }, { name: 'value' }, { name: 'selected', defaultValue: false}]);
+            var datasourceOptions = {
+                reader: myReader,
+                data: testArray
+            };
+            var datasource = new wijdatasource({
+                reader: myReader,
+                data: testArray
+            });
+
+            $("#tags").wijcombobox({
+                data: datasource,
+                width: 150
+            });
+            $('.position').bind('change', changed);
+        });
+
+        function changed() {
+            $("#tags").wijcombobox('option', 'dropDownListPosition', {
+                my: $('#my_horizontal').val() + ' ' + $('#my_vertical').val(),
+                at: $('#at_horizontal').val() + ' ' + $('#at_vertical').val(),
+                offset: $('#offset').val(),
+                collision: $("#collision_horizontal").val() + ' ' + $("#collision_vertical").val()
+            });
+        }
+    </script>
+}
+<h2>
+    Position</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <input id="tags" />
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div class="option-row">
+            <label for="my_horizontal">
+                Dropdown list:</label>
+            <select id="my_horizontal" class="position">
+                <option value="left">left</option>
+                <option value="center">center</option>
+                <option value="right">right</option>
+            </select>
+            <select id="my_vertical" class="position">
+                <option value="top">top</option>
+                <option value="middle">center</option>
+                <option value="bottom">bottom</option>
+            </select>
+        </div>
+        <div class="option-row">
+            <label for="at_horizontal">
+                Aligns to textbox:</label>
+            <select id="at_horizontal" class="position">
+                <option value="left">left</option>
+                <option value="center">center</option>
+                <option value="right">right</option>
+            </select>
+            <select id="at_vertical" class="position">
+                <option value="top">top</option>
+                <option value="middle">center</option>
+                <option value="bottom">bottom</option>
+            </select>
+        </div>
+        <div class="option-row">
+            <label for="offset">
+                With offset:</label>
+            <input onblur="changed()" id="offset" type="text" size="15" />
+        </div>
+        <div class="option-row">
+            <label for="collision_horizontal">
+                Horizontal collision detection:</label>
+            <select id="collision_horizontal">
+                <option value="flip">flip</option>
+                <option value="fit">fit</option>
+                <option value="none">none</option>
+            </select>
+            <label for="collision_vertical">
+                Vertical collision detection:</label>
+            <select id="collision_vertical">
+                <option value="flip">flip</option>
+                <option value="fit">fit</option>
+                <option value="none">none</option>
+            </select>
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample shows how you can change the position of the drop-down list for the
+        wijcombobox by setting the <b>dropDownListPosition</b> option.
+    </p>
+}

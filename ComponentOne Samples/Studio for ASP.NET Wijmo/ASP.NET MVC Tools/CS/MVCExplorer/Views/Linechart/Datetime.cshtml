@@ -1,0 +1,110 @@
+﻿@{
+	ViewBag.Title = "Datetime";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#wijdatelinechart").wijlinechart({
+				showChartLabels: false,
+				hint: {
+					content: function () {
+						return this.y;
+					}
+				},
+				header: {
+					text: "World of Warcraft Players by Region"
+				},
+				seriesList: [
+					{
+						label: "North America",
+						legendEntry: true,
+						data: {
+							x: [new Date("7/1/2005"), new Date("8/1/2005"), new Date("10/1/2005"), new Date("12/1/2005"), new Date("3/1/2006"), new Date("12/1/2006"), new Date("1/1/2008")],
+							y: [1000000, 1000000, 1100000, 1400000, 1700000, 2000000, 2500000]
+						},
+						markers: {
+							visible: true,
+							type: "circle"
+						}
+					},
+					{
+						label: "Europe",
+						legendEntry: true,
+						data: {
+							x: [new Date("7/1/2005"), new Date("8/1/2005"), new Date("10/1/2005"), new Date("12/1/2005"), new Date("3/1/2006"), new Date("7/1/2006"), new Date("12/1/2006"), new Date("1/1/2008")],
+							y: [1000000, 1000000, 900000, 1000000, 1000000, 1000000, 1500000, 2000000]
+						},
+						markers: {
+							visible: true,
+							type: "circle"
+						}
+					},
+					{
+						label: "Asia",
+						legendEntry: true,
+						data: {
+							x: [new Date("7/1/2005"), new Date("8/1/2005"), new Date("10/1/2005"), new Date("3/1/2006"), new Date("9/1/2006"), new Date("12/1/2006"), new Date("1/1/2008")],
+							y: [1500000, 2000000, 2400000, 3700000, 4000000, 4500000, 5500000]
+						},
+						markers: {
+							visible: true,
+							type: "circle"
+						}
+					}
+				],
+				seriesStyles: [{
+					stroke: "#afe500", "stroke-width": 5, opacity: 0.8
+				}, {
+					stroke: "#959595", "stroke-width": 5, opacity: 0.8
+				}, {
+					stroke: "#2d2d2d", "stroke-width": 5, opacity: 0.8
+				}],
+				seriesHoverStyles: [{
+					"stroke-width": 8, opacity: 1
+				}, {
+					"stroke-width": 8, opacity: 1
+				}, {
+					"stroke-width": 8, opacity: 1
+				}]
+			});
+
+			var resizeTimer = null;
+
+			$(window).resize(function () {
+				window.clearTimeout(resizeTimer);
+				resizeTimer = window.setTimeout(function () {
+					var jqLine = $("#wijdatelinechart"),
+						width = jqLine.width(),
+						height = jqLine.height();
+
+					if (!width || !height) {
+						window.clearTimeout(resizeTimer);
+						return;
+					}
+
+					jqLine.wijlinechart("redraw", width, height);
+				}, 250);
+			});
+		})
+	</script>
+}
+<h2>
+	Datetime</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="wijdatelinechart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px; height: 475px">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+		{
+	<p>
+		This sample demonstrates how to add dates with corresponding data to a line chart.
+	</p>
+}

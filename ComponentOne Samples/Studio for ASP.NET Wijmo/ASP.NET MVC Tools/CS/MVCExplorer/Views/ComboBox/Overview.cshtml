@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "Overview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            // put all your jQuery goodness in here.
+            $("#tagsinput").wijcombobox(
+            {
+                showingAnimation: { effect: "blind" },
+                hidingAnimation: { effect: "blind" },
+                data: [
+                        {
+                            label: 'c++',
+                            value: 'c++'
+                        },
+                        {
+                            label: 'java',
+                            value: 'java'
+                        },
+                        {
+                            label: 'php',
+                            value: 'php'
+                        },
+                        {
+                            label: 'coldfusion',
+                            value: 'coldfusion'
+                        }, {
+                            label: 'javascript',
+                            value: 'javascript'
+                        },
+                        {
+                            label: 'asp',
+                            value: 'asp'
+                        },
+                        {
+                            label: 'ruby',
+                            value: 'ruby'
+                        },
+                        {
+                            label: 'python',
+                            value: 'python'
+                        },
+                        {
+                            label: 'c',
+                            value: 'c'
+                        },
+                        {
+                            label: 'scala',
+                            value: 'scala'
+                        },
+                        {
+                            label: 'groovy',
+                            value: 'groovy'
+                        },
+                        {
+                            label: 'haskell',
+                            value: 'haskell'
+                        },
+                        {
+                            label: 'perl',
+                            value: 'perl'
+                        }
+                    ]
+            }
+            );
+            $("#tags").wijcombobox(
+                {
+                    showingAnimation: { effect: "blind" },
+                    hidingAnimation: { effect: "blind" }
+                }
+            );
+            $('#show').click(function () {
+                $("#tags").show();
+            })
+        });
+    </script>
+}
+<h2>
+    Overview</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <label>
+            HTML input element</label>
+        <input id="tagsinput" />
+    </div>
+    <div>
+        <label>
+            HTML select element</label>
+        <select id="tags">
+            <option value="c++">c++</option>
+            <option value="java">java</option>
+            <option value="php">php</option>
+            <option value="coldfusion">coldfusion</option>
+            <option value="javascript">javascript</option>
+            <option value="asp">asp</option>
+            <option value="ruby">ruby</option>
+            <option value="python">python</option>
+            <option value="c">c</option>
+            <option value="scala">scala</option>
+            <option value="groovy">groovy</option>
+            <option value="haskell">haskell</option>
+            <option value="perl">perl</option>
+        </select>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <button value="" id="show">
+            Show Original Select Element</button>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        Display a resizable and editable text box/drop-down list on your HTML page with
+        this easy-to-use combo box widget.
+    </p>
+    <p>
+        This sample shows how to add data to populate the combobox, how to add animation,
+        and how to link comboboxes.</p>
+}

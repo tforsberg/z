@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijgallery").wijgallery({
+                showControlsOnHover: false,
+                thumbsDisplay: 4,
+                thumbsLength: 100,
+                mode: "swf",
+                showCaption: false,
+                showTimer: false
+            });
+
+            //            $("#wijgallery2").wijgallery({
+            //                showControlsOnHover: false,
+            //                thumbsDisplay: 4,
+            //                thumbsLength: 100,
+            //                mode: "iframe",
+            //                showCaption: false,
+            //                showTimer: false
+            //            });
+        });
+    </script>
+    <style type="text/css">
+        #wijgallery, #wijgallery2
+        {
+            width: 750px;
+            height: 500px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <h3>
+            Youtube</h3>
+        <div id="wijgallery" class="">
+            <ul class="">
+                <li class=""><a href="https://www.youtube.com/v/J---aiyznGQ?version=3">
+                    <img src="http://cdn.wijmo.com/images/keyboardcat.png" title="Keyboard Cat" alt="Keyboard Cat" /></a>
+                </li>
+                <li class=""><a href="http://www.youtube.com/v/FzRH3iTQPrk?version=3">
+                    <img src="http://cdn.wijmo.com/images/panda.png" title="Sneezing Panda" alt="Sneezing Panda" /></a>
+                </li>
+                <li class=""><a href="http://www.youtube.com/v/z3U0udLH974?version=3">
+                    <img src="http://cdn.wijmo.com/images/talkingcats.png" title="Talking Cats" alt="Talking Cats" /></a>
+                </li>
+            </ul>
+        </div>
+        <br />
+        @*        <h3>
+            Vimeo</h3>
+        <div id="wijgallery2" class="">
+            <ul class="">
+                <li class=""><a href="http://player.vimeo.com/video/8087882">
+                    <img src="../lightbox/images/small/mindrelic.png" title="Happy Girl" alt="Happy Girl" /></a>
+                </li>
+                <li class=""><a href="http://player.vimeo.com/video/5244737">
+                    <img src="../lightbox/images/small/rochester.png" title="Cave Man" alt="Cave Man" /></a>
+                </li>
+                <li class=""><a href="http://player.vimeo.com/video/5244737">
+                    <img src="../lightbox/images/small/lightning.png" title="Cave Man" alt="Cave Man" /></a>
+                </li>
+                <li class=""><a href="http://player.vimeo.com/video/19746784">
+                    <img src="../lightbox/images/small/iceflow.png" title="Old Man" alt="Old Man" /></a>
+                </li>
+            </ul>
+        </div>*@
+    </div>
+</div>
+<!-- End demo markup -->
+<div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the swf mode of wijgallery, which has a inner flash player
+        in the the frame.
+    </p>
+}

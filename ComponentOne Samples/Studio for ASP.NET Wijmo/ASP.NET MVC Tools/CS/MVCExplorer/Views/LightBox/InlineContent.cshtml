@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Inline-Content";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({textPosition: 'outside', controlsPosition: 'outside'});
+		});
+	</script>
+}
+<h2>Inline-Content</h2>
+
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<div id="lightbox">
+				<a href="#content-1" rel="wijlightbox[stock]">
+					<img src="http://lorempixum.com/200/150/abstract/1" title="Abstract 1" alt="Abstract 1" /></a> 
+				<a href="#content-2" rel="wijlightbox[stock]">
+					<img src="http://lorempixum.com/200/150/abstract/1" title="Abstract 1" alt="Abstract 1" /></a> 
+				<a href="#content-3" rel="wijlightbox[stock]">
+					<img src="http://lorempixum.com/200/150/abstract/1" title="Abstract 1" alt="Abstract 1" /></a> 
+			</div>
+
+			<div id="content-1" class="ui-helper-hidden">
+				<p>This is inline content opened in wijlightbox.</p>
+				<p>Our new web stack is the ultimate kit for web development. We have tools that range from pure client-side development to robust server-side development all powered by our core technology: Wijmo. This studio will help your team take on any style of web development all while using a single framework. We have you covered from WebForms to MVC and from client-side to server-side programming.</p>
+			</div>
+
+
+			<div id="content-2" class="ui-helper-hidden">
+				<p>As we see modern browsers launching new versions, we hear a lot about HTML5. HTML5 is a working spec from the W3C that is defining a revolution in how we develop web apps. When comes to data visualization, we believe that Scalable Vector Graphics (SVG) and HTML5 are the future of the Web. Learn more about how ComponentOne is utilizing HTML5 & SVG!</p>
+			</div>
+
+			<div id="content-3" class="ui-helper-hidden">
+				<p>Greetings earthlings, start building a better web with Wijmo.</p>
+				<p>Wijmo is a complete kit of over 30 UI widgets with everything from interactive menus to rich charts. If you know jQuery, you know Wijmo. Complete with documentation and professional support, every widget is hand-crafted and includes premium themes.</p>
+			</div>
+
+
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+
+			<!-- End options markup -->
+			</div>
+		</div>
+
+@section description
+{
+  <p>
+                This sample demonstrates the default wijlightbox behavior.</p>
+}

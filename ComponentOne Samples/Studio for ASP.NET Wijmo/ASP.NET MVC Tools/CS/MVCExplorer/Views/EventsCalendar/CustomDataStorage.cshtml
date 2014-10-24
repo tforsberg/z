@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "CustomDataStorage";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{	
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#eventscalendar").wijevcal({
+    			visibleCalendars: ["My", "Work"],
+    			dataStorage: {
+    				addEvent: _updateEvent,
+    				updateEvent: _updateEvent,
+    				deleteEvent: function (obj, successCallback, errorCallback) {
+    					window.setTimeout(function () {
+    						var curCalStore = amplify.store("calendarstore_" + obj.calendar);
+    						if (!curCalStore) {
+    							curCalStore = {};
+    						}
+    						if (curCalStore[obj.id]) {
+    							delete curCalStore[obj.id];
+    						}
+    						amplify.store("calendarstore_" + obj.calendar, curCalStore);
+    						successCallback()
+    					}, 400); //simulate server delay
+    					//errorCallback("Unable to delete event");
+    				},
+    				loadEvents: function (visibleCalendars,
+											successCallback, errorCallback) {
+
+    					var i, j, events = [];
+    					window.setTimeout(function () {
+    						for (i = 0; i < visibleCalendars.length; i++) {
+
+    							var curCalStore = amplify.store("calendarstore_" + visibleCalendars[i]);
+    							if (!curCalStore) {
+    								curCalStore = {};
+    								amplify.store("calendarstore_" + visibleCalendars[i], curCalStore);
+    							}
+    							for (j in curCalStore) {
+    								events.push(curCalStore[j]);
+    							}
+    						}
+    						successCallback(events);
+    					}, 500);
+    					//errorCallback("unable to load events");
+    				},
+    				addCalendar: _updateCalendar,
+    				updateCalendar: _updateCalendar,
+    				deleteCalendar: function (obj, successCallback, errorCallback) {
+    					successCallback();
+    					//errorCallback("Unable to delete calendar");
+    				},
+    				loadCalendars: function (successCallback, errorCallback) {
+    					var calendars = [{ name: "My", id: "My", color: "red" },
+									 { name: "Work", id: "Work", color: "blue"}];
+    					successCallback(calendars);
+    				}
+    			}
+    		});
+
+
+
+    	});
+
+    	function _updateEvent(obj, successCallback, errorCallback) {
+    		window.setTimeout(function () {
+    			var curCalStore = amplify.store("calendarstore_" + obj.calendar);
+    			if (!curCalStore) {
+    				curCalStore = {};
+    			}
+    			curCalStore[obj.id] = obj;
+    			amplify.store("calendarstore_" + obj.calendar, curCalStore);
+    			successCallback()
+    		}, 400); //simulate server delay
+    		//errorCallback("Unable to save event");
+    	}
+
+    	function _updateCalendar(obj, successCallback, errorCallback) {
+    		successCallback();
+    		//errorCallback("Unable to save calendar");
+    	}
+	</script>
+    <style type="text/css">
+        #eventscalendar
+        {
+            width: 750px;
+        }
+    </style>
+}
+<h2>
+	Custom data storage.</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="eventscalendar"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+			<p>
+				This sample demonstrates how to implement custom data storage for the events calendar.
+			</p>
+			<p>The sample uses the <b>amplify.store</b> library in order to implement local data storage.</p>
+			<p>Options used in the sample include the following:</p>
+			<ul>
+			<li><strong>dataStorage</strong> - use this option in order to implement the custom data storage layer.</li>
+			<li><strong>visibleCalendars</strong> - array of the calendar names that need to be shown.</li>			
+			</ul>
+
+			<p>
+				Note, you can use <b>dataStorage</b> methods in order to call server side web service, as well.
+			</p>
+				If you don't want to implement some data storage method, you can assign this method to null and the events calendar will use
+				built-in implementation for this function, e.g.:
+				<pre>
+    	$(document).ready(function () {
+    		$("#eventscalendar").wijevcal({ 
+			visibleCalendars: ["My", "Work"],
+			dataStorage: {
+    			saveEvent: function (obj, successCallback, errorCallback) {
+    				// implement your code here
+    			},
+    			deleteEvent: function (obj, successCallback, errorCallback) {
+    				// implement your code here
+    			},
+    			loadEvents: function (visibleCalendars,
+											successCallback, errorCallback) {
+					// implement your code here
+    			},
+    			saveCalendar: null, // use built-in saveCalendar code
+    			deleteCalendar: null, // use built-in deleteCalendar code
+    			loadCalendars: null // use built-in loadCalendars code
+    		}
+    		});
+    	});				
+				</pre>
+}
+
+

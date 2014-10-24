@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Animation";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            // put all your jQuery goodness in here.
+            var testArray = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby", "python", "c", "scala", "groovy", "haskell", "perl"];
+            var myReader = new wijarrayreader([{
+                name: 'label'
+            }, {
+                name: 'value'
+            }, {
+                name: 'selected',
+                defaultValue: false
+            }]);
+            var datasourceOptions = {
+                reader: myReader,
+                data: testArray
+            };
+            var datasource = new wijdatasource({
+                reader: myReader,
+                data: testArray
+            });
+            $("#tags").wijcombobox({
+                data: datasource,
+                width: 150
+            });
+        });
+
+        function changeProperties() {
+            var showingSpeed, hidingSpeed, expandingSpeed, collapsingSpeed;
+            showingSpeed = parseNumberFromString($('#showingSpeed').val());
+            hidingSpeed = parseNumberFromString($('#hidingSpeed').val());
+            var showingAnimation = {
+                effect: $('#showingEffectTypes').get(0).value,
+                options: null,
+                speed: showingSpeed
+            };
+            var hidingAnimation = {
+                effect: $('#hidingEffectTypes').get(0).value,
+                options: null,
+                speed: hidingSpeed
+            };
+            var wij = $('#tags');
+            wij.wijcombobox('option', 'showingAnimation', showingAnimation);
+            wij.wijcombobox('option', 'hidingAnimation', hidingAnimation);
+        }
+
+        function parseNumberFromString(st) {
+            var i = 1000;
+            try {
+                i = parseInt(st);
+            }
+            catch (e) {
+                alert(e);
+            }
+            return i;
+        }
+    </script>
+}
+<h2>
+    Animation</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <input id="tags" />
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div class="option-row">
+            <label for="showingSpeed">
+                Showing Speed
+            </label>
+            <input id="showingSpeed" type="text" value="1000" onblur="changeProperties()" />
+        </div>
+        <div class="option-row">
+            <label for="showingEffectTypes">
+                Showing Effect
+            </label>
+            <select id="showingEffectTypes" name="effects" onchange="changeProperties()">
+                <option value="none">none</option>
+                <option value="blind">Blind</option>
+                <option value="bounce">Bounce</option>
+                <option value="clip">Clip</option>
+                <option value="drop">Drop</option>
+                <option value="explode">Explode</option>
+                <option value="fade">Fade</option>
+                <option value="fold">Fold</option>
+                <option value="highlight">Highlight</option>
+                <option value="puff">Puff</option>
+                <option value="pulsate">Pulsate</option>
+                <option value="scale">Scale</option>
+                <option value="shake">Shake</option>
+                <option value="size">Size</option>
+                <option value="slide">Slide</option>
+            </select>
+        </div>
+        <div class="option-row">
+            <label for="hidingSpeed">
+                Hiding Speed
+            </label>
+            <input id="hidingSpeed" type="text" value="1000" onblur="changeProperties()" />
+        </div>
+        <div class="option-row">
+            <label for="hidingEffectTypes">
+                Hiding Effect
+            </label>
+            <select id="hidingEffectTypes" name="effects" onchange="changeProperties()">
+                <option value="none">none</option>
+                <option value="blind">Blind</option>
+                <option value="bounce">Bounce</option>
+                <option value="clip">Clip</option>
+                <option value="drop">Drop</option>
+                <option value="explode">Explode</option>
+                <option value="fade">Fade</option>
+                <option value="fold">Fold</option>
+                <option value="highlight">Highlight</option>
+                <option value="puff">Puff</option>
+                <option value="pulsate">Pulsate</option>
+                <option value="scale">Scale</option>
+                <option value="shake">Shake</option>
+                <option value="size">Size</option>
+                <option value="slide">Slide</option>
+            </select>
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample demonstrates the different animation effects and how you can manipulate
+        their speed.
+    </p>
+}

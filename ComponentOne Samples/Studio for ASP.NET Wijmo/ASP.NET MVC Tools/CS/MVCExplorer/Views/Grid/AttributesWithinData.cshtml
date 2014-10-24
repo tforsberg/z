@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Attributes within data";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            // dom
+            $("#demo-dom").wijgrid({ readAttributesFromData: true });
+
+            // array
+            $("#demo-array").wijgrid({
+                readAttributesFromData: true,
+                data: [
+                   [["00", { style: "background-color: #FFA500"}], ["01", { style: "background-color: #9ACD32"}]],
+                   [["10", { style: "background-color: #4169E1"}], ["11", { style: "background-color: #9370D8"}]]
+                ],
+                columns: [
+                  { headerText: "Column0" }, { headerText: "Column1" }
+                ]
+            });
+
+            // hash
+            $("#demo-hash").wijgrid({
+                readAttributesFromData: true,
+                data: [
+                  { Column0: ["00", { style: "background-color: #FFA500"}], Column1: ["01", { style: "background-color: #9ACD32"}] },
+                  { Column0: ["10", { style: "background-color: #4169E1"}], Column1: ["11", { style: "background-color: #9370D8"}] }
+                ]
+            });
+        });
+    </script>
+}
+
+<h2>Attributes Within Data</h2>
+
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <p>DOM table:</p>
+    <table id="demo-dom">
+        <thead>
+        <tr>
+            <th>Column0</th><th>Column1</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="background-color: #FFA500">00</td><td style="background-color: #9ACD32">01</td>
+        </tr>
+        <tr>
+            <td style="background-color: #4169E1">10</td><td style="background-color: #9370D8">11</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Array:</p>
+    <table id="demo-array">
+    </table>
+
+    <p>Hash:</p>
+    <table id="demo-hash">
+    </table>
+    <!-- End demo markup -->
+    <div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+    </div>
+</div>
+
+@section description{
+    <p>
+        This sample shows how to pass a list of DOM attributes within data into wijgrid using the readAttributesFromData option.
+    </p>
+}
+

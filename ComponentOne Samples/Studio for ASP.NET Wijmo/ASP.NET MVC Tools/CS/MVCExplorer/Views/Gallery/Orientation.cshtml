@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "Orientation";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijgallery").wijgallery({
+                thumbnailOrientation: "vertical",
+                thumbnailDirection:"before",
+                thumbsDisplay: 3,
+                thumbsLength: 150,               
+                showCounter: false,
+                showTimer: false,
+            });
+
+            $("#wijgallery1").wijgallery({
+                thumbnailOrientation: "vertical",
+                thumbsDisplay: 3,
+                showCounter: false,
+                thumbsLength: 150,   
+                showTimer: false
+            });
+
+            $("#wijgallery3").wijgallery({
+                thumbnailDirection:"before",
+                showCounter: false,
+                showTimer: false
+            });
+        });
+    </script>
+    <style type="text/css">
+        .wijmo-wijcarousel-text span
+        {
+            padding: 5px;
+        }
+        
+        #wijgallery, #wijgallery1
+        {
+            width: 750px;
+            height: 240px;
+        }
+        
+        #wijgallery3
+        {
+            width: 750px;
+            height: 411px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <h3>
+            Orientation is "vertical", at left side</h3>
+        <div id="wijgallery" class="">
+            <ul class="">
+                <li class=""><a href="http://lorempixum.com/750/300/sports/1">
+                    <img alt="1" src="http://lorempixum.com/200/150/sports/1" title="Word Caption 1" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/2">
+                    <img alt="2" src="http://lorempixum.com/200/150/sports/2" title="Word Caption 2" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/3">
+                    <img alt="3" src="http://lorempixum.com/200/150/sports/3" title="Word Caption 3" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/4">
+                    <img alt="4" src="http://lorempixum.com/200/150/sports/4" title="Word Caption 4" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/5">
+                    <img alt="5" src="http://lorempixum.com/200/150/sports/5" title="Word Caption 5" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/6">
+                    <img alt="6" src="http://lorempixum.com/200/150/sports/6" title="Word Caption 6" />
+                </a></li>
+            </ul>
+        </div>
+        <br />
+        <h3>
+            Orientation is "vertical", at right side</h3>
+        <br />
+        <div id="wijgallery1" class="">
+            <ul class="">
+                <li class=""><a href="http://lorempixum.com/750/300/city/1">
+                    <img alt="1" src="http://lorempixum.com/200/150/city/1" title="Word Caption 1" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/city/2">
+                    <img alt="2" src="http://lorempixum.com/200/150/city/2" title="Word Caption 2" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/city/3">
+                    <img alt="3" src="http://lorempixum.com/200/150/city/3" title="Word Caption 3" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/city/4">
+                    <img alt="4" src="http://lorempixum.com/200/150/city/4" title="Word Caption 4" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/city/5">
+                    <img alt="5" src="http://lorempixum.com/200/150/city/5" title="Word Caption 5" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/city/6">
+                    <img alt="6" src="http://lorempixum.com/200/150/city/6" title="Word Caption 6" />
+                </a></li>
+            </ul>
+        </div>
+        <br />
+        <h3>
+            Orientation is "horizontal", at top</h3>
+        <br />
+        <div id="wijgallery3" class="">
+            <ul class="">
+                <li class=""><a href="http://lorempixum.com/750/300/sports/1">
+                    <img alt="1" src="http://lorempixum.com/200/150/sports/1" title="Word Caption 1" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/2">
+                    <img alt="2" src="http://lorempixum.com/200/150/sports/2" title="Word Caption 2" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/3">
+                    <img alt="3" src="http://lorempixum.com/200/150/sports/3" title="Word Caption 3" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/4">
+                    <img alt="4" src="http://lorempixum.com/200/150/sports/4" title="Word Caption 4" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/5">
+                    <img alt="5" src="http://lorempixum.com/200/150/sports/5" title="Word Caption 5" />
+                </a></li>
+                <li class=""><a href="http://lorempixum.com/750/300/sports/6">
+                    <img alt="6" src="http://lorempixum.com/200/150/sports/6" title="Word Caption 6" />
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the orientation and position of the thumbnails of wijgallery.
+    </p>
+}

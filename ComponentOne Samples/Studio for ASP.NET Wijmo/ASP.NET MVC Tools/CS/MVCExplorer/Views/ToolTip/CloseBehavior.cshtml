@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "CloseBehavior";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#tooltip>a").wijtooltip();
+            $("#closeBehavior").change(function () {
+                $("#tooltip>a").wijtooltip("option", "closeBehavior", this.value);
+            });
+
+        });
+       
+        
+    </script>
+}
+
+<h2>CloseBehavior</h2>
+
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <h3 id="tooltip"  class="ui-helper-reset ui-widget-header ui-corner-all" style="padding: 1em;">
+                <a href="#" title="tooltip">Anchor</a>
+            </h3>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <label>
+                    Close Behavior</label>
+                <select id="closeBehavior">
+                    <option value="auto">auto</option>
+                    <option value="none">none</option>
+                    <option value="sticky">sticky</option>
+                </select>
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+            <p>This sample demonstrates the different <b>closeBehavior</b> behaviors.</p>
+<p>Choose "auto", "none", or "sticky" and hover over the word <b>Anchor</b> to see the tooltip. Then move the mouse off of the word and notice how the tooltip closes.</p>
+        }

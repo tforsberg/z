@@ -1,0 +1,690 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+html, body
+{
+    background: #e9e9e9 url(images/texture.jpg) repeat top left;
+}
+body
+{
+    font-size: .75em;
+    font-family: "Segoe UI" , Segoe, Tahoma, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #5c87b2;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header
+{
+    background: #252525;
+    position: relative;
+    margin-bottom: 0px;
+    color: #fff;
+    padding: 0;
+}
+
+#header h1
+{
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    color: #0099cc;
+    border: none;
+}
+
+#main
+{
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    border-top: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+#innerWrapper
+{
+        width: 1280px;
+        margin: 0 auto;
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------
+*/
+body .ui-widget
+{
+    font-family: "Segoe UI" , Segoe, Tahoma, Geneva, sans-serif;
+}
+body #menucontainer .wijmo-wijmenu
+{
+    clear: left;
+    border-bottom: none;
+    border-radius: 2px 2px 0 0;
+    font-size: 1.3em;
+}
+#menucontainer
+{
+    min-height: 43px;
+}
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+#quote_summary_data table
+{
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+#quote_summary_data table td
+{
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+
+#quote_summary_data table th
+{
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color: Red;
+}
+
+#menucontainer
+{
+}
+
+div#title
+{
+    display: block;
+    text-align: left;
+    padding: 15px 10px 5px 10px;
+}
+
+#logo
+{
+    background: transparent url(images/stock_logo.png) no-repeat;
+    width: 726px;
+    height: 70px;
+    text-indent: -999px;
+}
+
+#logindisplay
+{
+    display: block;
+    text-align: right;
+    position: absolute;
+    right: 15px;
+    top: 95px;
+    z-index: 10;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, .editor-label, .display-field, .editor-field
+{
+    margin: 0.5em 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+#stockHistory
+{
+}
+body #menucontainer .wijmo-wijmenu
+{
+    background: #252525 url(images/menu_bg.png) repeat-x top;
+    border: none;
+    border-top: solid 1px #111111;
+    border-bottom: solid 1px #111111;
+    border-radius: 0;
+    padding: 5px 20px;
+}
+
+body #menucontainer .wijmo-wijmenu .wijmo-wijmenu-link, #logindisplay .ui-button
+{
+    background: #252525 url(images/menu_bg.png) repeat-x top;
+    border: solid 1px #3f3f3f;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 3px 2px rgba(0,0,0,0.25);
+    border-radius: 15px;
+    padding: 5px 15px 7px 15px;
+    margin: 0 5px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    font-weight: normal;
+}
+
+body #menucontainer .wijmo-wijmenu .wijmo-wijmenu-link:hover, #logindisplay .ui-button:hover
+{
+    background: #07668e url(images/menu_bg_hover.png) repeat-x top;
+}
+
+#logindisplay .ui-button-text
+{
+    padding: 0;
+}
+#dateRangeContainer
+{
+    width: 100%;
+    margin: 30px auto;
+}
+
+#dateRange
+{
+    height: 120px;
+    margin: -140px 0 0 5px;
+}
+
+body .ui-slider
+{
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+body .ui-slider-range
+{
+    opacity: 0.5;
+    filter: alpha(opacity = 50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    zoom: 1;
+}
+
+#stockHistory
+{
+    width: 50%;
+    float: left;
+}
+
+.quote_summary
+{
+}
+.quote_summary
+{
+    float: left;
+    margin-bottom: 10px;
+    padding: 0 0 0 5px;
+    text-align: left;
+}
+
+.quote_summary .hd
+{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #000000;
+    font: 93%/138.5% arial;
+    padding: 0;
+}
+
+.quote_summary_rt_top
+{
+    clear: left;
+}
+
+#quote_summary_data table
+{
+    width: 50%;
+}
+
+#quote_summary_data #table1, .quote_summary .sup1
+{
+    float: left;
+    *width: 50.5%;
+
+}
+
+#quote_summary_data th
+{
+    background: #f7f9fb;
+    border: solid 1px #fff;
+    color: #607491;
+}
+
+#quote_summary_data #table2, .quote_summary .sup2
+{
+    float: right;
+    *width: 49.5%;
+
+}
+
+#quote_summary_data table td
+{
+    background: #fbfcfd;
+    border: solid 1px #fff;
+    padding: 5px;
+    text-align: right;
+    color: #333;
+}
+
+#quote_summary_data
+{
+    background: transparent url(images/table_bg.png) no-repeat center center;
+    padding: 20px 0;
+}
+
+#quote_summary_data .alt td
+{
+    background: #f7f9fb;
+}
+
+#quote_summary_data .alt th
+{
+    background: #eff2f8;
+}
+
+.quote_summary .hd h2
+{
+    display: inline;
+    font-size: 138.5%;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.quote_summary_rt_top .time
+{
+    font-size: 85%;
+}
+.quote_summary_rt_top p
+{
+    line-height: 1em;
+    margin-bottom: 0;
+}
+
+#quote_summary_date_range
+{
+    float: right;
+    margin: 3px 0;
+}
+
+#calendar1
+{
+    font-size: 0.8em;
+    float: left;
+}
+
+#dateRangeDialog
+{
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #E3E3E3;
+    z-index: 100;
+    left: 0;
+}
+
+.dateinput h4
+{
+}
+
+.dateinput
+{
+}
+
+.dateinput, .dateinput div, .dateinput span
+{
+    float: left;
+}
+
+.dateinput .wijmo-wijinput
+{
+}
+
+.dateinput button
+{
+}
+.green
+{
+    color: Green;
+    text-shadow: 0 0 15px #00ff00;
+    -moz-text-shadow: 0 0 15px #00ff00;
+    -webkit-text-shadow: 0 0 15px #00ff00;
+}
+
+.red
+{
+    color: Red;
+    text-shadow: 0 0 15px #ff0000;
+    -moz-text-shadow: 0 0 15px #ff0000;
+    -webkit-text-shadow: 0 0 15px #ff0000;
+}
+
+#showDateRange
+{
+    float: left;
+    border: solid 1px #A8A8A8;
+    padding: 5px;
+    border-right: none;
+    box-shadow: 0 2px 2px rgba(143,143,143,0.5) inset;
+    font-size: 10px;
+}
+
+.cell-right
+{
+    width: 50%;
+    text-align: left;
+    float: right;
+    margin: 5px 0;
+}
+.clear
+{
+    clear: both;
+}
+
+.cell-left
+{
+    width: 40%;
+    float: left;
+    margin: 5px 0;
+}
+
+#dateRangeDialog .ui-datepicker-group-last, #dateRangeDialog .ui-datepicker-group-first
+{
+    border: 0;
+}
+
+#autocomplete
+{
+    width: 300px;
+    padding: 7px;
+    margin: 0;
+    height: 14px;
+}
+
+#addStock
+{
+    margin: 0 0 5px 0;
+}
+
+#addStockContainer
+{
+    background: #f4f4f4;
+    border-top: 5px solid #eeeeee;
+    margin-bottom: -30px;
+    padding: 20px 0;
+}
+#addStockInner
+{
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#stockHistoryContainer
+{
+    background: #fbfbfb;
+    border: solid 5px #f7f6f6;
+    width: 98%;
+    margin: 20px auto;
+    padding: 1em 1em 0;
+    border-radius: 8px;
+    position: relative;
+}
+#quoteSummaryWrapper
+{
+    float: left;
+    width: 48%;
+    margin-left: 20px;
+}
+#corpName
+{
+    float: left;
+    margin: 3px 5px 3px 0;
+    padding: 0;
+}
+.highlight
+{
+    float: left;
+    background: #d1e4ef;
+    border-bottom: solid 2px #a4cee6;
+    padding: 3px 5px;
+    color: #60aedb;
+    border-radius: 8px;
+    margin: 4px 5px;
+}
+#showDateDialog
+{
+    width: 24px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#showDateDialog .ui-button-text
+{
+    padding: 3px 0;
+    height: 16px;
+}
+#summaryLastTrade
+{
+    font-weight: bold;
+}
+#stockHistoryCallout
+{
+    background: url("images/callout.png") no-repeat scroll 0 0 transparent;
+    bottom: -39px;
+    height: 39px;
+    left: 71px;
+    position: absolute;
+    width: 54px;
+}
+
+.wijmo-wijcombobox
+{
+    margin-right: 3px;
+    float: left;
+}
+
+#loadingOverlay 
+{
+    background:#fff;
+    position:absolute;
+    z-index:998;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+ }
+
+.progress-detail
+{
+    position:absolute;
+    z-index:999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:fafafa;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+
+.progress-label
+{
+    font-size:2em;
+    font-style:italic;
+    position: absolute;
+    left: 42%;
+    top: 46%;
+    color: #dcdcdc;
+    text-shadow: 1px 1px 0 #f0f0f0;
+}
+
+div.wijmo-wijprogressbar-east
+{
+    left: 42%;
+    top: 45%;
+    overflow: hidden;
+}
+

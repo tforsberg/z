@@ -1,0 +1,44 @@
+﻿@{
+	ViewBag.Title = "Reading Ime String";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputtext({
+		        imeMode: "active",
+		        readingImeStringOutput: function (sender, data) {
+		            var output = $("#textbox2");
+		            output.wijinputtext("option", "text", output.val() + data.readingString);
+		        }
+		    });
+
+		    $("#textbox2").wijinputtext();
+		});
+	</script>
+}
+<h2>Reading Ime String</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+             <span>Input the japanese character, then the reading ime string will output to the second input.</span>
+            <br/>
+
+            <input type="text" id="textbox1" />
+           
+            <br/>
+            
+            <input type="text" id="textbox2" readonly="true"/>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                This sample illustrates how you can get the reading Ime string using the <b>readingImeStringOutput</b> event to output the reading ime string.</p>
+}

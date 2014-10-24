@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Simple";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijbarchart").wijbarchart({
+                axis: {
+                    y: {
+                        text: "Total Hardware"
+                    },
+                    x: {
+                        text: ""
+                    }
+                },
+                hint: {
+                    content: function () {
+                        return this.data.label + '\n ' + this.y + '';
+                    }
+                },
+                header: {
+                    text: "Console Wars"
+                },
+                seriesList: [{
+                    label: "US",
+                    legendEntry: true,
+                    data: { x: ['PS3', 'XBOX360', 'Wii'], y: [12.35, 21.50, 30.56] }
+                }],
+                seriesStyles: [{
+                    fill: "#8ede43", stroke: "#7fc73c", opacity: 0.8
+                }],
+                seriesHoverStyles: [{
+                    "stroke-width": "1.5", opacity: 1
+                }]
+            });
+        });
+    </script>
+}
+<h2>
+    Simple</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijbarchart" class="ui-widget ui-widget-content ui-corner-all" style="width: 756px;
+        height: 475px">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+{
+    <p>
+        This sample illustrates a simple bar chart that compares the sales between the Nintendo
+        Wii, the Xbox 360, and the Playstation 3.
+    </p>
+}

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "MVC Explorer";
+}
+@section HeaderButtons
+{    <a runat="server" href="@Url.Action("Widgets", "Home")" class="button">
+        <img runat="server" src=@Url.Content("~/explore/css/images/dots.png")><span></span></a>
+}
+@section HeaderTitle
+ {
+Welcome
+}
+<section>
+        <article class="ui-helper-clearfix">
+            <aside>
+                <div class="padder">
+                    <h3>
+                        The Ultimate UI Tools for WebForms</h3>
+                    <p>
+                        Over 40 styled, supercharged, and easy-to-use controls built on Web standards including AJAX, CSS, HTML5, and jQuery. All of which are available as ASP.NET Controls, Extenders and MVC tools. Shift your site into overdrive with ComponentOne Studio® for ASP.NET Wijmo.</p>
+                </div>
+            </aside>
+            <div class="main-content">
+                <div class="padder">
+                    <h3 class="page-title">
+                        Favorites</h3>
+                        <ul class="favorite-widgets widget-icons ui-helper-clearfix">
+                        @{
+                            MVCExplorer.WidgetData data = new MVCExplorer.WidgetData();
+                            IEnumerable<System.Xml.Linq.XElement> res = data.GetAllWidgetData().Where(p => p.Attribute("isFavorite") != null && p.Attribute("isFavorite").Value == "true");
+                            string widgetName, icon, title, href;                
+                            foreach (var obj in res)
+                            {
+                                widgetName = obj.Attribute("name").Value;
+                                href = "C1" + widgetName + "/Overview.aspx";
+                                title = obj.Attribute("text") != null ? obj.Attribute("text").Value : widgetName;
+                                icon = "~/explore/css/images/icons/widget/" + widgetName + ".png";
+                                 <li><a runat="server" href="@Url.Action("OverView", widgetName)">
+                                  <img runat="server" src="@Url.Content(icon)" alt="@title" />@title                                 
+                                 </a>                           
+                                 </li> 
+                            }
+                         }
+                          <li class="explore-all"><a runat="server" href="@Url.Action("Widgets", "Home")">
+                                <img runat="server" src=@Url.Content("~/explore/css/images/dots94x94.png") />
+                                Explore All</a></li>
+                        </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+@section description
+{
+}

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "OverView";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#expanderContentUrl1").wijexpander({ contentUrl: "http://www.google.com/", expanded: true });
+    	});
+    </script>
+}
+<h2>External Content</h2>
+ <div class="main demo">
+            <!-- Begin demo markup -->
+            <div id="expanderContentUrl1">
+                <h3>
+                    www.google.com (click to collapse/expand)</h3>
+                <div style="height:400px;overflow:hidden;">
+                </div>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+
+        @section description
+        {
+
+        }

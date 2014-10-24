@@ -1,0 +1,55 @@
+﻿@{
+	ViewBag.Title = "MultipleViews";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#calendar1").wijcalendar({ monthRows: 2, monthCols: 3 });
+
+			$('#rows').bind("change keyup", function () {
+				$("#calendar1").wijcalendar({ monthRows: $(this).val() * 1 });
+			});
+
+			$('#cols').bind("change keyup", function () {
+				$("#calendar1").wijcalendar({ monthCols: $(this).val() * 1 });
+			});
+		});
+	</script>
+}
+<h2>MultipleViews</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="calendar1">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<div class="option-row">
+			<label for="rows">Rows</label>
+			<select name="rows" id="rows">
+				<option value="1">1</option>
+				<option value="2" selected="selected">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+		</div>
+		<div class="option-row">
+			<label for="cols">Columns</label>
+			<select name="cols" id="cols">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3" selected="selected">3</option>
+				<option value="4">4</option>
+			</select>
+		</div>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	This sample illustrates the wijcalendar widget's ability to show multiple months at one time. You can control how many months are displayed in each row and column by setting the monthRows and monthCols options. 
+	</p>
+}

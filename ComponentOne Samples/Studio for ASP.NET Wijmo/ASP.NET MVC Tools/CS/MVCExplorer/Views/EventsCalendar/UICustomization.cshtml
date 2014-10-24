@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "UICustomization";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+<h2>UICustomization</h2>
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+			$("#eventscalendar").wijevcal(
+						{
+							titleFormat: "Custom title, start date: {0:d}",
+							statusBarVisible: false,
+							rightPaneVisible: false
+						}
+					);
+		});
+	</script>
+        <style type="text/css">
+        #eventscalendar
+        {
+            width: 750px;
+        }
+    </style>
+}
+<h2>
+	UI customization</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="eventscalendar"></div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+				<label>Options</label>
+				<p>
+					<span>
+						<input type="checkbox" id="option_headerBarVisible" checked="checked"
+							title="Indicates whether the header bar will be visible." />
+						<label for="option_headerBarVisible">Show header bar</label>
+					</span>
+					<span>
+						<input type="checkbox" id="option_navigationBarVisible" checked="checked"
+							title="Indicates whether the title bar will be visible." />
+						<label for="option_navigationBarVisible">Show navigation bar</label>
+					</span>
+					<span>
+						<input type="checkbox" id="option_statusBarVisible" 
+							title="Indicates whether the status bar will be visible." />
+						<label for="option_statusBarVisible">Show status bar</label>
+					</span>
+					<span>
+						<input type="checkbox" id="option_rightPaneVisible" 
+							title="Indicates whether the right pane will be visible." />
+						<label for="option_rightPaneVisible">Show right pane</label>
+					</span>		
+					
+					<script language="javascript" type="text/javascript">
+						$(document).ready(function () {
+
+							$("#option_headerBarVisible").change(function () {
+								$("#eventscalendar").wijevcal("option",
+										"headerBarVisible", $("#option_headerBarVisible")[0].checked);
+							});
+							$("#option_navigationBarVisible").change(function () {
+								$("#eventscalendar").wijevcal("option",
+										"navigationBarVisible", $("#option_navigationBarVisible")[0].checked);
+							});
+							$("#option_statusBarVisible").change(function () {
+								$("#eventscalendar").wijevcal("option",
+										"statusBarVisible", $("#option_statusBarVisible")[0].checked);
+							});
+							$("#option_rightPaneVisible").change(function () {
+								$("#eventscalendar").wijevcal("option",
+										"rightPaneVisible", $("#option_rightPaneVisible")[0].checked);
+							});
+
+
+
+						});
+					</script>
+					
+				</p>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+			<p>
+				This sample demonstrates how to customize the events calendar UI.
+			</p>
+			<p>&nbsp;</p>
+			<p>Options used in the sample:</p>
+			<ul>
+			<li><strong>titleFormat</strong> - the title text format that will be shown in the header bar</li>
+			<li><strong>headerBarVisible</strong> - indicates whether the header bar will be visible</li>
+			<li><strong>navigationBarVisible</strong> - indicates whether the bottom navigation bar will be visible.</li>			
+			<li><strong>statusBarVisible</strong> - indicates whether the status bar will be visible</li>			
+			<li><strong>rightPaneVisible</strong> - indicates whether the right pane will be visible. 
+			By default the right pane are empty. You can use this pane in order to further customize the UI.</li>				
+			</ul>
+}

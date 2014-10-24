@@ -1,0 +1,51 @@
+﻿@{
+	ViewBag.Title = "Selection";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#calendar1").wijcalendar({
+		        showWeekDays: true,
+		        showWeekNumbers: true
+		    });
+
+		    $.each(["day", "days", "weekDay", "weekNumber", "month"], function (i, name) {
+		        $("#" + name).attr("checked", !!$("#calendar1").wijcalendar("option", "selectionMode")[name]);
+		    });
+
+		    $("input[type=checkbox]").change(function () {
+		        var chk = $(this);
+		        var selMode = $("#calendar1").wijcalendar("option", "selectionMode");
+		        selMode[chk.val()] = chk[0].checked;
+		        $("#calendar1").wijcalendar("option", "selectionMode", selMode);
+		    });
+		});
+	</script>
+}
+<h2>Selection</h2>
+<div class="main demo">
+	<!-- Begin demo markup -->
+	<div id="calendar1">
+	</div>
+	<!-- End demo markup -->
+	<div class="demo-options">
+		<!-- Begin options markup -->
+		<div class="option-row">
+			<input type="checkbox" name="selectionmode" id="day" value="day" />Day
+			<input type="checkbox" name="selectionmode" id="days" value="days" />Days
+			<input type="checkbox" name="selectionmode" id="weekDay" value="weekDay" />Week Day
+			<input type="checkbox" name="selectionmode" id="weekNumber" value="weekNumber" />Week
+			Number
+			<input type="checkbox" name="selectionmode" id="month" value="month" />Month
+		</div>
+		<!-- End options markup -->
+	</div>
+</div>
+@section description
+{
+	<p>
+	The wijcalendar widget can have its dates selected in a number of ways. This sample will show you how the day, days, weekday, week number, and month settings work. To see a specific selection mode, just select the check box. 
+	</p>
+}

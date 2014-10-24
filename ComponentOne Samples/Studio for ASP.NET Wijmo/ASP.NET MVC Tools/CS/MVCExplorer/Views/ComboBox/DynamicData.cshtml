@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "DynamicData";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#tags").wijcombobox({
+                data: [
+                        {
+                            label: 'c++',
+                            value: 'c++'
+                        },
+                        {
+                            label: 'java',
+                            value: 'java'
+                        },
+                        {
+                            label: 'php',
+                            value: 'php'
+                        },
+                        {
+                            label: 'coldfusion',
+                            value: 'coldfusion'
+                        }, {
+                            label: 'javascript',
+                            value: 'javascript'
+                        },
+                        {
+                            label: 'asp',
+                            value: 'asp'
+                        },
+                        {
+                            label: 'ruby',
+                            value: 'ruby'
+                        },
+                        {
+                            label: 'python',
+                            value: 'python'
+                        },
+                        {
+                            label: 'c',
+                            value: 'c'
+                        },
+                        {
+                            label: 'scala',
+                            value: 'scala'
+                        },
+                        {
+                            label: 'groovy',
+                            value: 'groovy'
+                        },
+                        {
+                            label: 'haskell',
+                            value: 'haskell'
+                        },
+                        {
+                            label: 'perl',
+                            value: 'perl'
+                        }
+                    ]
+            });
+        });
+
+        function setData() {
+            $("#tags").wijcombobox("option", "data", [
+                {
+                    label: 'delphi',
+                    value: 'delphi'
+                },
+                {
+                    label: 'visual studio',
+                    value: 'visual studio'
+                },
+                {
+                    label: 'flash',
+                    value: 'flash'
+                }
+            ]);
+        }
+            
+    </script>
+}
+<h2>
+    DynamicData</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <input id="tags" style="width: 300px" />
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <input type="button" value="Set Dynamic Data " onclick="setData()" />
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        This sample shows how to add dynamical data to the combo.
+    </p>
+}

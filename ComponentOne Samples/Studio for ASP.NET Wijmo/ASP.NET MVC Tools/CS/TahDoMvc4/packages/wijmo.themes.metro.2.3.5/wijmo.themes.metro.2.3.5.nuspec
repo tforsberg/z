@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>wijmo.themes.metro</id>
+    <version>2.3.5</version>
+    <title>Metro Theme for Wijmo</title>
+    <authors>ComponentOne</authors>
+    <owners>ComponentOne</owners>
+    <licenseUrl>http://wijmo.com/widgets/license/wijmo-mit-license/</licenseUrl>
+    <projectUrl>http://wijmo.com/</projectUrl>
+    <iconUrl>http://wijmo.com/img/media/wijmo_wijmo_150.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Metro Theme for Wijmo. This Theme is also usable with jQuery UI Widgets.</description>
+    <language>en-US</language>
+    <tags>Theme Themeroller jQuery jQueryUI Wijmo</tags>
+    <references />
+  </metadata>
+</package>

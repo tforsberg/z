@@ -1,0 +1,39 @@
+﻿@{
+	ViewBag.Title = "Overview";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+    	$(document).ready(function () {
+    		$("#datepager").wijdatepager();
+    	});
+    
+    </script>
+}
+<h2>Overview</h2>
+
+        <div class="main demo">
+            <!-- Begin demo markup -->
+            
+            <div id="datepager" style="margin-top:20px">
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+				<p>
+					<div id="log_label"></div>
+				</p>
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+{
+	<p>       
+            wijpopup is a tool widget that can be used by other widgets to flexibly display
+                or hide an element. wijpopup allows a target element (such as a DIV) to pop up or
+                hide at a specified position. The target element is placed in the topmost position
+                above other elements, and a transparent FRAME is created automatically beneath the
+                element in IE6 (or lower) browser.
+	</p>
+}

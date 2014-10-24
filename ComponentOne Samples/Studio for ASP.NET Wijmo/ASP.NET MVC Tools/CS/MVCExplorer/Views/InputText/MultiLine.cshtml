@@ -1,0 +1,31 @@
+﻿@{
+	ViewBag.Title = "MultiLine";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+
+@section header
+{
+	<script id="scriptInit" type="text/javascript">
+		$(document).ready(function () {
+		    $("#textbox1").wijinputtext({
+		    });
+		});
+	</script>
+}
+<h2>Format</h2>
+<div class="main demo">
+            <!-- Begin demo markup -->
+            <textarea id="textbox1" ></textarea>
+            
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+</div>
+
+@section description
+{
+            <p>
+                This sample illustrates how you can create a multiline text widget.</p>
+}

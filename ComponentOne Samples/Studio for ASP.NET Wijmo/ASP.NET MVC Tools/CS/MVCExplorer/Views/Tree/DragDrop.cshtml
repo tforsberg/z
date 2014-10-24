@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "DragDrop";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            var tv = $("#tree1").wijtree({ allowDrop: true, allowDrag: true });
+            $("#tree2").wijtree({ allowDrop: true, allowDrag: false });
+        });       
+    </script>
+}
+<h2>
+    DragDrop</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <ul id="tree1">
+            <li><a><span>Folder 1</span></a>
+                <ul>
+                    <li><a><span>Folder 1.1</span></a></li>
+                    <li><a><span>Folder 1.2</span></a></li>
+                    <li><a><span>Folder 1.3</span></a></li>
+                    <li><a><span>Folder 1.4</span></a></li>
+                    <li><a><span>Folder 1.5</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>Folder 2</span></a>
+                <ul>
+                    <li><a><span>Folder 2.1</span></a></li>
+                    <li><a><span>Folder 2.2</span></a></li>
+                    <li><a><span>Folder 2.3</span></a></li>
+                    <li><a><span>Folder 2.4</span></a></li>
+                    <li><a><span>Folder 2.5</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>Folder 3</span></a>
+                <ul>
+                    <li><a><span>Folder 3.1</span></a></li>
+                    <li><a><span>Folder 3.2</span></a></li>
+                    <li><a><span>Folder 3.3</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <p>
+        Between 2 trees</p>
+    <div>
+        <ul id="tree2">
+            <li><a><span>Folder 4</span></a>
+                <ul>
+                    <li><a><span>Folder 4.1</span></a></li>
+                    <li><a><span>Folder 4.2</span></a></li>
+                    <li><a><span>Folder 4.3</span></a></li>
+                    <li><a><span>Folder 4.4</span></a></li>
+                    <li><a><span>Folder 4.5</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>Folder 5</span></a>
+                <ul>
+                    <li><a><span>Folder 5.1</span></a></li>
+                    <li><a><span>Folder 5.2</span></a></li>
+                    <li><a><span>Folder 5.3</span></a></li>
+                    <li><a><span>Folder 5.4</span></a></li>
+                    <li><a><span>Folder 5.5</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- End demo markup -->
+</div>
+@section description
+        {
+    <p>
+        The wijtree widget allows you to make drag-and-drop nodes by setting the allowDrag
+        and allowDrop properties to true. You can drag and drop widgets within one tree
+        or between two trees.
+    </p>
+}

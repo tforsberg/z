@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Flash";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#lightbox").wijlightbox({
+                controlsPosition: 'outside',
+                textPosition: 'outside',
+                showCounter: false
+            });
+        });
+    </script>
+}
+<h2>Flash</h2>
+
+        <div class="main demo">
+            <!-- Begin demo markup -->
+            <div id="lightbox">
+                <a href="http://cdn.wijmo.com/movies/skip.swf" rel="wijlightbox[stock];width=400;height=300">
+                    <img src="http://cdn.wijmo.com/images/happygirl.png" title="Happy Girl" alt="Happy Girl" /></a>
+                <a href="http://cdn.wijmo.com/movies/caveman.swf" rel="wijlightbox[stock];width=520;height=390">
+                    <img src="http://cdn.wijmo.com/images/caveman.png" title="Cave Man" alt="Cave Man" /></a>
+                <a href="http://cdn.wijmo.com/movies/old_man.swf" rel="wijlightbox[stock];width=600;height=450">
+                    <img src="http://cdn.wijmo.com/images/oldman.png" title="Old Man" alt="Old Man" /></a>
+            </div>
+            <!-- End demo markup -->
+            <div class="demo-options">
+                <!-- Begin options markup -->
+                <!-- End options markup -->
+            </div>
+        </div>
+@section description
+{
+   <p>This sample demonstrates how to display Flash content in a wijlightbox widget.
+            </p>
+}

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Direction";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <style type="text/css">
+        .option-row li
+        {
+            margin: 3px 0;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#progressbar1").wijprogressbar({
+                value: 50,
+                animationOptions: {
+                    duration: 1000
+                }
+            });
+            $("#value").blur(function () {
+                if ($(this).val() == "") return;
+                var value = parseInt($(this).val());
+                $("#progressbar1").wijprogressbar("option", "value", value);
+            });
+            $("#labelAlign").change(function () {
+                $("#progressbar1").wijprogressbar("option", "labelAlign", this.value);
+            });
+            $("#fillDirection").change(function () {
+                $("#progressbar1").wijprogressbar("option", "fillDirection", this.value);
+            });
+        });
+				
+    </script>
+}
+<h2>
+    Direction</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="progressbar1">
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <div class="option-row">
+            <label>
+                Value</label>
+            <input type="text" id="value" value="50" />
+        </div>
+        <div class="option-row">
+            <label>
+                Label Align</label>
+            <select id="labelAlign">
+                <option value="east">east</option>
+                <option value="west">west</option>
+                <option value="center" selected="selected">center</option>
+                <option value="north">north</option>
+                <option value="south">south</option>
+                <option value="running">running</option>
+            </select>(if select running,please change the value)
+        </div>
+        <div class="option-row">
+            <label>
+                Fill Direction</label>
+            <select id="fillDirection">
+                <option value="east">east</option>
+                <option value="west">west</option>
+                <option value="south">south</option>
+                <option value="north">north</option>
+            </select>
+        </div>
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+            {
+    <p>
+        This sample demonstrates the wijprogressbar widgets value, labelAlign, orientation,
+        and fillDirection options. To change the value, enter a number between 0 and 100
+        into the Value text box. To change the label alignment, click the Label Align drop-down
+        arrow and select an alignment from the drop-down box. To set the fill direction,
+        click the Fill Direction drop-down arrow and select a direction; east and west will
+        give you a horizontal progress bar, and north and south will give you a vertical
+        progress bar.
+    </p>
+}

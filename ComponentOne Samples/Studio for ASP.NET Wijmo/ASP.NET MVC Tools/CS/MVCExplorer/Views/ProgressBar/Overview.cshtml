@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Overview";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#hProBar").wijprogressbar({ value: 75, animationOptions: {
+                duration: 1000
+            }
+            });
+            $("#vProBar").wijprogressbar({ value: 75, fillDirection: "north" });
+        });    
+    </script>
+    <style type="text/css">
+        .layout
+        {
+            margin: 10px 0;
+        }
+    </style>
+}
+<h2>
+    Overview</h2>
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div class="layout ui-helper-clearfix">
+        <h6>
+            Horizontal</h6>
+        <div id="hProBar">
+        </div>
+    </div>
+    <div class="layout ui-helper-clearfix">
+        <h6>
+            Vertical</h6>
+        <div id="vProBar">
+        </div>
+    </div>
+    <!-- End demo markup -->
+    <div class="demo-options">
+        <!-- Begin options markup -->
+        <!-- End options markup -->
+    </div>
+</div>
+@section description
+        {
+    <p>
+        Showing a fixed indication or a real-time indicator of progress is quick and easy
+        for Web developers with the wijprogressbar widget. This sample represents the orientations
+        of the progress bar. By default, the progress bar is horizontal, but you can set
+        it to vertical by setting the fillDirection option to north or south; in this sample,
+        the fillDirection option is set to north.
+    </p>
+}

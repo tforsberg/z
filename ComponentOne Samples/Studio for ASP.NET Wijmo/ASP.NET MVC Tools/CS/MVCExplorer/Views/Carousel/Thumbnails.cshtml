@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Thumbnails";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijcarousel").wijcarousel({
+                showPager: true,
+                showTimer: true,
+                pagerPosition: {
+                    my: 'left bottom',
+                    at: 'left bottom',
+                    offset: '0 50'
+                },
+                loop: true,
+                pagerType: "thumbnails",
+                thumbnails: {
+                    mouseover: function (event) {
+                        var li = $(this);
+                        if (!li.hasClass("ui-state-active")) {
+                            li.stop().animate({ "margin-top": 10 }, 500);
+                        }
+                    },
+                    mouseout: function (event) {
+                        var li = $(this);
+                        if (!li.hasClass("ui-state-active")) {
+                            li.stop().animate({
+                                "margin-top": 0
+                            }, 500, function () {
+                                li.css("margin-top", "")
+                            });
+                        }
+                    },
+                    click: function (event) {
+                        var li = $(this);
+                        li.css({ "margin-top": "" });
+                        li.siblings("li").removeClass("ui-state-active")
+                        .css({ "margin-top": "" });
+                    },
+                    imageWidth: 58,
+                    imageHeight: 74,
+                    images: [
+                        "http://www.componentone.com/newimages/walls/StudioEnterprise2011v2/secharts2011_thumb.png",
+                        "http://www.componentone.com/newimages/walls/WindowsPhone2011/wp72011_thumb.png",
+                        "http://www.componentone.com/newimages/Walls/SilverlightWPF2011v2/slwpf_thumb.png"]
+                }
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        #wijcarousel
+        {
+            width: 756px;
+            height: 300px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div id="wijcarousel">
+        <ul>
+            <li>
+                <img src="http://www.componentone.com/newimages/Walls/StudioEnterprise2011v2/productheaderse2011.png"
+                    alt="Studio Enterprise 2011" />
+            </li>
+            <li>
+                <img src="http://www.componentone.com/newimages/Walls/WindowsPhone2011/productheader_windowsphone7.png"
+                    alt="Olap" /></li>
+            <li>
+                <img src="http://www.componentone.com/newimages/Walls/SilverlightWPF2011v2/productheader_slwpf_2011v2.png"
+                    alt="Winforms" />
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End demo markup -->
+<div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates how to use custom image thumbnails for paging and previewing
+        carousel panes.
+    </p>
+}

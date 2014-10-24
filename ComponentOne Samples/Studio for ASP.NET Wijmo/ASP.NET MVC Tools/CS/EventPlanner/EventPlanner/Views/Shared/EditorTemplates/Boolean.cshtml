@@ -1,0 +1,8 @@
+﻿@model Nullable<bool>
+@{ 
+    List<SelectListItem> TrueFalseList = new List<SelectListItem>();
+    TrueFalseList.Add(new SelectListItem { Text = "Yes", Value = "true", Selected = Model.HasValue && Model.Value });
+    TrueFalseList.Add(new SelectListItem { Text = "No", Value = "false", Selected = Model.HasValue && !Model.Value });
+}
+
+@Html.DropDownList("", TrueFalseList, htmlAttributes: new { data_role = "slider" })

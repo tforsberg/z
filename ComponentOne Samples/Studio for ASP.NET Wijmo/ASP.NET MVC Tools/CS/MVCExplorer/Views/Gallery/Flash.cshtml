@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Flash";
+    Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+    <script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijgallery,#wijgallery2").wijgallery({
+                showControlsOnHover: false,
+                thumbsDisplay: 4,
+                thumbsLength: 100,
+                mode: "swf"
+            });
+        });
+    </script>
+    <style type="text/css">
+        #wijgallery
+        {
+            width: 700px;
+            height: 600px;
+        }
+    </style>
+}
+<div class="main demo">
+    <!-- Begin demo markup -->
+    <div>
+        <div id="wijgallery" class="">
+            <ul class="">
+                <li class=""><a href="http://cdn.wijmo.com/movies/skip.swf">
+                    <img src="http://cdn.wijmo.com/images/happygirl.png" title="Happy Girl" alt="Happy Girl" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/caveman.swf">
+                    <img src="http://cdn.wijmo.com/images/caveman.png" title="Cave Man" alt="Cave Man" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/old_man.swf">
+                    <img src="http://cdn.wijmo.com/images/oldman.png" title="Old Man" alt="Old Man" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/skip.swf">
+                    <img src="http://cdn.wijmo.com/images/happygirl.png" title="Happy Girl" alt="Happy Girl" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/caveman.swf">
+                    <img src="http://cdn.wijmo.com/images/caveman.png" title="Cave Man" alt="Cave Man" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/old_man.swf">
+                    <img src="http://cdn.wijmo.com/images/oldman.png" title="Old Man" alt="Old Man" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/skip.swf">
+                    <img src="http://cdn.wijmo.com/images/happygirl.png" title="Happy Girl" alt="Happy Girl" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/caveman.swf">
+                    <img src="http://cdn.wijmo.com/images/caveman.png" title="Cave Man" alt="Cave Man" /></a>
+                </li>
+                <li class=""><a href="http://cdn.wijmo.com/movies/old_man.swf">
+                    <img src="http://cdn.wijmo.com/images/oldman.png" title="Old Man" alt="Old Man" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<!-- End demo markup -->
+<div class="demo-options">
+    <!-- Begin options markup -->
+    <!-- End options markup -->
+</div>
+</div>
+@section description
+        {
+    <p>
+        This sample illustrates the flash mode of wijgallery, which has a inner flash player
+        in the frame.
+    </p>
+}

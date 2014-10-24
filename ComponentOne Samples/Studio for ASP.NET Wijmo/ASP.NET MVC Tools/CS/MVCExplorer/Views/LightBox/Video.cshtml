@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Video";
+	Layout = "~/Views/Shared/_WidgetLayout.cshtml";
+}
+@section header
+{
+	<script type="text/javascript">
+		$(function () {
+			$("#lightbox").wijlightbox({
+				controlsPosition: 'outside',
+				textPosition: 'outside', 
+                player: 'iframe'
+			});
+		});
+	</script>
+}
+<h2>Video</h2>
+		<div class="main demo">
+			<!-- Begin demo markup -->
+			<a id="lightbox" href="http://wijmo.com/demo/explore/Wijmo-Open/development-bundle/samples/video/overview.html" rel="wijlightbox;width=800;height=600">
+				<img src="http://cdn.wijmo.com/images/quicktime.png" title="HTML5 Video Inside Lightbox" alt="HTML5 Video Inside Lightbox" /></a> 
+			<!-- End demo markup -->
+			<div class="demo-options">
+			<!-- Begin options markup -->
+				
+			<!-- End options markup -->
+			</div>
+		</div>
+@section description
+{
+  <p>This sample demonstrates how the wijlightbox widget can be used to videos in IFrame.</p>
+}

@@ -1,0 +1,59 @@
+﻿@model EventPlanner.Models.EventObj
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section Header {
+    @Html.ActionLink("Back", "Index", routeValues: null, htmlAttributes: new { data_icon = "back" })
+    <h2>Details</h2>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { data_icon = "gear" })
+}
+
+<ul data-role="listview" data-inset="true" data-theme="c">
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.Subject)
+            </label>
+            @Html.DisplayFor(model => model.Subject)
+        </li>
+
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.Location)
+            </label>
+            @Html.DisplayFor(model => model.Location)
+        </li>
+
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.Start)
+            </label>
+            @Html.DisplayFor(model => model.Start)
+        </li>
+
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.End)
+            </label>
+            @Html.DisplayFor(model => model.End)
+        </li>
+
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.Description)
+            </label>
+            @Html.DisplayFor(model => model.Description)
+        </li>
+
+        <li data-role="fieldcontain">
+            <label>
+                @Html.DisplayNameFor(model => model.AllDay)
+            </label>
+            @Html.DisplayFor(model => model.AllDay)
+        </li>
+
+</ul>
+
+@Html.ActionLink("Delete", "Delete", new { id = Model.Id }, htmlAttributes: new { data_role="button", data_theme = "e" })
+
